@@ -1,1 +1,4 @@
 * text eol=lf
+catalogs/** -text
+evidence/** -text
+provenance/** -text
