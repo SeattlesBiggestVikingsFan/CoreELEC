@@ -31,6 +31,24 @@ def public_profile(index=29, identity=None):
             'identity': identity or {'backend': cal.BACKEND}, 'index': index,
             'verification': {'rounds': rounds}}
 
+
+def https_evidence(payload=cal.PUBLIC_PAYLOAD, seconds=20):
+    return {'backend': cal.HTTPS_BACKEND, 'endpoint': cal.HTTPS_ENDPOINT,
+            'tls_verified': True, 'tls_version': 'TLSv1.3', 'certificate_sha256': 'a'*64,
+            'http_status': 200, 'requested_bytes': payload, 'framing': 'content_length',
+            'declared_bytes': payload, 'pacing': 'application_read', 'pacing_bps': cal.PUBLIC_RATE,
+            'wire_rate_limited': False, 'wire_bytes_capped': False,
+            'tcp_unique_received_bytes': payload, 'tcp_progress_seconds': seconds}
+
+
+def https_profile(index=29, identity=None):
+    saved = public_profile(index, identity)
+    saved.update(schema=4, traffic_backend=cal.HTTPS_BACKEND, verified_at=1700000000)
+    for item in saved['verification']['rounds']:
+        item['application_bps'] = item.pop('bps')
+        item.update(https_evidence())
+    return saved
+
 def slot_bytes(store):
     return {name: path.read_bytes() if path.exists() else None
             for name in ('active', 'previous')
@@ -1094,7 +1112,8 @@ class PublicDiagnosticTests(unittest.TestCase):
                                      self.worker.update, preset='scaleway-france')
         with mock.patch.object(cal, 'resolve_public_server', return_value='1.1.1.1') as lookup:
             self.run_diagnostic()
-        lookup.assert_called_once_with(cal.public_server('scaleway-france'), self.job.cancel)
+        lookup.assert_called_once_with(cal.public_server('scaleway-france'), self.job.cancel,
+                                       self.job.deadline)
         self.assertEqual(self.job.address, '1.1.1.1')
         self.assertEqual(self.worker.result['diagnostic']['state'], 'no_errors')
         self.assertFalse(self.worker.result['diagnostic']['saved'])
@@ -1266,6 +1285,139 @@ class PublicDiagnosticTests(unittest.TestCase):
             self.worker.request({'version': 1, 'action': 'start', 'address': '1.1.1.1',
                                  'port': 5201, 'public': True, 'consent': True})
         self.assertIsInstance(self.worker.job, cal.DiagnosticJob)
+
+
+class HTTPSPolicyTests(unittest.TestCase):
+    run_job = PublicRepairTests.run_job
+
+    def setUp(self):
+        PublicRepairTests.setUp(self)
+        self.job = cal.PublicRepairJob(self.adapter, self.store, None, None, True,
+                                      self.worker.update, backend=cal.HTTPS_BACKEND)
+        self.job.address = '1.1.1.1'
+        self.job.source = self.adapter.address()
+
+    def measurement(self, seconds=20):
+        result = PublicRepairTests.measurement(self, seconds)
+        self.job.last_measurement['transport'] = https_evidence(result['bytes'], seconds)
+        return result
+
+    def test_shared_search_reopen_save_and_lan_history_for_https(self):
+        self.store.replace('previous', self.original)
+        self.bad = {0}
+        self.run_job()
+        saved = self.store.load()
+        self.assertEqual(saved['schema'], 4)
+        self.assertEqual(saved['traffic_backend'], cal.HTTPS_BACKEND)
+        self.assertEqual(cal.validate_profile(saved, self.adapter.identity), 1)
+        self.assertEqual(self.store.load('previous'), self.original)
+        self.assertEqual(self.worker.result['phase'], 'public_complete')
+        self.assertFalse(self.adapter.lease)
+        self.assertFalse(self.worker.result['gigabit_verified'])
+        self.assertEqual(self.worker.health.state['state'], 'insufficient_traffic')
+
+    def test_service_failure_and_cancel_do_not_reject_timings_or_change_slots(self):
+        for error in (cal.CalibrationError('HTTPS server refused/status 429'),
+                      cal.CalibrationError('TLS certificate verification failed'), cal.Cancelled()):
+            with self.subTest(error=error):
+                self.setUp()
+                before = slot_bytes(self.store)
+                self.failure = error
+                self.run_job()
+                self.assertEqual(slot_bytes(self.store), before)
+                self.assertEqual(self.adapter.index, 30)
+                self.assertFalse(self.adapter.lease)
+                self.assertNotIn('accept', self.adapter.commands)
+
+    def test_https_accept_failure_rolls_back_both_slots_and_runtime(self):
+        before = slot_bytes(self.store)
+        original_write = self.adapter.write
+        def write(command):
+            if command == 'accept':
+                raise cal.CalibrationError('accept refused')
+            original_write(command)
+        with mock.patch.object(self.adapter, 'write', side_effect=write):
+            self.run_job()
+        self.assertEqual(slot_bytes(self.store), before)
+        self.assertEqual(self.adapter.index, 30)
+        self.assertFalse(self.adapter.lease)
+
+    def test_insufficient_or_buffered_only_transport_cannot_save(self):
+        original = self.measurement
+        def measure(seconds=20):
+            result = original(seconds)
+            if self.adapter.lease and seconds == 20:
+                self.job.last_measurement['transport']['tcp_progress_seconds'] = 1
+            return result
+        before = slot_bytes(self.store)
+        with mock.patch.object(self, 'measurement', side_effect=measure):
+            self.run_job()
+        self.assertEqual(slot_bytes(self.store), before)
+        self.assertNotIn('accept', self.adapter.commands)
+
+    def test_offline_https_and_old_profiles_need_no_network(self):
+        with mock.patch.object(cal, 'run_command', side_effect=AssertionError('network forbidden')):
+            for saved in (profile(), public_profile(), https_profile()):
+                self.assertEqual(cal.validate_profile(saved, saved['identity']), 29)
+        with mock.patch.object(service, 'adapters', return_value=[self.adapter]), \
+                mock.patch.object(service, 'BOOT_STATUS', Path(self.directory.name)/'boot.json'):
+            self.store.replace('active', https_profile(30, self.adapter.identity))
+            state = self.worker.status()
+        self.assertEqual(state['profile']['traffic_backend'], cal.HTTPS_BACKEND)
+        self.assertNotIn('send_bps', state['last_verification'])
+
+    def test_https_profile_rejects_forged_transport_source_tls_framing_and_claims(self):
+        changes = [('tls_verified', False), ('certificate_sha256', ''), ('http_status', 503),
+                   ('endpoint', 'https://example.org/file'), ('backend', 'librespeed'),
+                   ('wire_rate_limited', True), ('wire_bytes_capped', True),
+                   ('tcp_progress_seconds', 1), ('tcp_progress_seconds', float('nan')),
+                   ('tcp_unique_received_bytes', 1), ('requested_bytes', 1),
+                   ('declared_bytes', 1), ('interface', 'eth1'), ('source', '127.0.0.1'),
+                   ('generation', 2), ('index', 30), ('application_bps', 100)]
+        for key, value in changes:
+            saved = https_profile()
+            saved['verification']['rounds'][0][key] = value
+            with self.subTest(key=key), self.assertRaises(cal.CalibrationError):
+                cal.validate_profile(saved, saved['identity'])
+        saved = https_profile()
+        for item in saved['verification']['rounds']:
+            item.update(framing='chunked', declared_bytes=None)
+        self.assertEqual(cal.validate_profile(saved, saved['identity']), 29)
+
+    def test_start_source_requires_consent_and_rejects_arbitrary_urls(self):
+        for extra in ({'consent': False}, {'url': 'https://example.org/file'},
+                      {'address': '1.1.1.1'}, {'preset': 'scaleway-france'},
+                      {'backend': 'librespeed'}, {'public': False}):
+            request = {'version': 1, 'action': 'start', 'public': True,
+                       'consent': True, 'backend': cal.HTTPS_BACKEND}
+            request.update(extra)
+            with self.subTest(extra=extra), \
+                    mock.patch.object(service, 'adapters', return_value=[self.adapter]), \
+                    mock.patch.object(service.threading, 'Thread') as thread:
+                with self.assertRaises(cal.CalibrationError):
+                    self.worker.request(request)
+                thread.assert_not_called()
+        with mock.patch.object(service, 'adapters', return_value=[self.adapter]), \
+                mock.patch.object(service.threading, 'Thread'):
+            self.worker.request({'version': 1, 'action': 'start', 'public': True,
+                                 'consent': True, 'backend': cal.HTTPS_BACKEND})
+        self.assertEqual(self.worker.job.backend, cal.HTTPS_BACKEND)
+        self.assertIsNone(self.worker.job.address)
+
+    def test_shared_aggregate_and_deadline_reservations_are_not_refunded(self):
+        self.job.reserved_bytes = cal.PUBLIC_REPAIR_MAX_BYTES-cal.PUBLIC_PAYLOAD
+        self.job.reserve(20)
+        with self.assertRaises(cal.CalibrationError):
+            self.job.reserve(3)
+        self.job.reserved_bytes = 0
+        self.job.deadline = cal.time.monotonic()+39
+        with self.assertRaises(cal.CalibrationError):
+            self.job.reserve(40, attempts=2)
+        with mock.patch.object(cal, 'run_command') as command:
+            with self.assertRaises(cal.CalibrationError):
+                cal.resolve_public_server(self.job.preset, self.job.cancel,
+                                          cal.time.monotonic()-1)
+        command.assert_not_called()
 
 
 class HealthTests(unittest.TestCase):

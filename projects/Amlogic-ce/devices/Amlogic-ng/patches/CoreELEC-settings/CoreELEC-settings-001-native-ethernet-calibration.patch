@@ -138,7 +138,7 @@
      def open_context_menu(self, listItem):
 --- /dev/null
 +++ b/src/resources/lib/ethernet_calibration.py
-@@ -0,0 +1,339 @@
+@@ -0,0 +1,348 @@
 +# SPDX-License-Identifier: GPL-2.0-or-later
 +"""Kodi client for the OS-owned, local Ethernet calibration service."""
 +
@@ -190,7 +190,8 @@
 +    health = oe._(33655) if status.get('application_error') else oe._(HEALTH.get(state, 33623))
 +    profile = oe._(PROFILE.get(status['profile']['state'], 33631))
 +    if status['profile'].get('kind') == 'public_error_checked':
-+        profile += ' / ' + oe._(33680)
++        profile += ' / ' + oe._(33704 if status['profile'].get('traffic_backend') ==
++                                  'cloudflare_https_experimental' else 33680)
 +    if status['profile'].get('margin') == 'reduced':
 +        profile += ' / ' + oe._(33650)
 +    verified = status.get('last_verification')
@@ -352,7 +353,9 @@
 +                        message += '\n' + oe._(33650)
 +                    xbmcgui.Dialog().ok(oe._(TITLE), message)
 +                elif state['phase'] == 'public_complete':
-+                    xbmcgui.Dialog().ok(oe._(TITLE), oe._(33682))
++                    xbmcgui.Dialog().ok(oe._(TITLE), oe._(33705 if
++                        state.get('traffic_backend', state.get('profile', {}).get('traffic_backend')) ==
++                        'cloudflare_https_experimental' else 33682))
 +                elif state['phase'] in ('cleared', 'restored'):
 +                    xbmcgui.Dialog().ok(oe._(TITLE), oe._(
 +                        33657 if state['phase'] == 'cleared' else 33661))
@@ -412,8 +415,14 @@
 +            request('restore' if action == 1 else 'clear')
 +            progress()
 +            return
-+        mode = dialog.select(oe._(33640), [oe._(33641), oe._(33642)])
++        mode = dialog.select(oe._(33640), [oe._(33641), oe._(33642), oe._(33700)])
 +        if mode < 0:
++            return
++        if mode == 2:
++            if not dialog.yesno(oe._(TITLE), oe._(33703)):
++                return
++            request('start', public=True, consent=True, backend='cloudflare_https_experimental')
++            progress()
 +            return
 +        public = mode == 1
 +        preset = None
@@ -480,7 +489,7 @@
 +        xbmcgui.Dialog().ok(oe._(TITLE), str(error))
 --- a/language/resource.language.en_gb/strings.po
 +++ b/language/resource.language.en_gb/strings.po
-@@ -1562,3 +1562,267 @@
+@@ -1562,3 +1562,283 @@
  msgctxt "#33535"
  msgid "Could not save the Wi-Fi throughput setting."
  msgstr ""
@@ -574,7 +583,7 @@
 +msgstr ""
 +
 +msgctxt "#33642"
-+msgid "Check and repair using a public server"
++msgid "Public iPerf3 server (directory or custom IP)"
 +msgstr ""
 +
 +msgctxt "#33643"
@@ -748,6 +757,22 @@
 +msgctxt "#33685"
 +msgid "Reconnecting before trying another setting"
 +msgstr ""
++
++msgctxt "#33700"
++msgid "Cloudflare HTTPS (experimental)"
++msgstr ""
++
++msgctxt "#33703"
++msgid "Experimental public error checks can interrupt Ethernet. Each full check requests 25 MB over 20 seconds; candidate screens last 3 seconds. Repair may reserve up to 256 MiB and 20 minutes. Reads are paced near 10 Mbps, but sender/wire rate and total wire bytes are not capped. Cloudflare sees your IP and request metadata. Availability and permission for repeated device-fleet calibration are not guaranteed. No results sharing or telemetry upload is sent. Only measured CRC corruption triggers repair; two complete checks with a reopen are required before saving. Gigabit speed is not verified. Continue?"
++msgstr ""
++
++msgctxt "#33704"
++msgid "Experimental HTTPS public error checked; gigabit not verified"
++msgstr ""
++
++msgctxt "#33705"
++msgid "Repair saved after two experimental HTTPS error checks. Gigabit speed is not verified. Application reads were paced; sender/wire rate and total wire bytes were not capped."
++msgstr ""
 --- /dev/null
 +++ b/skins/Default/1080i/service-CoreELEC-Ethernet-Numeric.xml
 @@ -0,0 +1,116 @@
@@ -869,7 +894,7 @@
 +</window>
 --- /dev/null
 +++ b/tests/test_ethernet_calibration.py
-@@ -0,0 +1,562 @@
+@@ -0,0 +1,588 @@
 +# SPDX-License-Identifier: GPL-2.0-or-later
 +
 +import ast
@@ -970,6 +995,32 @@
 +        self.status['health']['state'] = 'healthy'
 +        self.status['profile']['state'] = 'not_saved'
 +        self.assertIn('[COLOR green]', client.row_values(self.status)['CalibrationHealth'])
++
++    def test_experimental_https_is_explicit_selected_and_needs_consent_without_discovery(self):
++        self.dialog.select.side_effect = [0, 2]
++        self.dialog.yesno.return_value = True
++        client.open_dialog()
++        self.request.assert_any_call('start', public=True, consent=True,
++                                     backend='cloudflare_https_experimental')
++        self.assertFalse(any(call.args[0] == 'catalogue' for call in self.request.call_args_list))
++        self.numeric.assert_not_called()
++        self.progress.assert_called_once()
++        self.assertIn('33700', self.dialog.select.call_args.args[1])
++
++    def test_https_decline_and_picker_cancel_make_no_traffic_request(self):
++        for answers in ([0, 2], [0, -1]):
++            self.request.reset_mock()
++            self.dialog.select.side_effect = answers
++            self.dialog.yesno.return_value = False
++            client.open_dialog()
++            self.assertFalse(any(call.args[0] == 'start' for call in self.request.call_args_list))
++
++    def test_https_profile_label_does_not_certify_health_or_show_lan_speeds(self):
++        self.status['profile'].update(kind='public_error_checked',
++                                      traffic_backend='cloudflare_https_experimental')
++        values = client.row_values(self.status)
++        self.assertIn('33704', values['CalibrationProfile'])
++        self.assertNotIn('[COLOR green]', values['CalibrationHealth'])
 +
 +    def test_unsupported_adapter_does_not_offer_a_scan(self):
 +        self.status['supported'] = False

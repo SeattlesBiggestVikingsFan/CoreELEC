@@ -14,6 +14,51 @@ Its region/host/port picker includes the complete dated
 [iPerf.fr public iPerf3 directory](https://iperf.fr/iperf-servers.php), plus custom
 IPv4 entry. It is an offline snapshot, not a live availability check.
 Internet congestion can make public verification inconclusive.
+An additional, explicitly selected **Cloudflare HTTPS (experimental)** choice
+uses only `https://speed.cloudflare.com/__down?bytes=N`, not arbitrary download
+URLs. It does not probe providers when the settings page opens, follow redirects,
+retry refused requests, upload results, or silently replace an iPerf source.
+LibreSpeed sponsors are not supported by this snapshot: endpoint compatibility
+and operator permission have not been established.
+
+HTTPS shares the existing public repair search, lease, identity, recovery,
+two-round/reopen and transactional-save policy. Only new hardware CRC triggers
+search or rejects a timing. DNS/TLS/HTTP errors, short/stalled data, cancellation,
+or insufficient fresh receive activity abort inconclusively and restore the
+original state. TLS requires a correct clock and the system CA store; certificate
+and hostname verification cannot be disabled. The Python3 dependency already
+includes OpenSSL and its system CA bundle; no third-party client is added.
+
+Each full HTTPS leg must receive exactly 25,000,000 payload bytes, over 18-21
+seconds, with zero CRC and the same onboard source/index/generation. Application
+reads are paced near 10 Mbps, **not the server or wire**. Small bursts, TLS/HTTP
+overhead and retransmissions are not an exact wire-volume or wire-rate cap.
+The 256 MiB job reservation and 32 MiB attempt limit are payload limits, and
+failed attempts are not refunded. Socket buffering is requested at 32 KiB and
+refused above 128 KiB actual; TLS/body reads and headers/framing are bounded.
+All operations are cancellable/deadline-bounded; a stall does not become healthy.
+Linux TCP_INFO must expose its unique received-byte counter. A forced final
+snapshot, at least 90% fresh unique TCP bytes and 18-21 seconds of observed TCP
+progress prevent a buffered download from masquerading as sustained traffic.
+These unique TCP bytes include TLS/framing, not retransmissions or Ethernet wire
+bytes. Missing/reset transport counters are inconclusive, not a fallback.
+
+HTTPS reduced evidence uses schema 4, retaining schema 1 LAN and schema 2 iPerf
+offline validation. It records the selected backend/endpoint, verified TLS
+version/certificate hash, framing/exact requested payload, application rate,
+TCP progression, CRC and onboard source/index/generation. The certificate hash
+is a measurement receipt, not a boot-time certificate pin. Boot application
+validates the saved receipt locally without DNS or traffic. The earlier schema 3
+manual-timing work is intentionally NOT included. UI and runtime must be shipped
+together; accepted8a cannot apply schema 4 profiles.
+
+This is an **off-device source-preparation snapshot, not a production release**.
+Prior five bounded Cloudflare host samples established feasibility only: there
+is no fleet quota/SLA or established permission for repeated fleet calibration.
+Cloudflare sees the client's IP/access metadata. Explicit consent does not imply
+operator endorsement. Native TLS/runtime on CoreELEC, real HTTPS repair/save,
+boot/upgrade/cold boot and suspend/resume remain unvalidated on TestUgoos.
+Accepted8a, frozen manual9 and the combined upgrade's source lock are unchanged.
 Calibration interrupts onboard networking and may disrupt playback/transfers.
 The onboard port needs an IPv4 address; if bad timing prevents DHCP, first
 configure a suitable manual address in the existing Network connection dialog.
