@@ -47,6 +47,10 @@ class Cancelled(CalibrationError):
     pass
 
 
+class Inconclusive(CalibrationError):
+    pass
+
+
 class CandidateError(CalibrationError):
     pass
 
@@ -103,7 +107,7 @@ def resolve_public_server(server, cancel, deadline=None):
     except Cancelled:
         raise
     except (CalibrationError, OSError, ValueError) as error:
-        raise CalibrationError('Public server DNS lookup failed or timed out: ' +
+        raise Inconclusive('Public server DNS lookup failed or timed out: ' +
                                server['hostname']) from error
     if not isinstance(addresses, list) or not addresses or len(addresses) > 16:
         raise CalibrationError('Public server DNS returned no usable IPv4 addresses')
@@ -198,13 +202,20 @@ def read_json(path):
 
 def validate_profile(profile, identity):
     if (not isinstance(profile, dict) or type(profile.get('schema')) is not int or
-            profile.get('schema') not in (1, 2, 4)):
+            profile.get('schema') not in (1, 2, 3, 4)):
         raise CalibrationError('Unsupported calibration profile schema')
     if profile.get('identity') != identity:
         raise CalibrationError('Saved profile no longer matches the adapter/backend; recalibrate')
     index = profile.get('index')
     if type(index) is not int or not 0 <= index <= 31:
         raise CalibrationError('Invalid saved timing index')
+    if profile['schema'] == 3:
+        stamp = profile.get('manually_set_at')
+        if (profile.get('kind') != 'manual_unverified' or
+                type(stamp) not in (int, float) or not math.isfinite(stamp) or stamp <= 0 or
+                any(key in profile for key in ('verification', 'verified_at', 'window'))):
+            raise CalibrationError('Invalid manually configured profile; no verification may be claimed')
+        return index
     if profile['schema'] in (2, 4):
         validate_public_profile(profile)
         return index
@@ -392,11 +403,17 @@ class ProfileStore:
         snapshot = self.snapshot()
         previous = self.load()
         older = self.load('previous')
+        if profile['schema'] == 3:
+            for existing in (previous, older):
+                if existing is not None:
+                    validate_profile(existing, identity)
+        preserve_lan = (previous is not None and
+                        previous.get('kind') in ('public_error_checked', 'manual_unverified') and
+                        older is not None and older.get('schema') == 1)
+        if preserve_lan:
+            validate_profile(older, identity)
         try:
-            if previous is not None and not (
-                    profile.get('kind') == 'public_error_checked' and
-                    previous.get('kind') == 'public_error_checked' and
-                    older is not None and older.get('schema') == 1):
+            if previous is not None and not preserve_lan:
                 self.replace('previous', previous)
             self.replace('active', profile)
             accept()
@@ -541,7 +558,10 @@ class Job:
         else:
             self.address, self.port = endpoint(address, port, public, public)
         self.public = public
-        self.update = update
+        self.notify = update
+        self.progress = {'phase': 'starting'}
+        self.operation_started = time.monotonic()
+        self.update = self.report
         self.cancel = threading.Event()
         self.lease_stop = threading.Event()
         self.lease_error = None
@@ -550,6 +570,25 @@ class Job:
         self.deadline = time.monotonic() + MAX_JOB_SECONDS
         self.scan_probe = False
         self.last_measurement = None
+
+    def report(self, result):
+        if 'phase' in result:
+            candidate = {key: self.progress[key] for key in ('candidate_number', 'candidate_total')
+                         if key in self.progress and result.get('candidate') is not None and
+                         result['candidate'] == self.progress.get('candidate')}
+            self.progress = dict(candidate, **result)
+        else:
+            self.progress.update(result)
+        self.progress['elapsed_seconds'] = time.monotonic() - self.operation_started
+        self.progress['server'] = self.preset['label'] if self.preset is not None else self.address
+        self.notify(dict(self.progress))
+
+    def wait_ready(self, poll=None, require_address=True):
+        self.update({'activity': 'reconnecting', 'recovery_deadline': time.monotonic() + 20})
+        try:
+            self.adapter.wait_ready(self.cancel, poll=poll, require_address=require_address)
+        finally:
+            self.update({'activity': None, 'recovery_deadline': None})
 
     def check_budget(self, seconds, tests=1):
         max_seconds = MAX_LAN_TRAFFIC_SECONDS
@@ -588,8 +627,16 @@ class Job:
                      '--connect-timeout', '3000', '-t', str(seconds)]
         if reverse:
             arguments.append('-R')
-        poll = (lambda: self.reject_corruption(before)) if self.scan_probe else None
-        output = run_command(arguments, seconds + 8, self.cancel, allow_failure=True, poll=poll)
+        started = time.monotonic()
+        def poll():
+            self.update({'activity': 'traffic', 'traffic_seconds': time.monotonic() - started,
+                         'traffic_target_seconds': seconds})
+            if self.scan_probe:
+                self.reject_corruption(before)
+        try:
+            output = run_command(arguments, seconds + 8, self.cancel, allow_failure=True, poll=poll)
+        finally:
+            self.update({'activity': None})
         after = self.adapter.counters()
         if not self.adapter.link_ready() or self.adapter.address() != source:
             raise CalibrationError('Selected onboard link/address changed')
@@ -618,7 +665,7 @@ class Job:
         lease = None
         accepted = False
         try:
-            self.adapter.wait_ready(self.cancel, require_address=True)
+            self.wait_ready()
             source = self.adapter.address()
             self.store.load()
             if self.address in [item.address() for item in adapters()]:
@@ -639,13 +686,13 @@ class Job:
             for index in range(32):
                 if self.cancel.is_set():
                     raise Cancelled('Calibration cancelled')
-                self.update({'phase': 'scanning', 'candidate': index})
+                self.update({'phase': 'scanning', 'candidate': index,
+                             'candidate_number': index + 1, 'candidate_total': 32,
+                             'activity': 'applying'})
                 self.adapter.write('set ' + str(index))
                 try:
                     baseline = self.adapter.counters()
-                    self.adapter.wait_ready(self.cancel,
-                                            poll=lambda: self.reject_corruption(baseline),
-                                            require_address=True)
+                    self.wait_ready(poll=lambda: self.reject_corruption(baseline))
                     source = self.adapter.address()
                     self.test(True, 2, source)
                     clean.add(index)
@@ -663,13 +710,13 @@ class Job:
                 self.adapter.write('set ' + str(chosen))
                 rounds = []
                 try:
-                    self.adapter.wait_ready(self.cancel, require_address=True)
+                    self.wait_ready()
                     source = self.adapter.address()
                     for repetition in range(repetitions):
                         # Reopen between narrow-window rounds to verify reapplication too.
                         if repetition:
                             self.adapter.write('set ' + str(chosen))
-                            self.adapter.wait_ready(self.cancel, require_address=True)
+                            self.wait_ready()
                             source = self.adapter.address()
                         measurements = {}
                         for direction, reverse in (('send', False), ('receive', True)):
@@ -737,7 +784,7 @@ class DiagnosticReceiver:
             return stream
         except OSError as error:
             stream.close()
-            raise CalibrationError('Cannot reach the error-check server; it may be unavailable') from error
+            raise Inconclusive('Cannot reach the traffic server; it may be unavailable') from error
 
     def check(self):
         if getattr(self.job, 'lease_error', None) is not None:
@@ -748,20 +795,20 @@ class DiagnosticReceiver:
 
     def read(self, stream, size, deadline):
         if size > 64 * 1024 or self.control_bytes + size > 512 * 1024:
-            raise CalibrationError('Error-check server returned excessive control data')
+            raise Inconclusive('Traffic server returned excessive control data')
         data = bytearray()
         while len(data) < size:
             self.check()
             remaining = deadline - time.monotonic()
             if remaining <= 0:
-                raise CalibrationError('Error-check server timed out')
+                raise Inconclusive('Traffic server timed out')
             stream.settimeout(min(.2, remaining))
             try:
                 chunk = stream.recv(size - len(data))
             except socket.timeout:
                 continue
             if not chunk:
-                raise CalibrationError('Error-check server closed the connection')
+                raise Inconclusive('Traffic server closed the connection')
             data.extend(chunk)
         self.control_bytes += len(data)
         return bytes(data)
@@ -769,9 +816,9 @@ class DiagnosticReceiver:
     def expect(self, control, state):
         actual = struct.unpack('b', self.read(control, 1, time.monotonic() + 5))[0]
         if actual == -1:
-            raise CalibrationError('Server is busy or refused the test; try later or choose another server')
+            raise Inconclusive('Server is busy or refused the test; try later or choose another server')
         if actual != state:
-            raise CalibrationError('Error-check server refused or uses an unsupported protocol')
+            raise Inconclusive('Traffic server refused or uses an unsupported protocol')
 
     @staticmethod
     def send_json(control, value):
@@ -854,6 +901,12 @@ class DiagnosticJob(Job):
         if now - self.sampled < .2:
             return
         self.sampled = now
+        receiver = getattr(self, 'current_receiver', None)
+        if receiver is not None:
+            self.update({'activity': 'receiving' if receiver.started is not None else 'connecting',
+                         'received_bytes': receiver.received, 'target_bytes': self.attempt_payload,
+                         'traffic_seconds': now - receiver.started if receiver.started is not None else 0,
+                         'traffic_target_seconds': self.attempt_seconds})
         if self.lease_error is not None:
             raise CalibrationError('Driver rollback lease failed')
         self.reject_corruption(self.before)
@@ -885,12 +938,15 @@ class DiagnosticJob(Job):
         started = self.sampled
         self.started = started
         receiver = self.receiver(self.source)
+        self.current_receiver = receiver
         try:
             duration = receiver.run()
         except CRCError:
             duration = time.monotonic() - (receiver.started or started)
         finally:
             self.traffic_bytes += receiver.received
+            self.current_receiver = None
+            self.update({'activity': None})
         after = self.adapter.counters()
         delta = counter_delta(self.before, after)
         if not self.adapter.link_ready() or self.adapter.address() != self.source:
@@ -943,7 +999,7 @@ class PublicRepairJob(DiagnosticJob):
         payload = PUBLIC_RATE * seconds // 8
         if (self.reserved_bytes + payload > PUBLIC_REPAIR_MAX_BYTES or
                 time.monotonic() + seconds + 30 * attempts > self.deadline):
-            raise CalibrationError('Public repair limit reached; original Ethernet setting retained')
+            raise Inconclusive('Public repair limit reached; original Ethernet setting retained')
         self.reserved_bytes += payload
 
     def ready(self, index):
@@ -961,7 +1017,7 @@ class PublicRepairJob(DiagnosticJob):
             self.reject_corruption(before)
 
         try:
-            self.adapter.wait_ready(self.cancel, poll=poll, require_address=True)
+            self.wait_ready(poll=poll)
         except CRCError:
             raise
         except CandidateError as error:
@@ -1007,7 +1063,7 @@ class PublicRepairJob(DiagnosticJob):
                 raise CalibrationError('Original Ethernet state changed during recovery')
 
         try:
-            self.adapter.wait_ready(self.cancel, poll=poll, require_address=True)
+            self.wait_ready(poll=poll)
         except CandidateError as recovery_error:
             raise CalibrationError('Original Ethernet link/address did not recover; repair stopped') from recovery_error
         poll()
@@ -1033,7 +1089,7 @@ class PublicRepairJob(DiagnosticJob):
         if result['state'] == 'corruption':
             raise CRCError('CRC errors during public verification')
         if result['state'] != 'no_errors':
-            raise CalibrationError('Too little clean public traffic; repair is inconclusive')
+            raise Inconclusive('Too little clean public traffic; repair is inconclusive')
         cap = self.adapter.capabilities()
         observation = self.last_measurement
         if cap['index'] != index or cap['generation'] != observation['after']['generation']:
@@ -1070,11 +1126,14 @@ class PublicRepairJob(DiagnosticJob):
             lease = threading.Thread(target=self.keepalive, daemon=True)
             lease.start()
             original = self.adapter.capabilities()['index']
-            for index in self.candidates(original):
+            candidates = self.candidates(original)
+            for position, index in enumerate(candidates, 1):
                 if self.cancel.is_set():
                     raise Cancelled('Public repair cancelled')
                 self.reserve(3)
                 self.update({'phase': 'public_scanning', 'candidate': index,
+                             'candidate_number': position, 'candidate_total': len(candidates),
+                             'activity': 'applying',
                              'reserved_bytes': self.reserved_bytes,
                              'payload_limit': PUBLIC_REPAIR_MAX_BYTES})
                 self.adapter.write('set ' + str(index))
@@ -1089,15 +1148,16 @@ class PublicRepairJob(DiagnosticJob):
                 if screen['state'] == 'corruption':
                     continue
                 if screen['state'] != 'no_errors':
-                    raise CalibrationError('Public server traffic is inconclusive; original setting retained')
+                    raise Inconclusive('Public server traffic is inconclusive; original setting retained')
                 self.reserve(2 * PUBLIC_SECONDS, 2)
                 rounds = []
                 try:
                     for repetition in range(2):
+                        self.update({'phase': 'public_verifying', 'candidate': index,
+                                     'verification_round': repetition + 1, 'verification_rounds': 2,
+                                     'activity': 'applying'})
                         self.adapter.write('set ' + str(index))
                         self.ready(index)
-                        self.update({'phase': 'public_verifying', 'candidate': index,
-                                     'verification_round': repetition + 1, 'verification_rounds': 2})
                         rounds.append(self.verified_receive(index))
                 except CRCError:
                     continue
@@ -1118,6 +1178,7 @@ class PublicRepairJob(DiagnosticJob):
                            'verified_at': int(time.time()), 'verification': {'rounds': rounds}}
                 if self.backend == HTTPS_BACKEND:
                     profile.update(schema=4, traffic_backend=HTTPS_BACKEND)
+                self.update({'phase': 'saving', 'candidate': index})
                 self.lease_stop.set()
                 lease.join()
 
@@ -1133,7 +1194,7 @@ class PublicRepairJob(DiagnosticJob):
                              'traffic_backend': self.backend,
                              'received_bytes': self.traffic_bytes, 'reserved_bytes': self.reserved_bytes})
                 return
-            raise CalibrationError('No timing passed repeated public error checks; original setting retained')
+            raise CRCError('No timing passed repeated packet checks; original setting retained')
         finally:
             self.lease_stop.set()
             if lease is not None:

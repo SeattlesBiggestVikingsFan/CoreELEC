@@ -13,7 +13,7 @@
                  lstItem.setProperty(strProp, str(dictProperties[strProp]))
              self.getControl(int(strType)).addItem(lstItem)
 +            if dictProperties.get('entry') in (
-+                    'CalibrationHealth', 'CalibrationProfile', 'CalibrationTest'):
++                    'CalibrationHealth', 'CalibrationTiming', 'CalibrationProfile', 'CalibrationTest'):
 +                self.calibration_rows[dictProperties['entry']] = lstItem
              return lstItem
          except Exception as e:
@@ -44,7 +44,7 @@
  import log
  import modules
  import oe
-@@ -470,7 +471,31 @@
+@@ -470,7 +471,43 @@
              'hidden': 'true',
              'order': 2,
              'name': 32103,
@@ -55,29 +55,41 @@
 +                'value': '',
 +                'action': '',
 +                'type': 'label',
-+            }, 'CalibrationProfile': {
++            }, 'CalibrationTiming': {
 +                'order': 3,
++                'name': 33710,
++                'value': '',
++                'action': '',
++                'type': 'label',
++            }, 'CalibrationProfile': {
++                'order': 4,
 +                'name': 33653,
 +                'value': '',
 +                'action': '',
 +                'type': 'label',
 +            }, 'CalibrationTest': {
-+                'order': 4,
++                'order': 5,
 +                'name': 33654,
 +                'value': '',
 +                'action': '',
 +                'type': 'label',
 +            }, 'Calibration': {
-+                'order': 5,
++                'order': 6,
 +                'name': 33620,
 +                'value': '',
 +                'action': 'calibrate_ethernet',
++                'type': 'button',
++            }, 'CalibrationManual': {
++                'order': 7,
++                'name': 33686,
++                'value': '',
++                'action': 'manual_ethernet_timing',
 +                'type': 'button',
 +            }, 'Powered': {
                  'order': 1,
                  'name': 32105,
                  'value': '',
-@@ -557,6 +582,9 @@
+@@ -557,6 +594,9 @@
          self.listItems = {}
          self.busy = 0
          self.visible = False
@@ -87,7 +99,7 @@
  
      @log.log_function()
      def clear_list(self):
-@@ -567,11 +595,30 @@
+@@ -567,11 +607,30 @@
  
      @log.log_function()
      def do_init(self):
@@ -120,7 +132,7 @@
          self.clear_list()
  
      @log.log_function()
-@@ -742,7 +789,15 @@
+@@ -742,7 +801,20 @@
                      self.struct['Timeservers']['settings'][setting]['value'] = self.clock_properties['Timeservers'][int(setting)]
              else:
                  self.struct['Timeservers']['settings'][setting]['value'] = ''
@@ -133,12 +145,17 @@
 +    def calibrate_ethernet(self, **kwargs):
 +        ethernet_calibration.open_dialog()
 +        self.menu_loader()
++
++    @log.log_function()
++    def manual_ethernet_timing(self, **kwargs):
++        ethernet_calibration.open_manual_dialog()
++        self.menu_loader()
  
      @log.log_function()
      def open_context_menu(self, listItem):
 --- /dev/null
 +++ b/src/resources/lib/ethernet_calibration.py
-@@ -0,0 +1,348 @@
+@@ -0,0 +1,434 @@
 +# SPDX-License-Identifier: GPL-2.0-or-later
 +"""Kodi client for the OS-owned, local Ethernet calibration service."""
 +
@@ -163,7 +180,7 @@
 +         'clearing': 33656, 'restoring': 33658, 'verification_failed': 33660,
 +         'diagnosing': 33663, 'resolving': 33674,
 +         'public_scanning': 33683, 'public_verifying': 33684,
-+         'public_recovering': 33685}
++         'public_recovering': 33685, 'manual_saving': 33691}
 +
 +
 +def request(action, **kwargs):
@@ -189,18 +206,32 @@
 +             'green' if state == 'healthy' else 'orange')
 +    health = oe._(33655) if status.get('application_error') else oe._(HEALTH.get(state, 33623))
 +    profile = oe._(PROFILE.get(status['profile']['state'], 33631))
++    index = status['profile'].get('configured_index')
++    if type(index) is int and status['profile'].get('kind') != 'manual_unverified':
++        profile = (oe._(33711) % index) + ' / ' + profile
 +    if status['profile'].get('kind') == 'public_error_checked':
 +        profile += ' / ' + oe._(33704 if status['profile'].get('traffic_backend') ==
 +                                  'cloudflare_https_experimental' else 33680)
++    manual = status['profile'].get('kind') == 'manual_unverified'
++    if manual:
++        profile += ' / ' + (oe._(33689) % status['profile']['configured_index'])
++    elif status['profile'].get('kind') == 'lan_gigabit':
++        profile += ' / ' + oe._(33718)
 +    if status['profile'].get('margin') == 'reduced':
 +        profile += ' / ' + oe._(33650)
 +    verified = status.get('last_verification')
-+    speeds = oe._(33681) if verified and verified.get('kind') == 'public_error_checked' else (
++    speeds = oe._(33690) if manual else oe._(33681) if verified and verified.get('kind') == 'public_error_checked' else (
 +        ('%d / %d Mbps' % (verified['send_bps'] / 1_000_000,
 +                                verified['receive_bps'] / 1_000_000)) if verified else oe._(33659)
 +    )
++    timing = status.get('timing')
++    current = oe._(33627) if status.get('busy') else oe._(33647)
++    if timing is not None:
++        current = oe._(33712 if timing['factory'] else 33711) % timing['index']
++        current += ' / ' + oe._({'applied': 33713, 'pending': 33714,
++                                'failed': 33715, 'temporary': 33716}[timing['state']])
 +    return {'CalibrationHealth': '[COLOR %s]%s[/COLOR]' % (color, health),
-+            'CalibrationProfile': profile, 'CalibrationTest': speeds}
++            'CalibrationTiming': current, 'CalibrationProfile': profile, 'CalibrationTest': speeds}
 +
 +
 +def menu_status():
@@ -209,7 +240,7 @@
 +    except (OSError, ValueError, KeyError, TypeError) as error:
 +        log.log('Ethernet calibration status unavailable: %s' % error, log.ERROR)
 +        return {name: oe._(33647) for name in
-+                ('CalibrationHealth', 'CalibrationProfile', 'CalibrationTest')}
++                ('CalibrationHealth', 'CalibrationTiming', 'CalibrationProfile', 'CalibrationTest')}
 +
 +
 +def refresh_rows(window, stop=None):
@@ -233,6 +264,9 @@
 +        self.block = 0
 +        self.dirty = False
 +        self.result = None
++        self.minimum = kwargs.get('minimum', 1)
++        self.maximum = kwargs.get('maximum', 65535)
++        self.error = 33693 if (self.minimum, self.maximum) == (0, 31) else 33673
 +
 +    def onInit(self):
 +        self.getControl(1).setLabel(oe._(self.heading))
@@ -291,10 +325,10 @@
 +                address = ipaddress.IPv4Address(value)
 +                if address.is_unspecified:
 +                    raise ValueError('Unspecified address')
-+            elif not value.isdecimal() or not 1 <= int(value) <= 65535:
-+                raise ValueError('Invalid port')
++            elif not value.isdecimal() or not self.minimum <= int(value) <= self.maximum:
++                raise ValueError('Invalid numeric value')
 +        except ValueError:
-+            self.getControl(5).setLabel(oe._(33673))
++            self.getControl(5).setLabel(oe._(self.error))
 +            return
 +        self.result = value
 +        self.close()
@@ -331,11 +365,76 @@
 +            self.move(-1)
 +
 +
-+def prompt(heading, input_type, default):
++def prompt(heading, input_type, default, minimum=1, maximum=65535):
++    bounds = {} if (minimum, maximum) == (1, 65535) else dict(minimum=minimum, maximum=maximum)
 +    dialog = NumericEntry('service-CoreELEC-Ethernet-Numeric.xml', oe.__cwd__, 'Default',
-+                          heading=heading, kind=input_type, default=default)
++                          heading=heading, kind=input_type, default=default, **bounds)
 +    dialog.doModal()
 +    return dialog.result
++
++
++def result_message(state):
++    phase = state['phase']
++    if phase == 'complete':
++        text = oe._(33646)
++        if state.get('profile', {}).get('margin') == 'reduced':
++            text += '\n' + oe._(33650)
++        return text
++    if phase == 'public_complete':
++        return oe._(33705 if state.get('traffic_backend',
++                    state.get('profile', {}).get('traffic_backend')) ==
++                    'cloudflare_https_experimental' else 33682)
++    if phase == 'manually_set':
++        return oe._(33692) % state['index']
++    if phase in ('cleared', 'restored', 'cancelled'):
++        return oe._({'cleared': 33657, 'restored': 33661, 'cancelled': 33648}[phase])
++    if phase == 'diagnostic_complete':
++        return oe._({'no_errors': 33664, 'corruption': 33665,
++                     'inconclusive': 33666}[state['diagnostic']['state']])
++    if phase in ('inconclusive', 'corruption', 'failed'):
++        text = oe._({'inconclusive': 33729, 'corruption': 33731, 'failed': 33730}[phase])
++        if state.get('error'):
++            text += '\n' + state['error']
++        return text
++    return oe._(33647)
++
++
++def progress_values(state, cancelled=False):
++    phase = state['phase']
++    lines = [oe._(PHASE.get(phase, 33627))]
++    percent = 0
++    if type(state.get('candidate')) is int:
++        if 'candidate_number' in state:
++            lines.append(oe._(33721) % (state['candidate'], state['candidate_number'],
++                                       state['candidate_total']))
++        else:
++            lines.append(oe._(33711) % state['candidate'])
++    if 'verification_round' in state:
++        lines[0] += ' / ' + oe._(33651) % (state['verification_round'], state['verification_rounds'])
++    activity = state.get('activity')
++    if activity == 'reconnecting':
++        remaining = state.get('recovery_remaining_seconds')
++        lines.append(oe._(33724) % max(0, int(remaining + .999)) if remaining is not None
++                     else oe._(33662))
++    elif activity in ('applying', 'connecting'):
++        lines.append(oe._(33723 if activity == 'applying' else 33725))
++    if 'target_bytes' in state and state['target_bytes'] > 0:
++        lines.append(oe._(33726) % (state['received_bytes'] / 1_000_000,
++                                   state['target_bytes'] / 1_000_000))
++        percent = min(99, int(100 * state['received_bytes'] / state['target_bytes']))
++    if activity in ('traffic', 'receiving'):
++        traffic = oe._(33727) % (int(state.get('traffic_seconds', 0)), state['traffic_target_seconds'])
++        if 'target_bytes' in state:
++            lines[-1] += ' / ' + traffic
++        else:
++            lines.append(traffic)
++    elapsed = max(0, int(state.get('elapsed_seconds', 0)))
++    lines.append(oe._(33722) % (elapsed // 60, elapsed % 60))
++    if state.get('server'):
++        lines[-1] += ' / ' + state['server']
++    if cancelled:
++        lines = [oe._(33728), lines[-1]]
++    return percent, '\n'.join(lines)
 +
 +
 +def progress():
@@ -343,47 +442,20 @@
 +    dialog.create(oe._(TITLE), oe._(33627))
 +    monitor = xbmc.Monitor()
 +    cancelled = False
++    closed = False
 +    try:
 +        while not monitor.abortRequested():
 +            state = request('status')
 +            if not state['busy']:
-+                if state['phase'] == 'complete':
-+                    message = oe._(33646)
-+                    if state['profile'].get('margin') == 'reduced':
-+                        message += '\n' + oe._(33650)
-+                    xbmcgui.Dialog().ok(oe._(TITLE), message)
-+                elif state['phase'] == 'public_complete':
-+                    xbmcgui.Dialog().ok(oe._(TITLE), oe._(33705 if
-+                        state.get('traffic_backend', state.get('profile', {}).get('traffic_backend')) ==
-+                        'cloudflare_https_experimental' else 33682))
-+                elif state['phase'] in ('cleared', 'restored'):
-+                    xbmcgui.Dialog().ok(oe._(TITLE), oe._(
-+                        33657 if state['phase'] == 'cleared' else 33661))
-+                elif state['phase'] == 'diagnostic_complete':
-+                    result = state['diagnostic']['state']
-+                    xbmcgui.Dialog().ok(oe._(TITLE), oe._(
-+                        33664 if result == 'no_errors' else 33665 if result == 'corruption' else 33666))
-+                elif state['phase'] == 'cancelled':
-+                    ui_tools.notification(oe._(33648), oe._(TITLE))
-+                elif state.get('error'):
-+                    xbmcgui.Dialog().ok(oe._(TITLE), state['error'])
++                dialog.close()
++                closed = True
++                xbmcgui.Dialog().ok(oe._(TITLE), result_message(state))
 +                return
-+            can_cancel = state['phase'] not in ('clearing', 'restoring')
++            can_cancel = state['phase'] not in ('clearing', 'restoring', 'manual_saving')
 +            if dialog.iscanceled() and not cancelled and can_cancel:
 +                request('cancel')
 +                cancelled = True
-+            phase = state['phase']
-+            candidate = state.get('candidate', 0)
-+            percent = int(candidate * 80 / 32) if phase == 'scanning' else (
-+                85 if phase == 'verifying_send' else 95 if phase == 'verifying_receive' else 0)
-+            message = oe._(PHASE.get(phase, 33627))
-+            if state.get('server'):
-+                message += '\n' + state['server']
-+            if phase == 'scanning':
-+                message %= candidate + 1
-+            if 'verification_round' in state:
-+                message += '\n' + (oe._(33651) % (
-+                    state['verification_round'], state['verification_rounds']))
++            percent, message = progress_values(state, cancelled)
 +            dialog.update(percent, message)
 +            if monitor.waitForAbort(0.25):
 +                if can_cancel:
@@ -391,7 +463,35 @@
 +                return
 +        request('cancel')
 +    finally:
-+        dialog.close()
++        if not closed:
++            dialog.close()
++
++
++@log.log_function()
++def open_manual_dialog():
++    try:
++        status = request('status')
++        if status['busy']:
++            progress()
++            return
++        if not status['supported']:
++            xbmcgui.Dialog().ok(oe._(TITLE), oe._(33626))
++            return
++        current = status.get('timing', {}).get('index', status['profile'].get('index'))
++        default = str(current) if type(current) is int and 0 <= current <= 31 else ''
++        text = prompt(33688, 0, default, minimum=0, maximum=31)
++        if text is None:
++            return
++        index = int(text)
++        if not 0 <= index <= 31:
++            raise ValueError(oe._(33693))
++        if not xbmcgui.Dialog().yesno(oe._(33686), oe._(33687)):
++            return
++        request('manual', index=index, consent=True)
++        progress()
++    except (OSError, ValueError, KeyError, TypeError) as error:
++        log.log('Manual Ethernet timing failed: %s' % error, log.ERROR)
++        xbmcgui.Dialog().ok(oe._(TITLE), str(error))
 +
 +
 +@log.log_function()
@@ -406,8 +506,11 @@
 +            return
 +        dialog = xbmcgui.Dialog()
 +        action = dialog.select(oe._(TITLE),
-+                               [oe._(33636), oe._(33637), oe._(33638)])
++                               [oe._(33636), oe._(33637), oe._(33638), oe._(33686)])
 +        if action < 0:
++            return
++        if action == 3:
++            open_manual_dialog()
 +            return
 +        if action in (1, 2):
 +            if not dialog.yesno(oe._(TITLE), oe._(33639)):
@@ -489,7 +592,7 @@
 +        xbmcgui.Dialog().ok(oe._(TITLE), str(error))
 --- a/language/resource.language.en_gb/strings.po
 +++ b/language/resource.language.en_gb/strings.po
-@@ -1562,3 +1562,283 @@
+@@ -1562,3 +1562,391 @@
  msgctxt "#33535"
  msgid "Could not save the Wi-Fi throughput setting."
  msgstr ""
@@ -527,15 +630,15 @@
 +msgstr ""
 +
 +msgctxt "#33628"
-+msgid "Factory setting"
++msgid "Not saved"
 +msgstr ""
 +
 +msgctxt "#33629"
-+msgid "Active"
++msgid "Applied"
 +msgstr ""
 +
 +msgctxt "#33630"
-+msgid "Waiting for link"
++msgid "Waiting to apply"
 +msgstr ""
 +
 +msgctxt "#33631"
@@ -543,7 +646,7 @@
 +msgstr ""
 +
 +msgctxt "#33632"
-+msgid "Testing setting %d of 32"
++msgid "Testing timing candidates"
 +msgstr ""
 +
 +msgctxt "#33633"
@@ -587,7 +690,7 @@
 +msgstr ""
 +
 +msgctxt "#33643"
-+msgid "Allow 20 seconds of traffic plus connection setup for the first check (about 25 MB at 10 Mbps). If packet errors are found, other timings are tried and saved only after two more 20-second checks. Repair can take up to 20 minutes and 256 MiB of test payload. Gigabit speed is not verified. Use a server you have permission to test."
++msgid "The first check uses 20 seconds of traffic plus connection setup (about 25 MB at 10 Mbps). A pass keeps your current timing without saving a new calibration. Only CRC packet errors trigger a repair, saved after two further checks. Ethernet may disconnect. The repair budget is 20 minutes and 256 MiB of payload. Gigabit speed is not measured. The server sees your IP; use one you have permission to test."
 +msgstr ""
 +
 +msgctxt "#33644"
@@ -607,7 +710,7 @@
 +msgstr ""
 +
 +msgctxt "#33648"
-+msgid "Cancelled. Calibration unchanged."
++msgid "Test cancelled. Previous timing kept or restored; saved calibration unchanged."
 +msgstr ""
 +
 +msgctxt "#33649"
@@ -631,7 +734,7 @@
 +msgstr ""
 +
 +msgctxt "#33654"
-+msgid "Last test (up/down)"
++msgid "Saved test evidence"
 +msgstr ""
 +
 +msgctxt "#33655"
@@ -667,23 +770,23 @@
 +msgstr ""
 +
 +msgctxt "#33663"
-+msgid "Checking packet errors (20 seconds)"
++msgid "Checking the current timing"
 +msgstr ""
 +
 +msgctxt "#33664"
-+msgid "No packet errors in this limited-rate test. Gigabit speed was not verified. Calibration unchanged."
++msgid "Test passed. No packet errors were found; your current timing is unchanged and no new calibration was saved.[CR]Gigabit speed not measured."
 +msgstr ""
 +
 +msgctxt "#33665"
-+msgid "Packet errors detected. Calibration unchanged; use a wired LAN server for full calibration."
++msgid "Packet errors detected. No calibration saved; previous timing kept. Try a wired LAN server for full calibration."
 +msgstr ""
 +
 +msgctxt "#33666"
-+msgid "The limited-rate check was inconclusive. Check the link and server. Calibration unchanged."
++msgid "Test could not complete. No calibration saved; previous timing kept. Check the connection and traffic source."
 +msgstr ""
 +
 +msgctxt "#33667"
-+msgid "Full LAN calibration usually takes about 12 minutes. Allow up to 25 minutes; link and address recovery times vary. Ethernet will disconnect during the scan. Pause playback and downloads before continuing."
++msgid "This tests timings 0-31 with a wired LAN iPerf3 server and saves a calibration only after upload and download verification. The time budget is 25 minutes; reconnect times vary. Ethernet will disconnect during the scan. Pause playback and downloads before continuing."
 +msgstr ""
 +
 +msgctxt "#33668"
@@ -735,15 +838,15 @@
 +msgstr ""
 +
 +msgctxt "#33680"
-+msgid "Public error checked"
++msgid "Public packet checks passed"
 +msgstr ""
 +
 +msgctxt "#33681"
-+msgid "Gigabit speed not verified"
++msgid "Gigabit speed not measured"
 +msgstr ""
 +
 +msgctxt "#33682"
-+msgid "Ethernet timing saved after repeated public error checks. Gigabit speed was not verified."
++msgid "Calibration saved. The timing passed two packet checks and will be used at startup.[CR]Gigabit speed not measured."
 +msgstr ""
 +
 +msgctxt "#33683"
@@ -751,7 +854,7 @@
 +msgstr ""
 +
 +msgctxt "#33684"
-+msgid "Verifying with repeated public error checks"
++msgid "Verifying the selected timing"
 +msgstr ""
 +
 +msgctxt "#33685"
@@ -763,15 +866,123 @@
 +msgstr ""
 +
 +msgctxt "#33703"
-+msgid "Experimental public error checks can interrupt Ethernet. Each full check requests 25 MB over 20 seconds; candidate screens last 3 seconds. Repair may reserve up to 256 MiB and 20 minutes. Reads are paced near 10 Mbps, but sender/wire rate and total wire bytes are not capped. Cloudflare sees your IP and request metadata. Availability and permission for repeated device-fleet calibration are not guaranteed. No results sharing or telemetry upload is sent. Only measured CRC corruption triggers repair; two complete checks with a reopen are required before saving. Gigabit speed is not verified. Continue?"
++msgid "Use Cloudflare for an experimental packet check? A pass keeps your current timing; only measured CRC errors trigger repair. Each full check requests 25 MB over 20 seconds, with 3-second candidate screens. Repair reserves at most 256 MiB of payload and 20 minutes; Ethernet may disconnect. Reads are paced near 10 Mbps, not a sender/wire-rate or total wire-byte cap. Cloudflare sees your IP and request metadata. No results or telemetry are uploaded. Availability and permission for repeated fleet use are not guaranteed. Saving requires two full checks with a reconnect; gigabit speed is not measured."
 +msgstr ""
 +
 +msgctxt "#33704"
-+msgid "Experimental HTTPS public error checked; gigabit not verified"
++msgid "HTTPS packet checks passed (experimental)"
 +msgstr ""
 +
 +msgctxt "#33705"
-+msgid "Repair saved after two experimental HTTPS error checks. Gigabit speed is not verified. Application reads were paced; sender/wire rate and total wire bytes were not capped."
++msgid "Calibration saved. The timing passed two experimental HTTPS packet checks and will be used at startup.[CR]Gigabit speed not measured. Application reads were paced, not sender/wire rate or total wire bytes."
++msgstr ""
++
++msgctxt "#33686"
++msgid "Set Ethernet timing manually"
++msgstr ""
++
++msgctxt "#33687"
++msgid "Save this timing for every startup? It is manually set, not verified, and may disconnect Ethernet or make it unusable. Different devices can need different indices. No speed or packet test will run. Your previous verified LAN calibration, if present, is retained so you can restore it."
++msgstr ""
++
++msgctxt "#33688"
++msgid "Timing index (0-31)"
++msgstr ""
++
++msgctxt "#33689"
++msgid "Index %d manually set - not verified"
++msgstr ""
++
++msgctxt "#33690"
++msgid "Manual timing has not been verified"
++msgstr ""
++
++msgctxt "#33691"
++msgid "Saving manual Ethernet timing"
++msgstr ""
++
++msgctxt "#33692"
++msgid "Timing index %d saved manually. It will be applied at boot. It has not been verified for packet errors or gigabit speed."
++msgstr ""
++
++msgctxt "#33693"
++msgid "Enter a timing index from 0 to 31"
++msgstr ""
++
++msgctxt "#33710"
++msgid "Current timing"
++msgstr ""
++
++msgctxt "#33711"
++msgid "Index %d"
++msgstr ""
++
++msgctxt "#33712"
++msgid "Factory (index %d)"
++msgstr ""
++
++msgctxt "#33713"
++msgid "Applied"
++msgstr ""
++
++msgctxt "#33714"
++msgid "Pending"
++msgstr ""
++
++msgctxt "#33715"
++msgid "Could not apply"
++msgstr ""
++
++msgctxt "#33716"
++msgid "Temporary test setting"
++msgstr ""
++
++msgctxt "#33718"
++msgid "LAN speed verified"
++msgstr ""
++
++msgctxt "#33721"
++msgid "Timing index %d - candidate %d of %d"
++msgstr ""
++
++msgctxt "#33722"
++msgid "Elapsed: %d:%02d"
++msgstr ""
++
++msgctxt "#33723"
++msgid "Applying timing; Ethernet may disconnect"
++msgstr ""
++
++msgctxt "#33724"
++msgid "Waiting for Ethernet and its address (up to %d seconds remaining)"
++msgstr ""
++
++msgctxt "#33725"
++msgid "Connecting to the traffic source"
++msgstr ""
++
++msgctxt "#33726"
++msgid "Received %.1f / %.1f MB of application payload"
++msgstr ""
++
++msgctxt "#33727"
++msgid "Traffic: %d / %d seconds"
++msgstr ""
++
++msgctxt "#33728"
++msgid "Cancelling; restoring previous timing"
++msgstr ""
++
++msgctxt "#33729"
++msgid "Test could not complete. No calibration saved; previous timing kept or restored."
++msgstr ""
++
++msgctxt "#33730"
++msgid "Calibration failed. Check the timing status before retrying."
++msgstr ""
++
++msgctxt "#33731"
++msgid "Packet errors detected. No calibration saved; previous timing kept or restored."
 +msgstr ""
 --- /dev/null
 +++ b/skins/Default/1080i/service-CoreELEC-Ethernet-Numeric.xml
@@ -894,7 +1105,7 @@
 +</window>
 --- /dev/null
 +++ b/tests/test_ethernet_calibration.py
-@@ -0,0 +1,588 @@
+@@ -0,0 +1,754 @@
 +# SPDX-License-Identifier: GPL-2.0-or-later
 +
 +import ast
@@ -912,8 +1123,10 @@
 +kodi_stubs.install()
 +sys.modules['xbmcgui'].WindowXMLDialog = object
 +
-+oe = types.SimpleNamespace(_=lambda number: (str(number) + ' %s'
-+                          if number in (33675, 33677, 33678) else str(number)), __cwd__='addon-path')
++formats = {**dict.fromkeys((33675, 33677, 33678, 33689, 33692, 33711, 33712, 33724), ' %s'),
++           33651: ' %s %s', 33721: ' %s %s %s', 33722: ' %s %s',
++           33726: ' %s %s', 33727: ' %s %s'}
++oe = types.SimpleNamespace(_=lambda number: str(number) + formats.get(number, ''), __cwd__='addon-path')
 +log = types.SimpleNamespace(log=mock.Mock(), ERROR=3,
 +                            log_function=lambda: lambda function: function)
 +tools = types.SimpleNamespace(notification=mock.Mock())
@@ -943,7 +1156,7 @@
 +        ethernet = next(value for key, value in zip(struct.value.keys, struct.value.values)
 +                        if isinstance(key, ast.Attribute) and key.attr == 'PATH_TECH_ETHERNET')
 +        rows = ast.literal_eval(ethernet)['settings']
-+        for entry in ('CalibrationHealth', 'CalibrationProfile', 'CalibrationTest'):
++        for entry in ('CalibrationHealth', 'CalibrationTiming', 'CalibrationProfile', 'CalibrationTest'):
 +            self.assertEqual(rows[entry]['action'], '')
 +            self.assertNotIn(rows[entry]['type'], ('button', 'bool'))
 +            self.assertLess(rows[entry]['order'], rows['Calibration']['order'])
@@ -1021,6 +1234,73 @@
 +        values = client.row_values(self.status)
 +        self.assertIn('33704', values['CalibrationProfile'])
 +        self.assertNotIn('[COLOR green]', values['CalibrationHealth'])
++    def test_manual_entry_requires_consent_and_has_no_universal_default(self):
++        self.answers(['30'])
++        self.dialog.yesno.return_value = True
++        client.open_manual_dialog()
++        self.numeric.assert_called_once_with('service-CoreELEC-Ethernet-Numeric.xml',
++            'addon-path', 'Default', heading=33688, kind=0, default='', minimum=0, maximum=31)
++        self.request.assert_called_with('manual', index=30, consent=True)
++        self.progress.assert_called_once()
++        self.dialog.select.assert_not_called()
++
++    def test_manual_cancel_and_declined_warning_make_no_change(self):
++        for answer in (None, '30'):
++            with self.subTest(answer=answer):
++                self.request.reset_mock()
++                self.answers([answer])
++                self.dialog.yesno.return_value = False
++                client.open_manual_dialog()
++                self.request.assert_called_once_with('status')
++        self.progress.assert_not_called()
++
++    def test_manual_profile_never_displays_old_measured_speed(self):
++        self.status['profile'].update(kind='manual_unverified', configured_index=30)
++        self.status['last_verification'] = {'send_bps':940_000_000,'receive_bps':940_000_000}
++        rows = client.row_values(self.status)
++        self.assertIn('33689 30', rows['CalibrationProfile'])
++        self.assertEqual(rows['CalibrationTest'], '33690')
++        self.assertNotIn('[COLOR green]', rows['CalibrationHealth'])
++
++    def test_manual_numeric_range_includes_zero_but_not_32(self):
++        for text, accepted in (('0', True), ('31', True), ('32', False)):
++            entry = NumericEntry(heading=33688,kind=0,default=text,minimum=0,maximum=31)
++            entry.getControl = mock.Mock()
++            entry.close = mock.Mock()
++            entry.confirm()
++            self.assertEqual(entry.result, text if accepted else None)
++            if not accepted:
++                entry.onClick(24)
++                self.assertIsNone(entry.result)
++
++    def test_manual_unsupported_busy_and_invalid_index_do_not_mutate(self):
++        for change in ({'supported':False},{'busy':True}):
++            self.status.update(change)
++            client.open_manual_dialog()
++            self.status.update(supported=True,busy=False)
++        self.numeric.assert_not_called()
++        self.progress.reset_mock()
++        self.answers(['32'])
++        client.open_manual_dialog()
++        self.request.assert_called_with('status')
++        self.dialog.yesno.assert_not_called()
++        self.progress.assert_not_called()
++
++    def test_manual_default_is_current_index_including_zero(self):
++        self.status['profile']['index']=0
++        client.open_manual_dialog()
++        self.assertEqual(self.numeric.call_args.kwargs['default'],'0')
++        self.request.assert_called_once_with('status')
++
++    def test_manual_success_is_explicitly_unverified(self):
++        self.progress_patcher.stop()
++        self.request.return_value={'phase':'manually_set','index':30,'busy':False}
++        monitor=mock.Mock()
++        monitor.abortRequested.return_value=False
++        with mock.patch.object(client.xbmcgui,'DialogProgress',create=True), \
++                mock.patch.object(client.xbmc,'Monitor',return_value=monitor,create=True):
++            client.progress()
++        self.dialog.ok.assert_called_with('33620','33692 30')
 +
 +    def test_unsupported_adapter_does_not_offer_a_scan(self):
 +        self.status['supported'] = False
@@ -1138,7 +1418,7 @@
 +        window = types.SimpleNamespace(calibration_rows={}, getControl=mock.Mock(),
 +                                       oe=types.SimpleNamespace(_=str, dbg_log=mock.Mock()))
 +        window.addConfigItem = types.MethodType(namespace['addConfigItem'], window)
-+        entries = ('CalibrationHealth', 'CalibrationProfile', 'CalibrationTest')
++        entries = ('CalibrationHealth', 'CalibrationTiming', 'CalibrationProfile', 'CalibrationTest')
 +        settings = {entry: {'order': index, 'value': '', 'type': 'status', 'action': '',
 +                            'name': entry} for index, entry in enumerate(entries)}
 +        namespace['build_menu'](window, {'ethernet': {'order': 0, 'name': 1, 'settings': settings}})
@@ -1279,6 +1559,103 @@
 +            client.progress()
 +        self.dialog.ok.assert_called_with('33620', '33664')
 +
++    def test_manual_is_available_inside_the_calibration_action_menu(self):
++        self.dialog.select.return_value = 3
++        self.dialog.yesno.return_value = True
++        self.answers(['0'])
++        client.open_dialog()
++        self.request.assert_called_with('manual', index=0, consent=True)
++        self.assertIn('33686', self.dialog.select.call_args.args[1])
++        self.assertFalse(any(call.args[0] == 'start' for call in self.request.call_args_list))
++
++    def english(self):
++        import json
++        import re
++        text = (Path(__file__).resolve().parents[1] /
++                'language/resource.language.en_gb/strings.po').read_text(encoding='utf-8')
++        strings = {int(number): json.loads('"' + value + '"')
++                   for number, value in re.findall(r'msgctxt "#(\d+)"\nmsgid "(.*)"', text)}
++        return mock.patch.object(client.oe, '_', side_effect=lambda number: strings[number])
++
++    def test_actual_public_pass_and_saved_messages_lead_with_unambiguous_success(self):
++        with self.english():
++            checked = client.result_message({'phase': 'diagnostic_complete',
++                      'diagnostic': {'state': 'no_errors', 'saved': False}})
++            self.assertTrue(checked.startswith('Test passed.'))
++            self.assertIn('no new calibration was saved', checked)
++            self.assertIn('Gigabit speed not measured', checked)
++            for backend in ('iperf3', 'cloudflare_https_experimental'):
++                saved = client.result_message({'phase': 'public_complete', 'traffic_backend': backend})
++                self.assertTrue(saved.startswith('Calibration saved.'))
++                self.assertIn('Gigabit speed not measured', saved)
++                self.assertNotIn('error checks', saved.lower())
++
++    def test_actual_current_factory_and_saved_manual_indices_are_distinct(self):
++        self.status.update(timing={'factory': True, 'index': 0, 'state': 'pending'})
++        self.status['profile'].update(kind='manual_unverified', configured_index=31, state='inactive')
++        with self.english():
++            rows = client.row_values(self.status)
++            self.assertEqual(rows['CalibrationTiming'], 'Factory (index 0) / Pending')
++            self.assertIn('Index 31 manually set - not verified', rows['CalibrationProfile'])
++            self.assertNotIn('green', rows['CalibrationHealth'])
++            self.status['timing'].update(factory=False, index=31, state='failed')
++            self.assertEqual(client.row_values(self.status)['CalibrationTiming'], 'Index 31 / Could not apply')
++
++    def test_receive_progress_shows_round_exact_payload_and_elapsed_without_eta(self):
++        with self.english():
++            percent, message = client.progress_values({
++                'phase': 'public_verifying', 'candidate': 30, 'verification_round': 2,
++                'verification_rounds': 2, 'activity': 'receiving',
++                'received_bytes': 12_500_000, 'target_bytes': 25_000_000,
++                'traffic_seconds': 10, 'traffic_target_seconds': 20,
++                'elapsed_seconds': 91, 'server': 'Cloudflare HTTPS (experimental)'})
++        self.assertEqual(percent, 50)
++        self.assertIn('Round 2 of 2', message)
++        self.assertIn('Index 30', message)
++        self.assertIn('Received 12.5 / 25.0 MB of application payload', message)
++        self.assertIn('Elapsed: 1:31', message)
++        self.assertLessEqual(len(message.splitlines()), 4)
++        self.assertNotIn('ETA', message)
++
++    def test_live_recovery_updates_countdown_then_cancel_waits_for_restoration(self):
++        self.progress_patcher.stop()
++        progress_dialog = mock.Mock()
++        progress_dialog.iscanceled.side_effect = [False, True]
++        monitor = mock.Mock()
++        monitor.abortRequested.return_value = False
++        monitor.waitForAbort.return_value = False
++        states = iter([
++            {'busy': True, 'phase': 'public_recovering', 'candidate': 7, 'activity': 'reconnecting',
++             'recovery_remaining_seconds': 19, 'elapsed_seconds': 31},
++            {'busy': True, 'phase': 'public_recovering', 'candidate': 7, 'activity': 'reconnecting',
++             'recovery_remaining_seconds': 16, 'elapsed_seconds': 34},
++            {'busy': False, 'phase': 'cancelled'}])
++        self.request.side_effect = lambda action, **kwargs: next(states) if action == 'status' else {
++            'cancel_requested': True}
++        order = mock.Mock()
++        order.attach_mock(progress_dialog.close, 'close')
++        order.attach_mock(self.dialog.ok, 'result')
++        with self.english(), \
++                mock.patch.object(client.xbmcgui, 'DialogProgress', return_value=progress_dialog, create=True), \
++                mock.patch.object(client.xbmc, 'Monitor', return_value=monitor, create=True):
++            client.progress()
++        first, second = [call.args[1] for call in progress_dialog.update.call_args_list]
++        self.assertIn('19 seconds remaining', first)
++        self.assertIn('Cancelling; restoring previous timing', second)
++        self.assertIn('Elapsed: 0:34', second)
++        self.assertEqual(sum(call.args[0] == 'cancel' for call in self.request.call_args_list), 1)
++        self.assertEqual([call[0] for call in order.mock_calls], ['close', 'result'])
++        self.assertIn('saved calibration unchanged', self.dialog.ok.call_args.args[1])
++
++    def test_failure_inconclusive_corruption_and_cancel_never_read_as_success(self):
++        with self.english():
++            for phase in ('failed', 'inconclusive', 'corruption', 'cancelled'):
++                message = client.result_message({'phase': phase, 'error': 'fixture detail'})
++                self.assertFalse(message.startswith(('Test passed', 'Calibration saved')))
++            failed = client.result_message({'phase': 'failed', 'error': 'restore failed'})
++            self.assertIn('Check the timing status', failed)
++            self.assertIn('restore failed', failed)
++
 +    def test_custom_public_consent_still_requires_permission_for_repair(self):
 +        self.dialog.select.side_effect = [0, 1, 1]
 +        self.dialog.yesno.return_value = True
@@ -1377,8 +1754,8 @@
 +        source = (Path(__file__).resolve().parents[1] /
 +                  'language/resource.language.en_gb/strings.po').read_text()
 +        self.assertIn('20 seconds of traffic plus connection setup', source)
-+        self.assertIn('about 12 minutes', source)
-+        self.assertIn('up to 25 minutes', source)
++        self.assertIn('The time budget is 25 minutes', source)
++        self.assertNotIn('usually takes about', source)
 +
 +    def test_directory_host_and_port_back_do_not_start_tests(self):
 +        for selections in ([0, 1, 0, -1], [0, 1, 0, 0, -1]):
