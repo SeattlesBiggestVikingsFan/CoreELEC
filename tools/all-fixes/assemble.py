@@ -236,7 +236,12 @@ def assemble(manifest_path, bindings_path, work, experiments=(), refresh=None):
     work.mkdir(parents=True, exist_ok=False)
     receipt = {"schema": 1, "manifest_sha256": manifest_hash, "status": "unvalidated",
                "build_run": False, "binary_claim": False, "components": {},
-               "experimental_selection": list(experiments), "refresh": refresh or {}}
+               "experimental_selection": list(experiments), "refresh": refresh or {},
+               "review_tasks": [{"component": name, "kind": "upstream-refresh",
+                                 "new_upstream": revision,
+                                 "required": ["upstream-delta/equivalence review", "new manifest",
+                                              "fresh source/build/runtime validation as applicable"]}
+                                for name, revision in (refresh or {}).items()]}
     with (work / "manifest.json").open("xb") as stream:
         stream.write(Path(manifest_path).read_bytes())
     refresh = refresh or {}
@@ -309,6 +314,8 @@ def assemble(manifest_path, bindings_path, work, experiments=(), refresh=None):
     except (Failure, OSError, ValueError, KeyError) as error:
         receipt["status"] = "blocked"
         receipt["error"] = str(error)
+        receipt["review_tasks"].append({"kind": "assembly-blocker", "error": str(error),
+                                        "required": ["inspect retained isolated worktree", "explicit resolution/review"]})
         write(work / "assembly.json", receipt)
         raise
     write(work / "assembly.json", receipt)
