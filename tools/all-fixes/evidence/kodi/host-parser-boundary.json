@@ -1,0 +1,12 @@
+{
+  "parser_source": "xbmc/cores/AudioEngine/Utils/AEStreamInfo.cpp",
+  "parser_sha256": "17802bd0f244f7e6b2dafb67413130eb3e5f51ac5bb39ba43958d598aa2c8906",
+  "test_source_unchanged": true,
+  "full_parser_compiled": true,
+  "crc_dependency": "Read-only existing native public FFmpeg CRC object, not a Kodi binary.",
+  "crc_object_sha256": "f6f0cec20f53356b671c178777d7671ada6818f6125337a5c70f145cb80e4c4c",
+  "crc_header_source": "https://raw.githubusercontent.com/FFmpeg/FFmpeg/n8.0/libavutil/crc.h",
+  "crc_header_sha256": "5728cf65705a46723ea28b4f6c8361aad82b76a90e859943efe8af0edb79ec86",
+  "sdk_written": false,
+  "production_or_test_assertions_changed": false
+}

@@ -1,0 +1,1325 @@
+{
+  "schema": 1,
+  "component": "kodi",
+  "upstream": {
+    "commit": "a4295421f270929315fea42b9e53b00c16e920a5",
+    "ref": "aml-4.9-21.3_dev",
+    "repository": "https://github.com/pannal/xbmc.git",
+    "refresh": {
+      "commit": "efcb4dac04f9b2cfeb863154045602e768195ab2",
+      "ref": "upstream-dev",
+      "status": "unvalidated",
+      "repository": "https://github.com/pannal/xbmc.git"
+    }
+  },
+  "tracked_upstream": {
+    "commit": "efcb4dac04f9b2cfeb863154045602e768195ab2",
+    "ref": "upstream-dev",
+    "status": "unvalidated-refresh-candidate",
+    "repository": "https://github.com/pannal/xbmc.git",
+    "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git"
+  },
+  "integration": {
+    "ref": "integration/all-fixes",
+    "head": "fce97af5c969859be1d42fdebb19b727b6d4b5be",
+    "tree": "80398010a104b30fc2a0d21eaf2af6567a3f685f",
+    "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+    "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+    "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git"
+  },
+  "expected_tree": "80398010a104b30fc2a0d21eaf2af6567a3f685f",
+  "original_release": {
+    "commit": "0aff06e05c4faada67c96a791f8a7e5f3485a29f",
+    "tree": "80398010a104b30fc2a0d21eaf2af6567a3f685f",
+    "ref": "release/original-0aff-source",
+    "binary_rebuilt": false,
+    "availability": "local-only; not a public bootstrap fetch target"
+  },
+  "reconstructed_baseline": {
+    "commit": "fce97af5c969859be1d42fdebb19b727b6d4b5be",
+    "tree": "80398010a104b30fc2a0d21eaf2af6567a3f685f",
+    "ref": "release/reconstructed-0aff-source-equivalent",
+    "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+    "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git"
+  },
+  "features": [
+    {
+      "id": "seek-queue",
+      "ref": "fix/seek-queue-prerequisite",
+      "branch": "fix/seek-queue-prerequisite",
+      "base": "a4295421f270929315fea42b9e53b00c16e920a5",
+      "head": "dbcac3753798892dea27df07e791a2fffad49b08",
+      "commits": [
+        "dbcac3753798892dea27df07e791a2fffad49b08"
+      ],
+      "ordered_commits": [
+        "dbcac3753798892dea27df07e791a2fffad49b08"
+      ],
+      "depends_on": [],
+      "status": "included",
+      "default": true,
+      "experimental": false,
+      "source_pins": [],
+      "provenance": {
+        "source_commits": [],
+        "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+      },
+      "settings_defaults": {},
+      "evidence": [
+        {
+          "id": "hunk-ownership.json",
+          "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+        },
+        {
+          "id": "tree-parity.json",
+          "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+        }
+      ],
+      "upstream_equivalence_reason": null,
+      "paths": [
+        "xbmc/cores/VideoPlayer/DVDMessageQueue.h",
+        "xbmc/cores/VideoPlayer/VideoPlayer.cpp"
+      ],
+      "patch_id": "eb9742ba42bca832afaea0114ee96d532669d08e",
+      "test_ids": [],
+      "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git"
+    },
+    {
+      "id": "manual-lldv",
+      "ref": "feature/manual-lldv",
+      "branch": "feature/manual-lldv",
+      "base": "a4295421f270929315fea42b9e53b00c16e920a5",
+      "head": "f0022c9ff4c196b4fdd085cbcd7fa13f8ef1c88d",
+      "commits": [
+        "f0022c9ff4c196b4fdd085cbcd7fa13f8ef1c88d"
+      ],
+      "ordered_commits": [
+        "f0022c9ff4c196b4fdd085cbcd7fa13f8ef1c88d"
+      ],
+      "depends_on": [],
+      "status": "included",
+      "default": true,
+      "experimental": false,
+      "source_pins": [
+        "fdd11b64010d509b570fdb0400f4f483844dc77d"
+      ],
+      "provenance": {
+        "source_commits": [
+          "fdd11b64010d509b570fdb0400f4f483844dc77d"
+        ],
+        "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+      },
+      "settings_defaults": {},
+      "evidence": [
+        {
+          "id": "hunk-ownership.json",
+          "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+        },
+        {
+          "id": "tree-parity.json",
+          "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+        },
+        {
+          "id": "tests/test-aml-dv-manager-dependency.log",
+          "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+        },
+        {
+          "id": "tests/test-aml-dv-options.log",
+          "sha256": "e7f694bcf6bfe21f474b4f2a5a97d80f5fa36d59e627fbc6d6e8bc39e11959cf"
+        },
+        {
+          "id": "tests/test-aml-dv-preset-read.log",
+          "sha256": "ddedc445ffe6370c4d2430ce36bc9103ef23188e0b324ae8b57c07eacf476b62"
+        },
+        {
+          "id": "tests/test-aml-dv-setting-locks.log",
+          "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+        }
+      ],
+      "upstream_equivalence_reason": null,
+      "paths": [
+        "addons/resource.language.en_gb/resources/strings.po",
+        "system/settings/settings.xml",
+        "tools/test-aml-dv-manager-dependency.py",
+        "tools/test-aml-dv-options.py",
+        "tools/test-aml-dv-preset-read.py",
+        "tools/test-aml-dv-setting-locks.py",
+        "xbmc/settings/lib/Setting.h",
+        "xbmc/windowing/amlogic/DolbyVisionAML.cpp"
+      ],
+      "patch_id": "19445c8ab2ebe35182284a488a38ec623965d741",
+      "test_ids": [
+        "test-aml-dv-manager-dependency",
+        "test-aml-dv-options",
+        "test-aml-dv-preset-read",
+        "test-aml-dv-setting-locks"
+      ],
+      "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git"
+    },
+    {
+      "id": "pause-presenter",
+      "ref": "fix/pause-presenter",
+      "branch": "fix/pause-presenter",
+      "base": "a4295421f270929315fea42b9e53b00c16e920a5",
+      "head": "fec0b610922a655207e5db6a0f08e79399f73e44",
+      "commits": [
+        "fec0b610922a655207e5db6a0f08e79399f73e44"
+      ],
+      "ordered_commits": [
+        "fec0b610922a655207e5db6a0f08e79399f73e44"
+      ],
+      "depends_on": [],
+      "status": "included",
+      "default": true,
+      "experimental": false,
+      "source_pins": [
+        "57282b8191469b4abd8e81b1c752ae0c920c3f1f"
+      ],
+      "provenance": {
+        "source_commits": [
+          "57282b8191469b4abd8e81b1c752ae0c920c3f1f"
+        ],
+        "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+      },
+      "settings_defaults": {},
+      "evidence": [
+        {
+          "id": "hunk-ownership.json",
+          "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+        },
+        {
+          "id": "tree-parity.json",
+          "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+        },
+        {
+          "id": "tests/test-aml-presenter-cadence.log",
+          "sha256": "113b7cdee2150d9c0cf1ad8b05ecb5bfc269dde0f18b43eb4d1585e8ef100184"
+        },
+        {
+          "id": "tests/test-aml-presenter-step-invalidation.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "id": "tests/test-dvd-clock-locking.log",
+          "sha256": "7b986b070adba05f50408fd6bdb94cdf6d685cd3a7db4cfb645446855ec48d55"
+        },
+        {
+          "id": "tests/test-presenter-invalidation-lifetime.log",
+          "sha256": "15bdde7faaba220f1d1273b970147c4482a01b733c77a8d46a6478b397f338f6"
+        }
+      ],
+      "upstream_equivalence_reason": null,
+      "paths": [
+        "tools/test-aml-presenter-cadence.py",
+        "tools/test-aml-presenter-step-invalidation.py",
+        "tools/test-dvd-clock-locking.py",
+        "tools/test-presenter-invalidation-lifetime.py",
+        "xbmc/cores/VideoPlayer/DVDClock.cpp",
+        "xbmc/cores/VideoPlayer/DVDClock.h",
+        "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+        "xbmc/cores/VideoPlayer/VideoRenderers/AMLPresenter.h",
+        "xbmc/cores/VideoPlayer/VideoRenderers/HwDecRender/AMLPresenterSession.h",
+        "xbmc/cores/VideoPlayer/VideoRenderers/RenderManager.cpp",
+        "xbmc/cores/VideoPlayer/VideoRenderers/RenderManager.h"
+      ],
+      "patch_id": "b0e72c3ef0e08ffa17ca28a434519e0de0d98877",
+      "test_ids": [
+        "test-aml-presenter-cadence",
+        "test-aml-presenter-step-invalidation",
+        "test-dvd-clock-locking",
+        "test-presenter-invalidation-lifetime"
+      ],
+      "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git"
+    },
+    {
+      "id": "seek-ux",
+      "ref": "fix/seek-ux",
+      "branch": "fix/seek-ux",
+      "base": "dbcac3753798892dea27df07e791a2fffad49b08",
+      "head": "9128f66dda003e5781f6e27ec162cd1ede1de117",
+      "commits": [
+        "9128f66dda003e5781f6e27ec162cd1ede1de117"
+      ],
+      "ordered_commits": [
+        "9128f66dda003e5781f6e27ec162cd1ede1de117"
+      ],
+      "depends_on": [
+        "seek-queue"
+      ],
+      "status": "included",
+      "default": true,
+      "experimental": false,
+      "source_pins": [
+        "11ab17291932848c8c847627d91515bb7872beff"
+      ],
+      "provenance": {
+        "source_commits": [
+          "11ab17291932848c8c847627d91515bb7872beff"
+        ],
+        "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+      },
+      "settings_defaults": {},
+      "evidence": [
+        {
+          "id": "hunk-ownership.json",
+          "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+        },
+        {
+          "id": "tree-parity.json",
+          "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+        },
+        {
+          "id": "tests/test-seek-preview-origin.log",
+          "sha256": "5caf7ad573205ffb23400585a26977dbe2ab710ac68560da4ec615beeb17e71e"
+        },
+        {
+          "id": "tests/test-seek-timeline-marker.log",
+          "sha256": "002ee1e755f9c70c8a95da436ef7c7ce10541f93226c16d457af4bf60dd220d9"
+        },
+        {
+          "id": "tests/test-seek-marker-review-retirement-preview.log",
+          "sha256": "5281598eb6fca8f6c9e0a13dd6a966e0df0a38155ed74887ed72c4cebd6b7162"
+        },
+        {
+          "id": "tests/test-seek-marker-review-retirement-commit.log",
+          "sha256": "b612113c7f98b20b5020f7ebafbf0a8271d551e4416434481d6c251966cfa0ef"
+        },
+        {
+          "id": "tests/test-seek-marker-review-queued-speed.log",
+          "sha256": "c95ad4a83eb4349ca35cb80273b99db3b806e9ed6f5cbd198e0b449fadb104ad"
+        },
+        {
+          "id": "tests/test-seek-marker-review-rejected-queue-keeps-older.log",
+          "sha256": "4ce8e30c802419c9153dbb0011e302f46fc4b44a7a3eaf6222bff668803d4379"
+        },
+        {
+          "id": "tests/test-seek-marker-review-chapter-supersession.log",
+          "sha256": "b4373673a1faa1e0c0d16d488d4e874ba2cac51a04ef7e52059ab8167e06651a"
+        },
+        {
+          "id": "tests/test-seek-marker-review-stack-accurate-overlap.log",
+          "sha256": "30995aaf5f94a635739cf461c19111d16dd38c1d45020916a306389bd7151da2"
+        }
+      ],
+      "upstream_equivalence_reason": null,
+      "paths": [
+        "tools/test-seek-marker-review.py",
+        "tools/test-seek-preview-origin.py",
+        "tools/test-seek-timeline-marker.py",
+        "xbmc/SeekHandler.cpp",
+        "xbmc/SeekHandler.h",
+        "xbmc/application/ApplicationPlayer.cpp",
+        "xbmc/application/ApplicationPlayer.h",
+        "xbmc/cores/DataCacheCore.cpp",
+        "xbmc/cores/DataCacheCore.h",
+        "xbmc/cores/IPlayer.h",
+        "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+        "xbmc/cores/VideoPlayer/VideoPlayer.h",
+        "xbmc/guilib/guiinfo/PlayerGUIInfo.cpp"
+      ],
+      "patch_id": "043afc9ef9f7f62d801876b3c5744d445f89f08b",
+      "test_ids": [
+        "test-seek-preview-origin",
+        "test-seek-timeline-marker",
+        "test-seek-marker-review-retirement-preview",
+        "test-seek-marker-review-retirement-commit",
+        "test-seek-marker-review-queued-speed",
+        "test-seek-marker-review-rejected-queue-keeps-older",
+        "test-seek-marker-review-chapter-supersession",
+        "test-seek-marker-review-stack-accurate-overlap"
+      ],
+      "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git"
+    },
+    {
+      "id": "trickplay-reanchor",
+      "ref": "fix/trickplay-reanchor",
+      "branch": "fix/trickplay-reanchor",
+      "base": "dbcac3753798892dea27df07e791a2fffad49b08",
+      "head": "d7fbe0d1696e7fc3ffceb6a38060146debb05b43",
+      "commits": [
+        "d7fbe0d1696e7fc3ffceb6a38060146debb05b43"
+      ],
+      "ordered_commits": [
+        "d7fbe0d1696e7fc3ffceb6a38060146debb05b43"
+      ],
+      "depends_on": [
+        "seek-queue"
+      ],
+      "status": "included",
+      "default": true,
+      "experimental": false,
+      "source_pins": [
+        "1caca6978bbeba5a5343cd6d82bdbf65d1b0c275"
+      ],
+      "provenance": {
+        "source_commits": [
+          "1caca6978bbeba5a5343cd6d82bdbf65d1b0c275"
+        ],
+        "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+      },
+      "settings_defaults": {},
+      "evidence": [
+        {
+          "id": "hunk-ownership.json",
+          "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+        },
+        {
+          "id": "tree-parity.json",
+          "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+        },
+        {
+          "id": "tests/test-paused-trickplay-return.log",
+          "sha256": "853a42b935422d1115ad932e4f9a8b99cc3e5e3e37b870417fe211354870a64e"
+        }
+      ],
+      "upstream_equivalence_reason": null,
+      "paths": [
+        "tools/test-paused-trickplay-return.py",
+        "xbmc/cores/VideoPlayer/VideoPlayer.cpp"
+      ],
+      "patch_id": "730fd57a2caf0fa7b1ed141b9bf4cc491f5b0fe0",
+      "test_ids": [
+        "test-paused-trickplay-return"
+      ],
+      "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git"
+    },
+    {
+      "id": "startup-gate",
+      "ref": "fix/startup-gate",
+      "branch": "fix/startup-gate",
+      "base": "a4295421f270929315fea42b9e53b00c16e920a5",
+      "head": "f01e69ddc8cc7442e399d213e5c38655a817ffbf",
+      "commits": [
+        "f01e69ddc8cc7442e399d213e5c38655a817ffbf"
+      ],
+      "ordered_commits": [
+        "f01e69ddc8cc7442e399d213e5c38655a817ffbf"
+      ],
+      "depends_on": [],
+      "status": "included",
+      "default": true,
+      "experimental": false,
+      "source_pins": [
+        "7d09dbc7932f7b9deb47c0ffa097405417692f73"
+      ],
+      "provenance": {
+        "source_commits": [
+          "7d09dbc7932f7b9deb47c0ffa097405417692f73"
+        ],
+        "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+      },
+      "settings_defaults": {},
+      "evidence": [
+        {
+          "id": "hunk-ownership.json",
+          "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+        },
+        {
+          "id": "tree-parity.json",
+          "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+        }
+      ],
+      "upstream_equivalence_reason": null,
+      "paths": [
+        "xbmc/cores/VideoPlayer/DVDCodecs/Video/AMLCodec.cpp",
+        "xbmc/utils/AMLUtils.cpp",
+        "xbmc/utils/AMLUtils.h"
+      ],
+      "patch_id": "68a843db585ee6d27e94c99b6ce7122f7feb763a",
+      "test_ids": [],
+      "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git"
+    },
+    {
+      "id": "hdr-v20",
+      "ref": "feature/hdr-v20",
+      "branch": "feature/hdr-v20",
+      "base": "a4295421f270929315fea42b9e53b00c16e920a5",
+      "head": "6ab06b16530c3ac3618a71336ddc2efc2905a2be",
+      "commits": [
+        "6ab06b16530c3ac3618a71336ddc2efc2905a2be"
+      ],
+      "ordered_commits": [
+        "6ab06b16530c3ac3618a71336ddc2efc2905a2be"
+      ],
+      "depends_on": [],
+      "status": "included",
+      "default": true,
+      "experimental": false,
+      "source_pins": [
+        "ce89f7a4592ccc8ad3124ee18f7097e3f3d8fd77",
+        "0b921124166d24b6b27ecd1244c62f8dbf084e9c"
+      ],
+      "provenance": {
+        "source_commits": [
+          "ce89f7a4592ccc8ad3124ee18f7097e3f3d8fd77",
+          "0b921124166d24b6b27ecd1244c62f8dbf084e9c"
+        ],
+        "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+      },
+      "settings_defaults": {
+        "seamless_transitions": true,
+        "migration_version_default": 0,
+        "first_launch_saved_off": "enable-once-and-save-version-1",
+        "later_manual_off": "preserved",
+        "same_gate_writer": true
+      },
+      "evidence": [
+        {
+          "id": "hunk-ownership.json",
+          "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+        },
+        {
+          "id": "tree-parity.json",
+          "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+        },
+        {
+          "id": "tests/test-hdr10-seamless-setting.log",
+          "sha256": "48fb8760bfd1e89ac0ed96dadd32c3e20299891bf59d95264c75950cce51eb16"
+        },
+        {
+          "id": "tests/test-seamless-profile-migration.log",
+          "sha256": "0858aaff3e9e1340fe4d777d56c823c5fa84b672f9644b8d51a9b0384bdbba1b"
+        }
+      ],
+      "upstream_equivalence_reason": null,
+      "paths": [
+        "addons/resource.language.en_gb/resources/strings.po",
+        "system/settings/settings.xml",
+        "tools/test-hdr10-seamless-setting.py",
+        "tools/test-seamless-profile-migration.py",
+        "xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecAmlogic.cpp",
+        "xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecAmlogic.h",
+        "xbmc/settings/Settings.cpp",
+        "xbmc/settings/Settings.h",
+        "xbmc/utils/AMLUtils.cpp",
+        "xbmc/utils/AMLUtils.h",
+        "xbmc/windowing/amlogic/DolbyVisionAML.cpp"
+      ],
+      "patch_id": "788536b1054679514346ccbc891e04943eb20578",
+      "test_ids": [
+        "test-hdr10-seamless-setting",
+        "test-seamless-profile-migration"
+      ],
+      "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git"
+    },
+    {
+      "id": "jvc-sticky-sdr",
+      "ref": "fix/jvc-sticky-sdr",
+      "branch": "fix/jvc-sticky-sdr",
+      "base": "6ab06b16530c3ac3618a71336ddc2efc2905a2be",
+      "head": "cc1bf5abdc52c878a76f42bcb6ed7a17a272952e",
+      "commits": [
+        "cc1bf5abdc52c878a76f42bcb6ed7a17a272952e"
+      ],
+      "ordered_commits": [
+        "cc1bf5abdc52c878a76f42bcb6ed7a17a272952e"
+      ],
+      "depends_on": [
+        "hdr-v20"
+      ],
+      "status": "included",
+      "default": true,
+      "experimental": false,
+      "source_pins": [
+        "0b921124166d24b6b27ecd1244c62f8dbf084e9c"
+      ],
+      "provenance": {
+        "source_commits": [
+          "0b921124166d24b6b27ecd1244c62f8dbf084e9c"
+        ],
+        "source_patch_sha256": "3bf337f2a13648ebd65dc7b3a4ef50b8e7ca7398452914ffd1a74a937471ff57",
+        "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+      },
+      "settings_defaults": {
+        "applies_only": "DV Mode On after bypassed SDR playback",
+        "dv_mode_forced": false,
+        "gate": "same existing seamless setting writer"
+      },
+      "evidence": [
+        {
+          "id": "hunk-ownership.json",
+          "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+        },
+        {
+          "id": "tree-parity.json",
+          "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+        }
+      ],
+      "upstream_equivalence_reason": null,
+      "paths": [
+        "xbmc/utils/AMLUtils.cpp"
+      ],
+      "patch_id": "1d0400e598791a7ad8f098ccb50647ff0b3d9aba",
+      "test_ids": [],
+      "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git"
+    },
+    {
+      "id": "ddplus-safety",
+      "ref": "fix/ddplus-safety",
+      "branch": "fix/ddplus-safety",
+      "base": "a4295421f270929315fea42b9e53b00c16e920a5",
+      "head": "24c21d115a46cf3a0e86c275fcba0f7be2ce7cb6",
+      "commits": [
+        "24c21d115a46cf3a0e86c275fcba0f7be2ce7cb6"
+      ],
+      "ordered_commits": [
+        "24c21d115a46cf3a0e86c275fcba0f7be2ce7cb6"
+      ],
+      "depends_on": [],
+      "status": "included",
+      "default": true,
+      "experimental": false,
+      "source_pins": [
+        "0b921124166d24b6b27ecd1244c62f8dbf084e9c"
+      ],
+      "provenance": {
+        "source_commits": [
+          "0b921124166d24b6b27ecd1244c62f8dbf084e9c"
+        ],
+        "source_patch_sha256": "9ad643e1cf583939ac80797ecc76a640f8a715e14fa0be7970f8cff708dd2c40",
+        "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+      },
+      "settings_defaults": {
+        "unsafe_atmos_override": "removed",
+        "joc_unknown_bsi_and_isolated_ac3": "preserve-original",
+        "atmos_gain_recovery": false
+      },
+      "evidence": [
+        {
+          "id": "hunk-ownership.json",
+          "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+        },
+        {
+          "id": "tree-parity.json",
+          "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+        },
+        {
+          "id": "tests/ddplus-parser-synthetic-12.log",
+          "sha256": "53dc1083de4d867205f3406073c5b499b67a60f2eb1f49841966565ca65ad7a3"
+        }
+      ],
+      "upstream_equivalence_reason": null,
+      "paths": [
+        "addons/resource.language.de_de/resources/strings.po",
+        "addons/resource.language.en_gb/resources/strings.po",
+        "system/settings/settings.xml",
+        "xbmc/cores/AudioEngine/Utils/AEStreamInfo.cpp",
+        "xbmc/cores/AudioEngine/Utils/AEStreamInfo.h",
+        "xbmc/cores/AudioEngine/Utils/test/CMakeLists.txt",
+        "xbmc/cores/AudioEngine/Utils/test/TestAEStreamParser.cpp",
+        "xbmc/cores/VideoPlayer/DVDCodecs/Audio/DVDAudioCodecPassthrough.cpp",
+        "xbmc/cores/VideoPlayer/DVDCodecs/Audio/DVDAudioCodecPassthrough.h",
+        "xbmc/settings/Settings.h"
+      ],
+      "patch_id": "e4af3ee5d57339d0f280917ea7866d5e499ef888",
+      "test_ids": [
+        "ddplus-parser-synthetic-12"
+      ],
+      "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git"
+    },
+    {
+      "id": "audio-pause-transport",
+      "ref": "fix/audio-pause-transport",
+      "branch": "fix/audio-pause-transport",
+      "base": "a4295421f270929315fea42b9e53b00c16e920a5",
+      "head": "a28d115db0d7a552bba31cbf3c4bfe6fbb86d22d",
+      "commits": [
+        "a28d115db0d7a552bba31cbf3c4bfe6fbb86d22d"
+      ],
+      "ordered_commits": [
+        "a28d115db0d7a552bba31cbf3c4bfe6fbb86d22d"
+      ],
+      "depends_on": [],
+      "status": "included",
+      "default": true,
+      "experimental": false,
+      "source_pins": [
+        "fc74d84ac51731259ab58aeba3c3350b7cc16eb0",
+        "3891e347d0b12ab5fdcc7d1dfda524a5a731161c"
+      ],
+      "provenance": {
+        "source_commits": [
+          "fc74d84ac51731259ab58aeba3c3350b7cc16eb0",
+          "3891e347d0b12ab5fdcc7d1dfda524a5a731161c"
+        ],
+        "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+      },
+      "settings_defaults": {},
+      "evidence": [
+        {
+          "id": "hunk-ownership.json",
+          "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+        },
+        {
+          "id": "tree-parity.json",
+          "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+        },
+        {
+          "id": "tests/test-activeae-configure-retry.log",
+          "sha256": "5c08e1c566d9af917049c35a46a4c2f977f26577f56981468ba317611b58720d"
+        },
+        {
+          "id": "tests/test-activeae-dropped-raw-delay.log",
+          "sha256": "a5c34bcdd434dd26a58029127158cdce90edadcceaa52a3f339b55aca71ef0e5"
+        },
+        {
+          "id": "tests/test-activeae-duration-families.log",
+          "sha256": "6a69b4f78754d631b37d88f95ff97c15f98308342fd7183fae4e96e18d3aa976"
+        },
+        {
+          "id": "tests/test-activeae-error-free.log",
+          "sha256": "4766ffa38f56bfac0f963b9d03f9d7e2a196a761a0c7517c5d7eb491693e719a"
+        },
+        {
+          "id": "tests/test-activeae-long-pause.log",
+          "sha256": "d2475985a2ac8b30f4228c0d1787a608b3c98e331c8bb8dfa69ceaf409e36f36"
+        },
+        {
+          "id": "tests/test-activeae-pause-silence.log",
+          "sha256": "8dfd9fa630083c16c360840142ef1e754e2ec639efd2a905860ee9b269cb025d"
+        },
+        {
+          "id": "tests/test-activeae-paused-packets.log",
+          "sha256": "6a20eddc0c0c240089d7b2599e3ee54ee351c908b20b7ef4dd98c803caf0212f"
+        },
+        {
+          "id": "tests/test-activeae-resume-epoch.log",
+          "sha256": "df87449bfa8fbdd6b904389dc2afbdb3d05aaa3a8ccdce35ba08fcb08e9c47d9"
+        },
+        {
+          "id": "tests/test-activeae-stream-flush.log",
+          "sha256": "da44c5c28eba40bec587a1bbe8735fc7fd5c4aef336b31e7aea22acddd1b2932"
+        },
+        {
+          "id": "tests/test-activeae-threaded-barrier.log",
+          "sha256": "09db92f7ea40cff765cfdbc2650aeb3d04260959bcf1b2bad60447f70027e6e2"
+        }
+      ],
+      "upstream_equivalence_reason": null,
+      "paths": [
+        "addons/resource.language.en_gb/resources/strings.po",
+        "tools/test-activeae-configure-retry.py",
+        "tools/test-activeae-dropped-raw-delay.py",
+        "tools/test-activeae-duration-families.py",
+        "tools/test-activeae-error-free.py",
+        "tools/test-activeae-long-pause.py",
+        "tools/test-activeae-pause-silence.py",
+        "tools/test-activeae-paused-packets.py",
+        "tools/test-activeae-resume-epoch.py",
+        "tools/test-activeae-stream-flush.py",
+        "tools/test-activeae-threaded-barrier.py",
+        "xbmc/cores/AudioEngine/CMakeLists.txt",
+        "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+        "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.h",
+        "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.cpp",
+        "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.h",
+        "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAEStream.cpp",
+        "xbmc/cores/AudioEngine/Utils/AEBitstreamPacker.cpp",
+        "xbmc/cores/AudioEngine/Utils/AEBitstreamPacker.h",
+        "xbmc/cores/AudioEngine/Utils/AEBitstreamSilence.cpp",
+        "xbmc/cores/AudioEngine/Utils/AEBitstreamSilence.h"
+      ],
+      "patch_id": "ff349d66fc5ad9f20c76472ed881260b7cd0b705",
+      "scope": "Complete accepted fc74 extension including silent frames, whole pause and DTS-HD core. No universal zero-loss claim.",
+      "test_ids": [
+        "test-activeae-configure-retry",
+        "test-activeae-dropped-raw-delay",
+        "test-activeae-duration-families",
+        "test-activeae-error-free",
+        "test-activeae-long-pause",
+        "test-activeae-pause-silence",
+        "test-activeae-paused-packets",
+        "test-activeae-resume-epoch",
+        "test-activeae-stream-flush",
+        "test-activeae-threaded-barrier"
+      ],
+      "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git"
+    },
+    {
+      "id": "retained-audio-admission",
+      "ref": "fix/retained-audio-admission",
+      "branch": "fix/retained-audio-admission",
+      "base": "a4295421f270929315fea42b9e53b00c16e920a5",
+      "head": "36fae96028539369cbaf016e0e5d4d25ef846d9c",
+      "commits": [
+        "36fae96028539369cbaf016e0e5d4d25ef846d9c"
+      ],
+      "ordered_commits": [
+        "36fae96028539369cbaf016e0e5d4d25ef846d9c"
+      ],
+      "depends_on": [],
+      "status": "included",
+      "default": true,
+      "experimental": false,
+      "source_pins": [
+        "eefe92d249c72edbd2f216b0b6ca3944e85e69b3"
+      ],
+      "provenance": {
+        "source_commits": [
+          "eefe92d249c72edbd2f216b0b6ca3944e85e69b3"
+        ],
+        "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+      },
+      "settings_defaults": {},
+      "evidence": [
+        {
+          "id": "hunk-ownership.json",
+          "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+        },
+        {
+          "id": "tree-parity.json",
+          "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+        },
+        {
+          "id": "tests/test-audio-frame-admission.log",
+          "sha256": "f6d06a36e120d3ca2ef82da4d6d4524676fa817be46c366ffff9f3633e9b74f3"
+        }
+      ],
+      "upstream_equivalence_reason": null,
+      "paths": [
+        "tools/test-audio-frame-admission.py",
+        "xbmc/cores/VideoPlayer/VideoPlayerAudio.cpp"
+      ],
+      "patch_id": "ae1ad8547040dd1b2e07d68f461007b291f01b00",
+      "test_ids": [
+        "test-audio-frame-admission"
+      ],
+      "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git"
+    },
+    {
+      "id": "numbered-frame-tools",
+      "ref": "feature/numbered-frame-tools",
+      "branch": "feature/numbered-frame-tools",
+      "base": "a4295421f270929315fea42b9e53b00c16e920a5",
+      "head": "8882c7b0a618cec2e76893f7324bc81038de58eb",
+      "commits": [
+        "8882c7b0a618cec2e76893f7324bc81038de58eb"
+      ],
+      "ordered_commits": [
+        "8882c7b0a618cec2e76893f7324bc81038de58eb"
+      ],
+      "depends_on": [],
+      "status": "included",
+      "default": true,
+      "experimental": false,
+      "source_pins": [
+        "c66e8b493e23318f7d538eaa3fd1a922c52b8513"
+      ],
+      "provenance": {
+        "source_commits": [
+          "c66e8b493e23318f7d538eaa3fd1a922c52b8513"
+        ],
+        "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+      },
+      "settings_defaults": {},
+      "evidence": [
+        {
+          "id": "hunk-ownership.json",
+          "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+        },
+        {
+          "id": "tree-parity.json",
+          "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+        },
+        {
+          "id": "tests/frame-pacing.log",
+          "sha256": "6b693b6d25abe12d1b69f6f62be0fd246fedfbc9a3db494c36820968e0b90c8a"
+        }
+      ],
+      "upstream_equivalence_reason": null,
+      "paths": [
+        "tools/frame_pacing/.gitignore",
+        "tools/frame_pacing/README.md",
+        "tools/frame_pacing/__init__.py",
+        "tools/frame_pacing/__main__.py",
+        "tools/frame_pacing/analysis.py",
+        "tools/frame_pacing/capture.py",
+        "tools/frame_pacing/marker.py",
+        "tools/frame_pacing/media.py",
+        "tools/frame_pacing/requirements.txt",
+        "tools/frame_pacing/test_capture.py",
+        "tools/frame_pacing/test_frame_pacing.py"
+      ],
+      "patch_id": "36afa7683d7ad2025a0332c19f9430b64c6059f0",
+      "scope": "Source measurement tooling only; not a production pacing fix.",
+      "test_ids": [
+        "frame-pacing"
+      ],
+      "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git"
+    },
+    {
+      "id": "distribution-build",
+      "ref": "fix/distribution-build",
+      "branch": "fix/distribution-build",
+      "base": "a4295421f270929315fea42b9e53b00c16e920a5",
+      "head": "ac12f1fbb10370a4210833929ecc87d71cc7334e",
+      "commits": [
+        "ac12f1fbb10370a4210833929ecc87d71cc7334e"
+      ],
+      "ordered_commits": [
+        "ac12f1fbb10370a4210833929ecc87d71cc7334e"
+      ],
+      "depends_on": [],
+      "status": "included",
+      "default": true,
+      "experimental": false,
+      "source_pins": [
+        "045efc4a3e5da75a5c06dfbbb231d6477d7c5e49",
+        "e8943cbb010e4381625ea7f2a8b3fbed72336e3f"
+      ],
+      "provenance": {
+        "source_commits": [
+          "045efc4a3e5da75a5c06dfbbb231d6477d7c5e49",
+          "e8943cbb010e4381625ea7f2a8b3fbed72336e3f"
+        ],
+        "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+      },
+      "settings_defaults": {},
+      "evidence": [
+        {
+          "id": "hunk-ownership.json",
+          "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+        },
+        {
+          "id": "tree-parity.json",
+          "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+        }
+      ],
+      "upstream_equivalence_reason": null,
+      "paths": [
+        "cmake/modules/buildtools/FindTexturePacker.cmake",
+        "version.txt"
+      ],
+      "patch_id": "a85af6644a0672b6cb55050aa2546e90095515b8",
+      "test_ids": [],
+      "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git"
+    },
+    {
+      "id": "fixture-union",
+      "ref": "fix/accepted-fixture-union",
+      "branch": "fix/accepted-fixture-union",
+      "base": "b4d2f3835891411d85a2180b3885b5dffa42303b",
+      "head": "83bf4c44adc22a4af150534ff222ac74ca206766",
+      "commits": [
+        "83bf4c44adc22a4af150534ff222ac74ca206766"
+      ],
+      "ordered_commits": [
+        "83bf4c44adc22a4af150534ff222ac74ca206766"
+      ],
+      "depends_on": [
+        "manual-lldv",
+        "pause-presenter",
+        "seek-ux",
+        "trickplay-reanchor",
+        "startup-gate",
+        "jvc-sticky-sdr",
+        "ddplus-safety",
+        "audio-pause-transport",
+        "retained-audio-admission"
+      ],
+      "status": "included",
+      "default": true,
+      "experimental": false,
+      "source_pins": [
+        "bdaf39855185da0d1e97d3d969b69b63a4b31a7c",
+        "0aff06e05c4faada67c96a791f8a7e5f3485a29f"
+      ],
+      "provenance": {
+        "source_commits": [
+          "bdaf39855185da0d1e97d3d969b69b63a4b31a7c",
+          "0aff06e05c4faada67c96a791f8a7e5f3485a29f"
+        ],
+        "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+      },
+      "settings_defaults": {},
+      "evidence": [
+        {
+          "id": "hunk-ownership.json",
+          "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+        },
+        {
+          "id": "tree-parity.json",
+          "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+        },
+        {
+          "id": "tests/test-activeae-truehd-sync.log",
+          "sha256": "783d7ba22a1a1d617222d3f894283f7ebbebc54f0941f9aec1063000e54e3dd9"
+        },
+        {
+          "id": "tests/test-aml-lifecycle.log",
+          "sha256": "da3632e61b90565553cef38cf5f8871ad87938371bc1abaeb92f1e4ba09a05bc"
+        },
+        {
+          "id": "tests/test-aml-mute-renderer.log",
+          "sha256": "95490e56d47610d3adf2f59f47447ee406498bd9037b4b2ba81cc55e185674c5"
+        },
+        {
+          "id": "tests/test-aml-native-continuation.log",
+          "sha256": "c82306bd1c2de7a4f5f7ec74b1f1a2f84f49867a34fa14d51e90886aa7d710b5"
+        },
+        {
+          "id": "tests/test-aml-native-settings.log",
+          "sha256": "53266bcb4581cd03cf1991b482543fe3ca08843250c8bc609764815eb2fca67d"
+        },
+        {
+          "id": "tests/test-aml-preroll.log",
+          "sha256": "a416cd0766a952d9932ebcb6d2b98b7121072445a68b4bbf2ccad741ea481ebd"
+        },
+        {
+          "id": "tests/test-aml-presenter-cadence.log",
+          "sha256": "113b7cdee2150d9c0cf1ad8b05ecb5bfc269dde0f18b43eb4d1585e8ef100184"
+        },
+        {
+          "id": "tests/test-aml-presenter-setting.log",
+          "sha256": "64b61e7b6fb90ce8abe1bd1f4b6eb5762952d4ef2d4edbba27c5a9c5bef490a9"
+        },
+        {
+          "id": "tests/test-aml-presenter-step-invalidation.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "id": "tests/test-aml-presenter.log",
+          "sha256": "df9b449c3fc4eb08c2fe23683b24632f5196cb0790c6e884c9ff1afa1788fe78"
+        },
+        {
+          "id": "tests/test-aml-restart-hold.log",
+          "sha256": "a5e601cf385ad789f1b1080ccff2a8428cd4fa04fa14d5e6620653ea3cbe3e42"
+        },
+        {
+          "id": "tests/test-aml-seek-clock.log",
+          "sha256": "e8bea246dfaabf2bddea9ae96d50647c1373b3ab905871ad927a13e6c8917a4e"
+        },
+        {
+          "id": "tests/test-aml-skin-reload.log",
+          "sha256": "a68cec0e1908074a26cf75384b03f64f834f883e7dbb374ee438f5cfbd34b649"
+        },
+        {
+          "id": "tests/test-aml-window-lifecycle.log",
+          "sha256": "f739ad337ac056e6aeab95457940565d7761632e3f3095f367d5685633e4751d"
+        },
+        {
+          "id": "tests/test-audio-recovery-seek.log",
+          "sha256": "0edc6188ca1e6d8c6d9d1f3c5d016fa34d6c76f97d7b6138860067b2e61a9fec"
+        },
+        {
+          "id": "tests/test-chapter-seek-intent.log",
+          "sha256": "f0351acd142921c56e8e7d70bc934f4a890e3f92f4a0c3865772a294bb1a179f"
+        },
+        {
+          "id": "tests/test-dv-disc-hold.log",
+          "sha256": "8101cbe2eec629d64f3019aca2e197c7dcf46b3ea293108df2e78358eff42120"
+        },
+        {
+          "id": "tests/test-player-lifecycle.log",
+          "sha256": "5b26cc0e262eb77844d7527ac6aca3223f5bd4798196828e801f6e0ab9d64d68"
+        },
+        {
+          "id": "tests/test-player-retirement.log",
+          "sha256": "0814e3a7097ec779c12b56c7b4d3c25b33b54da330d9dd56485208c64d6cbae3"
+        },
+        {
+          "id": "tests/test-render-lifecycle.log",
+          "sha256": "d0cb44fba94722a57b63c8fb6f99c3e699e7768eb4517c5e19d9bcbfdc90c0cb"
+        },
+        {
+          "id": "tests/test-render-video-admission.log",
+          "sha256": "17466672469e3f195bb2e8fa9ba02859e4f84c5ebb39a55790661a2d4136f75e"
+        },
+        {
+          "id": "tests/test-truehd-delivery.log",
+          "sha256": "1fe79f2d6e8a520afe82b7e2aa437f9bec98db9d5942c75ef78b0aa91e671597"
+        },
+        {
+          "id": "tests/test-video-timeout-recovery.log",
+          "sha256": "c3502fd80db653510d1e6d6e61c9a7c8f28e2859dbc665ca08c22398fe931d39"
+        }
+      ],
+      "upstream_equivalence_reason": null,
+      "paths": [
+        "tools/test-activeae-truehd-sync.py",
+        "tools/test-aml-lifecycle.py",
+        "tools/test-aml-mute-renderer.py",
+        "tools/test-aml-native-continuation.py",
+        "tools/test-aml-native-settings.py",
+        "tools/test-aml-preroll.py",
+        "tools/test-aml-presenter-setting.py",
+        "tools/test-aml-presenter.py",
+        "tools/test-aml-restart-hold.py",
+        "tools/test-aml-seek-clock.py",
+        "tools/test-aml-skin-reload.py",
+        "tools/test-aml-window-lifecycle.py",
+        "tools/test-audio-recovery-seek.py",
+        "tools/test-chapter-seek-intent.py",
+        "tools/test-dv-disc-hold.py",
+        "tools/test-player-lifecycle.py",
+        "tools/test-player-retirement.py",
+        "tools/test-render-lifecycle.py",
+        "tools/test-render-video-admission.py",
+        "tools/test-truehd-delivery.py",
+        "tools/test-video-timeout-recovery.py"
+      ],
+      "patch_id": "7182670b94e7d94aa203e78d57a440f9cd51ee27",
+      "test_ids": [
+        "test-activeae-truehd-sync",
+        "test-aml-lifecycle",
+        "test-aml-mute-renderer",
+        "test-aml-native-continuation",
+        "test-aml-native-settings",
+        "test-aml-preroll",
+        "test-aml-presenter-cadence",
+        "test-aml-presenter-setting",
+        "test-aml-presenter-step-invalidation",
+        "test-aml-presenter",
+        "test-aml-restart-hold",
+        "test-aml-seek-clock",
+        "test-aml-skin-reload",
+        "test-aml-window-lifecycle",
+        "test-audio-recovery-seek",
+        "test-chapter-seek-intent",
+        "test-dv-disc-hold",
+        "test-player-lifecycle",
+        "test-player-retirement",
+        "test-render-lifecycle",
+        "test-render-video-admission",
+        "test-truehd-delivery",
+        "test-video-timeout-recovery"
+      ],
+      "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git"
+    },
+    {
+      "id": "dim-black-screensaver",
+      "status": "upstream-integrated",
+      "default": true,
+      "experimental": false,
+      "branch": "archive/accepted-upstream/pr-151",
+      "ref": "archive/accepted-upstream/pr-151",
+      "base": "a4295421f270929315fea42b9e53b00c16e920a5",
+      "head": "674be07da5f888a12873072d387dab3b198dd428",
+      "ordered_commits": [],
+      "commits": [],
+      "depends_on": [],
+      "source_pins": [
+        "674be07da5f888a12873072d387dab3b198dd428"
+      ],
+      "provenance": {
+        "source_commits": [
+          "674be07da5f888a12873072d387dab3b198dd428"
+        ],
+        "original_patch_ids": [
+          "62932490a4e501c5375237378964dd4fcc4f53d2"
+        ],
+        "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+      },
+      "upstream_review": {
+        "upstream_commit": "a4295421f270929315fea42b9e53b00c16e920a5",
+        "reason": "Original Dim/Black commit and merge are ancestors of validated upstream; GUIWindow production file has no local delta. Retained, not replayed.",
+        "evidence_sha256": "4bbc8de0ba80d6909d118c4e9b61a4eb18150d877b0904b5efc32e876bc12886"
+      },
+      "settings_defaults": {},
+      "evidence": [
+        {
+          "id": "upstream-review.json",
+          "sha256": "4bbc8de0ba80d6909d118c4e9b61a4eb18150d877b0904b5efc32e876bc12886"
+        }
+      ],
+      "test_ids": [],
+      "commit_repository": "https://github.com/pannal/xbmc.git",
+      "ref_repository": "https://github.com/pannal/xbmc.git",
+      "ref_availability": "local archive alias; no replay or remote fetch",
+      "upstream_repository": "https://github.com/pannal/xbmc.git"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "hunk-ownership.json",
+      "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+    },
+    {
+      "id": "tree-parity.json",
+      "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+    },
+    {
+      "id": "upstream-review.json",
+      "sha256": "4bbc8de0ba80d6909d118c4e9b61a4eb18150d877b0904b5efc32e876bc12886"
+    },
+    {
+      "id": "publish-safe-audit.json",
+      "sha256": "1e6836fc92384a631b37286587f63cfb8efa75168ebc4f63c78845c706a55119"
+    },
+    {
+      "id": "WORKFLOW.md",
+      "sha256": "d98ab70bfd2af60a2a033f19dd0e1fe91dbba2e525a1f64bf8866a027770e955"
+    },
+    {
+      "id": "test-results.json",
+      "sha256": "cfa36e17f6b59357f140c022d3cda317a7918ba94f4780ad850a1dfac744859b"
+    },
+    {
+      "id": "original-control-results.json",
+      "sha256": "8f5579e51e518ae3b6ceda80edc375d9f3d42432d73165d4784684b21b7dcaa5"
+    },
+    {
+      "id": "host-parser-boundary.json",
+      "sha256": "6e05a91742fc9495bcd26b66b93ddff9ec109686c00a49592fc986eeee711467"
+    },
+    {
+      "id": "host-dependencies.json",
+      "sha256": "06bdee0e92c829caaae43610a8f1cac0652c93860a3f3db90868237a4487555d"
+    },
+    {
+      "id": "public-bootstrap-provenance.json",
+      "sha256": "0e0ab16681503852fbf1453b2521fc917913d5e8324d3e5a5ed9b6ae1e4bb65f"
+    }
+  ],
+  "limits": [
+    "No hardware or new binary verification; source parity only.",
+    "Unrelated old historical blobs are excluded; three original bundles required.",
+    "Active stress shutdown/VFM sources pending acceptance; not included.",
+    "No accepted post-seek/pre-roll/timeline-flash/IVTC/Atmos-gain claim.",
+    "PCM 5.1/7.1 remains unverified.",
+    "Frozen source has preserved skin-reload/disc-hold fixture compile gaps; exact original controls reproduce them. Legacy frame-selection also retains its original failure. No assertion was relaxed."
+  ],
+  "cross_component_coverage": [
+    {
+      "id": "afbc29-deferred-scanout-retention",
+      "component": "kernel",
+      "source_commit": "a2ed27d5ba51f79ba386eae9281e588cfd9c5fa9",
+      "reason": "Accepted kernel feature is supplied by kernel catalog; Kodi upstream GUI AFBC is not a substitute."
+    }
+  ],
+  "pending_acceptance": [
+    {
+      "id": "stress-python-shutdown",
+      "status": "pending",
+      "default": false,
+      "source_commit": "2abc372bd7584d9e7575811a6fc730a5bfe9ce4f",
+      "availability": "local-only; unaccepted and excluded from public bootstrap"
+    },
+    {
+      "id": "stress-vfm-route",
+      "status": "pending",
+      "default": false,
+      "source_commit": "8fa1efaf811753848394f34294932f6526941df7",
+      "availability": "local-only; unaccepted and excluded from public bootstrap"
+    }
+  ],
+  "excluded_experiments": [
+    "postseek-corruption",
+    "startup-preroll-policy",
+    "timeline-flash",
+    "ivtc",
+    "atmos-gain-recovery"
+  ],
+  "published_pr_pins": {
+    "145": "fdd11b64010d509b570fdb0400f4f483844dc77d",
+    "146": "57282b8191469b4abd8e81b1c752ae0c920c3f1f",
+    "147": "fc74d84ac51731259ab58aeba3c3350b7cc16eb0",
+    "148": "11ab17291932848c8c847627d91515bb7872beff",
+    "149": "1caca6978bbeba5a5343cd6d82bdbf65d1b0c275",
+    "150": "c66e8b493e23318f7d538eaa3fd1a922c52b8513",
+    "151": "674be07da5f888a12873072d387dab3b198dd428",
+    "153": "7d09dbc7932f7b9deb47c0ffa097405417692f73",
+    "156": "eefe92d249c72edbd2f216b0b6ca3944e85e69b3"
+  },
+  "validations": {
+    "receipt": "test-results.json",
+    "sha256": "cfa36e17f6b59357f140c022d3cda317a7918ba94f4780ad850a1dfac744859b",
+    "passed": [
+      "test-activeae-configure-retry",
+      "test-activeae-dropped-raw-delay",
+      "test-activeae-duration-families",
+      "test-activeae-error-free",
+      "test-activeae-long-pause",
+      "test-activeae-pause-silence",
+      "test-activeae-paused-packets",
+      "test-activeae-resume-epoch",
+      "test-activeae-stream-flush",
+      "test-activeae-threaded-barrier",
+      "test-activeae-truehd-sync",
+      "test-aml-dv-manager-dependency",
+      "test-aml-dv-options",
+      "test-aml-dv-preset-read",
+      "test-aml-dv-setting-locks",
+      "test-aml-lifecycle",
+      "test-aml-mute-renderer",
+      "test-aml-native-continuation",
+      "test-aml-native-settings",
+      "test-aml-preroll",
+      "test-aml-presenter-cadence",
+      "test-aml-presenter-setting",
+      "test-aml-presenter-step-invalidation",
+      "test-aml-presenter",
+      "test-aml-restart-hold",
+      "test-aml-seek-clock",
+      "test-aml-window-lifecycle",
+      "test-audio-frame-admission",
+      "test-audio-recovery-seek",
+      "test-chapter-seek-intent",
+      "test-dvd-clock-locking",
+      "test-hdr10-seamless-setting",
+      "test-paused-trickplay-return",
+      "test-player-lifecycle",
+      "test-player-retirement",
+      "test-presenter-invalidation-lifetime",
+      "test-render-lifecycle",
+      "test-render-video-admission",
+      "test-seamless-profile-migration",
+      "test-seek-preview-origin",
+      "test-seek-timeline-marker",
+      "test-truehd-delivery",
+      "test-video-timeout-recovery",
+      "test-seek-marker-review-retirement-preview",
+      "test-seek-marker-review-retirement-commit",
+      "test-seek-marker-review-queued-speed",
+      "test-seek-marker-review-rejected-queue-keeps-older",
+      "test-seek-marker-review-chapter-supersession",
+      "test-seek-marker-review-stack-accurate-overlap",
+      "frame-pacing",
+      "ddplus-parser-compile",
+      "ddplus-parser-synthetic-12"
+    ],
+    "failures": [
+      "test-aml-skin-reload",
+      "test-dv-disc-hold"
+    ]
+  },
+  "revision": 2,
+  "previous_catalog_sha256": "efbc2cfa3f120d374f75ab4beceb3ea89be9496c792e7771b50937e07ff3de12",
+  "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+  "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+  "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+  "public_bootstrap": {
+    "included_feature_commits_and_refs": "Fetch from owned assembly repository, never from pannal.",
+    "upstream_base_and_refresh": "Canonical public Pannal ancestry; validated base stays pinned.",
+    "original_0aff_and_9a90": "Remain local, neither refs nor private ancestry are publication targets.",
+    "original_diagnostic_gate": "Requires preserved local original fixture evidence; not runnable from public refs alone."
+  }
+}

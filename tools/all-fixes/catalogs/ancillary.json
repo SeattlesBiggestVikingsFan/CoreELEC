@@ -1,0 +1,72 @@
+{
+  "media_modules": {
+    "upstream": {
+      "repository": "https://github.com/pannal/media_modules-aml.git",
+      "ref": "amlogic-4.9.269",
+      "commit": "10d1e8bfc22068c81a5b10b0d89b00f8b15c9502"
+    },
+    "pinned_source": {
+      "commit": "4ea44185edde8efb38dffed6ba1b2b7cce697999",
+      "tree": "a4fa774d0b6e3bd32c50a38a87b63027d11229eb",
+      "stage": "accepted integrated export; no new ancillary source changes or feature refs",
+      "original_release_input": true
+    },
+    "expected_tree": "a4fa774d0b6e3bd32c50a38a87b63027d11229eb",
+    "source_variable": "COMBINED_MEDIA_SOURCE",
+    "features": [],
+    "recipe_policy": "Canonical six-source binding; pre-integrated platform patches are not replayed."
+  },
+  "ap6275s": {
+    "upstream": {
+      "repository": "https://github.com/CoreELEC/ap6xxx-aml.git",
+      "ref": "recipe-pin",
+      "commit": "f08f1b88be470d07667a671b5c6b7f4e198a75f8"
+    },
+    "pinned_source": {
+      "commit": "95a15af695f2c93cec95363ed48d9ce64b060253",
+      "tree": "c5604bdf4bae9f30ccf4e69b892a8c6109302be3",
+      "stage": "accepted integrated export; no new ancillary source changes or feature refs",
+      "original_release_input": true
+    },
+    "expected_tree": "c5604bdf4bae9f30ccf4e69b892a8c6109302be3",
+    "source_variable": "COMBINED_AP6275S_SOURCE",
+    "features": [],
+    "recipe_policy": "Canonical six-source binding; pre-integrated platform patches are not replayed."
+  },
+  "settings": {
+    "upstream": {
+      "repository": "https://github.com/pannal/service.coreelec.settings.git",
+      "ref": "coreelec-21-ng",
+      "commit": "a9f4e6980f5e65a3120d43198d9f4a337e526ffb"
+    },
+    "pinned_source": {
+      "commit": "d81eff5f0596d63e6a3fe79f656efe88b902b7ec",
+      "tree": "49e63446af24b2f1b23f1b99c6b45115b08de3fc",
+      "stage": "accepted integrated export; no new ancillary source changes or feature refs",
+      "original_release_input": true,
+      "history_boundary": "d81eff5f0596d63e6a3fe79f656efe88b902b7ec",
+      "historical_graph_policy": "Exact selected commit/tree preserved as depth-one Git source; unrelated donor historical .gitattributes object unavailable, historical completeness not claimed."
+    },
+    "expected_tree": "49e63446af24b2f1b23f1b99c6b45115b08de3fc",
+    "source_variable": "COMBINED_SETTINGS_SOURCE",
+    "features": [],
+    "recipe_policy": "Canonical six-source binding; pre-integrated platform patches are not replayed."
+  },
+  "skin": {
+    "upstream": {
+      "repository": "https://github.com/pannal/skin.p3i.estuary.git",
+      "ref": "master",
+      "commit": "94ccb38311d52a6244c71a2748379cee59e5d736"
+    },
+    "pinned_source": {
+      "commit": "94ccb38311d52a6244c71a2748379cee59e5d736",
+      "tree": "f320f6c26143a1c41acc93c6359c95bc85747db2",
+      "stage": "accepted integrated export; no new ancillary source changes or feature refs",
+      "original_release_input": true
+    },
+    "expected_tree": "f320f6c26143a1c41acc93c6359c95bc85747db2",
+    "source_variable": "COMBINED_SKIN_SOURCE",
+    "features": [],
+    "recipe_policy": "Canonical six-source binding; pre-integrated platform patches are not replayed."
+  }
+}
