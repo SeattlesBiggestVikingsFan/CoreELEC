@@ -2,14 +2,27 @@
 
 This package backs **Settings > CoreELEC > Network > Calibrate Ethernet**.
 Initial support is the verified AM6B+ onboard G12B/RTL8211F combination.
-Health, saved calibration and last verified upload/download speeds have
-separate single-line rows above the action button.
+Health, current timing, saved calibration and saved test evidence have
+separate single-line rows above the action button. Current timing distinguishes
+factory (raw -1, effective index 0), selected/applied, pending and application
+failure. Saved timing shows its own index and type; neither a saved profile nor
+a manually selected timing implies healthy Ethernet.
+
+**Set Ethernet timing manually** accepts indices 0-31, including 0, through the
+visible-Cancel numeric dialog. It is available both in Network settings and
+inside the calibration action menu. After explicit disruption/unverified consent,
+the native service transactionally saves schema 3 and applies the selected timing
+at startup, labeled **manually set - not verified**. It does not run a traffic
+test or fabricate packet/speed evidence. Driver rejection or persistence failure
+rolls back both raw profile slots and runtime timing; existing verified LAN
+history is retained. Restore understands previous schema 1, 2, 3 or 4 profiles.
+There is no universal recommended value or silent preset of index 30.
 
 Use a known-good cable and gigabit switch, and preferably a wired LAN machine
 running `iperf3 -s` (TCP port 5201 by default). Enter that machine's IPv4 address
 and port in the dialog. LAN calibration verifies gigabit upload and download.
 The public-server option can repair corrupt timing without a local server,
-but its saved result is explicitly **public error checked, not gigabit verified**.
+but its saved result is explicitly **packet checks passed; gigabit speed not measured**.
 Its region/host/port picker includes the complete dated
 [iPerf.fr public iPerf3 directory](https://iperf.fr/iperf-servers.php), plus custom
 IPv4 entry. It is an offline snapshot, not a live availability check.
@@ -23,9 +36,10 @@ and operator permission have not been established.
 
 HTTPS shares the existing public repair search, lease, identity, recovery,
 two-round/reopen and transactional-save policy. Only new hardware CRC triggers
-search or rejects a timing. DNS/TLS/HTTP errors, short/stalled data, cancellation,
-or insufficient fresh receive activity abort inconclusively and restore the
-original state. TLS requires a correct clock and the system CA store; certificate
+search or rejects a timing. DNS/TLS/HTTP errors and short/stalled or insufficient
+data are inconclusive; cancellation is a separate outcome. Neither becomes a
+successful calibration. Identity, driver or transactional-restoration failures
+remain failures rather than service errors. TLS requires a correct clock and the system CA store; certificate
 and hostname verification cannot be disabled. The Python3 dependency already
 includes OpenSSL and its system CA bundle; no third-party client is added.
 
@@ -36,29 +50,46 @@ overhead and retransmissions are not an exact wire-volume or wire-rate cap.
 The 256 MiB job reservation and 32 MiB attempt limit are payload limits, and
 failed attempts are not refunded. Socket buffering is requested at 32 KiB and
 refused above 128 KiB actual; TLS/body reads and headers/framing are bounded.
-All operations are cancellable/deadline-bounded; a stall does not become healthy.
+Traffic jobs are cancellable/deadline-bounded; a stall does not become healthy.
 Linux TCP_INFO must expose its unique received-byte counter. A forced final
 snapshot, at least 90% fresh unique TCP bytes and 18-21 seconds of observed TCP
 progress prevent a buffered download from masquerading as sustained traffic.
 These unique TCP bytes include TLS/framing, not retransmissions or Ethernet wire
-bytes. Missing/reset transport counters are inconclusive, not a fallback.
+bytes. Missing/reset transport counters stop without saving, not with a fallback.
 
 HTTPS reduced evidence uses schema 4, retaining schema 1 LAN and schema 2 iPerf
 offline validation. It records the selected backend/endpoint, verified TLS
 version/certificate hash, framing/exact requested payload, application rate,
 TCP progression, CRC and onboard source/index/generation. The certificate hash
 is a measurement receipt, not a boot-time certificate pin. Boot application
-validates the saved receipt locally without DNS or traffic. The earlier schema 3
-manual-timing work is intentionally NOT included. UI and runtime must be shipped
-together; accepted8a cannot apply schema 4 profiles.
+validates the saved receipt locally without DNS or traffic. This revision merges
+the source-validated schema 3 manual timing controls into HTTPS10, not just its UI.
+Schemas 1/2/3/4 remain offline-compatible. UI and runtime must be shipped together;
+accepted8a cannot apply schema 3/4 profiles.
+
+Live progress reports phase, the actual zero-based timing index and candidate
+position/total, verification round, elapsed time, reconnect countdown and received
+application payload/traffic time. Busy status never queries a driver locked during
+reopen. Cancel remains responsive and shows restoration in progress; committed
+manual/factory/profile operations are not advertised as cancellable. No completion
+ETA or sender/wire rate is inferred from these counters. The progress modal closes
+before the result modal opens. An unchanged-current public pass leads with
+**Test passed**, explicitly says no new calibration was saved, then states
+**Gigabit speed not measured**. An actual accepted repair leads with
+**Calibration saved**. Cancelled, inconclusive, corruption and failed outcomes
+cannot use either success heading.
 
 This is an **off-device source-preparation snapshot, not a production release**.
 Prior five bounded Cloudflare host samples established feasibility only: there
 is no fleet quota/SLA or established permission for repeated fleet calibration.
 Cloudflare sees the client's IP/access metadata. Explicit consent does not imply
-operator endorsement. Native TLS/runtime on CoreELEC, real HTTPS repair/save,
-boot/upgrade/cold boot and suspend/resume remain unvalidated on TestUgoos.
-Accepted8a, frozen manual9 and the combined upgrade's source lock are unchanged.
+operator endorsement. The earlier HTTPS10 trial verified target TLS/runtime,
+genuine CRC repair/save, cancellation and warm boot; those sealed receipts are
+not hardware acceptance of this new merged UX11 source. UX11 paired firmware,
+manual save/rollback/boot and actual Kodi progress/modal lifecycle need fresh
+owner clearance and validation. No device contact or new public sampling is
+part of source preparation. Accepted8a, frozen manual9/HTTPS10 and the combined
+upgrade's accepted8a-only source lock are unchanged.
 Calibration interrupts onboard networking and may disrupt playback/transfers.
 The onboard port needs an IPv4 address; if bad timing prevents DHCP, first
 configure a suitable manual address in the existing Network connection dialog.
