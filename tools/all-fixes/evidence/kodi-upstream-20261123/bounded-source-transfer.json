@@ -1,0 +1,22 @@
+{
+  "public_base_prerequisite": {
+    "repository": "https://github.com/pannal/xbmc.git",
+    "commit": "efcb4dac04f9b2cfeb863154045602e768195ab2"
+  },
+  "new_delta_bundle": {
+    "id": "exports/upstream-new-ref-deltas.bundle",
+    "sha256": "36f3052c68be065d293fdb6914cb3f0d0c91480d0d94e028e9f3a59239df0e41",
+    "bytes": 356157
+  },
+  "new_maintained_commits_transferred": 19,
+  "ordinary_unfiltered_bundle_fetch": "passed against independently fetched canonical public depth-1 base",
+  "all_allowed_new_refs_and_candidate_tree_verified": true,
+  "all_new_delta_changed_blobs_readable": true,
+  "alternates": false,
+  "candidate": "52117bc6027fbca1edfdd508661edba2446a1727",
+  "tree": "f2fc279ff91b8ebaa358aa4e7b9559168048d6d7",
+  "public_bootstrap_contract": "Managed bootstrap uses --update-shallow from public owned fork or complete bounded local mirror. Explicit depth=2 plus exact ordered commits/refs is needed only when importing the partial-history lab donor.",
+  "framework_independent_transfer": "Framework reports all19 ordered commits and18 topic/integration refs verified by its independent depth2 batch fetch.",
+  "historical_qualification": "Unbounded local fetch of inherited filtered historical graph is unsupported: unrelated older public promisor blobs are deliberately absent. No claim of complete unbounded historic blobs.",
+  "publication_boundary": "Only new reviewed refs; known public canonical base is prerequisite. Original/archive/diagnostic refs and full local graph never published."
+}

@@ -1,0 +1,17 @@
+/tmp/aml-skin-reload-o5_by152/test.cpp: In constructor ‘CAMLPresenterSession::Frame::Frame(const VideoPicture&, std::shared_ptr<const CAMLPresenterSession::OverlayObservation>)’:
+/tmp/aml-skin-reload-o5_by152/test.cpp:241:26: error: ‘IsAMLTimedTextBatch’ was not declared in this scope; did you mean ‘IsAMLTimedText’?
+  241 |         overlayContent = IsAMLTimedTextBatch(overlays->overlays)
+      |                          ^~~~~~~~~~~~~~~~~~~
+      |                          IsAMLTimedText
+/tmp/aml-skin-reload-o5_by152/test.cpp: In member function ‘void CRenderManager::StopAMLPresenter(bool)’:
+/tmp/aml-skin-reload-o5_by152/test.cpp:736:22: error: ‘struct CRenderManager::<unnamed>’ has no member named ‘timedText’
+  736 |       m_Queue[index].timedText = frame->overlayContent == CAMLPresenter::OverlayContent::TEXT;
+      |                      ^~~~~~~~~
+Traceback (most recent call last):
+  File "<LOCAL-SOURCE>", line 530, in <module>
+    main(parser.parse_args().negative_controls)
+  File "<LOCAL-SOURCE>", line 91, in main
+    subprocess.run([os.environ.get('CXX', 'g++'), '-std=c++17', '-Wall', '-Wextra', '-Werror',
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['g++', '-std=c++17', '-Wall', '-Wextra', '-Werror', '-Wno-unused-parameter', '-DHAS_LIBAMCODEC=1', '-pthread', '-fsanitize=address,undefined', '-fno-omit-frame-pointer', '-I', '<LOCAL-SOURCE>', '/tmp/aml-skin-reload-o5_by152/test.cpp', '-o', '/tmp/aml-skin-reload-o5_by152/test']' returned non-zero exit status 1.

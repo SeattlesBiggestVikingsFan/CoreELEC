@@ -1,0 +1,24 @@
+{
+  "original_receipts_unchanged": true,
+  "reviewed_new_copies": [
+    {
+      "id": "baseline-evidence/tests/ddplus-parser-synthetic-12.log",
+      "original_local_only_sha256": "53dc1083de4d867205f3406073c5b499b67a60f2eb1f49841966565ca65ad7a3",
+      "reviewed_copy_sha256": "f8805ba4750aee7f50bf52600573d3bc42a85a41b30a1d0f99f8962080a79ab8",
+      "change": "Redact personal absolute source paths only."
+    },
+    {
+      "id": "baseline-evidence/tests/test-aml-skin-reload.log",
+      "original_local_only_sha256": "a68cec0e1908074a26cf75384b03f64f834f883e7dbb374ee438f5cfbd34b649",
+      "reviewed_copy_sha256": "7163a3a869b360a1f69c491de9c9e8544a9d041104a8fc2062a5061ad3417d8f",
+      "change": "Redact personal absolute source paths only."
+    },
+    {
+      "id": "baseline-evidence/tests/test-dv-disc-hold.log",
+      "original_local_only_sha256": "8101cbe2eec629d64f3019aca2e197c7dcf46b3ea293108df2e78358eff42120",
+      "reviewed_copy_sha256": "8e6b494fd031055e349036535f61972cc00c9622fe6cf5e6cc9d72300f6a8254",
+      "change": "Redact personal absolute source paths only."
+    }
+  ],
+  "original_catalog_sha256": "ab3762d0a66c110c85288defbe7a5e396e9f68258ce422b25ceb5d7a021aeacc"
+}

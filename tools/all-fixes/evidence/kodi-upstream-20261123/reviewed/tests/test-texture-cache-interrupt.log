@@ -1,0 +1,15 @@
+PASS 18 cases 108 checks; actual CacheImage/OnCachingComplete, cache/job fixtures, real threads
+PASS semantic control no-own-interrupt: own fill reads with the caller's interrupt
+PASS semantic control wait-ignores-interrupt: a waiting caller stops on its interrupt
+PASS semantic control stop-not-recorded: a caller waiting for a stopped fill fetches the image itself
+PASS semantic control refetch-any-failure: a fill that failed on its own is not repeated by its waiters
+PASS semantic control record-without-waiters: a stopped fill without waiters leaves no record
+PASS semantic control record-kept: the record of a stopped fill ends with its waiters
+PASS semantic control record-per-image: a fill that failed on its own is not retried for an earlier stopped fill
+PASS semantic control release-any-fill: a declined background fill leaves the running fill alone
+PASS semantic control retry-trusts-miss: a retry finds an image cached since its last look
+PASS semantic control wait-per-image: a waiter does not wait through a later fill and retry its failure
+PASS semantic control background-needs-callback: a background fill ends without its completion callback
+PASS semantic control report-under-lock: the report comes without the cache's locks
+PASS semantic control no-report: every cached image is reported
+PASS semantic control report-failures: a fill that caches nothing is not reported

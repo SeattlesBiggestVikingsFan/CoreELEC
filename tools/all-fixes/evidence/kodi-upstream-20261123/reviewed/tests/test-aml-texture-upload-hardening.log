@@ -1,0 +1,13 @@
+Source-order checks: existing Stop job drain and init-failure-before-GUI boundaries retained
+PASS donor6 + hardening11 fixture groups
+Rejected mutation: exception-cleanup
+Rejected mutation: failed-publication
+Rejected mutation: destroy-under-callback-lock
+Rejected mutation: retry-per-texture
+Rejected mutation: wrong-owner
+Rejected mutation: release-fallback
+Rejected mutation: pbuffer-config
+Rejected mutation: sticky-poison
+Rejected mutation: close-admission
+Rejected mutation: logging-before-release
+Limits: recording EGL/GL/decode/job-drain fixtures; no GPU sharing, pixels, device timing or arbitrary full-context recreation acceptance.

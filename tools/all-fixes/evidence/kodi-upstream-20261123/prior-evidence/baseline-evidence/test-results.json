@@ -1,0 +1,727 @@
+[
+  {
+    "id": "test-activeae-configure-retry",
+    "exit_code": 0,
+    "seconds": 1.12,
+    "log": "tests/test-activeae-configure-retry.log",
+    "sha256": "5c08e1c566d9af917049c35a46a4c2f977f26577f56981468ba317611b58720d",
+    "command": [
+      "python3",
+      "-B",
+      "test-activeae-configure-retry.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-activeae-dropped-raw-delay",
+    "exit_code": 0,
+    "seconds": 4.94,
+    "log": "tests/test-activeae-dropped-raw-delay.log",
+    "sha256": "a5c34bcdd434dd26a58029127158cdce90edadcceaa52a3f339b55aca71ef0e5",
+    "command": [
+      "python3",
+      "-B",
+      "test-activeae-dropped-raw-delay.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-activeae-duration-families",
+    "exit_code": 0,
+    "seconds": 0.95,
+    "log": "tests/test-activeae-duration-families.log",
+    "sha256": "6a69b4f78754d631b37d88f95ff97c15f98308342fd7183fae4e96e18d3aa976",
+    "command": [
+      "python3",
+      "-B",
+      "test-activeae-duration-families.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-activeae-error-free",
+    "exit_code": 0,
+    "seconds": 1.27,
+    "log": "tests/test-activeae-error-free.log",
+    "sha256": "4766ffa38f56bfac0f963b9d03f9d7e2a196a761a0c7517c5d7eb491693e719a",
+    "command": [
+      "python3",
+      "-B",
+      "test-activeae-error-free.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-activeae-long-pause",
+    "exit_code": 0,
+    "seconds": 0.76,
+    "log": "tests/test-activeae-long-pause.log",
+    "sha256": "d2475985a2ac8b30f4228c0d1787a608b3c98e331c8bb8dfa69ceaf409e36f36",
+    "command": [
+      "python3",
+      "-B",
+      "test-activeae-long-pause.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-activeae-pause-silence",
+    "exit_code": 0,
+    "seconds": 35.89,
+    "log": "tests/test-activeae-pause-silence.log",
+    "sha256": "8dfd9fa630083c16c360840142ef1e754e2ec639efd2a905860ee9b269cb025d",
+    "command": [
+      "python3",
+      "-B",
+      "test-activeae-pause-silence.py",
+      "--negative-control"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-activeae-paused-packets",
+    "exit_code": 0,
+    "seconds": 1.34,
+    "log": "tests/test-activeae-paused-packets.log",
+    "sha256": "6a20eddc0c0c240089d7b2599e3ee54ee351c908b20b7ef4dd98c803caf0212f",
+    "command": [
+      "python3",
+      "-B",
+      "test-activeae-paused-packets.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-activeae-resume-epoch",
+    "exit_code": 0,
+    "seconds": 1.02,
+    "log": "tests/test-activeae-resume-epoch.log",
+    "sha256": "df87449bfa8fbdd6b904389dc2afbdb3d05aaa3a8ccdce35ba08fcb08e9c47d9",
+    "command": [
+      "python3",
+      "-B",
+      "test-activeae-resume-epoch.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-activeae-stream-flush",
+    "exit_code": 0,
+    "seconds": 1.09,
+    "log": "tests/test-activeae-stream-flush.log",
+    "sha256": "da44c5c28eba40bec587a1bbe8735fc7fd5c4aef336b31e7aea22acddd1b2932",
+    "command": [
+      "python3",
+      "-B",
+      "test-activeae-stream-flush.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-activeae-threaded-barrier",
+    "exit_code": 0,
+    "seconds": 2.39,
+    "log": "tests/test-activeae-threaded-barrier.log",
+    "sha256": "09db92f7ea40cff765cfdbc2650aeb3d04260959bcf1b2bad60447f70027e6e2",
+    "command": [
+      "python3",
+      "-B",
+      "test-activeae-threaded-barrier.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-activeae-truehd-sync",
+    "exit_code": 0,
+    "seconds": 0.65,
+    "log": "tests/test-activeae-truehd-sync.log",
+    "sha256": "783d7ba22a1a1d617222d3f894283f7ebbebc54f0941f9aec1063000e54e3dd9",
+    "command": [
+      "python3",
+      "-B",
+      "test-activeae-truehd-sync.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-aml-dv-manager-dependency",
+    "exit_code": 0,
+    "seconds": 2.59,
+    "log": "tests/test-aml-dv-manager-dependency.log",
+    "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54",
+    "command": [
+      "python3",
+      "-B",
+      "test-aml-dv-manager-dependency.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-aml-dv-options",
+    "exit_code": 0,
+    "seconds": 1.66,
+    "log": "tests/test-aml-dv-options.log",
+    "sha256": "e7f694bcf6bfe21f474b4f2a5a97d80f5fa36d59e627fbc6d6e8bc39e11959cf",
+    "command": [
+      "python3",
+      "-B",
+      "test-aml-dv-options.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-aml-dv-preset-read",
+    "exit_code": 0,
+    "seconds": 2.84,
+    "log": "tests/test-aml-dv-preset-read.log",
+    "sha256": "ddedc445ffe6370c4d2430ce36bc9103ef23188e0b324ae8b57c07eacf476b62",
+    "command": [
+      "python3",
+      "-B",
+      "test-aml-dv-preset-read.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-aml-dv-setting-locks",
+    "exit_code": 0,
+    "seconds": 2.05,
+    "log": "tests/test-aml-dv-setting-locks.log",
+    "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54",
+    "command": [
+      "python3",
+      "-B",
+      "test-aml-dv-setting-locks.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-aml-lifecycle",
+    "exit_code": 0,
+    "seconds": 2.09,
+    "log": "tests/test-aml-lifecycle.log",
+    "sha256": "da3632e61b90565553cef38cf5f8871ad87938371bc1abaeb92f1e4ba09a05bc",
+    "command": [
+      "python3",
+      "-B",
+      "test-aml-lifecycle.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-aml-mute-renderer",
+    "exit_code": 0,
+    "seconds": 0.84,
+    "log": "tests/test-aml-mute-renderer.log",
+    "sha256": "95490e56d47610d3adf2f59f47447ee406498bd9037b4b2ba81cc55e185674c5",
+    "command": [
+      "python3",
+      "-B",
+      "test-aml-mute-renderer.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-aml-native-continuation",
+    "exit_code": 0,
+    "seconds": 1.9,
+    "log": "tests/test-aml-native-continuation.log",
+    "sha256": "c82306bd1c2de7a4f5f7ec74b1f1a2f84f49867a34fa14d51e90886aa7d710b5",
+    "command": [
+      "python3",
+      "-B",
+      "test-aml-native-continuation.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-aml-native-settings",
+    "exit_code": 0,
+    "seconds": 2.7,
+    "log": "tests/test-aml-native-settings.log",
+    "sha256": "53266bcb4581cd03cf1991b482543fe3ca08843250c8bc609764815eb2fca67d",
+    "command": [
+      "python3",
+      "-B",
+      "test-aml-native-settings.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-aml-preroll",
+    "exit_code": 0,
+    "seconds": 2.4,
+    "log": "tests/test-aml-preroll.log",
+    "sha256": "a416cd0766a952d9932ebcb6d2b98b7121072445a68b4bbf2ccad741ea481ebd",
+    "command": [
+      "python3",
+      "-B",
+      "test-aml-preroll.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-aml-presenter-cadence",
+    "exit_code": 0,
+    "seconds": 8.5,
+    "log": "tests/test-aml-presenter-cadence.log",
+    "sha256": "113b7cdee2150d9c0cf1ad8b05ecb5bfc269dde0f18b43eb4d1585e8ef100184",
+    "command": [
+      "python3",
+      "-B",
+      "test-aml-presenter-cadence.py",
+      "--negative-control"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-aml-presenter-setting",
+    "exit_code": 0,
+    "seconds": 1.28,
+    "log": "tests/test-aml-presenter-setting.log",
+    "sha256": "64b61e7b6fb90ce8abe1bd1f4b6eb5762952d4ef2d4edbba27c5a9c5bef490a9",
+    "command": [
+      "python3",
+      "-B",
+      "test-aml-presenter-setting.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-aml-presenter-step-invalidation",
+    "exit_code": 0,
+    "seconds": 1.44,
+    "log": "tests/test-aml-presenter-step-invalidation.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command": [
+      "python3",
+      "-B",
+      "test-aml-presenter-step-invalidation.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-aml-presenter",
+    "exit_code": 0,
+    "seconds": 4.58,
+    "log": "tests/test-aml-presenter.log",
+    "sha256": "df9b449c3fc4eb08c2fe23683b24632f5196cb0790c6e884c9ff1afa1788fe78",
+    "command": [
+      "python3",
+      "-B",
+      "test-aml-presenter.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-aml-restart-hold",
+    "exit_code": 0,
+    "seconds": 2.21,
+    "log": "tests/test-aml-restart-hold.log",
+    "sha256": "a5e601cf385ad789f1b1080ccff2a8428cd4fa04fa14d5e6620653ea3cbe3e42",
+    "command": [
+      "python3",
+      "-B",
+      "test-aml-restart-hold.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-aml-seek-clock",
+    "exit_code": 0,
+    "seconds": 1.51,
+    "log": "tests/test-aml-seek-clock.log",
+    "sha256": "e8bea246dfaabf2bddea9ae96d50647c1373b3ab905871ad927a13e6c8917a4e",
+    "command": [
+      "python3",
+      "-B",
+      "test-aml-seek-clock.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-aml-skin-reload",
+    "exit_code": 1,
+    "seconds": 0.87,
+    "log": "tests/test-aml-skin-reload.log",
+    "sha256": "a68cec0e1908074a26cf75384b03f64f834f883e7dbb374ee438f5cfbd34b649",
+    "command": [
+      "python3",
+      "-B",
+      "test-aml-skin-reload.py",
+      "--negative-controls"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification.",
+    "classification": "pre-existing-exact-0aff-fixture-compile-gap",
+    "source_parity_preserved": true
+  },
+  {
+    "id": "test-aml-window-lifecycle",
+    "exit_code": 0,
+    "seconds": 2.27,
+    "log": "tests/test-aml-window-lifecycle.log",
+    "sha256": "f739ad337ac056e6aeab95457940565d7761632e3f3095f367d5685633e4751d",
+    "command": [
+      "python3",
+      "-B",
+      "test-aml-window-lifecycle.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-audio-frame-admission",
+    "exit_code": 0,
+    "seconds": 0.52,
+    "log": "tests/test-audio-frame-admission.log",
+    "sha256": "f6d06a36e120d3ca2ef82da4d6d4524676fa817be46c366ffff9f3633e9b74f3",
+    "command": [
+      "python3",
+      "-B",
+      "test-audio-frame-admission.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-audio-recovery-seek",
+    "exit_code": 0,
+    "seconds": 6.51,
+    "log": "tests/test-audio-recovery-seek.log",
+    "sha256": "0edc6188ca1e6d8c6d9d1f3c5d016fa34d6c76f97d7b6138860067b2e61a9fec",
+    "command": [
+      "python3",
+      "-B",
+      "test-audio-recovery-seek.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-chapter-seek-intent",
+    "exit_code": 0,
+    "seconds": 3.16,
+    "log": "tests/test-chapter-seek-intent.log",
+    "sha256": "f0351acd142921c56e8e7d70bc934f4a890e3f92f4a0c3865772a294bb1a179f",
+    "command": [
+      "python3",
+      "-B",
+      "test-chapter-seek-intent.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-dv-disc-hold",
+    "exit_code": 1,
+    "seconds": 0.49,
+    "log": "tests/test-dv-disc-hold.log",
+    "sha256": "8101cbe2eec629d64f3019aca2e197c7dcf46b3ea293108df2e78358eff42120",
+    "command": [
+      "python3",
+      "-B",
+      "test-dv-disc-hold.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification.",
+    "classification": "pre-existing-exact-0aff-fixture-compile-gap",
+    "source_parity_preserved": true
+  },
+  {
+    "id": "test-dvd-clock-locking",
+    "exit_code": 0,
+    "seconds": 3.66,
+    "log": "tests/test-dvd-clock-locking.log",
+    "sha256": "7b986b070adba05f50408fd6bdb94cdf6d685cd3a7db4cfb645446855ec48d55",
+    "command": [
+      "python3",
+      "-B",
+      "test-dvd-clock-locking.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-hdr10-seamless-setting",
+    "exit_code": 0,
+    "seconds": 24.32,
+    "log": "tests/test-hdr10-seamless-setting.log",
+    "sha256": "48fb8760bfd1e89ac0ed96dadd32c3e20299891bf59d95264c75950cce51eb16",
+    "command": [
+      "python3",
+      "-B",
+      "test-hdr10-seamless-setting.py",
+      "--negative-control"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-paused-trickplay-return",
+    "exit_code": 0,
+    "seconds": 2.17,
+    "log": "tests/test-paused-trickplay-return.log",
+    "sha256": "853a42b935422d1115ad932e4f9a8b99cc3e5e3e37b870417fe211354870a64e",
+    "command": [
+      "python3",
+      "-B",
+      "test-paused-trickplay-return.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-player-lifecycle",
+    "exit_code": 0,
+    "seconds": 2.33,
+    "log": "tests/test-player-lifecycle.log",
+    "sha256": "5b26cc0e262eb77844d7527ac6aca3223f5bd4798196828e801f6e0ab9d64d68",
+    "command": [
+      "python3",
+      "-B",
+      "test-player-lifecycle.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-player-retirement",
+    "exit_code": 0,
+    "seconds": 1.33,
+    "log": "tests/test-player-retirement.log",
+    "sha256": "0814e3a7097ec779c12b56c7b4d3c25b33b54da330d9dd56485208c64d6cbae3",
+    "command": [
+      "python3",
+      "-B",
+      "test-player-retirement.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-presenter-invalidation-lifetime",
+    "exit_code": 0,
+    "seconds": 1.48,
+    "log": "tests/test-presenter-invalidation-lifetime.log",
+    "sha256": "15bdde7faaba220f1d1273b970147c4482a01b733c77a8d46a6478b397f338f6",
+    "command": [
+      "python3",
+      "-B",
+      "test-presenter-invalidation-lifetime.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-render-lifecycle",
+    "exit_code": 0,
+    "seconds": 14.37,
+    "log": "tests/test-render-lifecycle.log",
+    "sha256": "d0cb44fba94722a57b63c8fb6f99c3e699e7768eb4517c5e19d9bcbfdc90c0cb",
+    "command": [
+      "python3",
+      "-B",
+      "test-render-lifecycle.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-render-video-admission",
+    "exit_code": 0,
+    "seconds": 1.13,
+    "log": "tests/test-render-video-admission.log",
+    "sha256": "17466672469e3f195bb2e8fa9ba02859e4f84c5ebb39a55790661a2d4136f75e",
+    "command": [
+      "python3",
+      "-B",
+      "test-render-video-admission.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-seamless-profile-migration",
+    "exit_code": 0,
+    "seconds": 3.15,
+    "log": "tests/test-seamless-profile-migration.log",
+    "sha256": "0858aaff3e9e1340fe4d777d56c823c5fa84b672f9644b8d51a9b0384bdbba1b",
+    "command": [
+      "python3",
+      "-B",
+      "test-seamless-profile-migration.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-seek-preview-origin",
+    "exit_code": 0,
+    "seconds": 2.51,
+    "log": "tests/test-seek-preview-origin.log",
+    "sha256": "5caf7ad573205ffb23400585a26977dbe2ab710ac68560da4ec615beeb17e71e",
+    "command": [
+      "python3",
+      "-B",
+      "test-seek-preview-origin.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-seek-timeline-marker",
+    "exit_code": 0,
+    "seconds": 3.08,
+    "log": "tests/test-seek-timeline-marker.log",
+    "sha256": "002ee1e755f9c70c8a95da436ef7c7ce10541f93226c16d457af4bf60dd220d9",
+    "command": [
+      "python3",
+      "-B",
+      "test-seek-timeline-marker.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-truehd-delivery",
+    "exit_code": 0,
+    "seconds": 55.8,
+    "log": "tests/test-truehd-delivery.log",
+    "sha256": "1fe79f2d6e8a520afe82b7e2aa437f9bec98db9d5942c75ef78b0aa91e671597",
+    "command": [
+      "python3",
+      "-B",
+      "test-truehd-delivery.py",
+      "--sanitize",
+      "--output",
+      "tests/truehd-generated"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-video-timeout-recovery",
+    "exit_code": 0,
+    "seconds": 33.1,
+    "log": "tests/test-video-timeout-recovery.log",
+    "sha256": "c3502fd80db653510d1e6d6e61c9a7c8f28e2859dbc665ca08c22398fe931d39",
+    "command": [
+      "python3",
+      "-B",
+      "test-video-timeout-recovery.py"
+    ],
+    "scope": "Unchanged host source fixture; not device/firmware verification."
+  },
+  {
+    "id": "test-seek-marker-review-retirement-preview",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "seconds": 2.57,
+    "log": "tests/test-seek-marker-review-retirement-preview.log",
+    "sha256": "5281598eb6fca8f6c9e0a13dd6a966e0df0a38155ed74887ed72c4cebd6b7162",
+    "command": [
+      "python3",
+      "-B",
+      "tools/test-seek-marker-review.py",
+      "--case",
+      "retirement-preview"
+    ],
+    "scope": "Unchanged host source fixture; not hardware or binary verification."
+  },
+  {
+    "id": "test-seek-marker-review-retirement-commit",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "seconds": 2.44,
+    "log": "tests/test-seek-marker-review-retirement-commit.log",
+    "sha256": "b612113c7f98b20b5020f7ebafbf0a8271d551e4416434481d6c251966cfa0ef",
+    "command": [
+      "python3",
+      "-B",
+      "tools/test-seek-marker-review.py",
+      "--case",
+      "retirement-commit"
+    ],
+    "scope": "Unchanged host source fixture; not hardware or binary verification."
+  },
+  {
+    "id": "test-seek-marker-review-queued-speed",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "seconds": 2.49,
+    "log": "tests/test-seek-marker-review-queued-speed.log",
+    "sha256": "c95ad4a83eb4349ca35cb80273b99db3b806e9ed6f5cbd198e0b449fadb104ad",
+    "command": [
+      "python3",
+      "-B",
+      "tools/test-seek-marker-review.py",
+      "--case",
+      "queued-speed"
+    ],
+    "scope": "Unchanged host source fixture; not hardware or binary verification."
+  },
+  {
+    "id": "test-seek-marker-review-rejected-queue-keeps-older",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "seconds": 2.44,
+    "log": "tests/test-seek-marker-review-rejected-queue-keeps-older.log",
+    "sha256": "4ce8e30c802419c9153dbb0011e302f46fc4b44a7a3eaf6222bff668803d4379",
+    "command": [
+      "python3",
+      "-B",
+      "tools/test-seek-marker-review.py",
+      "--case",
+      "rejected-queue-keeps-older"
+    ],
+    "scope": "Unchanged host source fixture; not hardware or binary verification."
+  },
+  {
+    "id": "test-seek-marker-review-chapter-supersession",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "seconds": 2.32,
+    "log": "tests/test-seek-marker-review-chapter-supersession.log",
+    "sha256": "b4373673a1faa1e0c0d16d488d4e874ba2cac51a04ef7e52059ab8167e06651a",
+    "command": [
+      "python3",
+      "-B",
+      "tools/test-seek-marker-review.py",
+      "--case",
+      "chapter-supersession"
+    ],
+    "scope": "Unchanged host source fixture; not hardware or binary verification."
+  },
+  {
+    "id": "test-seek-marker-review-stack-accurate-overlap",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "seconds": 2.47,
+    "log": "tests/test-seek-marker-review-stack-accurate-overlap.log",
+    "sha256": "30995aaf5f94a635739cf461c19111d16dd38c1d45020916a306389bd7151da2",
+    "command": [
+      "python3",
+      "-B",
+      "tools/test-seek-marker-review.py",
+      "--case",
+      "stack-accurate-overlap"
+    ],
+    "scope": "Unchanged host source fixture; not hardware or binary verification."
+  },
+  {
+    "id": "frame-pacing",
+    "exit_code": 0,
+    "log": "tests/frame-pacing.log",
+    "sha256": "6b693b6d25abe12d1b69f6f62be0fd246fedfbc9a3db494c36820968e0b90c8a",
+    "scope": "Current unchanged source and synthetic tests; host only.",
+    "command": [
+      "python3",
+      "frame-pacing"
+    ]
+  },
+  {
+    "id": "ddplus-parser-compile",
+    "exit_code": 0,
+    "log": "tests/ddplus-parser-compile.log",
+    "sha256": "b48c00e7426231a898e44d3e1211d03b5e59419fef3a05145091a37dc5196a20",
+    "scope": "Current unchanged source and synthetic tests; host only.",
+    "command": [
+      "g++",
+      "ddplus-parser-compile"
+    ]
+  },
+  {
+    "id": "ddplus-parser-synthetic-12",
+    "exit_code": 0,
+    "log": "tests/ddplus-parser-synthetic-12.log",
+    "sha256": "53dc1083de4d867205f3406073c5b499b67a60f2eb1f49841966565ca65ad7a3",
+    "scope": "Current unchanged source and synthetic tests; host only.",
+    "command": [
+      "ddplus-parser-tests",
+      "ddplus-parser-synthetic-12"
+    ]
+  }
+]

@@ -1,0 +1,10 @@
+refresh=23.976 sync=0 method=0 steady_skipped=0 wakeMax=100
+refresh=23.976 sync=1 method=0 steady_skipped=0 wakeMax=100
+refresh=47.952 sync=1 method=0 steady_skipped=0 wakeMax=100
+refresh=47.952 sync=1 method=2 steady_skipped=0 wakeMax=100
+refresh=59.9401 sync=0 method=0 steady_skipped=0 wakeMax=100
+refresh=60 sync=0 method=0 steady_skipped=0 wakeMax=100
+PASS cadence/reset/refresh/stall recovery and bounded skip events
+Rejected negative control
+Rejected negative control
+Rejected negative control

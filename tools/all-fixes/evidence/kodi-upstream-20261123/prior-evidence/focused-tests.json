@@ -1,0 +1,202 @@
+[
+  {
+    "id": "test-python-forced-shutdown",
+    "exit_code": 0,
+    "seconds": 1.57,
+    "evidence": {
+      "id": "tests/test-python-forced-shutdown.log",
+      "sha256": "67357884b47b2827fe257b422a8382be2dea9affd6f1abb252ca3c14bf303e29"
+    },
+    "command": [
+      "python3",
+      "-B",
+      "tools/test-python-forced-shutdown.py",
+      "--negative-control"
+    ],
+    "scope": "Host source fixture only; no release build or hardware validation."
+  },
+  {
+    "id": "test-lldv-vsif-suppress-setting",
+    "exit_code": 0,
+    "seconds": 0.56,
+    "evidence": {
+      "id": "tests/test-lldv-vsif-suppress-setting.log",
+      "sha256": "a19feee95053fa7034637adcef17133e0954570f7325adc0ba63d436224adfab"
+    },
+    "command": [
+      "python3",
+      "-B",
+      "tools/test-lldv-vsif-suppress-setting.py"
+    ],
+    "scope": "Host source fixture only; no release build or hardware validation."
+  },
+  {
+    "id": "test-hdr10-seamless-setting",
+    "exit_code": 0,
+    "seconds": 20.96,
+    "evidence": {
+      "id": "tests/test-hdr10-seamless-setting.log",
+      "sha256": "48fb8760bfd1e89ac0ed96dadd32c3e20299891bf59d95264c75950cce51eb16"
+    },
+    "command": [
+      "python3",
+      "-B",
+      "tools/test-hdr10-seamless-setting.py",
+      "--negative-control"
+    ],
+    "scope": "Host source fixture only; no release build or hardware validation."
+  },
+  {
+    "id": "test-seamless-profile-migration",
+    "exit_code": 0,
+    "seconds": 2.59,
+    "evidence": {
+      "id": "tests/test-seamless-profile-migration.log",
+      "sha256": "0858aaff3e9e1340fe4d777d56c823c5fa84b672f9644b8d51a9b0384bdbba1b"
+    },
+    "command": [
+      "python3",
+      "-B",
+      "tools/test-seamless-profile-migration.py"
+    ],
+    "scope": "Host source fixture only; no release build or hardware validation."
+  },
+  {
+    "id": "test-aml-native-settings",
+    "exit_code": 0,
+    "seconds": 26.53,
+    "evidence": {
+      "id": "tests/test-aml-native-settings.log",
+      "sha256": "abfd304607578c2d6f375180201a9d0ce44212f9ff80be4931f4f8186546b798"
+    },
+    "command": [
+      "python3",
+      "-B",
+      "tools/test-aml-native-settings.py",
+      "--negative-controls"
+    ],
+    "scope": "Host source fixture only; no release build or hardware validation."
+  },
+  {
+    "id": "test-aml-native-continuation",
+    "exit_code": 0,
+    "seconds": 18.01,
+    "evidence": {
+      "id": "tests/test-aml-native-continuation.log",
+      "sha256": "15f15569b8952486efd84ce4c0a5b55be54f5ad05abf8114e76f80f0a4b9922c"
+    },
+    "command": [
+      "python3",
+      "-B",
+      "tools/test-aml-native-continuation.py",
+      "--negative-controls"
+    ],
+    "scope": "Host source fixture only; no release build or hardware validation."
+  },
+  {
+    "id": "test-aml-dv-manager-dependency",
+    "exit_code": 0,
+    "seconds": 2.39,
+    "evidence": {
+      "id": "tests/test-aml-dv-manager-dependency.log",
+      "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+    },
+    "command": [
+      "python3",
+      "-B",
+      "tools/test-aml-dv-manager-dependency.py"
+    ],
+    "scope": "Host source fixture only; no release build or hardware validation."
+  },
+  {
+    "id": "test-aml-dv-preset-read",
+    "exit_code": 0,
+    "seconds": 2.65,
+    "evidence": {
+      "id": "tests/test-aml-dv-preset-read.log",
+      "sha256": "ddedc445ffe6370c4d2430ce36bc9103ef23188e0b324ae8b57c07eacf476b62"
+    },
+    "command": [
+      "python3",
+      "-B",
+      "tools/test-aml-dv-preset-read.py"
+    ],
+    "scope": "Host source fixture only; no release build or hardware validation."
+  },
+  {
+    "id": "test-aml-dv-setting-locks",
+    "exit_code": 0,
+    "seconds": 1.95,
+    "evidence": {
+      "id": "tests/test-aml-dv-setting-locks.log",
+      "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+    },
+    "command": [
+      "python3",
+      "-B",
+      "tools/test-aml-dv-setting-locks.py"
+    ],
+    "scope": "Host source fixture only; no release build or hardware validation."
+  },
+  {
+    "id": "test-aml-dv-options",
+    "exit_code": 0,
+    "seconds": 1.54,
+    "evidence": {
+      "id": "tests/test-aml-dv-options.log",
+      "sha256": "e7f694bcf6bfe21f474b4f2a5a97d80f5fa36d59e627fbc6d6e8bc39e11959cf"
+    },
+    "command": [
+      "python3",
+      "-B",
+      "tools/test-aml-dv-options.py"
+    ],
+    "scope": "Host source fixture only; no release build or hardware validation."
+  },
+  {
+    "id": "test-aml-lifecycle",
+    "exit_code": 0,
+    "seconds": 2.02,
+    "evidence": {
+      "id": "tests/test-aml-lifecycle.log",
+      "sha256": "da3632e61b90565553cef38cf5f8871ad87938371bc1abaeb92f1e4ba09a05bc"
+    },
+    "command": [
+      "python3",
+      "-B",
+      "tools/test-aml-lifecycle.py"
+    ],
+    "scope": "Host source fixture only; no release build or hardware validation."
+  },
+  {
+    "id": "test-aml-restart-hold",
+    "exit_code": 0,
+    "seconds": 2.06,
+    "evidence": {
+      "id": "tests/test-aml-restart-hold.log",
+      "sha256": "a5e601cf385ad789f1b1080ccff2a8428cd4fa04fa14d5e6620653ea3cbe3e42"
+    },
+    "command": [
+      "python3",
+      "-B",
+      "tools/test-aml-restart-hold.py"
+    ],
+    "scope": "Host source fixture only; no release build or hardware validation."
+  },
+  {
+    "id": "test-truehd-delivery",
+    "exit_code": 0,
+    "seconds": 28.65,
+    "evidence": {
+      "id": "tests/test-truehd-delivery.log",
+      "sha256": "1fe79f2d6e8a520afe82b7e2aa437f9bec98db9d5942c75ef78b0aa91e671597"
+    },
+    "command": [
+      "python3",
+      "-B",
+      "tools/test-truehd-delivery.py",
+      "--sanitize"
+    ],
+    "scope": "Host source fixture only; no release build or hardware validation."
+  }
+]

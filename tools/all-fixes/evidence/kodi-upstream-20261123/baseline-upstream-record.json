@@ -1,0 +1,30 @@
+{
+  "component": "kodi",
+  "baseline_commit": "5ee5e77fc07ae84012355e133ef66b530ea43569",
+  "baseline_tree": "a752e03e60bc2c3624190de63fc846c983c6310b",
+  "prior_upstream": "a4295421f270929315fea42b9e53b00c16e920a5",
+  "live_development": "efcb4dac04f9b2cfeb863154045602e768195ab2",
+  "live_stable": "e984c6c6749c50887c4f7d2049e9f47ace49fe45",
+  "development_commits_since_prior_pin": 14,
+  "manifest_sha256": "687a59f73b9f4b95a5ec7a583aeca04bfbbfb3e6348e1a96e0032ae5cb7da73d",
+  "catalog_sha256": "3e20514b5251ddfa1f796441680e37814b20aa4499617492127d64b769d05ba3",
+  "imports": [
+    {
+      "id": "workflow-payload.bundle",
+      "sha256": "847c8513b5106f8e4dbfea138377e0ed47a7eeba6e9c28c06cb4566a6fa16c65"
+    },
+    {
+      "id": "today-payload.bundle",
+      "sha256": "15763dbced392c885e5ace5bd6f0f4ddf846216215b461e6124961e151219f88"
+    },
+    {
+      "id": "kodi-current-source-tree.bundle",
+      "sha256": "e0488d6a6bfd9448859aae716c4ba8faec2eb1fde971690fc095c3c177ff992c"
+    },
+    {
+      "id": "kodi-diagnostic-fixture.bundle",
+      "sha256": "0160c372eff8394ea4494da592b1539c7437779f99b2262c5dfc72aa3cf6d88c"
+    }
+  ],
+  "old_repos_or_refs_changed": false
+}

@@ -1,0 +1,17 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 4 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 4 tests from TestHevcSei
+[ RUN      ] TestHevcSei.TrailingBytesAfterStopBit
+[       OK ] TestHevcSei.TrailingBytesAfterStopBit (0 ms)
+[ RUN      ] TestHevcSei.Hdr10PlusPeakMatrices
+[       OK ] TestHevcSei.Hdr10PlusPeakMatrices (1 ms)
+[ RUN      ] TestHevcSei.Hdr10PlusChecksBothPeakMatrixDimensions
+[       OK ] TestHevcSei.Hdr10PlusChecksBothPeakMatrixDimensions (0 ms)
+[ RUN      ] TestHevcSei.Hdr10PlusRejectsTruncationAndAcceptsFollowingSei
+[       OK ] TestHevcSei.Hdr10PlusRejectsTruncationAndAcceptsFollowingSei (1 ms)
+[----------] 4 tests from TestHevcSei (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test suite ran. (4 ms total)
+[  PASSED  ] 4 tests.

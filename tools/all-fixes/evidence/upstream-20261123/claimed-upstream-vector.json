@@ -1,0 +1,21 @@
+{
+  "accepted_user_features": "retain baseline UX11 and separate Jellyfin; no UX12/pre-roll",
+  "all_seven_final_manifest_upstream_commits_must_equal_this_vector": true,
+  "claimed_run_id": "20261123T160146Z-453ea96b6347",
+  "coordinator_hash_not_recomputed_from_reduced_vector": true,
+  "coordinator_inputvector_hash": "bbd0d04c0fc1af77c610ba9cd090baea5c23551d46227a9afd3a83291a505877",
+  "discovery_is_not_source_acceptance": true,
+  "latest_release": {
+    "head": "d60b91e991a5c0367367f86abfdd83c62b27f449",
+    "tag": "T4c"
+  },
+  "source_vector": {
+    "ap6275s": "f08f1b88be470d07667a671b5c6b7f4e198a75f8",
+    "framework": "473c9808dea2a9aa9ba1b42a09adb26b4e601f5d",
+    "kernel": "605cf2407df57a850fc7db29e514c2de41b5ebc7",
+    "kodi": "efcb4dac04f9b2cfeb863154045602e768195ab2",
+    "media_modules": "10d1e8bfc22068c81a5b10b0d89b00f8b15c9502",
+    "settings": "a9f4e6980f5e65a3120d43198d9f4a337e526ffb",
+    "skin": "94ccb38311d52a6244c71a2748379cee59e5d736"
+  }
+}

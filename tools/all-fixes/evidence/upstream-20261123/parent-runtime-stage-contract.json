@@ -1,0 +1,24 @@
+{
+  "actual_resolved_new_config_and_exports": "parent build receipt required; checked-in config is not asserted equal to generated .config",
+  "binary_or_hardware_claim": false,
+  "checked_in_kernel_config": {
+    "sha256": "c0216828c25352984c8b287227e51ab85dfd9b186d633c7644aed2d98cb145af",
+    "unchanged_since_sealed_source": true
+  },
+  "companion": "preserve existing repaired user addons and addon_data; separate source artifact/manual authorized hash gate only, no SYSTEM-contained addon or fresh-install automatic hook",
+  "dovi_source": {
+    "all_other_helper_code_and_profiles_unchanged": true,
+    "installed_mode": "0755",
+    "installed_path": "/usr/lib/coreelec/dovi5-prepare",
+    "path": "projects/Amlogic-ce/packages/linux-drivers/amlogic/dovi5-prepare/scripts/dovi5_prepare.py",
+    "sha256": "c18db434e720226c7f23307593cdc542a487bb2f8ddaff2b77c7f7ff3266f0d9"
+  },
+  "framework_upstream": "473c9808dea2a9aa9ba1b42a09adb26b4e601f5d",
+  "kernel_recipe": {
+    "sha256": "51e466191176f4abea81dcc01224766c1565edac2a0ac86a779b3dbe527cd433",
+    "unchanged_since_sealed_source": true
+  },
+  "native_plain_sources": "four source/*.py (calibration/service/public_servers/https_receive), mode0644 per unchanged recipe; no native pyc conversion",
+  "passed": true,
+  "settings_bytecode": "fresh target-compatible existing helper on complete resources/lib and oe.py, runtime paths per parent packaging config; no old pyc copy and no full001 replay on sealed integrated source"
+}

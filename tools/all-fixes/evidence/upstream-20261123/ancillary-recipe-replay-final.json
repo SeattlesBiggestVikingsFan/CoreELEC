@@ -1,0 +1,51 @@
+{
+  "ap6275s": {
+    "accepted_tree": "c5604bdf4bae9f30ccf4e69b892a8c6109302be3",
+    "canonical_post_unpack_stage": "rename dhd_sdio.c to dhd_sdio_bus.c before compilation (baseline integrated recipe explicitly requires bus filename)",
+    "canonical_recipe_patches": [
+      {
+        "path": "projects/Amlogic-ce/packages/linux-drivers/amlogic/ap6275s-aml/patches/ap6275s-aml-001-ce-build-identity.patch",
+        "sha256": "8e071d8187d79dedb3c9011f963b84c6e410318276a07bdac6676b790b9c5896"
+      },
+      {
+        "path": "projects/Amlogic-ce/packages/linux-drivers/amlogic/ap6275s-aml/patches/ap6275s-aml-002-ce-runtime-integration.patch",
+        "sha256": "20c62cbe87c5e009732a4351149cdd37216e7ff448c065b8815f3f758f6db133"
+      },
+      {
+        "path": "projects/Amlogic-ce/packages/linux-drivers/amlogic/ap6275s-aml/patches/ap6275s-aml-003-ce-profile-and-config.patch",
+        "sha256": "5f6d6df80d38d90b09d40cddbfcfb02eea9cb59a729147b8dd6b7f62a1629f7d"
+      },
+      {
+        "path": "projects/Amlogic-ce/packages/linux-drivers/amlogic/ap6275s-aml/patches/ap6275s-aml-004-remove-key-debug-prints.patch",
+        "sha256": "1b24355bf200d33facf29ff5de5f483c7b54cbe73980b8cdd8fb08e4eb676156"
+      },
+      {
+        "path": "projects/Amlogic-ce/packages/linux-drivers/amlogic/ap6275s-aml/patches/ap6275s-aml-005-legacy-event-mask.patch",
+        "sha256": "1422f689742421dadc0b426a850016c777e2bce1c549a2059202d6bc6ae56d60"
+      },
+      {
+        "path": "projects/Amlogic-ce/packages/linux-drivers/amlogic/ap6275s-aml/patches/ap6275s-aml-006-no-rxf0ovfl-reinit.patch",
+        "sha256": "44275c00efb70ee1d164dae0dcdea0839d68d26f42ac75084b8639a6154b1506"
+      }
+    ],
+    "exact_tree_and_mode_equal": true,
+    "patched_upstream_tree": "c5604bdf4bae9f30ccf4e69b892a8c6109302be3",
+    "remaining_delta_stat": ""
+  },
+  "media_modules": {
+    "accepted_tree": "a4fa774d0b6e3bd32c50a38a87b63027d11229eb",
+    "canonical_recipe_patches": [
+      {
+        "path": "projects/Amlogic-ce/packages/linux-drivers/amlogic/media_modules-aml/patches/002-fix-building.patch",
+        "sha256": "ac8d9aa49048982c00e3ebc74d2f23081de0cf5d3cef41dbcddf81fca5c782ae"
+      },
+      {
+        "path": "projects/Amlogic-ce/packages/linux-drivers/amlogic/media_modules-aml/patches/003-multi-decoders-limit-maximum-number-of-decoder.patch",
+        "sha256": "b4eb4211c6de11e02be45378d26babab42af95d5203b978173c647a78a173702"
+      }
+    ],
+    "exact_tree_and_mode_equal": true,
+    "patched_upstream_tree": "a4fa774d0b6e3bd32c50a38a87b63027d11229eb",
+    "remaining_delta_stat": ""
+  }
+}

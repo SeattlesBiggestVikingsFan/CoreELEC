@@ -1,0 +1,8 @@
+PASS 27 checks; actual IsInterruptibleDownload, CURL fixture
+PASS semantic control owner-ignored: a generated image does not download
+PASS semantic control flipped-ignored: flipped overrides the owner, as DecodeImageURL does
+PASS semantic control pvr-generated: a PVR-owned HTTP image downloads
+PASS semantic control any-protocol: other protocols and local files do not download
+PASS semantic control wrapper-unread: a wrapped HTTP image downloads
+PASS semantic control no-substitution: an image substituted to another protocol does not download
+PASS semantic control vfs-ignored: a protocol that a VFS add-on serves does not download

@@ -1,0 +1,51 @@
+PASS: pre-arm only when no DV output, VS10 or HDR10+ to DV route can take the stream
+PASS: knobs on (bypass, BT.2020 SDR, gate) / off (gate, cancel, BT.2020 SDR, bypass); missing knobs skipped
+PASS: pre-arm only with setting+knob, reports kernel rejection, cancel tolerates missing knob (ASan/UBSan)
+PASS: only the latest HDR10 opener cancels; a rejected successor takes over a pending pre-arm
+PASS: always-on sticky SDR suppresses restore only while DV disabled; non-sticky restore, playback/pending and Off/OnDemand guards retained
+PASS: GUI restore waits for every opened codec's decoder start; release never underflows
+PASS: setting directly follows HDR re-assert, defaults on, hidden until kernel support, EN strings
+PASS: startup apply, change callback routing and DV-independent visibility
+PASS: codec arms only PQ/BT.2020 HDR10 (or DV base layer) on a plain HDR10 route after open and cancels its own on close; GUI restore pending from open to decoder start
+REJECTED: ignore missing knob
+REJECTED: invert setting
+REJECTED: BT.2020 SDR without bypass
+REJECTED: disable leaves pre-arm
+REJECTED: pre-arm ignores setting
+REJECTED: pre-arm hides rejection
+REJECTED: route ignores DV output
+REJECTED: route ignores VS10
+REJECTED: route ignores HDR10+ convert
+REJECTED: route admits DV stream
+REJECTED: old close cancels
+REJECTED: no takeover
+REJECTED: arm outside lock
+REJECTED: owner cancel outside lock
+REJECTED: setting cancel outside lock
+REJECTED: gate ignores missing node
+REJECTED: enabled leaves gate off
+REJECTED: disabled leaves gate on
+REJECTED: gate enabled before bypass
+REJECTED: gate disabled after cancel
+REJECTED: GUI restore skips DV-disabled
+REJECTED: GUI restore during playback
+REJECTED: GUI restore while codec pending
+REJECTED: pending release underflows
+REJECTED: pending not counted
+REJECTED: DV-disabled not reported as switch
+REJECTED: sticky bypass restores IPT
+REJECTED: sticky hold suppresses enabled DV
+REJECTED: HDR10+ armed
+REJECTED: DV route armed
+REJECTED: close cancels any owner
+REJECTED: HLG armed
+REJECTED: no close cancel
+REJECTED: open not pending
+REJECTED: decoder start keeps pending
+REJECTED: close keeps pending
+REJECTED: moved before re-assert setting
+REJECTED: default off
+REJECTED: parented to DV type
+REJECTED: no startup apply
+REJECTED: no callback
+REJECTED: no change routing

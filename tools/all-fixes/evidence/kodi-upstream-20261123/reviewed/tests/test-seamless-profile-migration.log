@@ -1,0 +1,6 @@
+PASS: fresh/old false/old true once, reentrant callbacks, persisted Off, future marker, save failure rollback/retry and missing definitions
+REJECTED: force every restart
+REJECTED: old Off preserved instead of migrated
+REJECTED: save failure hidden
+REJECTED: marker not persisted
+REJECTED: failed save leaves marker complete

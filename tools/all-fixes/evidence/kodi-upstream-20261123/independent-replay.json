@@ -1,0 +1,54 @@
+{
+  "upstream_commit": "efcb4dac04f9b2cfeb863154045602e768195ab2",
+  "candidate_commit": "52117bc6027fbca1edfdd508661edba2446a1727",
+  "tree": "f2fc279ff91b8ebaa358aa4e7b9559168048d6d7",
+  "all_paths_content_and_modes_exact": true,
+  "entries": 9897,
+  "feature_delta_commits_replayed": [
+    "56bbf07d3e596394831914c34c9050509ba1cd55",
+    "540726f0a691dc93cb9b75d556750c2e44bbfd52",
+    "e3cf5b037b86c278ee9532f7e8021cd39d9b3d4e",
+    "57c0942a375efc2cdda8e20f1bdfb6b0a737dd31",
+    "7d2bbf0df643641a6083ee05a5b629f08bc96d98",
+    "7ec4ecf071692ed2a9122f6f0d0d26ae8ea8c0c1",
+    "05b0e0d290e1c77f81b31174ca381d70bd58eab3",
+    "adb42e1fc3ae8d14da57e18796e9f503f49cc78c",
+    "d29d381ed4ff7e8f6235890a4d8156188f1c16bb",
+    "3bedefcfcc86744f76ca746a0c5262cdda7e9913",
+    "4ccf49f055c2e4f732e267cca9a53caf24037dac",
+    "8815564bf5b3dea02a899fc134330795d49ce21d",
+    "2f589a22d12c9f6e154a29ca69ec4e2738b11f4d",
+    "4b14ba8d8ee570cd20b09639f4c4f37cea71a3b8",
+    "525196e1087fd260972b039d519c2a33f29ea16a",
+    "7078cd6007efadbc2c647b877b69f1e267fb56d8",
+    "fc3f9ed71546a7d5c839375c51cfc758144641a0",
+    "1862d068cf2927164ed1f788f96a5cc6c6df2969",
+    "52117bc6027fbca1edfdd508661edba2446a1727"
+  ],
+  "fresh_repository": true,
+  "network_remotes": [],
+  "alternates": false,
+  "focused_runners": 22,
+  "native_test_groups": 2,
+  "all_passed": true,
+  "receipt_resume": "Retained passed fixture receipts only after verifying exact source tree, clean checkout, fixture SHA256 and original log hashes; completed remaining fixtures with evidence-local system headers restricted to PCM to avoid global NTFS header-search overhead.",
+  "unchanged_original_9a90_diagnostic_gate": "Passed with unchanged original script/assertions; original fixture remains local-only.",
+  "exports": [
+    {
+      "id": "exports/upstream-graph.bundle",
+      "sha256": "46fef22718d1f196de1e32f39b8852eac88e96d29f9f6969d50277c3b7b8d098",
+      "bytes": 70026570
+    },
+    {
+      "id": "exports/upstream-new-ref-deltas.bundle",
+      "sha256": "36f3052c68be065d293fdb6914cb3f0d0c91480d0d94e028e9f3a59239df0e41",
+      "bytes": 356157
+    },
+    {
+      "id": "exports/upstream-payload.bundle",
+      "sha256": "7a0e997a27b15287fbe4a5b85644ff9e587d7264814a16119f905695abb1c3e8",
+      "bytes": 45162507
+    }
+  ],
+  "publication_policy": "Only reviewed maintained new refs; graph/payload/diagnostic archives never published."
+}

@@ -1,0 +1,168 @@
+{
+  "schema": 1,
+  "component": "kodi",
+  "baseline": {
+    "commit": "fce97af5c969859be1d42fdebb19b727b6d4b5be",
+    "tree": "80398010a104b30fc2a0d21eaf2af6567a3f685f"
+  },
+  "integration": {
+    "ref": "integration/all-fixes-today-20261122",
+    "head": "5ee5e77fc07ae84012355e133ef66b530ea43569",
+    "tree": "a752e03e60bc2c3624190de63fc846c983c6310b"
+  },
+  "features": [
+    {
+      "id": "python-forced-shutdown",
+      "status": "included",
+      "default": true,
+      "ref": "fix/today-python-shutdown",
+      "base": "fce97af5c969859be1d42fdebb19b727b6d4b5be",
+      "head": "8ef79ccdec5243ec0803f2c608420f4979d51d25",
+      "ordered_commits": [
+        "8ef79ccdec5243ec0803f2c608420f4979d51d25"
+      ],
+      "depends_on": [],
+      "source_pins": [
+        "2abc372bd7584d9e7575811a6fc730a5bfe9ce4f"
+      ],
+      "source_export_sha256": "493359a1c71153332b4b11baab0715dabf0077e55a5d80af89e077d7d90c2ea5",
+      "required_runtime": "CPython 3.13.18 exported PyThreadState_SetAsyncExc",
+      "paths": [
+        "xbmc/interfaces/python/PythonInvoker.cpp",
+        "tools/test-python-forced-shutdown.py"
+      ],
+      "branch": "fix/today-python-shutdown",
+      "experimental": false,
+      "commits": [
+        "8ef79ccdec5243ec0803f2c608420f4979d51d25"
+      ]
+    },
+    {
+      "id": "lldv-vsif-suppression",
+      "status": "included",
+      "default": true,
+      "ref": "feature/today-lldv-vsif-suppression",
+      "base": "fce97af5c969859be1d42fdebb19b727b6d4b5be",
+      "head": "9cdf90502deda6026cdad45b6bbb7172f90f4de0",
+      "ordered_commits": [
+        "4c36d29c89cefa2e8d596f180706eb790eb99c38",
+        "9cdf90502deda6026cdad45b6bbb7172f90f4de0"
+      ],
+      "depends_on": [],
+      "source_pins": [
+        "7944fad16e5b2344d9bfc6b37ceaea146d33a3fb",
+        "ac278966543eabcebae5db1945e407273cfba800"
+      ],
+      "source_export_sha256": "3f491e615fdb925840fcb88f4597026cd47efa39ce5d45c55873f5f832caf80b",
+      "paths": [
+        "addons/resource.language.en_gb/resources/strings.po",
+        "system/settings/settings.xml",
+        "tools/test-lldv-vsif-suppress-setting.py",
+        "xbmc/settings/Settings.h",
+        "xbmc/utils/AMLLldvVsifPolicy.h",
+        "xbmc/utils/AMLUtils.cpp",
+        "xbmc/utils/AMLUtils.h",
+        "xbmc/windowing/amlogic/DolbyVisionAML.cpp",
+        "tools/test-aml-native-continuation.py",
+        "tools/test-aml-native-settings.py",
+        "tools/test-hdr10-seamless-setting.py"
+      ],
+      "existing_baseline_prerequisites": [
+        "accepted HDR v20/default-On migration",
+        "sticky SDR GUI",
+        "same seamless gate writer"
+      ],
+      "optional_kernel_capability": "lldv_vsif_suppress; generic kernel default Off",
+      "settings_defaults": {
+        "suppression": false,
+        "policy": "opt-in",
+        "adopted_marker": false,
+        "first_start": "adopt existing kernel value once; do not change signaling"
+      },
+      "branch": "feature/today-lldv-vsif-suppression",
+      "experimental": false,
+      "commits": [
+        "4c36d29c89cefa2e8d596f180706eb790eb99c38",
+        "9cdf90502deda6026cdad45b6bbb7172f90f4de0"
+      ]
+    }
+  ],
+  "rebase_ownership": {
+    "system/settings/settings.xml": "Insert exact owner setting blocks immediately after seamless toggle and before existing hidden HDR migration marker; preserve all previous blocks.",
+    "xbmc/settings/Settings.h": "Insert exact owner suppression declarations beside existing HDR transition declaration; preserve migration declaration.",
+    "other_owner_paths": "Unchanged owner hunks applied directly; do not import older HDR parent 45198."
+  },
+  "pending": [
+    "HDR10+ hidden visibility diagnosis/repair",
+    "pre-roll v13c",
+    "VFM/parser/decoder playback cures"
+  ],
+  "already_existing": [
+    "HDR10+ visible converter; accepted configuration trial, not a new code delta"
+  ],
+  "hardware_scope": "Prior owner trials only; current source candidate and generic default-Off path not hardware-tested.",
+  "new_binary_built": false,
+  "old_b0_or_bd569_reused": false,
+  "existing_refs_tags_preserved": {
+    "refs/heads/archive/accepted-upstream/pr-151": "674be07da5f888a12873072d387dab3b198dd428",
+    "refs/heads/archive/current-tree-payload": "a94ac06fb8583a91a9878b55f61cb3c1d43d254f",
+    "refs/heads/archive/diagnostic-fixture-payload": "12b83a936cd7f1326bbd452fe0a5b46c4edcf301",
+    "refs/heads/archive/original-integration": "0aff06e05c4faada67c96a791f8a7e5f3485a29f",
+    "refs/heads/archive/published-pr-145": "fdd11b64010d509b570fdb0400f4f483844dc77d",
+    "refs/heads/archive/published-pr-146": "57282b8191469b4abd8e81b1c752ae0c920c3f1f",
+    "refs/heads/archive/published-pr-147": "fc74d84ac51731259ab58aeba3c3350b7cc16eb0",
+    "refs/heads/archive/published-pr-148": "11ab17291932848c8c847627d91515bb7872beff",
+    "refs/heads/archive/published-pr-149": "1caca6978bbeba5a5343cd6d82bdbf65d1b0c275",
+    "refs/heads/archive/published-pr-150": "c66e8b493e23318f7d538eaa3fd1a922c52b8513",
+    "refs/heads/archive/published-pr-151": "674be07da5f888a12873072d387dab3b198dd428",
+    "refs/heads/archive/published-pr-153": "7d09dbc7932f7b9deb47c0ffa097405417692f73",
+    "refs/heads/archive/published-pr-156": "eefe92d249c72edbd2f216b0b6ca3944e85e69b3",
+    "refs/heads/archive/workflow-payload-0": "d34a50f8159a5eb1c61b05a6db9168eb684a84c9",
+    "refs/heads/archive/workflow-payload-1": "138f3f7b535e04d575b81402abe0d952767fd2f8",
+    "refs/heads/archive/workflow-payload-10": "92696175678b37733a0b11dcd1b133479b378f52",
+    "refs/heads/archive/workflow-payload-11": "e68acc593c356f04b62e7e0e047ceecf6f7397cd",
+    "refs/heads/archive/workflow-payload-12": "86bba50bc877e189b7ed79c162a5504b2640f349",
+    "refs/heads/archive/workflow-payload-13": "702be9d33da54b42af49857f36f496fd77c244fa",
+    "refs/heads/archive/workflow-payload-14": "fe47d997b3602ab24fcaa36f25afad95eccf9e41",
+    "refs/heads/archive/workflow-payload-15": "894ea789ff05b9f9bfe215095806a0fd4cb3cfb6",
+    "refs/heads/archive/workflow-payload-2": "5bd3c8d8c93cb346edd69612dfddd3ccd1fce28d",
+    "refs/heads/archive/workflow-payload-3": "6c8d90e50516d02590da2dcbbb8de38fac2cf79e",
+    "refs/heads/archive/workflow-payload-4": "0381b998c136166cddcc0a0ce0c875e9981fd34d",
+    "refs/heads/archive/workflow-payload-5": "17c551add911bc89e7df28b75348910defaa8666",
+    "refs/heads/archive/workflow-payload-6": "0f63ffa66d47a2312faabdd9b3f3b5845e25a6dd",
+    "refs/heads/archive/workflow-payload-7": "84c2c13ba44e77bdf0ff2f55239f007bcae20cb7",
+    "refs/heads/archive/workflow-payload-8": "f9ef58e37327f71a905f79c105f46551d880e114",
+    "refs/heads/archive/workflow-payload-9": "71f60aef8b7f7fdcdd86904975c5d2f8f7b890a4",
+    "refs/heads/baseline/published-fce97": "fce97af5c969859be1d42fdebb19b727b6d4b5be",
+    "refs/heads/combined-playback-hdr-20261122-diagnostic-baseline": "9a90ccab8904ef1cf98b18bc7d1348cf469f33f2",
+    "refs/heads/feature/hdr-v20": "6ab06b16530c3ac3618a71336ddc2efc2905a2be",
+    "refs/heads/feature/manual-lldv": "f0022c9ff4c196b4fdd085cbcd7fa13f8ef1c88d",
+    "refs/heads/feature/numbered-frame-tools": "8882c7b0a618cec2e76893f7324bc81038de58eb",
+    "refs/heads/fix/accepted-fixture-union": "83bf4c44adc22a4af150534ff222ac74ca206766",
+    "refs/heads/fix/audio-pause-transport": "a28d115db0d7a552bba31cbf3c4bfe6fbb86d22d",
+    "refs/heads/fix/ddplus-safety": "24c21d115a46cf3a0e86c275fcba0f7be2ce7cb6",
+    "refs/heads/fix/distribution-build": "ac12f1fbb10370a4210833929ecc87d71cc7334e",
+    "refs/heads/fix/jvc-sticky-sdr": "cc1bf5abdc52c878a76f42bcb6ed7a17a272952e",
+    "refs/heads/fix/pause-presenter": "fec0b610922a655207e5db6a0f08e79399f73e44",
+    "refs/heads/fix/retained-audio-admission": "36fae96028539369cbaf016e0e5d4d25ef846d9c",
+    "refs/heads/fix/seek-queue-prerequisite": "dbcac3753798892dea27df07e791a2fffad49b08",
+    "refs/heads/fix/seek-ux": "9128f66dda003e5781f6e27ec162cd1ede1de117",
+    "refs/heads/fix/startup-gate": "f01e69ddc8cc7442e399d213e5c38655a817ffbf",
+    "refs/heads/fix/trickplay-reanchor": "d7fbe0d1696e7fc3ffceb6a38060146debb05b43",
+    "refs/heads/integration/all-fixes": "fce97af5c969859be1d42fdebb19b727b6d4b5be",
+    "refs/heads/upstream-dev": "efcb4dac04f9b2cfeb863154045602e768195ab2",
+    "refs/heads/upstream-dev-observed-today": "efcb4dac04f9b2cfeb863154045602e768195ab2",
+    "refs/heads/upstream-validated": "a4295421f270929315fea42b9e53b00c16e920a5",
+    "refs/tags/release/original-0aff-source": "0aff06e05c4faada67c96a791f8a7e5f3485a29f",
+    "refs/tags/release/reconstructed-0aff-source-equivalent": "05271cabf039c8e9c7971667a7eb5ccd34bab9c7"
+  },
+  "fixture_adaptation": {
+    "original_failures": [
+      "HDR negative-control adjacent-line anchor",
+      "missing new VSIF apply/support mocks in two native fixtures"
+    ],
+    "changes": "Only two mutation anchors and new API mocks; add a native VSIF dispatch case.",
+    "existing_assertions_removed": 0,
+    "original_truehd_fixture_source_changed": false
+  }
+}

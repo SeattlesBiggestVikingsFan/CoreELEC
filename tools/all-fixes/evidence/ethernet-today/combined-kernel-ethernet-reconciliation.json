@@ -1,0 +1,28 @@
+{
+  "accepted_a3_ethernet_paths": {
+    "drivers/net/ethernet/stmicro/stmmac/dwmac-meson.c": {
+      "accepted_git_mode": "100644",
+      "byte_mode_identical": true,
+      "combined_git_mode": "100644",
+      "sha256": "e57c4cac7a1a8dd59deedc6be91afb267506a82ec61fa4c3580a6b95c387c521"
+    },
+    "drivers/net/ethernet/stmicro/stmmac/stmmac_main.c": {
+      "accepted_git_mode": "100644",
+      "byte_mode_identical": true,
+      "combined_git_mode": "100644",
+      "sha256": "d11af416b717e7100f8c172f5c5a48f19322881f6900ef0c31dfb0bf1100818c"
+    },
+    "include/linux/stmmac.h": {
+      "accepted_git_mode": "100644",
+      "byte_mode_identical": true,
+      "combined_git_mode": "100644",
+      "sha256": "3f9b69ed609a34216a1b4f37bb9c800766602d61aaa3b6d79abdac270bbcb32b"
+    }
+  },
+  "combined_commit": "2b17ade58f733854821be8b18cf66f5d249bc727",
+  "combined_kernel_sha256": "3b3a0180cba8d510247752a1fee18438f19204c7ad7e4b0df8ced69f89dfebbd",
+  "combined_tree": "2de60b436acf0c6289449c53eee6f842d176d4d2",
+  "new_ethernet_kernel_source_delta": [],
+  "new_tests_build_patch_device_or_owner_writes": false,
+  "not_asserted": "No binary-wide or configuration/module ABI equivalence; no claim a3a was built from current2b17."
+}

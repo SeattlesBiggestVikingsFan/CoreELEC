@@ -1,0 +1,94 @@
+{
+  "scope": "All new topic changed blobs and commit metadata, not inherited historic history.",
+  "findings": [],
+  "features": [
+    {
+      "feature": "seek-queue",
+      "changed_paths": 2,
+      "diff_check": "passed",
+      "patch_id": "eb9742ba42bca832afaea0114ee96d532669d08e"
+    },
+    {
+      "feature": "manual-lldv",
+      "changed_paths": 8,
+      "diff_check": "passed",
+      "patch_id": "19445c8ab2ebe35182284a488a38ec623965d741"
+    },
+    {
+      "feature": "pause-presenter",
+      "changed_paths": 11,
+      "diff_check": "passed",
+      "patch_id": "b0e72c3ef0e08ffa17ca28a434519e0de0d98877"
+    },
+    {
+      "feature": "seek-ux",
+      "changed_paths": 13,
+      "diff_check": "passed",
+      "patch_id": "043afc9ef9f7f62d801876b3c5744d445f89f08b"
+    },
+    {
+      "feature": "trickplay-reanchor",
+      "changed_paths": 2,
+      "diff_check": "passed",
+      "patch_id": "730fd57a2caf0fa7b1ed141b9bf4cc491f5b0fe0"
+    },
+    {
+      "feature": "startup-gate",
+      "changed_paths": 3,
+      "diff_check": "passed",
+      "patch_id": "68a843db585ee6d27e94c99b6ce7122f7feb763a"
+    },
+    {
+      "feature": "hdr-v20",
+      "changed_paths": 11,
+      "diff_check": "passed",
+      "patch_id": "788536b1054679514346ccbc891e04943eb20578"
+    },
+    {
+      "feature": "jvc-sticky-sdr",
+      "changed_paths": 1,
+      "diff_check": "passed",
+      "patch_id": "1d0400e598791a7ad8f098ccb50647ff0b3d9aba"
+    },
+    {
+      "feature": "ddplus-safety",
+      "changed_paths": 10,
+      "diff_check": "passed",
+      "patch_id": "e4af3ee5d57339d0f280917ea7866d5e499ef888"
+    },
+    {
+      "feature": "audio-pause-transport",
+      "changed_paths": 21,
+      "diff_check": "passed",
+      "patch_id": "ff349d66fc5ad9f20c76472ed881260b7cd0b705"
+    },
+    {
+      "feature": "retained-audio-admission",
+      "changed_paths": 2,
+      "diff_check": "passed",
+      "patch_id": "ae1ad8547040dd1b2e07d68f461007b291f01b00"
+    },
+    {
+      "feature": "numbered-frame-tools",
+      "changed_paths": 11,
+      "diff_check": "passed",
+      "patch_id": "36afa7683d7ad2025a0332c19f9430b64c6059f0"
+    },
+    {
+      "feature": "distribution-build",
+      "changed_paths": 2,
+      "diff_check": "passed",
+      "patch_id": "a85af6644a0672b6cb55050aa2546e90095515b8"
+    },
+    {
+      "feature": "fixture-union",
+      "changed_paths": 21,
+      "diff_check": "passed",
+      "patch_id": "7182670b94e7d94aa203e78d57a440f9cd51ee27"
+    }
+  ],
+  "compiled_or_private_payloads_added": false,
+  "device_or_sdk_access": false,
+  "publication_authorized": false,
+  "raw_local_evidence_automatically_public": false
+}

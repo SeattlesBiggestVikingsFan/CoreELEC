@@ -1,0 +1,312 @@
+{
+  "upstream_commit": "efcb4dac04f9b2cfeb863154045602e768195ab2",
+  "prior_upstream": "a4295421f270929315fea42b9e53b00c16e920a5",
+  "seventeen_prior_catalog_topics": 17,
+  "sixteen_remaining_delta_topics": 16,
+  "features": [
+    {
+      "id": "seek-queue",
+      "status": "included",
+      "old_ref": "fix/seek-queue-prerequisite",
+      "old_commits": [
+        "dbcac3753798892dea27df07e791a2fffad49b08"
+      ],
+      "new_ref": "fix/seek-queue-prerequisite-upstream-20261123",
+      "new_commits": [
+        "56bbf07d3e596394831914c34c9050509ba1cd55"
+      ],
+      "original_patch_id": "eb9742ba42bca832afaea0114ee96d532669d08e",
+      "replayed_patch_id": "eb9742ba42bca832afaea0114ee96d532669d08e",
+      "patch_id_identical": true,
+      "upstream_equivalent": false,
+      "reason": "Accepted delta remains absent from canonical dev; no empty cherry-pick or SHA-only skip.",
+      "resolution": "Applied without conflict."
+    },
+    {
+      "id": "manual-lldv",
+      "status": "included",
+      "old_ref": "feature/manual-lldv",
+      "old_commits": [
+        "f0022c9ff4c196b4fdd085cbcd7fa13f8ef1c88d"
+      ],
+      "new_ref": "feature/manual-lldv-upstream-20261123",
+      "new_commits": [
+        "540726f0a691dc93cb9b75d556750c2e44bbfd52"
+      ],
+      "original_patch_id": "19445c8ab2ebe35182284a488a38ec623965d741",
+      "replayed_patch_id": "19445c8ab2ebe35182284a488a38ec623965d741",
+      "patch_id_identical": true,
+      "upstream_equivalent": false,
+      "reason": "Accepted delta remains absent from canonical dev; no empty cherry-pick or SHA-only skip.",
+      "resolution": "Applied without conflict."
+    },
+    {
+      "id": "pause-presenter",
+      "status": "included",
+      "old_ref": "fix/pause-presenter",
+      "old_commits": [
+        "fec0b610922a655207e5db6a0f08e79399f73e44"
+      ],
+      "new_ref": "fix/pause-presenter-upstream-20261123",
+      "new_commits": [
+        "e3cf5b037b86c278ee9532f7e8021cd39d9b3d4e"
+      ],
+      "original_patch_id": "b0e72c3ef0e08ffa17ca28a434519e0de0d98877",
+      "replayed_patch_id": "b0e72c3ef0e08ffa17ca28a434519e0de0d98877",
+      "patch_id_identical": true,
+      "upstream_equivalent": false,
+      "reason": "Accepted delta remains absent from canonical dev; no empty cherry-pick or SHA-only skip.",
+      "resolution": "Applied without conflict."
+    },
+    {
+      "id": "seek-ux",
+      "status": "included",
+      "old_ref": "fix/seek-ux",
+      "old_commits": [
+        "9128f66dda003e5781f6e27ec162cd1ede1de117"
+      ],
+      "new_ref": "fix/seek-ux-upstream-20261123",
+      "new_commits": [
+        "57c0942a375efc2cdda8e20f1bdfb6b0a737dd31"
+      ],
+      "original_patch_id": "043afc9ef9f7f62d801876b3c5744d445f89f08b",
+      "replayed_patch_id": "043afc9ef9f7f62d801876b3c5744d445f89f08b",
+      "patch_id_identical": true,
+      "upstream_equivalent": false,
+      "reason": "Accepted delta remains absent from canonical dev; no empty cherry-pick or SHA-only skip.",
+      "resolution": "Applied without conflict."
+    },
+    {
+      "id": "trickplay-reanchor",
+      "status": "included",
+      "old_ref": "fix/trickplay-reanchor",
+      "old_commits": [
+        "d7fbe0d1696e7fc3ffceb6a38060146debb05b43"
+      ],
+      "new_ref": "fix/trickplay-reanchor-upstream-20261123",
+      "new_commits": [
+        "7d2bbf0df643641a6083ee05a5b629f08bc96d98"
+      ],
+      "original_patch_id": "730fd57a2caf0fa7b1ed141b9bf4cc491f5b0fe0",
+      "replayed_patch_id": "730fd57a2caf0fa7b1ed141b9bf4cc491f5b0fe0",
+      "patch_id_identical": true,
+      "upstream_equivalent": false,
+      "reason": "Accepted delta remains absent from canonical dev; no empty cherry-pick or SHA-only skip.",
+      "resolution": "Applied without conflict."
+    },
+    {
+      "id": "startup-gate",
+      "status": "included",
+      "old_ref": "fix/startup-gate",
+      "old_commits": [
+        "f01e69ddc8cc7442e399d213e5c38655a817ffbf"
+      ],
+      "new_ref": "fix/startup-gate-upstream-20261123",
+      "new_commits": [
+        "7ec4ecf071692ed2a9122f6f0d0d26ae8ea8c0c1"
+      ],
+      "original_patch_id": "68a843db585ee6d27e94c99b6ce7122f7feb763a",
+      "replayed_patch_id": "68a843db585ee6d27e94c99b6ce7122f7feb763a",
+      "patch_id_identical": true,
+      "upstream_equivalent": false,
+      "reason": "Accepted delta remains absent from canonical dev; no empty cherry-pick or SHA-only skip.",
+      "resolution": "Applied without conflict."
+    },
+    {
+      "id": "hdr-v20",
+      "status": "included",
+      "old_ref": "feature/hdr-v20",
+      "old_commits": [
+        "6ab06b16530c3ac3618a71336ddc2efc2905a2be"
+      ],
+      "new_ref": "feature/hdr-v20-upstream-20261123",
+      "new_commits": [
+        "05b0e0d290e1c77f81b31174ca381d70bd58eab3"
+      ],
+      "original_patch_id": "788536b1054679514346ccbc891e04943eb20578",
+      "replayed_patch_id": "788536b1054679514346ccbc891e04943eb20578",
+      "patch_id_identical": true,
+      "upstream_equivalent": false,
+      "reason": "Accepted delta remains absent from canonical dev; no empty cherry-pick or SHA-only skip.",
+      "resolution": "Applied without conflict."
+    },
+    {
+      "id": "jvc-sticky-sdr",
+      "status": "included",
+      "old_ref": "fix/jvc-sticky-sdr",
+      "old_commits": [
+        "cc1bf5abdc52c878a76f42bcb6ed7a17a272952e"
+      ],
+      "new_ref": "fix/jvc-sticky-sdr-upstream-20261123",
+      "new_commits": [
+        "adb42e1fc3ae8d14da57e18796e9f503f49cc78c"
+      ],
+      "original_patch_id": "1d0400e598791a7ad8f098ccb50647ff0b3d9aba",
+      "replayed_patch_id": "1d0400e598791a7ad8f098ccb50647ff0b3d9aba",
+      "patch_id_identical": true,
+      "upstream_equivalent": false,
+      "reason": "Accepted delta remains absent from canonical dev; no empty cherry-pick or SHA-only skip.",
+      "resolution": "Applied without conflict."
+    },
+    {
+      "id": "ddplus-safety",
+      "status": "included",
+      "old_ref": "fix/ddplus-safety",
+      "old_commits": [
+        "24c21d115a46cf3a0e86c275fcba0f7be2ce7cb6"
+      ],
+      "new_ref": "fix/ddplus-safety-upstream-20261123",
+      "new_commits": [
+        "d29d381ed4ff7e8f6235890a4d8156188f1c16bb"
+      ],
+      "original_patch_id": "e4af3ee5d57339d0f280917ea7866d5e499ef888",
+      "replayed_patch_id": "086caa223e27f0bada2765dbc74b469110cc8132",
+      "patch_id_identical": false,
+      "upstream_equivalent": false,
+      "reason": "Accepted delta remains absent from canonical dev; no empty cherry-pick or SHA-only skip.",
+      "resolution": "Insertion-only conflict retained bounded EAC3 status scan; explicit final adapter reuses renamed upstream reader."
+    },
+    {
+      "id": "audio-pause-transport",
+      "status": "included",
+      "old_ref": "fix/audio-pause-transport",
+      "old_commits": [
+        "a28d115db0d7a552bba31cbf3c4bfe6fbb86d22d"
+      ],
+      "new_ref": "fix/audio-pause-transport-upstream-20261123",
+      "new_commits": [
+        "3bedefcfcc86744f76ca746a0c5262cdda7e9913"
+      ],
+      "original_patch_id": "ff349d66fc5ad9f20c76472ed881260b7cd0b705",
+      "replayed_patch_id": "78c41fcaccaafe5c623fa2f0e977941d36c3ffd6",
+      "patch_id_identical": false,
+      "upstream_equivalent": false,
+      "reason": "Accepted delta remains absent from canonical dev; no empty cherry-pick or SHA-only skip.",
+      "resolution": "Applied without conflict."
+    },
+    {
+      "id": "retained-audio-admission",
+      "status": "included",
+      "old_ref": "fix/retained-audio-admission",
+      "old_commits": [
+        "36fae96028539369cbaf016e0e5d4d25ef846d9c"
+      ],
+      "new_ref": "fix/retained-audio-admission-upstream-20261123",
+      "new_commits": [
+        "4ccf49f055c2e4f732e267cca9a53caf24037dac"
+      ],
+      "original_patch_id": "ae1ad8547040dd1b2e07d68f461007b291f01b00",
+      "replayed_patch_id": "ae1ad8547040dd1b2e07d68f461007b291f01b00",
+      "patch_id_identical": true,
+      "upstream_equivalent": false,
+      "reason": "Accepted delta remains absent from canonical dev; no empty cherry-pick or SHA-only skip.",
+      "resolution": "Applied without conflict."
+    },
+    {
+      "id": "numbered-frame-tools",
+      "status": "included",
+      "old_ref": "feature/numbered-frame-tools",
+      "old_commits": [
+        "8882c7b0a618cec2e76893f7324bc81038de58eb"
+      ],
+      "new_ref": "feature/numbered-frame-tools-upstream-20261123",
+      "new_commits": [
+        "8815564bf5b3dea02a899fc134330795d49ce21d"
+      ],
+      "original_patch_id": "36afa7683d7ad2025a0332c19f9430b64c6059f0",
+      "replayed_patch_id": "36afa7683d7ad2025a0332c19f9430b64c6059f0",
+      "patch_id_identical": true,
+      "upstream_equivalent": false,
+      "reason": "Accepted delta remains absent from canonical dev; no empty cherry-pick or SHA-only skip.",
+      "resolution": "Applied without conflict."
+    },
+    {
+      "id": "distribution-build",
+      "status": "included",
+      "old_ref": "fix/distribution-build",
+      "old_commits": [
+        "ac12f1fbb10370a4210833929ecc87d71cc7334e"
+      ],
+      "new_ref": "fix/distribution-build-upstream-20261123",
+      "new_commits": [
+        "2f589a22d12c9f6e154a29ca69ec4e2738b11f4d"
+      ],
+      "original_patch_id": "a85af6644a0672b6cb55050aa2546e90095515b8",
+      "replayed_patch_id": "a85af6644a0672b6cb55050aa2546e90095515b8",
+      "patch_id_identical": true,
+      "upstream_equivalent": false,
+      "reason": "Accepted delta remains absent from canonical dev; no empty cherry-pick or SHA-only skip.",
+      "resolution": "Applied without conflict."
+    },
+    {
+      "id": "fixture-union",
+      "status": "included",
+      "old_ref": "fix/accepted-fixture-union",
+      "old_commits": [
+        "83bf4c44adc22a4af150534ff222ac74ca206766"
+      ],
+      "new_ref": "fix/accepted-fixture-union-upstream-20261123",
+      "new_commits": [
+        "4b14ba8d8ee570cd20b09639f4c4f37cea71a3b8"
+      ],
+      "original_patch_id": "7182670b94e7d94aa203e78d57a440f9cd51ee27",
+      "replayed_patch_id": "7182670b94e7d94aa203e78d57a440f9cd51ee27",
+      "patch_id_identical": true,
+      "upstream_equivalent": false,
+      "reason": "Accepted delta remains absent from canonical dev; no empty cherry-pick or SHA-only skip.",
+      "resolution": "Applied without conflict."
+    },
+    {
+      "id": "python-forced-shutdown",
+      "status": "included",
+      "old_ref": "fix/today-python-shutdown",
+      "old_commits": [
+        "8ef79ccdec5243ec0803f2c608420f4979d51d25"
+      ],
+      "new_ref": "fix/today-python-shutdown-upstream-20261123",
+      "new_commits": [
+        "525196e1087fd260972b039d519c2a33f29ea16a"
+      ],
+      "original_patch_id": "f72190b17ab569ef1afe8a035e42fe885ae0d322",
+      "replayed_patch_id": "f72190b17ab569ef1afe8a035e42fe885ae0d322",
+      "patch_id_identical": true,
+      "upstream_equivalent": false,
+      "reason": "Accepted delta remains absent from canonical dev; no empty cherry-pick or SHA-only skip.",
+      "resolution": "Applied without conflict."
+    },
+    {
+      "id": "lldv-vsif-suppression",
+      "status": "included",
+      "old_ref": "feature/today-lldv-vsif-suppression",
+      "old_commits": [
+        "4c36d29c89cefa2e8d596f180706eb790eb99c38",
+        "9cdf90502deda6026cdad45b6bbb7172f90f4de0"
+      ],
+      "new_ref": "feature/today-lldv-vsif-suppression-upstream-20261123",
+      "new_commits": [
+        "7078cd6007efadbc2c647b877b69f1e267fb56d8",
+        "fc3f9ed71546a7d5c839375c51cfc758144641a0"
+      ],
+      "original_patch_id": "eb811bbc635059a93eab0f54f4dee688d53f1604",
+      "replayed_patch_id": "eb811bbc635059a93eab0f54f4dee688d53f1604",
+      "patch_id_identical": true,
+      "upstream_equivalent": false,
+      "reason": "Accepted delta remains absent from canonical dev; no empty cherry-pick or SHA-only skip.",
+      "resolution": "Applied without conflict."
+    }
+  ],
+  "already_upstream": [
+    {
+      "id": "dim-black-screensaver",
+      "original_commit": "674be07da5f888a12873072d387dab3b198dd428",
+      "reason": "Already accepted upstream at the previous exact base and remains unchanged on the descendant live dev; no replay."
+    }
+  ],
+  "reconciliation": {
+    "reader_definition_identical_after_rename": true,
+    "eac3_joc_bsi_logic_changed": false,
+    "upstream_dts_bounds_retained": true,
+    "long_pause_fixture_real_header_added": true,
+    "assertions_removed": 0
+  }
+}

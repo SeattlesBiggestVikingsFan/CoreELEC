@@ -1,0 +1,186 @@
+{
+  "AP_source_line": "recipe pinf08 is the actual6.12 branch tip, not repository default5.15.170",
+  "bindings": {
+    "ap6275s": {
+      "actual_assembly_commit": "recorded separately in final assembly receipt",
+      "canonical_development_recipe_fields": [
+        "PKG_VERSION=\"f08f1b88be470d07667a671b5c6b7f4e198a75f8\"",
+        "PKG_URL=\"${PKG_SITE}/archive/${PKG_VERSION}.tar.gz\""
+      ],
+      "canonical_development_recipe_sha256": "8d571e83632c06514366beda27e0bc853aa5793f5e5941b76e5c50a93a9308cb",
+      "do_not_apply_platform_patches_again": true,
+      "integrated_recipe_fields": [
+        "PKG_VERSION=\"f08f1b88be470d07667a671b5c6b7f4e198a75f8\"",
+        "PKG_URL=\"file://${COMBINED_AP6275S_SOURCE:?Set COMBINED_AP6275S_SOURCE to the sealed integrated source}\"",
+        "PKG_SKIP_PATCHES=\"yes\""
+      ],
+      "live_selected_upstream": {
+        "commit": "f08f1b88be470d07667a671b5c6b7f4e198a75f8",
+        "ref": "recipe-pin",
+        "repository": "https://github.com/CoreELEC/ap6xxx-aml.git"
+      },
+      "recipe_path": "projects/Amlogic-ce/packages/linux-drivers/amlogic/ap6275s-aml/package.mk",
+      "selected_integrated_sources_already_include_recorded_recipe_and_post_unpack_deltas": true,
+      "selected_recipe_sha256": "94a795a2d4748cd46d2b0f871c9f64e803de8eedeca8ad2426a17dcaa185f242",
+      "selected_recipe_source_revision": "c8e5b485e38948dbefb96d3808c16cc3bf0ed1c2",
+      "selected_source_anchor": "95a15af695f2c93cec95363ed48d9ce64b060253",
+      "selected_source_tree": "c5604bdf4bae9f30ccf4e69b892a8c6109302be3",
+      "source_variable": "COMBINED_AP6275S_SOURCE"
+    },
+    "kernel": {
+      "actual_assembly_commit": "recorded separately in final assembly receipt",
+      "canonical_development_recipe_fields": [
+        "PKG_VERSION=\"amlogic-4.9-20\"",
+        "PKG_URL=\"file://${HOME}/linux-amlogic-local\""
+      ],
+      "canonical_development_recipe_sha256": "539a1aeb65be1ac6efc8095347e86ed9030e98151088873b11088aed5006ded1",
+      "do_not_apply_platform_patches_again": true,
+      "integrated_recipe_fields": [
+        "PKG_VERSION=\"amlogic-4.9-20\"",
+        "PKG_URL=\"file://${COMBINED_KERNEL_SOURCE:?Set COMBINED_KERNEL_SOURCE to the sealed integrated source}\"",
+        "PKG_SKIP_PATCHES=\"yes\""
+      ],
+      "live_selected_upstream": {
+        "commit": "605cf2407df57a850fc7db29e514c2de41b5ebc7",
+        "previous_validated_commit": "58c06bb03fba0d4136115b828a3924394130c15d",
+        "published_ref": "amlogic-4.9-20",
+        "ref": "upstream-dev-20261123",
+        "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+        "refresh": {
+          "commit": "605cf2407df57a850fc7db29e514c2de41b5ebc7",
+          "observation": "Live head independently fetched; identical to previously tracked head. Not yet built or hardware-validated.",
+          "status": "source-reconciled-offline-only"
+        },
+        "repository": "https://github.com/pannal/linux-amlogic"
+      },
+      "recipe_path": "projects/Amlogic-ce/packages/linux/package.mk",
+      "selected_integrated_sources_already_include_recorded_recipe_and_post_unpack_deltas": true,
+      "selected_recipe_sha256": "51e466191176f4abea81dcc01224766c1565edac2a0ac86a779b3dbe527cd433",
+      "selected_recipe_source_revision": "c8e5b485e38948dbefb96d3808c16cc3bf0ed1c2",
+      "selected_source_anchor": "087830e1a90a3a62e82339e23793f5d630df9168",
+      "selected_source_tree": "eaaadfa0a70a4a5e5487a607549b9c2167bcaf53",
+      "source_variable": "COMBINED_KERNEL_SOURCE"
+    },
+    "kodi": {
+      "actual_assembly_commit": "recorded separately in final assembly receipt",
+      "canonical_development_recipe_fields": [
+        "PKG_VERSION=\"aml-4.9-21.3\"",
+        "PKG_URL=\"file://${ROOT}/sources/kodi/xbmc-local\""
+      ],
+      "canonical_development_recipe_sha256": "c8e196e260790bf888c66ee83c8d7086381b790cfa061b00b9ef4a60a0a68b8a",
+      "do_not_apply_platform_patches_again": true,
+      "integrated_recipe_fields": [
+        "PKG_VERSION=\"aml-4.9-21.3\"",
+        "PKG_URL=\"file://${COMBINED_KODI_SOURCE:?Set COMBINED_KODI_SOURCE to the sealed integrated source}\"",
+        "PKG_SKIP_PATCHES=\"yes\""
+      ],
+      "live_selected_upstream": {
+        "commit": "efcb4dac04f9b2cfeb863154045602e768195ab2",
+        "ref": "aml-4.9-21.3_dev",
+        "refresh": {
+          "commit": "efcb4dac04f9b2cfeb863154045602e768195ab2",
+          "ref": "aml-4.9-21.3_dev",
+          "repository": "https://github.com/pannal/xbmc.git",
+          "status": "selected-source-refresh-host-validated-not-target-built"
+        },
+        "repository": "https://github.com/pannal/xbmc.git"
+      },
+      "recipe_path": "projects/Amlogic-ce/packages/mediacenter/kodi/package.mk",
+      "selected_integrated_sources_already_include_recorded_recipe_and_post_unpack_deltas": true,
+      "selected_recipe_sha256": "5912c4fb1e8406deeede3e4e8ce631fea4b0c30d6475628a87695ef6a2103db6",
+      "selected_recipe_source_revision": "c8e5b485e38948dbefb96d3808c16cc3bf0ed1c2",
+      "selected_source_anchor": "52117bc6027fbca1edfdd508661edba2446a1727",
+      "selected_source_tree": "f2fc279ff91b8ebaa358aa4e7b9559168048d6d7",
+      "source_variable": "COMBINED_KODI_SOURCE"
+    },
+    "media_modules": {
+      "actual_assembly_commit": "recorded separately in final assembly receipt",
+      "canonical_development_recipe_fields": [
+        "PKG_VERSION=\"amlogic-4.9.269\"",
+        "PKG_URL=\"file://${ROOT}/sources/media_modules-aml/media_modules-aml-local\""
+      ],
+      "canonical_development_recipe_sha256": "e6391465345cc90903264a7ca957cbbb1df98a045ef60fedb7ab37af53890b68",
+      "do_not_apply_platform_patches_again": true,
+      "integrated_recipe_fields": [
+        "PKG_VERSION=\"amlogic-4.9.269\"",
+        "PKG_URL=\"file://${COMBINED_MEDIA_SOURCE:?Set COMBINED_MEDIA_SOURCE to the sealed integrated source}\"",
+        "PKG_SKIP_PATCHES=\"yes\""
+      ],
+      "live_selected_upstream": {
+        "commit": "10d1e8bfc22068c81a5b10b0d89b00f8b15c9502",
+        "ref": "amlogic-4.9.269",
+        "repository": "https://github.com/pannal/media_modules-aml.git"
+      },
+      "recipe_path": "projects/Amlogic-ce/packages/linux-drivers/amlogic/media_modules-aml/package.mk",
+      "selected_integrated_sources_already_include_recorded_recipe_and_post_unpack_deltas": true,
+      "selected_recipe_sha256": "a05583286fa09698d1451d5001dd7ab1ac78238be7ad50b6c6105db8e083297b",
+      "selected_recipe_source_revision": "c8e5b485e38948dbefb96d3808c16cc3bf0ed1c2",
+      "selected_source_anchor": "4ea44185edde8efb38dffed6ba1b2b7cce697999",
+      "selected_source_tree": "a4fa774d0b6e3bd32c50a38a87b63027d11229eb",
+      "source_variable": "COMBINED_MEDIA_SOURCE"
+    },
+    "settings": {
+      "actual_assembly_commit": "recorded separately in final assembly receipt",
+      "canonical_development_recipe_fields": [
+        "PKG_VERSION=\"coreelec-21-ng\"",
+        "PKG_URL=\"file://${ROOT}/sources/service.coreelec.settings/service.coreelec.settings-local\""
+      ],
+      "canonical_development_recipe_sha256": "a0d5fda3ee8d064edc61639c905a98dcc165036cc595f44eb556830a9df75a70",
+      "do_not_apply_platform_patches_again": true,
+      "integrated_recipe_fields": [
+        "PKG_VERSION=\"coreelec-21-ng\"",
+        "PKG_URL=\"file://${COMBINED_SETTINGS_SOURCE:?Set COMBINED_SETTINGS_SOURCE to the sealed integrated source}\"",
+        "PKG_SKIP_PATCHES=\"yes\""
+      ],
+      "live_selected_upstream": {
+        "commit": "a9f4e6980f5e65a3120d43198d9f4a337e526ffb",
+        "ref": "coreelec-21-ng",
+        "repository": "https://github.com/pannal/service.coreelec.settings.git"
+      },
+      "recipe_path": "projects/Amlogic-ce/packages/mediacenter/CoreELEC-settings/package.mk",
+      "selected_integrated_sources_already_include_recorded_recipe_and_post_unpack_deltas": true,
+      "selected_recipe_sha256": "528d54e32258affe58b95c022afbd7b2e7e1bb68e527f54666ffa484a153a394",
+      "selected_recipe_source_revision": "c8e5b485e38948dbefb96d3808c16cc3bf0ed1c2",
+      "selected_source_anchor": "d81eff5f0596d63e6a3fe79f656efe88b902b7ec",
+      "selected_source_tree": "d9ac67c43de71ba908ff5356ebda999eb45b8dc3",
+      "source_variable": "COMBINED_SETTINGS_SOURCE"
+    },
+    "skin": {
+      "actual_assembly_commit": "recorded separately in final assembly receipt",
+      "canonical_development_recipe_fields": [
+        "PKG_VERSION=\"8.8.15\"",
+        "PKG_URL=\"file://${ROOT}/sources/skin.p3i.estuary/skin.p3i.estuary-local\""
+      ],
+      "canonical_development_recipe_sha256": "fd1e8bfff4e9c8da7dd8012f7a2171fbeaf5b61656e4515462a2fc004f8cd27a",
+      "do_not_apply_platform_patches_again": true,
+      "integrated_recipe_fields": [
+        "PKG_VERSION=\"8.8.15\"",
+        "PKG_URL=\"file://${COMBINED_SKIN_SOURCE:?Set COMBINED_SKIN_SOURCE to the sealed integrated source}\"",
+        "PKG_SKIP_PATCHES=\"yes\""
+      ],
+      "live_selected_upstream": {
+        "commit": "94ccb38311d52a6244c71a2748379cee59e5d736",
+        "ref": "master",
+        "repository": "https://github.com/pannal/skin.p3i.estuary.git"
+      },
+      "recipe_path": "projects/Amlogic-ce/packages/mediacenter/skin.p3i.estuary/package.mk",
+      "selected_integrated_sources_already_include_recorded_recipe_and_post_unpack_deltas": true,
+      "selected_recipe_sha256": "a6adfa8a36bd0dc1d71eb590c246f43ae5382154fb0791089ac939f5600f59ab",
+      "selected_recipe_source_revision": "c8e5b485e38948dbefb96d3808c16cc3bf0ed1c2",
+      "selected_source_anchor": "94ccb38311d52a6244c71a2748379cee59e5d736",
+      "selected_source_tree": "f320f6c26143a1c41acc93c6359c95bc85747db2",
+      "source_variable": "COMBINED_SKIN_SOURCE"
+    }
+  },
+  "external_modules_cohort": "rebuild all consumers against actual selected kernel outputs; no old Module.symvers/binary substitution",
+  "framework_upstream": "473c9808dea2a9aa9ba1b42a09adb26b4e601f5d",
+  "kernel_internal_arch": "arm64 per unchanged Amlogic-ng options",
+  "new_build_executed_by_framework_owner": false,
+  "passed": true,
+  "recipe_or_SDK_updates_required_by_Core473c": false,
+  "target": {
+    "ARCH": "arm",
+    "DEVICE": "Amlogic-ng",
+    "PROJECT": "Amlogic-ce"
+  }
+}

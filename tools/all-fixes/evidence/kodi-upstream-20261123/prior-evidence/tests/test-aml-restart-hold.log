@@ -1,0 +1,4 @@
+PASS route capability: explicit unsupported decoded fallback, zero/unknown fail-closed, route/provider changes, sole paused/still frame, renewal and failure cap
+PASS DV blackout: pending/failed output gate, supported/unsupported sole frame, replacement budget, reset/cancel and bounded recovery
+PASS idle hold: no-frame expiry, native/display/failed-session fencing and bounded DV transition
+PASS restart hold: DQBUF/QBUF/poll separation, stale/drop/failure guards, epochs, paused frame, timeout/cancel, serialized ownership

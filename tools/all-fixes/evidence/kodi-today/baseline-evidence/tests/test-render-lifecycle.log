@@ -1,0 +1,1 @@
+Render lifecycle: PASS (real mailbox, Configure/wrappers/CloseFile; ASan/UBSan; real recursive gfx lock, recording renderer/thread stubs)

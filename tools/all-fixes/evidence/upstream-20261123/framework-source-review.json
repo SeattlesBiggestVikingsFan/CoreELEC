@@ -1,0 +1,112 @@
+{
+  "accepted_selection": "all twelve baseline topics plus operator discovery docs, HTTPS10/UX11 retained, Jellyfin separate companion; no UX12/pre-roll/runtime scope",
+  "build_device_publish_actions": false,
+  "latest_release": {
+    "commit": "d60b91e991a5c0367367f86abfdd83c62b27f449",
+    "default_stable_commit": "872edca4dd5a7c5d6344e785d7358766834d7119",
+    "not_the_selected_development_branch": true,
+    "published_at": "2026-08-12T10:55:16Z",
+    "tag": "T4c",
+    "url": "https://github.com/pannal/CoreELEC/releases/tag/T4c"
+  },
+  "passed": true,
+  "previous_integration": "e2802f350b2d6e26218de4b012e859da19b48d6f",
+  "previous_manifest_sha256": "687a59f73b9f4b95a5ec7a583aeca04bfbbfb3e6348e1a96e0032ae5cb7da73d",
+  "proprietary_fixture_qualification": {
+    "host_fixture_free_passed": 8,
+    "initial_default_suite_cases": 24,
+    "new_multiprocess_locking_test_passed": true,
+    "optional_private_blob_or_actual_reference_skipped": 16,
+    "parent_actual_fixture_run_required": true,
+    "proprietary_blob_mutation_or_inclusion": false
+  },
+  "runtime_install": {
+    "configured_kernel_versions": "new matching linux/.image/Module.symvers -> /usr/lib/coreelec/dovi5-Module.symvers (0644)",
+    "destination": "/usr/lib/coreelec/dovi5-prepare",
+    "mode": "0755",
+    "recipe": "projects/Amlogic-ce/packages/linux-drivers/amlogic/dovi5-prepare/package.mk",
+    "source": "projects/Amlogic-ce/packages/linux-drivers/amlogic/dovi5-prepare/scripts/dovi5_prepare.py"
+  },
+  "schema": 1,
+  "sdk_impact": {
+    "GCC": "13.3.0",
+    "Python": "3.13.18",
+    "Python_upgrade_already_in_previous_sealed_baseline": true,
+    "binutils": "2.41",
+    "new_Kodi_kernel_coherent_build_required": "owned and qualified separately by build owner; no old ABI/Module.symvers/binary substitution",
+    "new_compiler_dependency_or_config_required_by_this_Core_delta": false,
+    "release_Python": "3.13.14"
+  },
+  "semantics": [
+    "Take preparation lock before marker invalidation; nonblocking contender cannot remove another publication.",
+    "Hold same exclusive lock across marker load validation and failure cleanup; stale reader cannot remove a new generation.",
+    "Context manager closes checked regular-single-link lock descriptor; runtime preparation selection and proprietary-module contracts unchanged.",
+    "Multiprocess regression covers publication contention, validation cleanup, stale-marker rejection and successful republication."
+  ],
+  "source_delta": {
+    "projects/Amlogic-ce/packages/linux-drivers/amlogic/dovi5-prepare/scripts/dovi5_prepare.py": {
+      "mode": "100644",
+      "previous_sha256": "08744165cecfcf3644953e89d363166f42749518ff26dedf461b2ad7b1e7e574",
+      "upstream_sha256": "c18db434e720226c7f23307593cdc542a487bb2f8ddaff2b77c7f7ff3266f0d9"
+    },
+    "projects/Amlogic-ce/packages/linux-drivers/amlogic/dovi5-prepare/tests/test_dovi5.py": {
+      "mode": "100644",
+      "previous_sha256": "1a759052329f267191a997772644bfff83d7e8416f88062b428f8147c3f5138c",
+      "upstream_sha256": "cef64a05dd9078e718af9dfec20d7dceeba963f4416489d7b6effe7a91e3964d"
+    }
+  },
+  "unchanged_recipe_config_compiler_contracts": {
+    "packages/devel/binutils/package.mk": {
+      "sha256": "586d8d8b097fb08aaaa5b44e5da0b188de204f48180c6c27034083d983531c61",
+      "unchanged_since_sealed_source": true
+    },
+    "packages/lang/Python3/package.mk": {
+      "sha256": "6adfff8167bceaf716c8c7c3635f5fd9718c520b87c4a8cf89c6e30940946046",
+      "unchanged_since_sealed_source": true
+    },
+    "packages/lang/gcc/package.mk": {
+      "sha256": "a7fad13dc5ae8b6eb34cf63db5f29a18aed916ef01ff56782ae90376eb8e934f",
+      "unchanged_since_sealed_source": true
+    },
+    "projects/Amlogic-ce/devices/Amlogic-ng/linux/linux.aarch64.conf": {
+      "sha256": "c0216828c25352984c8b287227e51ab85dfd9b186d633c7644aed2d98cb145af",
+      "unchanged_since_sealed_source": true
+    },
+    "projects/Amlogic-ce/devices/Amlogic-ng/options": {
+      "sha256": "96e52e07ec38e8b07f2b2347649d038b10faf09e5b6f8942bddd77df625c642f",
+      "unchanged_since_sealed_source": true
+    },
+    "projects/Amlogic-ce/packages/linux-drivers/amlogic/ap6275s-aml/package.mk": {
+      "sha256": "94a795a2d4748cd46d2b0f871c9f64e803de8eedeca8ad2426a17dcaa185f242",
+      "unchanged_since_sealed_source": true
+    },
+    "projects/Amlogic-ce/packages/linux-drivers/amlogic/media_modules-aml/package.mk": {
+      "sha256": "a05583286fa09698d1451d5001dd7ab1ac78238be7ad50b6c6105db8e083297b",
+      "unchanged_since_sealed_source": true
+    },
+    "projects/Amlogic-ce/packages/linux/package.mk": {
+      "sha256": "51e466191176f4abea81dcc01224766c1565edac2a0ac86a779b3dbe527cd433",
+      "unchanged_since_sealed_source": true
+    },
+    "projects/Amlogic-ce/packages/mediacenter/CoreELEC-settings/package.mk": {
+      "sha256": "528d54e32258affe58b95c022afbd7b2e7e1bb68e527f54666ffa484a153a394",
+      "unchanged_since_sealed_source": true
+    },
+    "projects/Amlogic-ce/packages/mediacenter/kodi/package.mk": {
+      "sha256": "5912c4fb1e8406deeede3e4e8ce631fea4b0c30d6475628a87695ef6a2103db6",
+      "unchanged_since_sealed_source": true
+    },
+    "projects/Amlogic-ce/packages/mediacenter/skin.p3i.estuary/package.mk": {
+      "sha256": "a6adfa8a36bd0dc1d71eb590c246f43ae5382154fb0791089ac939f5600f59ab",
+      "unchanged_since_sealed_source": true
+    }
+  },
+  "upstream": {
+    "commit": "473c9808dea2a9aa9ba1b42a09adb26b4e601f5d",
+    "commit_count": 1,
+    "parent_verified": "7a36d3e71d20014db093d5dfc613fe21fe654902",
+    "previous_base": "7a36d3e71d20014db093d5dfc613fe21fe654902",
+    "ref": "refs/heads/coreelec-21_local",
+    "repository": "https://github.com/pannal/CoreELEC.git"
+  }
+}

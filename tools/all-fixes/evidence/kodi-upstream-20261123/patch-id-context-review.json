@@ -1,0 +1,14 @@
+{
+  "evidence_boundary": "upstream-source-parity.json proves final prior-to-candidate delta equals the complete upstream delta plus exactly two reviewed adaptations.",
+  "ddplus-safety": {
+    "reason": "The intermediate replay retains the bounded AtmosBitReader needed by the accepted EAC3 scanner after upstream removed/renamed it. The explicit adapter removes that duplicate and changes only the EAC3 reader type to byte-identical AudioBitReader.",
+    "xml_deletion_hunk_grouping": "Repeated adjacent closing XML tags regroup the zero-context diff; the final entire settings.xml is byte-identical to the sealed prior source.",
+    "existing_eac3_joc_bsi_policy_and_twelve_tests_preserved": true
+  },
+  "audio-pause-transport": {
+    "reason": "Upstream changes surrounding IEC capacity context, changing patch-id without changing any accepted added/removed source lines.",
+    "accepted_changed_lines_identical": true
+  },
+  "other_fourteen_replayed_topics": "Stable patch IDs identical to prior accepted deltas.",
+  "upstream_integrated_dim_black": "Original commit and stable patch ID retained in feature provenance and prior checksum-pinned review; exact live descendant pin reviewed without replay."
+}

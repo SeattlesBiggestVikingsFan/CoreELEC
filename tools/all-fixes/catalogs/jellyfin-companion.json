@@ -1,0 +1,49 @@
+{
+  "accepted_source_sha256": "acdd54e6c7caf61275ab2405c7bb9b8013583124e185a7e4eb44ac4135dc0b07",
+  "component": "external-companion",
+  "delivery": {
+    "addon_updater_ownership": "unchanged, later source updates require maintained reviewed rebase",
+    "automatic_native_hook": false,
+    "parent_packages_identified_companion_archive": true,
+    "preserve_existing_addon_and_userdata": true,
+    "system_component": false,
+    "unfixed_or_fresh_install": "excluded from automatic migration; separate authorized exact-identity/source-gated companion procedure required",
+    "user_settings_writes": false,
+    "whole_addon_package": false
+  },
+  "feature_head": "34b205ae3c93c47e8432f2449bd7af4585835b10",
+  "feature_ref": "feature/today-accepted-companion-contract",
+  "framework_feature": "accepted-jellyfin-companion-sources",
+  "id": "jellyfin-late-keepalive",
+  "observed_addon": {
+    "declared_requires_graph_available": false,
+    "id": "plugin.video.jellyfin",
+    "manifest_bytes_available": false,
+    "manifest_sha256": "785d238176b45558407a48e4f2aa9912a8c8e744fc4c2fd5224ad3da0c32c1ea",
+    "new_version_or_dependencies": false,
+    "observed_websocket_version": "1.6.4",
+    "version": "2.2.0+py3"
+  },
+  "original_source_sha256": "7cc8bbce35b2ea0ba889fd8bbe0938cd74fb0f99b8459b7bd33ef9899ab57b39",
+  "original_test_sha256": "0f795e9d0be458519fed9274c6b4eef0b3464d0692b2be213e94840f03fb0058",
+  "patch_sha256": "2002d2770df89079adcf80c322c6744add69acc8fd16d637dcd0b79b69979ed6",
+  "provenance": {
+    "export_release_sha256": "39c014ee2a9ae3a9616d657980aac7a612c3773eca4a0f26dcd628692d117379",
+    "hardware_data_and_raw_logs": "hash-only, local evidence; no new-cohort hardware claim",
+    "packaging_contract_sha256": "4882d7f1e0a0402f78cda111b4e376611a4519e61d29f45e49c4b641ec06a30a",
+    "source_export_zip_sha256": "c68be9dda14425c041b038a6cbba5e67bd58957ce745129f03c1a8ad2921bf55"
+  },
+  "schema": 1,
+  "source_commit": null,
+  "source_directory": "tools/all-fixes/companions/jellyfin-late-keepalive",
+  "source_files": {
+    "ws-client-ordering.patch": "2002d2770df89079adcf80c322c6744add69acc8fd16d637dcd0b79b69979ed6",
+    "ws_client-original.py": "7cc8bbce35b2ea0ba889fd8bbe0938cd74fb0f99b8459b7bd33ef9899ab57b39",
+    "ws_client.py": "acdd54e6c7caf61275ab2405c7bb9b8013583124e185a7e4eb44ac4135dc0b07"
+  },
+  "source_tree": null,
+  "status": "included-source-companion-only",
+  "test_portability_adaptation": "SOURCE directory only; remaining AST and assertions identical",
+  "test_sha256": "548d0d03691fa162fb65058f42116ec98523710281e2efe69c35ddcadceffca0",
+  "tests_passed": 7
+}

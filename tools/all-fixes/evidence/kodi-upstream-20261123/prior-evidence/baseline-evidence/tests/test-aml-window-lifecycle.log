@@ -1,0 +1,1 @@
+AML window lifecycle: PASS (production window/graphics/renderer methods; ASan/UBSan; recording native/EGL/GLES/service effects)
