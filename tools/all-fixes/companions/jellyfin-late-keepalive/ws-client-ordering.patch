@@ -1,0 +1,63 @@
+--- ws_client.py.original
++++ ws_client.py
+@@ -36,6 +36,7 @@
+         self.client = client
+         threading.Thread.__init__(self)
+         self.keepalive = None
++        self._keepalive_lock = threading.Lock()
+ 
+     def send(self, message, data=""):
+ 
+@@ -93,7 +94,8 @@
+     def on_open(self, ws):
+         LOG.info("--->[ websocket opened ]")
+         # Avoid a timing issue where the capabilities are not correctly registered
+-        time.sleep(5)
++        if xbmc.Monitor().waitForAbort(5) or self.stop:
++            return
+         if settings("remoteControl.bool"):
+             self.client.jellyfin.post_capabilities(
+                 {
+@@ -115,10 +117,22 @@
+             self.client.jellyfin.post_capabilities(
+                 {"PlayableMediaTypes": "Audio, Video", "SupportsMediaControl": False}
+             )
+-        if self.keepalive is not None:
+-            self.keepalive.stop()
+-        self.keepalive = KeepAlive(self, ws)
+-        self.keepalive.start()
++        while True:
++            with self._keepalive_lock:
++                if self.stop:
++                    return
++                previous = self.keepalive
++            if previous is not None:
++                previous.stop()
++            with self._keepalive_lock:
++                if self.stop:
++                    return
++                if self.keepalive is not previous:
++                    continue
++                keepalive = KeepAlive(self, ws)
++                keepalive.start()
++                self.keepalive = keepalive
++                break
+ 
+     def on_message(self, ws, message):
+ 
+@@ -137,10 +151,11 @@
+ 
+     def stop_client(self):
+ 
+-        self.stop = True
+-
+-        if self.keepalive is not None:
+-            self.keepalive.stop()
++        with self._keepalive_lock:
++            self.stop = True
++            keepalive = self.keepalive
++        if keepalive is not None:
++            keepalive.stop()
+ 
+         if self.wsc is not None:
+             self.wsc.close()
