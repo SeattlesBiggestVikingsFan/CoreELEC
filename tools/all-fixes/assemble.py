@@ -192,12 +192,21 @@ def tree_check(repo, head, component):
             raise Failure(f"Tree parity failed: {actual} != {component['expected_tree']}")
         checks.append({"kind": "full-tree", "tree": actual})
     for record in component.get("parity", []):
-        reference = commit(repo, record["commit"])
         excluded = record.get("exclude", [])
-        if entries(repo, head, excluded) != entries(repo, reference, excluded):
-            raise Failure(f"Source bytes/modes/paths differ from {reference}")
-        checks.append({"kind": "projected-tree", "reference": reference, "exclude": excluded,
-                       "entries": len(entries(repo, head, excluded))})
+        actual = entries(repo, head, excluded)
+        if record.get("entries_sha256"):
+            identity = digest(json.dumps(actual, sort_keys=True, separators=(",", ":")).encode())
+            if identity != record["entries_sha256"] or len(actual) != record["entries_count"]:
+                raise Failure("Portable source projection checksum/count mismatch")
+            checks.append({"kind": "projected-tree-digest", "entries_sha256": identity,
+                           "exclude": excluded, "entries": len(actual),
+                           "reference_commit": record.get("reference_commit")})
+        else:
+            reference = commit(repo, record["commit"])
+            if actual != entries(repo, reference, excluded):
+                raise Failure(f"Source bytes/modes/paths differ from {reference}")
+            checks.append({"kind": "projected-tree", "reference": reference, "exclude": excluded,
+                           "entries": len(actual)})
     for record in component.get("files", []):
         listing = text(repo, "ls-tree", head, "--", record["path"])
         if not listing or listing.split()[0] != record["mode"]:
@@ -228,6 +237,85 @@ def commit_index(repo, message):
     if text(repo, "status", "--porcelain"):
         raise Failure("Assembly produced unexpected dirty files")
     return head
+
+
+def bootstrap(manifest_path, destination, local_sources_path=None):
+    manifest, manifest_hash = validate_manifest(manifest_path)
+    local = load(local_sources_path) if local_sources_path else {}
+    destination = Path(destination).resolve()
+    destination.mkdir(parents=True, exist_ok=False)
+    receipt = {"schema": 1, "manifest_sha256": manifest_hash, "status": "preparing",
+               "components": {}, "private_local_paths": True}
+    bindings = {}
+    try:
+        for name, component in manifest["components"].items():
+            repo = destination / name
+            git_args = ["git", "init", "--quiet", str(repo)]
+            run(git_args)
+            if component.get("pinned_source"):
+                if name not in local or not Path(local[name]).is_absolute():
+                    raise Failure(f"{name}: explicit sealed local Git source required; "
+                                  "no upstream/latest fallback for integrated ancillary sources")
+                source = str(Path(local[name]).resolve())
+                revision = sha(component["pinned_source"]["commit"], name + " source")
+                git(repo, "fetch", "--quiet", "--depth=1", source, revision)
+                commit(repo, revision)
+                tree_check(repo, revision, component)
+                receipt["components"][name] = {"source_kind": "sealed-local-ancillary",
+                                               "commit": revision,
+                                               "tree": text(repo, "rev-parse", revision + "^{tree}")}
+            else:
+                source = component.get("source_repository")
+                if not source or not source.startswith("https://github.com/"):
+                    raise Failure(f"{name}: explicit owned source_repository URL required; "
+                                  "upstream.repository is provenance, not a new-commit fetch source")
+                git(repo, "remote", "add", "origin", source)
+                git(repo, "remote", "add", "upstream", component["upstream"]["repository"])
+                integration = component.get("integration", {})
+                integration_ref = integration.get("ref", "refs/heads/integration/all-fixes")
+                if not integration_ref.startswith("refs/"):
+                    integration_ref = "refs/heads/" + integration_ref
+                refs = {integration_ref}
+                selected = order(component)
+                for feature in selected:
+                    revisions = feature.get("commits", feature.get("ordered_commits", []))
+                    if revisions:
+                        if not feature.get("ref"):
+                            raise Failure(f"{name}/{feature['id']}: published feature ref required")
+                        ref = feature["ref"]
+                        refs.add(ref if ref.startswith("refs/") else "refs/heads/" + ref)
+                for ref in refs:
+                    if not ref.startswith("refs/heads/"):
+                        raise Failure(f"Bootstrap requires explicit branch refs: {ref}")
+                    git(repo, "check-ref-format", ref)
+                git(repo, "fetch", "--quiet", "--no-tags", "origin",
+                    *[ref + ":" + ref for ref in sorted(refs)])
+                commit(repo, component["upstream"]["commit"])
+                revision = text(repo, "rev-parse", "--verify", integration_ref)
+                if integration.get("head") and revision != integration["head"]:
+                    raise Failure(f"{name}: integration ref moved from pinned catalog head")
+                for feature in selected:
+                    revisions = feature.get("commits", feature.get("ordered_commits", []))
+                    for item in revisions:
+                        commit(repo, item)
+                    if revisions and text(repo, "rev-parse", feature["ref"]) != revisions[-1]:
+                        raise Failure(f"{name}: published feature ref moved: {feature['ref']}")
+                receipt["components"][name] = {"source_kind": "owned-fork",
+                                               "source_repository": source,
+                                               "upstream_repository": component["upstream"]["repository"],
+                                               "fetched_refs": sorted(refs), "commit": revision}
+            git(repo, "switch", "--quiet", "--detach", revision)
+            if text(repo, "status", "--porcelain"):
+                raise Failure(f"{name}: bootstrapped source is dirty")
+            bindings[name] = str(repo)
+    except (Failure, OSError, ValueError, KeyError) as error:
+        receipt.update(status="blocked", error=str(error))
+        write(destination / "bootstrap.private.json", receipt)
+        raise
+    receipt["status"] = "ready"
+    write(destination / "repositories.private.json", bindings)
+    write(destination / "bootstrap.private.json", receipt)
+    return receipt
 
 
 def assemble(manifest_path, bindings_path, work, experiments=(), refresh=None):
@@ -494,6 +582,10 @@ def materialize(work, destination):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
+    item = sub.add_parser("bootstrap")
+    item.add_argument("--manifest", required=True)
+    item.add_argument("--output", required=True)
+    item.add_argument("--local-sources", help="Private JSON: ancillary component -> exact sealed local Git source")
     item = sub.add_parser("assemble")
     item.add_argument("--manifest", required=True)
     item.add_argument("--bindings", required=True, help="Private JSON: component -> local Git repository")
@@ -517,7 +609,9 @@ def main():
     item.add_argument("--output", required=True)
     args = parser.parse_args()
     try:
-        if args.command == "assemble":
+        if args.command == "bootstrap":
+            result = bootstrap(args.manifest, args.output, args.local_sources)
+        elif args.command == "assemble":
             result = assemble(args.manifest, args.bindings, args.work, args.experiment,
                               load(args.refresh) if args.refresh else None)
         elif args.command == "validate":

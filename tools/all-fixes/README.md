@@ -12,12 +12,34 @@ Run these commands in Linux with Python 3.12+ and Git. No extra packages are nee
 Private repository paths belong in an untracked bindings JSON, never the manifest:
 
 ```sh
+python3 tools/all-fixes/assemble.py bootstrap \
+  --manifest tools/all-fixes/manifest.json --output /new/location/repositories \
+  --local-sources /private/location/sealed-ancillary-repositories.json
 python3 tools/all-fixes/assemble.py assemble \
   --manifest tools/all-fixes/manifest.json \
-  --bindings /private/location/repositories.json --work /new/location/candidate
+  --bindings /new/location/repositories/repositories.private.json \
+  --work /new/location/candidate
 python3 tools/all-fixes/assemble.py materialize \
   --work /new/location/candidate --output /new/location/sources
 ```
+
+The managed `source_repository` URLs are the user-owned
+`SeattlesBiggestVikingsFan/CoreELEC`, `SeattlesBiggestVikingsFan/xbmc` and
+`SeattlesBiggestVikingsFan/linux-amlogic` forks. Bootstrap fetches the named
+integration and selected feature refs from those forks and verifies exact pins.
+`upstream.repository` remains canonical Pannal provenance, not the fetch location
+for new private/integration commits. Missing or moved published refs fail visibly.
+Publication and a fresh public-clone acceptance are separate parent-owned steps;
+bootstrap does not create forks, publish, authorize or infer PR activity.
+
+The four unchanged integrated ancillary sources need explicit sealed local Git
+inputs in the private JSON: `media_modules`, `ap6275s`, `settings`, `skin`.
+Restore the corresponding hash-pinned source bundles/exports recorded in the
+manifest provenance, then provide those Git repository paths. Bootstrap copies
+only their exact selected commits into new depth-one repositories and verifies
+the selected trees. It never guesses a moving upstream or consumes a build cache.
+This explicit immutable-input boundary is not a claim that ancillary integrated
+commits or proprietary inputs are available on the three owned forks.
 
 Both paths must be new. Assembly uses detached worktrees and does not change
 existing worktree files, PR branches, the upstream branch, or release refs.
@@ -35,6 +57,9 @@ The framework's `manifest_destination` installs the exact manifest and its input
 in the candidate. Its containing commit is pinned by the assembly receipt, avoiding
 a self-referential commit pin. The original production-tree parity excludes only
 this documented tooling/metadata directory and intentional recipe-binding paths.
+Public framework parity uses a pinned canonical projection digest over sorted
+path/mode/blob IDs and an exact entry count. The original private `55ab` commit is
+provenance only and is neither fetched nor required to assemble public sources.
 `required_validation` names the mandatory checks. Validation evidence must contain
 `manifest_sha256`, every exact component `{head, tree}`, and checks
 `{id, passed: true, path, sha256}`. Paths are relative to the evidence file.
