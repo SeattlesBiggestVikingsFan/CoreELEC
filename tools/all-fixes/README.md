@@ -103,6 +103,8 @@ Proprietary binaries and SDK/rootfs exports are not checked in or published.
 Source parity with the previously validated image is **not** new binary, ABI,
 hardware, installability or reproducible firmware certification. Keep the old
 image's original release label and distinguish source-equivalent reconstruction.
+Any future rebuilt package needs a new release ID and fresh build evidence; do not
+reuse the original image's label or source/binary validation receipts.
 
 Focused tooling tests:
 
