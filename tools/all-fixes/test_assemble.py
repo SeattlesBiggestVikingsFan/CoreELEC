@@ -225,6 +225,8 @@ class AssemblyTests(unittest.TestCase):
         a.git(self.repo, "commit", "-qm", "mode and symlink")
         final = a.text(self.repo, "rev-parse", "HEAD")
         component = self.manifest["components"]["example"]
+        component["source_variable"] = "COMBINED_EXAMPLE_SOURCE"
+        component["required_source_variables"] = ["COMBINED_EXAMPLE_SOURCE"]
         component["features"].append({"id": "modes", "ordered_commits": [final],
                                       "depends_on": ["two"], "default": True})
         component["expected_tree"] = a.text(self.repo, "rev-parse", "HEAD^{tree}")
@@ -234,6 +236,7 @@ class AssemblyTests(unittest.TestCase):
         self.assertEqual(result["example"]["tree"], component["expected_tree"])
         self.assertTrue((output / "example" / "script").stat().st_mode & 0o111)
         self.assertEqual(os.readlink(output / "example" / "link"), "script")
+        self.assertIn("export COMBINED_EXAMPLE_SOURCE=", (output / "source-env.sh").read_text())
         with self.assertRaises(FileExistsError):
             a.materialize(work, output)
 

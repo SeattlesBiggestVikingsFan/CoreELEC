@@ -76,8 +76,10 @@ and evidence remain local unless separately reviewed for publication.
 Materialization verifies the complete exported namespace, blob bytes, executable
 modes and symlink targets, and records archive hashes. `materialization.json`
 contains private absolute paths and must not be published. Its environment binds
-the six canonical Amlogic-ce recipes through `COMBINED_*_SOURCE`. Integrated
-component exports already include their recorded platform/post-unpack patches;
+the six canonical Amlogic-ce recipes through `COMBINED_*_SOURCE`.
+`source-env.sh` exports those verified bindings and all three target variables;
+source it only from your new local materialization directory.
+Integrated component exports already include their recorded platform/post-unpack patches;
 the recipe binding feature avoids applying them twice. AP's canonical bus rename
 is checked, not repeated. The native Ethernet adapter changes exactly the two
 installed service units from CRLF to LF; original source units stay byte-identical.

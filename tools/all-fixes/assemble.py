@@ -7,6 +7,7 @@ import json
 import os
 from pathlib import Path
 import re
+import shlex
 import subprocess
 import sys
 import tarfile
@@ -456,9 +457,19 @@ def materialize(work, destination):
                           "archive_sha256": digest(archive), "entries": len(expected)}
         variable = manifest["components"][name].get("source_variable")
         if variable:
+            if not re.fullmatch(r"COMBINED_[A-Z0-9_]+_SOURCE", variable) or variable in environment:
+                raise Failure(f"Invalid/duplicate source binding variable: {variable}")
             environment[variable] = str(source)
+    required = {variable for component in manifest["components"].values()
+                for variable in component.get("required_source_variables", [])}
+    if not required.issubset(environment):
+        raise Failure(f"Missing canonical source bindings: {sorted(required - set(environment))}")
+    shell = "".join(f"export {key}={shlex.quote(value)}\n" for key, value in environment.items())
+    with (destination / "source-env.sh").open("x") as stream:
+        stream.write(shell)
     write(destination / "materialization.json", {"manifest_sha256": assembly["manifest_sha256"],
                                                 "sources": receipts, "environment": environment,
+                                                "source_env_sha256": digest(shell.encode()),
                                                 "build_run": False})
     return receipts
 
