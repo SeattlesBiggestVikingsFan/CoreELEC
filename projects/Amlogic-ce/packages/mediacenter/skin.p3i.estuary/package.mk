@@ -8,7 +8,8 @@ PKG_SITE="https://github.com/xbmc/skin.estuary/"
 # Using local skin checkout; ship raw sources and pack the XBT bundles at build
 # time (mirrors kodi's copy_skin_to_buildtree), so the CoreELEC icon overlay can
 # be baked in before TexturePacker runs.
-PKG_URL="file://${ROOT}/sources/skin.p3i.estuary/skin.p3i.estuary-local"
+PKG_URL="file://${COMBINED_SKIN_SOURCE:?Set COMBINED_SKIN_SOURCE to the sealed integrated source}"
+PKG_SKIP_PATCHES="yes"
 PKG_SOURCE_NAME="skin.p3i.estuary-local"
 PKG_DEPENDS_TARGET="toolchain TexturePacker:host"
 PKG_TOOLCHAIN="manual"

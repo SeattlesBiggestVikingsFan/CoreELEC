@@ -6,7 +6,8 @@ PKG_VERSION="coreelec-21-ng"
 PKG_LICENSE="GPL"
 PKG_SITE="https://coreelec.org"
 # Using local service.coreelec.settings checkout for development
-PKG_URL="file://${ROOT}/sources/service.coreelec.settings/service.coreelec.settings-local"
+PKG_URL="file://${COMBINED_SETTINGS_SOURCE:?Set COMBINED_SETTINGS_SOURCE to the sealed integrated source}"
+PKG_SKIP_PATCHES="yes"
 PKG_SOURCE_NAME="service.coreelec.settings-local"
 # Local source edits must invalidate the cached addon package.
 PKG_NEED_UNPACK="${PKG_URL#file://}/src ${PKG_URL#file://}/language"
