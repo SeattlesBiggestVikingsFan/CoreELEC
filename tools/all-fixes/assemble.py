@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Pinned, isolated Git assembly. No build, deployment, or network side effects."""
+"""Pinned, isolated Git assembly with explicit source bootstrap; no builds or deployment."""
 import argparse
 import hashlib
 import io

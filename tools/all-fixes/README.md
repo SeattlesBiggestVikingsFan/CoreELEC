@@ -28,9 +28,12 @@ The managed `source_repository` URLs are the user-owned
 `SeattlesBiggestVikingsFan/linux-amlogic` forks. Bootstrap fetches the named
 integration and selected feature refs from those forks and verifies exact pins.
 `upstream.repository` remains canonical Pannal provenance, not the fetch location
-for new private/integration commits. Missing or moved published refs fail visibly.
+for new feature/integration commits. Missing or moved published refs fail visibly.
 Publication and a fresh public-clone acceptance are separate parent-owned steps;
 bootstrap does not create forks, publish, authorize or infer PR activity.
+Historic component evidence documents local bundle reconstruction, not public
+bootstrap instructions. Original diagnostic fixtures and their raw control logs
+remain local-only; their recorded hashes do not make those gates public-runnable.
 
 The four unchanged integrated ancillary sources need explicit sealed local Git
 inputs in the private JSON: `media_modules`, `ap6275s`, `settings`, `skin`.
