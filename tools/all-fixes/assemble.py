@@ -283,6 +283,16 @@ def commit_index(repo, message):
     return head
 
 
+def check_bootstrap_features(repo, selected):
+    for feature in selected:
+        revisions = feature.get("commits", feature.get("ordered_commits", []))
+        for revision in revisions:
+            commit(repo, revision)
+        if revisions and (not feature.get("ref") or
+                          text(repo, "rev-parse", "--verify", feature["ref"]) != revisions[-1]):
+            raise Failure(f"Feature ref missing or moved: {feature.get('ref')}")
+
+
 def bootstrap(manifest_path, destination, local_sources_path=None):
     manifest, manifest_hash = validate_manifest(manifest_path)
     local = load(local_sources_path) if local_sources_path else {}
@@ -304,7 +314,31 @@ def bootstrap(manifest_path, destination, local_sources_path=None):
                 revision = sha(component["pinned_source"]["commit"], name + " source")
                 git(repo, "fetch", "--quiet", "--depth=1", source, revision)
                 commit(repo, revision)
-                tree_check(repo, revision, component)
+                selected = order(component)
+                if selected:
+                    base_tree = component["pinned_source"].get("tree")
+                    if not base_tree:
+                        raise Failure(f"{name}: ancillary replay requires pinned_source.tree")
+                    sha(base_tree, name + " source tree")
+                    if text(repo, "rev-parse", revision + "^{tree}") != base_tree:
+                        raise Failure(f"{name}: ancillary base tree mismatch")
+                    refs, commits = set(), set()
+                    for feature in selected:
+                        revisions = feature.get("commits", feature.get("ordered_commits", []))
+                        if revisions:
+                            ref = feature.get("ref", "")
+                            ref = ref if ref.startswith("refs/") else "refs/heads/" + ref
+                            if not ref.startswith("refs/heads/"):
+                                raise Failure(f"{name}: ancillary topic branch required")
+                            git(repo, "check-ref-format", ref)
+                            refs.add(ref)
+                            commits.update(sha(item, name + " feature") for item in revisions)
+                    if commits:
+                        git(repo, "fetch", "--quiet", "--depth=2", source, *sorted(commits),
+                            *[ref + ":" + ref for ref in sorted(refs)])
+                    check_bootstrap_features(repo, selected)
+                else:
+                    tree_check(repo, revision, component)
                 receipt["components"][name] = {"source_kind": "sealed-local-ancillary",
                                                "commit": revision,
                                                "tree": text(repo, "rev-parse", revision + "^{tree}")}
@@ -338,12 +372,7 @@ def bootstrap(manifest_path, destination, local_sources_path=None):
                 revision = text(repo, "rev-parse", "--verify", integration_ref)
                 if integration.get("head") and revision != integration["head"]:
                     raise Failure(f"{name}: integration ref moved from pinned catalog head")
-                for feature in selected:
-                    revisions = feature.get("commits", feature.get("ordered_commits", []))
-                    for item in revisions:
-                        commit(repo, item)
-                    if revisions and text(repo, "rev-parse", feature["ref"]) != revisions[-1]:
-                        raise Failure(f"{name}: published feature ref moved: {feature['ref']}")
+                check_bootstrap_features(repo, selected)
                 receipt["components"][name] = {"source_kind": "owned-fork",
                                                "source_repository": source,
                                                "upstream_repository": component["upstream"]["repository"],

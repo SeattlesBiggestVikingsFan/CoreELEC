@@ -45,7 +45,12 @@ inputs in the private JSON: `media_modules`, `ap6275s`, `settings`, `skin`.
 Restore the corresponding hash-pinned source bundles/exports recorded in the
 manifest provenance, then provide those Git repository paths. Bootstrap copies
 only their exact selected commits into new depth-one repositories and verifies
-the selected trees. It never guesses a moving upstream or consumes a build cache.
+the selected trees. Ancillary components with reviewed replay topics must also
+pin `pinned_source.tree` and provide their exact topic refs/ordered commits in the
+sealed local repository. Bootstrap fetches those commits with their parent trees
+for delta extraction; assembly verifies the final selected tree. This permits
+settings UI updates without importing private history or applying the full
+platform patch twice. It never guesses a moving upstream or consumes a build cache.
 This explicit immutable-input boundary is not a claim that ancillary integrated
 commits or proprietary inputs are available on the three owned forks.
 
