@@ -103,6 +103,47 @@ class AssemblyTests(unittest.TestCase):
         with self.assertRaisesRegex(a.Failure, "ref moved"):
             self.build()
 
+    def test_cross_component_capability_missing_unselected_and_cycle(self):
+        self.manifest["components"]["kernel"] = {
+            "upstream": {"commit": self.base, "repository": "https://github.com/example/kernel.git"},
+            "expected_tree": a.text(self.repo, "rev-parse", self.first + "^{tree}"),
+            "features": [{"id": "capability", "ordered_commits": [self.first],
+                          "ref": "refs/heads/feature/one", "default": True, "status": "included"}]}
+        self.bindings.write_text(json.dumps({"example": str(self.repo), "kernel": str(self.repo)}))
+        consumer = self.manifest["components"]["example"]["features"][0]
+        capability = self.manifest["components"]["kernel"]["features"][0]
+        consumer["cross_component_depends_on"] = [{"component": "kernel", "feature": "capability"}]
+        _, receipt = self.build()
+        self.assertEqual(receipt["components"]["kernel"]["selected"], ["capability"])
+        capability["default"] = False
+        with self.assertRaisesRegex(a.Failure, "Unselected cross-component"):
+            self.build()
+        capability["default"] = True
+        consumer["cross_component_depends_on"][0]["feature"] = "missing"
+        with self.assertRaisesRegex(a.Failure, "Missing cross-component"):
+            self.build()
+        consumer["cross_component_depends_on"][0]["feature"] = "capability"
+        capability["cross_component_depends_on"] = [{"component": "example", "feature": "two"}]
+        with self.assertRaisesRegex(a.Failure, "cycle"):
+            self.build()
+
+    def test_cross_component_experiments_require_both_explicit_selections(self):
+        consumer = self.manifest["components"]["example"]["features"][0]
+        consumer.update(default=False, experimental=True)
+        consumer["cross_component_depends_on"] = [{"component": "kernel", "feature": "capability"}]
+        self.manifest["components"]["kernel"] = {
+            "upstream": {"commit": self.base, "repository": "https://github.com/example/kernel.git"},
+            "expected_tree": a.text(self.repo, "rev-parse", self.first + "^{tree}"),
+            "features": [{"id": "capability", "ordered_commits": [self.first],
+                          "ref": "refs/heads/feature/one", "default": False,
+                          "experimental": True, "status": "included"}]}
+        self.bindings.write_text(json.dumps({"example": str(self.repo), "kernel": str(self.repo)}))
+        with self.assertRaisesRegex(a.Failure, "Unselected cross-component"):
+            self.build(experiments=["example:two"])
+        _, receipt = self.build(experiments=["example:two", "kernel:capability"])
+        self.assertEqual(receipt["components"]["example"]["selected"], ["one", "two"])
+        self.assertEqual(receipt["components"]["kernel"]["selected"], ["capability"])
+
     def test_conflict_retains_isolated_diagnostics(self):
         a.git(self.repo, "switch", "--detach", self.base)
         conflicting = self.change("data", "upstream\n", "upstream")
