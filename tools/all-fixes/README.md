@@ -74,7 +74,10 @@ and evidence remain local unless separately reviewed for publication.
 ## Native source and build boundaries
 
 Materialization verifies the complete exported namespace, blob bytes, executable
-modes and symlink targets, and records archive hashes. `materialization.json`
+modes and symlink targets, and records archive hashes. It
+exports Git trees directly, including files marked `export-ignore` and preserving
+`export-subst` bytes; its deterministic source-tar hash uses PAX format and epoch
+zero rather than Git's filtered release-archive behavior. `materialization.json`
 contains private absolute paths and must not be published. Its environment binds
 the six canonical Amlogic-ce recipes through `COMBINED_*_SOURCE`.
 `source-env.sh` exports those verified bindings and all three target variables;

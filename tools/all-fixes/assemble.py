@@ -402,6 +402,15 @@ def immutable(repo, ref, revision):
     git(repo, "update-ref", ref, revision, "0" * 40)
 
 
+class ArchiveHash:
+    def __init__(self):
+        self.hash = hashlib.sha256()
+
+    def write(self, data):
+        self.hash.update(data)
+        return len(data)
+
+
 def materialize(work, destination):
     work, destination = Path(work), Path(destination).resolve()
     assembly = load(work / "assembly.json")
@@ -415,46 +424,54 @@ def materialize(work, destination):
         repo = work / name
         if text(repo, "rev-parse", "HEAD") != record["head"] or text(repo, "status", "--porcelain"):
             raise Failure(f"Candidate changed: {name}")
-        archive = git(repo, "-c", "core.autocrlf=false", "archive", "--format=tar", record["head"]).stdout
         source = destination / name
         source.mkdir()
-        with tarfile.open(fileobj=io.BytesIO(archive)) as bundle:
-            # Git trees are trusted only after rejecting path escapes and special files.
-            for member in bundle.getmembers():
-                path = safe_path(source, member.name)
-                if member.islnk() or member.isdev() or member.isfifo():
-                    raise Failure(f"Unsupported archive member: {member.name}")
-                if member.issym():
-                    target = (path.parent / member.linkname).resolve()
-                    if Path(member.linkname).is_absolute() or not target.is_relative_to(source):
-                        raise Failure(f"Unsafe archive symlink: {member.name}")
-            bundle.extractall(source, filter="fully_trusted")
         expected = entries(repo, record["head"])
+        object_ids = [information.split()[2] for information in expected.values()]
+        blobs = git(repo, "cat-file", "--batch", data=("\n".join(object_ids) + "\n").encode()).stdout
+        offset = 0
+        archive = ArchiveHash()
+        with tarfile.open(fileobj=archive, mode="w|", format=tarfile.PAX_FORMAT) as bundle:
+            for relative, information in expected.items():
+                mode, kind, object_id = information.split()
+                if kind != "blob" or mode not in ("100644", "100755", "120000"):
+                    raise Failure(f"Unsupported source tree entry: {relative}")
+                path = safe_path(source, relative)
+                path.parent.mkdir(parents=True, exist_ok=True)
+                end = blobs.index(b"\n", offset)
+                header = blobs[offset:end].decode().split()
+                if len(header) != 3 or header[:2] != [object_id, "blob"]:
+                    raise Failure(f"Missing materialized source object: {relative}")
+                size = int(header[2])
+                blob = memoryview(blobs)[end + 1:end + 1 + size]
+                offset = end + size + 2
+                member = tarfile.TarInfo(relative)
+                if mode == "120000":
+                    link = bytes(blob).decode()
+                    target = (path.parent / link).resolve()
+                    if Path(link).is_absolute() or not target.is_relative_to(source):
+                        raise Failure(f"Unsafe source symlink: {relative}")
+                    os.symlink(link, path)
+                    member.type, member.linkname, member.mode = tarfile.SYMTYPE, link, 0o777
+                    bundle.addfile(member)
+                else:
+                    path.write_bytes(blob)
+                    path.chmod(0o755 if mode == "100755" else 0o644)
+                    member.mode, member.size = int(mode[-3:], 8), size
+                    bundle.addfile(member, io.BytesIO(blob))
+                data = os.readlink(path).encode() if path.is_symlink() else path.read_bytes()
+                if digest(data) != digest(blob):
+                    raise Failure(f"Materialized content mismatch: {relative}")
+                actual_mode = "120000" if path.is_symlink() else ("100755" if path.stat().st_mode & 0o111 else "100644")
+                if mode != actual_mode:
+                    raise Failure(f"Materialized mode mismatch: {relative}")
         actual_paths = {str(path.relative_to(source)) for path in source.rglob("*")
                         if not path.is_dir() or path.is_symlink()}
         if actual_paths != set(expected):
             raise Failure(f"Materialized namespace mismatch: {name}")
-        object_ids = [information.split()[2] for information in expected.values()]
-        blobs = git(repo, "cat-file", "--batch", data=("\n".join(object_ids) + "\n").encode()).stdout
-        offset = 0
-        for relative, information in expected.items():
-            mode, kind, object_id = information.split()
-            path = source / relative
-            data = os.readlink(path).encode() if path.is_symlink() else path.read_bytes()
-            end = blobs.index(b"\n", offset)
-            header = blobs[offset:end].decode().split()
-            if len(header) != 3 or header[:2] != [object_id, "blob"]:
-                raise Failure(f"Missing materialized source object: {relative}")
-            size = int(header[2])
-            blob = memoryview(blobs)[end + 1:end + 1 + size]
-            offset = end + size + 2
-            if kind != "blob" or digest(data) != digest(blob):
-                raise Failure(f"Materialized content mismatch: {relative}")
-            actual_mode = "120000" if path.is_symlink() else ("100755" if path.stat().st_mode & 0o111 else "100644")
-            if mode != actual_mode:
-                raise Failure(f"Materialized mode mismatch: {relative}")
         receipts[name] = {"head": record["head"], "tree": record["tree"],
-                          "archive_sha256": digest(archive), "entries": len(expected)}
+                          "archive_sha256": archive.hash.hexdigest(), "entries": len(expected),
+                          "archive_format": "complete-git-tree-pax-tar-v1/epoch-zero"}
         variable = manifest["components"][name].get("source_variable")
         if variable:
             if not re.fullmatch(r"COMBINED_[A-Z0-9_]+_SOURCE", variable) or variable in environment:
