@@ -12,7 +12,7 @@ import struct
 import threading
 import time
 
-from calibration import (CalibrationError, Cancelled, DiagnosticJob, Health, Job, ProfileStore, PublicRepairJob,
+from calibration import (CalibrationError, Cancelled, DiagnosticJob, Health, HTTPS_BACKEND, Job, ProfileStore, PublicRepairJob,
                          adapters, endpoint, validate_profile)
 from public_servers import catalogue_metadata, catalogue_page
 
@@ -184,7 +184,8 @@ class Service:
                 if profile.get('kind') == 'public_error_checked':
                     result['last_verification'] = {
                         'index': index, 'verified_at': profile.get('verified_at'),
-                        'kind': 'public_error_checked', 'gigabit_verified': False, 'state': 'saved'}
+                        'kind': 'public_error_checked', 'gigabit_verified': False, 'state': 'saved',
+                        'traffic_backend': profile.get('traffic_backend', 'iperf3')}
                 else:
                     result['last_verification'] = {
                         'index': index, 'verified_at': profile.get('verified_at'),
@@ -201,6 +202,7 @@ class Service:
         result['profile'] = {'state': profile_state, 'index': capabilities['index']}
         if profile is not None and profile.get('kind') == 'public_error_checked':
             result['profile']['kind'] = 'public_error_checked'
+            result['profile']['traffic_backend'] = profile.get('traffic_backend', 'iperf3')
         if profile_margin is not None:
             result['profile']['margin'] = profile_margin
         result['health'] = {'state': 'calibrating'} if busy else dict(self.health.state)
@@ -233,7 +235,15 @@ class Service:
             if type(public) is not bool or type(consent) is not bool:
                 raise CalibrationError('Invalid public endpoint consent')
             preset = request.get('preset')
-            if preset is not None:
+            backend = request.get('backend', 'iperf3')
+            if backend == HTTPS_BACKEND:
+                if not public or not consent or any(request.get(key) is not None for key in
+                                                    ('address', 'port', 'preset', 'url')):
+                    raise CalibrationError('Experimental HTTPS needs explicit public-source consent and no custom URL')
+                address, port = None, None
+            elif backend != 'iperf3':
+                raise CalibrationError('Unsupported traffic backend')
+            elif preset is not None:
                 if not public or not consent:
                     raise CalibrationError('Public presets require explicit diagnostic consent')
                 address, port = None, request.get('port')
@@ -242,7 +252,10 @@ class Service:
             else:
                 address, port = endpoint(request.get('address'), request.get('port'), public, consent)
             job_type = PublicRepairJob if public else Job
-            self.job = job_type(adapter, self.store, address, port, public, self.update, preset=preset)
+            options = {'preset': preset}
+            if backend != 'iperf3':
+                options['backend'] = backend
+            self.job = job_type(adapter, self.store, address, port, public, self.update, **options)
             self.health.reset()
             self.current_adapter = adapter
             self.update({'phase': 'starting'})
