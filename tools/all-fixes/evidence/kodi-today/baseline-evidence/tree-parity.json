@@ -1,0 +1,11 @@
+{
+  "original_commit": "0aff06e05c4faada67c96a791f8a7e5f3485a29f",
+  "reconstructed_commit": "fce97af5c969859be1d42fdebb19b727b6d4b5be",
+  "tree": "80398010a104b30fc2a0d21eaf2af6567a3f685f",
+  "paths": 9889,
+  "content_and_modes_exact": true,
+  "tree_entries_sha256": "d6e270a60e401b35b443267a589d7b5ec750bf40945034aae0613636da166a4a",
+  "diagnostic_fixture": "9a90ccab8904ef1cf98b18bc7d1348cf469f33f2",
+  "assertions_modified": false,
+  "binary_rebuilt": false
+}

@@ -1,0 +1,98 @@
+{
+  "passed": true,
+  "base": "d81eff5f0596d63e6a3fe79f656efe88b902b7ec",
+  "mode": "100644",
+  "records": [
+    {
+      "step": "8a-to-10",
+      "ref": "feature/today-settings-https10",
+      "head": "cca0e474fe8ff9d5a7c79d38ed224c7417e8c357",
+      "tree": "f9a99880bc8d43390ce4973d0ace78846f3213b2",
+      "patch_sha256": "f2349b006ade96a6b35cf13263b6c02213847478227ed0b047479da22163cf75",
+      "owner_files": {
+        "language/resource.language.en_gb/strings.po": {
+          "intended_regular_file_mode": "0644",
+          "new_sha256": "97c2490e862e46bc81d6878ef526f6a24b992eed2388e02073411ed2e482dd96",
+          "old_sha256": "1d94f6679c6011053b02c9aaca71386ccb25392006d480c4e0152d6884d6d1dc"
+        },
+        "src/resources/lib/ethernet_calibration.py": {
+          "intended_regular_file_mode": "0644",
+          "new_sha256": "ae744d957ddb09e68aa665c585ce5a81a78a913f7cb9abf36f026af273c5578c",
+          "old_sha256": "3839cbe1c1da694e32a91b82fe5e30cf7833f1106d4b4c11abc20c255b1da594"
+        },
+        "tests/test_ethernet_calibration.py": {
+          "intended_regular_file_mode": "0644",
+          "new_sha256": "9d931fcd62594583d88a58338681811158a9559b1e762980ba6662f5bd241f52",
+          "old_sha256": "33fe0cb78c2c340211ec9666a1c8e67e8b679f4c5f30ef8805ddbb3a2cd1c257"
+        }
+      },
+      "actual_before": {
+        "language/resource.language.en_gb/strings.po": "30806adcca58a78ee6b9f495859992426a4a12bddb07a526036d368fddd98c65",
+        "src/resources/lib/ethernet_calibration.py": "3839cbe1c1da694e32a91b82fe5e30cf7833f1106d4b4c11abc20c255b1da594",
+        "tests/test_ethernet_calibration.py": "33fe0cb78c2c340211ec9666a1c8e67e8b679f4c5f30ef8805ddbb3a2cd1c257"
+      },
+      "actual_after": {
+        "language/resource.language.en_gb/strings.po": "2106997aa5b02aee87697cd0c9e5f0260f80c142150878632944c4673e2985d1",
+        "src/resources/lib/ethernet_calibration.py": "ae744d957ddb09e68aa665c585ce5a81a78a913f7cb9abf36f026af273c5578c",
+        "tests/test_ethernet_calibration.py": "9d931fcd62594583d88a58338681811158a9559b1e762980ba6662f5bd241f52"
+      },
+      "unchanged_distribution_translation_delta": true
+    },
+    {
+      "step": "10-to-11",
+      "ref": "feature/today-settings-ux11",
+      "head": "8a367cf0216b15bd4aaa881640dbb5b6ae547a79",
+      "tree": "d9ac67c43de71ba908ff5356ebda999eb45b8dc3",
+      "patch_sha256": "71a01092343e69bb8f243b2b0c4efdd47447fee4df3a78768fd684a6e105f59d",
+      "owner_files": {
+        "language/resource.language.en_gb/strings.po": {
+          "intended_regular_file_mode": "0644",
+          "new_sha256": "a02c5537c2ec6b1beb76ce2461202f6c392d00de29ea2cdbbfe26ceecd7e9c95",
+          "old_sha256": "97c2490e862e46bc81d6878ef526f6a24b992eed2388e02073411ed2e482dd96"
+        },
+        "src/resources/lib/ethernet_calibration.py": {
+          "intended_regular_file_mode": "0644",
+          "new_sha256": "948318990aa65e70c7319de5ad8349837cd08b55460ac4d0d9289c54500346ba",
+          "old_sha256": "ae744d957ddb09e68aa665c585ce5a81a78a913f7cb9abf36f026af273c5578c"
+        },
+        "src/resources/lib/modules/connman.py": {
+          "intended_regular_file_mode": "0644",
+          "new_sha256": "5d147b6bbc0304053c2fffeff902b9284a6c8958f651d1c60be33f24be5f9c3b",
+          "old_sha256": "e695e11cc6bae9efecef8617412d74619b6c60adbc4328f6a8982b31c2077921"
+        },
+        "src/resources/lib/oeWindows.py": {
+          "intended_regular_file_mode": "0644",
+          "new_sha256": "9c1a659b2df64b411cbe1286b892f9bb258d5a88cebeef403e74cb8ffaa2185b",
+          "old_sha256": "1296283430b425eec773ded79b90c8630cf4dc392cbd98d4879ea9453409b2c0"
+        },
+        "tests/test_ethernet_calibration.py": {
+          "intended_regular_file_mode": "0644",
+          "new_sha256": "4f7e0a4ead6f200e77eb91b7600b242b8e7dce08460935e0758dafd813719529",
+          "old_sha256": "9d931fcd62594583d88a58338681811158a9559b1e762980ba6662f5bd241f52"
+        }
+      },
+      "actual_before": {
+        "language/resource.language.en_gb/strings.po": "2106997aa5b02aee87697cd0c9e5f0260f80c142150878632944c4673e2985d1",
+        "src/resources/lib/ethernet_calibration.py": "ae744d957ddb09e68aa665c585ce5a81a78a913f7cb9abf36f026af273c5578c",
+        "src/resources/lib/modules/connman.py": "e695e11cc6bae9efecef8617412d74619b6c60adbc4328f6a8982b31c2077921",
+        "src/resources/lib/oeWindows.py": "1296283430b425eec773ded79b90c8630cf4dc392cbd98d4879ea9453409b2c0",
+        "tests/test_ethernet_calibration.py": "9d931fcd62594583d88a58338681811158a9559b1e762980ba6662f5bd241f52"
+      },
+      "actual_after": {
+        "language/resource.language.en_gb/strings.po": "201ee3ca05a9c998f210072292885922d162c164c917d63decb302167e24275e",
+        "src/resources/lib/ethernet_calibration.py": "948318990aa65e70c7319de5ad8349837cd08b55460ac4d0d9289c54500346ba",
+        "src/resources/lib/modules/connman.py": "5d147b6bbc0304053c2fffeff902b9284a6c8958f651d1c60be33f24be5f9c3b",
+        "src/resources/lib/oeWindows.py": "9c1a659b2df64b411cbe1286b892f9bb258d5a88cebeef403e74cb8ffaa2185b",
+        "tests/test_ethernet_calibration.py": "4f7e0a4ead6f200e77eb91b7600b242b8e7dce08460935e0758dafd813719529"
+      },
+      "unchanged_distribution_translation_delta": true
+    }
+  ],
+  "preserved_translation_adaptations": [
+    "prior duplicate32240 cleanup",
+    "existing persistent-log-backup help",
+    "existing Wi-Fi throughput help"
+  ],
+  "full001_applied_to_candidate": false,
+  "owner_full001_control_only": true
+}

@@ -1,0 +1,29 @@
+{
+  "framework": {
+    "initial_fsck_passed": true,
+    "initial_error": null,
+    "alternates_present": false
+  },
+  "media_modules": {
+    "initial_fsck_passed": true,
+    "initial_error": null,
+    "alternates_present": false
+  },
+  "ap6275s": {
+    "initial_fsck_passed": true,
+    "initial_error": null,
+    "alternates_present": false
+  },
+  "settings": {
+    "initial_fsck_passed": false,
+    "initial_error": "error in blob 89114a6bf92c3ecdf2494dde911718c02fc8e957: gitattributesMissing: unable to read .gitattributes blob",
+    "recovery": "New exact-commit depth-one source object store; original donor partial historical attributes graph not claimed complete.",
+    "final_fsck_passed": true,
+    "alternates_present": false
+  },
+  "skin": {
+    "initial_fsck_passed": true,
+    "initial_error": null,
+    "alternates_present": false
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "published_ancestry_boundary": "fce97af5c969859be1d42fdebb19b727b6d4b5be",
+  "newly_reachable_commits": [
+    "9cdf90502deda6026cdad45b6bbb7172f90f4de0",
+    "5ee5e77fc07ae84012355e133ef66b530ea43569",
+    "8ef79ccdec5243ec0803f2c608420f4979d51d25",
+    "4c36d29c89cefa2e8d596f180706eb790eb99c38",
+    "aa1aecf3f2d182d859468a234b690fa240194e0a"
+  ],
+  "count": 5,
+  "new_changed_blobs_scanned": 13,
+  "findings": [],
+  "original_private_ancestry_intersection": [],
+  "old_refs_and_tags_unchanged": true,
+  "new_refs_only": [
+    "refs/heads/fix/today-python-shutdown",
+    "refs/heads/feature/today-lldv-vsif-suppression",
+    "refs/heads/integration/all-fixes-today-20261122",
+    "refs/tags/release/today-20261122-source-candidate"
+  ],
+  "original_source_or_diagnostic_refs_published": false,
+  "push_or_pr_actions": false
+}

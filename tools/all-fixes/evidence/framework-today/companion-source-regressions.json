@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "feature_ref": "feature/today-accepted-companion-contract",
+  "head": "34b205ae3c93c47e8432f2449bd7af4585835b10",
+  "tests": 7,
+  "original_test_sha256": "0f795e9d0be458519fed9274c6b4eef0b3464d0692b2be213e94840f03fb0058",
+  "portable_test_sha256": "548d0d03691fa162fb65058f42116ec98523710281e2efe69c35ddcadceffca0",
+  "assertions_and_test_AST_unchanged_except_SOURCE": true,
+  "source_files": {
+    "ws_client-original.py": "7cc8bbce35b2ea0ba889fd8bbe0938cd74fb0f99b8459b7bd33ef9899ab57b39",
+    "ws_client.py": "acdd54e6c7caf61275ab2405c7bb9b8013583124e185a7e4eb44ac4135dc0b07",
+    "ws-client-ordering.patch": "2002d2770df89079adcf80c322c6744add69acc8fd16d637dcd0b79b69979ed6"
+  },
+  "system_addon_install": false,
+  "runtime_migration": false
+}
