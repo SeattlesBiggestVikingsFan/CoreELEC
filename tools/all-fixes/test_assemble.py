@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 import assemble as a
 
@@ -272,6 +273,62 @@ class AssemblyTests(unittest.TestCase):
         component["files"][0]["sha256"] = "0" * 64
         with self.assertRaisesRegex(a.Failure, "source checksum"):
             self.build()
+
+    def test_portable_projection_does_not_require_private_reference_commit(self):
+        component = self.manifest["components"]["example"]
+        records = a.entries(self.repo, self.second)
+        component["parity"] = [{"reference_commit": "f" * 40,
+                                "entries_count": len(records),
+                                "entries_sha256": a.digest(json.dumps(
+                                    records, sort_keys=True, separators=(",", ":")).encode())}]
+        self.build()
+        component["parity"][0]["entries_sha256"] = "0" * 64
+        with self.assertRaisesRegex(a.Failure, "projection"):
+            self.build()
+
+    def test_bootstrap_fetches_exact_features_from_owned_fork_not_upstream(self):
+        owned = "https://github.com/test-owned/source.git"
+        component = self.manifest["components"]["example"]
+        component["source_repository"] = owned
+        component["integration"] = {"ref": "refs/heads/integration/all-fixes", "head": self.second}
+        a.git(self.repo, "branch", "integration/all-fixes", self.second)
+        self.manifest_path.write_text(json.dumps(self.manifest))
+        config = {"GIT_CONFIG_COUNT": "1",
+                  "GIT_CONFIG_KEY_0": f"url.{self.repo}.insteadOf",
+                  "GIT_CONFIG_VALUE_0": owned}
+        output = self.root / "public-bootstrap"
+        with patch.dict(os.environ, config):
+            result = a.bootstrap(self.manifest_path, output)
+        self.assertEqual(result["status"], "ready")
+        self.assertEqual(a.text(output / "example", "remote", "get-url", "origin"), owned)
+        self.assertEqual(a.text(output / "example", "remote", "get-url", "upstream"),
+                         component["upstream"]["repository"])
+        self.assertEqual(a.text(output / "example", "rev-parse", "feature/one"), self.first)
+        self.assertEqual(a.text(output / "example", "rev-parse", "feature/two"), self.second)
+        work = self.root / "public-candidate"
+        receipt = a.assemble(self.manifest_path, output / "repositories.private.json", work)
+        self.assertEqual(receipt["components"]["example"]["tree"], component["expected_tree"])
+
+    def test_bootstrap_never_defaults_new_commits_to_upstream_url(self):
+        self.manifest_path.write_text(json.dumps(self.manifest))
+        with self.assertRaisesRegex(a.Failure, "owned source_repository"):
+            a.bootstrap(self.manifest_path, self.root / "missing-owned")
+        self.assertEqual(a.load(self.root / "missing-owned/bootstrap.private.json")["status"], "blocked")
+
+    def test_bootstrap_integrated_ancillary_requires_exact_explicit_local_source(self):
+        component = self.manifest["components"]["example"]
+        component["pinned_source"] = {"commit": self.base}
+        component["features"] = []
+        component["expected_tree"] = a.text(self.repo, "rev-parse", self.base + "^{tree}")
+        self.manifest_path.write_text(json.dumps(self.manifest))
+        with self.assertRaisesRegex(a.Failure, "sealed local Git source"):
+            a.bootstrap(self.manifest_path, self.root / "missing-ancillary")
+        sources = self.root / "sealed-local.private.json"
+        a.write(sources, {"example": str(self.repo)})
+        output = self.root / "sealed-bootstrap"
+        result = a.bootstrap(self.manifest_path, output, sources)
+        self.assertEqual(result["components"]["example"]["commit"], self.base)
+        self.assertEqual(a.text(output / "example", "rev-parse", "HEAD"), self.base)
 
 
 if __name__ == "__main__":
