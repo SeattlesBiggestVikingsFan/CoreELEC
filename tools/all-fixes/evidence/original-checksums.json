@@ -1,0 +1,11 @@
+{
+  "archive_sha256": "09d980218d8ab1cc9b48cb27c056f03c8f7a4ba198e98b3d15f4c2bbea0a672a",
+  "component_lock_sha256": "3c053d25604083b2f9f288bd7c7789efa0fd2836b38c4200c365405ed65a29a8",
+  "original_source_commits": {
+    "kodi": "0aff06e05c4faada67c96a791f8a7e5f3485a29f",
+    "kernel": "2b17ade58f733854821be8b18cf66f5d249bc727",
+    "framework": "55ab6e4ff30464b4456da1f85bbbbbdb3907e9c9"
+  },
+  "passed": true,
+  "rebuild_run": false
+}

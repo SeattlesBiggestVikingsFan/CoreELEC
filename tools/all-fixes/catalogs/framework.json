@@ -1,0 +1,262 @@
+{
+  "build_run": false,
+  "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+  "component": "framework",
+  "features": [
+    {
+      "base": "7a36d3e71d20014db093d5dfc613fe21fe654902",
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+      "default": true,
+      "depends_on": [],
+      "experimental": false,
+      "head": "41a2d4142f8b4c20d7b9899cb3d8840485a3e2b3",
+      "id": "native-ethernet8a",
+      "ordered_commits": [
+        "41a2d4142f8b4c20d7b9899cb3d8840485a3e2b3"
+      ],
+      "provenance": {
+        "source": "55ab6e4ff30464b4456da1f85bbbbbdb3907e9c9"
+      },
+      "ref": "refs/heads/feature/native-ethernet8a",
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+      "settings_defaults": {},
+      "status": "included"
+    },
+    {
+      "base": "41a2d4142f8b4c20d7b9899cb3d8840485a3e2b3",
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+      "default": true,
+      "depends_on": [
+        "native-ethernet8a"
+      ],
+      "experimental": false,
+      "head": "fa6948447b34c3ce04866c077efc68ab117ac54a",
+      "id": "native-unit-lf-adapter",
+      "ordered_commits": [
+        "fa6948447b34c3ce04866c077efc68ab117ac54a"
+      ],
+      "provenance": {
+        "source": "55ab6e4ff30464b4456da1f85bbbbbdb3907e9c9"
+      },
+      "ref": "refs/heads/feature/native-unit-lf-adapter",
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+      "settings_defaults": {},
+      "status": "included"
+    },
+    {
+      "base": "7a36d3e71d20014db093d5dfc613fe21fe654902",
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+      "default": true,
+      "depends_on": [],
+      "experimental": false,
+      "head": "e6a0e9b17f93c49d2d8ed53b50a72b97fe3b3240",
+      "id": "verified-update-packaging",
+      "ordered_commits": [
+        "e6a0e9b17f93c49d2d8ed53b50a72b97fe3b3240"
+      ],
+      "provenance": {
+        "source": "55ab6e4ff30464b4456da1f85bbbbbdb3907e9c9"
+      },
+      "ref": "refs/heads/feature/verified-update-packaging",
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+      "settings_defaults": {},
+      "status": "included"
+    },
+    {
+      "base": "fa6948447b34c3ce04866c077efc68ab117ac54a",
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+      "default": true,
+      "depends_on": [
+        "native-unit-lf-adapter"
+      ],
+      "experimental": false,
+      "head": "2df9e8ea1872886ec73279f4fc96791769728306",
+      "id": "canonical-source-bindings",
+      "ordered_commits": [
+        "2df9e8ea1872886ec73279f4fc96791769728306"
+      ],
+      "provenance": {
+        "source": "55ab6e4ff30464b4456da1f85bbbbbdb3907e9c9"
+      },
+      "ref": "refs/heads/feature/canonical-source-bindings",
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+      "settings_defaults": {},
+      "status": "included"
+    },
+    {
+      "base": "7a36d3e71d20014db093d5dfc613fe21fe654902",
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+      "default": true,
+      "depends_on": [],
+      "experimental": false,
+      "head": "ec2659a74748513df5cf22653bd2e95fa323e387",
+      "id": "reproducible-assembly",
+      "ordered_commits": [
+        "44df42bfaab9c2e0e0a8cb8d0106cb3fca514230",
+        "765c13e5de92289dd174990608463f5efa6fae9e",
+        "70c0e343c6ba196b0142f18a8af4d78708564c77",
+        "52f57b6c05f772190d1aea023b285e860ddce017",
+        "387731472a545670947a10b28b3a16a99392236e",
+        "3d69fe4874fb1c6e4bacb74361960b53f14c3fb1",
+        "fa3534a7e528c7631a2bb4ac029e074ffb3c4653",
+        "ec2659a74748513df5cf22653bd2e95fa323e387"
+      ],
+      "provenance": {
+        "source": "new workflow implementation"
+      },
+      "ref": "refs/heads/feature/reproducible-assembly",
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+      "settings_defaults": {},
+      "status": "included"
+    },
+    {
+      "base": "ec2659a74748513df5cf22653bd2e95fa323e387",
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+      "default": true,
+      "depends_on": [
+        "reproducible-assembly"
+      ],
+      "experimental": false,
+      "head": "d9c1f79b6e4c82ebc2b4d4fd2675358a2d3eb680",
+      "id": "public-source-bootstrap",
+      "ordered_commits": [
+        "2ad80e070d09bc4c6f2f6a9778a5af4dda15ef56",
+        "d9c1f79b6e4c82ebc2b4d4fd2675358a2d3eb680"
+      ],
+      "provenance": {
+        "purpose": "Owned-fork exact-ref bootstrap and portable source projection; no private original commit requirement"
+      },
+      "ref": "refs/heads/feature/public-source-bootstrap",
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+      "settings_defaults": {},
+      "status": "included"
+    }
+  ],
+  "files": [
+    {
+      "mode": "100644",
+      "path": "projects/Amlogic-ce/packages/mediacenter/kodi/package.mk",
+      "sha256": "5912c4fb1e8406deeede3e4e8ce631fea4b0c30d6475628a87695ef6a2103db6"
+    },
+    {
+      "mode": "100644",
+      "path": "projects/Amlogic-ce/packages/linux/package.mk",
+      "sha256": "51e466191176f4abea81dcc01224766c1565edac2a0ac86a779b3dbe527cd433"
+    },
+    {
+      "mode": "100644",
+      "path": "projects/Amlogic-ce/packages/linux-drivers/amlogic/media_modules-aml/package.mk",
+      "sha256": "a05583286fa09698d1451d5001dd7ab1ac78238be7ad50b6c6105db8e083297b"
+    },
+    {
+      "mode": "100644",
+      "path": "projects/Amlogic-ce/packages/mediacenter/CoreELEC-settings/package.mk",
+      "sha256": "528d54e32258affe58b95c022afbd7b2e7e1bb68e527f54666ffa484a153a394"
+    },
+    {
+      "mode": "100644",
+      "path": "projects/Amlogic-ce/packages/mediacenter/skin.p3i.estuary/package.mk",
+      "sha256": "a6adfa8a36bd0dc1d71eb590c246f43ae5382154fb0791089ac939f5600f59ab"
+    },
+    {
+      "mode": "100644",
+      "path": "projects/Amlogic-ce/packages/linux-drivers/amlogic/ap6275s-aml/package.mk",
+      "sha256": "94a795a2d4748cd46d2b0f871c9f64e803de8eedeca8ad2426a17dcaa185f242"
+    },
+    {
+      "mode": "100644",
+      "path": "tools/combined-playback-hdr/package_update.py",
+      "sha256": "d91c8b24613739bf34de31d3dad53658cfbc4ae8f93e5b73881aca83b780bec1"
+    },
+    {
+      "mode": "100644",
+      "path": "tools/combined-playback-hdr/verify_candidate.py",
+      "sha256": "eaeb0531a4183c77ce0904b7331edeb73145c3ec98467f01b0acc5a4b256042f"
+    },
+    {
+      "mode": "100644",
+      "path": "tools/combined-playback-hdr/test_package_update.py",
+      "sha256": "0d5571b864187a705ad86456112b2cf727f5c3b86ef73baeb27248a6c74f4eac"
+    },
+    {
+      "mode": "100644",
+      "path": "tools/combined-playback-hdr/test_verify_candidate.py",
+      "sha256": "1232f01c17baa5772d0ae3045a79d6cee085208d58aed4e8a8c99d18a0909ac2"
+    },
+    {
+      "mode": "100644",
+      "path": "tools/combined-playback-hdr/canupdate.sh",
+      "sha256": "4ad85c6bc7f684a5a7713f2d8fd806882e7819e23c4ad0d3bb7a1ed77b42df22"
+    },
+    {
+      "mode": "100644",
+      "path": "tools/combined-playback-hdr/os-release",
+      "sha256": "9c51d63e4ce7f4cb50de221b581adc36795dfb883ec5a5a176cf4d32087ea127"
+    },
+    {
+      "mode": "100644",
+      "path": "tools/combined-playback-hdr/release",
+      "sha256": "5138c1e85ba558a47f94076934035263d63e8fa2e119b8d7ad5ae31e953c894c"
+    },
+    {
+      "mode": "100644",
+      "path": "tools/combined-playback-hdr/tar-release.txt",
+      "sha256": "8910488d3a187534e5a765d35171cb30274eb45ab608db3714c68cad1224459e"
+    }
+  ],
+  "integration": {
+    "containing_manifest_commit_pinned_by_receipt": true,
+    "head_record": "assembly.json/components/framework/head",
+    "ref": "refs/heads/integration/all-fixes",
+    "tree_record": "assembly.json/components/framework/tree"
+  },
+  "limitations": [
+    "Framework production parity excludes six intentional canonical recipe bindings and workflow/legacy evidence tools; recipe and unchanged packager files have individual checksum/mode checks.",
+    "Original binary release is immutable; this reconstruction does not certify a new firmware build."
+  ],
+  "manifest_destination": "tools/all-fixes/manifest.json",
+  "original_release": {
+    "availability": "local-only provenance; never fetch or publish this original private history",
+    "commit": "55ab6e4ff30464b4456da1f85bbbbbdb3907e9c9",
+    "tag": "refs/tags/release-original/combined-all-fixes-20261122",
+    "tree": "3bbd8ab321dc7e8ff05f0f96e572b8781b172839"
+  },
+  "parity": [
+    {
+      "entries_count": 3691,
+      "entries_sha256": "24256f032c7a49b11d337aec99a9b5daf1bd8411484eb72c561990a1a0a3c055",
+      "exclude": [
+        "tools/combined-playback-hdr",
+        "tools/all-fixes",
+        "projects/Amlogic-ce/packages/mediacenter/kodi/package.mk",
+        "projects/Amlogic-ce/packages/linux/package.mk",
+        "projects/Amlogic-ce/packages/linux-drivers/amlogic/media_modules-aml/package.mk",
+        "projects/Amlogic-ce/packages/mediacenter/CoreELEC-settings/package.mk",
+        "projects/Amlogic-ce/packages/mediacenter/skin.p3i.estuary/package.mk",
+        "projects/Amlogic-ce/packages/linux-drivers/amlogic/ap6275s-aml/package.mk"
+      ],
+      "reference_commit": "55ab6e4ff30464b4456da1f85bbbbbdb3907e9c9"
+    }
+  ],
+  "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+  "required_source_variables": [
+    "COMBINED_KODI_SOURCE",
+    "COMBINED_KERNEL_SOURCE",
+    "COMBINED_MEDIA_SOURCE",
+    "COMBINED_SETTINGS_SOURCE",
+    "COMBINED_SKIN_SOURCE",
+    "COMBINED_AP6275S_SOURCE"
+  ],
+  "schema": 1,
+  "source_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+  "upstream": {
+    "commit": "7a36d3e71d20014db093d5dfc613fe21fe654902",
+    "ref": "refs/heads/coreelec-21_local",
+    "refresh": {
+      "commit": "473c9808dea2a9aa9ba1b42a09adb26b4e601f5d",
+      "status": "unvalidated"
+    },
+    "repository": "https://github.com/pannal/CoreELEC.git",
+    "tracking_ref": "refs/heads/upstream-dev"
+  }
+}

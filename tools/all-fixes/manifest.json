@@ -1,0 +1,3090 @@
+{
+  "binary_claim": false,
+  "bootstrap_policy": {
+    "ancillary": "Four unchanged integrated sources require exact sealed local Git inputs, not moving upstream URLs.",
+    "managed_commits": "Explicit source_repository user-owned forks; canonical upstream URLs are provenance only.",
+    "original_private_sources": "Original55ab/0aff/9a90 and original-control evidence remain local-only; never fetched/published or required for public reconstruction."
+  },
+  "build_run": false,
+  "components": {
+    "ap6275s": {
+      "expected_tree": "c5604bdf4bae9f30ccf4e69b892a8c6109302be3",
+      "features": [],
+      "pinned_source": {
+        "commit": "95a15af695f2c93cec95363ed48d9ce64b060253",
+        "original_release_input": true,
+        "stage": "accepted integrated export; no new ancillary source changes or feature refs",
+        "tree": "c5604bdf4bae9f30ccf4e69b892a8c6109302be3"
+      },
+      "recipe_policy": "Canonical six-source binding; pre-integrated platform patches are not replayed.",
+      "source_variable": "COMBINED_AP6275S_SOURCE",
+      "upstream": {
+        "commit": "f08f1b88be470d07667a671b5c6b7f4e198a75f8",
+        "ref": "recipe-pin",
+        "repository": "https://github.com/CoreELEC/ap6xxx-aml.git"
+      }
+    },
+    "framework": {
+      "build_run": false,
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+      "component": "framework",
+      "features": [
+        {
+          "base": "7a36d3e71d20014db093d5dfc613fe21fe654902",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+          "default": true,
+          "depends_on": [],
+          "experimental": false,
+          "head": "41a2d4142f8b4c20d7b9899cb3d8840485a3e2b3",
+          "id": "native-ethernet8a",
+          "ordered_commits": [
+            "41a2d4142f8b4c20d7b9899cb3d8840485a3e2b3"
+          ],
+          "provenance": {
+            "source": "55ab6e4ff30464b4456da1f85bbbbbdb3907e9c9"
+          },
+          "ref": "refs/heads/feature/native-ethernet8a",
+          "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+          "settings_defaults": {},
+          "status": "included"
+        },
+        {
+          "base": "41a2d4142f8b4c20d7b9899cb3d8840485a3e2b3",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+          "default": true,
+          "depends_on": [
+            "native-ethernet8a"
+          ],
+          "experimental": false,
+          "head": "fa6948447b34c3ce04866c077efc68ab117ac54a",
+          "id": "native-unit-lf-adapter",
+          "ordered_commits": [
+            "fa6948447b34c3ce04866c077efc68ab117ac54a"
+          ],
+          "provenance": {
+            "source": "55ab6e4ff30464b4456da1f85bbbbbdb3907e9c9"
+          },
+          "ref": "refs/heads/feature/native-unit-lf-adapter",
+          "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+          "settings_defaults": {},
+          "status": "included"
+        },
+        {
+          "base": "7a36d3e71d20014db093d5dfc613fe21fe654902",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+          "default": true,
+          "depends_on": [],
+          "experimental": false,
+          "head": "e6a0e9b17f93c49d2d8ed53b50a72b97fe3b3240",
+          "id": "verified-update-packaging",
+          "ordered_commits": [
+            "e6a0e9b17f93c49d2d8ed53b50a72b97fe3b3240"
+          ],
+          "provenance": {
+            "source": "55ab6e4ff30464b4456da1f85bbbbbdb3907e9c9"
+          },
+          "ref": "refs/heads/feature/verified-update-packaging",
+          "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+          "settings_defaults": {},
+          "status": "included"
+        },
+        {
+          "base": "fa6948447b34c3ce04866c077efc68ab117ac54a",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+          "default": true,
+          "depends_on": [
+            "native-unit-lf-adapter"
+          ],
+          "experimental": false,
+          "head": "2df9e8ea1872886ec73279f4fc96791769728306",
+          "id": "canonical-source-bindings",
+          "ordered_commits": [
+            "2df9e8ea1872886ec73279f4fc96791769728306"
+          ],
+          "provenance": {
+            "source": "55ab6e4ff30464b4456da1f85bbbbbdb3907e9c9"
+          },
+          "ref": "refs/heads/feature/canonical-source-bindings",
+          "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+          "settings_defaults": {},
+          "status": "included"
+        },
+        {
+          "base": "7a36d3e71d20014db093d5dfc613fe21fe654902",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+          "default": true,
+          "depends_on": [],
+          "experimental": false,
+          "head": "ec2659a74748513df5cf22653bd2e95fa323e387",
+          "id": "reproducible-assembly",
+          "ordered_commits": [
+            "44df42bfaab9c2e0e0a8cb8d0106cb3fca514230",
+            "765c13e5de92289dd174990608463f5efa6fae9e",
+            "70c0e343c6ba196b0142f18a8af4d78708564c77",
+            "52f57b6c05f772190d1aea023b285e860ddce017",
+            "387731472a545670947a10b28b3a16a99392236e",
+            "3d69fe4874fb1c6e4bacb74361960b53f14c3fb1",
+            "fa3534a7e528c7631a2bb4ac029e074ffb3c4653",
+            "ec2659a74748513df5cf22653bd2e95fa323e387"
+          ],
+          "provenance": {
+            "source": "new workflow implementation"
+          },
+          "ref": "refs/heads/feature/reproducible-assembly",
+          "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+          "settings_defaults": {},
+          "status": "included"
+        },
+        {
+          "base": "ec2659a74748513df5cf22653bd2e95fa323e387",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+          "default": true,
+          "depends_on": [
+            "reproducible-assembly"
+          ],
+          "experimental": false,
+          "head": "d9c1f79b6e4c82ebc2b4d4fd2675358a2d3eb680",
+          "id": "public-source-bootstrap",
+          "ordered_commits": [
+            "2ad80e070d09bc4c6f2f6a9778a5af4dda15ef56",
+            "d9c1f79b6e4c82ebc2b4d4fd2675358a2d3eb680"
+          ],
+          "provenance": {
+            "purpose": "Owned-fork exact-ref bootstrap and portable source projection; no private original commit requirement"
+          },
+          "ref": "refs/heads/feature/public-source-bootstrap",
+          "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+          "settings_defaults": {},
+          "status": "included"
+        }
+      ],
+      "files": [
+        {
+          "mode": "100644",
+          "path": "projects/Amlogic-ce/packages/mediacenter/kodi/package.mk",
+          "sha256": "5912c4fb1e8406deeede3e4e8ce631fea4b0c30d6475628a87695ef6a2103db6"
+        },
+        {
+          "mode": "100644",
+          "path": "projects/Amlogic-ce/packages/linux/package.mk",
+          "sha256": "51e466191176f4abea81dcc01224766c1565edac2a0ac86a779b3dbe527cd433"
+        },
+        {
+          "mode": "100644",
+          "path": "projects/Amlogic-ce/packages/linux-drivers/amlogic/media_modules-aml/package.mk",
+          "sha256": "a05583286fa09698d1451d5001dd7ab1ac78238be7ad50b6c6105db8e083297b"
+        },
+        {
+          "mode": "100644",
+          "path": "projects/Amlogic-ce/packages/mediacenter/CoreELEC-settings/package.mk",
+          "sha256": "528d54e32258affe58b95c022afbd7b2e7e1bb68e527f54666ffa484a153a394"
+        },
+        {
+          "mode": "100644",
+          "path": "projects/Amlogic-ce/packages/mediacenter/skin.p3i.estuary/package.mk",
+          "sha256": "a6adfa8a36bd0dc1d71eb590c246f43ae5382154fb0791089ac939f5600f59ab"
+        },
+        {
+          "mode": "100644",
+          "path": "projects/Amlogic-ce/packages/linux-drivers/amlogic/ap6275s-aml/package.mk",
+          "sha256": "94a795a2d4748cd46d2b0f871c9f64e803de8eedeca8ad2426a17dcaa185f242"
+        },
+        {
+          "mode": "100644",
+          "path": "tools/combined-playback-hdr/package_update.py",
+          "sha256": "d91c8b24613739bf34de31d3dad53658cfbc4ae8f93e5b73881aca83b780bec1"
+        },
+        {
+          "mode": "100644",
+          "path": "tools/combined-playback-hdr/verify_candidate.py",
+          "sha256": "eaeb0531a4183c77ce0904b7331edeb73145c3ec98467f01b0acc5a4b256042f"
+        },
+        {
+          "mode": "100644",
+          "path": "tools/combined-playback-hdr/test_package_update.py",
+          "sha256": "0d5571b864187a705ad86456112b2cf727f5c3b86ef73baeb27248a6c74f4eac"
+        },
+        {
+          "mode": "100644",
+          "path": "tools/combined-playback-hdr/test_verify_candidate.py",
+          "sha256": "1232f01c17baa5772d0ae3045a79d6cee085208d58aed4e8a8c99d18a0909ac2"
+        },
+        {
+          "mode": "100644",
+          "path": "tools/combined-playback-hdr/canupdate.sh",
+          "sha256": "4ad85c6bc7f684a5a7713f2d8fd806882e7819e23c4ad0d3bb7a1ed77b42df22"
+        },
+        {
+          "mode": "100644",
+          "path": "tools/combined-playback-hdr/os-release",
+          "sha256": "9c51d63e4ce7f4cb50de221b581adc36795dfb883ec5a5a176cf4d32087ea127"
+        },
+        {
+          "mode": "100644",
+          "path": "tools/combined-playback-hdr/release",
+          "sha256": "5138c1e85ba558a47f94076934035263d63e8fa2e119b8d7ad5ae31e953c894c"
+        },
+        {
+          "mode": "100644",
+          "path": "tools/combined-playback-hdr/tar-release.txt",
+          "sha256": "8910488d3a187534e5a765d35171cb30274eb45ab608db3714c68cad1224459e"
+        }
+      ],
+      "integration": {
+        "containing_manifest_commit_pinned_by_receipt": true,
+        "head_record": "assembly.json/components/framework/head",
+        "ref": "refs/heads/integration/all-fixes",
+        "tree_record": "assembly.json/components/framework/tree"
+      },
+      "limitations": [
+        "Framework production parity excludes six intentional canonical recipe bindings and workflow/legacy evidence tools; recipe and unchanged packager files have individual checksum/mode checks.",
+        "Original binary release is immutable; this reconstruction does not certify a new firmware build."
+      ],
+      "manifest_destination": "tools/all-fixes/manifest.json",
+      "original_release": {
+        "availability": "local-only provenance; never fetch or publish this original private history",
+        "commit": "55ab6e4ff30464b4456da1f85bbbbbdb3907e9c9",
+        "tag": "refs/tags/release-original/combined-all-fixes-20261122",
+        "tree": "3bbd8ab321dc7e8ff05f0f96e572b8781b172839"
+      },
+      "parity": [
+        {
+          "entries_count": 3691,
+          "entries_sha256": "24256f032c7a49b11d337aec99a9b5daf1bd8411484eb72c561990a1a0a3c055",
+          "exclude": [
+            "tools/combined-playback-hdr",
+            "tools/all-fixes",
+            "projects/Amlogic-ce/packages/mediacenter/kodi/package.mk",
+            "projects/Amlogic-ce/packages/linux/package.mk",
+            "projects/Amlogic-ce/packages/linux-drivers/amlogic/media_modules-aml/package.mk",
+            "projects/Amlogic-ce/packages/mediacenter/CoreELEC-settings/package.mk",
+            "projects/Amlogic-ce/packages/mediacenter/skin.p3i.estuary/package.mk",
+            "projects/Amlogic-ce/packages/linux-drivers/amlogic/ap6275s-aml/package.mk"
+          ],
+          "reference_commit": "55ab6e4ff30464b4456da1f85bbbbbdb3907e9c9"
+        }
+      ],
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+      "required_source_variables": [
+        "COMBINED_KODI_SOURCE",
+        "COMBINED_KERNEL_SOURCE",
+        "COMBINED_MEDIA_SOURCE",
+        "COMBINED_SETTINGS_SOURCE",
+        "COMBINED_SKIN_SOURCE",
+        "COMBINED_AP6275S_SOURCE"
+      ],
+      "schema": 1,
+      "source_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
+      "upstream": {
+        "commit": "7a36d3e71d20014db093d5dfc613fe21fe654902",
+        "ref": "refs/heads/coreelec-21_local",
+        "refresh": {
+          "commit": "473c9808dea2a9aa9ba1b42a09adb26b4e601f5d",
+          "status": "unvalidated"
+        },
+        "repository": "https://github.com/pannal/CoreELEC.git",
+        "tracking_ref": "refs/heads/upstream-dev"
+      }
+    },
+    "kernel": {
+      "component": "kernel",
+      "expected_tree": "2de60b436acf0c6289449c53eee6f842d176d4d2",
+      "features": [
+        {
+          "base": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {},
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            }
+          ],
+          "experimental": false,
+          "head": "1a608ee33cb0d69aeb278ef1cac83f1856d4fdae",
+          "id": "boot-mode-timeout",
+          "ordered_commits": [
+            "1a608ee33cb0d69aeb278ef1cac83f1856d4fdae"
+          ],
+          "patch_sha256": "9c63a41ac59428ab73ab287db77b87826b392e10bb11dba0d3dc45f7271bc06d",
+          "paths": [
+            "arch/x86/boot/tty.c",
+            "arch/x86/boot/video.c"
+          ],
+          "provenance": {
+            "adaptation": "Exact accepted donor blobs for i8042/HID context drift; exact force-output condition; other patches applied unchanged.",
+            "kind": "selected-distribution-patch",
+            "original_source": "b3fdef79fcf04d602849315f70edae9583138b72",
+            "patch": "linux-004_lower_undefined_mode_timeout.patch",
+            "sha256": "837fe5e88c2b006337456af4dc8ad281f523ddf372f33bd567edd7c9aef12d66"
+          },
+          "ref": "refs/heads/fix/boot-mode-timeout",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {},
+          "status": "included",
+          "upstream_equivalence_reason": "Exact accepted delta absent from validated upstream; replay once."
+        },
+        {
+          "base": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {},
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            }
+          ],
+          "experimental": false,
+          "head": "708a20d5f75ef903759efc72f20eb89b9ebdf94c",
+          "id": "disable-floppy-probe",
+          "ordered_commits": [
+            "708a20d5f75ef903759efc72f20eb89b9ebdf94c"
+          ],
+          "patch_sha256": "aafc7625a92539dfb7c7e72283d42f0c5aaf9e1b6c4a8dc80b86c958c9441077",
+          "paths": [
+            "drivers/block/floppy.c"
+          ],
+          "provenance": {
+            "adaptation": "Exact accepted donor blobs for i8042/HID context drift; exact force-output condition; other patches applied unchanged.",
+            "kind": "selected-distribution-patch",
+            "original_source": "b3fdef79fcf04d602849315f70edae9583138b72",
+            "patch": "linux-007_die_floppy_die.patch",
+            "sha256": "8c4db095ecf5f0a5f66790fd2afdeac1fa8eb999dfc442fb8f3aec4be02cd623"
+          },
+          "ref": "refs/heads/fix/disable-floppy-probe",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {},
+          "status": "included",
+          "upstream_equivalence_reason": "Exact accepted delta absent from validated upstream; replay once."
+        },
+        {
+          "base": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {},
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            }
+          ],
+          "experimental": false,
+          "head": "2d903eeb3b4e63ccb2af1df56b34a5153e3279a8",
+          "id": "apple-i8042",
+          "ordered_commits": [
+            "2d903eeb3b4e63ccb2af1df56b34a5153e3279a8"
+          ],
+          "patch_sha256": "6f1d96b21188b5e2940fe4af393e2f1636400cf066c0054afa853c44a3d8c003",
+          "paths": [
+            "drivers/input/serio/i8042.c"
+          ],
+          "provenance": {
+            "adaptation": "Exact accepted donor blobs for i8042/HID context drift; exact force-output condition; other patches applied unchanged.",
+            "kind": "selected-distribution-patch",
+            "original_source": "b3fdef79fcf04d602849315f70edae9583138b72",
+            "patch": "linux-009_disable_i8042_check_on_apple_mac.patch",
+            "sha256": "06967b05cdbad10c7fb87106bed1987863b5525a805331cb4f6fa16c75e8203f"
+          },
+          "ref": "refs/heads/fix/apple-i8042",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {},
+          "status": "included",
+          "upstream_equivalence_reason": "Exact accepted delta absent from validated upstream; replay once."
+        },
+        {
+          "base": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {},
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            }
+          ],
+          "experimental": false,
+          "head": "2234fcea9ddcde87c6f49bce72759ce78a32b135",
+          "id": "bluetooth-reconnect",
+          "ordered_commits": [
+            "2234fcea9ddcde87c6f49bce72759ce78a32b135"
+          ],
+          "patch_sha256": "50cd0d65ecdaaf90bc54f3ee8bf22be8c8bb62f51a3184f0f9c296bddab75d60",
+          "paths": [
+            "net/bluetooth/l2cap_core.c"
+          ],
+          "provenance": {
+            "adaptation": "Exact accepted donor blobs for i8042/HID context drift; exact force-output condition; other patches applied unchanged.",
+            "kind": "selected-distribution-patch",
+            "original_source": "b3fdef79fcf04d602849315f70edae9583138b72",
+            "patch": "linux-02-fix_bluetooth_reconnect.patch",
+            "sha256": "204a4445350aab48905b06efb6ae174ccbfab0afe3e8dd82c189ff3a19bcd063"
+          },
+          "ref": "refs/heads/fix/bluetooth-reconnect",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {},
+          "status": "included",
+          "upstream_equivalence_reason": "Exact accepted delta absent from validated upstream; replay once."
+        },
+        {
+          "base": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {},
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            }
+          ],
+          "experimental": false,
+          "head": "05ce3a97cbda3c675d2e23524e322bb8f9a2cb7d",
+          "id": "xbox-special-driver",
+          "ordered_commits": [
+            "05ce3a97cbda3c675d2e23524e322bb8f9a2cb7d"
+          ],
+          "patch_sha256": "3aa400b55d15ba579e95ef25c6ed8642bff3ef892d09b87492c8073450f30e8e",
+          "paths": [
+            "drivers/hid/hid-core.c",
+            "drivers/hid/hid-ids.h"
+          ],
+          "provenance": {
+            "adaptation": "Exact accepted donor blobs for i8042/HID context drift; exact force-output condition; other patches applied unchanged.",
+            "kind": "selected-distribution-patch",
+            "original_source": "b3fdef79fcf04d602849315f70edae9583138b72",
+            "patch": "linux-03-stop-hid-generic-from-grabing-xbone.patch",
+            "sha256": "fceceb760b4ed9bd0c6b321f7bef0d377c3e9c2c6bfffa8cf7e4b957ef351a41"
+          },
+          "ref": "refs/heads/fix/xbox-special-driver",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {},
+          "status": "included",
+          "upstream_equivalence_reason": "Exact accepted delta absent from validated upstream; replay once."
+        },
+        {
+          "base": "05ce3a97cbda3c675d2e23524e322bb8f9a2cb7d",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {},
+          "depends_on": [
+            "xbox-special-driver"
+          ],
+          "evidence": [
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            }
+          ],
+          "experimental": false,
+          "head": "302616e3db836de3075adc6e8564ee89d881abcd",
+          "id": "xpadneo",
+          "ordered_commits": [
+            "302616e3db836de3075adc6e8564ee89d881abcd"
+          ],
+          "patch_sha256": "7d601bd91be8f6023d42400ab6bd395b8beb6aad5d2dc9f06da562e218c44845",
+          "paths": [
+            "drivers/hid/Kconfig",
+            "drivers/hid/Makefile",
+            "drivers/hid/hid-xpadneo.c"
+          ],
+          "provenance": {
+            "adaptation": "Exact accepted donor blobs for i8042/HID context drift; exact force-output condition; other patches applied unchanged.",
+            "kind": "selected-distribution-patch",
+            "original_source": "b3fdef79fcf04d602849315f70edae9583138b72",
+            "patch": "linux-04-xpadneo.patch",
+            "sha256": "e2b236165b286514eb0ecc1ef253848328a6c32a761fb638c7bfa1468ce778da"
+          },
+          "ref": "refs/heads/fix/xpadneo",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {},
+          "status": "included",
+          "upstream_equivalence_reason": "Exact accepted delta absent from validated upstream; replay once."
+        },
+        {
+          "base": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {},
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            }
+          ],
+          "experimental": false,
+          "head": "c7a2233ceb0598f34180bec2e96cd27e18df598a",
+          "id": "input-event-compat",
+          "ordered_commits": [
+            "c7a2233ceb0598f34180bec2e96cd27e18df598a"
+          ],
+          "patch_sha256": "5f51566e7fbbcc935dc7e321c1338bf44a38ccda024a4f0edb0fc5031620b41a",
+          "paths": [
+            "include/uapi/linux/input.h"
+          ],
+          "provenance": {
+            "adaptation": "Exact accepted donor blobs for i8042/HID context drift; exact force-output condition; other patches applied unchanged.",
+            "kind": "selected-distribution-patch",
+            "original_source": "b3fdef79fcf04d602849315f70edae9583138b72",
+            "patch": "linux-10-add-compatibility-macro-for-input_event_sec.patch",
+            "sha256": "587241c0af2c460c5baf2ea550e89f9647c4ba21b3cab19cc5f5da9c49eb738c"
+          },
+          "ref": "refs/heads/fix/input-event-compat",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {},
+          "status": "included",
+          "upstream_equivalence_reason": "Exact accepted delta absent from validated upstream; replay once."
+        },
+        {
+          "base": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {},
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            }
+          ],
+          "experimental": false,
+          "head": "23fa829590b1b51c5d908e0f69772f58221254cf",
+          "id": "ax88179-rx-bounds",
+          "ordered_commits": [
+            "23fa829590b1b51c5d908e0f69772f58221254cf"
+          ],
+          "patch_sha256": "b1818cd26aaaf838766dc076e25272fb81284c0309b90c56042d6fc482540083",
+          "paths": [
+            "drivers/net/usb/ax88179_178a.c"
+          ],
+          "provenance": {
+            "adaptation": "Exact accepted donor blobs for i8042/HID context drift; exact force-output condition; other patches applied unchanged.",
+            "kind": "selected-distribution-patch",
+            "original_source": "b3fdef79fcf04d602849315f70edae9583138b72",
+            "patch": "linux-11-ax88179-fix-rx-bounds.patch",
+            "sha256": "7076077560a67db8dcd6976a041884dc565872d957844ecfeb377d7079f404a6"
+          },
+          "ref": "refs/heads/fix/ax88179-rx-bounds",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {},
+          "status": "included",
+          "upstream_equivalence_reason": "Exact accepted delta absent from validated upstream; replay once."
+        },
+        {
+          "base": "23fa829590b1b51c5d908e0f69772f58221254cf",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {},
+          "depends_on": [
+            "ax88179-rx-bounds"
+          ],
+          "evidence": [
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            }
+          ],
+          "experimental": false,
+          "head": "0991b31902b2b4eddb10bfc8762232c51af1388e",
+          "id": "ax88179-rx-packets",
+          "ordered_commits": [
+            "0991b31902b2b4eddb10bfc8762232c51af1388e"
+          ],
+          "patch_sha256": "6d60060ed6c9d48d3f8eece8a9da0ce57f5db7a21f506a70b6d78108ed47f404",
+          "paths": [
+            "drivers/net/usb/ax88179_178a.c"
+          ],
+          "provenance": {
+            "adaptation": "Exact accepted donor blobs for i8042/HID context drift; exact force-output condition; other patches applied unchanged.",
+            "kind": "selected-distribution-patch",
+            "original_source": "b3fdef79fcf04d602849315f70edae9583138b72",
+            "patch": "linux-12-ax88179-fix-packet-receiving.patch",
+            "sha256": "4b064efbbe91d898ca729a9890e3cf2449d436bd943a97be2d9c06bc614174f6"
+          },
+          "ref": "refs/heads/fix/ax88179-rx-packets",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {},
+          "status": "included",
+          "upstream_equivalence_reason": "Exact accepted delta absent from validated upstream; replay once."
+        },
+        {
+          "base": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {},
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            }
+          ],
+          "experimental": false,
+          "head": "fd2d00fa3ff4e0a2c10f86d37f87c7de1fa3087f",
+          "id": "usb-nested-reset",
+          "ordered_commits": [
+            "fd2d00fa3ff4e0a2c10f86d37f87c7de1fa3087f"
+          ],
+          "patch_sha256": "330f0e205b0774b5e4fea1eb04b4a96b2a85e99fc0c1dffce717cf46a75f4807",
+          "paths": [
+            "drivers/usb/core/hub.c",
+            "include/linux/usb.h"
+          ],
+          "provenance": {
+            "adaptation": "Exact accepted donor blobs for i8042/HID context drift; exact force-output condition; other patches applied unchanged.",
+            "kind": "selected-distribution-patch",
+            "original_source": "b3fdef79fcf04d602849315f70edae9583138b72",
+            "patch": "linux-13-usb-prevent-nested-device-resets.patch",
+            "sha256": "3d06531a83ab56ef173e39bbc88fb642130f542e5cff7ff26614cdfbc8a193ec"
+          },
+          "ref": "refs/heads/fix/usb-nested-reset",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {},
+          "status": "included",
+          "upstream_equivalence_reason": "Exact accepted delta absent from validated upstream; replay once."
+        },
+        {
+          "base": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {},
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            }
+          ],
+          "experimental": false,
+          "head": "80061fe5429002d60bac11fe263a8769e8f6683c",
+          "id": "usb-boot-uas-policy",
+          "ordered_commits": [
+            "80061fe5429002d60bac11fe263a8769e8f6683c"
+          ],
+          "patch_sha256": "6c28bea7d6fddbffe5247540e05ed308e991b1f8c897f8227213718dcee194f8",
+          "paths": [
+            "drivers/usb/storage/Makefile",
+            "drivers/usb/storage/uas.c",
+            "drivers/usb/storage/unusual_devs.h",
+            "drivers/usb/storage/unusual_uas.h",
+            "drivers/usb/storage/usb.c",
+            "drivers/usb/storage/usb.h"
+          ],
+          "provenance": {
+            "adaptation": "Exact accepted donor blobs for i8042/HID context drift; exact force-output condition; other patches applied unchanged.",
+            "kind": "selected-distribution-patch",
+            "original_source": "b3fdef79fcf04d602849315f70edae9583138b72",
+            "patch": "linux-14-usb-storage-add-boot-uas-policy.patch",
+            "sha256": "051592f38a0e81a5bc339e48ced682b1b80803263c5dc3032b8d42ce651804ef"
+          },
+          "ref": "refs/heads/fix/usb-boot-uas-policy",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {},
+          "status": "included",
+          "upstream_equivalence_reason": "Exact accepted delta absent from validated upstream; replay once."
+        },
+        {
+          "base": "80061fe5429002d60bac11fe263a8769e8f6683c",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {},
+          "depends_on": [
+            "usb-boot-uas-policy"
+          ],
+          "evidence": [
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            }
+          ],
+          "experimental": false,
+          "head": "7b35e23c35bdcb3865d591737578695c8920c8a4",
+          "id": "vl817-disable-uas",
+          "ordered_commits": [
+            "7b35e23c35bdcb3865d591737578695c8920c8a4"
+          ],
+          "patch_sha256": "923472c19a17b578b6388a5f8a710be6690808ed1e4c6ca7f4931179cabfa804",
+          "paths": [
+            "drivers/usb/storage/unusual_uas.h"
+          ],
+          "provenance": {
+            "adaptation": "Exact accepted donor blobs for i8042/HID context drift; exact force-output condition; other patches applied unchanged.",
+            "kind": "selected-distribution-patch",
+            "original_source": "b3fdef79fcf04d602849315f70edae9583138b72",
+            "patch": "linux-15-usb-storage-disable-uas-for-vl817.patch",
+            "sha256": "7cab56ca50dc7b97fdd83a025fe0756f2a91c9500abe12f8a8f3ba17348a72eb"
+          },
+          "ref": "refs/heads/fix/vl817-disable-uas",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {},
+          "status": "included",
+          "upstream_equivalence_reason": "Exact accepted delta absent from validated upstream; replay once."
+        },
+        {
+          "base": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {},
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            }
+          ],
+          "experimental": false,
+          "head": "c1aedcc3fefd4e7608fa8683be6dcc9f5afca71a",
+          "id": "force-output-source-policy",
+          "ordered_commits": [
+            "c1aedcc3fefd4e7608fa8683be6dcc9f5afca71a"
+          ],
+          "patch_sha256": "a5a7ebaf14c71f27c0e35a78ec6051ce8c26ef9a1763b79ef2d45abf506b02f1",
+          "paths": [
+            "drivers/amlogic/media/enhancement/amvecm/amcsc.c"
+          ],
+          "provenance": {
+            "adaptation": "Exact accepted donor blobs for i8042/HID context drift; exact force-output condition; other patches applied unchanged.",
+            "kind": "selected-distribution-patch",
+            "original_source": "b3fdef79fcf04d602849315f70edae9583138b72",
+            "patch": "linux-temp-02-fo_on_source.patch",
+            "sha256": "c07599c5b51e1d240a1719a6e81d2544fa6a93a10d70a5c24b7521c1147e9f12"
+          },
+          "ref": "refs/heads/fix/force-output-source-policy",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {},
+          "status": "included",
+          "upstream_equivalence_reason": "Exact accepted delta absent from validated upstream; replay once."
+        },
+        {
+          "base": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {},
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            }
+          ],
+          "experimental": false,
+          "head": "bcd093047049599f696fd20b8b9267861a2a95db",
+          "id": "network-uapi-compat",
+          "ordered_commits": [
+            "bcd093047049599f696fd20b8b9267861a2a95db"
+          ],
+          "patch_sha256": "9cd0f46152dd442906e6c650878147220d318ac66a7c9151e3890a5c05a48bfe",
+          "paths": [
+            "include/uapi/linux/if.h"
+          ],
+          "provenance": {
+            "adaptation": "Exact accepted donor blobs for i8042/HID context drift; exact force-output condition; other patches applied unchanged.",
+            "kind": "selected-distribution-patch",
+            "original_source": "b3fdef79fcf04d602849315f70edae9583138b72",
+            "patch": "linux-uapi-fix_linux-if.h-userspace-compilation-errors.patch",
+            "sha256": "920c84771dc6167f843e3046698148df7e91dc228fce0be05e582807688fc9f4"
+          },
+          "ref": "refs/heads/fix/network-uapi-compat",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {},
+          "status": "included",
+          "upstream_equivalence_reason": "Exact accepted delta absent from validated upstream; replay once."
+        },
+        {
+          "base": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {},
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            }
+          ],
+          "experimental": false,
+          "head": "8d03b6639e0c3c22c22362a383ae8b07831dde71",
+          "id": "powerpc-test-symlink",
+          "ordered_commits": [
+            "8d03b6639e0c3c22c22362a383ae8b07831dde71"
+          ],
+          "patch_sha256": "f1a30eec3ee1148f330d7a3a144d49a06147a15102d80894ae48b9602946cd95",
+          "paths": [
+            "tools/testing/selftests/powerpc/primitives/asm/asm-compat.h"
+          ],
+          "provenance": {
+            "kind": "inherited-source-test-normalization",
+            "original_source": "b3fdef79fcf04d602849315f70edae9583138b72",
+            "reason": "Remove redundant ./ in symlink while preserving identical target resolution."
+          },
+          "ref": "refs/heads/fix/powerpc-test-symlink",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {},
+          "status": "included",
+          "upstream_equivalence_reason": "Exact accepted delta absent from validated upstream; replay once."
+        },
+        {
+          "base": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {},
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/focused-tests.json",
+              "sha256": "01b32fbf1bfe8d2457cbd8217fc250ebcaff41f66bebe565d842c46b349b76d6"
+            }
+          ],
+          "experimental": false,
+          "head": "fb8df55d68c91d98049ce977dc3c942ff7900b8d",
+          "id": "afbc-scanout-retention",
+          "ordered_commits": [
+            "fb8df55d68c91d98049ce977dc3c942ff7900b8d"
+          ],
+          "patch_sha256": "2ad26c5e61cc9ab134bd7d95a8daef8464e7dc523a84cfcb39e9ffdf6b80d081",
+          "paths": [
+            "drivers/amlogic/media/video_sink/video.c",
+            "tools/testing/amlogic/README",
+            "tools/testing/amlogic/afbc_scanout.c",
+            "tools/testing/amlogic/test_afbc_scanout.py"
+          ],
+          "provenance": {
+            "accepted_source": "b3fdef79fcf04d602849315f70edae9583138b72",
+            "archive_ref": "refs/archive/published/pr-29",
+            "original_commits": [
+              "116209acd7f5d651b52a56b4a5f2e1ae73c09b01",
+              "a2ed27d5ba51f79ba386eae9281e588cfd9c5fa9"
+            ],
+            "original_patch_ids": {
+              "116209acd7f5d651b52a56b4a5f2e1ae73c09b01": "e587500260533c82cfe99bbfb9b02a54248b945b",
+              "a2ed27d5ba51f79ba386eae9281e588cfd9c5fa9": "2d01628138588dd8c5696494fc4984be61f8fa33"
+            },
+            "pr": 29,
+            "repository": "https://github.com/pannal/linux-amlogic"
+          },
+          "ref": "refs/heads/fix/afbc-scanout-retention",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {},
+          "status": "included",
+          "upstream_equivalence_reason": "Exact accepted delta absent from validated upstream; replay once."
+        },
+        {
+          "base": "c1aedcc3fefd4e7608fa8683be6dcc9f5afca71a",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {
+            "dv_seamless_refresh": false,
+            "manual_off_supported": true
+          },
+          "depends_on": [
+            "force-output-source-policy"
+          ],
+          "evidence": [
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/focused-tests.json",
+              "sha256": "01b32fbf1bfe8d2457cbd8217fc250ebcaff41f66bebe565d842c46b349b76d6"
+            }
+          ],
+          "experimental": false,
+          "head": "5a4eaf46237b12a6c1c5c951262fa2d5cbcbdfbb",
+          "id": "seamless-hdr-v20",
+          "ordered_commits": [
+            "5a4eaf46237b12a6c1c5c951262fa2d5cbcbdfbb"
+          ],
+          "patch_sha256": "67d1a01bb639623749237fd914e058828edf76e56353ecf8db9ee145f1c1911f",
+          "paths": [
+            "Documentation/ABI/testing/sysfs-class-amhdmitx-native-hdr-mute-bypass",
+            "drivers/amlogic/media/enhancement/amvecm/amcsc.c",
+            "drivers/amlogic/media/enhancement/amvecm/amcsc.h",
+            "drivers/amlogic/media/enhancement/amvecm/amcsc_pip.c",
+            "drivers/amlogic/media/enhancement/amvecm/amcsc_pip.h",
+            "drivers/amlogic/media/enhancement/amvecm/set_hdr2_v0.c",
+            "drivers/amlogic/media/enhancement/amvecm/set_hdr2_v0.h",
+            "drivers/amlogic/media/vout/hdmitx/hdmi_tx_20/hdmi_tx_main.c",
+            "drivers/amlogic/media/vout/hdmitx/hdmi_tx_20/hdmi_tx_video.c",
+            "drivers/amlogic/media/vout/hdmitx/hdmi_tx_20/hdmi_tx_video_mute.h",
+            "drivers/amlogic/media/vout/hdmitx/hdmi_tx_20/hw/hdmi_tx_hw.c",
+            "include/linux/amlogic/media/vout/hdmi_tx/hdmi_tx_module.h",
+            "tools/test-dv-seamless-refresh.py",
+            "tools/test-hdr-prearm.py",
+            "tools/test-native-hdr-mute-bypass.py",
+            "tools/test-sdr-bt2020-out.py"
+          ],
+          "provenance": {
+            "accepted_correction": "Preserve exact corrected SDR-BT2020 regression fixture and distribution force-output policy.",
+            "accepted_source": "b3fdef79fcf04d602849315f70edae9583138b72",
+            "archive_ref": "refs/archive/published/pr-32",
+            "original_commits": [
+              "703a6c140f4644f8695d8d94b1e944b48f6693e8"
+            ],
+            "original_patch_ids": {
+              "703a6c140f4644f8695d8d94b1e944b48f6693e8": "ec5b9e8a2936cb2f4349b7086f00940a5efdbc18"
+            },
+            "pr": 32,
+            "repository": "https://github.com/pannal/linux-amlogic",
+            "scope": "Complete accepted v20: BT2020 output, guarded mute bypass, pre-arm, packet/transport trust and gated same-mode policy; not only recent default changes."
+          },
+          "ref": "refs/heads/feature/seamless-hdr-v20",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {
+            "dv_seamless_refresh": false,
+            "manual_off_supported": true
+          },
+          "status": "included",
+          "upstream_equivalence_reason": "Exact accepted delta absent from validated upstream; replay once."
+        },
+        {
+          "base": "8d43fe6e9edc0a178709470c4d7fbc432cf78f20",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {},
+          "depends_on": [
+            "seamless-hdr-v20"
+          ],
+          "evidence": [
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/c2-results.json",
+              "sha256": "0e420dc63b2d8c4af908a50d15fb5c41b0a031f9ab5e4acf998db5b81089d5df"
+            }
+          ],
+          "experimental": false,
+          "head": "56298eb1cb81e270876b454dcbd7290b1dfea25f",
+          "id": "hdmi-c2-clock-serialization",
+          "ordered_commits": [
+            "56298eb1cb81e270876b454dcbd7290b1dfea25f"
+          ],
+          "patch_sha256": "b88f269ad14ba795296414142be00f01baf35619da3844f88793b4223a4a5b3d",
+          "paths": [
+            "drivers/amlogic/media/vout/hdmitx/hdmi_tx_20/hdmi_tx_main.c",
+            "drivers/amlogic/media/vout/hdmitx/hdmi_tx_20/hdmi_tx_main_drm.c",
+            "drivers/amlogic/media/vout/hdmitx/hdmi_tx_20/hw/hdmi_tx_hw.c",
+            "drivers/amlogic/media/vout/hdmitx/hdmi_tx_20/hw/reg_ops.c",
+            "include/linux/amlogic/media/vout/hdmi_tx/hdmi_tx_module.h"
+          ],
+          "provenance": {
+            "accepted_integration_commit": "3fcd63294c322c3102f281454095f26de5e7411a",
+            "accepted_patch_sha256": "bedea2b5bdb28dddf9800d3ad9a6383e512f57884a2260f94d2644ed1ebe8660",
+            "archive_refs": [
+              "refs/archive/published/pr-32",
+              "refs/archive/published/pr-34"
+            ],
+            "original_commits": [
+              "1b4b6c1546f0d0da55dcc78d1341f9e521807aea"
+            ],
+            "original_patch_ids": {
+              "1b4b6c1546f0d0da55dcc78d1341f9e521807aea": "ebce9363198ff462526a78e786bec98a0d1d3659"
+            },
+            "scope": "Counted sampler-clock borrow plus independently valid mute/config/register serialization; folded PR34 into PR32."
+          },
+          "ref": "refs/heads/fix/hdmi-c2-clock-serialization",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {},
+          "status": "included",
+          "upstream_equivalence_reason": "Exact accepted delta absent from validated upstream; replay once."
+        },
+        {
+          "base": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {
+            "calibration": "Explicitly initiated; bounded lease restores original timing."
+          },
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/ethernet-lease.json",
+              "sha256": "f247bde663f0695cdcf6d169c628d19a3e013bae5b72248ca2a8f68afa7c2ca6"
+            }
+          ],
+          "experimental": false,
+          "external_dependencies": [
+            "framework/native-ethernet-8a",
+            "settings/native-ethernet-8a"
+          ],
+          "head": "7793a9acfeafd6185de0076142ca1775182eda30",
+          "id": "ethernet-calibration-8a",
+          "ordered_commits": [
+            "7793a9acfeafd6185de0076142ca1775182eda30"
+          ],
+          "patch_sha256": "fbbc79ca91db0669d95830680b0bcd4ff1fcc3542873f5f1aa6bb26c5a03d395",
+          "paths": [
+            "drivers/net/ethernet/stmicro/stmmac/dwmac-meson.c",
+            "drivers/net/ethernet/stmicro/stmmac/stmmac_main.c",
+            "include/linux/stmmac.h"
+          ],
+          "provenance": {
+            "accepted_integration_commit": "23b6d82fd3dd543cea89ebb2ec197549b30497a2",
+            "manual_timing_9": "excluded",
+            "scope": "Guarded native RTL8211F backend; no hardware calibration or generic vendor ABI certification.",
+            "source_abi": 1,
+            "source_zip_sha256": "3b70387a27dc33c820020794d01ad3f5c81f1e30c732add1c36f51e354ae0168"
+          },
+          "ref": "refs/heads/feature/ethernet-calibration-8a",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {
+            "calibration": "Explicitly initiated; bounded lease restores original timing."
+          },
+          "status": "included",
+          "upstream_equivalence_reason": "Exact accepted delta absent from validated upstream; replay once."
+        },
+        {
+          "base": "e217316ec07f519b9b9545a45b04efb345fdc9e0",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {
+            "dv_seamless_refresh": true,
+            "manual_off_supported": true
+          },
+          "depends_on": [
+            "seamless-hdr-v20"
+          ],
+          "evidence": [
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/focused-tests.json",
+              "sha256": "01b32fbf1bfe8d2457cbd8217fc250ebcaff41f66bebe565d842c46b349b76d6"
+            }
+          ],
+          "experimental": false,
+          "external_dependencies": [
+            "kodi/seamless-setting-kernel-gate-coupling"
+          ],
+          "head": "3fa59259ae206111b6ec8b24d2e94068e44fbd32",
+          "id": "seamless-default-on",
+          "ordered_commits": [
+            "3fa59259ae206111b6ec8b24d2e94068e44fbd32"
+          ],
+          "patch_sha256": "1e3991dea7868910ae691668da531840eb1417ecae6ade74f72572afc073a220",
+          "paths": [
+            "Documentation/ABI/testing/sysfs-class-amhdmitx-native-hdr-mute-bypass",
+            "drivers/amlogic/media/vout/hdmitx/hdmi_tx_20/hdmi_tx_main.c",
+            "tools/test-dv-seamless-refresh.py"
+          ],
+          "provenance": {
+            "accepted_integration_commit": "1286593daf858bdb9a73490ddf6437eaf22006a9",
+            "coupled_component": "kodi",
+            "scope": "Compiled default on; later manual Off remains authoritative through Kodi.",
+            "user_directed": true
+          },
+          "ref": "refs/heads/feature/seamless-default-on",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {
+            "dv_seamless_refresh": true,
+            "manual_off_supported": true
+          },
+          "status": "included",
+          "upstream_equivalence_reason": "Exact accepted delta absent from validated upstream; replay once."
+        },
+        {
+          "base": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {},
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "evidence/osd-afbc-queued-flips-upstream-review.json",
+              "sha256": "d626a0ce4358a21dcddcc8f7e65e4d672d3a92206bcdf4b2385bd758656c4f90"
+            },
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/focused-tests.json",
+              "sha256": "01b32fbf1bfe8d2457cbd8217fc250ebcaff41f66bebe565d842c46b349b76d6"
+            }
+          ],
+          "experimental": false,
+          "head": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "id": "osd-afbc-queued-flips",
+          "ordered_commits": [],
+          "paths": [
+            "drivers/amlogic/media/osd/osd_afbc_scanout.h",
+            "drivers/amlogic/media/osd/osd_hw.c",
+            "drivers/amlogic/media/osd/osd_rdma.c",
+            "drivers/amlogic/media/osd/osd_rdma.h",
+            "tools/test-osd-afbc-queued-flips.py"
+          ],
+          "provenance": {
+            "archive_ref": "refs/archive/published/pr-30",
+            "original_commits": [
+              "0855e6aa6b41f5207959f48c5bc78c683af15c46",
+              "eebe87aede345899623f576ce5bf65d6d75774d6"
+            ],
+            "original_patch_ids": {
+              "0855e6aa6b41f5207959f48c5bc78c683af15c46": "b3ca054eafda5354738bce0d00a5afdfb2d84093",
+              "eebe87aede345899623f576ce5bf65d6d75774d6": "e184a6caed7926af99bf3081215ce19a9e4ea322"
+            }
+          },
+          "ref": "refs/heads/fix/osd-afbc-upstream-integrated",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {},
+          "status": "upstream-integrated",
+          "upstream_equivalence_reason": "Original queued-flip and reset-disabled replay commits are already merged; retained production/test blobs equal archived PR30, validated upstream and accepted release. Do not replay or confuse with PR29 deferred scanout retention.",
+          "upstream_review": {
+            "evidence_sha256": "d626a0ce4358a21dcddcc8f7e65e4d672d3a92206bcdf4b2385bd758656c4f90",
+            "reason": "Original queued-flip and reset-disabled replay commits are already merged; retained production/test blobs equal archived PR30, validated upstream and accepted release. Do not replay or confuse with PR29 deferred scanout retention.",
+            "upstream_commit": "58c06bb03fba0d4136115b828a3924394130c15d"
+          }
+        },
+        {
+          "base": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {},
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "evidence/vfm-vdin-routing-safeguards-upstream-review.json",
+              "sha256": "454e5e5f9b8428988b0eedf5c21cd3fb5f17850ef3aa4e417978dce98e38074a"
+            },
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            }
+          ],
+          "experimental": false,
+          "head": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "id": "vfm-vdin-routing-safeguards",
+          "ordered_commits": [],
+          "paths": [
+            "drivers/amlogic/media/common/codec_mm/configs/configs.c",
+            "drivers/amlogic/media/common/vfm/vfm.c",
+            "drivers/amlogic/media/common/vfm/vfm.h",
+            "drivers/amlogic/media/common/vfm/vframe_provider.c",
+            "drivers/amlogic/media/common/vfm/vframe_receiver.c",
+            "drivers/amlogic/media/deinterlace/deinterlace.c",
+            "drivers/amlogic/media/vin/tvin/vdin/vdin_ctl.c"
+          ],
+          "provenance": {
+            "archive_ref": "refs/archive/published/pr-33",
+            "original_commits": [
+              "4d182eabe7eaee0e287027c91e2de1ae127a6a26"
+            ],
+            "original_patch_ids": {
+              "4d182eabe7eaee0e287027c91e2de1ae127a6a26": "5973e593d064a0c4b1bdb9deea0b5734ab2fdb8c"
+            }
+          },
+          "ref": "refs/heads/fix/vfm-vdin-upstream-integrated",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {},
+          "status": "upstream-integrated",
+          "upstream_equivalence_reason": "Seven accepted refreshed VFM/VDIN routing and log-safeguard paths are byte/mode equal to archived PR33 and validated upstream; final release imported that exact delta. No duplicate replay.",
+          "upstream_review": {
+            "evidence_sha256": "454e5e5f9b8428988b0eedf5c21cd3fb5f17850ef3aa4e417978dce98e38074a",
+            "reason": "Seven accepted refreshed VFM/VDIN routing and log-safeguard paths are byte/mode equal to archived PR33 and validated upstream; final release imported that exact delta. No duplicate replay.",
+            "upstream_commit": "58c06bb03fba0d4136115b828a3924394130c15d"
+          }
+        },
+        {
+          "base": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {},
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "evidence/raven-vdin-writeback-upstream-review.json",
+              "sha256": "086dd63d9d36fb8ce8c27148c30b99d4e167f8425560e2be6fd82dd6ca9c2c70"
+            },
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            }
+          ],
+          "experimental": false,
+          "head": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "id": "raven-vdin-writeback",
+          "ordered_commits": [],
+          "paths": [
+            "arch/arm64/boot/dts/amlogic/g12b_s922z_amazon_2nd_gen_cube.dts"
+          ],
+          "provenance": {
+            "archive_ref": "refs/archive/published/pr-31",
+            "original_commits": [
+              "1f9baf7026d8fb0e8fc578bf337e0b23166e67e6"
+            ],
+            "original_patch_ids": {
+              "1f9baf7026d8fb0e8fc578bf337e0b23166e67e6": "12a8b87542ebbfd9d5aa46f42b182784fd629c6b"
+            }
+          },
+          "ref": "refs/heads/feature/raven-vdin-upstream-integrated",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {},
+          "status": "upstream-integrated",
+          "upstream_equivalence_reason": "Published Raven/Fire TV Cube 2 VDIN1 write-back DTS is exactly retained in archived PR31, validated upstream and release; do not replay it or change other board/revision policy.",
+          "upstream_review": {
+            "evidence_sha256": "086dd63d9d36fb8ce8c27148c30b99d4e167f8425560e2be6fd82dd6ca9c2c70",
+            "reason": "Published Raven/Fire TV Cube 2 VDIN1 write-back DTS is exactly retained in archived PR31, validated upstream and release; do not replay it or change other board/revision policy.",
+            "upstream_commit": "58c06bb03fba0d4136115b828a3924394130c15d"
+          }
+        },
+        {
+          "base": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {},
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "evidence/hdr-sink-vsvdb-recovery-upstream-review.json",
+              "sha256": "c00d814607b35446072569ad2ca9f4cab0813ac7529923a856aec43da16141e2"
+            },
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/focused-tests.json",
+              "sha256": "01b32fbf1bfe8d2457cbd8217fc250ebcaff41f66bebe565d842c46b349b76d6"
+            }
+          ],
+          "experimental": false,
+          "head": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "id": "hdr-sink-vsvdb-recovery",
+          "ordered_commits": [],
+          "paths": [
+            "drivers/amlogic/media/enhancement/amdolby_vision/amdolby_vision.c",
+            "tools/test-dv-sink-modeset.py"
+          ],
+          "provenance": {
+            "archive_ref": "refs/archive/published/hdr-sink-modeset",
+            "original_commits": [
+              "3a5991353f33e67bf9ddfe2735b3d3133b042974"
+            ],
+            "original_patch_ids": {
+              "3a5991353f33e67bf9ddfe2735b3d3133b042974": "0671fe98ea43df6bc030e1c8ec1c21e284dac72a"
+            }
+          },
+          "ref": "refs/heads/fix/hdr-sink-vsvdb-upstream-integrated",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {},
+          "status": "upstream-integrated",
+          "upstream_equivalence_reason": "Upstream sink-VSVDB modeset deferral, recovery and production regression are byte/mode identical to the archived accepted source, validated upstream and release; no duplicate replay.",
+          "upstream_review": {
+            "evidence_sha256": "c00d814607b35446072569ad2ca9f4cab0813ac7529923a856aec43da16141e2",
+            "reason": "Upstream sink-VSVDB modeset deferral, recovery and production regression are byte/mode identical to the archived accepted source, validated upstream and release; no duplicate replay.",
+            "upstream_commit": "58c06bb03fba0d4136115b828a3924394130c15d"
+          }
+        },
+        {
+          "base": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {
+            "xbmc_live_frame_l5": true
+          },
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "evidence/native-p81-live-l5-default-upstream-review.json",
+              "sha256": "a49414f956da63c0e31c6aa0c11df8e625318ce95bc5f4bd745578a0ff2460e5"
+            },
+            {
+              "id": "evidence/parity.json",
+              "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+            },
+            {
+              "id": "evidence/workflow-tests.json",
+              "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            }
+          ],
+          "experimental": false,
+          "head": "58c06bb03fba0d4136115b828a3924394130c15d",
+          "id": "native-p81-live-l5-default",
+          "ordered_commits": [],
+          "paths": [
+            "drivers/amlogic/media/enhancement/amdolby_vision/amdolby_vision.c"
+          ],
+          "provenance": {
+            "archive_ref": "refs/archive/published/hdr-sink-modeset",
+            "original_commits": [
+              "5710229b488aae905e14ecb386c77eceda552500"
+            ],
+            "original_patch_ids": {
+              "5710229b488aae905e14ecb386c77eceda552500": "0886f6685a6e210b34b78fb53920115d49821364"
+            }
+          },
+          "ref": "refs/heads/feature/native-p81-upstream-integrated",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {
+            "xbmc_live_frame_l5": true
+          },
+          "status": "upstream-integrated",
+          "upstream_equivalence_reason": "Original native P8.1 same-picture L5 default-on commit is retained beneath the later archived sink-safeguard commit; complete resulting production file equals validated upstream and release. Native module/version policy is unchanged.",
+          "upstream_review": {
+            "evidence_sha256": "a49414f956da63c0e31c6aa0c11df8e625318ce95bc5f4bd745578a0ff2460e5",
+            "reason": "Original native P8.1 same-picture L5 default-on commit is retained beneath the later archived sink-safeguard commit; complete resulting production file equals validated upstream and release. Native module/version policy is unchanged.",
+            "upstream_commit": "58c06bb03fba0d4136115b828a3924394130c15d"
+          }
+        }
+      ],
+      "immutable_refs": {
+        "source/original-pr-29-20261122": "a2ed27d5ba51f79ba386eae9281e588cfd9c5fa9",
+        "source/original-pr-30-20261122": "eebe87aede345899623f576ce5bf65d6d75774d6",
+        "source/original-pr-31-20261122": "1f9baf7026d8fb0e8fc578bf337e0b23166e67e6",
+        "source/original-pr-32-20261122": "1b4b6c1546f0d0da55dcc78d1341f9e521807aea",
+        "source/original-pr-33-20261122": "4d182eabe7eaee0e287027c91e2de1ae127a6a26",
+        "source/original-pr-34-20261122": "7f412a9bfb8b9f02ed703025631c18a80b93a01e",
+        "source/reconstructed-equivalent-20261122": "f7061e5ca4f174c28614bfc29eed368e7cefafd0",
+        "source/release-original-20261122": "2b17ade58f733854821be8b18cf66f5d249bc727",
+        "source/upstream-validated-20261122": "58c06bb03fba0d4136115b828a3924394130c15d"
+      },
+      "integration": {
+        "head": "f7061e5ca4f174c28614bfc29eed368e7cefafd0",
+        "ref": "integration/all-fixes",
+        "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+        "tree": "2de60b436acf0c6289449c53eee6f842d176d4d2"
+      },
+      "limits": [
+        "No firmware build, deployment, push, merge, PR or hardware testing.",
+        "Original release binary provenance is unchanged; no old binary is attributed to reconstructed commits.",
+        "Complete current source and archived public PR histories; donor snapshot history does not restore unrelated historical payloads.",
+        "Native DOVI/module policy unchanged; all 12 legacy provider CRCs preserved with two inherited exceptions, exact 18 DOVI5/28 shim match inherited from release evidence, not recertified by source parity.",
+        "Physical legacy declaration limits retained; no proprietary binaries or generic vendor ABI certification."
+      ],
+      "original_binary_policy": "Original sealed release build IDs/hashes remain attached to original source; reconstructed IDs are source-equivalent only. No binary relabel or rebuild claimed.",
+      "original_release": {
+        "commit": "2b17ade58f733854821be8b18cf66f5d249bc727",
+        "tag": "source/release-original-20261122",
+        "tree": "2de60b436acf0c6289449c53eee6f842d176d4d2"
+      },
+      "reconstructed_baseline": {
+        "commit": "f7061e5ca4f174c28614bfc29eed368e7cefafd0",
+        "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+        "tag": "source/reconstructed-equivalent-20261122",
+        "tree": "2de60b436acf0c6289449c53eee6f842d176d4d2"
+      },
+      "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+      "schema_version": 1,
+      "source_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic.git",
+      "source_variable": "COMBINED_KERNEL_SOURCE",
+      "upstream": {
+        "commit": "58c06bb03fba0d4136115b828a3924394130c15d",
+        "published_ref": "amlogic-4.9-20",
+        "ref": "upstream-validated-20261122",
+        "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+        "refresh": {
+          "commit": "605cf2407df57a850fc7db29e514c2de41b5ebc7",
+          "ref": "upstream-dev",
+          "status": "unvalidated-separate"
+        },
+        "repository": "https://github.com/pannal/linux-amlogic"
+      },
+      "validations": [
+        {
+          "id": "evidence/parity.json",
+          "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+        },
+        {
+          "id": "evidence/focused-tests.json",
+          "sha256": "01b32fbf1bfe8d2457cbd8217fc250ebcaff41f66bebe565d842c46b349b76d6"
+        },
+        {
+          "id": "evidence/decomposition-review.json",
+          "sha256": "2bad736aec91ced5b07b28c63bf7ab880ef937000eb8f5bdc52d61212ea131f4"
+        },
+        {
+          "id": "evidence/workflow-tests.json",
+          "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+        },
+        {
+          "id": "evidence/c2-results.json",
+          "sha256": "0e420dc63b2d8c4af908a50d15fb5c41b0a031f9ab5e4acf998db5b81089d5df"
+        },
+        {
+          "id": "evidence/ethernet-lease.json",
+          "sha256": "f247bde663f0695cdcf6d169c628d19a3e013bae5b72248ca2a8f68afa7c2ca6"
+        }
+      ],
+      "workflow_ref": "workflow/catalog",
+      "workflow_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic"
+    },
+    "kodi": {
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "component": "kodi",
+      "cross_component_coverage": [
+        {
+          "component": "kernel",
+          "id": "afbc29-deferred-scanout-retention",
+          "reason": "Accepted kernel feature is supplied by kernel catalog; Kodi upstream GUI AFBC is not a substitute.",
+          "source_commit": "a2ed27d5ba51f79ba386eae9281e588cfd9c5fa9"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "hunk-ownership.json",
+          "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+        },
+        {
+          "id": "tree-parity.json",
+          "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+        },
+        {
+          "id": "upstream-review.json",
+          "sha256": "4bbc8de0ba80d6909d118c4e9b61a4eb18150d877b0904b5efc32e876bc12886"
+        },
+        {
+          "id": "publish-safe-audit.json",
+          "sha256": "1e6836fc92384a631b37286587f63cfb8efa75168ebc4f63c78845c706a55119"
+        },
+        {
+          "id": "WORKFLOW.md",
+          "sha256": "d98ab70bfd2af60a2a033f19dd0e1fe91dbba2e525a1f64bf8866a027770e955"
+        },
+        {
+          "id": "test-results.json",
+          "sha256": "cfa36e17f6b59357f140c022d3cda317a7918ba94f4780ad850a1dfac744859b"
+        },
+        {
+          "id": "original-control-results.json",
+          "sha256": "8f5579e51e518ae3b6ceda80edc375d9f3d42432d73165d4784684b21b7dcaa5"
+        },
+        {
+          "id": "host-parser-boundary.json",
+          "sha256": "6e05a91742fc9495bcd26b66b93ddff9ec109686c00a49592fc986eeee711467"
+        },
+        {
+          "id": "host-dependencies.json",
+          "sha256": "06bdee0e92c829caaae43610a8f1cac0652c93860a3f3db90868237a4487555d"
+        },
+        {
+          "id": "public-bootstrap-provenance.json",
+          "sha256": "0e0ab16681503852fbf1453b2521fc917913d5e8324d3e5a5ed9b6ae1e4bb65f"
+        }
+      ],
+      "excluded_experiments": [
+        "postseek-corruption",
+        "startup-preroll-policy",
+        "timeline-flash",
+        "ivtc",
+        "atmos-gain-recovery"
+      ],
+      "expected_tree": "80398010a104b30fc2a0d21eaf2af6567a3f685f",
+      "features": [
+        {
+          "base": "a4295421f270929315fea42b9e53b00c16e920a5",
+          "branch": "fix/seek-queue-prerequisite",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "commits": [
+            "dbcac3753798892dea27df07e791a2fffad49b08"
+          ],
+          "default": true,
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "hunk-ownership.json",
+              "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+            },
+            {
+              "id": "tree-parity.json",
+              "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+            }
+          ],
+          "experimental": false,
+          "head": "dbcac3753798892dea27df07e791a2fffad49b08",
+          "id": "seek-queue",
+          "ordered_commits": [
+            "dbcac3753798892dea27df07e791a2fffad49b08"
+          ],
+          "patch_id": "eb9742ba42bca832afaea0114ee96d532669d08e",
+          "paths": [
+            "xbmc/cores/VideoPlayer/DVDMessageQueue.h",
+            "xbmc/cores/VideoPlayer/VideoPlayer.cpp"
+          ],
+          "provenance": {
+            "source_commits": [],
+            "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+          },
+          "ref": "refs/heads/fix/seek-queue-prerequisite",
+          "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "settings_defaults": {},
+          "source_pins": [],
+          "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "status": "included",
+          "test_ids": [],
+          "upstream_equivalence_reason": null
+        },
+        {
+          "base": "a4295421f270929315fea42b9e53b00c16e920a5",
+          "branch": "feature/manual-lldv",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "commits": [
+            "f0022c9ff4c196b4fdd085cbcd7fa13f8ef1c88d"
+          ],
+          "default": true,
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "hunk-ownership.json",
+              "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+            },
+            {
+              "id": "tree-parity.json",
+              "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+            },
+            {
+              "id": "tests/test-aml-dv-manager-dependency.log",
+              "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+            },
+            {
+              "id": "tests/test-aml-dv-options.log",
+              "sha256": "e7f694bcf6bfe21f474b4f2a5a97d80f5fa36d59e627fbc6d6e8bc39e11959cf"
+            },
+            {
+              "id": "tests/test-aml-dv-preset-read.log",
+              "sha256": "ddedc445ffe6370c4d2430ce36bc9103ef23188e0b324ae8b57c07eacf476b62"
+            },
+            {
+              "id": "tests/test-aml-dv-setting-locks.log",
+              "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+            }
+          ],
+          "experimental": false,
+          "head": "f0022c9ff4c196b4fdd085cbcd7fa13f8ef1c88d",
+          "id": "manual-lldv",
+          "ordered_commits": [
+            "f0022c9ff4c196b4fdd085cbcd7fa13f8ef1c88d"
+          ],
+          "patch_id": "19445c8ab2ebe35182284a488a38ec623965d741",
+          "paths": [
+            "addons/resource.language.en_gb/resources/strings.po",
+            "system/settings/settings.xml",
+            "tools/test-aml-dv-manager-dependency.py",
+            "tools/test-aml-dv-options.py",
+            "tools/test-aml-dv-preset-read.py",
+            "tools/test-aml-dv-setting-locks.py",
+            "xbmc/settings/lib/Setting.h",
+            "xbmc/windowing/amlogic/DolbyVisionAML.cpp"
+          ],
+          "provenance": {
+            "source_commits": [
+              "fdd11b64010d509b570fdb0400f4f483844dc77d"
+            ],
+            "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+          },
+          "ref": "refs/heads/feature/manual-lldv",
+          "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "settings_defaults": {},
+          "source_pins": [
+            "fdd11b64010d509b570fdb0400f4f483844dc77d"
+          ],
+          "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "status": "included",
+          "test_ids": [
+            "test-aml-dv-manager-dependency",
+            "test-aml-dv-options",
+            "test-aml-dv-preset-read",
+            "test-aml-dv-setting-locks"
+          ],
+          "upstream_equivalence_reason": null
+        },
+        {
+          "base": "a4295421f270929315fea42b9e53b00c16e920a5",
+          "branch": "fix/pause-presenter",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "commits": [
+            "fec0b610922a655207e5db6a0f08e79399f73e44"
+          ],
+          "default": true,
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "hunk-ownership.json",
+              "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+            },
+            {
+              "id": "tree-parity.json",
+              "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+            },
+            {
+              "id": "tests/test-aml-presenter-cadence.log",
+              "sha256": "113b7cdee2150d9c0cf1ad8b05ecb5bfc269dde0f18b43eb4d1585e8ef100184"
+            },
+            {
+              "id": "tests/test-aml-presenter-step-invalidation.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "id": "tests/test-dvd-clock-locking.log",
+              "sha256": "7b986b070adba05f50408fd6bdb94cdf6d685cd3a7db4cfb645446855ec48d55"
+            },
+            {
+              "id": "tests/test-presenter-invalidation-lifetime.log",
+              "sha256": "15bdde7faaba220f1d1273b970147c4482a01b733c77a8d46a6478b397f338f6"
+            }
+          ],
+          "experimental": false,
+          "head": "fec0b610922a655207e5db6a0f08e79399f73e44",
+          "id": "pause-presenter",
+          "ordered_commits": [
+            "fec0b610922a655207e5db6a0f08e79399f73e44"
+          ],
+          "patch_id": "b0e72c3ef0e08ffa17ca28a434519e0de0d98877",
+          "paths": [
+            "tools/test-aml-presenter-cadence.py",
+            "tools/test-aml-presenter-step-invalidation.py",
+            "tools/test-dvd-clock-locking.py",
+            "tools/test-presenter-invalidation-lifetime.py",
+            "xbmc/cores/VideoPlayer/DVDClock.cpp",
+            "xbmc/cores/VideoPlayer/DVDClock.h",
+            "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+            "xbmc/cores/VideoPlayer/VideoRenderers/AMLPresenter.h",
+            "xbmc/cores/VideoPlayer/VideoRenderers/HwDecRender/AMLPresenterSession.h",
+            "xbmc/cores/VideoPlayer/VideoRenderers/RenderManager.cpp",
+            "xbmc/cores/VideoPlayer/VideoRenderers/RenderManager.h"
+          ],
+          "provenance": {
+            "source_commits": [
+              "57282b8191469b4abd8e81b1c752ae0c920c3f1f"
+            ],
+            "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+          },
+          "ref": "refs/heads/fix/pause-presenter",
+          "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "settings_defaults": {},
+          "source_pins": [
+            "57282b8191469b4abd8e81b1c752ae0c920c3f1f"
+          ],
+          "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "status": "included",
+          "test_ids": [
+            "test-aml-presenter-cadence",
+            "test-aml-presenter-step-invalidation",
+            "test-dvd-clock-locking",
+            "test-presenter-invalidation-lifetime"
+          ],
+          "upstream_equivalence_reason": null
+        },
+        {
+          "base": "dbcac3753798892dea27df07e791a2fffad49b08",
+          "branch": "fix/seek-ux",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "commits": [
+            "9128f66dda003e5781f6e27ec162cd1ede1de117"
+          ],
+          "default": true,
+          "depends_on": [
+            "seek-queue"
+          ],
+          "evidence": [
+            {
+              "id": "hunk-ownership.json",
+              "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+            },
+            {
+              "id": "tree-parity.json",
+              "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+            },
+            {
+              "id": "tests/test-seek-preview-origin.log",
+              "sha256": "5caf7ad573205ffb23400585a26977dbe2ab710ac68560da4ec615beeb17e71e"
+            },
+            {
+              "id": "tests/test-seek-timeline-marker.log",
+              "sha256": "002ee1e755f9c70c8a95da436ef7c7ce10541f93226c16d457af4bf60dd220d9"
+            },
+            {
+              "id": "tests/test-seek-marker-review-retirement-preview.log",
+              "sha256": "5281598eb6fca8f6c9e0a13dd6a966e0df0a38155ed74887ed72c4cebd6b7162"
+            },
+            {
+              "id": "tests/test-seek-marker-review-retirement-commit.log",
+              "sha256": "b612113c7f98b20b5020f7ebafbf0a8271d551e4416434481d6c251966cfa0ef"
+            },
+            {
+              "id": "tests/test-seek-marker-review-queued-speed.log",
+              "sha256": "c95ad4a83eb4349ca35cb80273b99db3b806e9ed6f5cbd198e0b449fadb104ad"
+            },
+            {
+              "id": "tests/test-seek-marker-review-rejected-queue-keeps-older.log",
+              "sha256": "4ce8e30c802419c9153dbb0011e302f46fc4b44a7a3eaf6222bff668803d4379"
+            },
+            {
+              "id": "tests/test-seek-marker-review-chapter-supersession.log",
+              "sha256": "b4373673a1faa1e0c0d16d488d4e874ba2cac51a04ef7e52059ab8167e06651a"
+            },
+            {
+              "id": "tests/test-seek-marker-review-stack-accurate-overlap.log",
+              "sha256": "30995aaf5f94a635739cf461c19111d16dd38c1d45020916a306389bd7151da2"
+            }
+          ],
+          "experimental": false,
+          "head": "9128f66dda003e5781f6e27ec162cd1ede1de117",
+          "id": "seek-ux",
+          "ordered_commits": [
+            "9128f66dda003e5781f6e27ec162cd1ede1de117"
+          ],
+          "patch_id": "043afc9ef9f7f62d801876b3c5744d445f89f08b",
+          "paths": [
+            "tools/test-seek-marker-review.py",
+            "tools/test-seek-preview-origin.py",
+            "tools/test-seek-timeline-marker.py",
+            "xbmc/SeekHandler.cpp",
+            "xbmc/SeekHandler.h",
+            "xbmc/application/ApplicationPlayer.cpp",
+            "xbmc/application/ApplicationPlayer.h",
+            "xbmc/cores/DataCacheCore.cpp",
+            "xbmc/cores/DataCacheCore.h",
+            "xbmc/cores/IPlayer.h",
+            "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+            "xbmc/cores/VideoPlayer/VideoPlayer.h",
+            "xbmc/guilib/guiinfo/PlayerGUIInfo.cpp"
+          ],
+          "provenance": {
+            "source_commits": [
+              "11ab17291932848c8c847627d91515bb7872beff"
+            ],
+            "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+          },
+          "ref": "refs/heads/fix/seek-ux",
+          "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "settings_defaults": {},
+          "source_pins": [
+            "11ab17291932848c8c847627d91515bb7872beff"
+          ],
+          "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "status": "included",
+          "test_ids": [
+            "test-seek-preview-origin",
+            "test-seek-timeline-marker",
+            "test-seek-marker-review-retirement-preview",
+            "test-seek-marker-review-retirement-commit",
+            "test-seek-marker-review-queued-speed",
+            "test-seek-marker-review-rejected-queue-keeps-older",
+            "test-seek-marker-review-chapter-supersession",
+            "test-seek-marker-review-stack-accurate-overlap"
+          ],
+          "upstream_equivalence_reason": null
+        },
+        {
+          "base": "dbcac3753798892dea27df07e791a2fffad49b08",
+          "branch": "fix/trickplay-reanchor",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "commits": [
+            "d7fbe0d1696e7fc3ffceb6a38060146debb05b43"
+          ],
+          "default": true,
+          "depends_on": [
+            "seek-queue"
+          ],
+          "evidence": [
+            {
+              "id": "hunk-ownership.json",
+              "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+            },
+            {
+              "id": "tree-parity.json",
+              "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+            },
+            {
+              "id": "tests/test-paused-trickplay-return.log",
+              "sha256": "853a42b935422d1115ad932e4f9a8b99cc3e5e3e37b870417fe211354870a64e"
+            }
+          ],
+          "experimental": false,
+          "head": "d7fbe0d1696e7fc3ffceb6a38060146debb05b43",
+          "id": "trickplay-reanchor",
+          "ordered_commits": [
+            "d7fbe0d1696e7fc3ffceb6a38060146debb05b43"
+          ],
+          "patch_id": "730fd57a2caf0fa7b1ed141b9bf4cc491f5b0fe0",
+          "paths": [
+            "tools/test-paused-trickplay-return.py",
+            "xbmc/cores/VideoPlayer/VideoPlayer.cpp"
+          ],
+          "provenance": {
+            "source_commits": [
+              "1caca6978bbeba5a5343cd6d82bdbf65d1b0c275"
+            ],
+            "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+          },
+          "ref": "refs/heads/fix/trickplay-reanchor",
+          "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "settings_defaults": {},
+          "source_pins": [
+            "1caca6978bbeba5a5343cd6d82bdbf65d1b0c275"
+          ],
+          "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "status": "included",
+          "test_ids": [
+            "test-paused-trickplay-return"
+          ],
+          "upstream_equivalence_reason": null
+        },
+        {
+          "base": "a4295421f270929315fea42b9e53b00c16e920a5",
+          "branch": "fix/startup-gate",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "commits": [
+            "f01e69ddc8cc7442e399d213e5c38655a817ffbf"
+          ],
+          "default": true,
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "hunk-ownership.json",
+              "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+            },
+            {
+              "id": "tree-parity.json",
+              "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+            }
+          ],
+          "experimental": false,
+          "head": "f01e69ddc8cc7442e399d213e5c38655a817ffbf",
+          "id": "startup-gate",
+          "ordered_commits": [
+            "f01e69ddc8cc7442e399d213e5c38655a817ffbf"
+          ],
+          "patch_id": "68a843db585ee6d27e94c99b6ce7122f7feb763a",
+          "paths": [
+            "xbmc/cores/VideoPlayer/DVDCodecs/Video/AMLCodec.cpp",
+            "xbmc/utils/AMLUtils.cpp",
+            "xbmc/utils/AMLUtils.h"
+          ],
+          "provenance": {
+            "source_commits": [
+              "7d09dbc7932f7b9deb47c0ffa097405417692f73"
+            ],
+            "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+          },
+          "ref": "refs/heads/fix/startup-gate",
+          "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "settings_defaults": {},
+          "source_pins": [
+            "7d09dbc7932f7b9deb47c0ffa097405417692f73"
+          ],
+          "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "status": "included",
+          "test_ids": [],
+          "upstream_equivalence_reason": null
+        },
+        {
+          "base": "a4295421f270929315fea42b9e53b00c16e920a5",
+          "branch": "feature/hdr-v20",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "commits": [
+            "6ab06b16530c3ac3618a71336ddc2efc2905a2be"
+          ],
+          "default": true,
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "hunk-ownership.json",
+              "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+            },
+            {
+              "id": "tree-parity.json",
+              "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+            },
+            {
+              "id": "tests/test-hdr10-seamless-setting.log",
+              "sha256": "48fb8760bfd1e89ac0ed96dadd32c3e20299891bf59d95264c75950cce51eb16"
+            },
+            {
+              "id": "tests/test-seamless-profile-migration.log",
+              "sha256": "0858aaff3e9e1340fe4d777d56c823c5fa84b672f9644b8d51a9b0384bdbba1b"
+            }
+          ],
+          "experimental": false,
+          "head": "6ab06b16530c3ac3618a71336ddc2efc2905a2be",
+          "id": "hdr-v20",
+          "ordered_commits": [
+            "6ab06b16530c3ac3618a71336ddc2efc2905a2be"
+          ],
+          "patch_id": "788536b1054679514346ccbc891e04943eb20578",
+          "paths": [
+            "addons/resource.language.en_gb/resources/strings.po",
+            "system/settings/settings.xml",
+            "tools/test-hdr10-seamless-setting.py",
+            "tools/test-seamless-profile-migration.py",
+            "xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecAmlogic.cpp",
+            "xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecAmlogic.h",
+            "xbmc/settings/Settings.cpp",
+            "xbmc/settings/Settings.h",
+            "xbmc/utils/AMLUtils.cpp",
+            "xbmc/utils/AMLUtils.h",
+            "xbmc/windowing/amlogic/DolbyVisionAML.cpp"
+          ],
+          "provenance": {
+            "source_commits": [
+              "ce89f7a4592ccc8ad3124ee18f7097e3f3d8fd77",
+              "0b921124166d24b6b27ecd1244c62f8dbf084e9c"
+            ],
+            "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+          },
+          "ref": "refs/heads/feature/hdr-v20",
+          "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "settings_defaults": {
+            "first_launch_saved_off": "enable-once-and-save-version-1",
+            "later_manual_off": "preserved",
+            "migration_version_default": 0,
+            "same_gate_writer": true,
+            "seamless_transitions": true
+          },
+          "source_pins": [
+            "ce89f7a4592ccc8ad3124ee18f7097e3f3d8fd77",
+            "0b921124166d24b6b27ecd1244c62f8dbf084e9c"
+          ],
+          "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "status": "included",
+          "test_ids": [
+            "test-hdr10-seamless-setting",
+            "test-seamless-profile-migration"
+          ],
+          "upstream_equivalence_reason": null
+        },
+        {
+          "base": "6ab06b16530c3ac3618a71336ddc2efc2905a2be",
+          "branch": "fix/jvc-sticky-sdr",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "commits": [
+            "cc1bf5abdc52c878a76f42bcb6ed7a17a272952e"
+          ],
+          "default": true,
+          "depends_on": [
+            "hdr-v20"
+          ],
+          "evidence": [
+            {
+              "id": "hunk-ownership.json",
+              "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+            },
+            {
+              "id": "tree-parity.json",
+              "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+            }
+          ],
+          "experimental": false,
+          "head": "cc1bf5abdc52c878a76f42bcb6ed7a17a272952e",
+          "id": "jvc-sticky-sdr",
+          "ordered_commits": [
+            "cc1bf5abdc52c878a76f42bcb6ed7a17a272952e"
+          ],
+          "patch_id": "1d0400e598791a7ad8f098ccb50647ff0b3d9aba",
+          "paths": [
+            "xbmc/utils/AMLUtils.cpp"
+          ],
+          "provenance": {
+            "source_commits": [
+              "0b921124166d24b6b27ecd1244c62f8dbf084e9c"
+            ],
+            "source_patch_sha256": "3bf337f2a13648ebd65dc7b3a4ef50b8e7ca7398452914ffd1a74a937471ff57",
+            "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+          },
+          "ref": "refs/heads/fix/jvc-sticky-sdr",
+          "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "settings_defaults": {
+            "applies_only": "DV Mode On after bypassed SDR playback",
+            "dv_mode_forced": false,
+            "gate": "same existing seamless setting writer"
+          },
+          "source_pins": [
+            "0b921124166d24b6b27ecd1244c62f8dbf084e9c"
+          ],
+          "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "status": "included",
+          "test_ids": [],
+          "upstream_equivalence_reason": null
+        },
+        {
+          "base": "a4295421f270929315fea42b9e53b00c16e920a5",
+          "branch": "fix/ddplus-safety",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "commits": [
+            "24c21d115a46cf3a0e86c275fcba0f7be2ce7cb6"
+          ],
+          "default": true,
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "hunk-ownership.json",
+              "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+            },
+            {
+              "id": "tree-parity.json",
+              "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+            },
+            {
+              "id": "tests/ddplus-parser-synthetic-12.log",
+              "sha256": "53dc1083de4d867205f3406073c5b499b67a60f2eb1f49841966565ca65ad7a3"
+            }
+          ],
+          "experimental": false,
+          "head": "24c21d115a46cf3a0e86c275fcba0f7be2ce7cb6",
+          "id": "ddplus-safety",
+          "ordered_commits": [
+            "24c21d115a46cf3a0e86c275fcba0f7be2ce7cb6"
+          ],
+          "patch_id": "e4af3ee5d57339d0f280917ea7866d5e499ef888",
+          "paths": [
+            "addons/resource.language.de_de/resources/strings.po",
+            "addons/resource.language.en_gb/resources/strings.po",
+            "system/settings/settings.xml",
+            "xbmc/cores/AudioEngine/Utils/AEStreamInfo.cpp",
+            "xbmc/cores/AudioEngine/Utils/AEStreamInfo.h",
+            "xbmc/cores/AudioEngine/Utils/test/CMakeLists.txt",
+            "xbmc/cores/AudioEngine/Utils/test/TestAEStreamParser.cpp",
+            "xbmc/cores/VideoPlayer/DVDCodecs/Audio/DVDAudioCodecPassthrough.cpp",
+            "xbmc/cores/VideoPlayer/DVDCodecs/Audio/DVDAudioCodecPassthrough.h",
+            "xbmc/settings/Settings.h"
+          ],
+          "provenance": {
+            "source_commits": [
+              "0b921124166d24b6b27ecd1244c62f8dbf084e9c"
+            ],
+            "source_patch_sha256": "9ad643e1cf583939ac80797ecc76a640f8a715e14fa0be7970f8cff708dd2c40",
+            "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+          },
+          "ref": "refs/heads/fix/ddplus-safety",
+          "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "settings_defaults": {
+            "atmos_gain_recovery": false,
+            "joc_unknown_bsi_and_isolated_ac3": "preserve-original",
+            "unsafe_atmos_override": "removed"
+          },
+          "source_pins": [
+            "0b921124166d24b6b27ecd1244c62f8dbf084e9c"
+          ],
+          "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "status": "included",
+          "test_ids": [
+            "ddplus-parser-synthetic-12"
+          ],
+          "upstream_equivalence_reason": null
+        },
+        {
+          "base": "a4295421f270929315fea42b9e53b00c16e920a5",
+          "branch": "fix/audio-pause-transport",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "commits": [
+            "a28d115db0d7a552bba31cbf3c4bfe6fbb86d22d"
+          ],
+          "default": true,
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "hunk-ownership.json",
+              "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+            },
+            {
+              "id": "tree-parity.json",
+              "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+            },
+            {
+              "id": "tests/test-activeae-configure-retry.log",
+              "sha256": "5c08e1c566d9af917049c35a46a4c2f977f26577f56981468ba317611b58720d"
+            },
+            {
+              "id": "tests/test-activeae-dropped-raw-delay.log",
+              "sha256": "a5c34bcdd434dd26a58029127158cdce90edadcceaa52a3f339b55aca71ef0e5"
+            },
+            {
+              "id": "tests/test-activeae-duration-families.log",
+              "sha256": "6a69b4f78754d631b37d88f95ff97c15f98308342fd7183fae4e96e18d3aa976"
+            },
+            {
+              "id": "tests/test-activeae-error-free.log",
+              "sha256": "4766ffa38f56bfac0f963b9d03f9d7e2a196a761a0c7517c5d7eb491693e719a"
+            },
+            {
+              "id": "tests/test-activeae-long-pause.log",
+              "sha256": "d2475985a2ac8b30f4228c0d1787a608b3c98e331c8bb8dfa69ceaf409e36f36"
+            },
+            {
+              "id": "tests/test-activeae-pause-silence.log",
+              "sha256": "8dfd9fa630083c16c360840142ef1e754e2ec639efd2a905860ee9b269cb025d"
+            },
+            {
+              "id": "tests/test-activeae-paused-packets.log",
+              "sha256": "6a20eddc0c0c240089d7b2599e3ee54ee351c908b20b7ef4dd98c803caf0212f"
+            },
+            {
+              "id": "tests/test-activeae-resume-epoch.log",
+              "sha256": "df87449bfa8fbdd6b904389dc2afbdb3d05aaa3a8ccdce35ba08fcb08e9c47d9"
+            },
+            {
+              "id": "tests/test-activeae-stream-flush.log",
+              "sha256": "da44c5c28eba40bec587a1bbe8735fc7fd5c4aef336b31e7aea22acddd1b2932"
+            },
+            {
+              "id": "tests/test-activeae-threaded-barrier.log",
+              "sha256": "09db92f7ea40cff765cfdbc2650aeb3d04260959bcf1b2bad60447f70027e6e2"
+            }
+          ],
+          "experimental": false,
+          "head": "a28d115db0d7a552bba31cbf3c4bfe6fbb86d22d",
+          "id": "audio-pause-transport",
+          "ordered_commits": [
+            "a28d115db0d7a552bba31cbf3c4bfe6fbb86d22d"
+          ],
+          "patch_id": "ff349d66fc5ad9f20c76472ed881260b7cd0b705",
+          "paths": [
+            "addons/resource.language.en_gb/resources/strings.po",
+            "tools/test-activeae-configure-retry.py",
+            "tools/test-activeae-dropped-raw-delay.py",
+            "tools/test-activeae-duration-families.py",
+            "tools/test-activeae-error-free.py",
+            "tools/test-activeae-long-pause.py",
+            "tools/test-activeae-pause-silence.py",
+            "tools/test-activeae-paused-packets.py",
+            "tools/test-activeae-resume-epoch.py",
+            "tools/test-activeae-stream-flush.py",
+            "tools/test-activeae-threaded-barrier.py",
+            "xbmc/cores/AudioEngine/CMakeLists.txt",
+            "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+            "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.h",
+            "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.cpp",
+            "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.h",
+            "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAEStream.cpp",
+            "xbmc/cores/AudioEngine/Utils/AEBitstreamPacker.cpp",
+            "xbmc/cores/AudioEngine/Utils/AEBitstreamPacker.h",
+            "xbmc/cores/AudioEngine/Utils/AEBitstreamSilence.cpp",
+            "xbmc/cores/AudioEngine/Utils/AEBitstreamSilence.h"
+          ],
+          "provenance": {
+            "source_commits": [
+              "fc74d84ac51731259ab58aeba3c3350b7cc16eb0",
+              "3891e347d0b12ab5fdcc7d1dfda524a5a731161c"
+            ],
+            "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+          },
+          "ref": "refs/heads/fix/audio-pause-transport",
+          "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "scope": "Complete accepted fc74 extension including silent frames, whole pause and DTS-HD core. No universal zero-loss claim.",
+          "settings_defaults": {},
+          "source_pins": [
+            "fc74d84ac51731259ab58aeba3c3350b7cc16eb0",
+            "3891e347d0b12ab5fdcc7d1dfda524a5a731161c"
+          ],
+          "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "status": "included",
+          "test_ids": [
+            "test-activeae-configure-retry",
+            "test-activeae-dropped-raw-delay",
+            "test-activeae-duration-families",
+            "test-activeae-error-free",
+            "test-activeae-long-pause",
+            "test-activeae-pause-silence",
+            "test-activeae-paused-packets",
+            "test-activeae-resume-epoch",
+            "test-activeae-stream-flush",
+            "test-activeae-threaded-barrier"
+          ],
+          "upstream_equivalence_reason": null
+        },
+        {
+          "base": "a4295421f270929315fea42b9e53b00c16e920a5",
+          "branch": "fix/retained-audio-admission",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "commits": [
+            "36fae96028539369cbaf016e0e5d4d25ef846d9c"
+          ],
+          "default": true,
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "hunk-ownership.json",
+              "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+            },
+            {
+              "id": "tree-parity.json",
+              "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+            },
+            {
+              "id": "tests/test-audio-frame-admission.log",
+              "sha256": "f6d06a36e120d3ca2ef82da4d6d4524676fa817be46c366ffff9f3633e9b74f3"
+            }
+          ],
+          "experimental": false,
+          "head": "36fae96028539369cbaf016e0e5d4d25ef846d9c",
+          "id": "retained-audio-admission",
+          "ordered_commits": [
+            "36fae96028539369cbaf016e0e5d4d25ef846d9c"
+          ],
+          "patch_id": "ae1ad8547040dd1b2e07d68f461007b291f01b00",
+          "paths": [
+            "tools/test-audio-frame-admission.py",
+            "xbmc/cores/VideoPlayer/VideoPlayerAudio.cpp"
+          ],
+          "provenance": {
+            "source_commits": [
+              "eefe92d249c72edbd2f216b0b6ca3944e85e69b3"
+            ],
+            "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+          },
+          "ref": "refs/heads/fix/retained-audio-admission",
+          "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "settings_defaults": {},
+          "source_pins": [
+            "eefe92d249c72edbd2f216b0b6ca3944e85e69b3"
+          ],
+          "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "status": "included",
+          "test_ids": [
+            "test-audio-frame-admission"
+          ],
+          "upstream_equivalence_reason": null
+        },
+        {
+          "base": "a4295421f270929315fea42b9e53b00c16e920a5",
+          "branch": "feature/numbered-frame-tools",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "commits": [
+            "8882c7b0a618cec2e76893f7324bc81038de58eb"
+          ],
+          "default": true,
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "hunk-ownership.json",
+              "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+            },
+            {
+              "id": "tree-parity.json",
+              "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+            },
+            {
+              "id": "tests/frame-pacing.log",
+              "sha256": "6b693b6d25abe12d1b69f6f62be0fd246fedfbc9a3db494c36820968e0b90c8a"
+            }
+          ],
+          "experimental": false,
+          "head": "8882c7b0a618cec2e76893f7324bc81038de58eb",
+          "id": "numbered-frame-tools",
+          "ordered_commits": [
+            "8882c7b0a618cec2e76893f7324bc81038de58eb"
+          ],
+          "patch_id": "36afa7683d7ad2025a0332c19f9430b64c6059f0",
+          "paths": [
+            "tools/frame_pacing/.gitignore",
+            "tools/frame_pacing/README.md",
+            "tools/frame_pacing/__init__.py",
+            "tools/frame_pacing/__main__.py",
+            "tools/frame_pacing/analysis.py",
+            "tools/frame_pacing/capture.py",
+            "tools/frame_pacing/marker.py",
+            "tools/frame_pacing/media.py",
+            "tools/frame_pacing/requirements.txt",
+            "tools/frame_pacing/test_capture.py",
+            "tools/frame_pacing/test_frame_pacing.py"
+          ],
+          "provenance": {
+            "source_commits": [
+              "c66e8b493e23318f7d538eaa3fd1a922c52b8513"
+            ],
+            "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+          },
+          "ref": "refs/heads/feature/numbered-frame-tools",
+          "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "scope": "Source measurement tooling only; not a production pacing fix.",
+          "settings_defaults": {},
+          "source_pins": [
+            "c66e8b493e23318f7d538eaa3fd1a922c52b8513"
+          ],
+          "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "status": "included",
+          "test_ids": [
+            "frame-pacing"
+          ],
+          "upstream_equivalence_reason": null
+        },
+        {
+          "base": "a4295421f270929315fea42b9e53b00c16e920a5",
+          "branch": "fix/distribution-build",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "commits": [
+            "ac12f1fbb10370a4210833929ecc87d71cc7334e"
+          ],
+          "default": true,
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "hunk-ownership.json",
+              "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+            },
+            {
+              "id": "tree-parity.json",
+              "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+            }
+          ],
+          "experimental": false,
+          "head": "ac12f1fbb10370a4210833929ecc87d71cc7334e",
+          "id": "distribution-build",
+          "ordered_commits": [
+            "ac12f1fbb10370a4210833929ecc87d71cc7334e"
+          ],
+          "patch_id": "a85af6644a0672b6cb55050aa2546e90095515b8",
+          "paths": [
+            "cmake/modules/buildtools/FindTexturePacker.cmake",
+            "version.txt"
+          ],
+          "provenance": {
+            "source_commits": [
+              "045efc4a3e5da75a5c06dfbbb231d6477d7c5e49",
+              "e8943cbb010e4381625ea7f2a8b3fbed72336e3f"
+            ],
+            "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+          },
+          "ref": "refs/heads/fix/distribution-build",
+          "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "settings_defaults": {},
+          "source_pins": [
+            "045efc4a3e5da75a5c06dfbbb231d6477d7c5e49",
+            "e8943cbb010e4381625ea7f2a8b3fbed72336e3f"
+          ],
+          "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "status": "included",
+          "test_ids": [],
+          "upstream_equivalence_reason": null
+        },
+        {
+          "base": "b4d2f3835891411d85a2180b3885b5dffa42303b",
+          "branch": "fix/accepted-fixture-union",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "commits": [
+            "83bf4c44adc22a4af150534ff222ac74ca206766"
+          ],
+          "default": true,
+          "depends_on": [
+            "manual-lldv",
+            "pause-presenter",
+            "seek-ux",
+            "trickplay-reanchor",
+            "startup-gate",
+            "jvc-sticky-sdr",
+            "ddplus-safety",
+            "audio-pause-transport",
+            "retained-audio-admission"
+          ],
+          "evidence": [
+            {
+              "id": "hunk-ownership.json",
+              "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+            },
+            {
+              "id": "tree-parity.json",
+              "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+            },
+            {
+              "id": "tests/test-activeae-truehd-sync.log",
+              "sha256": "783d7ba22a1a1d617222d3f894283f7ebbebc54f0941f9aec1063000e54e3dd9"
+            },
+            {
+              "id": "tests/test-aml-lifecycle.log",
+              "sha256": "da3632e61b90565553cef38cf5f8871ad87938371bc1abaeb92f1e4ba09a05bc"
+            },
+            {
+              "id": "tests/test-aml-mute-renderer.log",
+              "sha256": "95490e56d47610d3adf2f59f47447ee406498bd9037b4b2ba81cc55e185674c5"
+            },
+            {
+              "id": "tests/test-aml-native-continuation.log",
+              "sha256": "c82306bd1c2de7a4f5f7ec74b1f1a2f84f49867a34fa14d51e90886aa7d710b5"
+            },
+            {
+              "id": "tests/test-aml-native-settings.log",
+              "sha256": "53266bcb4581cd03cf1991b482543fe3ca08843250c8bc609764815eb2fca67d"
+            },
+            {
+              "id": "tests/test-aml-preroll.log",
+              "sha256": "a416cd0766a952d9932ebcb6d2b98b7121072445a68b4bbf2ccad741ea481ebd"
+            },
+            {
+              "id": "tests/test-aml-presenter-cadence.log",
+              "sha256": "113b7cdee2150d9c0cf1ad8b05ecb5bfc269dde0f18b43eb4d1585e8ef100184"
+            },
+            {
+              "id": "tests/test-aml-presenter-setting.log",
+              "sha256": "64b61e7b6fb90ce8abe1bd1f4b6eb5762952d4ef2d4edbba27c5a9c5bef490a9"
+            },
+            {
+              "id": "tests/test-aml-presenter-step-invalidation.log",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "id": "tests/test-aml-presenter.log",
+              "sha256": "df9b449c3fc4eb08c2fe23683b24632f5196cb0790c6e884c9ff1afa1788fe78"
+            },
+            {
+              "id": "tests/test-aml-restart-hold.log",
+              "sha256": "a5e601cf385ad789f1b1080ccff2a8428cd4fa04fa14d5e6620653ea3cbe3e42"
+            },
+            {
+              "id": "tests/test-aml-seek-clock.log",
+              "sha256": "e8bea246dfaabf2bddea9ae96d50647c1373b3ab905871ad927a13e6c8917a4e"
+            },
+            {
+              "id": "tests/test-aml-skin-reload.log",
+              "sha256": "a68cec0e1908074a26cf75384b03f64f834f883e7dbb374ee438f5cfbd34b649"
+            },
+            {
+              "id": "tests/test-aml-window-lifecycle.log",
+              "sha256": "f739ad337ac056e6aeab95457940565d7761632e3f3095f367d5685633e4751d"
+            },
+            {
+              "id": "tests/test-audio-recovery-seek.log",
+              "sha256": "0edc6188ca1e6d8c6d9d1f3c5d016fa34d6c76f97d7b6138860067b2e61a9fec"
+            },
+            {
+              "id": "tests/test-chapter-seek-intent.log",
+              "sha256": "f0351acd142921c56e8e7d70bc934f4a890e3f92f4a0c3865772a294bb1a179f"
+            },
+            {
+              "id": "tests/test-dv-disc-hold.log",
+              "sha256": "8101cbe2eec629d64f3019aca2e197c7dcf46b3ea293108df2e78358eff42120"
+            },
+            {
+              "id": "tests/test-player-lifecycle.log",
+              "sha256": "5b26cc0e262eb77844d7527ac6aca3223f5bd4798196828e801f6e0ab9d64d68"
+            },
+            {
+              "id": "tests/test-player-retirement.log",
+              "sha256": "0814e3a7097ec779c12b56c7b4d3c25b33b54da330d9dd56485208c64d6cbae3"
+            },
+            {
+              "id": "tests/test-render-lifecycle.log",
+              "sha256": "d0cb44fba94722a57b63c8fb6f99c3e699e7768eb4517c5e19d9bcbfdc90c0cb"
+            },
+            {
+              "id": "tests/test-render-video-admission.log",
+              "sha256": "17466672469e3f195bb2e8fa9ba02859e4f84c5ebb39a55790661a2d4136f75e"
+            },
+            {
+              "id": "tests/test-truehd-delivery.log",
+              "sha256": "1fe79f2d6e8a520afe82b7e2aa437f9bec98db9d5942c75ef78b0aa91e671597"
+            },
+            {
+              "id": "tests/test-video-timeout-recovery.log",
+              "sha256": "c3502fd80db653510d1e6d6e61c9a7c8f28e2859dbc665ca08c22398fe931d39"
+            }
+          ],
+          "experimental": false,
+          "head": "83bf4c44adc22a4af150534ff222ac74ca206766",
+          "id": "fixture-union",
+          "ordered_commits": [
+            "83bf4c44adc22a4af150534ff222ac74ca206766"
+          ],
+          "patch_id": "7182670b94e7d94aa203e78d57a440f9cd51ee27",
+          "paths": [
+            "tools/test-activeae-truehd-sync.py",
+            "tools/test-aml-lifecycle.py",
+            "tools/test-aml-mute-renderer.py",
+            "tools/test-aml-native-continuation.py",
+            "tools/test-aml-native-settings.py",
+            "tools/test-aml-preroll.py",
+            "tools/test-aml-presenter-setting.py",
+            "tools/test-aml-presenter.py",
+            "tools/test-aml-restart-hold.py",
+            "tools/test-aml-seek-clock.py",
+            "tools/test-aml-skin-reload.py",
+            "tools/test-aml-window-lifecycle.py",
+            "tools/test-audio-recovery-seek.py",
+            "tools/test-chapter-seek-intent.py",
+            "tools/test-dv-disc-hold.py",
+            "tools/test-player-lifecycle.py",
+            "tools/test-player-retirement.py",
+            "tools/test-render-lifecycle.py",
+            "tools/test-render-video-admission.py",
+            "tools/test-truehd-delivery.py",
+            "tools/test-video-timeout-recovery.py"
+          ],
+          "provenance": {
+            "source_commits": [
+              "bdaf39855185da0d1e97d3d969b69b63a4b31a7c",
+              "0aff06e05c4faada67c96a791f8a7e5f3485a29f"
+            ],
+            "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+          },
+          "ref": "refs/heads/fix/accepted-fixture-union",
+          "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "settings_defaults": {},
+          "source_pins": [
+            "bdaf39855185da0d1e97d3d969b69b63a4b31a7c",
+            "0aff06e05c4faada67c96a791f8a7e5f3485a29f"
+          ],
+          "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "status": "included",
+          "test_ids": [
+            "test-activeae-truehd-sync",
+            "test-aml-lifecycle",
+            "test-aml-mute-renderer",
+            "test-aml-native-continuation",
+            "test-aml-native-settings",
+            "test-aml-preroll",
+            "test-aml-presenter-cadence",
+            "test-aml-presenter-setting",
+            "test-aml-presenter-step-invalidation",
+            "test-aml-presenter",
+            "test-aml-restart-hold",
+            "test-aml-seek-clock",
+            "test-aml-skin-reload",
+            "test-aml-window-lifecycle",
+            "test-audio-recovery-seek",
+            "test-chapter-seek-intent",
+            "test-dv-disc-hold",
+            "test-player-lifecycle",
+            "test-player-retirement",
+            "test-render-lifecycle",
+            "test-render-video-admission",
+            "test-truehd-delivery",
+            "test-video-timeout-recovery"
+          ],
+          "upstream_equivalence_reason": null
+        },
+        {
+          "base": "a4295421f270929315fea42b9e53b00c16e920a5",
+          "branch": "archive/accepted-upstream/pr-151",
+          "commit_repository": "https://github.com/pannal/xbmc.git",
+          "commits": [],
+          "default": true,
+          "depends_on": [],
+          "evidence": [
+            {
+              "id": "upstream-review.json",
+              "sha256": "4bbc8de0ba80d6909d118c4e9b61a4eb18150d877b0904b5efc32e876bc12886"
+            }
+          ],
+          "experimental": false,
+          "head": "674be07da5f888a12873072d387dab3b198dd428",
+          "id": "dim-black-screensaver",
+          "ordered_commits": [],
+          "provenance": {
+            "original_patch_ids": [
+              "62932490a4e501c5375237378964dd4fcc4f53d2"
+            ],
+            "source_commits": [
+              "674be07da5f888a12873072d387dab3b198dd428"
+            ],
+            "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
+          },
+          "ref": "refs/heads/archive/accepted-upstream/pr-151",
+          "ref_availability": "local archive alias; no replay or remote fetch",
+          "ref_repository": "https://github.com/pannal/xbmc.git",
+          "settings_defaults": {},
+          "source_pins": [
+            "674be07da5f888a12873072d387dab3b198dd428"
+          ],
+          "status": "upstream-integrated",
+          "test_ids": [],
+          "upstream_repository": "https://github.com/pannal/xbmc.git",
+          "upstream_review": {
+            "evidence_sha256": "4bbc8de0ba80d6909d118c4e9b61a4eb18150d877b0904b5efc32e876bc12886",
+            "reason": "Original Dim/Black commit and merge are ancestors of validated upstream; GUIWindow production file has no local delta. Retained, not replayed.",
+            "upstream_commit": "a4295421f270929315fea42b9e53b00c16e920a5"
+          }
+        }
+      ],
+      "integration": {
+        "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+        "head": "fce97af5c969859be1d42fdebb19b727b6d4b5be",
+        "ref": "integration/all-fixes",
+        "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+        "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+        "tree": "80398010a104b30fc2a0d21eaf2af6567a3f685f"
+      },
+      "limits": [
+        "No hardware or new binary verification; source parity only.",
+        "Unrelated old historical blobs are excluded; three original bundles required.",
+        "Active stress shutdown/VFM sources pending acceptance; not included.",
+        "No accepted post-seek/pre-roll/timeline-flash/IVTC/Atmos-gain claim.",
+        "PCM 5.1/7.1 remains unverified.",
+        "Frozen source has preserved skin-reload/disc-hold fixture compile gaps; exact original controls reproduce them. Legacy frame-selection also retains its original failure. No assertion was relaxed."
+      ],
+      "original_release": {
+        "availability": "local-only; not a public bootstrap fetch target",
+        "binary_rebuilt": false,
+        "commit": "0aff06e05c4faada67c96a791f8a7e5f3485a29f",
+        "ref": "release/original-0aff-source",
+        "tree": "80398010a104b30fc2a0d21eaf2af6567a3f685f"
+      },
+      "pending_acceptance": [
+        {
+          "availability": "local-only; unaccepted and excluded from public bootstrap",
+          "default": false,
+          "id": "stress-python-shutdown",
+          "source_commit": "2abc372bd7584d9e7575811a6fc730a5bfe9ce4f",
+          "status": "pending"
+        },
+        {
+          "availability": "local-only; unaccepted and excluded from public bootstrap",
+          "default": false,
+          "id": "stress-vfm-route",
+          "source_commit": "8fa1efaf811753848394f34294932f6526941df7",
+          "status": "pending"
+        }
+      ],
+      "previous_catalog_sha256": "efbc2cfa3f120d374f75ab4beceb3ea89be9496c792e7771b50937e07ff3de12",
+      "public_bootstrap": {
+        "included_feature_commits_and_refs": "Fetch from owned assembly repository, never from pannal.",
+        "original_0aff_and_9a90": "Remain local, neither refs nor private ancestry are publication targets.",
+        "original_diagnostic_gate": "Requires preserved local original fixture evidence; not runnable from public refs alone.",
+        "upstream_base_and_refresh": "Canonical public Pannal ancestry; validated base stays pinned."
+      },
+      "published_pr_pins": {
+        "145": "fdd11b64010d509b570fdb0400f4f483844dc77d",
+        "146": "57282b8191469b4abd8e81b1c752ae0c920c3f1f",
+        "147": "fc74d84ac51731259ab58aeba3c3350b7cc16eb0",
+        "148": "11ab17291932848c8c847627d91515bb7872beff",
+        "149": "1caca6978bbeba5a5343cd6d82bdbf65d1b0c275",
+        "150": "c66e8b493e23318f7d538eaa3fd1a922c52b8513",
+        "151": "674be07da5f888a12873072d387dab3b198dd428",
+        "153": "7d09dbc7932f7b9deb47c0ffa097405417692f73",
+        "156": "eefe92d249c72edbd2f216b0b6ca3944e85e69b3"
+      },
+      "reconstructed_baseline": {
+        "commit": "fce97af5c969859be1d42fdebb19b727b6d4b5be",
+        "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+        "ref": "release/reconstructed-0aff-source-equivalent",
+        "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+        "tree": "80398010a104b30fc2a0d21eaf2af6567a3f685f"
+      },
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "revision": 2,
+      "schema": 1,
+      "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "source_variable": "COMBINED_KODI_SOURCE",
+      "tracked_upstream": {
+        "commit": "efcb4dac04f9b2cfeb863154045602e768195ab2",
+        "ref": "upstream-dev",
+        "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+        "repository": "https://github.com/pannal/xbmc.git",
+        "status": "unvalidated-refresh-candidate"
+      },
+      "upstream": {
+        "commit": "a4295421f270929315fea42b9e53b00c16e920a5",
+        "ref": "aml-4.9-21.3_dev",
+        "refresh": {
+          "commit": "efcb4dac04f9b2cfeb863154045602e768195ab2",
+          "ref": "upstream-dev",
+          "repository": "https://github.com/pannal/xbmc.git",
+          "status": "unvalidated"
+        },
+        "repository": "https://github.com/pannal/xbmc.git"
+      },
+      "validations": {
+        "failures": [
+          "test-aml-skin-reload",
+          "test-dv-disc-hold"
+        ],
+        "passed": [
+          "test-activeae-configure-retry",
+          "test-activeae-dropped-raw-delay",
+          "test-activeae-duration-families",
+          "test-activeae-error-free",
+          "test-activeae-long-pause",
+          "test-activeae-pause-silence",
+          "test-activeae-paused-packets",
+          "test-activeae-resume-epoch",
+          "test-activeae-stream-flush",
+          "test-activeae-threaded-barrier",
+          "test-activeae-truehd-sync",
+          "test-aml-dv-manager-dependency",
+          "test-aml-dv-options",
+          "test-aml-dv-preset-read",
+          "test-aml-dv-setting-locks",
+          "test-aml-lifecycle",
+          "test-aml-mute-renderer",
+          "test-aml-native-continuation",
+          "test-aml-native-settings",
+          "test-aml-preroll",
+          "test-aml-presenter-cadence",
+          "test-aml-presenter-setting",
+          "test-aml-presenter-step-invalidation",
+          "test-aml-presenter",
+          "test-aml-restart-hold",
+          "test-aml-seek-clock",
+          "test-aml-window-lifecycle",
+          "test-audio-frame-admission",
+          "test-audio-recovery-seek",
+          "test-chapter-seek-intent",
+          "test-dvd-clock-locking",
+          "test-hdr10-seamless-setting",
+          "test-paused-trickplay-return",
+          "test-player-lifecycle",
+          "test-player-retirement",
+          "test-presenter-invalidation-lifetime",
+          "test-render-lifecycle",
+          "test-render-video-admission",
+          "test-seamless-profile-migration",
+          "test-seek-preview-origin",
+          "test-seek-timeline-marker",
+          "test-truehd-delivery",
+          "test-video-timeout-recovery",
+          "test-seek-marker-review-retirement-preview",
+          "test-seek-marker-review-retirement-commit",
+          "test-seek-marker-review-queued-speed",
+          "test-seek-marker-review-rejected-queue-keeps-older",
+          "test-seek-marker-review-chapter-supersession",
+          "test-seek-marker-review-stack-accurate-overlap",
+          "frame-pacing",
+          "ddplus-parser-compile",
+          "ddplus-parser-synthetic-12"
+        ],
+        "receipt": "test-results.json",
+        "sha256": "cfa36e17f6b59357f140c022d3cda317a7918ba94f4780ad850a1dfac744859b"
+      }
+    },
+    "media_modules": {
+      "expected_tree": "a4fa774d0b6e3bd32c50a38a87b63027d11229eb",
+      "features": [],
+      "pinned_source": {
+        "commit": "4ea44185edde8efb38dffed6ba1b2b7cce697999",
+        "original_release_input": true,
+        "stage": "accepted integrated export; no new ancillary source changes or feature refs",
+        "tree": "a4fa774d0b6e3bd32c50a38a87b63027d11229eb"
+      },
+      "recipe_policy": "Canonical six-source binding; pre-integrated platform patches are not replayed.",
+      "source_variable": "COMBINED_MEDIA_SOURCE",
+      "upstream": {
+        "commit": "10d1e8bfc22068c81a5b10b0d89b00f8b15c9502",
+        "ref": "amlogic-4.9.269",
+        "repository": "https://github.com/pannal/media_modules-aml.git"
+      }
+    },
+    "settings": {
+      "expected_tree": "49e63446af24b2f1b23f1b99c6b45115b08de3fc",
+      "features": [],
+      "pinned_source": {
+        "commit": "d81eff5f0596d63e6a3fe79f656efe88b902b7ec",
+        "historical_graph_policy": "Exact selected commit/tree preserved as depth-one Git source; unrelated donor historical .gitattributes object unavailable, historical completeness not claimed.",
+        "history_boundary": "d81eff5f0596d63e6a3fe79f656efe88b902b7ec",
+        "original_release_input": true,
+        "stage": "accepted integrated export; no new ancillary source changes or feature refs",
+        "tree": "49e63446af24b2f1b23f1b99c6b45115b08de3fc"
+      },
+      "recipe_policy": "Canonical six-source binding; pre-integrated platform patches are not replayed.",
+      "source_variable": "COMBINED_SETTINGS_SOURCE",
+      "upstream": {
+        "commit": "a9f4e6980f5e65a3120d43198d9f4a337e526ffb",
+        "ref": "coreelec-21-ng",
+        "repository": "https://github.com/pannal/service.coreelec.settings.git"
+      }
+    },
+    "skin": {
+      "expected_tree": "f320f6c26143a1c41acc93c6359c95bc85747db2",
+      "features": [],
+      "pinned_source": {
+        "commit": "94ccb38311d52a6244c71a2748379cee59e5d736",
+        "original_release_input": true,
+        "stage": "accepted integrated export; no new ancillary source changes or feature refs",
+        "tree": "f320f6c26143a1c41acc93c6359c95bc85747db2"
+      },
+      "recipe_policy": "Canonical six-source binding; pre-integrated platform patches are not replayed.",
+      "source_variable": "COMBINED_SKIN_SOURCE",
+      "upstream": {
+        "commit": "94ccb38311d52a6244c71a2748379cee59e5d736",
+        "ref": "master",
+        "repository": "https://github.com/pannal/skin.p3i.estuary.git"
+      }
+    }
+  },
+  "excluded_features": [
+    {
+      "archive_sha256": "0911994269e8b179fd69cf26beb8382451bae32c5dab789867f4f395c07a685e",
+      "default": false,
+      "id": "manual-ethernet9",
+      "reason": "Separate unaccepted schema and hardware validation; no new feature ref.",
+      "status": "excluded"
+    },
+    {
+      "default": false,
+      "id": "timeline-flash",
+      "reason": "No accepted reproduced implementation.",
+      "status": "excluded"
+    },
+    {
+      "default": false,
+      "id": "dvd24p-ivtc",
+      "reason": "No verified accepted contribution.",
+      "status": "excluded"
+    },
+    {
+      "default": false,
+      "id": "rejected-jvc-avi-vic",
+      "reason": "Not accepted as a blackout fix.",
+      "status": "excluded"
+    }
+  ],
+  "experiments": {
+    "default_selection": [],
+    "opt_in": "Explicit --experiment component:feature only for declared pinned default-off experimental deltas. Unaccepted/no-implementation investigations have no selectable feature refs."
+  },
+  "inputs": [
+    {
+      "path": "catalogs/framework.json",
+      "sha256": "fc8ace15d34996a0199597a1a4d7c669ae203db6244722a22c9a6d71cb480daa"
+    },
+    {
+      "path": "catalogs/kodi.json",
+      "sha256": "ab3762d0a66c110c85288defbe7a5e396e9f68258ce422b25ceb5d7a021aeacc"
+    },
+    {
+      "path": "catalogs/kernel.json",
+      "sha256": "f251558ff99e07ae0c498be7dd1614bead7fe4ece4fb0565ad62b2bd708457a0"
+    },
+    {
+      "path": "catalogs/ancillary.json",
+      "sha256": "882a1ff4826b340199b2ba247dc005edae10941c1c6f2449728aad06fc1a0a8b"
+    },
+    {
+      "path": "provenance/original-source-and-packaging.json",
+      "sha256": "19c609128419591cf9eb8a75bfcad99603432ef989977ffdf37f6997af3e4512"
+    },
+    {
+      "path": "evidence/original-checksums.json",
+      "sha256": "5d03cf82b07a9cb000470b2b8172e27b30d5c23b5c1f1bcea1279b97cfb44cee"
+    },
+    {
+      "path": "evidence/independent-object-stores.json",
+      "sha256": "5b51e421ba1137c5f60f9266f7b4919c4fbf7484a997f0cfec6c01739c604767"
+    },
+    {
+      "path": "evidence/kodi/hunk-ownership.json",
+      "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+    },
+    {
+      "path": "evidence/kodi/tree-parity.json",
+      "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+    },
+    {
+      "path": "evidence/kodi/upstream-review.json",
+      "sha256": "4bbc8de0ba80d6909d118c4e9b61a4eb18150d877b0904b5efc32e876bc12886"
+    },
+    {
+      "path": "evidence/kodi/publish-safe-audit.json",
+      "sha256": "1e6836fc92384a631b37286587f63cfb8efa75168ebc4f63c78845c706a55119"
+    },
+    {
+      "path": "evidence/kodi/WORKFLOW.md",
+      "sha256": "d98ab70bfd2af60a2a033f19dd0e1fe91dbba2e525a1f64bf8866a027770e955"
+    },
+    {
+      "path": "evidence/kodi/test-results.json",
+      "sha256": "cfa36e17f6b59357f140c022d3cda317a7918ba94f4780ad850a1dfac744859b"
+    },
+    {
+      "path": "evidence/kodi/host-parser-boundary.json",
+      "sha256": "6e05a91742fc9495bcd26b66b93ddff9ec109686c00a49592fc986eeee711467"
+    },
+    {
+      "path": "evidence/kodi/host-dependencies.json",
+      "sha256": "06bdee0e92c829caaae43610a8f1cac0652c93860a3f3db90868237a4487555d"
+    },
+    {
+      "path": "evidence/kodi/public-bootstrap-provenance.json",
+      "sha256": "0e0ab16681503852fbf1453b2521fc917913d5e8324d3e5a5ed9b6ae1e4bb65f"
+    },
+    {
+      "path": "evidence/kernel/parity.json",
+      "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+    },
+    {
+      "path": "evidence/kernel/workflow-tests.json",
+      "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+    },
+    {
+      "path": "evidence/kernel/focused-tests.json",
+      "sha256": "01b32fbf1bfe8d2457cbd8217fc250ebcaff41f66bebe565d842c46b349b76d6"
+    },
+    {
+      "path": "evidence/kernel/c2-results.json",
+      "sha256": "0e420dc63b2d8c4af908a50d15fb5c41b0a031f9ab5e4acf998db5b81089d5df"
+    },
+    {
+      "path": "evidence/kernel/ethernet-lease.json",
+      "sha256": "f247bde663f0695cdcf6d169c628d19a3e013bae5b72248ca2a8f68afa7c2ca6"
+    },
+    {
+      "path": "evidence/kernel/osd-afbc-queued-flips-upstream-review.json",
+      "sha256": "d626a0ce4358a21dcddcc8f7e65e4d672d3a92206bcdf4b2385bd758656c4f90"
+    },
+    {
+      "path": "evidence/kernel/vfm-vdin-routing-safeguards-upstream-review.json",
+      "sha256": "454e5e5f9b8428988b0eedf5c21cd3fb5f17850ef3aa4e417978dce98e38074a"
+    },
+    {
+      "path": "evidence/kernel/raven-vdin-writeback-upstream-review.json",
+      "sha256": "086dd63d9d36fb8ce8c27148c30b99d4e167f8425560e2be6fd82dd6ca9c2c70"
+    },
+    {
+      "path": "evidence/kernel/hdr-sink-vsvdb-recovery-upstream-review.json",
+      "sha256": "c00d814607b35446072569ad2ca9f4cab0813ac7529923a856aec43da16141e2"
+    },
+    {
+      "path": "evidence/kernel/native-p81-live-l5-default-upstream-review.json",
+      "sha256": "a49414f956da63c0e31c6aa0c11df8e625318ce95bc5f4bd745578a0ff2460e5"
+    },
+    {
+      "path": "evidence/kernel/decomposition-review.json",
+      "sha256": "2bad736aec91ced5b07b28c63bf7ab880ef937000eb8f5bdc52d61212ea131f4"
+    }
+  ],
+  "original_image_sha256": "09d980218d8ab1cc9b48cb27c056f03c8f7a4ba198e98b3d15f4c2bbea0a672a",
+  "private_diagnostic_evidence": [
+    {
+      "availability": "local-only; digest recorded, bytes not published",
+      "component": "kodi",
+      "id": "original-control-results.json",
+      "sha256": "8f5579e51e518ae3b6ceda80edc375d9f3d42432d73165d4784684b21b7dcaa5"
+    }
+  ],
+  "required_validation": [
+    "assembly-regressions",
+    "packaging-regressions",
+    "native-ethernet-regressions",
+    "source-parity",
+    "source-materialization",
+    "repeat-assembly",
+    "component-catalogs",
+    "publication-safety",
+    "public-bootstrap"
+  ],
+  "runtime_policy": {
+    "kernel_gate_default": 1,
+    "profile_migration": "Enable once for an existing saved Off; subsequent manually saved Off persists. Other preferences and profiles are not reset.",
+    "seamless_setting_default": true
+  },
+  "schema": 1,
+  "source_cohort": {
+    "components": [
+      "framework",
+      "kodi",
+      "kernel",
+      "media_modules",
+      "ap6275s",
+      "settings",
+      "skin"
+    ],
+    "policy": "Joint pinned source/configuration selection; no component binary or ABI substitution inferred from source tree equality."
+  },
+  "target": {
+    "ARCH": "arm",
+    "DEVICE": "Amlogic-ng",
+    "PROJECT": "Amlogic-ce"
+  },
+  "validation_scope": "Reconstructed source/workflow only. No firmware build, proprietary ABI recertification, installation, device testing or publication. Kodi frozen helper compile gaps and legacy frame-selection failure remain recorded unchanged against original controls."
+}
