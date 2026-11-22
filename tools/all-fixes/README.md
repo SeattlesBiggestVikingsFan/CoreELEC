@@ -8,7 +8,7 @@ runtime policy separately. Pending/excluded features are not selected.
 Experiments must be declared default-off and selected with
 `--experiment component:feature`; their candidates cannot inherit validation.
 
-Run these commands in Linux with Python 3.9+ and Git. No extra packages are needed.
+Run these commands in Linux with Python 3.12+ and Git. No extra packages are needed.
 Private repository paths belong in an untracked bindings JSON, never the manifest:
 
 ```sh
@@ -31,6 +31,10 @@ Deterministic synthetic assembly commits permit repeat source/commit comparison.
 Catalogs record exact upstream/feature/ref commits, dependencies, provenance,
 runtime defaults, original release anchors and reconstructed source baseline.
 Manifest `inputs` are repository-relative SHA256-verified catalogs/evidence.
+The framework's `manifest_destination` installs the exact manifest and its inputs
+in the candidate. Its containing commit is pinned by the assembly receipt, avoiding
+a self-referential commit pin. The original production-tree parity excludes only
+this documented tooling/metadata directory and intentional recipe-binding paths.
 `required_validation` names the mandatory checks. Validation evidence must contain
 `manifest_sha256`, every exact component `{head, tree}`, and checks
 `{id, passed: true, path, sha256}`. Paths are relative to the evidence file.

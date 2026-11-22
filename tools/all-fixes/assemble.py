@@ -105,6 +105,8 @@ def order(component, experimental=()):
     for item in features:
         if item.get("experimental", False) and item.get("default", False):
             raise Failure(f"Experiment enabled by default: {item['id']}")
+        if item.get("status") in ("pending", "excluded") and item.get("default", False):
+            raise Failure(f"Unaccepted feature enabled by default: {item['id']}")
         for parent in item.get("depends_on", []):
             if parent not in by_id:
                 raise Failure(f"Missing dependency: {parent}")
@@ -198,6 +200,27 @@ def tree_check(repo, head, component):
     return checks
 
 
+def commit_index(repo, message):
+    tree = text(repo, "write-tree")
+    parent = text(repo, "rev-parse", "HEAD")
+    environment = os.environ.copy()
+    environment.update(GIT_AUTHOR_DATE="2000-01-01T00:00:00Z",
+                       GIT_COMMITTER_DATE="2000-01-01T00:00:00Z")
+    result = subprocess.run(["git", "-C", str(repo), "-c", "user.name=Assembly",
+                             "-c", "user.email=assembly@users.noreply.github.com",
+                             "commit-tree", tree, "-p", parent],
+                            input=(message + "\n\nCo-authored-by: Copilot App "
+                                   "<223556219+Copilot@users.noreply.github.com>\n").encode(),
+                            env=environment, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    if result.returncode:
+        raise Failure(result.stderr.decode())
+    head = result.stdout.decode().strip()
+    git(repo, "reset", "--soft", head)
+    if text(repo, "status", "--porcelain"):
+        raise Failure("Assembly produced unexpected dirty files")
+    return head
+
+
 def assemble(manifest_path, bindings_path, work, experiments=(), refresh=None):
     manifest, manifest_hash = validate_manifest(manifest_path)
     bindings = load(bindings_path)
@@ -245,26 +268,22 @@ def assemble(manifest_path, bindings_path, work, experiments=(), refresh=None):
                         continue
                     git(destination, "-c", "user.name=Assembly", "-c",
                         "user.email=assembly@users.noreply.github.com", "cherry-pick", "--no-commit", revision)
-                    tree = text(destination, "write-tree")
-                    parent = text(destination, "rev-parse", "HEAD")
-                    metadata = ["-c", "user.name=Assembly", "-c", "user.email=assembly@users.noreply.github.com"]
-                    environment = os.environ.copy()
-                    environment.update(GIT_AUTHOR_DATE="2000-01-01T00:00:00Z",
-                                       GIT_COMMITTER_DATE="2000-01-01T00:00:00Z")
-                    message = (f"Assemble {name}/{feature['id']}\n\nSource-commit: {revision}\n\n"
-                               "Co-authored-by: Copilot App <223556219+Copilot@users.noreply.github.com>\n")
-                    result = subprocess.run(["git", "-C", str(destination), *metadata,
-                                             "commit-tree", tree, "-p", parent],
-                                            input=message.encode(), env=environment,
-                                            stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-                    if result.returncode:
-                        raise Failure(result.stderr.decode())
-                    new_head = result.stdout.decode().strip()
-                    git(destination, "reset", "--soft", new_head)
-                    if text(destination, "status", "--porcelain"):
-                        raise Failure("Assembly produced unexpected dirty files")
+                    new_head = commit_index(destination, f"Assemble {name}/{feature['id']}\n\nSource-commit: {revision}")
                     changes.append({"feature": feature["id"], "commit": revision,
                                     "action": "applied", "candidate_commit": new_head})
+            if component.get("manifest_destination"):
+                target = safe_path(destination, component["manifest_destination"])
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes(Path(manifest_path).read_bytes())
+                installed = [str(target.relative_to(destination))]
+                for record in manifest.get("inputs", []):
+                    source = safe_path(Path(manifest_path).parent, record["path"])
+                    target_input = safe_path(target.parent, record["path"])
+                    target_input.parent.mkdir(parents=True, exist_ok=True)
+                    target_input.write_bytes(source.read_bytes())
+                    installed.append(str(target_input.relative_to(destination)))
+                git(destination, "add", "--", *installed)
+                commit_index(destination, f"Record exact assembly manifest\n\nManifest-SHA256: {manifest_hash}")
             head = text(destination, "rev-parse", "HEAD")
             checks = [] if name in refresh else tree_check(destination, head, component)
             receipt["components"][name] = {"upstream": upstream, "head": head,
@@ -390,7 +409,7 @@ def materialize(work, destination):
                     target = (path.parent / member.linkname).resolve()
                     if Path(member.linkname).is_absolute() or not target.is_relative_to(source):
                         raise Failure(f"Unsafe archive symlink: {member.name}")
-            bundle.extractall(source)
+            bundle.extractall(source, filter="fully_trusted")
         expected = entries(repo, record["head"])
         actual_paths = {str(path.relative_to(source)) for path in source.rglob("*")
                         if not path.is_dir() or path.is_symlink()}

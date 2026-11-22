@@ -236,6 +236,25 @@ class AssemblyTests(unittest.TestCase):
         with self.assertRaises(FileExistsError):
             a.materialize(work, output)
 
+    def test_candidate_manifest_installed_and_stale_manifest_rejected(self):
+        component = self.manifest["components"]["example"]
+        component.pop("expected_tree")
+        component["manifest_destination"] = "workflow/manifest.json"
+        work, receipt = self.build()
+        self.assertEqual((work / "example" / "workflow" / "manifest.json").read_bytes(),
+                         self.manifest_path.read_bytes())
+        evidence = self.evidence(work, receipt)
+        (work / "manifest.json").write_text("{}")
+        with self.assertRaisesRegex(a.Failure, "manifest changed"):
+            a.validate(work, evidence)
+
+    def test_modes_are_part_of_source_parity(self):
+        component = self.manifest["components"]["example"]
+        component.pop("expected_tree")
+        component["parity"] = [{"commit": self.base}]
+        with self.assertRaisesRegex(a.Failure, "bytes/modes"):
+            self.build()
+
 
 if __name__ == "__main__":
     unittest.main()
