@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Pinned, isolated Git assembly. No build, deployment, or network side effects."""
+"""Pinned, isolated Git assembly with explicit source bootstrap; no builds or deployment."""
 import argparse
 import hashlib
 import io
@@ -288,7 +288,7 @@ def bootstrap(manifest_path, destination, local_sources_path=None):
                     if not ref.startswith("refs/heads/"):
                         raise Failure(f"Bootstrap requires explicit branch refs: {ref}")
                     git(repo, "check-ref-format", ref)
-                git(repo, "fetch", "--quiet", "--no-tags", "origin",
+                git(repo, "fetch", "--quiet", "--no-tags", "--update-shallow", "origin",
                     *[ref + ":" + ref for ref in sorted(refs)])
                 commit(repo, component["upstream"]["commit"])
                 revision = text(repo, "rev-parse", "--verify", integration_ref)

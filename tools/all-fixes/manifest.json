@@ -143,11 +143,13 @@
             "reproducible-assembly"
           ],
           "experimental": false,
-          "head": "d9c1f79b6e4c82ebc2b4d4fd2675358a2d3eb680",
+          "head": "7a278d36fb3bd9eacf28ce10f86127dc6432c047",
           "id": "public-source-bootstrap",
           "ordered_commits": [
             "2ad80e070d09bc4c6f2f6a9778a5af4dda15ef56",
-            "d9c1f79b6e4c82ebc2b4d4fd2675358a2d3eb680"
+            "d9c1f79b6e4c82ebc2b4d4fd2675358a2d3eb680",
+            "69c408e7430da3a586e2ae16b80f5b12d332f3ea",
+            "7a278d36fb3bd9eacf28ce10f86127dc6432c047"
           ],
           "provenance": {
             "purpose": "Owned-fork exact-ref bootstrap and portable source projection; no private original commit requirement"
@@ -2936,7 +2938,7 @@
   "inputs": [
     {
       "path": "catalogs/framework.json",
-      "sha256": "fc8ace15d34996a0199597a1a4d7c669ae203db6244722a22c9a6d71cb480daa"
+      "sha256": "e1ed634e85bc9a3215bc1304790b3b8626a9a8e97232d222370de06a342a004a"
     },
     {
       "path": "catalogs/kodi.json",
