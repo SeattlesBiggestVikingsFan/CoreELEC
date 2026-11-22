@@ -18,5 +18,8 @@ makeinstall_target() {
 }
 
 post_install() {
+  sed -i 's/\r$//' \
+    "${INSTALL}/usr/lib/systemd/system/ethernet-calibration.service" \
+    "${INSTALL}/usr/lib/systemd/system/ethernet-calibration-apply.service"
   enable_service ethernet-calibration.service
 }
