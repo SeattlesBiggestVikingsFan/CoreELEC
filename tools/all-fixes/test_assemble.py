@@ -221,7 +221,10 @@ class AssemblyTests(unittest.TestCase):
         script.write_text("#!/bin/sh\nexit 0\n")
         script.chmod(0o755)
         os.symlink("script", self.repo / "link")
-        a.git(self.repo, "add", "script", "link")
+        (self.repo / ".gitattributes").write_text("ignored export-ignore\nsubstituted export-subst\n")
+        (self.repo / "ignored").write_text("must retain this source\n")
+        (self.repo / "substituted").write_text("$Format:%H$\n")
+        a.git(self.repo, "add", "script", "link", ".gitattributes", "ignored", "substituted")
         a.git(self.repo, "commit", "-qm", "mode and symlink")
         final = a.text(self.repo, "rev-parse", "HEAD")
         component = self.manifest["components"]["example"]
@@ -236,6 +239,8 @@ class AssemblyTests(unittest.TestCase):
         self.assertEqual(result["example"]["tree"], component["expected_tree"])
         self.assertTrue((output / "example" / "script").stat().st_mode & 0o111)
         self.assertEqual(os.readlink(output / "example" / "link"), "script")
+        self.assertEqual((output / "example" / "ignored").read_text(), "must retain this source\n")
+        self.assertEqual((output / "example" / "substituted").read_text(), "$Format:%H$\n")
         self.assertIn("export COMBINED_EXAMPLE_SOURCE=", (output / "source-env.sh").read_text())
         with self.assertRaises(FileExistsError):
             a.materialize(work, output)
