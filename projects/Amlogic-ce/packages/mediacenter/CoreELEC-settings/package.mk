@@ -11,6 +11,9 @@ PKG_SOURCE_NAME="service.coreelec.settings-local"
 # Local source edits must invalidate the cached addon package.
 PKG_NEED_UNPACK="${PKG_URL#file://}/src ${PKG_URL#file://}/language"
 PKG_DEPENDS_TARGET="toolchain Python3 connman dbussy"
+if [ "${DEVICE}" = "Amlogic-ng" ]; then
+  PKG_DEPENDS_TARGET+=" ethernet-calibration"
+fi
 PKG_LONGDESC="CoreELEC-settings: is a settings dialog for CoreELEC"
 
 PKG_MAKE_OPTS_TARGET="DISTRONAME=${DISTRONAME} ADDON_VERSION=${ADDON_VERSION} ROOT_PASSWORD=${ROOT_PASSWORD}"
