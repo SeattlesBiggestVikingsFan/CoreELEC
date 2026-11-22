@@ -19,7 +19,8 @@ case "$LINUX" in
   amlogic-4.9)
     PKG_VERSION="amlogic-4.9-20"
     # Using local linux-amlogic checkout for development
-    PKG_URL="file://${HOME}/linux-amlogic-local"
+    PKG_URL="file://${COMBINED_KERNEL_SOURCE:?Set COMBINED_KERNEL_SOURCE to the sealed integrated source}"
+    PKG_SKIP_PATCHES="yes"
     PKG_SOURCE_NAME="linux-amlogic-local"
     PKG_DEPENDS_TARGET="$PKG_DEPENDS_TARGET aml-dtbtools:host"
     PKG_BUILD_PERF="no"

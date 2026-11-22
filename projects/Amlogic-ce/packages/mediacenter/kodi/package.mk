@@ -8,7 +8,8 @@ PKG_VERSION="aml-4.9-21.3"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.kodi.tv"
 # Using local xbmc checkout for development
-PKG_URL="file://${ROOT}/sources/kodi/xbmc-local"
+PKG_URL="file://${COMBINED_KODI_SOURCE:?Set COMBINED_KODI_SOURCE to the sealed integrated source}"
+PKG_SKIP_PATCHES="yes"
 PKG_SOURCE_NAME="xbmc-local"
 # omniphony brings the spatial audio engine, the decoder bridges and the helper
 # process that runs them, installed beside kodi.bin under /usr/lib/kodi/omniphony.
