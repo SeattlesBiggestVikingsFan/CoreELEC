@@ -197,6 +197,14 @@ def tree_check(repo, head, component):
             raise Failure(f"Source bytes/modes/paths differ from {reference}")
         checks.append({"kind": "projected-tree", "reference": reference, "exclude": excluded,
                        "entries": len(entries(repo, head, excluded))})
+    for record in component.get("files", []):
+        listing = text(repo, "ls-tree", head, "--", record["path"])
+        if not listing or listing.split()[0] != record["mode"]:
+            raise Failure(f"Required source mode/path mismatch: {record['path']}")
+        actual = digest(git(repo, "show", head + ":" + record["path"]).stdout)
+        if actual != record["sha256"]:
+            raise Failure(f"Required source checksum mismatch: {record['path']}")
+        checks.append({"kind": "file", **record})
     return checks
 
 
@@ -235,7 +243,10 @@ def assemble(manifest_path, bindings_path, work, experiments=(), refresh=None):
     try:
         for name, component in manifest["components"].items():
             repo = Path(bindings[name]).resolve()
-            upstream = commit(repo, refresh.get(name, component["upstream"]["commit"]))
+            if name in refresh and component.get("pinned_source"):
+                raise Failure(f"{name}: integrated ancillary source needs an explicit new recipe/source manifest")
+            upstream = commit(repo, refresh.get(name, component.get("pinned_source", {}).get(
+                "commit", component["upstream"]["commit"])))
             selected = order(component, [item.split(":", 1)[1] for item in experiments
                                          if item.startswith(name + ":")])
             destination = work / name
@@ -396,7 +407,7 @@ def materialize(work, destination):
         repo = work / name
         if text(repo, "rev-parse", "HEAD") != record["head"] or text(repo, "status", "--porcelain"):
             raise Failure(f"Candidate changed: {name}")
-        archive = git(repo, "archive", "--format=tar", record["head"]).stdout
+        archive = git(repo, "-c", "core.autocrlf=false", "archive", "--format=tar", record["head"]).stdout
         source = destination / name
         source.mkdir()
         with tarfile.open(fileobj=io.BytesIO(archive)) as bundle:
@@ -415,11 +426,21 @@ def materialize(work, destination):
                         if not path.is_dir() or path.is_symlink()}
         if actual_paths != set(expected):
             raise Failure(f"Materialized namespace mismatch: {name}")
+        object_ids = [information.split()[2] for information in expected.values()]
+        blobs = git(repo, "cat-file", "--batch", data=("\n".join(object_ids) + "\n").encode()).stdout
+        offset = 0
         for relative, information in expected.items():
             mode, kind, object_id = information.split()
             path = source / relative
             data = os.readlink(path).encode() if path.is_symlink() else path.read_bytes()
-            if kind != "blob" or digest(data) != digest(git(repo, "cat-file", "blob", object_id).stdout):
+            end = blobs.index(b"\n", offset)
+            header = blobs[offset:end].decode().split()
+            if len(header) != 3 or header[:2] != [object_id, "blob"]:
+                raise Failure(f"Missing materialized source object: {relative}")
+            size = int(header[2])
+            blob = memoryview(blobs)[end + 1:end + 1 + size]
+            offset = end + size + 2
+            if kind != "blob" or digest(data) != digest(blob):
                 raise Failure(f"Materialized content mismatch: {relative}")
             actual_mode = "120000" if path.is_symlink() else ("100755" if path.stat().st_mode & 0o111 else "100644")
             if mode != actual_mode:
