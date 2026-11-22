@@ -6,7 +6,8 @@ PKG_SHA256="139de5d2e5b9fd41908f72c5d894954ac3592cb86cca9071c7528f0a51663dca"
 PKG_ARCH="arm aarch64"
 PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/CoreELEC/ap6xxx-aml"
-PKG_URL="${PKG_SITE}/archive/${PKG_VERSION}.tar.gz"
+PKG_URL="file://${COMBINED_AP6275S_SOURCE:?Set COMBINED_AP6275S_SOURCE to the sealed integrated source}"
+PKG_SKIP_PATCHES="yes"
 PKG_SOURCE_DIR="ap6xxx-aml-${PKG_VERSION}"
 PKG_DEPENDS_TARGET="toolchain linux"
 PKG_NEED_UNPACK="${LINUX_DEPENDS}"
@@ -15,9 +16,8 @@ PKG_IS_KERNEL_PKG="yes"
 PKG_TOOLCHAIN="manual"
 
 post_unpack() {
-  # Keep the bus component distinct from the dhd_sdio composite module.
-  mv ${PKG_BUILD}/bcmdhd.101.10.591.x/dhd_sdio.c \
-    ${PKG_BUILD}/bcmdhd.101.10.591.x/dhd_sdio_bus.c
+  test -f "${PKG_BUILD}/bcmdhd.101.10.591.x/dhd_sdio_bus.c" ||
+    die "Integrated AP6275S source is missing the canonical bus rename"
 }
 
 pre_make_target() {
