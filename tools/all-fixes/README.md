@@ -107,3 +107,12 @@ Focused tooling tests:
 ```sh
 python3 -m unittest discover -s tools/all-fixes -p 'test_*.py'
 ```
+
+The preserved native packaging fixtures check root-owned added inodes. Run them
+as the ordinary user in an unprivileged root-mapped user namespace (no sudo or
+host privilege escalation), otherwise extraction ownership checks fail:
+
+```sh
+unshare --user --map-root-user -- python3 -m unittest discover \
+  -s tools/combined-playback-hdr -p 'test_*.py'
+```

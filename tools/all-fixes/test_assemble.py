@@ -206,6 +206,7 @@ class AssemblyTests(unittest.TestCase):
     def test_refresh_and_experiments_never_inherit_validation(self):
         work, receipt = self.build(refresh={"example": self.base})
         self.assertEqual(receipt["refresh"], {"example": self.base})
+        self.assertEqual(receipt["review_tasks"][0]["kind"], "upstream-refresh")
         with self.assertRaisesRegex(a.Failure, "new reviewed manifest"):
             a.validate(work, self.evidence(work, receipt))
         component = self.manifest["components"]["example"]
@@ -253,6 +254,15 @@ class AssemblyTests(unittest.TestCase):
         component.pop("expected_tree")
         component["parity"] = [{"commit": self.base}]
         with self.assertRaisesRegex(a.Failure, "bytes/modes"):
+            self.build()
+
+    def test_explicit_recipe_file_checksum_is_required(self):
+        component = self.manifest["components"]["example"]
+        component["files"] = [{"path": "first", "mode": "100644",
+                              "sha256": a.digest(b"one\n")}]
+        self.build()
+        component["files"][0]["sha256"] = "0" * 64
+        with self.assertRaisesRegex(a.Failure, "source checksum"):
             self.build()
 
 
