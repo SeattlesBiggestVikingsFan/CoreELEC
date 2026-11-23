@@ -9,7 +9,7 @@ import ssl
 import struct
 import time
 
-from calibration import CalibrationError, DiagnosticReceiver, HTTPS_BACKEND, HTTPS_ENDPOINT, PUBLIC_MAX_BYTES, PUBLIC_RATE
+from calibration import CalibrationError, DiagnosticReceiver, HTTPS_BACKEND, HTTPS_ENDPOINT, Inconclusive, PUBLIC_MAX_BYTES, PUBLIC_RATE
 
 TLS_HOST = 'speed.cloudflare.com'
 
@@ -49,7 +49,7 @@ class HTTPSReceiver(DiagnosticReceiver):
             while code:
                 self.check()
                 if time.monotonic() >= connect_deadline:
-                    raise CalibrationError('HTTPS connection timed out')
+                    raise Inconclusive('HTTPS connection timed out')
                 if select.select([], [stream], [], .05)[1]:
                     code = stream.getsockopt(socket.SOL_SOCKET, socket.SO_ERROR)
                     if code:
@@ -58,7 +58,7 @@ class HTTPSReceiver(DiagnosticReceiver):
             return stream
         except OSError as error:
             stream.close()
-            raise CalibrationError('HTTPS connection failed: %s' % error) from error
+            raise Inconclusive('HTTPS connection failed: %s' % error) from error
         except CalibrationError:
             stream.close()
             raise
@@ -74,7 +74,7 @@ class HTTPSReceiver(DiagnosticReceiver):
         super().check()
         now = time.monotonic()
         if now >= self.deadline:
-            raise CalibrationError('HTTPS traffic attempt timed out')
+            raise Inconclusive('HTTPS traffic attempt timed out')
         if self.tcp_initial is not None:
             value = self.tcp_received()
             if value < self.tcp_last:
@@ -98,7 +98,7 @@ class HTTPSReceiver(DiagnosticReceiver):
                 return data
             except ssl.SSLWantReadError:
                 if time.monotonic() - self.last_data >= 4:
-                    raise CalibrationError('HTTPS server stalled; test is inconclusive')
+                    raise Inconclusive('HTTPS server stalled; test is inconclusive')
                 self.wait()
             except ssl.SSLWantWriteError:
                 self.wait(True)
@@ -108,21 +108,21 @@ class HTTPSReceiver(DiagnosticReceiver):
         while len(data) < count:
             chunk = self.receive(min(16384, count-len(data)))
             if not chunk:
-                raise CalibrationError('HTTPS response was truncated')
+                raise Inconclusive('HTTPS response was truncated')
             data.extend(chunk)
             if payload:
                 self.received += len(chunk)
             else:
                 self.control_bytes += len(chunk)
                 if self.control_bytes > 512*1024:
-                    raise CalibrationError('HTTPS framing exceeded control-data limit')
+                    raise Inconclusive('HTTPS framing exceeded control-data limit')
         return bytes(data)
 
     def line(self, limit=4096):
         data = bytearray()
         while not data.endswith(b'\r\n'):
             if len(data) >= limit:
-                raise CalibrationError('HTTPS header/framing line is too large')
+                raise Inconclusive('HTTPS header/framing line is too large')
             data.extend(self.exact(1))
         return bytes(data[:-2])
 
@@ -130,7 +130,7 @@ class HTTPSReceiver(DiagnosticReceiver):
     def header(line):
         key, value = line.split(b':', 1)
         if re.fullmatch(rb"[!#$%&'*+.^_`|~0-9A-Za-z-]+", key) is None:
-            raise CalibrationError('Invalid HTTPS header name')
+            raise Inconclusive('Invalid HTTPS header name')
         return key.decode('ascii').lower(), value.decode('iso-8859-1').strip()
 
     def send(self, data):
@@ -139,7 +139,7 @@ class HTTPSReceiver(DiagnosticReceiver):
             try:
                 count = self.stream.send(data)
                 if not count:
-                    raise CalibrationError('HTTPS request could not be sent')
+                    raise Inconclusive('HTTPS request could not be sent')
                 data = data[count:]
             except ssl.SSLWantWriteError:
                 self.wait(True)
@@ -179,35 +179,35 @@ class HTTPSReceiver(DiagnosticReceiver):
                            (self.job.attempt_payload, TLS_HOST)).encode('ascii'))
                 status = self.line(1024).decode('ascii').split(' ', 2)
                 if len(status) < 2 or status[0] not in ('HTTP/1.0', 'HTTP/1.1'):
-                    raise CalibrationError('Unsupported HTTPS response status')
+                    raise Inconclusive('Unsupported HTTPS response status')
                 code = int(status[1])
                 headers = {}
                 while True:
                     line = self.line()
                     if self.control_bytes > 16384:
-                        raise CalibrationError('HTTPS response headers exceed limit')
+                        raise Inconclusive('HTTPS response headers exceed limit')
                     if not line:
                         break
                     key, value = self.header(line)
                     if key in headers and key in ('content-length', 'transfer-encoding', 'location',
                                                    'content-type', 'content-encoding'):
-                        raise CalibrationError('Duplicate HTTPS framing header')
+                        raise Inconclusive('Duplicate HTTPS framing header')
                     headers[key] = value
                 if code != 200:
                     if code in (301, 302, 303, 307, 308):
-                        raise CalibrationError('HTTPS redirect refused; no alternate source tried')
-                    raise CalibrationError('HTTPS server refused/status %d; no retries' % code)
+                        raise Inconclusive('HTTPS redirect refused; no alternate source tried')
+                    raise Inconclusive('HTTPS server refused/status %d; no retries' % code)
                 if headers.get('content-encoding', 'identity').lower() != 'identity':
-                    raise CalibrationError('Compressed HTTPS test payload refused')
+                    raise Inconclusive('Compressed HTTPS test payload refused')
                 if headers.get('content-type', '').split(';')[0].strip() != 'application/octet-stream':
-                    raise CalibrationError('HTTPS response is not traffic-test payload')
+                    raise Inconclusive('HTTPS response is not traffic-test payload')
                 chunked = headers.get('transfer-encoding', '').lower() == 'chunked'
                 if 'transfer-encoding' in headers and not chunked:
-                    raise CalibrationError('Unsupported HTTPS transfer encoding')
+                    raise Inconclusive('Unsupported HTTPS transfer encoding')
                 if chunked and 'content-length' in headers:
-                    raise CalibrationError('Ambiguous HTTPS transfer framing')
+                    raise Inconclusive('Ambiguous HTTPS transfer framing')
                 if not chunked and headers.get('content-length') != str(self.job.attempt_payload):
-                    raise CalibrationError('HTTPS payload length does not match request')
+                    raise Inconclusive('HTTPS payload length does not match request')
                 self.started = time.monotonic()
                 self.tcp_initial = self.tcp_last = self.tcp_received()
                 remaining_chunk = 0
@@ -215,17 +215,17 @@ class HTTPSReceiver(DiagnosticReceiver):
                     if chunked and not remaining_chunk:
                         size = self.line(1024)
                         if not size or any(c not in b'0123456789abcdefABCDEF' for c in size):
-                            raise CalibrationError('Invalid HTTPS chunk size')
+                            raise Inconclusive('Invalid HTTPS chunk size')
                         remaining_chunk = int(size, 16)
                         if not remaining_chunk or remaining_chunk > self.job.attempt_payload-self.received:
-                            raise CalibrationError('Short or oversized HTTPS chunked payload')
+                            raise Inconclusive('Short or oversized HTTPS chunked payload')
                     count = min(16384, self.job.attempt_payload-self.received,
                                 remaining_chunk if chunked else self.job.attempt_payload)
                     self.exact(count, payload=True)
                     if chunked:
                         remaining_chunk -= count
                         if not remaining_chunk and self.exact(2) != b'\r\n':
-                            raise CalibrationError('Invalid HTTPS chunk delimiter')
+                            raise Inconclusive('Invalid HTTPS chunk delimiter')
                     paced_until = self.started + self.received*8/PUBLIC_RATE
                     while time.monotonic() < paced_until:
                         self.check()
@@ -233,18 +233,18 @@ class HTTPSReceiver(DiagnosticReceiver):
                     self.last_data = time.monotonic()
                 if chunked:
                     if self.line(1024) != b'0':
-                        raise CalibrationError('HTTPS sent extra payload')
+                        raise Inconclusive('HTTPS sent extra payload')
                     trailers = self.control_bytes
                     while True:
                         line = self.line()
                         if not line:
                             break
                         if self.control_bytes-trailers > 4096:
-                            raise CalibrationError('HTTPS trailers exceed limit')
+                            raise Inconclusive('HTTPS trailers exceed limit')
                         key, _ = self.header(line)
                         if key in ('content-length', 'transfer-encoding', 'content-type',
                                    'content-encoding', 'location'):
-                            raise CalibrationError('HTTPS framing trailers refused')
+                            raise Inconclusive('HTTPS framing trailers refused')
                 self.check()
                 if (socket.if_nametoindex(self.job.adapter.name) != interface_index or
                         self.stream.getsockname()[0] != self.source or
@@ -264,6 +264,6 @@ class HTTPSReceiver(DiagnosticReceiver):
                     'tcp_progress_seconds': self.tcp_progress_seconds}
                 return time.monotonic()-self.started
         except (OSError, ValueError, KeyError) as error:
-            raise CalibrationError('HTTPS traffic failed: %s' % error) from error
+            raise Inconclusive('HTTPS traffic failed: %s' % error) from error
         finally:
             raw.close()

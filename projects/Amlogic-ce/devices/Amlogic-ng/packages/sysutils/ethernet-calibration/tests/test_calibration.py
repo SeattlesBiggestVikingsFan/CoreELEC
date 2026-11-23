@@ -66,7 +66,8 @@ class FakeAdapter:
         self.commands = []
 
     def capabilities(self):
-        return {'index': self.index, 'lease': self.lease, 'applied': True}
+        return {'index': self.index, 'lease': self.lease, 'applied': True,
+                'default_index': 0, 'error': 0, 'generation': 0}
 
     def write(self, command):
         self.commands.append(command)
@@ -771,7 +772,9 @@ class TransactionTests(unittest.TestCase):
         with mock.patch.object(cal, 'run_command', side_effect=['192.168.2.10 dev eth0', '{}']) as command:
             with self.assertRaises(cal.CalibrationError):
                 job.test(True, 30, self.adapter.address())
-        self.assertIsNone(command.call_args.kwargs['poll'])
+        with mock.patch.object(job, 'reject_corruption') as reject:
+            command.call_args.kwargs['poll']()
+        reject.assert_not_called()
 
 
 class PublicCatalogueTests(unittest.TestCase):
@@ -1418,6 +1421,291 @@ class HTTPSPolicyTests(unittest.TestCase):
                 cal.resolve_public_server(self.job.preset, self.job.cancel,
                                           cal.time.monotonic()-1)
         command.assert_not_called()
+
+
+class ManualTimingTests(unittest.TestCase):
+    def setUp(self):
+        self.directory = tempfile.TemporaryDirectory()
+        self.addCleanup(self.directory.cleanup)
+        self.store = cal.ProfileStore(self.directory.name)
+        self.adapter = FakeAdapter()
+        self.worker = service.Service(self.store)
+        self.boot = mock.patch.object(service, 'boot_status').start()
+        self.addCleanup(mock.patch.stopall)
+
+    def manual(self, index=30):
+        return {'schema':3,'kind':'manual_unverified','identity':self.adapter.identity,
+                'index':index,'manually_set_at':1_700_000_000}
+
+    def test_manual_schema_rejects_verification_claims_and_invalid_indexes(self):
+        for index in (0,31):
+            self.assertEqual(cal.validate_profile(self.manual(index),self.adapter.identity),index)
+        for change in ({'index':True},{'index':32},{'kind':'lan_gigabit'},
+                       {'verification':{}},{'window':[28,31]},{'manually_set_at':True}):
+            with self.subTest(change=change):
+                value=dict(self.manual(),**change)
+                with self.assertRaises(cal.CalibrationError):
+                    cal.validate_profile(value,self.adapter.identity)
+
+    def test_manual_save_preserves_absent_active_and_previous_lan_history(self):
+        self.store.replace('previous',profile(29))
+        before=slot_bytes(self.store)['previous']
+        with mock.patch.object(cal,'run_command') as traffic:
+            self.worker.control('manual',self.adapter,31)
+            self.worker.control('manual',self.adapter,0)
+        traffic.assert_not_called()
+        self.assertEqual(slot_bytes(self.store)['previous'],before)
+        value=self.store.load()
+        self.assertEqual(value['kind'],'manual_unverified')
+        self.assertNotIn('verification',value)
+        self.assertEqual(self.adapter.index,0)
+
+    def test_manual_over_public_and_clear_keep_verified_previous_bytes(self):
+        self.store.replace('previous',profile(29))
+        self.store.replace('active',public_profile(30))
+        previous=slot_bytes(self.store)['previous']
+        self.worker.control('manual',self.adapter,31)
+        self.assertEqual(slot_bytes(self.store)['previous'],previous)
+        self.worker.control('clear',self.adapter)
+        self.assertIsNone(self.store.load())
+        self.assertEqual(slot_bytes(self.store)['previous'],previous)
+        self.assertEqual(self.adapter.index,-1)
+
+    def test_manual_promotes_verified_active_and_retains_it_on_repeat(self):
+        self.store.replace('active',profile(30))
+        self.store.replace('previous',profile(29))
+        active=slot_bytes(self.store)['active']
+        self.worker.control('manual',self.adapter,31)
+        self.worker.control('manual',self.adapter,0)
+        self.assertEqual(slot_bytes(self.store)['previous'],active)
+        self.store.save(profile(28),self.adapter.identity,lambda:None)
+        self.assertEqual(slot_bytes(self.store)['previous'],active)
+
+    def test_manual_invalid_existing_identity_is_not_silently_overwritten(self):
+        self.store.replace('previous',profile(29,{'backend':'old'}))
+        before=slot_bytes(self.store)
+        with self.assertRaises(cal.CalibrationError):
+            self.worker.control('manual',self.adapter,31)
+        self.assertEqual(slot_bytes(self.store),before)
+        self.assertEqual(self.adapter.commands,[])
+
+    def test_manual_storage_failure_does_not_change_runtime_or_slots(self):
+        self.store.replace('previous',profile(29))
+        before=slot_bytes(self.store)
+        with mock.patch.object(self.store,'replace',side_effect=OSError('disk full')):
+            with self.assertRaises(OSError):
+                self.worker.control('manual',self.adapter,31)
+        self.assertEqual(slot_bytes(self.store),before)
+        self.assertEqual(self.adapter.commands,[])
+
+    def test_manual_readback_failure_restores_both_slots_and_original_runtime(self):
+        self.store.replace('active',profile(30))
+        self.store.replace('previous',profile(29))
+        before=slot_bytes(self.store)
+        capabilities=self.adapter.capabilities
+        def cap():
+            result=capabilities()
+            if result['index']==31:result['error']=-1
+            return result
+        with mock.patch.object(self.adapter,'capabilities',side_effect=cap):
+            with self.assertRaises(cal.CalibrationError):
+                self.worker.control('manual',self.adapter,31)
+        self.assertEqual(slot_bytes(self.store),before)
+        self.assertEqual(self.adapter.index,30)
+
+    def test_manual_boot_applies_offline_without_claiming_verified_status(self):
+        self.store.replace('active',self.manual(31))
+        with mock.patch.object(service,'ProfileStore',return_value=self.store), \
+                mock.patch.object(service,'adapters',return_value=[self.adapter]), \
+                mock.patch.object(self.adapter,'address') as address, \
+                mock.patch.object(cal,'run_command') as traffic:
+            self.assertEqual(service.apply_profile(),0)
+        address.assert_not_called()
+        traffic.assert_not_called()
+        self.assertEqual(self.adapter.index,31)
+        with mock.patch.object(service,'adapters',return_value=[self.adapter]), \
+                mock.patch.object(service,'BOOT_STATUS',Path(self.directory.name)/'missing'):
+            status=self.worker.status()
+        self.assertEqual(status['profile']['kind'],'manual_unverified')
+        self.assertFalse(status['manual_timing']['gigabit_verified'])
+        self.assertNotIn('last_verification',status)
+        self.assertNotEqual(status['health']['state'],'healthy')
+
+    def test_manual_api_rejects_missing_consent_and_non_integer_index(self):
+        with mock.patch.object(service,'adapters',return_value=[self.adapter]):
+            for request in ({'index':True,'consent':True},{'index':32,'consent':True},
+                            {'index':30},{'index':30,'consent':1}):
+                with self.subTest(request=request):
+                    with self.assertRaises(cal.CalibrationError):
+                        self.worker.request(dict(request,version=1,action='manual'))
+        self.assertEqual(self.adapter.commands,[])
+        self.assertIsNone(self.worker.thread)
+
+    def test_manual_boot_record_failure_restores_release_default_and_slots(self):
+        self.adapter.index=-1
+        self.store.replace('previous',profile(29))
+        before=slot_bytes(self.store)
+        self.boot.side_effect=OSError('boot record unavailable')
+        with self.assertRaises(OSError):
+            self.worker.control('manual',self.adapter,30)
+        self.assertEqual(slot_bytes(self.store),before)
+        self.assertEqual(self.adapter.index,-1)
+        self.assertEqual(self.adapter.commands[-1],'default')
+
+    def test_manual_pending_apply_and_foreign_lease_are_distinct(self):
+        self.adapter.lease=True
+        with self.assertRaises(cal.CalibrationError):
+            self.worker.control('manual',self.adapter,31)
+        self.assertEqual(self.adapter.commands,[])
+        self.assertIsNone(self.store.load())
+        self.adapter.lease=False
+        capabilities=self.adapter.capabilities
+        with mock.patch.object(self.adapter,'capabilities',
+                               side_effect=lambda:dict(capabilities(),applied=False)):
+            self.worker.control('manual',self.adapter,31)
+        self.boot.assert_called_with({'state':'pending','index':31,'kind':'manual_unverified'})
+
+    def test_manual_failed_runtime_rollback_is_reported_explicitly(self):
+        before=slot_bytes(self.store)
+        write=self.adapter.write
+        def command(value):
+            if value=='profile 30':raise OSError('rollback rejected')
+            write(value)
+        self.boot.side_effect=OSError('boot record unavailable')
+        with mock.patch.object(self.adapter,'write',side_effect=command):
+            with self.assertRaisesRegex(cal.CalibrationError,'restoration also failed'):
+                self.worker.control('manual',self.adapter,31)
+        self.assertEqual(slot_bytes(self.store),before)
+
+    def test_manual_profile_cannot_apply_to_another_adapter(self):
+        value=self.manual()
+        value['identity']={'backend':'different'}
+        self.store.replace('active',value)
+        with mock.patch.object(service,'ProfileStore',return_value=self.store), \
+                mock.patch.object(service,'adapters',return_value=[self.adapter]):
+            self.assertEqual(service.apply_profile(),1)
+        self.assertEqual(self.adapter.commands,[])
+
+
+class TimingUXTests(unittest.TestCase):
+    def setUp(self):
+        ManualTimingTests.setUp(self)
+
+    def status(self):
+        with mock.patch.object(service, 'adapters', return_value=[self.adapter]), \
+                mock.patch.object(service, 'BOOT_STATUS', Path(self.directory.name) / 'absent'):
+            return self.worker.status()
+
+    def test_all_four_profile_schemas_validate_offline_and_report_saved_index(self):
+        manual = {'schema': 3, 'kind': 'manual_unverified', 'index': 0,
+                  'identity': self.adapter.identity, 'manually_set_at': 1700000000}
+        for saved in (profile(29), public_profile(30), manual, https_profile(31)):
+            with self.subTest(schema=saved['schema']):
+                self.store.replace('active', saved)
+                self.assertEqual(cal.validate_profile(saved, self.adapter.identity), saved['index'])
+                status = self.status()
+                self.assertEqual(status['profile']['configured_index'], saved['index'])
+                self.assertNotEqual(status['health']['state'], 'healthy')
+
+    def test_factory_current_and_pending_failed_saved_timings_are_distinct(self):
+        self.store.replace('active', https_profile(31))
+        self.adapter.index = -1
+        status = self.status()
+        self.assertEqual(status['timing'], {'index': 0, 'factory': True, 'state': 'applied'})
+        self.assertEqual(status['profile']['configured_index'], 31)
+        self.assertEqual(status['profile']['state'], 'inactive')
+        cap = dict(self.adapter.capabilities(), index=31, applied=False)
+        with mock.patch.object(self.adapter, 'capabilities', return_value=cap):
+            status = self.status()
+            self.assertEqual(status['timing']['state'], 'pending')
+            self.assertEqual(status['profile']['state'], 'pending')
+            cap.update(applied=True, error=5)
+            status = self.status()
+            self.assertEqual(status['timing']['state'], 'failed')
+            self.assertNotEqual(status['profile']['state'], 'applied')
+
+    def test_https_to_manual_save_preserves_genuine_lan_history_and_restores_it(self):
+        self.store.replace('previous', profile(29))
+        before = slot_bytes(self.store)['previous']
+        self.store.replace('active', https_profile(30))
+        self.worker.control('manual', self.adapter, 0)
+        self.assertEqual(self.store.load()['schema'], 3)
+        self.assertEqual(slot_bytes(self.store)['previous'], before)
+        self.worker.control('restore', self.adapter)
+        self.assertEqual(cal.validate_profile(self.store.load(), self.adapter.identity), 29)
+        self.assertEqual(self.adapter.index, 29)
+
+    def test_manual_save_can_restore_previous_https_without_network_verification(self):
+        self.store.replace('active', https_profile(31))
+        self.worker.control('manual', self.adapter, 0)
+        self.assertEqual(self.store.load('previous')['schema'], 4)
+        with mock.patch.object(cal, 'run_command') as traffic:
+            self.worker.control('restore', self.adapter)
+        traffic.assert_not_called()
+        self.assertEqual(self.store.load()['schema'], 4)
+        self.assertEqual(self.adapter.index, 31)
+
+    def test_recovery_status_counts_down_without_driver_reads_and_cancel_remains_available(self):
+        job = cal.PublicRepairJob(self.adapter, self.store, '1.1.1.1', 5201, True, self.worker.update)
+        self.worker.job = job
+        self.worker.current_adapter = self.adapter
+        self.worker.thread = mock.Mock()
+        self.worker.thread.is_alive.return_value = True
+        self.worker.operation_started = 10
+        job.update({'phase': 'public_scanning', 'candidate': 7,
+                    'candidate_number': 8, 'candidate_total': 32})
+        job.update({'phase': 'public_recovering', 'candidate': 7})
+        seen = []
+        def recovery(cancel, **kwargs):
+            with mock.patch.object(self.adapter, 'capabilities', side_effect=AssertionError('driver locked')), \
+                    mock.patch.object(service, 'adapters', side_effect=AssertionError('driver locked')):
+                for now in (21, 24):
+                    with mock.patch.object(cal.time, 'monotonic', return_value=now):
+                        seen.append(self.worker.status())
+                self.worker.request({'version': 1, 'action': 'cancel'})
+            self.assertTrue(cancel.is_set())
+            raise cal.Cancelled('cancelled during address recovery')
+        with mock.patch.object(cal.time, 'monotonic', return_value=20), \
+                mock.patch.object(self.adapter, 'wait_ready', side_effect=recovery):
+            with self.assertRaises(cal.Cancelled):
+                job.wait_ready()
+        self.assertEqual([s['recovery_remaining_seconds'] for s in seen], [19, 16])
+        self.assertEqual([s['elapsed_seconds'] for s in seen], [11, 14])
+        self.assertTrue(all(s['candidate'] == 7 and s['phase'] == 'public_recovering' for s in seen))
+        self.assertTrue(all(s['candidate_number'] == 8 and s['candidate_total'] == 32 for s in seen))
+
+    def test_receive_poll_publishes_real_payload_and_round_progress(self):
+        job = cal.PublicRepairJob(self.adapter, self.store, '1.1.1.1', 5201, True, self.worker.update)
+        job.source = self.adapter.address()
+        job.before = self.adapter.counters()
+        job.sampled = 0
+        job.attempt_seconds, job.attempt_payload = 20, 25_000_000
+        job.current_receiver = types.SimpleNamespace(received=1_250_000, started=10)
+        job.update({'phase': 'public_verifying', 'candidate': 30,
+                    'verification_round': 2, 'verification_rounds': 2})
+        with mock.patch.object(cal.time, 'monotonic', return_value=11):
+            job.inspect()
+        first = dict(self.worker.result)
+        job.current_receiver.received = 2_500_000
+        with mock.patch.object(cal.time, 'monotonic', return_value=12):
+            job.inspect()
+        self.assertEqual(first['received_bytes'], 1_250_000)
+        self.assertEqual(self.worker.result['received_bytes'], 2_500_000)
+        self.assertEqual(self.worker.result['traffic_seconds'], 2)
+        self.assertEqual(self.worker.result['verification_round'], 2)
+
+    def test_inconclusive_corruption_and_persistence_failures_have_distinct_outcomes(self):
+        for error, expected in ((cal.Inconclusive('server busy'), 'inconclusive'),
+                                (cal.CRCError('packet errors'), 'corruption'),
+                                (OSError('profile sync failed'), 'failed')):
+            with self.subTest(outcome=expected):
+                before = slot_bytes(self.store)
+                job = cal.PublicRepairJob(self.adapter, self.store, '1.1.1.1', 5201,
+                                          True, self.worker.update)
+                with mock.patch.object(job, 'run', side_effect=error):
+                    self.worker.run_job(job)
+                self.assertEqual(self.worker.result['phase'], expected)
+                self.assertEqual(slot_bytes(self.store), before)
 
 
 class HealthTests(unittest.TestCase):

@@ -12,7 +12,7 @@ import struct
 import threading
 import time
 
-from calibration import (CalibrationError, Cancelled, DiagnosticJob, Health, HTTPS_BACKEND, Job, ProfileStore, PublicRepairJob,
+from calibration import (CalibrationError, Cancelled, CRCError, DiagnosticJob, Health, HTTPS_BACKEND, Inconclusive, Job, ProfileStore, PublicRepairJob,
                          adapters, endpoint, validate_profile)
 from public_servers import catalogue_metadata, catalogue_page
 
@@ -74,6 +74,7 @@ class Service:
         self.lock = threading.Lock()
         self.health = Health()
         self.current_adapter = None
+        self.operation_started = None
 
     def update(self, result):
         with self.lock:
@@ -91,6 +92,12 @@ class Service:
         except Cancelled as error:
             log.info('%s', error)
             self.update({'phase': 'cancelled', 'error': str(error)})
+        except CRCError as error:
+            log.error('Ethernet packet checks failed: %s', error)
+            self.update({'phase': 'corruption', 'error': str(error)})
+        except Inconclusive as error:
+            log.warning('Ethernet test was inconclusive: %s', error)
+            self.update({'phase': 'inconclusive', 'error': str(error)})
         except (CalibrationError, OSError, ValueError, KeyError) as error:
             log.error('Ethernet calibration failed: %s', error)
             self.update({'phase': 'failed', 'error': str(error)})
@@ -121,9 +128,9 @@ class Service:
                     self.health.baseline = job.started, job.before
                     self.sample_health(job.adapter)
 
-    def run_control(self, action, adapter):
+    def run_control(self, action, adapter, index=None):
         try:
-            self.control(action, adapter)
+            self.control(action, adapter, index)
         except (CalibrationError, OSError, ValueError, KeyError) as error:
             log.error('Ethernet settings update failed: %s', error)
             self.update({'phase': 'failed', 'error': str(error)})
@@ -140,6 +147,10 @@ class Service:
         busy = self.thread is not None and self.thread.is_alive()
         with self.lock:
             result = dict(self.result)
+        if busy and self.operation_started is not None:
+            result['elapsed_seconds'] = time.monotonic() - self.operation_started
+        if busy and result.get('recovery_deadline') is not None:
+            result['recovery_remaining_seconds'] = max(0, result['recovery_deadline'] - time.monotonic())
         result['public_catalogue'] = catalogue_metadata()
         if busy:
             # PHY reopen holds the driver lock; progress/cancel must not wait on it.
@@ -171,27 +182,36 @@ class Service:
             result['application_error'] = 'Driver timing application failed (%s)' % capabilities['error']
         profile_state = 'inactive' if profile_error else 'not_saved'
         profile_margin = None
+        valid_profile = None
         if profile_error:
             result['application_error'] = profile_error
         if profile is not None:
             try:
                 index = validate_profile(profile, adapter.identity)
+                valid_profile = profile
                 if 'window' in profile:
                     profile_margin = ('reduced' if profile['window'][1] - profile['window'][0] < 2
                                       else 'normal')
-                profile_state = ('applied' if capabilities['applied'] else 'pending') if (
+                profile_state = ('applied' if capabilities['applied'] and not capabilities.get('error')
+                                 else 'pending') if (
                     capabilities['index'] == index and not capabilities['lease']) else 'inactive'
                 if profile.get('kind') == 'public_error_checked':
                     result['last_verification'] = {
                         'index': index, 'verified_at': profile.get('verified_at'),
                         'kind': 'public_error_checked', 'gigabit_verified': False, 'state': 'saved',
                         'traffic_backend': profile.get('traffic_backend', 'iperf3')}
+                elif profile.get('kind') == 'manual_unverified':
+                    result.pop('last_verification', None)
+                    result['manual_timing'] = {
+                        'index': index, 'manually_set_at': profile['manually_set_at'],
+                        'gigabit_verified': False}
                 else:
                     result['last_verification'] = {
                         'index': index, 'verified_at': profile.get('verified_at'),
                         'send_bps': profile['verification']['send']['bps'],
                         'receive_bps': profile['verification']['receive']['bps'], 'state': 'saved'}
-            except CalibrationError:
+            except CalibrationError as error:
+                log.error('Saved calibration cannot be applied: %s', error)
                 profile_state = 'inactive'
         if BOOT_STATUS.exists():
             boot = json.loads(BOOT_STATUS.read_text())
@@ -200,9 +220,16 @@ class Service:
         result['adapter'] = {'name': adapter.name, 'identity': adapter.identity,
                              'gigabit_full': adapter.link_ready()}
         result['profile'] = {'state': profile_state, 'index': capabilities['index']}
-        if profile is not None and profile.get('kind') == 'public_error_checked':
-            result['profile']['kind'] = 'public_error_checked'
-            result['profile']['traffic_backend'] = profile.get('traffic_backend', 'iperf3')
+        result['timing'] = {
+            'index': capabilities['default_index'] if capabilities['index'] < 0 else capabilities['index'],
+            'factory': capabilities['index'] < 0,
+            'state': 'failed' if capabilities.get('error') else
+                     'temporary' if capabilities['lease'] else
+                     'applied' if capabilities['applied'] else 'pending'}
+        if valid_profile is not None:
+            result['profile']['kind'] = valid_profile.get('kind', 'lan_gigabit')
+            result['profile']['configured_index'] = valid_profile['index']
+            result['profile']['traffic_backend'] = valid_profile.get('traffic_backend', 'iperf3')
         if profile_margin is not None:
             result['profile']['margin'] = profile_margin
         result['health'] = {'state': 'calibrating'} if busy else dict(self.health.state)
@@ -258,21 +285,64 @@ class Service:
             self.job = job_type(adapter, self.store, address, port, public, self.update, **options)
             self.health.reset()
             self.current_adapter = adapter
+            self.operation_started = time.monotonic()
             self.update({'phase': 'starting'})
             self.thread = threading.Thread(target=self.run_job, args=(self.job,), daemon=True)
             self.thread.start()
             return {'version': 1, 'started': True}
-        if action in ('clear', 'restore'):
+        if action in ('clear', 'restore', 'manual'):
+            index = request.get('index') if action == 'manual' else None
+            if action == 'manual' and (
+                    type(index) is not int or not 0 <= index <= 31 or request.get('consent') is not True):
+                raise CalibrationError('Manual timing requires an index from 0 to 31 and explicit consent')
             self.health.reset()
             self.job = None
             self.current_adapter = adapter
-            self.update({'phase': 'clearing' if action == 'clear' else 'restoring'})
-            self.thread = threading.Thread(target=self.run_control, args=(action, adapter), daemon=True)
+            self.operation_started = time.monotonic()
+            self.update({'phase': {'clear': 'clearing', 'restore': 'restoring',
+                                   'manual': 'manual_saving'}[action]})
+            self.thread = threading.Thread(target=self.run_control, args=(action, adapter, index), daemon=True)
             self.thread.start()
             return {'version': 1, 'started': True}
         raise CalibrationError('Unknown control action')
 
-    def control(self, action, adapter):
+    def control(self, action, adapter, index=None):
+        if action == 'manual':
+            if type(index) is not int or not 0 <= index <= 31:
+                raise CalibrationError('Manual timing index must be from 0 to 31')
+            before = adapter.capabilities()
+            if before['lease'] or before.get('error'):
+                raise CalibrationError('Existing Ethernet timing transaction/error must be resolved first')
+            profile = {'schema': 3, 'kind': 'manual_unverified', 'identity': adapter.identity,
+                       'index': index, 'manually_set_at': time.time()}
+            applied = False
+            def apply():
+                nonlocal applied
+                applied = True
+                adapter.write('profile ' + str(index))
+                cap = adapter.capabilities()
+                if cap['lease'] or cap.get('error') or cap['index'] != index:
+                    raise CalibrationError('Driver did not accept manually entered timing')
+                boot_status({'state': 'applied' if cap['applied'] else 'pending',
+                             'index': index, 'kind': 'manual_unverified'})
+            try:
+                self.store.save(profile, adapter.identity, apply)
+            except (OSError, CalibrationError) as error:
+                if applied:
+                    try:
+                        adapter.write('default' if before['index'] < 0 else 'profile ' + str(before['index']))
+                        restored = adapter.capabilities()
+                        if (restored['index'] != before['index'] or restored['lease'] or
+                                restored.get('error')):
+                            raise CalibrationError('Original driver timing was not restored')
+                    except (OSError, CalibrationError) as restore_error:
+                        raise CalibrationError('Manual timing save failed (%s); '
+                                               'original runtime restoration also failed (%s)' %
+                                               (error, restore_error)) from restore_error
+                raise
+            self.health.reset()
+            self.update({'phase': 'manually_set', 'index': index})
+            return
         if action == 'clear':
             snapshot = self.store.snapshot()
             try:
@@ -283,7 +353,7 @@ class Service:
                 log.warning('Clearing invalid calibration profile at user request: %s', error)
                 previous = None
             preserve_lan = False
-            if previous is not None and previous.get('kind') == 'public_error_checked':
+            if previous is not None and previous.get('kind') in ('public_error_checked', 'manual_unverified'):
                 try:
                     older = self.store.load('previous')
                     if older is not None and older.get('schema') == 1:
