@@ -7,6 +7,7 @@ import logging
 import math
 import os
 from pathlib import Path
+import re
 import secrets
 import select
 import socket
@@ -34,6 +35,8 @@ PUBLIC_PAYLOAD = 25_000_000
 PUBLIC_MAX_BYTES = 32 * 1024 ** 2
 PUBLIC_REPAIR_MAX_BYTES = 256 * 1024 ** 2
 PUBLIC_REPAIR_MAX_SECONDS = 1200
+HTTPS_BACKEND = 'cloudflare_https_experimental'
+HTTPS_ENDPOINT = 'https://speed.cloudflare.com/__down'
 
 
 class CalibrationError(Exception):
@@ -84,15 +87,18 @@ def public_server(identifier, port=None):
     raise CalibrationError('Unknown public server selection')
 
 
-def resolve_public_server(server, cancel):
+def resolve_public_server(server, cancel, deadline=None):
     if cancel.is_set():
         raise Cancelled('Ethernet error check cancelled')
     script = ("import json,socket,sys;"
               "values=socket.getaddrinfo(sys.argv[1],None,socket.AF_INET,socket.SOCK_STREAM);"
-              "print(json.dumps(sorted({item[4][0] for item in values})[:16]))")
+              "print(json.dumps(sorted({item[4][0] for item in values})))")
     try:
+        timeout = 5 if deadline is None else min(5, deadline-time.monotonic())
+        if timeout <= 0:
+            raise CalibrationError('Public traffic deadline reached before DNS')
         output = run_command([sys.executable, '-I', '-B', '-c', script, server['hostname']],
-                             timeout=5, cancel=cancel)
+                             timeout=timeout, cancel=cancel)
         addresses = json.loads(output)
     except Cancelled:
         raise
@@ -192,14 +198,14 @@ def read_json(path):
 
 def validate_profile(profile, identity):
     if (not isinstance(profile, dict) or type(profile.get('schema')) is not int or
-            profile.get('schema') not in (1, 2)):
+            profile.get('schema') not in (1, 2, 4)):
         raise CalibrationError('Unsupported calibration profile schema')
     if profile.get('identity') != identity:
         raise CalibrationError('Saved profile no longer matches the adapter/backend; recalibrate')
     index = profile.get('index')
     if type(index) is not int or not 0 <= index <= 31:
         raise CalibrationError('Invalid saved timing index')
-    if profile['schema'] == 2:
+    if profile['schema'] in (2, 4):
         validate_public_profile(profile)
         return index
     if profile.get('kind') not in (None, 'lan_gigabit'):
@@ -248,9 +254,16 @@ def validate_public_profile(profile):
         rounds = profile['verification']['rounds']
         if not isinstance(rounds, list) or len(rounds) != 2:
             raise ValueError('Two public verification rounds are required')
+        https = profile['schema'] == 4
+        if https and profile.get('traffic_backend') != HTTPS_BACKEND:
+            raise ValueError('Unsupported HTTPS profile backend')
+        if https and (type(profile.get('verified_at')) not in (int, float) or
+                      not math.isfinite(profile['verified_at']) or profile['verified_at'] <= 0):
+            raise ValueError('Invalid HTTPS verification timestamp')
         generations = []
         for evidence in rounds:
-            values = [evidence[key] for key in ('bps', 'bytes', 'seconds', 'rx_bytes', 'crc_delta')]
+            rate_key = 'application_bps' if https else 'bps'
+            values = [evidence[key] for key in (rate_key, 'bytes', 'seconds', 'rx_bytes', 'crc_delta')]
             if any(type(value) not in (int, float) or not math.isfinite(value) for value in values):
                 raise ValueError('Invalid public evidence')
             if any(type(evidence[key]) is not int for key in
@@ -258,12 +271,39 @@ def validate_public_profile(profile):
                 raise ValueError('Invalid public counter provenance')
             if (not 18 <= evidence['seconds'] <= 21 or
                     not 20_000_000 <= evidence['bytes'] <= PUBLIC_MAX_BYTES or
-                    not PUBLIC_RATE * .8 <= evidence['bps'] <= PUBLIC_RATE * 1.2 or
-                    abs(evidence['bps'] - evidence['bytes'] * 8 / evidence['seconds']) > 1 or
+                    not PUBLIC_RATE * .8 <= evidence[rate_key] <= PUBLIC_RATE * 1.2 or
+                    abs(evidence[rate_key] - evidence['bytes'] * 8 / evidence['seconds']) > 1 or
                     evidence['rx_bytes'] < evidence['bytes'] * .9 or evidence['crc_delta'] != 0 or
                     evidence['interface'] != 'eth0' or evidence['index'] != profile['index'] or
                     type(evidence['generation']) is not int or evidence['generation'] < 0):
                 raise ValueError('Public verification criteria were not met')
+            if https:
+                if (evidence.get('backend') != HTTPS_BACKEND or
+                        evidence.get('endpoint') != HTTPS_ENDPOINT or
+                        evidence.get('tls_verified') is not True or
+                        evidence.get('tls_version') not in ('TLSv1.2', 'TLSv1.3') or
+                        not isinstance(evidence.get('certificate_sha256'), str) or
+                        re.fullmatch('[0-9a-f]{64}', evidence['certificate_sha256']) is None or
+                        type(evidence.get('http_status')) is not int or evidence['http_status'] != 200 or
+                        type(evidence.get('requested_bytes')) is not int or
+                        evidence['requested_bytes'] != PUBLIC_PAYLOAD or evidence['bytes'] != PUBLIC_PAYLOAD or
+                        evidence.get('pacing') != 'application_read' or
+                        evidence.get('pacing_bps') != PUBLIC_RATE or
+                        evidence.get('wire_rate_limited') is not False or
+                        evidence.get('wire_bytes_capped') is not False or 'bps' in evidence):
+                    raise ValueError('Invalid HTTPS evidence or rate-cap claim')
+                framing = evidence.get('framing')
+                if (framing not in ('content_length', 'chunked') or
+                        (framing == 'content_length' and (
+                            type(evidence.get('declared_bytes')) is not int or
+                            evidence['declared_bytes'] != PUBLIC_PAYLOAD)) or
+                        (framing == 'chunked' and evidence.get('declared_bytes') is not None)):
+                    raise ValueError('Invalid exact HTTPS payload framing')
+                tcp_bytes, tcp_seconds = evidence.get('tcp_unique_received_bytes'), evidence.get('tcp_progress_seconds')
+                if (type(tcp_bytes) is not int or not PUBLIC_PAYLOAD * .9 <= tcp_bytes <= PUBLIC_MAX_BYTES + 512*1024 or
+                        type(tcp_seconds) not in (int, float) or not math.isfinite(tcp_seconds) or
+                        not 18 <= tcp_seconds <= 21):
+                    raise ValueError('HTTPS lacks sustained fresh transport evidence')
             source = ipaddress.IPv4Address(evidence['source'])
             if source.is_loopback or source.is_unspecified or source.is_multicast or source.is_link_local:
                 raise ValueError('Invalid onboard source address')
@@ -480,11 +520,20 @@ def adapters():
 
 
 class Job:
-    def __init__(self, adapter, store, address, port, public, update, preset=None):
+    def __init__(self, adapter, store, address, port, public, update, preset=None, backend='iperf3'):
         self.adapter = adapter
         self.store = store
+        self.backend = backend
         self.preset = None
-        if preset is not None:
+        if backend == HTTPS_BACKEND:
+            if not public or any(value is not None for value in (address, port, preset)):
+                raise CalibrationError('Experimental HTTPS requires its selected source, not a custom endpoint')
+            self.preset = {'id': HTTPS_BACKEND, 'label': 'Cloudflare HTTPS (experimental)',
+                           'hostname': 'speed.cloudflare.com', 'port': 443}
+            self.address, self.port = None, 443
+        elif backend != 'iperf3':
+            raise CalibrationError('Unsupported traffic backend')
+        elif preset is not None:
             if not public or address is not None:
                 raise CalibrationError('Public presets require the diagnostic mode and no custom address')
             self.preset = public_server(preset, port)
@@ -785,6 +834,19 @@ class DiagnosticJob(Job):
     attempt_seconds = PUBLIC_SECONDS
     attempt_payload = PUBLIC_PAYLOAD
 
+    def receiver(self, source):
+        if self.backend == HTTPS_BACKEND:
+            from https_receive import HTTPSReceiver
+            return HTTPSReceiver(self, source)
+        return DiagnosticReceiver(self, source)
+
+    def route(self):
+        remaining = self.deadline-time.monotonic()
+        if remaining <= 0:
+            raise CalibrationError('Public traffic deadline reached before route check')
+        return run_command(['ip', 'route', 'get', self.address, 'from', self.source,
+                            'oif', self.adapter.name], timeout=min(5, remaining), cancel=self.cancel)
+
     def inspect(self):
         now = time.monotonic()
         if now >= self.deadline:
@@ -801,14 +863,13 @@ class DiagnosticJob(Job):
     def prepare(self):
         if self.preset is not None:
             self.update({'phase': 'resolving', 'server': self.preset['label']})
-            self.address = resolve_public_server(self.preset, self.cancel)
+            self.address = resolve_public_server(self.preset, self.cancel, self.deadline)
         self.source = self.adapter.address()
         if self.address in [item.address() for item in adapters()]:
             raise CalibrationError('The test server must be another machine')
         if not self.adapter.link_ready():
             raise CalibrationError('Onboard Ethernet link is unavailable')
-        route = run_command(['ip', 'route', 'get', self.address, 'from', self.source,
-                             'oif', self.adapter.name])
+        route = self.route()
         if not onboard_route(route, self.adapter.name):
             raise CalibrationError('Server route does not use the onboard adapter')
 
@@ -816,15 +877,14 @@ class DiagnosticJob(Job):
         self.attempt_seconds = seconds
         self.attempt_payload = PUBLIC_RATE * seconds // 8
         self.source = self.adapter.address()
-        route = run_command(['ip', 'route', 'get', self.address, 'from', self.source,
-                             'oif', self.adapter.name])
+        route = self.route()
         if not onboard_route(route, self.adapter.name):
             raise CalibrationError('Server route does not use the onboard adapter')
         self.before = self.adapter.counters()
         self.sampled = time.monotonic()
         started = self.sampled
         self.started = started
-        receiver = DiagnosticReceiver(self, self.source)
+        receiver = self.receiver(self.source)
         try:
             duration = receiver.run()
         except CRCError:
@@ -843,13 +903,26 @@ class DiagnosticJob(Job):
             seconds * .9 <= duration <= seconds * 1.05 and
             receiver.received >= self.attempt_payload * .8 and
             PUBLIC_RATE * .8 <= rate <= PUBLIC_RATE * 1.2) else 'inconclusive')
+        transport = getattr(receiver, 'evidence', None)
+        if self.backend == HTTPS_BACKEND and state == 'no_errors':
+            if (transport is None or
+                    not seconds * .9 <= transport['tcp_progress_seconds'] <= seconds * 1.05 or
+                    transport['tcp_unique_received_bytes'] < receiver.received * .9):
+                state = 'inconclusive'
         self.last_measurement = {'before': self.before, 'after': after, 'started': started,
                                  'ended': time.monotonic(), 'evidence': {'seconds': duration}}
-        return {
+        if transport is not None:
+            self.last_measurement['transport'] = transport
+        result = {
             'state': state, 'bytes': receiver.received, 'seconds': duration,
             'rate_bps': rate, 'crc_delta': errors, 'gigabit_verified': False, 'saved': False,
             'address': self.address, 'port': self.port,
             'preset': self.preset['id'] if self.preset else None}
+        if self.backend == HTTPS_BACKEND:
+            result.update(traffic_backend=self.backend, endpoint=HTTPS_ENDPOINT,
+                          rate_semantics='application_payload', pacing='application_read',
+                          wire_rate_limited=False, wire_bytes_capped=False)
+        return result
 
     def run(self):
         self.prepare()
@@ -942,8 +1015,7 @@ class PublicRepairJob(DiagnosticJob):
         if len(found) != 1 or found[0].identity != self.adapter.identity:
             raise CalibrationError('Ethernet identity changed during recovery')
         self.source = self.adapter.address()
-        route = run_command(['ip', 'route', 'get', self.address, 'from', self.source,
-                             'oif', self.adapter.name])
+        route = self.route()
         if not onboard_route(route, self.adapter.name):
             raise CalibrationError('Original onboard route did not recover')
         self.adapter.write('begin')
@@ -966,10 +1038,14 @@ class PublicRepairJob(DiagnosticJob):
         observation = self.last_measurement
         if cap['index'] != index or cap['generation'] != observation['after']['generation']:
             raise CalibrationError('Ethernet timing changed during public verification')
-        return {'bps': result['rate_bps'], 'bytes': result['bytes'], 'seconds': result['seconds'],
+        evidence = {'bps': result['rate_bps'], 'bytes': result['bytes'], 'seconds': result['seconds'],
                 'crc_delta': 0, 'rx_bytes': observation['after']['rx_bytes'] - observation['before']['rx_bytes'],
                 'source': self.source, 'interface': self.adapter.name, 'index': index,
                 'generation': cap['generation']}
+        if self.backend == HTTPS_BACKEND:
+            evidence['application_bps'] = evidence.pop('bps')
+            evidence.update(observation['transport'])
+        return evidence
 
     def run(self):
         lease = None
@@ -1040,6 +1116,8 @@ class PublicRepairJob(DiagnosticJob):
                 profile = {'schema': 2, 'kind': 'public_error_checked',
                            'identity': self.adapter.identity, 'index': index,
                            'verified_at': int(time.time()), 'verification': {'rounds': rounds}}
+                if self.backend == HTTPS_BACKEND:
+                    profile.update(schema=4, traffic_backend=HTTPS_BACKEND)
                 self.lease_stop.set()
                 lease.join()
 
@@ -1052,6 +1130,7 @@ class PublicRepairJob(DiagnosticJob):
                 accepted = True
                 self.update({'phase': 'public_complete', 'index': index,
                              'kind': 'public_error_checked', 'gigabit_verified': False,
+                             'traffic_backend': self.backend,
                              'received_bytes': self.traffic_bytes, 'reserved_bytes': self.reserved_bytes})
                 return
             raise CalibrationError('No timing passed repeated public error checks; original setting retained')
