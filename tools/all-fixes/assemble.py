@@ -90,6 +90,7 @@ def validate_manifest(path):
         if not component["upstream"].get("repository", "").startswith("https://github.com/"):
             raise Failure(f"{name}: public repository URL required")
         order(component)
+    cross_component_dependencies(data)
     return data, digest(Path(path).read_bytes())
 
 
@@ -133,6 +134,49 @@ def order(component, experimental=()):
     for key in by_id:
         visit(key)
     return result
+
+
+def cross_component_dependencies(manifest, experiments=()):
+    components = manifest["components"]
+    selected = {
+        (name, feature["id"])
+        for name, component in components.items()
+        for feature in order(component, [item.split(":", 1)[1] for item in experiments
+                                         if item.startswith(name + ":")])
+    }
+    features = {(name, feature["id"]): feature
+                for name, component in components.items()
+                for feature in component.get("features", [])}
+    graph = {}
+    for key, feature in features.items():
+        dependencies = [(key[0], item) for item in feature.get("depends_on", [])]
+        for dependency in feature.get("cross_component_depends_on", []):
+            if (not isinstance(dependency, dict) or
+                    not isinstance(dependency.get("component"), str) or
+                    not isinstance(dependency.get("feature"), str)):
+                raise Failure(f"{key}: cross-component dependency requires component and feature")
+            target = (dependency["component"], dependency["feature"])
+            if target not in features:
+                raise Failure(f"{key}: Missing cross-component dependency {target}")
+            if key in selected and target not in selected:
+                raise Failure(f"{key}: Unselected cross-component dependency {target}")
+            dependencies.append(target)
+        graph[key] = dependencies
+    visiting, visited = set(), set()
+
+    def visit(key):
+        if key in visiting:
+            raise Failure(f"Dependency cycle across components: {key}")
+        if key in visited:
+            return
+        visiting.add(key)
+        for dependency in graph[key]:
+            visit(dependency)
+        visiting.remove(key)
+        visited.add(key)
+
+    for key in graph:
+        visit(key)
 
 
 def patch_id(repo, revision):
@@ -320,6 +364,7 @@ def bootstrap(manifest_path, destination, local_sources_path=None):
 
 def assemble(manifest_path, bindings_path, work, experiments=(), refresh=None):
     manifest, manifest_hash = validate_manifest(manifest_path)
+    cross_component_dependencies(manifest, experiments)
     bindings = load(bindings_path)
     work = Path(work).resolve()
     work.mkdir(parents=True, exist_ok=False)
