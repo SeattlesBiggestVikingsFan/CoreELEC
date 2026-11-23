@@ -1,0 +1,16 @@
+PASS: pause-output-watchdog
+REJECTED: count-paused-time-as-wedge
+PASS: video-timeout-recovery
+REJECTED: erase-post-seek-target
+REJECTED: skip-menu-time-search
+REJECTED: skip-parent-lifecycle
+REJECTED: inherit-stream-cooldown
+REJECTED: recover-into-drain
+REJECTED: reset-budget-on-same-stream
+REJECTED: strand-generation-on-refused-open
+REJECTED: waitsync-uses-stale-clock
+REJECTED: admit-at-stale-clock
+REJECTED: record-stale-clock
+REJECTED: mix-edl-coordinates
+REJECTED: keep-admitted-at-eof
+REJECTED: stay-ineligible-after-seek

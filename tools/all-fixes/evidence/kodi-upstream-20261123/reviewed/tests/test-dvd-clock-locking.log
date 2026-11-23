@@ -1,0 +1,12 @@
+PASS snapshot
+PASS frame-snapshot
+PASS reset
+PASS framerate
+PASS pause-state
+PASS arithmetic
+PASS frame-advances
+REJECTED frame-advances: multi-frame advance collapsed
+REJECTED snapshot: operation escaped playing-clock lock
+REJECTED snapshot: operation escaped playing-clock lock
+REJECTED reset: operation escaped playing-clock lock
+REJECTED framerate: operation escaped playing-clock lock

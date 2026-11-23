@@ -1,0 +1,141 @@
+{
+  "AP_repository_default_not_selected": "Default5.15.170 is unrelated to exact f08 recipe line6.12; recipe-pinned6.12 verified live.",
+  "all_four_live_tips_unchanged": true,
+  "components": {
+    "ap6275s": {
+      "accepted_source_commit": "95a15af695f2c93cec95363ed48d9ce64b060253",
+      "accepted_tree": "c5604bdf4bae9f30ccf4e69b892a8c6109302be3",
+      "declared_development_ref": "refs/heads/6.12",
+      "live_commit": "f08f1b88be470d07667a671b5c6b7f4e198a75f8",
+      "live_tree": "03b0de66fcae0905ebd0423a9e136c69fc46025e",
+      "previous_declared_upstream": "f08f1b88be470d07667a671b5c6b7f4e198a75f8",
+      "repository": "https://github.com/CoreELEC/ap6xxx-aml.git",
+      "upstream_moved": false,
+      "upstream_vs_accepted_name_status": [
+        "M\tbcmdhd.101.10.591.x/Makefile",
+        "M\tbcmdhd.101.10.591.x/bcmsdh_sdmmc_linux.c",
+        "M\tbcmdhd.101.10.591.x/dhd_config.c",
+        "M\tbcmdhd.101.10.591.x/dhd_config.h",
+        "M\tbcmdhd.101.10.591.x/dhd_gpio.c",
+        "M\tbcmdhd.101.10.591.x/dhd_linux.c",
+        "R100\tbcmdhd.101.10.591.x/dhd_sdio.c\tbcmdhd.101.10.591.x/dhd_sdio_bus.c",
+        "M\tbcmdhd.101.10.591.x/wl_android.c",
+        "M\tbcmdhd.101.10.591.x/wl_android_ext.c",
+        "M\tbcmdhd.101.10.591.x/wl_cfg80211.c"
+      ],
+      "upstream_vs_accepted_stat": " bcmdhd.101.10.591.x/Makefile                       | 13 ++-\n bcmdhd.101.10.591.x/bcmsdh_sdmmc_linux.c           | 31 ++-----\n bcmdhd.101.10.591.x/dhd_config.c                   | 38 ++++++---\n bcmdhd.101.10.591.x/dhd_config.h                   |  6 +-\n bcmdhd.101.10.591.x/dhd_gpio.c                     | 13 ++-\n bcmdhd.101.10.591.x/dhd_linux.c                    | 96 ++++++++++++++++------\n bcmdhd.101.10.591.x/{dhd_sdio.c => dhd_sdio_bus.c} |  0\n bcmdhd.101.10.591.x/wl_android.c                   |  5 +-\n bcmdhd.101.10.591.x/wl_android_ext.c               |  5 --\n bcmdhd.101.10.591.x/wl_cfg80211.c                  |  4 -\n 10 files changed, 123 insertions(+), 88 deletions(-)\n"
+    },
+    "media_modules": {
+      "accepted_source_commit": "4ea44185edde8efb38dffed6ba1b2b7cce697999",
+      "accepted_tree": "a4fa774d0b6e3bd32c50a38a87b63027d11229eb",
+      "declared_development_ref": "refs/heads/amlogic-4.9.269",
+      "live_commit": "10d1e8bfc22068c81a5b10b0d89b00f8b15c9502",
+      "live_tree": "6d1172166f4a34dbaf965bc497bce9776ee26c30",
+      "previous_declared_upstream": "10d1e8bfc22068c81a5b10b0d89b00f8b15c9502",
+      "repository": "https://github.com/pannal/media_modules-aml.git",
+      "upstream_moved": false,
+      "upstream_vs_accepted_name_status": [
+        "M\tdrivers/amvdec_ports/aml_vcodec_vfm.c",
+        "M\tdrivers/amvdec_ports/decoder/vdec_av1_if.c",
+        "M\tdrivers/amvdec_ports/decoder/vdec_h264_if.c",
+        "M\tdrivers/amvdec_ports/decoder/vdec_hevc_if.c",
+        "M\tdrivers/amvdec_ports/decoder/vdec_mjpeg_if.c",
+        "M\tdrivers/amvdec_ports/decoder/vdec_mpeg12_if.c",
+        "M\tdrivers/amvdec_ports/decoder/vdec_mpeg4_if.c",
+        "M\tdrivers/amvdec_ports/decoder/vdec_vp9_if.c",
+        "M\tdrivers/fake_video_out/fake_video.c",
+        "M\tdrivers/frame_provider/decoder/utils/vdec.h",
+        "M\tdrivers/frame_provider/decoder/utils/vdec_profile.c"
+      ],
+      "upstream_vs_accepted_stat": " drivers/amvdec_ports/aml_vcodec_vfm.c               |  4 +---\n drivers/amvdec_ports/decoder/vdec_av1_if.c          |  2 --\n drivers/amvdec_ports/decoder/vdec_h264_if.c         |  2 --\n drivers/amvdec_ports/decoder/vdec_hevc_if.c         |  2 --\n drivers/amvdec_ports/decoder/vdec_mjpeg_if.c        |  2 --\n drivers/amvdec_ports/decoder/vdec_mpeg12_if.c       |  2 --\n drivers/amvdec_ports/decoder/vdec_mpeg4_if.c        |  2 --\n drivers/amvdec_ports/decoder/vdec_vp9_if.c          |  2 --\n drivers/fake_video_out/fake_video.c                 | 10 +---------\n drivers/frame_provider/decoder/utils/vdec.h         |  2 +-\n drivers/frame_provider/decoder/utils/vdec_profile.c |  2 --\n 11 files changed, 3 insertions(+), 29 deletions(-)\n"
+    },
+    "settings": {
+      "accepted_source_commit": "a9181362031f3aa2d0ee5592a75bc743a4cb38a8",
+      "accepted_tree": "d9ac67c43de71ba908ff5356ebda999eb45b8dc3",
+      "declared_development_ref": "refs/heads/coreelec-21-ng",
+      "live_commit": "a9f4e6980f5e65a3120d43198d9f4a337e526ffb",
+      "live_tree": "3809081c3bc1b0a8e673039e4facc5d4f3ea8931",
+      "previous_declared_upstream": "a9f4e6980f5e65a3120d43198d9f4a337e526ffb",
+      "repository": "https://github.com/pannal/service.coreelec.settings.git",
+      "upstream_moved": false,
+      "upstream_vs_accepted_name_status": [
+        "M\tlanguage/resource.language.en_gb/strings.po",
+        "A\tskins/Default/1080i/service-CoreELEC-Ethernet-Numeric.xml",
+        "A\tsrc/resources/lib/ethernet_calibration.py",
+        "M\tsrc/resources/lib/modules/connman.py",
+        "M\tsrc/resources/lib/oeWindows.py",
+        "A\ttests/test_ethernet_calibration.py"
+      ],
+      "upstream_vs_accepted_stat": " language/resource.language.en_gb/strings.po        | 388 +++++++++++\n .../1080i/service-CoreELEC-Ethernet-Numeric.xml    | 116 ++++\n src/resources/lib/ethernet_calibration.py          | 434 ++++++++++++\n src/resources/lib/modules/connman.py               |  78 ++-\n src/resources/lib/oeWindows.py                     |   7 +\n tests/test_ethernet_calibration.py                 | 754 +++++++++++++++++++++\n 6 files changed, 1774 insertions(+), 3 deletions(-)\n"
+    },
+    "skin": {
+      "accepted_source_commit": "94ccb38311d52a6244c71a2748379cee59e5d736",
+      "accepted_tree": "f320f6c26143a1c41acc93c6359c95bc85747db2",
+      "declared_development_ref": "refs/heads/master",
+      "live_commit": "94ccb38311d52a6244c71a2748379cee59e5d736",
+      "live_tree": "f320f6c26143a1c41acc93c6359c95bc85747db2",
+      "previous_declared_upstream": "94ccb38311d52a6244c71a2748379cee59e5d736",
+      "repository": "https://github.com/pannal/skin.p3i.estuary.git",
+      "upstream_moved": false,
+      "upstream_vs_accepted_name_status": [],
+      "upstream_vs_accepted_stat": ""
+    }
+  },
+  "local_integrated_sources_not_raw_upstream_substituted": true,
+  "no_mutable_session_source_or_build_cache_dependency": true,
+  "no_new_feature_refs_for_unchanged_sources": true,
+  "no_new_kernel_delta_from_Ethernet": true,
+  "passed": true,
+  "recipe_replay": {
+    "ap6275s": {
+      "accepted_tree": "c5604bdf4bae9f30ccf4e69b892a8c6109302be3",
+      "canonical_post_unpack_stage": "rename dhd_sdio.c to dhd_sdio_bus.c before compilation (baseline integrated recipe explicitly requires bus filename)",
+      "canonical_recipe_patches": [
+        {
+          "path": "projects/Amlogic-ce/packages/linux-drivers/amlogic/ap6275s-aml/patches/ap6275s-aml-001-ce-build-identity.patch",
+          "sha256": "8e071d8187d79dedb3c9011f963b84c6e410318276a07bdac6676b790b9c5896"
+        },
+        {
+          "path": "projects/Amlogic-ce/packages/linux-drivers/amlogic/ap6275s-aml/patches/ap6275s-aml-002-ce-runtime-integration.patch",
+          "sha256": "20c62cbe87c5e009732a4351149cdd37216e7ff448c065b8815f3f758f6db133"
+        },
+        {
+          "path": "projects/Amlogic-ce/packages/linux-drivers/amlogic/ap6275s-aml/patches/ap6275s-aml-003-ce-profile-and-config.patch",
+          "sha256": "5f6d6df80d38d90b09d40cddbfcfb02eea9cb59a729147b8dd6b7f62a1629f7d"
+        },
+        {
+          "path": "projects/Amlogic-ce/packages/linux-drivers/amlogic/ap6275s-aml/patches/ap6275s-aml-004-remove-key-debug-prints.patch",
+          "sha256": "1b24355bf200d33facf29ff5de5f483c7b54cbe73980b8cdd8fb08e4eb676156"
+        },
+        {
+          "path": "projects/Amlogic-ce/packages/linux-drivers/amlogic/ap6275s-aml/patches/ap6275s-aml-005-legacy-event-mask.patch",
+          "sha256": "1422f689742421dadc0b426a850016c777e2bce1c549a2059202d6bc6ae56d60"
+        },
+        {
+          "path": "projects/Amlogic-ce/packages/linux-drivers/amlogic/ap6275s-aml/patches/ap6275s-aml-006-no-rxf0ovfl-reinit.patch",
+          "sha256": "44275c00efb70ee1d164dae0dcdea0839d68d26f42ac75084b8639a6154b1506"
+        }
+      ],
+      "exact_tree_and_mode_equal": true,
+      "patched_upstream_tree": "c5604bdf4bae9f30ccf4e69b892a8c6109302be3",
+      "remaining_delta_stat": ""
+    },
+    "media_modules": {
+      "accepted_tree": "a4fa774d0b6e3bd32c50a38a87b63027d11229eb",
+      "canonical_recipe_patches": [
+        {
+          "path": "projects/Amlogic-ce/packages/linux-drivers/amlogic/media_modules-aml/patches/002-fix-building.patch",
+          "sha256": "ac8d9aa49048982c00e3ebc74d2f23081de0cf5d3cef41dbcddf81fca5c782ae"
+        },
+        {
+          "path": "projects/Amlogic-ce/packages/linux-drivers/amlogic/media_modules-aml/patches/003-multi-decoders-limit-maximum-number-of-decoder.patch",
+          "sha256": "b4eb4211c6de11e02be45378d26babab42af95d5203b978173c647a78a173702"
+        }
+      ],
+      "exact_tree_and_mode_equal": true,
+      "patched_upstream_tree": "a4fa774d0b6e3bd32c50a38a87b63027d11229eb",
+      "remaining_delta_stat": ""
+    }
+  },
+  "settings_retained_replay_sha256": "0a32597fa088aaf1c75351ebef008379af5153e3d0b975cffbf4f560c53357bc"
+}

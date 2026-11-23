@@ -1,0 +1,57 @@
+{
+  "UX12_selected": false,
+  "all_other_paths_modes_blobs_equal_live_upstream": true,
+  "exact_six_accepted_deltas": {
+    "language/resource.language.en_gb/strings.po": {
+      "accepted": "100644 blob 46d97df189f0d910ab6b90e8868f863ae2bab352",
+      "upstream": "100644 blob f24d7372e752185521ea8054eec5d2452cd40dab"
+    },
+    "skins/Default/1080i/service-CoreELEC-Ethernet-Numeric.xml": {
+      "accepted": "100644 blob fe84722e090bba1a374449eea0d329c2faa746eb",
+      "upstream": null
+    },
+    "src/resources/lib/ethernet_calibration.py": {
+      "accepted": "100644 blob a5ea191516f95a869ca9568b5a154c5014979f90",
+      "upstream": null
+    },
+    "src/resources/lib/modules/connman.py": {
+      "accepted": "100644 blob 1e1d545f96df536bd7ea280d9205bc6fe74cb8c8",
+      "upstream": "100644 blob fb023269a179628bd9d18da8024ac6347b1d09c2"
+    },
+    "src/resources/lib/oeWindows.py": {
+      "accepted": "100644 blob a62a96dde120a515c8375cf98fa8aa75618fd4be",
+      "upstream": "100644 blob 0636e8da3f5cde14730ccb15553cefa1cd9312a2"
+    },
+    "tests/test_ethernet_calibration.py": {
+      "accepted": "100644 blob 8f4a01d0b74bed26fc24c84b91bb9768064f23aa",
+      "upstream": null
+    }
+  },
+  "head": "a9181362031f3aa2d0ee5592a75bc743a4cb38a8",
+  "initial_shallow_import": "sequential shallow fetch hid a topic parent; retained blocked probe, fixed by existing batch exact-SHA-plus-refs depth2 bootstrap contract. No source resolution or delta changes.",
+  "latest_declared_upstream": "a9f4e6980f5e65a3120d43198d9f4a337e526ffb",
+  "passed": true,
+  "pinned_integrated_base": {
+    "commit": "d81eff5f0596d63e6a3fe79f656efe88b902b7ec",
+    "historical_graph_policy": "Exact selected commit/tree preserved as depth-one Git source; unrelated donor historical .gitattributes object unavailable, historical completeness not claimed.",
+    "history_boundary": "d81eff5f0596d63e6a3fe79f656efe88b902b7ec",
+    "original_release_input": true,
+    "stage": "sealed integrated8a base plus exact reviewed HTTPS10/UX11 replay topics",
+    "tree": "49e63446af24b2f1b23f1b99c6b45115b08de3fc"
+  },
+  "replay": [
+    {
+      "candidate_commit": "6246a9736313d4dfd13c137ce0277a69ebefb5d0",
+      "feature": "settings-https10",
+      "source_commit": "cca0e474fe8ff9d5a7c79d38ed224c7417e8c357"
+    },
+    {
+      "candidate_commit": "a9181362031f3aa2d0ee5592a75bc743a4cb38a8",
+      "feature": "settings-ux11",
+      "source_commit": "8a367cf0216b15bd4aaa881640dbb5b6ae547a79"
+    }
+  ],
+  "translation_preservation_receipt_sha256": "c572da69ac8a3956b875b4245c0f29f9b66e7d4ce1cec847228eb77c93b81afb",
+  "tree": "d9ac67c43de71ba908ff5356ebda999eb45b8dc3",
+  "upstream_moved": false
+}

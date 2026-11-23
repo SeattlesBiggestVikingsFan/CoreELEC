@@ -1,0 +1,47 @@
+{
+  "upstream": "a4295421f270929315fea42b9e53b00c16e920a5",
+  "baseline_exact_tree": "80398010a104b30fc2a0d21eaf2af6567a3f685f",
+  "candidate_exact_tree": "a752e03e60bc2c3624190de63fc846c983c6310b",
+  "all_paths_content_modes_exact": true,
+  "entries": 9892,
+  "fresh_repo": true,
+  "network_remotes": [],
+  "alternates": false,
+  "prior_features_replayed": 14,
+  "new_feature_commits_replayed": [
+    "8ef79ccdec5243ec0803f2c608420f4979d51d25",
+    "4c36d29c89cefa2e8d596f180706eb790eb99c38",
+    "9cdf90502deda6026cdad45b6bbb7172f90f4de0"
+  ],
+  "fresh_replay_host_runners": 13,
+  "all_passed": true,
+  "original_diagnostic_gate": "Unchanged local original-fixture gate passed in original and independent union checkouts.",
+  "exports": [
+    {
+      "id": "exports/kodi-current-source-tree.bundle",
+      "sha256": "e0488d6a6bfd9448859aae716c4ba8faec2eb1fde971690fc095c3c177ff992c",
+      "bytes": 44993227
+    },
+    {
+      "id": "exports/kodi-diagnostic-fixture.bundle",
+      "sha256": "0160c372eff8394ea4494da592b1539c7437779f99b2262c5dfc72aa3cf6d88c",
+      "bytes": 41097
+    },
+    {
+      "id": "exports/today-graph.bundle",
+      "sha256": "8c9e26897c0bd43fe74b826589ba480951555918fdc77a89b43a70628478b765",
+      "bytes": 70010672
+    },
+    {
+      "id": "exports/today-payload.bundle",
+      "sha256": "15763dbced392c885e5ace5bd6f0f4ddf846216215b461e6124961e151219f88",
+      "bytes": 45004849
+    },
+    {
+      "id": "exports/workflow-payload.bundle",
+      "sha256": "847c8513b5106f8e4dbfea138377e0ed47a7eeba6e9c28c06cb4566a6fa16c65",
+      "bytes": 45114156
+    }
+  ],
+  "public_bundle_availability": "Offline bundles/fixture refs remain local-only; never publish."
+}

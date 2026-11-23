@@ -1,0 +1,7 @@
+PASS 14 checks; production wake sequence, progress wait and cooldown
+PASS semantic control interrupt-ignored: a wake wait ends on the read interrupt
+PASS semantic control check-first: no readiness check, which may block in DNS, after the interrupt
+PASS semantic control cooldown-after-interrupt: an interrupted readiness wait skips the fallback DNS lookup
+PASS semantic control uncanceled-quick-ping: an interrupt during the quick DNS lookup skips the probe and packet
+PASS semantic control missed-final-poll: an interrupt during the failing fallback lookup starts no cooldown
+PASS semantic control lost-interrupt: an interrupted service wait starts no cooldown

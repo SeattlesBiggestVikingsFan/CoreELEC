@@ -1,0 +1,35 @@
+PASS 30 cases 200 checks; actual manager/jobs, decoder/network fixtures
+PASS semantic control decode-fetches: decode job never fetches an internet image
+PASS semantic control keep-released-job-queued: releasing a cache-less download removes it from the job manager queue
+PASS semantic control keep-promoted-job-queued: cache promotion removes the obsolete download from the job manager queue
+PASS semantic control no-cap: at most two downloads
+PASS semantic control normal-priority: uncached internet image moves to a low-priority download job
+PASS semantic control stop-on-release: a released download keeps reading while no image waits
+PASS semantic control cancel-running-download: a released download keeps reading while no image waits
+PASS semantic control stop-shown: a download still shown is never stopped
+PASS semantic control no-stop: a released download stops when an image waits for its slot
+PASS semantic control no-stop-on-release: a released download stops when an image waits for its slot
+PASS semantic control oldest-first: the most recently started released download stops first
+PASS semantic control no-take-over: a renewed request takes over its running download
+PASS semantic control take-over-stopped: a stopped download is not taken over
+PASS semantic control shutdown-ignored: job-manager cancellation interrupts a download
+PASS semantic control no-read-interrupt: download fills the cache with a read interrupt
+PASS semantic control request-after-stop: a download stopped before it starts makes no request
+PASS semantic control waiting-restarts-decode: a new consumer of a waiting download starts no decode
+PASS semantic control plain-only: a transformed internet image downloads in its own job
+PASS semantic control cached-ignored: a waiting image cached by another request decodes at once
+PASS semantic control no-cache-url: a waiting image cached by another request decodes at once
+PASS semantic control take-over-any-policy: a request with another cache policy does not take over
+PASS semantic control no-recheck: an image cached between its decode job's check and the hand-off decodes at once
+PASS semantic control any-report: a report before the decode job's check does not skip the download
+PASS semantic control lost-ignored: with reports lost since the check, the cache is checked again
+PASS semantic control snapshot-late: a report before the decode job's check does not skip the download
+PASS semantic control no-drop: a download not yet running whose image was cached elsewhere is dropped and its slot reused
+PASS semantic control drop-started: a running download is not dropped
+PASS semantic control no-start-claim: a running download is not dropped
+PASS semantic control placement-kept: a foreground request reaches the download it took over
+PASS semantic control placement-not-carried: a foreground request before the take-over reaches the running download
+PASS semantic control take-over-first: a newer cache report wins over taking a download over
+PASS semantic control cacheless-kept: a cache-less download is dropped with its last consumer
+PASS semantic control cacheless-running-kept: a running cache-less download stops with its last consumer
+PASS semantic control no-admit-on-end: a finished download admits the next

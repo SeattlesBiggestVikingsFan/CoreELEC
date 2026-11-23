@@ -1,0 +1,119 @@
+{
+  "conflicts": [],
+  "head": "ec2e9cb2b9bb7f676af92871cca98facdf6f11cd",
+  "passed": true,
+  "replayed": [
+    {
+      "feature": "native-ethernet8a",
+      "replayed_commit": "6191ae4a618d26bd751d754aac4044dfd182c9e8",
+      "source_commit": "41a2d4142f8b4c20d7b9899cb3d8840485a3e2b3"
+    },
+    {
+      "feature": "native-unit-lf-adapter",
+      "replayed_commit": "5a3a97a15ab514e76cdcfa0a633bb582e5bc1664",
+      "source_commit": "fa6948447b34c3ce04866c077efc68ab117ac54a"
+    },
+    {
+      "feature": "verified-update-packaging",
+      "replayed_commit": "5458d4c663c05ac211f33cd28eba48f72529ebb9",
+      "source_commit": "e6a0e9b17f93c49d2d8ed53b50a72b97fe3b3240"
+    },
+    {
+      "feature": "canonical-source-bindings",
+      "replayed_commit": "ae5ab4de9087b00b8ec9fcf4c153c7d2aded32a4",
+      "source_commit": "2df9e8ea1872886ec73279f4fc96791769728306"
+    },
+    {
+      "feature": "reproducible-assembly",
+      "replayed_commit": "b0b223b2962e723ea7df959e96e8fcfffb065ddd",
+      "source_commit": "44df42bfaab9c2e0e0a8cb8d0106cb3fca514230"
+    },
+    {
+      "feature": "reproducible-assembly",
+      "replayed_commit": "a4216a604fc896e0e13369593ba3c65b6d8e51d6",
+      "source_commit": "765c13e5de92289dd174990608463f5efa6fae9e"
+    },
+    {
+      "feature": "reproducible-assembly",
+      "replayed_commit": "c51508c7cb389b16abe0bc5ceac06ed73efa2d27",
+      "source_commit": "70c0e343c6ba196b0142f18a8af4d78708564c77"
+    },
+    {
+      "feature": "reproducible-assembly",
+      "replayed_commit": "40ff42e339c137c19d83b14393242b32f3c63d5b",
+      "source_commit": "52f57b6c05f772190d1aea023b285e860ddce017"
+    },
+    {
+      "feature": "reproducible-assembly",
+      "replayed_commit": "a879454af14180e285e1d5a09f74d7d9026f126e",
+      "source_commit": "387731472a545670947a10b28b3a16a99392236e"
+    },
+    {
+      "feature": "reproducible-assembly",
+      "replayed_commit": "090a64b5bcfd2d48d4c9c1b46d33bb31bb976274",
+      "source_commit": "3d69fe4874fb1c6e4bacb74361960b53f14c3fb1"
+    },
+    {
+      "feature": "reproducible-assembly",
+      "replayed_commit": "da584afdb6a6d4a3fb08e12a9a8b940cbeaf0621",
+      "source_commit": "fa3534a7e528c7631a2bb4ac029e074ffb3c4653"
+    },
+    {
+      "feature": "reproducible-assembly",
+      "replayed_commit": "08185e378a70e82aea797f5ad159d8165dd925b6",
+      "source_commit": "ec2659a74748513df5cf22653bd2e95fa323e387"
+    },
+    {
+      "feature": "public-source-bootstrap",
+      "replayed_commit": "8ba373e2a139644146e3469bdaef7f7dfc8829bb",
+      "source_commit": "2ad80e070d09bc4c6f2f6a9778a5af4dda15ef56"
+    },
+    {
+      "feature": "public-source-bootstrap",
+      "replayed_commit": "c4c15aef98d050e61f44086c26bbe9af6f4719e6",
+      "source_commit": "d9c1f79b6e4c82ebc2b4d4fd2675358a2d3eb680"
+    },
+    {
+      "feature": "public-source-bootstrap",
+      "replayed_commit": "d8fcb2e290ccff1ba55630d0ff41365e740ee559",
+      "source_commit": "69c408e7430da3a586e2ae16b80f5b12d332f3ea"
+    },
+    {
+      "feature": "public-source-bootstrap",
+      "replayed_commit": "91ee4bd83d13dd4d7904e9ddf2192c5d4eb48628",
+      "source_commit": "7a278d36fb3bd9eacf28ce10f86127dc6432c047"
+    },
+    {
+      "feature": "cross-component-dependency-validation",
+      "replayed_commit": "75b4570de0762efdf2cb5b4a9ee2010feb3c5af6",
+      "source_commit": "4f5c410fffd7cf7f47c22ae9a8048a9e2b9ae682"
+    },
+    {
+      "feature": "ancillary-replay-bootstrap",
+      "replayed_commit": "f84b6cf8f7f7f0352d7cb8688c7b6e053fa7f802",
+      "source_commit": "44fa6b0c172526fb081a34479baac00777429517"
+    },
+    {
+      "feature": "accepted-jellyfin-companion-sources",
+      "replayed_commit": "72069dcc936abab2e734b220617e7bae1389a4d6",
+      "source_commit": "34b205ae3c93c47e8432f2449bd7af4585835b10"
+    },
+    {
+      "feature": "ethernet-https10",
+      "replayed_commit": "79d43e9bc2298a72aed26fc0b89ba077bc47f9bf",
+      "source_commit": "57452281b4db223c4ebcf4a3c3ce17555412b90c"
+    },
+    {
+      "feature": "ethernet-ux11",
+      "replayed_commit": "34b2f44d48409b460197c8f4113e0c5de1aee874",
+      "source_commit": "3ba471344c0c438175f9f7077b711abc05a15edf"
+    },
+    {
+      "feature": "qualified-refresh-ledger",
+      "replayed_commit": "ec2e9cb2b9bb7f676af92871cca98facdf6f11cd",
+      "source_commit": "cd0ae59eb22d1e7163e92b1e388363b952544017"
+    }
+  ],
+  "tree": "bc4ccd8f552508b69af73da888d73faedbfba47d",
+  "upstream": "473c9808dea2a9aa9ba1b42a09adb26b4e601f5d"
+}

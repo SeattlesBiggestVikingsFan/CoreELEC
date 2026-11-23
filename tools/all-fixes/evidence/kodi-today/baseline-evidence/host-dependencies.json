@@ -1,0 +1,9 @@
+{
+  "installation_scope": "New local evidence directory only; no global packages/SDK/cache writes.",
+  "ffmpeg_source": "https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz",
+  "ffmpeg_archive_sha256": "abda8d77ce8309141f83ab8edf0596834087c52467f6badf376a6a2a4c87cf67",
+  "ffmpeg_sha256": "e7e7fb30477f717e6f55f9180a70386c62677ef8a4d4d1a5d948f4098aa3eb99",
+  "ffprobe_sha256": "4f231a1960d83e403d08f7971e271707bec278a9ae18e21b8b5b03186668450d",
+  "python_requirements_source": "tools/frame_pacing/requirements.txt",
+  "python_requirements_sha256": "5d5c34449c716802d22bf04236156ce9f3e4d31dd17108f08fabe5fd0640564a"
+}

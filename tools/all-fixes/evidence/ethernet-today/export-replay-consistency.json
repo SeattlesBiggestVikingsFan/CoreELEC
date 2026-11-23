@@ -1,0 +1,30 @@
+{
+  "catalog_sha256": "77635d830d26eda36d2473d3089dae2579dbb2e95b440997da67a3ccf0fe1c2c",
+  "inventory_consistency_only_no_new_regression_build_device_actions": true,
+  "replay": {
+    "10-to-11/addon": {
+      "exact_replayed_file_map": true,
+      "sha256": "71a01092343e69bb8f243b2b0c4efdd47447fee4df3a78768fd684a6e105f59d"
+    },
+    "10-to-11/framework": {
+      "exact_replayed_file_map": true,
+      "sha256": "0e8a7b4e0b9f6b7cd013e173a81637a328418f89f3a3fe36ed46366eb5341371"
+    },
+    "8a-to-10/addon": {
+      "exact_replayed_file_map": true,
+      "sha256": "f2349b006ade96a6b35cf13263b6c02213847478227ed0b047479da22163cf75"
+    },
+    "8a-to-10/framework": {
+      "exact_replayed_file_map": true,
+      "sha256": "5137ab5a0127c5a0cfdb93565f31c20f18ed648ec7aeebe1286cb2455dddf025"
+    },
+    "8a-to-11/addon": {
+      "exact_replayed_file_map": true,
+      "sha256": "17b9bd6e0b891a9a0d5300beda514b695d17c27bd185cf2031c06105826b6e2c"
+    },
+    "8a-to-11/framework": {
+      "exact_replayed_file_map": true,
+      "sha256": "a29d83c52e585236ac40220720b2364ef7850107bbbe491f52eb30f591eecc13"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "python": {
+    "status": "included",
+    "source_base": "0aff06e05c4faada67c96a791f8a7e5f3485a29f",
+    "accepted_commit": "2abc372bd7584d9e7575811a6fc730a5bfe9ce4f",
+    "accepted_tree": "ac71e8a15530d4bd656508f136d77d57d3e91b7f",
+    "format_patch_sha256": "493359a1c71153332b4b11baab0715dabf0077e55a5d80af89e077d7d90c2ea5",
+    "production_file_sha256": "db79a719cb235380773baf62c135e2012fdd6d95671c6dded22949b0e0f56a04",
+    "contract": "Existing grace timeout/locking retained; evaluation-breaker API; controller excluded; log unmatched and undo ambiguous matches.",
+    "runtime_requirement": "CPython 3.13.18; libpython3.13.so.1.0 exporting PyThreadState_SetAsyncExc.",
+    "historical_build_and_hardware": "Owner's accepted build/target results are historical only; not a build or target result for this cohort.",
+    "fresh_release_obligations": "Full coherent link, exact SYSTEM provider/export audit, and new targeted runtime validation.",
+    "jellyfin": "Separate preserved user-installed addon delivery; not this Kodi source delta."
+  },
+  "vsif": {
+    "status": "included",
+    "source_commits": [
+      "7944fad16e5b2344d9bfc6b37ceaea146d33a3fb",
+      "ac278966543eabcebae5db1945e407273cfba800"
+    ],
+    "two_commit_mbox_sha256": "3f491e615fdb925840fcb88f4597026cd47efa39ce5d45c55873f5f832caf80b",
+    "runtime_default": false,
+    "source_default_selected": true,
+    "first_start": "Adopt verified supporting kernel state once; never override saved On; generic N adopts Off.",
+    "unsupported": "Off hidden/no-op; On remains disableable and warns.",
+    "signaling_scope": "Only user-enabled LLDV Dolby VSIF suppression; no DV mode, seamless gate, pixel or other VSIF changes.",
+    "kernel_feature": "lldv-vsif-suppression-v3",
+    "kernel_feature_commit": "5b9376a38cf4b0e4fb39aca74e2c1e889cf32281",
+    "historical_hardware": "Only owner's old overlay enabled-path trial accepted; neither current union nor generic default-Off path hardware-tested.",
+    "coherent_ui_assets": [
+      "kodi.bin",
+      "system/settings/settings.xml",
+      "addons/resource.language.en_gb/resources/strings.po"
+    ],
+    "fresh_release_obligations": "Build and package all three from the same cohort; no old overlay binary/stock-SYSTEM hash/mount recipe reuse."
+  },
+  "non_source_trial": {
+    "hdr10plus_visible_converter": "Existing code; accepted configuration trial sets visible convert=true and leaves hidden mapping at default 5.",
+    "new_converter_repair": false
+  },
+  "pending": [
+    {
+      "id": "hdr10plus-hidden-visibility",
+      "status": "pending",
+      "diagnosis": "Mode-is-3 dependency from 13f2f4ac; upstream owned; no accepted repair."
+    },
+    {
+      "id": "pre-roll-v13c",
+      "status": "pending",
+      "experimental": true,
+      "included": false,
+      "reason": "No accepted result; four unfixed findings; entire candidate/config/silence ES excluded."
+    }
+  ],
+  "excluded": [
+    "VFM/parser/decoder playback cures",
+    "reboot cures",
+    "Atmos gain claims"
+  ],
+  "production_or_device_actions": false
+}

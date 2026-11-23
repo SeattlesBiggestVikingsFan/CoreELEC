@@ -1,0 +1,20 @@
+{
+  "revision": 2,
+  "previous_catalog_sha256": "efbc2cfa3f120d374f75ab4beceb3ea89be9496c792e7771b50937e07ff3de12",
+  "owned_assembly_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+  "canonical_upstream_repository": "https://github.com/pannal/xbmc.git",
+  "publishing_owner_id": 357108287,
+  "source_tree_unchanged": "80398010a104b30fc2a0d21eaf2af6567a3f685f",
+  "source_refs_changed": false,
+  "previous_receipts_overwritten": false,
+  "public_bootstrap": {
+    "included_feature_commits_and_refs": "Fetch from owned assembly repository, never from pannal.",
+    "upstream_base_and_refresh": "Canonical public Pannal ancestry; validated base stays pinned.",
+    "original_0aff_and_9a90": "Remain local, neither refs nor private ancestry are publication targets.",
+    "original_diagnostic_gate": "Requires preserved local original fixture evidence; not runnable from public refs alone."
+  },
+  "reachability_audit": {
+    "id": "publication-reachability-audit.json",
+    "sha256": "0fd957b20b12097cf0f5861995b617f637033ccb81ea12cbab472c7b91a9555d"
+  }
+}

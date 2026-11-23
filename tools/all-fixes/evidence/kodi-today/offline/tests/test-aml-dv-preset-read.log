@@ -1,0 +1,1 @@
+PASS: recursive nested reads retain lock ownership/balance; load/default/reset/rejection stay truthful; busy preset clears stale exposed choices and GUI retries current policy

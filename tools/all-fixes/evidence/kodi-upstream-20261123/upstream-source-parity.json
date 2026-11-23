@@ -1,0 +1,508 @@
+{
+  "old_head": "5ee5e77fc07ae84012355e133ef66b530ea43569",
+  "old_tree": "a752e03e60bc2c3624190de63fc846c983c6310b",
+  "upstream": "efcb4dac04f9b2cfeb863154045602e768195ab2",
+  "candidate": "52117bc6027fbca1edfdd508661edba2446a1727",
+  "candidate_tree": "f2fc279ff91b8ebaa358aa4e7b9559168048d6d7",
+  "entries": 9897,
+  "old_entries": 9892,
+  "exact_delta_vs_upstream": [
+    {
+      "id": "tools/test-aml-lifecycle.py",
+      "upstream_changed_lines": 10,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "39143e8830f1b0adb1f68fc30c7c3cbd79c05be87dd2e1bfbae5b8e2e6d95ee5"
+    },
+    {
+      "id": "tools/test-aml-texture-upload-hardening.py",
+      "upstream_changed_lines": 20,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "b5f825d715b8d002b87e95357d63982743ec80e9c906b4280508bcadbb88b0de"
+    },
+    {
+      "id": "tools/test-curl-stat-interrupt.py",
+      "upstream_changed_lines": 166,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "3f8efdc73d8857f8bd5f52282db0db28fef036b879ffc80221d9b96ad95fe883"
+    },
+    {
+      "id": "tools/test-dts-dialnorm.py",
+      "upstream_changed_lines": 8,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "35fc14a1fe5564bd98db3f8b1ac7ecce39c59125fe4a25c4232d8decee661740"
+    },
+    {
+      "id": "tools/test-gui-background-defer.py",
+      "upstream_changed_lines": 2,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "76739fde8a9be64c9c080351e3b6249137a0a27df754cd871e957b544c0aae7d"
+    },
+    {
+      "id": "tools/test-image-download-classification.py",
+      "upstream_changed_lines": 138,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "ebaa4945a3f6ffdf14a095a581cadf4f9b39135e814bae1a9fbe394fdd2dfa32"
+    },
+    {
+      "id": "tools/test-image-download-lane.py",
+      "upstream_changed_lines": 418,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "6939867929a9704cd046aef294d33dfdf3e31edfbc9a3a4def072f30053b71c9"
+    },
+    {
+      "id": "tools/test-image-upload-demand.py",
+      "upstream_changed_lines": 30,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "0049442606b90cfc106fb750142a8ce26fde24407cbf6e2fd4040f3f55721e72"
+    },
+    {
+      "id": "tools/test-pcm-layouts.py",
+      "upstream_changed_lines": 3,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "dda63afa4f0962d5424637ef83ea533ebfa8ad53538ba8923c7143f3ff9cd153"
+    },
+    {
+      "id": "tools/test-texture-cache-interrupt.py",
+      "upstream_changed_lines": 330,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "b4e8ce0ae34baf731527f243fc9ccbd6a1c613c064856ce1c38347724c17b6db"
+    },
+    {
+      "id": "tools/test-wake-on-access-interrupt.py",
+      "upstream_changed_lines": 290,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "40e40706fdf3ea689515cb276c414c40b540af99b103a515d144d509602ac169"
+    },
+    {
+      "id": "xbmc/FileItem.cpp",
+      "upstream_changed_lines": 7,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "76fabe1ae63fdde2cceb72b6f70d03b49c4def443a4d089242c56de585294751"
+    },
+    {
+      "id": "xbmc/FileItem.h",
+      "upstream_changed_lines": 4,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "77ca4746d3402838fc35e31e8e88afe785655c31c73914cf32f5ccf6e7fc4f5d"
+    },
+    {
+      "id": "xbmc/GUILargeTextureManager.cpp",
+      "upstream_changed_lines": 303,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "7c89b216aeb13ff3692d1a92b6f8ec28e3bf039b22622e9cab8d47d9f69364e2"
+    },
+    {
+      "id": "xbmc/GUILargeTextureManager.h",
+      "upstream_changed_lines": 89,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "39ed20913ad318a57c092c25366ef41117cc6068c9a90b588ac0d687ef48af6c"
+    },
+    {
+      "id": "xbmc/TextureCache.cpp",
+      "upstream_changed_lines": 186,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "c65481e77d94e550f41dbcd098fd5b52ca907f5a3e7077fc55ab27c0a2054b56"
+    },
+    {
+      "id": "xbmc/TextureCache.h",
+      "upstream_changed_lines": 47,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "ee9c557bbf2d8065c40056a67f310b7cf14d70e8ecb50508c50fe5a89a93c70f"
+    },
+    {
+      "id": "xbmc/TextureCacheJob.cpp",
+      "upstream_changed_lines": 73,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "0aa0b8d50bc0689acfa6b16acd34028e4995e05514d473bb1e31531642d46317"
+    },
+    {
+      "id": "xbmc/TextureCacheJob.h",
+      "upstream_changed_lines": 22,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "27bb6679203a636d1073a521813ca2a04cc13347819fa57e2876f9416c01a53a"
+    },
+    {
+      "id": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAEBuffer.cpp",
+      "upstream_changed_lines": 4,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "632f0b9d2f8e8d6e5cce3b5fcdec7571f540aee602e5624d46064f160935bb23"
+    },
+    {
+      "id": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAEBuffer.h",
+      "upstream_changed_lines": 4,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "a2417b80fc015ebb11e0cfdc492f2ff164e6bbc50f986412e0f6853a2ce1a695"
+    },
+    {
+      "id": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.cpp",
+      "upstream_changed_lines": 2,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "4336c80c2a879beb8001976a4e97ee97880d882b67c77333774098fd8df0b591"
+    },
+    {
+      "id": "xbmc/cores/AudioEngine/Utils/AEBitstreamPacker.cpp",
+      "upstream_changed_lines": 7,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "66263b64e4bc7206efd4aa63e6e31a99285e13d00c3b1338092420c04c0afbdf"
+    },
+    {
+      "id": "xbmc/cores/AudioEngine/Utils/AEPackIEC61937.cpp",
+      "upstream_changed_lines": 43,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "45f34a84dd0b3b0e667aeae1c10c2396d28a6ae7ff48e0dfc6b9e9ae133b9f88"
+    },
+    {
+      "id": "xbmc/cores/AudioEngine/Utils/AEPackIEC61937.h",
+      "upstream_changed_lines": 2,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "7582536192b98085fe405975ccedac67368d9989d6dd011bae682eb316e299c0"
+    },
+    {
+      "id": "xbmc/cores/AudioEngine/Utils/AEStreamInfo.cpp",
+      "upstream_changed_lines": 303,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "24642a818cf4195b19d892a81b76ae674e873cbc7b41442bbe3764ba1ae02465"
+    },
+    {
+      "id": "xbmc/cores/AudioEngine/Utils/AEUtil.cpp",
+      "upstream_changed_lines": 6,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "ae6b37d7474f86835bd29eb3074d683db958fbe6f983134aee6d1587eaa42635"
+    },
+    {
+      "id": "xbmc/cores/AudioEngine/Utils/PackerMAT.cpp",
+      "upstream_changed_lines": 7,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "7b34434041f6eee753ab51a61cacd334c306228cfed1028c29463bb727f1c0d6"
+    },
+    {
+      "id": "xbmc/cores/AudioEngine/Utils/PackerMAT.h",
+      "upstream_changed_lines": 2,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "224b9c8c7cd228cbab8ffa5b867c0c18ca32de07bb43e69180a555d2fe69d2c3"
+    },
+    {
+      "id": "xbmc/cores/VideoPlayer/DVDCodecs/Audio/DVDAudioCodec.h",
+      "upstream_changed_lines": 2,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "93b3c7567ec919f9d2af2e3f8d1608ad5ac03a5ed4734f37cd982425107ff0dd"
+    },
+    {
+      "id": "xbmc/cores/VideoPlayer/DVDCodecs/Audio/DVDAudioCodecFFmpeg.cpp",
+      "upstream_changed_lines": 73,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "4f2b650e0e0905a9b2078418ce2089781fcdad2d5791b0700ba7f5bb47ce4ed5"
+    },
+    {
+      "id": "xbmc/cores/VideoPlayer/DVDCodecs/Audio/DVDAudioCodecFFmpeg.h",
+      "upstream_changed_lines": 3,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "f349cf8f4967af27af54c3257e9b331cce542e6985c97e11f7ddd8d9fe17a26e"
+    },
+    {
+      "id": "xbmc/cores/VideoPlayer/DVDCodecs/Audio/OmniphonyPcmSource.cpp",
+      "upstream_changed_lines": 67,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "dd97742e42c178518f1ad9a1c8e69485c17d4bf016d8cb36b0c2803c4d4f5d8d"
+    },
+    {
+      "id": "xbmc/cores/VideoPlayer/DVDCodecs/Audio/OmniphonyPcmSource.h",
+      "upstream_changed_lines": 27,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "c1c7fbb53bd349fe88e098d5447519786974ffc6ec9d7b41da2ec0e74be40b68"
+    },
+    {
+      "id": "xbmc/cores/VideoPlayer/DVDCodecs/Video/AMLCodec.cpp",
+      "upstream_changed_lines": 437,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "c4efb07fcc4ef59087db01780abfa92a7de668dff06e5cfc11a3fe82acd68c44"
+    },
+    {
+      "id": "xbmc/cores/VideoPlayer/DVDDemuxers/DVDDemuxFFmpeg.cpp",
+      "upstream_changed_lines": 260,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "52a84046b2edabc8b644e5642c2d376d9b7123faf4d42ccdb413801d47066216"
+    },
+    {
+      "id": "xbmc/cores/VideoPlayer/DVDDemuxers/DVDDemuxFFmpeg.h",
+      "upstream_changed_lines": 4,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "30e21c2354a295746854e5128d6d8ab1c051b79376086496e964aa3ce8969936"
+    },
+    {
+      "id": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+      "upstream_changed_lines": 3,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "5ff64a3e18480dddf6814cf95b07053c3f65ba807e09effdcbaceccc8e02c21e"
+    },
+    {
+      "id": "xbmc/filesystem/CurlFile.cpp",
+      "upstream_changed_lines": 715,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "2789efcb2f8902c51aa5e78341e9b8dfb5d53cb750c7d6742c8ac1e7f441fd36"
+    },
+    {
+      "id": "xbmc/filesystem/CurlFile.h",
+      "upstream_changed_lines": 38,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "0374dfdc226469cb905e7d66758784332f1f01e5f4f1bf9f812949888500dead"
+    },
+    {
+      "id": "xbmc/filesystem/DAVDirectory.cpp",
+      "upstream_changed_lines": 9,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "4059d1030fdfc0c6e543e7888ec8d3f2c80476876d59cc8cc84f1e8efc4a5469"
+    },
+    {
+      "id": "xbmc/filesystem/DAVFile.cpp",
+      "upstream_changed_lines": 3,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "4061b5feedf4c2122dc10b747529dc0f37950a38e3430a2d3e402438bf096ed7"
+    },
+    {
+      "id": "xbmc/filesystem/DllLibCurl.cpp",
+      "upstream_changed_lines": 161,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "800e34d1a8f0cf58cd61d4d70a57205b087ac9aaff3517e0c5e436b8be5c1d26"
+    },
+    {
+      "id": "xbmc/filesystem/DllLibCurl.h",
+      "upstream_changed_lines": 41,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "272448089aaff434c1f18ab436fb741dea280cd41c7b17ce249510d5d6b6730c"
+    },
+    {
+      "id": "xbmc/filesystem/File.cpp",
+      "upstream_changed_lines": 29,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "f238fa517cc27fab2490f577ca5b3cd8a36b22401cb8f030cb3e1d49b22e706e"
+    },
+    {
+      "id": "xbmc/filesystem/File.h",
+      "upstream_changed_lines": 17,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "0b82f0824c81df237f9f4ab6c2aa26b672e4d109a0654fe1711bfe1997c58653"
+    },
+    {
+      "id": "xbmc/filesystem/FileFactory.cpp",
+      "upstream_changed_lines": 18,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "95f89078a1d3938a72c6c717e95fde73e9f3e384238404cba7b0de80d3ddbf39"
+    },
+    {
+      "id": "xbmc/filesystem/FileFactory.h",
+      "upstream_changed_lines": 6,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "42b1f6d16c1eccfbecade54570fbeec33398ca30c4d1938562a8da59e4c4b8be"
+    },
+    {
+      "id": "xbmc/filesystem/ImageFile.cpp",
+      "upstream_changed_lines": 13,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "ed7867872af412f46340032b540901038711f00ffdda84e09e383fcff7cb9851"
+    },
+    {
+      "id": "xbmc/filesystem/ImageFile.h",
+      "upstream_changed_lines": 5,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "f888adcc857e990c38e7a28684269fd4d8f640fc57925056cc4b1a52fceebbd0"
+    },
+    {
+      "id": "xbmc/guilib/DDSImage.cpp",
+      "upstream_changed_lines": 7,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "b1aaa45490319c9a67981226e395e0a3126f03a558a51b83566d330889542adf"
+    },
+    {
+      "id": "xbmc/guilib/DDSImage.h",
+      "upstream_changed_lines": 4,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "8c0465032607cb94dc56728670283156a9ecf2d6b9676d306685bb893c66f889"
+    },
+    {
+      "id": "xbmc/guilib/Texture.cpp",
+      "upstream_changed_lines": 26,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "35e078bb744c899dd5d2c5f82e6a32e585601a4752f5a9b6ef11bebf6185f640"
+    },
+    {
+      "id": "xbmc/guilib/Texture.h",
+      "upstream_changed_lines": 12,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "aaf846554c77dedb118b6b53f00a7a2e1b47b5377fbc2632cc1876db61b142b0"
+    },
+    {
+      "id": "xbmc/guilib/imagefactory.cpp",
+      "upstream_changed_lines": 23,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "17968400d2a9719f85d1802c21e6ab91706454919f4ca4892e6162a2af2430c6"
+    },
+    {
+      "id": "xbmc/guilib/imagefactory.h",
+      "upstream_changed_lines": 7,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "31e65a3527213dbfaa4c22f3fdc941e8bafaea6d721c2080e1810eed25c2354d"
+    },
+    {
+      "id": "xbmc/network/WakeOnAccess.cpp",
+      "upstream_changed_lines": 80,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "53d1450e39b5ba6abbb9c93bd9de03a34c405d54f324a28b9a34e83a77c7ee25"
+    },
+    {
+      "id": "xbmc/network/WakeOnAccess.h",
+      "upstream_changed_lines": 11,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "fde31dda28e8328187f47e879ca796b06aad7ee3e9be7c67ddb03481efa792de"
+    },
+    {
+      "id": "xbmc/network/test/TestWebServer.cpp",
+      "upstream_changed_lines": 49,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "1fb6f7e7b0404c08421200c4c7b5a5d9abb604ec5a4a574b70689c56016b2275"
+    },
+    {
+      "id": "xbmc/threads/PerformanceCores.cpp",
+      "upstream_changed_lines": 6,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "bef4205eb0776f18d66f2617740b9fff3fa2111c05acfeb090035b12d516ba29"
+    },
+    {
+      "id": "xbmc/threads/PerformanceCores.h",
+      "upstream_changed_lines": 2,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "02187e8dc06d6b9cbfd52e574a38cd5c0a41684d4273ed16a51ef2815b7ff180"
+    },
+    {
+      "id": "xbmc/utils/BitstreamReader.cpp",
+      "upstream_changed_lines": 65,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "8200973a6ea4284c0d5a7389aedc756b8a969eddf007600931772c2c207eb7d4"
+    },
+    {
+      "id": "xbmc/utils/BitstreamReader.h",
+      "upstream_changed_lines": 21,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "b2f811f452e9a04be14790da5095da67d594c5acef7b824ad651533c097ceb75"
+    },
+    {
+      "id": "xbmc/utils/HDR10Plus.cpp",
+      "upstream_changed_lines": 113,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "454d65b88a96f5dfa581a01f43254d6c7fc3263ee50a9600790d4b71092a6713"
+    },
+    {
+      "id": "xbmc/utils/HDR10Plus.h",
+      "upstream_changed_lines": 3,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "5f22b4f8a47e2a665a6c75a5e770a0e8cd429dfdef8e72536428750c33439336"
+    },
+    {
+      "id": "xbmc/utils/HevcSei.cpp",
+      "upstream_changed_lines": 45,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "f9e62f21d82396fe3b1de2fddb2aca0b28c2ad2c2c4259d52b44b7521b5c80d5"
+    },
+    {
+      "id": "xbmc/utils/HevcSei.h",
+      "upstream_changed_lines": 2,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "260172febc35b180496bfd4bf864b5ae23efe05c973e55898b34f3664ba69344"
+    },
+    {
+      "id": "xbmc/utils/test/TestHevcSei.cpp",
+      "upstream_changed_lines": 141,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "58c53d8ab89fb1bf3802154a539b06154063c16c9903bcfe5af56f58fea93634"
+    },
+    {
+      "id": "xbmc/windowing/amlogic/DolbyVisionAML.cpp",
+      "upstream_changed_lines": 2,
+      "upstream_delta_preserved": true,
+      "candidate_sha256": "e0a2e85952a23709654541c8a619b71dcd0dfd713315d7284511376cf08ec39c"
+    }
+  ],
+  "intentional_exceptions": [
+    "EAC3/JOC status scanner uses byte-equivalent generalized AudioBitReader; redundant old reader removed.",
+    "Long-pause host fixture includes real IEC capacity header; no assertions changed."
+  ],
+  "all_other_accepted_entry_content_and_modes_exact": true,
+  "unchanged_entries": 9827,
+  "full_changed_paths": [
+    "tools/test-activeae-long-pause.py",
+    "tools/test-aml-lifecycle.py",
+    "tools/test-aml-texture-upload-hardening.py",
+    "tools/test-curl-stat-interrupt.py",
+    "tools/test-dts-dialnorm.py",
+    "tools/test-gui-background-defer.py",
+    "tools/test-image-download-classification.py",
+    "tools/test-image-download-lane.py",
+    "tools/test-image-upload-demand.py",
+    "tools/test-pcm-layouts.py",
+    "tools/test-texture-cache-interrupt.py",
+    "tools/test-wake-on-access-interrupt.py",
+    "xbmc/FileItem.cpp",
+    "xbmc/FileItem.h",
+    "xbmc/GUILargeTextureManager.cpp",
+    "xbmc/GUILargeTextureManager.h",
+    "xbmc/TextureCache.cpp",
+    "xbmc/TextureCache.h",
+    "xbmc/TextureCacheJob.cpp",
+    "xbmc/TextureCacheJob.h",
+    "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAEBuffer.cpp",
+    "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAEBuffer.h",
+    "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.cpp",
+    "xbmc/cores/AudioEngine/Utils/AEBitstreamPacker.cpp",
+    "xbmc/cores/AudioEngine/Utils/AEPackIEC61937.cpp",
+    "xbmc/cores/AudioEngine/Utils/AEPackIEC61937.h",
+    "xbmc/cores/AudioEngine/Utils/AEStreamInfo.cpp",
+    "xbmc/cores/AudioEngine/Utils/AEUtil.cpp",
+    "xbmc/cores/AudioEngine/Utils/PackerMAT.cpp",
+    "xbmc/cores/AudioEngine/Utils/PackerMAT.h",
+    "xbmc/cores/VideoPlayer/DVDCodecs/Audio/DVDAudioCodec.h",
+    "xbmc/cores/VideoPlayer/DVDCodecs/Audio/DVDAudioCodecFFmpeg.cpp",
+    "xbmc/cores/VideoPlayer/DVDCodecs/Audio/DVDAudioCodecFFmpeg.h",
+    "xbmc/cores/VideoPlayer/DVDCodecs/Audio/OmniphonyPcmSource.cpp",
+    "xbmc/cores/VideoPlayer/DVDCodecs/Audio/OmniphonyPcmSource.h",
+    "xbmc/cores/VideoPlayer/DVDCodecs/Video/AMLCodec.cpp",
+    "xbmc/cores/VideoPlayer/DVDDemuxers/DVDDemuxFFmpeg.cpp",
+    "xbmc/cores/VideoPlayer/DVDDemuxers/DVDDemuxFFmpeg.h",
+    "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "xbmc/filesystem/CurlFile.cpp",
+    "xbmc/filesystem/CurlFile.h",
+    "xbmc/filesystem/DAVDirectory.cpp",
+    "xbmc/filesystem/DAVFile.cpp",
+    "xbmc/filesystem/DllLibCurl.cpp",
+    "xbmc/filesystem/DllLibCurl.h",
+    "xbmc/filesystem/File.cpp",
+    "xbmc/filesystem/File.h",
+    "xbmc/filesystem/FileFactory.cpp",
+    "xbmc/filesystem/FileFactory.h",
+    "xbmc/filesystem/ImageFile.cpp",
+    "xbmc/filesystem/ImageFile.h",
+    "xbmc/guilib/DDSImage.cpp",
+    "xbmc/guilib/DDSImage.h",
+    "xbmc/guilib/Texture.cpp",
+    "xbmc/guilib/Texture.h",
+    "xbmc/guilib/imagefactory.cpp",
+    "xbmc/guilib/imagefactory.h",
+    "xbmc/network/WakeOnAccess.cpp",
+    "xbmc/network/WakeOnAccess.h",
+    "xbmc/network/test/TestWebServer.cpp",
+    "xbmc/threads/PerformanceCores.cpp",
+    "xbmc/threads/PerformanceCores.h",
+    "xbmc/utils/BitstreamReader.cpp",
+    "xbmc/utils/BitstreamReader.h",
+    "xbmc/utils/HDR10Plus.cpp",
+    "xbmc/utils/HDR10Plus.h",
+    "xbmc/utils/HevcSei.cpp",
+    "xbmc/utils/HevcSei.h",
+    "xbmc/utils/test/TestHevcSei.cpp",
+    "xbmc/windowing/amlogic/DolbyVisionAML.cpp"
+  ],
+  "manual_seamless_off_and_later_off_persistence_preserved": true,
+  "default_vsif_off_and_saved_setting_policy_preserved": true,
+  "python_shutdown_file_exact": "db79a719cb235380773baf62c135e2012fdd6d95671c6dded22949b0e0f56a04",
+  "jellyfin_remains_separate": true,
+  "new_ux12_preroll_or_owner_experiments": false
+}

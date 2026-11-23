@@ -1,0 +1,11 @@
+PASS 41 cases 295 checks; actual demand manager/jobs; decoder/GL/admission fixtures
+PASS semantic control eager-decode-upload: prefetch decode performs no eager GPU upload
+PASS semantic control undemanded-admission: undemanded decoded entry queues no upload
+PASS semantic control parallel-admission: replacement upload waits for the admitted stale upload
+PASS semantic control early-publication: promotion admission preserves publication barrier
+PASS semantic control missing-completion-demand-recheck: decode callback rechecks earlier demand
+PASS semantic control stale-id-publication: stale upload callback cannot publish into replacement path
+PASS semantic control rejected-upload-stranded: rejected or unsupported upload retains CPU fallback
+PASS semantic control pending-is-failure: private decoded pending is not failed or published
+PASS semantic control upload-job-cancellation-omitted: job-manager cancellation prevents started upload work
+PASS semantic control upload-final-cancellation-omitted: cancelled active upload reports failure after GPU mutation

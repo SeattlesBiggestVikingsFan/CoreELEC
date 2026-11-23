@@ -1,0 +1,18 @@
+{
+  "classes": [
+    "ELFValidation",
+    "MarkerLocking",
+    "Loader",
+    "FilesystemSafety"
+  ],
+  "command": "PYTHONDONTWRITEBYTECODE=1 python3 projects/Amlogic-ce/packages/linux-drivers/amlogic/dovi5-prepare/tests/test_dovi5.py ELFValidation MarkerLocking Loader FilesystemSafety",
+  "executed": 8,
+  "hardware_or_build_actions": false,
+  "multiprocess_contention_and_stale_marker_republication_passed": true,
+  "passed": true,
+  "private_module_and_actual_native_reference_checks": "not executed here; parent exact-source/native/kernel fixture run required",
+  "raw_local_log_sha256": "eb0b1e8fcfd8bc3cf883598c8874bf97fd146ad6efb6333edadafc54f9eee78f",
+  "script_sha256": "cef64a05dd9078e718af9dfec20d7dceeba963f4416489d7b6effe7a91e3964d",
+  "separate_optional_suite_cases": 16,
+  "skipped_in_selected_host_suite": 0
+}

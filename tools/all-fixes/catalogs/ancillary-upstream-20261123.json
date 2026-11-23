@@ -1,0 +1,183 @@
+{
+  "ap6275s": {
+    "expected_tree": "c5604bdf4bae9f30ccf4e69b892a8c6109302be3",
+    "features": [],
+    "pinned_source": {
+      "commit": "95a15af695f2c93cec95363ed48d9ce64b060253",
+      "original_release_input": true,
+      "stage": "accepted integrated export; no new ancillary source changes or feature refs",
+      "tree": "c5604bdf4bae9f30ccf4e69b892a8c6109302be3"
+    },
+    "recipe_policy": "Canonical six-source binding; pre-integrated platform patches are not replayed.",
+    "source_variable": "COMBINED_AP6275S_SOURCE",
+    "upstream": {
+      "commit": "f08f1b88be470d07667a671b5c6b7f4e198a75f8",
+      "ref": "recipe-pin",
+      "repository": "https://github.com/CoreELEC/ap6xxx-aml.git"
+    },
+    "upstream_review": {
+      "decision": "retain accepted integrated source; new live-tip/recipe/equivalence verification performed",
+      "id": "evidence/upstream-20261123/ancillary-source-review.json",
+      "live_commit": "f08f1b88be470d07667a671b5c6b7f4e198a75f8",
+      "upstream_moved": false
+    }
+  },
+  "media_modules": {
+    "expected_tree": "a4fa774d0b6e3bd32c50a38a87b63027d11229eb",
+    "features": [],
+    "pinned_source": {
+      "commit": "4ea44185edde8efb38dffed6ba1b2b7cce697999",
+      "original_release_input": true,
+      "stage": "accepted integrated export; no new ancillary source changes or feature refs",
+      "tree": "a4fa774d0b6e3bd32c50a38a87b63027d11229eb"
+    },
+    "recipe_policy": "Canonical six-source binding; pre-integrated platform patches are not replayed.",
+    "source_variable": "COMBINED_MEDIA_SOURCE",
+    "upstream": {
+      "commit": "10d1e8bfc22068c81a5b10b0d89b00f8b15c9502",
+      "ref": "amlogic-4.9.269",
+      "repository": "https://github.com/pannal/media_modules-aml.git"
+    },
+    "upstream_review": {
+      "decision": "retain accepted integrated source; new live-tip/recipe/equivalence verification performed",
+      "id": "evidence/upstream-20261123/ancillary-source-review.json",
+      "live_commit": "10d1e8bfc22068c81a5b10b0d89b00f8b15c9502",
+      "upstream_moved": false
+    }
+  },
+  "settings": {
+    "expected_tree": "d9ac67c43de71ba908ff5356ebda999eb45b8dc3",
+    "features": [
+      {
+        "base": "d81eff5f0596d63e6a3fe79f656efe88b902b7ec",
+        "cross_component_depends_on": [
+          {
+            "component": "framework",
+            "feature": "ethernet-https10"
+          }
+        ],
+        "default": true,
+        "depends_on": [],
+        "experimental": false,
+        "head": "cca0e474fe8ff9d5a7c79d38ed224c7417e8c357",
+        "id": "settings-https10",
+        "ordered_commits": [
+          "cca0e474fe8ff9d5a7c79d38ed224c7417e8c357"
+        ],
+        "provenance": {
+          "distribution_translation_corrections_preserved": true,
+          "full001_reapplied": false,
+          "kind": "incremental-reviewed-addon-source-delta",
+          "patch_sha256": "f2349b006ade96a6b35cf13263b6c02213847478227ed0b047479da22163cf75"
+        },
+        "ref": "refs/heads/feature/today-settings-https10",
+        "settings_defaults": {
+          "user_profiles": "preserved; no seed or eager migration"
+        },
+        "status": "included"
+      },
+      {
+        "base": "cca0e474fe8ff9d5a7c79d38ed224c7417e8c357",
+        "cross_component_depends_on": [
+          {
+            "component": "framework",
+            "feature": "ethernet-ux11"
+          }
+        ],
+        "default": true,
+        "depends_on": [
+          "settings-https10"
+        ],
+        "experimental": false,
+        "head": "8a367cf0216b15bd4aaa881640dbb5b6ae547a79",
+        "id": "settings-ux11",
+        "ordered_commits": [
+          "8a367cf0216b15bd4aaa881640dbb5b6ae547a79"
+        ],
+        "provenance": {
+          "distribution_translation_corrections_preserved": true,
+          "full001_reapplied": false,
+          "kind": "incremental-reviewed-addon-source-delta",
+          "patch_sha256": "71a01092343e69bb8f243b2b0c4efdd47447fee4df3a78768fd684a6e105f59d"
+        },
+        "ref": "refs/heads/feature/today-settings-ux11",
+        "settings_defaults": {
+          "user_profiles": "preserved; no seed or eager migration"
+        },
+        "status": "included"
+      }
+    ],
+    "files": [
+      {
+        "mode": "100644",
+        "path": "language/resource.language.en_gb/strings.po",
+        "sha256": "201ee3ca05a9c998f210072292885922d162c164c917d63decb302167e24275e"
+      },
+      {
+        "mode": "100644",
+        "path": "src/resources/lib/ethernet_calibration.py",
+        "sha256": "948318990aa65e70c7319de5ad8349837cd08b55460ac4d0d9289c54500346ba"
+      },
+      {
+        "mode": "100644",
+        "path": "src/resources/lib/modules/connman.py",
+        "sha256": "5d147b6bbc0304053c2fffeff902b9284a6c8958f651d1c60be33f24be5f9c3b"
+      },
+      {
+        "mode": "100644",
+        "path": "src/resources/lib/oeWindows.py",
+        "sha256": "9c1a659b2df64b411cbe1286b892f9bb258d5a88cebeef403e74cb8ffaa2185b"
+      },
+      {
+        "mode": "100644",
+        "path": "tests/test_ethernet_calibration.py",
+        "sha256": "4f7e0a4ead6f200e77eb91b7600b242b8e7dce08460935e0758dafd813719529"
+      }
+    ],
+    "history_policy": "Exact sealed base snapshot and reviewed topic parents; full older upstream history not required or claimed.",
+    "pinned_source": {
+      "commit": "d81eff5f0596d63e6a3fe79f656efe88b902b7ec",
+      "historical_graph_policy": "Exact selected commit/tree preserved as depth-one Git source; unrelated donor historical .gitattributes object unavailable, historical completeness not claimed.",
+      "history_boundary": "d81eff5f0596d63e6a3fe79f656efe88b902b7ec",
+      "original_release_input": true,
+      "stage": "sealed integrated8a base plus exact reviewed HTTPS10/UX11 replay topics",
+      "tree": "49e63446af24b2f1b23f1b99c6b45115b08de3fc"
+    },
+    "recipe_policy": "Canonical six-source binding; pre-integrated platform patches are not replayed.",
+    "source_variable": "COMBINED_SETTINGS_SOURCE",
+    "upstream": {
+      "commit": "a9f4e6980f5e65a3120d43198d9f4a337e526ffb",
+      "ref": "coreelec-21-ng",
+      "repository": "https://github.com/pannal/service.coreelec.settings.git"
+    },
+    "upstream_review": {
+      "decision": "retain accepted integrated source; new live-tip/recipe/equivalence verification performed",
+      "id": "evidence/upstream-20261123/ancillary-source-review.json",
+      "live_commit": "a9f4e6980f5e65a3120d43198d9f4a337e526ffb",
+      "upstream_moved": false
+    }
+  },
+  "skin": {
+    "expected_tree": "f320f6c26143a1c41acc93c6359c95bc85747db2",
+    "features": [],
+    "pinned_source": {
+      "commit": "94ccb38311d52a6244c71a2748379cee59e5d736",
+      "original_release_input": true,
+      "stage": "accepted integrated export; no new ancillary source changes or feature refs",
+      "tree": "f320f6c26143a1c41acc93c6359c95bc85747db2"
+    },
+    "recipe_policy": "Canonical six-source binding; pre-integrated platform patches are not replayed.",
+    "source_variable": "COMBINED_SKIN_SOURCE",
+    "upstream": {
+      "commit": "94ccb38311d52a6244c71a2748379cee59e5d736",
+      "ref": "master",
+      "repository": "https://github.com/pannal/skin.p3i.estuary.git"
+    },
+    "upstream_review": {
+      "decision": "retain accepted integrated source; new live-tip/recipe/equivalence verification performed",
+      "id": "evidence/upstream-20261123/ancillary-source-review.json",
+      "live_commit": "94ccb38311d52a6244c71a2748379cee59e5d736",
+      "upstream_moved": false
+    }
+  }
+}

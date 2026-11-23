@@ -1,0 +1,17 @@
+all pause silence checks passed
+decoder check: 1373 silent frames from 88 streams decoded to exact zeros
+silence-for-longer-gaps: rejected
+bridge-never-disarms: rejected
+packets-always-disarm: rejected
+resume-keeps-silence-source: rejected
+truehd-keeps-silence-source: rejected
+stale-silent-frame: rejected
+pause-cache-ignores-bursts: rejected
+failed-packet-retried: rejected
+dither-on: rejected
+collected-eac3-silenced: rejected
+wrong-crc1: rejected
+dtshd-extension-unchecked: rejected
+dtshd-whole-packet: rejected
+dtshd-not-silenced: rejected
+all 14 negative controls rejected

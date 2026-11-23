@@ -1,0 +1,1 @@
+AML lifecycle: PASS (production lifecycle, poll, speed, full AddData and wrapper cleanup; ASan/UBSan; stub decoder internals and packet/device interfaces)

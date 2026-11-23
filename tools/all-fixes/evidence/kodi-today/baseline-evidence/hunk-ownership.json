@@ -1,0 +1,2712 @@
+[
+  {
+    "path": "addons/resource.language.de_de/resources/strings.po",
+    "original_start": 19067,
+    "original_count": 2,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "cdefaf16e9789cf27438be26fd85a3f110d414dec754cb236af0c4a0265cc27c"
+  },
+  {
+    "path": "addons/resource.language.de_de/resources/strings.po",
+    "original_start": 19071,
+    "original_count": 10,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "a374ee8b945d98705784a00497c31be46d67045d766ea32d633909fe586c8125"
+  },
+  {
+    "path": "addons/resource.language.en_gb/resources/strings.po",
+    "original_start": 17893,
+    "original_count": 1,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "4aa2303588d02ad65754f994e633090caf1d11a7676e24a88786237aa618b543"
+  },
+  {
+    "path": "addons/resource.language.en_gb/resources/strings.po",
+    "original_start": 25836,
+    "original_count": 1,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "f1687617ebdb9341c28bb0efacd10f3ffb45b2a6f174fb3036baae98c32edc79"
+  },
+  {
+    "path": "addons/resource.language.en_gb/resources/strings.po",
+    "original_start": 25842,
+    "original_count": 13,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "9b8741816ec8ae2f06b58ee937fe73f9bd00852066f3feb346793abbd319f96b"
+  },
+  {
+    "path": "addons/resource.language.en_gb/resources/strings.po",
+    "original_start": 25948,
+    "original_count": 1,
+    "topic": "manual-lldv",
+    "hunk_sha256": "ab403c14661049f4794538e16bed879bdedf0ca121e943826499000fdedd8889"
+  },
+  {
+    "path": "addons/resource.language.en_gb/resources/strings.po",
+    "original_start": 27491,
+    "original_count": 0,
+    "topic": "hdr-v20",
+    "hunk_sha256": "2518e2ca6f8048eab162b2f5a42e13805cb53b62ae983b810423523baf48aa5f"
+  },
+  {
+    "path": "cmake/modules/buildtools/FindTexturePacker.cmake",
+    "original_start": 60,
+    "original_count": 1,
+    "topic": "distribution-build",
+    "hunk_sha256": "5d421dafaa8f082b28146a8151b365557b42e0ed0c79bd4a4c3dd704d311c96e"
+  },
+  {
+    "path": "system/settings/settings.xml",
+    "original_start": 4020,
+    "original_count": 13,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "1b917cf9869a942646cf4988cecae47469ac993004b05f0007ecb54a3c18a901"
+  },
+  {
+    "path": "system/settings/settings.xml",
+    "original_start": 4773,
+    "original_count": 0,
+    "topic": "manual-lldv",
+    "hunk_sha256": "7574bbb19ccf0e895a36a608fdfadfd09402966f640375f64089f9d0a36d633c"
+  },
+  {
+    "path": "system/settings/settings.xml",
+    "original_start": 4803,
+    "original_count": 0,
+    "topic": "hdr-v20",
+    "hunk_sha256": "982d099b32492ff4ef801c0f5975881b1ded68770e8db0a880edf7329c6275dc"
+  },
+  {
+    "path": "tools/frame_pacing/.gitignore",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "numbered-frame-tools",
+    "hunk_sha256": "5c769697de8b8dadae7817ae595376373a745e36a4da52baae5cb1cfec3795d0"
+  },
+  {
+    "path": "tools/frame_pacing/README.md",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "numbered-frame-tools",
+    "hunk_sha256": "c45461e2291afc7bfede47cefcc29a664559eee7098e5788922f10d6a27f3c9e"
+  },
+  {
+    "path": "tools/frame_pacing/__init__.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "numbered-frame-tools",
+    "hunk_sha256": "3ff06b94a6d08d43a137aed466d8dbdb8fa9db2469d56185f1f9d3e2644d1521"
+  },
+  {
+    "path": "tools/frame_pacing/__main__.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "numbered-frame-tools",
+    "hunk_sha256": "421f88931eb016925cf6dbeb733501a3d240aff4180fb7c0e847d40672ac75c2"
+  },
+  {
+    "path": "tools/frame_pacing/analysis.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "numbered-frame-tools",
+    "hunk_sha256": "73d18276770378b349db3f95635f8bc95c64ad454ed97fe56e341a38b2ce66fa"
+  },
+  {
+    "path": "tools/frame_pacing/capture.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "numbered-frame-tools",
+    "hunk_sha256": "e45a48964a2eef6b52a6f55740efa1d7ab248e0c71d0913df32797cb9028377e"
+  },
+  {
+    "path": "tools/frame_pacing/marker.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "numbered-frame-tools",
+    "hunk_sha256": "638be286c35882a88704cdeb5afb28f384e9345a51d59a3bf1589c38c4ebb961"
+  },
+  {
+    "path": "tools/frame_pacing/media.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "numbered-frame-tools",
+    "hunk_sha256": "087bacf5ba7e7f9065672c28ccd2681bdec17610e91433616de1cd09786315a8"
+  },
+  {
+    "path": "tools/frame_pacing/requirements.txt",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "numbered-frame-tools",
+    "hunk_sha256": "b050d1c0d24f12d92fbefd3e6750b4dee6663cffb396549fb992bdadd18033f0"
+  },
+  {
+    "path": "tools/frame_pacing/test_capture.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "numbered-frame-tools",
+    "hunk_sha256": "d46902b219f0aa1601c0601b27e2a307b16c5e4f3b0531a82a9f709f852472f9"
+  },
+  {
+    "path": "tools/frame_pacing/test_frame_pacing.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "numbered-frame-tools",
+    "hunk_sha256": "7d8d43328efcbfc1f541d1086e820febc2f918b7cbf2758d33cb298cca8f032c"
+  },
+  {
+    "path": "tools/test-activeae-configure-retry.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "64497b894a103efe7c045d93fde7f3d02b02d2966c438566ff577d337b2d6385"
+  },
+  {
+    "path": "tools/test-activeae-dropped-raw-delay.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "6a8c0c6d4924aab3e87c6c39c49de75c5ed4017a76d17a48faa7b32120463dc7"
+  },
+  {
+    "path": "tools/test-activeae-duration-families.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "5653c9a606c9290544ea4f94fd570ac844e49882981fa767845c2bd5b94fdb37"
+  },
+  {
+    "path": "tools/test-activeae-error-free.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "76d8ed65320e0c41d5d61ca6934827468d5233c4b637b77ec68089a4e71115cb"
+  },
+  {
+    "path": "tools/test-activeae-long-pause.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "3711da3b143ecfa1eb1803843ebc0c3d5255e226983331fad654848eb42d080b"
+  },
+  {
+    "path": "tools/test-activeae-pause-silence.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "58e1dd18cdcd8fb65a9feb21a73e65ad529da3923da97d41aba02b34d46b4b1e"
+  },
+  {
+    "path": "tools/test-activeae-paused-packets.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "65547dbbfdaf24eccfc8d26a49412152cadf1755fc47a1cc9fd91895c2601d7c"
+  },
+  {
+    "path": "tools/test-activeae-resume-epoch.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "e5024417bf2343f2d619a99bf2140a86378a21e4c94ef5bf11a3edef9711113e"
+  },
+  {
+    "path": "tools/test-activeae-stream-flush.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "813a60c03ba40ba24d7c23e44837c82233f5f8f9afcc0f9db3f86317bc58287b"
+  },
+  {
+    "path": "tools/test-activeae-threaded-barrier.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "cd77c1c39469fda5c54485974cbf7e30544b7091f614b1d379146f2b3bd944c1"
+  },
+  {
+    "path": "tools/test-activeae-truehd-sync.py",
+    "original_start": 37,
+    "original_count": 2,
+    "topic": "fixture-union",
+    "hunk_sha256": "9f3cb0728e5d49ade50ccb117f81afc844ded8e4d3f451121863d793906d9662"
+  },
+  {
+    "path": "tools/test-activeae-truehd-sync.py",
+    "original_start": 103,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "28f9811cae918a10db3b51284fcebac9880cd3992580f1a440096e2dfe235969"
+  },
+  {
+    "path": "tools/test-activeae-truehd-sync.py",
+    "original_start": 109,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "9b0a4017f3812b0de9191e27655ea56997a24c2da362248312c79734996cf71b"
+  },
+  {
+    "path": "tools/test-activeae-truehd-sync.py",
+    "original_start": 118,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "7774945ddd44757ba5f06a51063c438186503c5fe09703cfcf33b9034ba8e962"
+  },
+  {
+    "path": "tools/test-activeae-truehd-sync.py",
+    "original_start": 119,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "6f9567f95b6b29290a5d12f0eb49d91b6c8a84b80cc49a8640e893f88b368dd9"
+  },
+  {
+    "path": "tools/test-activeae-truehd-sync.py",
+    "original_start": 128,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "e1cdb8ecc5145e98b541653689387b626321fdd179e37e8809317d9f3d6224d0"
+  },
+  {
+    "path": "tools/test-activeae-truehd-sync.py",
+    "original_start": 201,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "f76c43124e93c80b436cc7f4c33d0d0f1b40e8ead77eff6c5db1a1121244d0a1"
+  },
+  {
+    "path": "tools/test-activeae-truehd-sync.py",
+    "original_start": 286,
+    "original_count": 3,
+    "topic": "fixture-union",
+    "hunk_sha256": "e56653aaab3142e829774d5882c70353793a849f918d8e6362f856bd57b23734"
+  },
+  {
+    "path": "tools/test-activeae-truehd-sync.py",
+    "original_start": 292,
+    "original_count": 3,
+    "topic": "fixture-union",
+    "hunk_sha256": "f63c6a767cc343de5d4ba84d1615b308c43974de27099a4089a5c3b90b7bf69b"
+  },
+  {
+    "path": "tools/test-activeae-truehd-sync.py",
+    "original_start": 297,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "0aad1ca1fcc246566a4c40b263a088a1c2659f4bf94854d71da9c1620b418ddf"
+  },
+  {
+    "path": "tools/test-activeae-truehd-sync.py",
+    "original_start": 304,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "81236b352971fbbd791bc98d3d0c560d2a7d670c32a20e9562ece4f55ede567c"
+  },
+  {
+    "path": "tools/test-activeae-truehd-sync.py",
+    "original_start": 339,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "422a1143a496a857a4a7baf92bd26f0d44a168f5b56f209f18262385b20b338a"
+  },
+  {
+    "path": "tools/test-activeae-truehd-sync.py",
+    "original_start": 347,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "31f7278732cb024f043524a026d4279dc807a8bd0d77a73f78bbbcc66ae5575f"
+  },
+  {
+    "path": "tools/test-aml-dv-manager-dependency.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "manual-lldv",
+    "hunk_sha256": "cb6a6c2337068b2e44f9c03daa7d0b8db3e826676a2837251af8dc19d6639de0"
+  },
+  {
+    "path": "tools/test-aml-dv-options.py",
+    "original_start": 9,
+    "original_count": 0,
+    "topic": "manual-lldv",
+    "hunk_sha256": "3a698c0b46561683be1b0310a985d8c40a2f1fc9316ef8b33ba7708fff27ed51"
+  },
+  {
+    "path": "tools/test-aml-dv-options.py",
+    "original_start": 24,
+    "original_count": 0,
+    "topic": "manual-lldv",
+    "hunk_sha256": "c73dfce275e2e8b7e63e3bd1397988037833cfdc1983c3a1586c58b0e963e783"
+  },
+  {
+    "path": "tools/test-aml-dv-options.py",
+    "original_start": 27,
+    "original_count": 1,
+    "topic": "manual-lldv",
+    "hunk_sha256": "8ebdb88f5e15f1deeead83c3a097927d4daab326ceb72e05783895be5bde4822"
+  },
+  {
+    "path": "tools/test-aml-dv-options.py",
+    "original_start": 37,
+    "original_count": 1,
+    "topic": "manual-lldv",
+    "hunk_sha256": "98ac9868efa5768ebaf3b569db8915ed93a13e2a18e542729fc4a4ecb2a7ad49"
+  },
+  {
+    "path": "tools/test-aml-dv-options.py",
+    "original_start": 48,
+    "original_count": 0,
+    "topic": "manual-lldv",
+    "hunk_sha256": "431f9f265d92c52903f3687dffb4e42ecd6794b313d1816b5adf36d2c220accf"
+  },
+  {
+    "path": "tools/test-aml-dv-options.py",
+    "original_start": 54,
+    "original_count": 0,
+    "topic": "manual-lldv",
+    "hunk_sha256": "354205d7ac401c37d9ca4eaf6bbf3e60b8283b3bdfab453d34160ab7305af11a"
+  },
+  {
+    "path": "tools/test-aml-dv-options.py",
+    "original_start": 129,
+    "original_count": 0,
+    "topic": "manual-lldv",
+    "hunk_sha256": "dfc4d5f2323feb7dfab63f61a39ea30c17c93912026886c790bd3217f15ae283"
+  },
+  {
+    "path": "tools/test-aml-dv-options.py",
+    "original_start": 166,
+    "original_count": 1,
+    "topic": "manual-lldv",
+    "hunk_sha256": "dbcde5181ad936ff581580fed461113db66e1cb450064e8cd689ebd48f648f15"
+  },
+  {
+    "path": "tools/test-aml-dv-options.py",
+    "original_start": 176,
+    "original_count": 0,
+    "topic": "manual-lldv",
+    "hunk_sha256": "e9945878ee935b1d269c89ce8d55a1b876ece52dc645905dbb38345d4227ac43"
+  },
+  {
+    "path": "tools/test-aml-dv-options.py",
+    "original_start": 179,
+    "original_count": 1,
+    "topic": "manual-lldv",
+    "hunk_sha256": "765b70677d1ed7afcb9552a4aab7a8227667cc8028b4ec3471df7a9c4eee44b0"
+  },
+  {
+    "path": "tools/test-aml-dv-options.py",
+    "original_start": 193,
+    "original_count": 0,
+    "topic": "manual-lldv",
+    "hunk_sha256": "334d7f28519cc2854f1a35a24943890bdaa4d100ca5654385b576c7c2660c0a2"
+  },
+  {
+    "path": "tools/test-aml-dv-options.py",
+    "original_start": 207,
+    "original_count": 0,
+    "topic": "manual-lldv",
+    "hunk_sha256": "6cf630694c993dc753aa4a17bd612859faea9e97d73813869025dd56fa0236f2"
+  },
+  {
+    "path": "tools/test-aml-dv-preset-read.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "manual-lldv",
+    "hunk_sha256": "b75fdea59feced6a8f9624109e8f9e5d6ce81d52e759ab9229afb40b4d272f27"
+  },
+  {
+    "path": "tools/test-aml-dv-setting-locks.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "manual-lldv",
+    "hunk_sha256": "0204e777db84d4abbd5cc4b8458015def1638eb3ca91d63a24ac624bf6dd750b"
+  },
+  {
+    "path": "tools/test-aml-lifecycle.py",
+    "original_start": 219,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "7bf9f699667069dbbcf426b2eaf26b1110a78077283d30a2a1926aecefb4f3d0"
+  },
+  {
+    "path": "tools/test-aml-lifecycle.py",
+    "original_start": 326,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "3288e8c806c9589cae27df0acf4168897e86e17f26de470d7a755c382bcb56be"
+  },
+  {
+    "path": "tools/test-aml-mute-renderer.py",
+    "original_start": 69,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "682f039d45f0e25823c271f535f34d2ac36b187c1cafe3d20bf7a59359ba72a1"
+  },
+  {
+    "path": "tools/test-aml-native-continuation.py",
+    "original_start": 52,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "d7287d5820ec49195fd025edbc961964a8f8c946a2637bcf69784b8bef3b8e7b"
+  },
+  {
+    "path": "tools/test-aml-native-settings.py",
+    "original_start": 105,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "e953fb7ae198718d3165a4b668c23832161d0810162c984fda4b44bfe0801207"
+  },
+  {
+    "path": "tools/test-aml-preroll.py",
+    "original_start": 52,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "dffa0ff65558df307a89885fc0879e5a41966db78c163acb3f3a7e1a05eb2712"
+  },
+  {
+    "path": "tools/test-aml-preroll.py",
+    "original_start": 66,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "0fb79133a701042148220bd1fe2b8d433f9951cf11e658eab157cee483e35312"
+  },
+  {
+    "path": "tools/test-aml-preroll.py",
+    "original_start": 105,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "2b10ef28c31019dfb3f38b053e6dba72de717e1a24d93aa1d873f5637b0d3881"
+  },
+  {
+    "path": "tools/test-aml-presenter-cadence.py",
+    "original_start": 132,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "fcc53d2b43da104f8b119aa743f775a398bf3000c027a30a6617a4701471031b"
+  },
+  {
+    "path": "tools/test-aml-presenter-cadence.py",
+    "original_start": 207,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "8428bfeba672e5cdda3033a413034255d4bbffd5e8f0fb444b4a86d74698f91c"
+  },
+  {
+    "path": "tools/test-aml-presenter-cadence.py",
+    "original_start": 242,
+    "original_count": 2,
+    "topic": "pause-presenter",
+    "hunk_sha256": "b02c546e1eb3bfcd42c1603b28e343c8e673376b5fd1860fb34844a7b8bb5517"
+  },
+  {
+    "path": "tools/test-aml-presenter-cadence.py",
+    "original_start": 250,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "a22bf7a7548fdce24742979c6c045749fdf8a80f38dfc358c4877072ea41d61e"
+  },
+  {
+    "path": "tools/test-aml-presenter-setting.py",
+    "original_start": 79,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "52958279b4c7794610d5ff7d18edf1dccac3573f6251e9d0e93690a0ced59172"
+  },
+  {
+    "path": "tools/test-aml-presenter-setting.py",
+    "original_start": 82,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "20f2403c959fbc1b0431a3e0a7d629c35fbfb3232842aae3625bc8830fffd4a3"
+  },
+  {
+    "path": "tools/test-aml-presenter-step-invalidation.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "eeb4ffb80534f858381c2942c65377a0002a04cbf7d87c0196bd74fc2cd893dd"
+  },
+  {
+    "path": "tools/test-aml-presenter.py",
+    "original_start": 142,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "d62718ce86a2ff4010a8da43139fa96ccf3beb518edecd48798fe7c7e093dd0f"
+  },
+  {
+    "path": "tools/test-aml-presenter.py",
+    "original_start": 143,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "2111777c9a76b0835a0464fe33e5d644a4dbcdbf47416a26d83703aadb3cf763"
+  },
+  {
+    "path": "tools/test-aml-restart-hold.py",
+    "original_start": 26,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "d40c4287eddcbe87cfc4f57d35382ff4164d0102ffe8db825de16b4fdb7de76d"
+  },
+  {
+    "path": "tools/test-aml-restart-hold.py",
+    "original_start": 80,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "e6c9bde920abd348caf68a13170a6ff48c1e77747f8a68c0abd4ea387bf4b2c5"
+  },
+  {
+    "path": "tools/test-aml-restart-hold.py",
+    "original_start": 97,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "ca4dcb4fd0c2a8ec94c113e81097895bb62b92c1c97884ff1d50c464b97a11dc"
+  },
+  {
+    "path": "tools/test-aml-seek-clock.py",
+    "original_start": 104,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "297f45810044ddb767564457c53ce24d330aa05878ce11c01950de456c637846"
+  },
+  {
+    "path": "tools/test-aml-skin-reload.py",
+    "original_start": 44,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "d75299fc07ad53f6c59e0ddb81a48ea50692e55294e122ca8f6a07c25451905a"
+  },
+  {
+    "path": "tools/test-aml-skin-reload.py",
+    "original_start": 65,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "82f19b80c3ab2e9beb8ebf6fe863335c6c42bd5f46987b3da395069ccf0c0acf"
+  },
+  {
+    "path": "tools/test-aml-skin-reload.py",
+    "original_start": 79,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "55796f9aee82016cd1fa2b5568c8d8911b0e4bd58c977c8a4580a8016405571c"
+  },
+  {
+    "path": "tools/test-aml-skin-reload.py",
+    "original_start": 97,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "265840d5ecb4a03d277f0a0600b2f60d8ca0a53877ad79b0a8adf8563385e1f0"
+  },
+  {
+    "path": "tools/test-aml-skin-reload.py",
+    "original_start": 105,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "b2a787a407fa78a09422db1edad323d312e56286bd5dd856fd9cce54d9aebc75"
+  },
+  {
+    "path": "tools/test-aml-skin-reload.py",
+    "original_start": 114,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "e9bbca15d78e39d1bf4d39f2a313b6caebb95d9505f9097989f7498608a02d03"
+  },
+  {
+    "path": "tools/test-aml-skin-reload.py",
+    "original_start": 123,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "f5e0dbf46b4a1818efeb7b0a1a34556cf5dc331b609ed1b682a794d181cf31bd"
+  },
+  {
+    "path": "tools/test-aml-skin-reload.py",
+    "original_start": 186,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "bb428b4553bc9298d6923f6cd9517d3bc28230cd328e89f3754464f8918978b8"
+  },
+  {
+    "path": "tools/test-aml-skin-reload.py",
+    "original_start": 189,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "5dbc8528312f20ea683d0dd5988770feee1fd14198d312664de804ee10c8b135"
+  },
+  {
+    "path": "tools/test-aml-skin-reload.py",
+    "original_start": 203,
+    "original_count": 2,
+    "topic": "fixture-union",
+    "hunk_sha256": "f52bef8f9fdbf38a136dce1083c0a43c808babb6e35e09ba73fe5d074a34c316"
+  },
+  {
+    "path": "tools/test-aml-skin-reload.py",
+    "original_start": 208,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "ee84c9c51164486d6ddb1b44424221c0b88d1f66f835d5a643ed545a1658c536"
+  },
+  {
+    "path": "tools/test-aml-skin-reload.py",
+    "original_start": 212,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "8cc4fac0d37927764c3b3ba034e9772c97c70066144293cda4e30d8ce7587a72"
+  },
+  {
+    "path": "tools/test-aml-skin-reload.py",
+    "original_start": 223,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "ee34a4b3ddefc294c7bc31e6ead6b75e428244f569f7a92afa4919f8eac0c55d"
+  },
+  {
+    "path": "tools/test-aml-skin-reload.py",
+    "original_start": 283,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "37b6aecbdf9bb5753bd337a59aaa91393d9fe6ea625f25fc2c7575fee631aa70"
+  },
+  {
+    "path": "tools/test-aml-skin-reload.py",
+    "original_start": 320,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "e850c9383bbe3ead203615de02bc851618c91985a7eaa1e4041e7d6f3a2ec70c"
+  },
+  {
+    "path": "tools/test-aml-skin-reload.py",
+    "original_start": 453,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "1e88ef86ba2e87af2305563df9e524c4096638fda478323816f6a128f7023e90"
+  },
+  {
+    "path": "tools/test-aml-skin-reload.py",
+    "original_start": 455,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "9d1a36af1b10a839083b86a3a4dc515ddb867e76463c21770f2806dae91ea08a"
+  },
+  {
+    "path": "tools/test-aml-skin-reload.py",
+    "original_start": 464,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "856cbd434b7815ed8e65b9c6f663580c4fe8df17ae91dcb32d8e2156ef864fc9"
+  },
+  {
+    "path": "tools/test-aml-window-lifecycle.py",
+    "original_start": 395,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "827ca2f6e46e0adfb8d9d3226011aeac7be5007187c10a3a8363cab04449f7e7"
+  },
+  {
+    "path": "tools/test-audio-frame-admission.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "retained-audio-admission",
+    "hunk_sha256": "8c5aedbcceb37e498d832a6480d293ed6fa85f88de8f29f39f3124725c623a30"
+  },
+  {
+    "path": "tools/test-audio-recovery-seek.py",
+    "original_start": 29,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "e01d368ae79a96535903289e309c854b9f7a62f669fb5b44512420a9a914c706"
+  },
+  {
+    "path": "tools/test-audio-recovery-seek.py",
+    "original_start": 165,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "9e8906cb419d015b24e34995f2e91097b48e49b2b983ab9ed1e62c91bd627be7"
+  },
+  {
+    "path": "tools/test-audio-recovery-seek.py",
+    "original_start": 169,
+    "original_count": 4,
+    "topic": "fixture-union",
+    "hunk_sha256": "442f866dc9add49e50b655588cc228d595e1501295c649ed4bc78a3786d456d4"
+  },
+  {
+    "path": "tools/test-chapter-seek-intent.py",
+    "original_start": 45,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "64875db04914a72d2c69fba9a623fc500126cf7c145adb31bad6c659be2f3152"
+  },
+  {
+    "path": "tools/test-chapter-seek-intent.py",
+    "original_start": 72,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "912928a4f827a70dfe49a0f7253ed9a9239ac410d6fa4ef486e7e4d298acabad"
+  },
+  {
+    "path": "tools/test-chapter-seek-intent.py",
+    "original_start": 84,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "fa167141343cf7c00fbf177a863c3ab45d85b40921b95895ee4de797b21380e1"
+  },
+  {
+    "path": "tools/test-chapter-seek-intent.py",
+    "original_start": 98,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "acfb3aa6d475a385f5ece6ee7ebb907aa90d186f7f99ff0fbaa2925d656efd3b"
+  },
+  {
+    "path": "tools/test-dv-disc-hold.py",
+    "original_start": 64,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "9e1c9fc24e1dcf68a8c2abe36d1b76dbb8471c915fd40e6ceae4394c47464235"
+  },
+  {
+    "path": "tools/test-dv-disc-hold.py",
+    "original_start": 80,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "deb74541b16c46ec12889394897dcbb1a9b5af3a494cca15472fba1b2560779f"
+  },
+  {
+    "path": "tools/test-dv-disc-hold.py",
+    "original_start": 272,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "4509a468f500a612209d6a99136ee818aab88ff851184e5e03235502d786e308"
+  },
+  {
+    "path": "tools/test-dv-disc-hold.py",
+    "original_start": 326,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "b913a832424963afe0dd57d2752de34b162f8d59abd16c32edd4b2db54a87ac0"
+  },
+  {
+    "path": "tools/test-dv-disc-hold.py",
+    "original_start": 520,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "41f10ac059756d6d9962f9d6240bb9ba2d5d008577a343f4ceccd8cdbd48bc9f"
+  },
+  {
+    "path": "tools/test-dv-disc-hold.py",
+    "original_start": 552,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "e05ac6c1ee16b81dfa86e9305dbb9b1fa7ee49a95ae100584e69a0398099e465"
+  },
+  {
+    "path": "tools/test-dv-disc-hold.py",
+    "original_start": 604,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "a1d8f6fcbbc6dc81f88dbc1dca717ce05e31c8be29a83340a50e9d626e0e3274"
+  },
+  {
+    "path": "tools/test-dv-disc-hold.py",
+    "original_start": 622,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "5e4e9577f867103d8a28fb4a17d1bd18484c80bdf492d8ef342eb8cbdce586c8"
+  },
+  {
+    "path": "tools/test-dv-disc-hold.py",
+    "original_start": 644,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "d8fe65d9fddb379121e34d7722b97cdb898bdd92f9b6cb528d972af73430bc89"
+  },
+  {
+    "path": "tools/test-dvd-clock-locking.py",
+    "original_start": 82,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "7a7287d0fba91ca6e26a2ba45c6e77ac141e9fc023b10ffba83e5e787b406c7e"
+  },
+  {
+    "path": "tools/test-dvd-clock-locking.py",
+    "original_start": 84,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "63ac623bbd7bd3825b50cfc155c4a6e184639b18482dc28304b550fc793635cc"
+  },
+  {
+    "path": "tools/test-dvd-clock-locking.py",
+    "original_start": 119,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "2dd6cef778f58025ce1c902960d6a98f46085bee7cd1665ce859ff1fc7c326e3"
+  },
+  {
+    "path": "tools/test-dvd-clock-locking.py",
+    "original_start": 120,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "a7581a2a93a2ad7533d81e2e7ab6a3a9a99a8db83492ea513a126b29428a4520"
+  },
+  {
+    "path": "tools/test-dvd-clock-locking.py",
+    "original_start": 123,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "e59a0f16bd911792b978ab898aa608a6dc015a49128a0bdd5f658f6f78acdbdf"
+  },
+  {
+    "path": "tools/test-dvd-clock-locking.py",
+    "original_start": 125,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "b98940666df57356b79388f6eaa3687c3fe419ac9c54d76057a3fac4e31550a8"
+  },
+  {
+    "path": "tools/test-dvd-clock-locking.py",
+    "original_start": 133,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "4a2ca7cff2ca911b1746ee1b88c58ead4170a22ea9dd073ee3d9b61dce2bc555"
+  },
+  {
+    "path": "tools/test-dvd-clock-locking.py",
+    "original_start": 137,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "f169e7f97fddfc348ad709b3ab804bcfbceb5944e20cb7b7abcf8fa9eb5ea215"
+  },
+  {
+    "path": "tools/test-dvd-clock-locking.py",
+    "original_start": 181,
+    "original_count": 1,
+    "topic": "pause-presenter",
+    "hunk_sha256": "03c446c99d66552081ca65375d902c0003cbeb665131cc8a06852c234494c1b9"
+  },
+  {
+    "path": "tools/test-hdr10-seamless-setting.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "hdr-v20",
+    "hunk_sha256": "824d3d7da202117e5b0a23a14389fd3343b2bb951522b6208a0d5327733ec9e1"
+  },
+  {
+    "path": "tools/test-paused-trickplay-return.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "trickplay-reanchor",
+    "hunk_sha256": "1f36865cf3f15d1d425bc69b50d47b78b60ea868235181dab3081b55b60ad07f"
+  },
+  {
+    "path": "tools/test-player-lifecycle.py",
+    "original_start": 85,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "bcfe6021c78e4cecbc0556b6366112b7a3b1bec48ccefc16015bd0a88f000de5"
+  },
+  {
+    "path": "tools/test-player-lifecycle.py",
+    "original_start": 116,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "5e082e43f53ebcbe430555204a1dfecea866595178914ba4d4ef1b3831ac56c8"
+  },
+  {
+    "path": "tools/test-player-lifecycle.py",
+    "original_start": 121,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "8b7d6a1278754b0c18fc332eaafdbba14fa057f8d2ee60596a156410b5b1a643"
+  },
+  {
+    "path": "tools/test-player-lifecycle.py",
+    "original_start": 304,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "c5fa17fff479bfb76a86bb3b020cc99c00289f0c0e031a43a533f505c761b397"
+  },
+  {
+    "path": "tools/test-player-lifecycle.py",
+    "original_start": 782,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "87b8b7be8a644ae0f2f19a518af2ba2553419450bda5bcb9f5b8cb58b529fc79"
+  },
+  {
+    "path": "tools/test-player-lifecycle.py",
+    "original_start": 805,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "3f7f4bfd17a165c87ef0539b05a589da423cb95ea731534b8f8dbe8544074f0d"
+  },
+  {
+    "path": "tools/test-player-retirement.py",
+    "original_start": 70,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "7f51b59f5b8224b498084b3f7c24820a44bf64bbe308acc81f80cb95938dbcee"
+  },
+  {
+    "path": "tools/test-player-retirement.py",
+    "original_start": 412,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "5496d7c51484853ecb9665f4632c00d1235603ba900169de027315c72406871f"
+  },
+  {
+    "path": "tools/test-player-retirement.py",
+    "original_start": 417,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "c97766f05331c604e8b3cdf8ecc0db35c4d827cdff5ffaad771281732d3f9d16"
+  },
+  {
+    "path": "tools/test-player-retirement.py",
+    "original_start": 423,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "9fd17de225dc155bf228e1e2df370ed8c285c35b2e0801452b00076d0f4249c4"
+  },
+  {
+    "path": "tools/test-player-retirement.py",
+    "original_start": 425,
+    "original_count": 2,
+    "topic": "fixture-union",
+    "hunk_sha256": "f9b24a03f130d50d054d69d7411990773b2f911f7ec94ab09a3e19e9cd700a66"
+  },
+  {
+    "path": "tools/test-player-retirement.py",
+    "original_start": 429,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "1b448ebf09e0c49f67333730b0b105a104eb207b6240aac192782a7d7a70745d"
+  },
+  {
+    "path": "tools/test-player-retirement.py",
+    "original_start": 466,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "05f6b3d8d95a9d440547ad952d025a0cf6a921f3acdcbb6b64e1529702fed110"
+  },
+  {
+    "path": "tools/test-player-retirement.py",
+    "original_start": 467,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "125824b85a7b6586753232b2bdf1a5331dd1d58e904e87dd00328006c865fc57"
+  },
+  {
+    "path": "tools/test-player-retirement.py",
+    "original_start": 474,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "27421f38511c36c60e30669f5f03afcf9ef61093b220918c7b495ba1b3c2b241"
+  },
+  {
+    "path": "tools/test-player-retirement.py",
+    "original_start": 498,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "81d7571f4ed0a7d853441fd1ce0f6809484e8924eb73eab2a984219e4ab0e2ec"
+  },
+  {
+    "path": "tools/test-presenter-invalidation-lifetime.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "ed31aa5d7dd5da233cfa1d4dd64407c8efaf8c4108a9f7b4d5c05b0690bd525c"
+  },
+  {
+    "path": "tools/test-render-lifecycle.py",
+    "original_start": 753,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "164249f0f1b2488bf4ce7248e9be671d2ddd40b3e13282b7cffb3bb4a1fb2030"
+  },
+  {
+    "path": "tools/test-render-video-admission.py",
+    "original_start": 40,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "b0f15583d364df4fb2fe7c794741cf5fd80dc2b295886657adc43e5366f0650f"
+  },
+  {
+    "path": "tools/test-render-video-admission.py",
+    "original_start": 43,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "8d93f1e11cb8dc2428cb1dca2c662eac3dd74fb73638bf74a08733377647d97e"
+  },
+  {
+    "path": "tools/test-render-video-admission.py",
+    "original_start": 54,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "159bf7f6c9ebc690f0d22cafcc1537e8cd44f45b5112a7ed63e912e0fb11cf09"
+  },
+  {
+    "path": "tools/test-render-video-admission.py",
+    "original_start": 93,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "7bc8a2cb0166b15fd4a0d663a3d55b9d0e1808f536ffa23f8b01da7b00f1d48f"
+  },
+  {
+    "path": "tools/test-render-video-admission.py",
+    "original_start": 99,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "d0df507ac9553e49d198241e7e6a58f1a053640d419a2a2d1761348acf72d7ce"
+  },
+  {
+    "path": "tools/test-render-video-admission.py",
+    "original_start": 139,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "7c496591f21de75887ac59d92a9f8a5bea87d6cdb569ae241a2628a79a6b396e"
+  },
+  {
+    "path": "tools/test-render-video-admission.py",
+    "original_start": 148,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "466c6863d382e68898db09ffd2db75a90063c189870cfa62d9c5a1407fad4fe4"
+  },
+  {
+    "path": "tools/test-render-video-admission.py",
+    "original_start": 150,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "3b4dfbff57cefe2381419a24b54e2ff709b92ca255c8ddad8bd534e567273b83"
+  },
+  {
+    "path": "tools/test-render-video-admission.py",
+    "original_start": 158,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "006edea4c999c700e9dd0d9da5c22717e5021fec26dcb89f30121892181d2144"
+  },
+  {
+    "path": "tools/test-render-video-admission.py",
+    "original_start": 165,
+    "original_count": 2,
+    "topic": "fixture-union",
+    "hunk_sha256": "add440aee137886aabcb12f0f9f41fc5a7c3bc07af5b943624dd9842c9d91abb"
+  },
+  {
+    "path": "tools/test-render-video-admission.py",
+    "original_start": 171,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "c237a6d925d3cfc0cc15b98fc68f52a01be9ec16504fba3beaf05c685a586281"
+  },
+  {
+    "path": "tools/test-render-video-admission.py",
+    "original_start": 226,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "910ba45b508db84f93d8090085b4c9a016c2029c677a24c801461c5e12c1cc07"
+  },
+  {
+    "path": "tools/test-seamless-profile-migration.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "hdr-v20",
+    "hunk_sha256": "1c9d332c8df61d5ff227e8ae9e45dc314664a4bf5772b81ed7a24b1ed38be739"
+  },
+  {
+    "path": "tools/test-seek-marker-review.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "e9d34c9afc4947df77aa8c31a713a825fe4be6395d8a14a4af70e313aea0bf6c"
+  },
+  {
+    "path": "tools/test-seek-preview-origin.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "b99822a2eaefc7b1658fa6070b29334df2420e9636870bb569f8c22ae3d7eedd"
+  },
+  {
+    "path": "tools/test-seek-timeline-marker.py",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "c6401d01a6f4acc788b408e3e5a760b5ee60628b8d33a6772797482dbc06f6b0"
+  },
+  {
+    "path": "tools/test-truehd-delivery.py",
+    "original_start": 98,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "e72159e686900ac8c8dc0eac94c2222c49ba7006809a6f745a74f47d94588c82"
+  },
+  {
+    "path": "tools/test-truehd-delivery.py",
+    "original_start": 193,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "9b9db00e68f7d374fd98b8cbbf38a67e5c7275a6e5512e5b37dedcf4b17738c1"
+  },
+  {
+    "path": "tools/test-truehd-delivery.py",
+    "original_start": 211,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "7b3193ff67dd74413875b1ec5bb21fcba0ec3ec9b20e0477c4ddfa393811d7f2"
+  },
+  {
+    "path": "tools/test-truehd-delivery.py",
+    "original_start": 213,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "82cf8f37d476b8113e4603c031e0ccd261372367f6a594a7e7074011658aec2d"
+  },
+  {
+    "path": "tools/test-truehd-delivery.py",
+    "original_start": 245,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "9d46b763f5f3d33699db6d796b9750b79924750d1a16f1ce3e9174434a0a0062"
+  },
+  {
+    "path": "tools/test-video-timeout-recovery.py",
+    "original_start": 24,
+    "original_count": 1,
+    "topic": "fixture-union",
+    "hunk_sha256": "67bf1acfcc911a8a62d727e32ccd02aec044fa6d15c8b1055373d15eb1b03013"
+  },
+  {
+    "path": "tools/test-video-timeout-recovery.py",
+    "original_start": 302,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "a92e68edcbe131421b3774ffbb6c308a68366b999186fb6869eba16d471087f0"
+  },
+  {
+    "path": "tools/test-video-timeout-recovery.py",
+    "original_start": 303,
+    "original_count": 0,
+    "topic": "fixture-union",
+    "hunk_sha256": "a017cc4e2e35332ec18c924f639477b2e31a88c13b9cfb0beb7c55b96e261d6d"
+  },
+  {
+    "path": "version.txt",
+    "original_start": 14,
+    "original_count": 1,
+    "topic": "distribution-build",
+    "hunk_sha256": "7c1b5874994b9af9f089a87f8d8b3ef066f754dfad72e96652819adb14cad6bb"
+  },
+  {
+    "path": "xbmc/SeekHandler.cpp",
+    "original_start": 15,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "10878f5271971bfe8c7e402517e3306436d81cde2c7d8796cbc363349f2b899d"
+  },
+  {
+    "path": "xbmc/SeekHandler.cpp",
+    "original_start": 86,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "810fb234f1b7ed7049ae2ef409713ce2f4f29e307f71103cc5bc3fd1ea687015"
+  },
+  {
+    "path": "xbmc/SeekHandler.cpp",
+    "original_start": 192,
+    "original_count": 1,
+    "topic": "seek-ux",
+    "hunk_sha256": "1c688a5ad9e65e05b02929744320c6f39c1866c980eebd74baf7609a6dd1f64f"
+  },
+  {
+    "path": "xbmc/SeekHandler.cpp",
+    "original_start": 199,
+    "original_count": 1,
+    "topic": "seek-ux",
+    "hunk_sha256": "846afffd7423a5c4fe45a243d78f2426afb19cb5506a7d50daaafdba6523d88e"
+  },
+  {
+    "path": "xbmc/SeekHandler.cpp",
+    "original_start": 210,
+    "original_count": 1,
+    "topic": "seek-ux",
+    "hunk_sha256": "a4535933bc7c878920cad0414e8f159a1d062068335119e23e7353e582b64833"
+  },
+  {
+    "path": "xbmc/SeekHandler.cpp",
+    "original_start": 219,
+    "original_count": 1,
+    "topic": "seek-ux",
+    "hunk_sha256": "5daf76d399a97b5a32184fc1a2daa8ac260ff9185ec7abdf21b45efd99940e8a"
+  },
+  {
+    "path": "xbmc/SeekHandler.cpp",
+    "original_start": 222,
+    "original_count": 1,
+    "topic": "seek-ux",
+    "hunk_sha256": "ed60f3dc2a58d99c6c96a7bb9f9b7a0934132c59ce99852b9ee25c8987832b3f"
+  },
+  {
+    "path": "xbmc/SeekHandler.h",
+    "original_start": 15,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "3ba469126456a78f1944d4e86165f79daac565d9335bbba856042d9c0461b76a"
+  },
+  {
+    "path": "xbmc/SeekHandler.h",
+    "original_start": 16,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "56d0fbe22609df7e04b33977bce6c0d57ab6a17b362a2405239b802f91f74159"
+  },
+  {
+    "path": "xbmc/SeekHandler.h",
+    "original_start": 48,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "9b42e10b7e8613336207c8f161222ba1b7471ea336cf22a7f8188c5e45ef3f4e"
+  },
+  {
+    "path": "xbmc/SeekHandler.h",
+    "original_start": 71,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "1992e710fb3b6cf243b84d983d34b274967ab19b3bfaf1768b403c390851dad9"
+  },
+  {
+    "path": "xbmc/application/ApplicationPlayer.cpp",
+    "original_start": 76,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "06b658fb550f446067e187b786172d8f8535ebb661cb9e02b59cb1861d63582a"
+  },
+  {
+    "path": "xbmc/application/ApplicationPlayer.cpp",
+    "original_start": 198,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "6f32472e28e456f280ecec6fea90d259dc04c4a6bc3b53636dab61a39b2331af"
+  },
+  {
+    "path": "xbmc/application/ApplicationPlayer.cpp",
+    "original_start": 573,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "964f9d6f7027e2763e21907d13466b0a7d84614d8427d851b2caff8dc5add8a4"
+  },
+  {
+    "path": "xbmc/application/ApplicationPlayer.h",
+    "original_start": 212,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "aff7b51a8405a5514b48ed6dff5a354f954a13b6e1554d6bd6fb32e51b56b0fc"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/CMakeLists.txt",
+    "original_start": 15,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "fb41dacbb8cb608e640d70c4c2ef9f51982c11628e7ddf68116dfcffb4a66c4e"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/CMakeLists.txt",
+    "original_start": 48,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "1a6dcfc25ad6fabff3f688ab5b04d31391bfa78b2f816597db0f522e88a41369"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 406,
+    "original_count": 1,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "0535321b365399cfa27612385282e27854486c157400b5b008276854d1e77474"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 429,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "9abd108eb64333eafee64cd244916563dea130fca7e3a6883fc611ce016a8345"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 608,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "cdf44cbb4becad64c71de2141cc93b6a3f50a02c39f2cc3b0df2cf2f07eb7967"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 697,
+    "original_count": 1,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "c41e7a12635d8adc184a74a41fbda7e4812b9600746165cad304aff248242b0f"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 699,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "847c78f7a86ee280b0c3461eff14f6c01bbf8ab20ac99cf7b911d9aedf7cabe8"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 705,
+    "original_count": 3,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "42cc5cc425b24aeff872d55a073cf6e620fa4004b0645ca9380e3061b35c0d4e"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 785,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "20258f9767d6f50fe300f611d0669f98fde40870ef5e4a6400424b7af38e9aeb"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 862,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "4c551ad500c943f5e03d1af05c8a36c199f8f5e5e6a650ca16ec77e6aa375b77"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 930,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "4967165e59dfaf22af3491aa82902294c4aa9be3ce51b852d692326771adaff8"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 958,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "fb996c30489b825d06a7d0b74a3b9c03379b6d46b5a9e34d43f96c1353e4db22"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 964,
+    "original_count": 2,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "eaadc80f46dc52eb79104d2858b03eb167564e65771b2a363d07a14e6b35aa47"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 1190,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "f976e14a64c02c08848db8dfb8ef525513a2a7a3a9f1fe3c2a6e0d27ab21c03d"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 1211,
+    "original_count": 1,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "82e7213051a31e92a70a2787a6c503ecc7cf729b359111ab10e85c5a5518ee9f"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 1447,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "573bea190ac7e24073f7426bf05e86163d1b8886dbb52fa30753bbe89bb36ace"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 1530,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "2870d4fcabcc4feb2da0679509f220abf57e2825eaa16b0dc03bc616b7a380c8"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 1557,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "8801d3b99ef1928fc82666b85988dd1e717c785271f357d3210a110344121aa7"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 1560,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "a5ca5c4a05125639040098fd04b9903856880b43386b13514ffcfd76a2fa6cdf"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 1605,
+    "original_count": 1,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "3b6465168335d963836b0699877aee4829337260af1c3481743a1920160a8750"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 1606,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "b3698ea2c93309a6876d892a8b8a26996f399272477cace982ec7fae03814b8a"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 1613,
+    "original_count": 2,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "ac6c20d7e983d7d0b28b805f7532c7460987229a2fd0c84502dd16db061cc164"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 1616,
+    "original_count": 2,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "c921320f9974353580ba939cecbf39619d1c91563601aaccb2b72e49cadfa4a7"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 1619,
+    "original_count": 1,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "db732f08588cf57af956e5a7fe63868b6de1d46f1a8c4046429cd7dc676160c3"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 1622,
+    "original_count": 6,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "29a748615c03868f5b41e15bd618971f389a8a843a5607b166ec2f22de316fe4"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 1629,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "4e6b06f51b12394be03b7f70e2ac3eac89b90c213ce4d94059277935a79544e4"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 1979,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "377c09c10b235cba5c5887a2c49fee2930e19336fad083eae1d78fb7fa249e3e"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 2049,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "b93449a6701efa54572d05c8b5afd23c2b742797ad74f6fdfd657c11109c34a6"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 2441,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "a9e7e54d143958cb53ee43d3ea7c4affd54099c36b069bec38c0d66e5dfe6ae2"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+    "original_start": 2459,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "990e432694197c795c47681d8ed18b1c2a3cee402c8c63d412a07ce2012b89ae"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.h",
+    "original_start": 332,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "196b463459840b23a39b5fd948a4b47e8d4ec0b770964429a5bdf11915375b1f"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.h",
+    "original_start": 334,
+    "original_count": 1,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "d362b853d02726a1d64aa1afcf4b0957cad040dea22c1be2e96fdf5c4bd4019d"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.h",
+    "original_start": 359,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "ef950f28aefc62c11e729362d7751c17559a5f50b9c63f1fd71ca66394a801a0"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.cpp",
+    "original_start": 265,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "295f742e636c744b06c06be3f925c4637539d493cc1811813e26c1bd848e6f9c"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.cpp",
+    "original_start": 296,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "a3d2b0eb9f90ce697a4aa1eb15425cf708e4c8b70f38810e29934ae413c6895a"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.cpp",
+    "original_start": 312,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "9e4fb36b2cc09687e4a2dc9df86d3082809c13e6f9a291db2af328add949baca"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.cpp",
+    "original_start": 320,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "3157fed304722b8ff03180901758b6383b7facbc5bdd36137c77a9b28918a521"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.cpp",
+    "original_start": 324,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "28d2ae6b483b86717a82cc4edc27159c059f45c91ac1ce0dca1e03c9a5f97778"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.cpp",
+    "original_start": 392,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "a897fd1e0d3a03207661f3804627d3817d5e2863326fd77bba9596a1ddd25d7f"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.cpp",
+    "original_start": 399,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "f6e90e7bb0cf1245af6edefc7025655cdf0f08d719856b11cbd84536abe104b3"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.cpp",
+    "original_start": 461,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "a8811b9072cb209abe8ece43dcf7f245ab5644ab7333f20d43080e5bd22f6d78"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.cpp",
+    "original_start": 1005,
+    "original_count": 1,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "e4d0ccc11b3e73aca937124785109e7d9d4fe497d510bdff731b93f8be865973"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.cpp",
+    "original_start": 1014,
+    "original_count": 1,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "c55a0da9225e54e49b167dec0fb29c1343f5a5fb541eede0de571bd4ecfda35c"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.cpp",
+    "original_start": 1039,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "3e37275387eae6e1ecdaecfacf144c3ad026afd689bfd79be35d3885e7da3faa"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.cpp",
+    "original_start": 1043,
+    "original_count": 4,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "a3e5518593d8399fd44d082d23cb6966e5a1c9e50f695da9d55d0ac8c742e6b2"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.cpp",
+    "original_start": 1208,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "77d7ec11768a16759b32c00e3cc93d7e9f04686839609a664e854b68472c9bcd"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.cpp",
+    "original_start": 1214,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "209e21bd5a9fb36ca8ad4dea75e5b62594fbfbdaf1f3f901b820b295f20ab287"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.cpp",
+    "original_start": 1220,
+    "original_count": 1,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "09a0ead991601e1560073325baf6e7879917407fdf2d26a656c4d128f18f9c66"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.h",
+    "original_start": 63,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "9de6361810870802c178d788a22a9029e8047c0827457287a9d9a2df6835297c"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.h",
+    "original_start": 88,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "ca096ab552b8a845dd36583e757386f71c951b12ce3d6080dc100ab898e6081c"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.h",
+    "original_start": 117,
+    "original_count": 1,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "04153535b8ede6171df3beb6e445058ea3dc750885a4a34391453f9738ed5a51"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.h",
+    "original_start": 135,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "be65bae6ce3e0e51e6607e54a98f2ab53ca5884b202dc9657d7b4d8014eaacb0"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAEStream.cpp",
+    "original_start": 670,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "b4179cafbabe23f9c667f412fefe567bdb6726cb268662c97f59495c61aebf8c"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/AEBitstreamPacker.cpp",
+    "original_start": 10,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "f50b9db66bd749a7ceb59d6500545f79ef6efa927e6c2b6693d75e2e3e35d45b"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/AEBitstreamPacker.cpp",
+    "original_start": 23,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "4c89ad99993f00fcf831f99ee318e4a6a4e89cfb3e851e7c535cd9a88f48db89"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/AEBitstreamPacker.cpp",
+    "original_start": 35,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "44c0837f882d86ac984c475bb53937138830324900e3d3d11ae05fbfe5215408"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/AEBitstreamPacker.cpp",
+    "original_start": 78,
+    "original_count": 2,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "145fe3faadb21e1f40f56a56253903cdcc89276052b95a9d625b38d2c4d47201"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/AEBitstreamPacker.cpp",
+    "original_start": 104,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "3992eaaa2f0041ef0abc25beb4a726c3c6224620d108140913694916632f4df4"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/AEBitstreamPacker.h",
+    "original_start": 27,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "136974979713751f84e38bb632bcbe989658774dd53850720851654b4d0d775a"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/AEBitstreamPacker.h",
+    "original_start": 34,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "487a84aa71721fd2196f1260e8a7b1bb4ae02b04a24a842fe74ecfc2f7e248a2"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/AEBitstreamPacker.h",
+    "original_start": 45,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "f7d46f1a2af61b02a58f83808dc89d5fbb0d0fa6e4d7f8f6791d0db222b76eb8"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/AEBitstreamPacker.h",
+    "original_start": 48,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "f16733f4bbed407dbda0ea6ee44c08fb27cf8d89e67cf7b6b97aa9c2d56f6219"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/AEBitstreamSilence.cpp",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "dffdc300177a96452e021b2c7c6dcc91df080d01de05374a05043cd04125248f"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/AEBitstreamSilence.h",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "audio-pause-transport",
+    "hunk_sha256": "593658633c00ed72874a42c1642629efb485b8e7cc49a663eb6cf0f7e46d53b4"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/AEStreamInfo.cpp",
+    "original_start": 257,
+    "original_count": 0,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "e0b07deef9fe77714e337ab5b63050792ba09ef8c1dbd00ea781caeb82f773a4"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/AEStreamInfo.cpp",
+    "original_start": 258,
+    "original_count": 0,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "6f83127f961b24329034ddcbff712ccfaeec48e317297149ff07bf2282a36171"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/AEStreamInfo.cpp",
+    "original_start": 259,
+    "original_count": 0,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "7af43a194640c29016c30720ef24228d69c7e1bb33f642e0c4cc6ab5a98b138b"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/AEStreamInfo.cpp",
+    "original_start": 281,
+    "original_count": 1,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "038959329391542e8c11c4efedeeb489133c3b3ef83c9e4a8c15ec433bb0ad17"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/AEStreamInfo.cpp",
+    "original_start": 874,
+    "original_count": 0,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "cdd5b91a9a13b7cd66b0b4dec803fa527d356d8103291336d458b1c69f88bec2"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/AEStreamInfo.cpp",
+    "original_start": 1239,
+    "original_count": 1,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "9c1d0713c3f649f4f35310728c28d1deb58c18e4d2235c2e073f8003404f9160"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/AEStreamInfo.cpp",
+    "original_start": 1516,
+    "original_count": 1,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "fda2d9f76d48c0ffb1d3dcf8d45b82b28b1628039f100fe74e91f37b8c0f1eea"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/AEStreamInfo.h",
+    "original_start": 104,
+    "original_count": 0,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "30baefa26c58f34458548c630bf1268639717099029bcf41c279216a52edcbe9"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/AEStreamInfo.h",
+    "original_start": 109,
+    "original_count": 1,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "ce978e4622b228c144778495a209c5b72db20e9494e052fdd779c74e222297bf"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/AEStreamInfo.h",
+    "original_start": 145,
+    "original_count": 0,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "ca093ef9021148386b21b0e96d7174ae30aaa42e2208ca3fe9b4a9b1cdf33f7c"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/AEStreamInfo.h",
+    "original_start": 193,
+    "original_count": 0,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "cf3f3e4b5633b5f2d344ddff6c176cafd0b8d3773ad3cccb7b8f54a80f5662dc"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/test/CMakeLists.txt",
+    "original_start": 1,
+    "original_count": 1,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "e30dbd6bccefa3c34477702499cd303985bcf0c5eaf6d1fc6a4353add34a83e5"
+  },
+  {
+    "path": "xbmc/cores/AudioEngine/Utils/test/TestAEStreamParser.cpp",
+    "original_start": 0,
+    "original_count": 0,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "a7edd806e438180f3e3b51cadbc9b6ea332ee405a1db7fe32cf62f8f7818e18c"
+  },
+  {
+    "path": "xbmc/cores/DataCacheCore.cpp",
+    "original_start": 888,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "c0b889cf34adc1f6818b583c2292d04a0c51131e6963d9f796bf98bf7936bd77"
+  },
+  {
+    "path": "xbmc/cores/DataCacheCore.h",
+    "original_start": 21,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "10455ac73e24937a4b6b41c6be35173df0109f16bd8a105f2039bdb722d00cb6"
+  },
+  {
+    "path": "xbmc/cores/DataCacheCore.h",
+    "original_start": 284,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "9fec62c0d426b6debebd50553a6bedf810496cc64032fd2206919f68abbf838a"
+  },
+  {
+    "path": "xbmc/cores/DataCacheCore.h",
+    "original_start": 511,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "ce6ea834ee8345a713f8e71d9f6b77ad1e12c023394f7c94f14a3befd74d5e9b"
+  },
+  {
+    "path": "xbmc/cores/IPlayer.h",
+    "original_start": 17,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "660cafc60ef7d326e4a1aa065d5572323f80c11fec632c43c0e174f897a24c24"
+  },
+  {
+    "path": "xbmc/cores/IPlayer.h",
+    "original_start": 173,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "d273281025da4a45c141d104d3b6cc130c2d0c7475ff7cba7d934f1b5d3a99f8"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDClock.cpp",
+    "original_start": 58,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "f6239a0ad9b8e4dd0b6540a9b75359ae29472a6d33c9ef005d712a518c9f8cf9"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDClock.cpp",
+    "original_start": 66,
+    "original_count": 1,
+    "topic": "pause-presenter",
+    "hunk_sha256": "c11e775354d57c6d8a61314902a939a93f36c568a9123ed5733ac86243dab39b"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDClock.cpp",
+    "original_start": 123,
+    "original_count": 1,
+    "topic": "pause-presenter",
+    "hunk_sha256": "97ed957de7e92fb4167155f7a7866e6c3d52dbfed2fc5d41caf3509fa0e06fe5"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDClock.cpp",
+    "original_start": 128,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "f41305c8e839c7734d771288d52c8af3b78cd12f3ff600ab04851cbeb4c5cbff"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDClock.cpp",
+    "original_start": 129,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "3e0185204ad966ac076f32f0911a02922d3ad9c814ce2ee7cc266732cc459844"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDClock.cpp",
+    "original_start": 329,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "9fe324c2cb5f6a19178c232168c650d8995254b29023d07b9396190077ee9589"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDClock.h",
+    "original_start": 26,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "61c13243b1ae00f26041bb1699b83af7578c2374121041b48a2c0019f19a78e3"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDClock.h",
+    "original_start": 43,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "889f34d4af57b451614324e6672698d4a753680cf8da249c11511f687b4a068b"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDClock.h",
+    "original_start": 59,
+    "original_count": 1,
+    "topic": "pause-presenter",
+    "hunk_sha256": "30e3861a248bc20e7db46ebbf847acd2a59c20e797b038d23a7585ad6c2ab458"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDClock.h",
+    "original_start": 70,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "24957bef6c8025f5867f31539536f078cbe67857d209d9dfdfe220dcd6fedec7"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDCodecs/Audio/DVDAudioCodecPassthrough.cpp",
+    "original_start": 60,
+    "original_count": 1,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "e4eecf691800f0fa7b7b56f98299e995604a65c3635edd4d63acecf394a13e0b"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDCodecs/Audio/DVDAudioCodecPassthrough.cpp",
+    "original_start": 97,
+    "original_count": 1,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "104b717a13d3591bd49a08f305874640a3477d9f77656dbccb1d33206864b811"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDCodecs/Audio/DVDAudioCodecPassthrough.cpp",
+    "original_start": 126,
+    "original_count": 1,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "0bff7577c6695940aa02200fb1f9faa060f03187a589bd75cc59251a73fc555c"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDCodecs/Audio/DVDAudioCodecPassthrough.cpp",
+    "original_start": 143,
+    "original_count": 0,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "6e2331427908f697bf4bea2e7236b5e533e7d5597255edaf8cd3ae508311db57"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDCodecs/Audio/DVDAudioCodecPassthrough.cpp",
+    "original_start": 177,
+    "original_count": 0,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "433f76f6ad3a76acdb4a36f740caccacd2d1d6c7c530b623a75e975df9b7a490"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDCodecs/Audio/DVDAudioCodecPassthrough.cpp",
+    "original_start": 189,
+    "original_count": 4,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "a5ea7697f6a8dc66a6af12224e327d49cad05580eb9541890e6b84d009d778fe"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDCodecs/Audio/DVDAudioCodecPassthrough.cpp",
+    "original_start": 289,
+    "original_count": 4,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "503ac66e3bc7655ea9f4960c725a40ae3d806a6ca6e37ee6cfbe9c74ccb50b9b"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDCodecs/Audio/DVDAudioCodecPassthrough.h",
+    "original_start": 136,
+    "original_count": 1,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "92c22b52c640400e92998b15c08a37cdde23eaf924a1f03837d05fc8edcc54eb"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDCodecs/Audio/DVDAudioCodecPassthrough.h",
+    "original_start": 140,
+    "original_count": 4,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "2cd8ce645c83bfbcd480f52c3c26da230d25a845e6bcee41d9c8a05078f6c753"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDCodecs/Video/AMLCodec.cpp",
+    "original_start": 2567,
+    "original_count": 0,
+    "topic": "startup-gate",
+    "hunk_sha256": "77c032fa5e1a9cea938be7eb0713b95fc1467577b05447c1779fab5af20dd593"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecAmlogic.cpp",
+    "original_start": 847,
+    "original_count": 0,
+    "topic": "hdr-v20",
+    "hunk_sha256": "22918c0e009477436e8529713a3c7f0ff7fa69d2ac8da8bc14fff6ba6815e861"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecAmlogic.cpp",
+    "original_start": 858,
+    "original_count": 0,
+    "topic": "hdr-v20",
+    "hunk_sha256": "00429001e5eb86815bbe9417af48431e92cb7c7bc0c364f87fb6176ef75eb332"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecAmlogic.cpp",
+    "original_start": 1060,
+    "original_count": 0,
+    "topic": "hdr-v20",
+    "hunk_sha256": "adf86ed1d9d5fc1a76085f5e7f4dc5e4731a8afdb51d588f2f7cc0d3d5916f81"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecAmlogic.h",
+    "original_start": 144,
+    "original_count": 0,
+    "topic": "hdr-v20",
+    "hunk_sha256": "c462d8309d70a6bc9298aeb7f881108c16b7448c3b3a8be8f19fc697652754a5"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/DVDMessageQueue.h",
+    "original_start": 103,
+    "original_count": 0,
+    "topic": "seek-queue",
+    "hunk_sha256": "b6e3a61a6edb0e6fc53903f082d37b031515cb11238d92d1b8cffb9eb194c14c"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "original_start": 885,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "92c12b4457df5c27a1b961bf40e7df5ec99ffc90671eb0e7dadd92c1bf16b175"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "original_start": 1706,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "5f779ee103d90a837680ff450d33f49abaa8014ad5d176b5620252c4ed0f0aa9"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "original_start": 3125,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "8561defe5c58053ada62003e297b9e65a4fe3a906330ce89ab02b7eca4635d09"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "original_start": 3861,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "8ac0f731adc301f54203a3f6f6b743960d372e6054d7d80ac0984cc8c110bf3d"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "original_start": 3862,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "9a439e4098ccf77e61f7bf6b88fb1a87c0b245ff77343b3d3fd441c9775459d4"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "original_start": 3869,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "91c12d0ad83b90e5119e69bf7cc4df140e2474875de480696f04c97add55551c"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "original_start": 3892,
+    "original_count": 1,
+    "topic": "seek-queue",
+    "hunk_sha256": "10f84a5fdcf19f593cb81a558649daac784e6914583e305adf8ea89908ad007f"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "original_start": 4057,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "de07bc365f5321286a309f4b2704da80bfd6fd2a985f5b6dd3f8295eb352e5d7"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "original_start": 4106,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "58a0967565c056d78154e171a475ba93e26917e213c549f6c6e4b9241ae9104e"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "original_start": 4125,
+    "original_count": 1,
+    "topic": "trickplay-reanchor",
+    "hunk_sha256": "2f3f6b3e4d93f540cc7b9471e51d9cd731a92f3b7080a4067bb7f52cac073568"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "original_start": 4127,
+    "original_count": 1,
+    "topic": "trickplay-reanchor",
+    "hunk_sha256": "10882998b1947a8a0c7bb3b7b4e9eaeaaaeafc25448547e601bab8bcd8a8a436"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "original_start": 4241,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "ca149dd611caaf6e8d4b72669476f4d3140f3ea4d0f9fe6c8723cc840e72a1f8"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "original_start": 4496,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "381129fae17e54a8565c7e2fbe4b19a58ef36278a07e53101314cd2ff59ad6b8"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "original_start": 4525,
+    "original_count": 2,
+    "topic": "trickplay-reanchor",
+    "hunk_sha256": "863725ea504851a878deb24917208a17cd45e62d14783f228f9d286dbc6318cb"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "original_start": 4528,
+    "original_count": 1,
+    "topic": "seek-queue",
+    "hunk_sha256": "ba8cbfd8a4bcc83ed038ce60797ba1bc3c5bad918669b16c05b3db83fddb304f"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "original_start": 4572,
+    "original_count": 1,
+    "topic": "pause-presenter",
+    "hunk_sha256": "495f24a61ec4362bfea77769418d11740a4f08f7b5f8ea1304d37b1aa53e76d8"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "original_start": 5266,
+    "original_count": 1,
+    "topic": "seek-ux",
+    "hunk_sha256": "f5f43b26cdd5ab5c37ac1c812fcfe2e53a664a5a3e778f15c9d661cd540b4e9e"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "original_start": 5273,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "78a6692df4ae5d27c6d8b06cb6ab2eacc157700f99e442e3278bbcbd32e0611d"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "original_start": 5279,
+    "original_count": 2,
+    "topic": "seek-ux",
+    "hunk_sha256": "70829168800cc85c65b6c5d5c42fb11f98ca7f81266c7197216cf46240743fc6"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "original_start": 5286,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "9bd13d6cb1b439f60a46edb60d32165c35e874e4cbe6f2512a34a900ed484ce4"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "original_start": 6024,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "551a4fcdf0fbd38983013809a127ef5cfa365752b5bd83d9320c8cf8aae211c8"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "original_start": 6997,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "581fcaea32ef747395f17b9da93cf525a0a5e7be16d770967a184ae366df3aa6"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+    "original_start": 7390,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "7c2ae5aa479d759c8a8e5eca746e0edd0ef067579e5d128a5e686d4629679561"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.h",
+    "original_start": 338,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "5520a7f85c67fa7fd1ff109f9d98b01d6ed7a298b0a4e3d351ab25d92a285148"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.h",
+    "original_start": 518,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "b3c5c1da9b4063748960c6741202af3fb6cd20be69298d3bd8be92e95911952d"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayer.h",
+    "original_start": 638,
+    "original_count": 0,
+    "topic": "seek-ux",
+    "hunk_sha256": "c69f8b84de72070cd8841928c61d0a3ee0c1f79cac0c2a539889b1690da44c08"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoPlayerAudio.cpp",
+    "original_start": 569,
+    "original_count": 1,
+    "topic": "retained-audio-admission",
+    "hunk_sha256": "811a9c5b0f6c262ccfcad2a0053cd7185ff1415d7a18f8862b5270efeab78555"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/AMLPresenter.h",
+    "original_start": 19,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "f6f9e236deadb71b2f311e96f75b11406c6cba7b4e60292b97fefc4094db178e"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/AMLPresenter.h",
+    "original_start": 51,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "e885babf875e360298bcfcb1f2275a92bce291271783e83b3082232da2f30628"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/AMLPresenter.h",
+    "original_start": 65,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "cc78c45c4d9206f1a2c52e865c3805f80cb65d4df96001ed2a04567437836ab2"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/AMLPresenter.h",
+    "original_start": 460,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "ba81744d41815f81b7de196368d5c91a15486d27c17a2ef3dfabf9bc7e1a824d"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/AMLPresenter.h",
+    "original_start": 462,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "e6e6132e85cf1b1a8698ecdfda585806415f1b8499b168cc72f2090922ace3ee"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/AMLPresenter.h",
+    "original_start": 470,
+    "original_count": 2,
+    "topic": "pause-presenter",
+    "hunk_sha256": "6f108a88e296870c6c26c0c4468cc54f7aab9ee46298798907561d379ce4613b"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/AMLPresenter.h",
+    "original_start": 473,
+    "original_count": 4,
+    "topic": "pause-presenter",
+    "hunk_sha256": "437fcced283ce39f15a8c2ce31e8f553f38a908781cf3fcff1905ef70c27db82"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/AMLPresenter.h",
+    "original_start": 480,
+    "original_count": 1,
+    "topic": "pause-presenter",
+    "hunk_sha256": "11d58c8f2bc4ab2508cb407f2a25e64b2bc8a0ec9958c358df650a7ca69b3ef0"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/AMLPresenter.h",
+    "original_start": 494,
+    "original_count": 1,
+    "topic": "pause-presenter",
+    "hunk_sha256": "6aa47e2ba0a6ed11c921e7ddfb0c4ae36600fe096d229dd5dd3f620896f8de0b"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/AMLPresenter.h",
+    "original_start": 525,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "d2b1a1b27f18ced2b262f089f7231686ab7f1d338e83df4114ea0d49a6d4057f"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/AMLPresenter.h",
+    "original_start": 698,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "f787477dd485c9d9750ad270cca31eb42a462d1a52b2c3559f38c524c7fcf2f5"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/AMLPresenter.h",
+    "original_start": 822,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "625d50f63672a93540c4a1adf2e20d284fbbd84240cd65459870d0faa31e64ff"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/HwDecRender/AMLPresenterSession.h",
+    "original_start": 90,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "3b3928c2fcea12645e88b897bf31d3393ab810b972feb22b9602a55df72b9478"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/HwDecRender/AMLPresenterSession.h",
+    "original_start": 113,
+    "original_count": 1,
+    "topic": "pause-presenter",
+    "hunk_sha256": "de64aa50254e67b20d73f9c9f6c5969a52aa454d97c2ff9e6c1ac55c69541dd5"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/HwDecRender/AMLPresenterSession.h",
+    "original_start": 123,
+    "original_count": 1,
+    "topic": "pause-presenter",
+    "hunk_sha256": "7ff10f617334d6c2f1936e964b4986f728cddb0b15d342b8fe4cdcd4874ffd8d"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/HwDecRender/AMLPresenterSession.h",
+    "original_start": 124,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "42fb40e21e9bf4e15588abb63c0492e2af04103e76c53aea3b8069f0c4fb6ae1"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/RenderManager.cpp",
+    "original_start": 427,
+    "original_count": 1,
+    "topic": "pause-presenter",
+    "hunk_sha256": "89817c470757283c716915588df865e2a342ccc5f03f47f64a07d2c37a0c6814"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/RenderManager.cpp",
+    "original_start": 550,
+    "original_count": 2,
+    "topic": "pause-presenter",
+    "hunk_sha256": "43b998eeb202859c19264aed368671cee0d33248e1c2f640e2d0016c0adc6612"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/RenderManager.cpp",
+    "original_start": 2142,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "4bdaa995506fe4506a19b806bdcd14e58e54f0980f52b73324ec1d3cd93a382e"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/RenderManager.cpp",
+    "original_start": 2168,
+    "original_count": 1,
+    "topic": "pause-presenter",
+    "hunk_sha256": "462b71b863c2eb7e1112ea8bcf1bd64168e6663ae8630c559cf97f25d7474af2"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/RenderManager.cpp",
+    "original_start": 2178,
+    "original_count": 4,
+    "topic": "pause-presenter",
+    "hunk_sha256": "9e223591d95549967f4b9535f1e35dc05858347885aec93071543e3ebfa6f27a"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/RenderManager.cpp",
+    "original_start": 2183,
+    "original_count": 6,
+    "topic": "pause-presenter",
+    "hunk_sha256": "b8c920e08edb76053ee9ba620e32eab564f4ce0c43f89c5007a51c97c78cea5d"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/RenderManager.cpp",
+    "original_start": 2192,
+    "original_count": 1,
+    "topic": "pause-presenter",
+    "hunk_sha256": "d7ecab8dff0c52e4e8ab6f688994441cb5090581c4a6cb80aa0f468a6c34ea92"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/RenderManager.cpp",
+    "original_start": 2217,
+    "original_count": 1,
+    "topic": "pause-presenter",
+    "hunk_sha256": "4ad2e723836aef3a80e1fce5e05cf2cae2b6c2f115f68a98ba7cf8e1ce01ec34"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/RenderManager.cpp",
+    "original_start": 2234,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "cdf5e6c7e9b75ce32f0ac233d686331b6d5b48d77ab0832b7d16885dbdc46dae"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/RenderManager.cpp",
+    "original_start": 2248,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "47509ba36fc3b5337177e154cf9addfbdf4c59a4afe41f998872dec965727952"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/RenderManager.cpp",
+    "original_start": 2403,
+    "original_count": 1,
+    "topic": "pause-presenter",
+    "hunk_sha256": "f15cb1fa86f8c70d1db94b4bddeead49859f0606c40281ce9716cc15a7402941"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/RenderManager.cpp",
+    "original_start": 2431,
+    "original_count": 0,
+    "topic": "pause-presenter",
+    "hunk_sha256": "b92008714931215e13cfaac2e0268c0ede67894057a5d05450f303b972a7bf18"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/RenderManager.cpp",
+    "original_start": 2604,
+    "original_count": 2,
+    "topic": "pause-presenter",
+    "hunk_sha256": "d20b5a5783ff6cf2a8d7994066a963301e9eabc3f807e254c3e149d2c67f1ece"
+  },
+  {
+    "path": "xbmc/cores/VideoPlayer/VideoRenderers/RenderManager.h",
+    "original_start": 287,
+    "original_count": 1,
+    "topic": "pause-presenter",
+    "hunk_sha256": "321695c7ebe7e971e026ad6862605b1226b6f3b103b908a777b92d5b848e437a"
+  },
+  {
+    "path": "xbmc/guilib/guiinfo/PlayerGUIInfo.cpp",
+    "original_start": 139,
+    "original_count": 2,
+    "topic": "seek-ux",
+    "hunk_sha256": "3a903fd60ed9699442f504a14807d083ab323c5a1d60a22def718c886067b9ab"
+  },
+  {
+    "path": "xbmc/guilib/guiinfo/PlayerGUIInfo.cpp",
+    "original_start": 142,
+    "original_count": 1,
+    "topic": "seek-ux",
+    "hunk_sha256": "3b0a2300cfc9004d41e7b7545a3fd3b822abfc0cef42d5bc32eef38ea673e697"
+  },
+  {
+    "path": "xbmc/guilib/guiinfo/PlayerGUIInfo.cpp",
+    "original_start": 184,
+    "original_count": 2,
+    "topic": "seek-ux",
+    "hunk_sha256": "8a6004e64609da6a7abab13cf32c49d73604a0945b328748e93685f7a81997e5"
+  },
+  {
+    "path": "xbmc/settings/Settings.cpp",
+    "original_start": 137,
+    "original_count": 3,
+    "topic": "hdr-v20",
+    "hunk_sha256": "107d68868d4840afaae48e5e2c2e43b7c63a39ce96ab64f516750b7186d975d7"
+  },
+  {
+    "path": "xbmc/settings/Settings.cpp",
+    "original_start": 140,
+    "original_count": 0,
+    "topic": "hdr-v20",
+    "hunk_sha256": "af0a07e4b4428db1cb5457b8ae3d925dae538c34c4ced9de4335d4a0c3bd8639"
+  },
+  {
+    "path": "xbmc/settings/Settings.h",
+    "original_start": 518,
+    "original_count": 0,
+    "topic": "hdr-v20",
+    "hunk_sha256": "778eacbf084f66567b61a33250ac2a11539ccc4b187424de6d6bcbd953b57698"
+  },
+  {
+    "path": "xbmc/settings/Settings.h",
+    "original_start": 584,
+    "original_count": 1,
+    "topic": "ddplus-safety",
+    "hunk_sha256": "2b7ee10cbfe43acb6c55f2344bf401afcd25f93f6ce303c1e8153bdc0529d60c"
+  },
+  {
+    "path": "xbmc/settings/Settings.h",
+    "original_start": 765,
+    "original_count": 0,
+    "topic": "hdr-v20",
+    "hunk_sha256": "30d2ad17fe5b478d6cd791dd34b0f43dd7098dc7384dcd8ad7f8c456ef6de90d"
+  },
+  {
+    "path": "xbmc/settings/lib/Setting.h",
+    "original_start": 301,
+    "original_count": 0,
+    "topic": "manual-lldv",
+    "hunk_sha256": "12e616f7e19dbc3de56f0c6138021c1309ba72fc9a400c9fd1668fc646fef96b"
+  },
+  {
+    "path": "xbmc/utils/AMLUtils.cpp",
+    "original_start": 107,
+    "original_count": 0,
+    "topic": "jvc-sticky-sdr",
+    "hunk_sha256": "1bc9cfcdce954e025e0e84f7028bac4e31ba9c4b2413406656e70615cef3a6d0",
+    "added_line_slice": [
+      1,
+      8
+    ]
+  },
+  {
+    "path": "xbmc/utils/AMLUtils.cpp",
+    "original_start": 1520,
+    "original_count": 0,
+    "topic": "hdr-v20",
+    "hunk_sha256": "792f8d0831a8a4203de687c70ad16e7c7aa61525b85ba9ceaf0bab3caef8d6a7"
+  },
+  {
+    "path": "xbmc/utils/AMLUtils.cpp",
+    "original_start": 2044,
+    "original_count": 0,
+    "topic": "jvc-sticky-sdr",
+    "hunk_sha256": "baa2133bc6d39193ed35bfd8d9657779fd8296ed1ea4539873cb65ea00c92cda"
+  },
+  {
+    "path": "xbmc/utils/AMLUtils.cpp",
+    "original_start": 2152,
+    "original_count": 0,
+    "topic": "startup-gate",
+    "hunk_sha256": "33d2e14d875d27ccb6202b9fbef2dcf5ca12c7b2147f389b033eaf633a66914e"
+  },
+  {
+    "path": "xbmc/utils/AMLUtils.cpp",
+    "original_start": 2214,
+    "original_count": 0,
+    "topic": "hdr-v20",
+    "hunk_sha256": "045541b3d58ae21d59a50450e959a0ae123cf54069bd4110a11582bb2f6b8e02"
+  },
+  {
+    "path": "xbmc/utils/AMLUtils.cpp",
+    "original_start": 2385,
+    "original_count": 0,
+    "topic": "jvc-sticky-sdr",
+    "hunk_sha256": "a3457bf16e50294eff942336cdee4ff92b181d4539a926c5dfd8879939d9cc75"
+  },
+  {
+    "path": "xbmc/utils/AMLUtils.cpp",
+    "original_start": 2449,
+    "original_count": 1,
+    "topic": "jvc-sticky-sdr",
+    "hunk_sha256": "790dcc2cadc1b3da4e8a3c227fdf4f2ed06e8300938fa378c69a20bf9769faae"
+  },
+  {
+    "path": "xbmc/utils/AMLUtils.cpp",
+    "original_start": 2453,
+    "original_count": 1,
+    "topic": "jvc-sticky-sdr",
+    "hunk_sha256": "b6fae28613159cf38941b1ae333c8d427628a7cd53c787451892a1b8b601962b"
+  },
+  {
+    "path": "xbmc/utils/AMLUtils.cpp",
+    "original_start": 2457,
+    "original_count": 0,
+    "topic": "jvc-sticky-sdr",
+    "hunk_sha256": "01367aa12ed36761049c49c4c5a1cc5b90035b68205b99180afd529e2953d074"
+  },
+  {
+    "path": "xbmc/utils/AMLUtils.cpp",
+    "original_start": 2459,
+    "original_count": 2,
+    "topic": "jvc-sticky-sdr",
+    "hunk_sha256": "1351e289ab705ca7845c928c7a917ff751f4218aa1159b89d058bcf5f0f70e2c"
+  },
+  {
+    "path": "xbmc/utils/AMLUtils.cpp",
+    "original_start": 2463,
+    "original_count": 2,
+    "topic": "jvc-sticky-sdr",
+    "hunk_sha256": "d2852e7f8ae2b46a6d3dade8445076fe1c839c29640dd9403b8ecbf78171edee"
+  },
+  {
+    "path": "xbmc/utils/AMLUtils.h",
+    "original_start": 17,
+    "original_count": 0,
+    "topic": "hdr-v20",
+    "hunk_sha256": "90f4c6d8135f47522326753e4478a06dbda0ed5663bf71c215b6f512825034f6"
+  },
+  {
+    "path": "xbmc/utils/AMLUtils.h",
+    "original_start": 206,
+    "original_count": 0,
+    "topic": "hdr-v20",
+    "hunk_sha256": "74d122c0f395c0c3ea97ceecbfc903cbb3cb1b8699d8557e4ed42c9763f7366c"
+  },
+  {
+    "path": "xbmc/utils/AMLUtils.h",
+    "original_start": 221,
+    "original_count": 0,
+    "topic": "startup-gate",
+    "hunk_sha256": "e29e838e9277ef6e95a4163a433322a583d39c14ce4717434b0c4fd8f353e081"
+  },
+  {
+    "path": "xbmc/utils/AMLUtils.h",
+    "original_start": 372,
+    "original_count": 0,
+    "topic": "hdr-v20",
+    "hunk_sha256": "8e2228b3b654991f7224fd193973ef2b6271345752d48d30d64727981f2171d7"
+  },
+  {
+    "path": "xbmc/windowing/amlogic/DolbyVisionAML.cpp",
+    "original_start": 483,
+    "original_count": 0,
+    "topic": "manual-lldv",
+    "hunk_sha256": "627f005ecc37294b5068d52a7daa2d48c2251ee26536f61394db17503f2e8bf9"
+  },
+  {
+    "path": "xbmc/windowing/amlogic/DolbyVisionAML.cpp",
+    "original_start": 537,
+    "original_count": 0,
+    "topic": "manual-lldv",
+    "hunk_sha256": "3575d05f243276b2ab7467b4488325d73ac5913fa7250616d3a85dcc5bd90412"
+  },
+  {
+    "path": "xbmc/windowing/amlogic/DolbyVisionAML.cpp",
+    "original_start": 540,
+    "original_count": 1,
+    "topic": "manual-lldv",
+    "hunk_sha256": "ed5a6184fbc7b86bb46a2dd752662088bdf31b323431aa541da9f3dc65df618e"
+  },
+  {
+    "path": "xbmc/windowing/amlogic/DolbyVisionAML.cpp",
+    "original_start": 763,
+    "original_count": 12,
+    "topic": "manual-lldv",
+    "hunk_sha256": "ad7928565a6893b6abafa8477d99ea5240dab98816fe34327ce761d333dd7a4f"
+  },
+  {
+    "path": "xbmc/windowing/amlogic/DolbyVisionAML.cpp",
+    "original_start": 1048,
+    "original_count": 0,
+    "topic": "hdr-v20",
+    "hunk_sha256": "276d2e79abfca62716b1ae1c158235bd069a9dc65ab7c253d4a7d4eb4c9e0005"
+  },
+  {
+    "path": "xbmc/windowing/amlogic/DolbyVisionAML.cpp",
+    "original_start": 1056,
+    "original_count": 0,
+    "topic": "hdr-v20",
+    "hunk_sha256": "d9548342ca5567a47be94bed426c36a454af826fe41a3707f1e9f9828e01fbbc"
+  },
+  {
+    "path": "xbmc/windowing/amlogic/DolbyVisionAML.cpp",
+    "original_start": 1156,
+    "original_count": 0,
+    "topic": "hdr-v20",
+    "hunk_sha256": "a776d0c2e859696e0a14aa1b0d891574b7ed19aeb632db538c8c7624368f0545"
+  },
+  {
+    "path": "xbmc/windowing/amlogic/DolbyVisionAML.cpp",
+    "original_start": 1240,
+    "original_count": 0,
+    "topic": "manual-lldv",
+    "hunk_sha256": "edc1f829248c72121c186daf309901ebcc45e7aa501384321746a4714d803ff5"
+  },
+  {
+    "path": "xbmc/windowing/amlogic/DolbyVisionAML.cpp",
+    "original_start": 1246,
+    "original_count": 1,
+    "topic": "hdr-v20",
+    "hunk_sha256": "81558cdaa08c1757b4b04b293bbe143d8e2f6a17babbfb09bae2daaa371c5631"
+  },
+  {
+    "path": "xbmc/windowing/amlogic/DolbyVisionAML.cpp",
+    "original_start": 1264,
+    "original_count": 8,
+    "topic": "manual-lldv",
+    "hunk_sha256": "0d14c4fd610a7ca3ae24ce9358e19a47291dc5fc80c535fd5ea507cab59448b5"
+  },
+  {
+    "path": "xbmc/utils/AMLUtils.cpp",
+    "original_start": 107,
+    "original_count": 0,
+    "topic": "hdr-v20",
+    "hunk_sha256": "1bc9cfcdce954e025e0e84f7028bac4e31ba9c4b2413406656e70615cef3a6d0",
+    "added_line_slice": [
+      9,
+      12
+    ]
+  }
+]

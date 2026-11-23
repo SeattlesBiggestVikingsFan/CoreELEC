@@ -1,0 +1,66 @@
+{
+  "validated_upstream": "a4295421f270929315fea42b9e53b00c16e920a5",
+  "source_release": "0aff06e05c4faada67c96a791f8a7e5f3485a29f",
+  "pr151": {
+    "original_commit": "674be07da5f888a12873072d387dab3b198dd428",
+    "upstream_merge": "cc45feab1ee75aa28a7e0922932bd7e49c5ccdf9",
+    "reason": "Original Dim/Black commit and merge are ancestors of validated upstream; GUIWindow production file has no local delta. Retained, not replayed.",
+    "paths": [
+      "xbmc/guilib/GUIWindow.cpp",
+      "tools/test-gui-window-close-animation.py"
+    ],
+    "retained_blobs": {
+      "xbmc/guilib/GUIWindow.cpp": "3b888bf750904eeb4773b47d5a732f80e3c116e2",
+      "tools/test-gui-window-close-animation.py": "9c3bc4d55a91bbda54e39228eef2f74a1dd3192d"
+    },
+    "patch_id": "62932490a4e501c5375237378964dd4fcc4f53d2"
+  },
+  "base_union": {
+    "reason": "Pinned upstream already contains AML paused-input/restart lifecycle, live-L5/timed-text presentation and GUI AFBC buffering. Topic deltas preserve these fields and add accepted pause-step credits; none substitutes for kernel AFBC29 scanout retention.",
+    "production_delta_paths": [
+      "xbmc/SeekHandler.cpp",
+      "xbmc/SeekHandler.h",
+      "xbmc/application/ApplicationPlayer.cpp",
+      "xbmc/application/ApplicationPlayer.h",
+      "xbmc/cores/AudioEngine/CMakeLists.txt",
+      "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.cpp",
+      "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAE.h",
+      "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.cpp",
+      "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAESink.h",
+      "xbmc/cores/AudioEngine/Engines/ActiveAE/ActiveAEStream.cpp",
+      "xbmc/cores/AudioEngine/Utils/AEBitstreamPacker.cpp",
+      "xbmc/cores/AudioEngine/Utils/AEBitstreamPacker.h",
+      "xbmc/cores/AudioEngine/Utils/AEBitstreamSilence.cpp",
+      "xbmc/cores/AudioEngine/Utils/AEBitstreamSilence.h",
+      "xbmc/cores/AudioEngine/Utils/AEStreamInfo.cpp",
+      "xbmc/cores/AudioEngine/Utils/AEStreamInfo.h",
+      "xbmc/cores/AudioEngine/Utils/test/CMakeLists.txt",
+      "xbmc/cores/AudioEngine/Utils/test/TestAEStreamParser.cpp",
+      "xbmc/cores/DataCacheCore.cpp",
+      "xbmc/cores/DataCacheCore.h",
+      "xbmc/cores/IPlayer.h",
+      "xbmc/cores/VideoPlayer/DVDClock.cpp",
+      "xbmc/cores/VideoPlayer/DVDClock.h",
+      "xbmc/cores/VideoPlayer/DVDCodecs/Audio/DVDAudioCodecPassthrough.cpp",
+      "xbmc/cores/VideoPlayer/DVDCodecs/Audio/DVDAudioCodecPassthrough.h",
+      "xbmc/cores/VideoPlayer/DVDCodecs/Video/AMLCodec.cpp",
+      "xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecAmlogic.cpp",
+      "xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecAmlogic.h",
+      "xbmc/cores/VideoPlayer/DVDMessageQueue.h",
+      "xbmc/cores/VideoPlayer/VideoPlayer.cpp",
+      "xbmc/cores/VideoPlayer/VideoPlayer.h",
+      "xbmc/cores/VideoPlayer/VideoPlayerAudio.cpp",
+      "xbmc/cores/VideoPlayer/VideoRenderers/AMLPresenter.h",
+      "xbmc/cores/VideoPlayer/VideoRenderers/HwDecRender/AMLPresenterSession.h",
+      "xbmc/cores/VideoPlayer/VideoRenderers/RenderManager.cpp",
+      "xbmc/cores/VideoPlayer/VideoRenderers/RenderManager.h",
+      "xbmc/guilib/guiinfo/PlayerGUIInfo.cpp",
+      "xbmc/settings/Settings.cpp",
+      "xbmc/settings/Settings.h",
+      "xbmc/settings/lib/Setting.h",
+      "xbmc/utils/AMLUtils.cpp",
+      "xbmc/utils/AMLUtils.h",
+      "xbmc/windowing/amlogic/DolbyVisionAML.cpp"
+    ]
+  }
+}

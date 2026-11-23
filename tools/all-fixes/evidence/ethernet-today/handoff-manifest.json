@@ -1,0 +1,49 @@
+{
+  "artifacts": {
+    "addon-10-to-11.patch": {
+      "bytes": 35448,
+      "sha256": "71a01092343e69bb8f243b2b0c4efdd47447fee4df3a78768fd684a6e105f59d"
+    },
+    "addon-8a-to-10.patch": {
+      "bytes": 5311,
+      "sha256": "f2349b006ade96a6b35cf13263b6c02213847478227ed0b047479da22163cf75"
+    },
+    "addon-8a-to-11.patch": {
+      "bytes": 36747,
+      "sha256": "17b9bd6e0b891a9a0d5300beda514b695d17c27bd185cf2031c06105826b6e2c"
+    },
+    "combined-kernel-ethernet-reconciliation.json": {
+      "bytes": 1229,
+      "sha256": "c3d7863ee8bc9680ac64b19f530e48d83a1e705057cf4d6ae0a9ceb23e586e7c"
+    },
+    "ethernet-component-catalog.json": {
+      "bytes": 47840,
+      "sha256": "77635d830d26eda36d2473d3089dae2579dbb2e95b440997da67a3ccf0fe1c2c"
+    },
+    "export-replay-consistency.json": {
+      "bytes": 1146,
+      "sha256": "431923d14286f2546062c3ff5b1659c94e85529f6db090bd6c224c88a2516e4f"
+    },
+    "framework-10-to-11.patch": {
+      "bytes": 101354,
+      "sha256": "0e8a7b4e0b9f6b7cd013e173a81637a328418f89f3a3fe36ed46366eb5341371"
+    },
+    "framework-8a-to-10.patch": {
+      "bytes": 66510,
+      "sha256": "5137ab5a0127c5a0cfdb93565f31c20f18ed648ec7aeebe1286cb2455dddf025"
+    },
+    "framework-8a-to-11.patch": {
+      "bytes": 143582,
+      "sha256": "a29d83c52e585236ac40220720b2364ef7850107bbbe491f52eb30f591eecc13"
+    },
+    "independent-kernel-owner-reference.json": {
+      "bytes": 689,
+      "sha256": "35f2b8595dfe8e02ae6f39881c2a8e7cec89b3f46f859be3673a0bc407c3237c"
+    }
+  },
+  "catalog_remains_immutable": true,
+  "frozen_source_revision_identity": "ZIP hashes, not invented Git commits/trees or imports of private ancestry",
+  "independent_kernel_reference_is_catalog_supplement": true,
+  "no_new_device_tests_build_publication_or_source_owner_mutation": true,
+  "source_export_mode_note": "ZIP0600 is archive metadata, not source Git mode. Delta entries explicitly intend regular0644; kernel three-path100644 mode comparison is measured. Installed SYSTEM modes are separately pinned."
+}

@@ -1,0 +1,16 @@
+{
+  "prior_manifest_sha256": "687a59f73b9f4b95a5ec7a583aeca04bfbbfb3e6348e1a96e0032ae5cb7da73d",
+  "kodi_recipe": "projects/Amlogic-ce/packages/mediacenter/kodi/package.mk",
+  "PKG_VERSION": "aml-4.9-21.3",
+  "source": "file://${COMBINED_KODI_SOURCE}",
+  "PKG_SKIP_PATCHES": "yes",
+  "compiler": "GCC 13.3",
+  "python": "3.13.18",
+  "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+  "source_commit": "52117bc6027fbca1edfdd508661edba2446a1727",
+  "expected_tree": "f2fc279ff91b8ebaa358aa4e7b9559168048d6d7",
+  "rebuild_required": true,
+  "new_kodi_build_performed": false,
+  "new_dependency_or_recipe_patch_replay": false,
+  "cohort_obligations": "New kodi.bin/settings.xml/English strings.po together; exact libpython3.13.so.1.0 exporting PyThreadState_SetAsyncExc."
+}

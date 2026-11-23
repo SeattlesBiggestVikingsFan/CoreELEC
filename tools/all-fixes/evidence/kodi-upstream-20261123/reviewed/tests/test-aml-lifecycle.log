@@ -1,0 +1,21 @@
+Rejected runtime negative control: stop applies restart blackout
+Rejected runtime negative control: stop inherits restart blackout
+Rejected runtime negative control: stop publishes a GUI handoff
+Rejected runtime negative control: reopen drops blackout
+Rejected runtime negative control: exception strands blackout
+Rejected runtime negative control: open loses preselected pause
+Rejected runtime negative control: speed marks applied before driver update
+Rejected runtime negative control: decoder ignores closed display admission
+Rejected runtime negative control: decoder permit ends before write
+Rejected runtime negative control: mutation skips outer admission
+Rejected runtime negative control: pending reset cleanup runs early
+Rejected runtime negative control: internal loop recovery bypasses gate
+Rejected runtime negative control: failed open reports success
+Rejected runtime negative control: partial open skips unwind
+Rejected runtime negative control: cleanup keeps freed config pointer
+Rejected runtime negative control: completed failure forgotten
+Rejected runtime negative control: wrapper reports terminal failure complete
+Rejected runtime negative control: poll accepts foreign session
+Rejected runtime negative control: poll changes timeout policy
+Rejected runtime negative control: poll errors falsely pace
+Rejected runtime negative control: poll ignores error event flags

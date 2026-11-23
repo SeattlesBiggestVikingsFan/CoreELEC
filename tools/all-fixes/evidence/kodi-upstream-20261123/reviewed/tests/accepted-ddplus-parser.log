@@ -1,0 +1,33 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 12 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 12 tests from TestAEStreamParser
+[ RUN      ] TestAEStreamParser.UntypedJocIsPreservedBeforeDialnormRewrite
+[       OK ] TestAEStreamParser.UntypedJocIsPreservedBeforeDialnormRewrite (0 ms)
+[ RUN      ] TestAEStreamParser.NonJocEac3StillDefeatsDialnorm
+[       OK ] TestAEStreamParser.NonJocEac3StillDefeatsDialnorm (0 ms)
+[ RUN      ] TestAEStreamParser.DemuxTypedAtmosIsPreservedWithoutAnInBandSignal
+[       OK ] TestAEStreamParser.DemuxTypedAtmosIsPreservedWithoutAnInBandSignal (0 ms)
+[ RUN      ] TestAEStreamParser.JocInDependentFrameProtectsTheWholePacket
+[       OK ] TestAEStreamParser.JocInDependentFrameProtectsTheWholePacket (0 ms)
+[ RUN      ] TestAEStreamParser.UnclassifiedAdditionalBsiIsNotRewritten
+[       OK ] TestAEStreamParser.UnclassifiedAdditionalBsiIsNotRewritten (0 ms)
+[ RUN      ] TestAEStreamParser.JocClassificationSurvivesSeekButNotANewTrackHint
+[       OK ] TestAEStreamParser.JocClassificationSurvivesSeekButNotANewTrackHint (0 ms)
+[ RUN      ] TestAEStreamParser.JocObservedWithDefeatOffRemainsProtectedWhenDefeatIsEnabled
+[       OK ] TestAEStreamParser.JocObservedWithDefeatOffRemainsProtectedWhenDefeatIsEnabled (0 ms)
+[ RUN      ] TestAEStreamParser.LateJocIsProtectedAfterTheObjectScanBudget
+[       OK ] TestAEStreamParser.LateJocIsProtectedAfterTheObjectScanBudget (1 ms)
+[ RUN      ] TestAEStreamParser.TypedAtmosAc3CoreIsPreserved
+[       OK ] TestAEStreamParser.TypedAtmosAc3CoreIsPreserved (0 ms)
+[ RUN      ] TestAEStreamParser.OrdinaryAc3StillDefeatsDialnorm
+[       OK ] TestAEStreamParser.OrdinaryAc3StillDefeatsDialnorm (0 ms)
+[ RUN      ] TestAEStreamParser.UntypedEac3TrackPreservesCoreBeforeALateJocDependent
+[       OK ] TestAEStreamParser.UntypedEac3TrackPreservesCoreBeforeALateJocDependent (0 ms)
+[ RUN      ] TestAEStreamParser.ParsedJocProtectsSubsequentAc3CoreAfterSeek
+[       OK ] TestAEStreamParser.ParsedJocProtectsSubsequentAc3CoreAfterSeek (0 ms)
+[----------] 12 tests from TestAEStreamParser (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 12 tests from 1 test suite ran. (2 ms total)
+[  PASSED  ] 12 tests.

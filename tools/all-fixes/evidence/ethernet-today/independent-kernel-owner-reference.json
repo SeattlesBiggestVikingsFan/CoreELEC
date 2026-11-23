@@ -1,0 +1,13 @@
+{
+  "driver_hashes_independently_agree": true,
+  "kernel_owner_receipt_not_binary_cohort_equivalence": true,
+  "original_combined_commit": "2b17ade58f733854821be8b18cf66f5d249bc727",
+  "owner_candidate_commit": "d49892898952cc48768f9faf25b3d095650e3438",
+  "owner_receipt": {
+    "file": "today-ethernet-source-reconciliation.json",
+    "portable_location": "workflow/catalog-today-20261122:evidence/today-ethernet-source-reconciliation.json",
+    "sha256": "53b2d11e09fd5769fa0095fedb17fb74a6b356c452f7ecc8ec8b08e315fb2d56"
+  },
+  "prior_maintained_commit": "f7061e5ca4f174c28614bfc29eed368e7cefafd0",
+  "supplement_to_unchanged_catalog": "ethernet-component-catalog.json"
+}

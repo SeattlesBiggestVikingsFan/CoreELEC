@@ -1,0 +1,7 @@
+frame=0 index=308 pts=3.62637e+09 dropped=1 decoded_hold_admission=0
+frame=1 index=309 pts=3.62641e+09 dropped=1 decoded_hold_admission=0
+frame=2 index=310 pts=3.63325e+09 dropped=0 decoded_hold_admission=1
+frame=3 index=311 pts=3.62646e+09 dropped=1 decoded_hold_admission=0
+frame=4 index=312 pts=3.6333e+09 dropped=0 decoded_hold_admission=1
+NATIVE GETPICTURE PREROLL CHECKS PASS
+PASS: native GetPicture/setter and OutputPicture/start admission; recording hardware/renderer/hold boundaries

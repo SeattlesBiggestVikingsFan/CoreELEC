@@ -1,0 +1,9 @@
+baseline 437 cases; 303 CRC trace assertions; complete behavior recorded
+actual 437 cases; 0 CRC trace assertions; complete behavior recorded
+Dropped raw bursts retain measured sink delay with and without IEC packing
+Baseline 9a90ccab8904ef1cf98b18bc7d1348cf469f33f2: 48668616 behavior bytes identical
+diagnostic 9a90ccab8904ef1cf98b18bc7d1348cf469f33f2 437 cases; 303 CRC trace assertions; complete behavior recorded
+Rejected wrong-offset complete byte/call/offset baseline mismatch
+Rejected missing-fragment ASSERT case 182: ALSA CRC differs from accepted fragments
+Rejected pre-swap-crc ASSERT case 190: sink CRC precedes final byte order
+Rejected codec-header ASSERT case 436: codec CRC includes reserved header

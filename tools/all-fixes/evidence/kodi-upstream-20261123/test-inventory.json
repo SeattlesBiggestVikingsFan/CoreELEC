@@ -1,0 +1,638 @@
+{
+  "candidate_commit": "52117bc6027fbca1edfdd508661edba2446a1727",
+  "tree": "f2fc279ff91b8ebaa358aa4e7b9559168048d6d7",
+  "current_host_runners": 62,
+  "all_passed": true,
+  "current": [
+    {
+      "id": "test-activeae-configure-retry",
+      "exit_code": 0,
+      "source_fixture_sha256": "abde10719d6b97b199a36d56fc7a2a740cea7a0629dac2729599e2ec19653e1f",
+      "evidence": {
+        "id": "reviewed/tests/test-activeae-configure-retry.log",
+        "sha256": "5c08e1c566d9af917049c35a46a4c2f977f26577f56981468ba317611b58720d"
+      }
+    },
+    {
+      "id": "test-activeae-dropped-raw-delay",
+      "exit_code": 0,
+      "source_fixture_sha256": "409b2ee187021431c6aa852a2a916eda740abf27e18c7f201d18e9e53d234b2e",
+      "evidence": {
+        "id": "reviewed/tests/test-activeae-dropped-raw-delay.log",
+        "sha256": "a5c34bcdd434dd26a58029127158cdce90edadcceaa52a3f339b55aca71ef0e5"
+      }
+    },
+    {
+      "id": "test-activeae-duration-families",
+      "exit_code": 0,
+      "source_fixture_sha256": "980a91a27b76b8c7ed6d88d2e322311a738a5404650de1dbfe73e40e02733d7f",
+      "evidence": {
+        "id": "reviewed/tests/test-activeae-duration-families.log",
+        "sha256": "6a69b4f78754d631b37d88f95ff97c15f98308342fd7183fae4e96e18d3aa976"
+      }
+    },
+    {
+      "id": "test-activeae-error-free",
+      "exit_code": 0,
+      "source_fixture_sha256": "7deef223a253789df30e48b53245295f692a9a4b9f8251ac4c6dc2ffd71f04e5",
+      "evidence": {
+        "id": "reviewed/tests/test-activeae-error-free.log",
+        "sha256": "4766ffa38f56bfac0f963b9d03f9d7e2a196a761a0c7517c5d7eb491693e719a"
+      }
+    },
+    {
+      "id": "test-activeae-long-pause",
+      "exit_code": 0,
+      "source_fixture_sha256": "5f235e5dfa902c27bb48e2b832b684924ffc720f0ecec3d3ac5ffda722074311",
+      "evidence": {
+        "id": "reviewed/rechecks/tests/test-activeae-long-pause.log",
+        "sha256": "d2475985a2ac8b30f4228c0d1787a608b3c98e331c8bb8dfa69ceaf409e36f36"
+      }
+    },
+    {
+      "id": "test-activeae-pause-silence",
+      "exit_code": 0,
+      "source_fixture_sha256": "5c826783fa2bd845bb3adc9e2f18ddb31bcfb1dce6d70bcb3a5dbf23f383cedf",
+      "evidence": {
+        "id": "reviewed/tests/test-activeae-pause-silence.log",
+        "sha256": "e795612c7644ab4728406c55af53f436858f98210b1f670db2153fd121f1c676"
+      }
+    },
+    {
+      "id": "test-activeae-paused-packets",
+      "exit_code": 0,
+      "source_fixture_sha256": "bf3fd1f02ed50a467f46ea89a4be980fd0b88cdec3e96c7a25d0d2fbbf87d1a2",
+      "evidence": {
+        "id": "reviewed/tests/test-activeae-paused-packets.log",
+        "sha256": "6a20eddc0c0c240089d7b2599e3ee54ee351c908b20b7ef4dd98c803caf0212f"
+      }
+    },
+    {
+      "id": "test-activeae-resume-epoch",
+      "exit_code": 0,
+      "source_fixture_sha256": "76ec2470896cc051aba3b487fdbe73b4a51dff05f6a51dbbe96e5547e0f65bca",
+      "evidence": {
+        "id": "reviewed/tests/test-activeae-resume-epoch.log",
+        "sha256": "df87449bfa8fbdd6b904389dc2afbdb3d05aaa3a8ccdce35ba08fcb08e9c47d9"
+      }
+    },
+    {
+      "id": "test-activeae-stream-flush",
+      "exit_code": 0,
+      "source_fixture_sha256": "bb6906f4b5b61df5aa1977d006cfc1e866f6f2bcf2755afb98d94eb8a32bdb83",
+      "evidence": {
+        "id": "reviewed/tests/test-activeae-stream-flush.log",
+        "sha256": "da44c5c28eba40bec587a1bbe8735fc7fd5c4aef336b31e7aea22acddd1b2932"
+      }
+    },
+    {
+      "id": "test-activeae-threaded-barrier",
+      "exit_code": 0,
+      "source_fixture_sha256": "4b31396baa2344c64e77ef84e72fbc157c8cffeb5dd91432db9245b23561df92",
+      "evidence": {
+        "id": "reviewed/tests/test-activeae-threaded-barrier.log",
+        "sha256": "09db92f7ea40cff765cfdbc2650aeb3d04260959bcf1b2bad60447f70027e6e2"
+      }
+    },
+    {
+      "id": "test-activeae-truehd-sync",
+      "exit_code": 0,
+      "source_fixture_sha256": "37cb1492e7721d2bfb768e84550933af6d31dc5b85e444736c3aa0efa309e34a",
+      "evidence": {
+        "id": "reviewed/tests/test-activeae-truehd-sync.log",
+        "sha256": "783d7ba22a1a1d617222d3f894283f7ebbebc54f0941f9aec1063000e54e3dd9"
+      }
+    },
+    {
+      "id": "test-aml-dv-manager-dependency",
+      "exit_code": 0,
+      "source_fixture_sha256": "7961e40df4ba12d49990a0eb749e76bf4dfa8ee49a2c845e6c301331ae5f8f16",
+      "evidence": {
+        "id": "reviewed/tests/test-aml-dv-manager-dependency.log",
+        "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+      }
+    },
+    {
+      "id": "test-aml-dv-options",
+      "exit_code": 0,
+      "source_fixture_sha256": "88e418597e43fafba4716a607c353337652b71a86e478047d2e5f6da11f621b9",
+      "evidence": {
+        "id": "reviewed/tests/test-aml-dv-options.log",
+        "sha256": "e7f694bcf6bfe21f474b4f2a5a97d80f5fa36d59e627fbc6d6e8bc39e11959cf"
+      }
+    },
+    {
+      "id": "test-aml-dv-preset-read",
+      "exit_code": 0,
+      "source_fixture_sha256": "56762720e9355aa9e77c86a68c80ee839203f89fb73f7c250f1d8e252f76433b",
+      "evidence": {
+        "id": "reviewed/tests/test-aml-dv-preset-read.log",
+        "sha256": "ddedc445ffe6370c4d2430ce36bc9103ef23188e0b324ae8b57c07eacf476b62"
+      }
+    },
+    {
+      "id": "test-aml-dv-setting-locks",
+      "exit_code": 0,
+      "source_fixture_sha256": "fd6f5eca960b0a498e44b7fd9bc672ffb2ea5e30a44480d52f1a1b3470a53c71",
+      "evidence": {
+        "id": "reviewed/tests/test-aml-dv-setting-locks.log",
+        "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+      }
+    },
+    {
+      "id": "test-aml-lifecycle",
+      "exit_code": 0,
+      "source_fixture_sha256": "39143e8830f1b0adb1f68fc30c7c3cbd79c05be87dd2e1bfbae5b8e2e6d95ee5",
+      "evidence": {
+        "id": "reviewed/tests/test-aml-lifecycle.log",
+        "sha256": "d10b3dc1ac94ba15324c6ea9dc6374871ddd114c03eb42c864381c0eb7e7a0a8"
+      }
+    },
+    {
+      "id": "test-aml-mute-renderer",
+      "exit_code": 0,
+      "source_fixture_sha256": "f05c821654c6dd10410ffbb2ba9c469520cd8601cb27c19a69248b2af2907798",
+      "evidence": {
+        "id": "reviewed/tests/test-aml-mute-renderer.log",
+        "sha256": "95490e56d47610d3adf2f59f47447ee406498bd9037b4b2ba81cc55e185674c5"
+      }
+    },
+    {
+      "id": "test-aml-native-continuation",
+      "exit_code": 0,
+      "source_fixture_sha256": "50afb3ffa3ae3862e1be6a34d0e89c296038774c178db446a15a5d56e631750e",
+      "evidence": {
+        "id": "reviewed/tests/test-aml-native-continuation.log",
+        "sha256": "15f15569b8952486efd84ce4c0a5b55be54f5ad05abf8114e76f80f0a4b9922c"
+      }
+    },
+    {
+      "id": "test-aml-native-settings",
+      "exit_code": 0,
+      "source_fixture_sha256": "1a206228a68a9382b5688583c8088fece11717f48505ffa02216c4c540e0dd67",
+      "evidence": {
+        "id": "reviewed/tests/test-aml-native-settings.log",
+        "sha256": "abfd304607578c2d6f375180201a9d0ce44212f9ff80be4931f4f8186546b798"
+      }
+    },
+    {
+      "id": "test-aml-preroll",
+      "exit_code": 0,
+      "source_fixture_sha256": "f75bd298b508896cfb24c49f0bd3f843903d96da2cfefc018a874d94a52f45a9",
+      "evidence": {
+        "id": "reviewed/tests/test-aml-preroll.log",
+        "sha256": "a416cd0766a952d9932ebcb6d2b98b7121072445a68b4bbf2ccad741ea481ebd"
+      }
+    },
+    {
+      "id": "test-aml-presenter-cadence",
+      "exit_code": 0,
+      "source_fixture_sha256": "cd6819e749ab2d2b96609ed8f6a1ab4b8c04a10e1a92a8c6c69708c1a899a844",
+      "evidence": {
+        "id": "reviewed/tests/test-aml-presenter-cadence.log",
+        "sha256": "113b7cdee2150d9c0cf1ad8b05ecb5bfc269dde0f18b43eb4d1585e8ef100184"
+      }
+    },
+    {
+      "id": "test-aml-presenter-setting",
+      "exit_code": 0,
+      "source_fixture_sha256": "22be5240f0b3287b1b9d5a51a724a0db09fbd2dd8f1acfe5cbe119c749fdb216",
+      "evidence": {
+        "id": "reviewed/tests/test-aml-presenter-setting.log",
+        "sha256": "64b61e7b6fb90ce8abe1bd1f4b6eb5762952d4ef2d4edbba27c5a9c5bef490a9"
+      }
+    },
+    {
+      "id": "test-aml-presenter-step-invalidation",
+      "exit_code": 0,
+      "source_fixture_sha256": "2816df6f32a78bb519acdb1a0dea45b4ceb9092d4f377edb58fbd45834bc453b",
+      "evidence": {
+        "id": "reviewed/tests/test-aml-presenter-step-invalidation.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "id": "test-aml-presenter",
+      "exit_code": 0,
+      "source_fixture_sha256": "0c4ee85bf7f37eca2a48d2d77971879c607b48edecdf287df6352008731eb205",
+      "evidence": {
+        "id": "reviewed/tests/test-aml-presenter.log",
+        "sha256": "df9b449c3fc4eb08c2fe23683b24632f5196cb0790c6e884c9ff1afa1788fe78"
+      }
+    },
+    {
+      "id": "test-aml-restart-hold",
+      "exit_code": 0,
+      "source_fixture_sha256": "0f40760b3c7ec03123c0a2061afc8d28e6c8d62fedfe9de51f4ece49496fb2bb",
+      "evidence": {
+        "id": "reviewed/tests/test-aml-restart-hold.log",
+        "sha256": "a5e601cf385ad789f1b1080ccff2a8428cd4fa04fa14d5e6620653ea3cbe3e42"
+      }
+    },
+    {
+      "id": "test-aml-seek-clock",
+      "exit_code": 0,
+      "source_fixture_sha256": "21c50f65df2046f1526194d31fba1efcc68344e1c979507649f51e968cf774c0",
+      "evidence": {
+        "id": "reviewed/tests/test-aml-seek-clock.log",
+        "sha256": "e8bea246dfaabf2bddea9ae96d50647c1373b3ab905871ad927a13e6c8917a4e"
+      }
+    },
+    {
+      "id": "test-aml-window-lifecycle",
+      "exit_code": 0,
+      "source_fixture_sha256": "a19962597223ac9c90395e67d740dbde1faefa8a8139dd37a98c4527af3b2685",
+      "evidence": {
+        "id": "reviewed/tests/test-aml-window-lifecycle.log",
+        "sha256": "f739ad337ac056e6aeab95457940565d7761632e3f3095f367d5685633e4751d"
+      }
+    },
+    {
+      "id": "test-audio-frame-admission",
+      "exit_code": 0,
+      "source_fixture_sha256": "e69dbd7a2354fcc71dc3d7f27119cf09a9fce18a92649dc113dd04e96f80b5aa",
+      "evidence": {
+        "id": "reviewed/tests/test-audio-frame-admission.log",
+        "sha256": "f6d06a36e120d3ca2ef82da4d6d4524676fa817be46c366ffff9f3633e9b74f3"
+      }
+    },
+    {
+      "id": "test-audio-recovery-seek",
+      "exit_code": 0,
+      "source_fixture_sha256": "fbf2562985b50437a3ddaae9f10821e3cfd605bea936fdb3601517da171cebbc",
+      "evidence": {
+        "id": "reviewed/tests/test-audio-recovery-seek.log",
+        "sha256": "0edc6188ca1e6d8c6d9d1f3c5d016fa34d6c76f97d7b6138860067b2e61a9fec"
+      }
+    },
+    {
+      "id": "test-chapter-seek-intent",
+      "exit_code": 0,
+      "source_fixture_sha256": "5053e538abae9e83c0e8bb16a184ef713fe2337b8304911197a9ac4364686e96",
+      "evidence": {
+        "id": "reviewed/tests/test-chapter-seek-intent.log",
+        "sha256": "f0351acd142921c56e8e7d70bc934f4a890e3f92f4a0c3865772a294bb1a179f"
+      }
+    },
+    {
+      "id": "test-dvd-clock-locking",
+      "exit_code": 0,
+      "source_fixture_sha256": "01a08e479ab36c47e82dc3c92388fc449b1015fafcf8e06c030316a9b042f3db",
+      "evidence": {
+        "id": "reviewed/tests/test-dvd-clock-locking.log",
+        "sha256": "7b986b070adba05f50408fd6bdb94cdf6d685cd3a7db4cfb645446855ec48d55"
+      }
+    },
+    {
+      "id": "test-hdr10-seamless-setting",
+      "exit_code": 0,
+      "source_fixture_sha256": "5f172b878f9349115c7e0d2dc59b1daeb95f59e72b77490d30c08dd488574bba",
+      "evidence": {
+        "id": "reviewed/tests/test-hdr10-seamless-setting.log",
+        "sha256": "48fb8760bfd1e89ac0ed96dadd32c3e20299891bf59d95264c75950cce51eb16"
+      }
+    },
+    {
+      "id": "test-paused-trickplay-return",
+      "exit_code": 0,
+      "source_fixture_sha256": "757bc8bad35a5943defe561924d3fb8dbe8a41dd585c7ab35175d006b42985a3",
+      "evidence": {
+        "id": "reviewed/tests/test-paused-trickplay-return.log",
+        "sha256": "853a42b935422d1115ad932e4f9a8b99cc3e5e3e37b870417fe211354870a64e"
+      }
+    },
+    {
+      "id": "test-player-lifecycle",
+      "exit_code": 0,
+      "source_fixture_sha256": "ef614c5fa4a9c9090c2b3635fcb58c1cd44a55b513780fe77e8463de04254b51",
+      "evidence": {
+        "id": "reviewed/tests/test-player-lifecycle.log",
+        "sha256": "5b26cc0e262eb77844d7527ac6aca3223f5bd4798196828e801f6e0ab9d64d68"
+      }
+    },
+    {
+      "id": "test-player-retirement",
+      "exit_code": 0,
+      "source_fixture_sha256": "4617e211fa48a02f6bb432a432fca28559052427b73511d6c783bdedad5a39bf",
+      "evidence": {
+        "id": "reviewed/tests/test-player-retirement.log",
+        "sha256": "0814e3a7097ec779c12b56c7b4d3c25b33b54da330d9dd56485208c64d6cbae3"
+      }
+    },
+    {
+      "id": "test-presenter-invalidation-lifetime",
+      "exit_code": 0,
+      "source_fixture_sha256": "0ef697b5e03560757e2dcbec5028d263790c4034ff41529041198b784835b4a3",
+      "evidence": {
+        "id": "reviewed/tests/test-presenter-invalidation-lifetime.log",
+        "sha256": "15bdde7faaba220f1d1273b970147c4482a01b733c77a8d46a6478b397f338f6"
+      }
+    },
+    {
+      "id": "test-render-lifecycle",
+      "exit_code": 0,
+      "source_fixture_sha256": "d1c0a414951d66dcdcee10f24927577ffd051c387fbda486b33c86a4065e173a",
+      "evidence": {
+        "id": "reviewed/tests/test-render-lifecycle.log",
+        "sha256": "d0cb44fba94722a57b63c8fb6f99c3e699e7768eb4517c5e19d9bcbfdc90c0cb"
+      }
+    },
+    {
+      "id": "test-render-video-admission",
+      "exit_code": 0,
+      "source_fixture_sha256": "ef42337d8e63f938d27701da0acc2f7ce111384fe481c169b8ebba631738479d",
+      "evidence": {
+        "id": "reviewed/tests/test-render-video-admission.log",
+        "sha256": "17466672469e3f195bb2e8fa9ba02859e4f84c5ebb39a55790661a2d4136f75e"
+      }
+    },
+    {
+      "id": "test-seamless-profile-migration",
+      "exit_code": 0,
+      "source_fixture_sha256": "69d23b1a7f0d544f77d6856190829a79c4efffc17be52b84722472c8b6ccc087",
+      "evidence": {
+        "id": "reviewed/tests/test-seamless-profile-migration.log",
+        "sha256": "0858aaff3e9e1340fe4d777d56c823c5fa84b672f9644b8d51a9b0384bdbba1b"
+      }
+    },
+    {
+      "id": "test-seek-preview-origin",
+      "exit_code": 0,
+      "source_fixture_sha256": "8d21c80782485a43aefe5d8c861e0554d8b35ccfa0fdca6a1c72a7f8ad3fd570",
+      "evidence": {
+        "id": "reviewed/tests/test-seek-preview-origin.log",
+        "sha256": "5caf7ad573205ffb23400585a26977dbe2ab710ac68560da4ec615beeb17e71e"
+      }
+    },
+    {
+      "id": "test-seek-timeline-marker",
+      "exit_code": 0,
+      "source_fixture_sha256": "33149937d71c748e02c5a239ae92abc36dc96c3b97a245bcf3b54da4a5cb248b",
+      "evidence": {
+        "id": "reviewed/tests/test-seek-timeline-marker.log",
+        "sha256": "002ee1e755f9c70c8a95da436ef7c7ce10541f93226c16d457af4bf60dd220d9"
+      }
+    },
+    {
+      "id": "test-truehd-delivery",
+      "exit_code": 0,
+      "source_fixture_sha256": "ba284d071130c890cc43ef314964ee7e46b46d346516e34a25c07ec5789f8ac2",
+      "evidence": {
+        "id": "reviewed/tests/test-truehd-delivery.log",
+        "sha256": "1fe79f2d6e8a520afe82b7e2aa437f9bec98db9d5942c75ef78b0aa91e671597"
+      }
+    },
+    {
+      "id": "test-video-timeout-recovery",
+      "exit_code": 0,
+      "source_fixture_sha256": "1ee41333b58d0df0ac3e964a38d6332a97272f890507dbe7dcbf39016edf8639",
+      "evidence": {
+        "id": "reviewed/tests/test-video-timeout-recovery.log",
+        "sha256": "c3502fd80db653510d1e6d6e61c9a7c8f28e2859dbc665ca08c22398fe931d39"
+      }
+    },
+    {
+      "id": "test-python-forced-shutdown",
+      "exit_code": 0,
+      "source_fixture_sha256": "1c504948c84d13d53293a785c08d59f74bf6e76236f007380a56d5c7cfff8986",
+      "evidence": {
+        "id": "reviewed/tests/test-python-forced-shutdown.log",
+        "sha256": "67357884b47b2827fe257b422a8382be2dea9affd6f1abb252ca3c14bf303e29"
+      }
+    },
+    {
+      "id": "test-lldv-vsif-suppress-setting",
+      "exit_code": 0,
+      "source_fixture_sha256": "27cd0609c47b431bfb682d8a8625a5e9ea8e103324498c6ba55d4815131ebed4",
+      "evidence": {
+        "id": "reviewed/tests/test-lldv-vsif-suppress-setting.log",
+        "sha256": "a19feee95053fa7034637adcef17133e0954570f7325adc0ba63d436224adfab"
+      }
+    },
+    {
+      "id": "test-dts-dialnorm",
+      "exit_code": 0,
+      "source_fixture_sha256": "35fc14a1fe5564bd98db3f8b1ac7ecce39c59125fe4a25c4232d8decee661740",
+      "evidence": {
+        "id": "reviewed/tests/test-dts-dialnorm.log",
+        "sha256": "ac340c2a6860830e108ba5db92bbbd055d6a9751eb37286aa019133985bfd8b2"
+      }
+    },
+    {
+      "id": "test-pcm-layouts",
+      "exit_code": 0,
+      "source_fixture_sha256": "dda63afa4f0962d5424637ef83ea533ebfa8ad53538ba8923c7143f3ff9cd153",
+      "evidence": {
+        "id": "reviewed/rechecks/tests/test-pcm-layouts.log",
+        "sha256": "3adf429eb38b908bd66e63bfb2049d63c45ecd7a1a3d5e2a012e20aa8ec89347"
+      }
+    },
+    {
+      "id": "test-curl-stat-interrupt",
+      "exit_code": 0,
+      "source_fixture_sha256": "3f8efdc73d8857f8bd5f52282db0db28fef036b879ffc80221d9b96ad95fe883",
+      "evidence": {
+        "id": "reviewed/rechecks/tests/test-curl-stat-interrupt.log",
+        "sha256": "7ce26d397d69f18152a9814239ca5ddcc401a3e42e676fdd12f7df913868e65e"
+      }
+    },
+    {
+      "id": "test-image-download-classification",
+      "exit_code": 0,
+      "source_fixture_sha256": "ebaa4945a3f6ffdf14a095a581cadf4f9b39135e814bae1a9fbe394fdd2dfa32",
+      "evidence": {
+        "id": "reviewed/tests/test-image-download-classification.log",
+        "sha256": "a214c94df723636c69d261904830b77e95d919371cc1c89382d4c4b677257826"
+      }
+    },
+    {
+      "id": "test-image-download-lane",
+      "exit_code": 0,
+      "source_fixture_sha256": "6939867929a9704cd046aef294d33dfdf3e31edfbc9a3a4def072f30053b71c9",
+      "evidence": {
+        "id": "reviewed/tests/test-image-download-lane.log",
+        "sha256": "175580d87cf8fb484199e26165f7279b0b885845f70d28ed3829905536ad5146"
+      }
+    },
+    {
+      "id": "test-texture-cache-interrupt",
+      "exit_code": 0,
+      "source_fixture_sha256": "b4e8ce0ae34baf731527f243fc9ccbd6a1c613c064856ce1c38347724c17b6db",
+      "evidence": {
+        "id": "reviewed/tests/test-texture-cache-interrupt.log",
+        "sha256": "dc4a4496eb5e3d234838915e2b491bfdf8fc794567be214b8f69b82527b3e24e"
+      }
+    },
+    {
+      "id": "test-wake-on-access-interrupt",
+      "exit_code": 0,
+      "source_fixture_sha256": "40e40706fdf3ea689515cb276c414c40b540af99b103a515d144d509602ac169",
+      "evidence": {
+        "id": "reviewed/tests/test-wake-on-access-interrupt.log",
+        "sha256": "f90087dba73ab99006c86bfb541532c0ebb15b501de855f2d8cbf803581d3aa6"
+      }
+    },
+    {
+      "id": "test-aml-texture-upload-hardening",
+      "exit_code": 0,
+      "source_fixture_sha256": "b5f825d715b8d002b87e95357d63982743ec80e9c906b4280508bcadbb88b0de",
+      "evidence": {
+        "id": "reviewed/tests/test-aml-texture-upload-hardening.log",
+        "sha256": "b0c86cdb847b57f3de2d3a9714299c7bf1a13c6286a0540f4e909bbdd3dddc68"
+      }
+    },
+    {
+      "id": "test-image-upload-demand",
+      "exit_code": 0,
+      "source_fixture_sha256": "0049442606b90cfc106fb750142a8ce26fde24407cbf6e2fd4040f3f55721e72",
+      "evidence": {
+        "id": "reviewed/tests/test-image-upload-demand.log",
+        "sha256": "dd68109ca9efccf5d3f05057d2a17d574a7dd5fee3cfa1b5bf55f56d33297343"
+      }
+    },
+    {
+      "id": "test-gui-background-defer",
+      "exit_code": 0,
+      "source_fixture_sha256": "76739fde8a9be64c9c080351e3b6249137a0a27df754cd871e957b544c0aae7d",
+      "evidence": {
+        "id": "reviewed/tests/test-gui-background-defer.log",
+        "sha256": "f975f42b2a294527863abf2cd2865eb16600dfc4a4824e9b489f02157629b1f2"
+      }
+    },
+    {
+      "id": "test-seek-marker-review-retirement-preview",
+      "exit_code": 0,
+      "source_fixture_sha256": null,
+      "evidence": {
+        "id": "reviewed/rechecks/tests/test-seek-marker-review-retirement-preview.log",
+        "sha256": "5281598eb6fca8f6c9e0a13dd6a966e0df0a38155ed74887ed72c4cebd6b7162"
+      }
+    },
+    {
+      "id": "test-seek-marker-review-retirement-commit",
+      "exit_code": 0,
+      "source_fixture_sha256": null,
+      "evidence": {
+        "id": "reviewed/rechecks/tests/test-seek-marker-review-retirement-commit.log",
+        "sha256": "b612113c7f98b20b5020f7ebafbf0a8271d551e4416434481d6c251966cfa0ef"
+      }
+    },
+    {
+      "id": "test-seek-marker-review-queued-speed",
+      "exit_code": 0,
+      "source_fixture_sha256": null,
+      "evidence": {
+        "id": "reviewed/rechecks/tests/test-seek-marker-review-queued-speed.log",
+        "sha256": "c95ad4a83eb4349ca35cb80273b99db3b806e9ed6f5cbd198e0b449fadb104ad"
+      }
+    },
+    {
+      "id": "test-seek-marker-review-rejected-queue-keeps-older",
+      "exit_code": 0,
+      "source_fixture_sha256": null,
+      "evidence": {
+        "id": "reviewed/rechecks/tests/test-seek-marker-review-rejected-queue-keeps-older.log",
+        "sha256": "4ce8e30c802419c9153dbb0011e302f46fc4b44a7a3eaf6222bff668803d4379"
+      }
+    },
+    {
+      "id": "test-seek-marker-review-chapter-supersession",
+      "exit_code": 0,
+      "source_fixture_sha256": null,
+      "evidence": {
+        "id": "reviewed/rechecks/tests/test-seek-marker-review-chapter-supersession.log",
+        "sha256": "b4373673a1faa1e0c0d16d488d4e874ba2cac51a04ef7e52059ab8167e06651a"
+      }
+    },
+    {
+      "id": "test-seek-marker-review-stack-accurate-overlap",
+      "exit_code": 0,
+      "source_fixture_sha256": null,
+      "evidence": {
+        "id": "reviewed/rechecks/tests/test-seek-marker-review-stack-accurate-overlap.log",
+        "sha256": "30995aaf5f94a635739cf461c19111d16dd38c1d45020916a306389bd7151da2"
+      }
+    },
+    {
+      "id": "frame-pacing",
+      "exit_code": 0,
+      "source_fixture_sha256": null,
+      "evidence": {
+        "id": "reviewed/rechecks/tests/frame-pacing.log",
+        "sha256": "e5dd6e8ba71eab749590c765948fc23d9b4894514e528b0c45a3dd84c35f3824"
+      }
+    }
+  ],
+  "native_groups": [
+    {
+      "id": "accepted-ddplus-parser",
+      "exit_code": 0,
+      "source_files": [
+        {
+          "id": "xbmc/cores/AudioEngine/Utils/AEStreamInfo.cpp",
+          "sha256": "24642a818cf4195b19d892a81b76ae674e873cbc7b41442bbe3764ba1ae02465"
+        },
+        {
+          "id": "xbmc/cores/AudioEngine/Utils/test/TestAEStreamParser.cpp",
+          "sha256": "fa990914a7126f17ae7cf398e70bbd783bad2e6afda522c7c2d8a32cee12730e"
+        }
+      ],
+      "evidence": {
+        "id": "reviewed/tests/accepted-ddplus-parser.log",
+        "sha256": "bc3e9911fbdb2936eab58d9bc0c2f3f422b791a759a818b55e58e6a00d96b325"
+      }
+    },
+    {
+      "id": "upstream-hdr10plus-bounds",
+      "exit_code": 0,
+      "source_files": [
+        {
+          "id": "xbmc/utils/BitstreamReader.cpp",
+          "sha256": "8200973a6ea4284c0d5a7389aedc756b8a969eddf007600931772c2c207eb7d4"
+        },
+        {
+          "id": "xbmc/utils/HDR10Plus.cpp",
+          "sha256": "454d65b88a96f5dfa581a01f43254d6c7fc3263ee50a9600790d4b71092a6713"
+        },
+        {
+          "id": "xbmc/utils/HevcSei.cpp",
+          "sha256": "f9e62f21d82396fe3b1de2fddb2aca0b28c2ad2c2c4259d52b44b7521b5c80d5"
+        },
+        {
+          "id": "xbmc/utils/test/TestHevcSei.cpp",
+          "sha256": "58c53d8ab89fb1bf3802154a539b06154063c16c9903bcfe5af56f58fea93634"
+        }
+      ],
+      "evidence": {
+        "id": "reviewed/tests/upstream-hdr10plus-bounds.log",
+        "sha256": "f86ce5ba280a16ab320ec4a9dac0975c33f7943b436ecc00bdebd8bb58b9bb2b"
+      }
+    }
+  ],
+  "independent_replay_host_runners": 22,
+  "independent_replay_native_groups": 2,
+  "initial_findings": [
+    {
+      "id": "test-activeae-long-pause",
+      "initial_exit": 1,
+      "resolved": true,
+      "resolution": "Bind existing long-pause harness to actual upstream IEC packet header; retain assertions."
+    },
+    {
+      "id": "test-pcm-layouts",
+      "initial_exit": 1,
+      "resolved": true,
+      "resolution": "Restore public host headers/libraries in new evidence only; not a target/source failure."
+    },
+    {
+      "id": "test-curl-stat-interrupt",
+      "initial_exit": 1,
+      "resolved": true,
+      "resolution": "Restore public host headers/libraries in new evidence only; not a target/source failure."
+    }
+  ],
+  "baseline_existing_gaps": "Unrelated historical skin-reload/disc-hold compile gaps and legacy frame-selection failure remain documented in inherited original-control receipts.",
+  "old_preroll_fixture": "Existing accepted AML lifecycle/gating regression name; does not select pending pre-roll v13c or UX12.",
+  "target_or_production_build": false,
+  "physical_pcm_channel_acceptance": false
+}

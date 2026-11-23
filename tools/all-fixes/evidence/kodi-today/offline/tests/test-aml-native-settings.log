@@ -1,0 +1,8 @@
+PASS: ordered native settings continuations, policy and retirement (ASan/UBSan)
+REJECTED: callback performs native write
+REJECTED: bypass admission
+REJECTED: lose coalescing/order
+REJECTED: lose changes during apply
+REJECTED: drop rest of failed batch
+REJECTED: ignore playback policy
+REJECTED: omit L5 flags
