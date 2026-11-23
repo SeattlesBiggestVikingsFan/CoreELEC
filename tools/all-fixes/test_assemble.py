@@ -330,6 +330,27 @@ class AssemblyTests(unittest.TestCase):
         self.assertEqual(result["components"]["example"]["commit"], self.base)
         self.assertEqual(a.text(output / "example", "rev-parse", "HEAD"), self.base)
 
+    def test_bootstrap_ancillary_topics_reconstruct_without_upstream_fetch(self):
+        component = self.manifest["components"]["example"]
+        component["pinned_source"] = {"commit": self.base}
+        self.manifest_path.write_text(json.dumps(self.manifest))
+        sources = self.root / "topic-sources.private.json"
+        a.write(sources, {"example": str(self.repo)})
+        with self.assertRaisesRegex(a.Failure, "pinned_source.tree"):
+            a.bootstrap(self.manifest_path, self.root / "unsealed-base-tree", sources)
+        component["pinned_source"]["tree"] = a.text(self.repo, "rev-parse", self.base + "^{tree}")
+        self.manifest_path.write_text(json.dumps(self.manifest))
+        output = self.root / "ancillary-topics"
+        a.bootstrap(self.manifest_path, output, sources)
+        for ref, revision in [("feature/one", self.first), ("feature/two", self.second)]:
+            self.assertEqual(a.text(output / "example", "rev-parse", ref), revision)
+        receipt = a.assemble(self.manifest_path, output / "repositories.private.json",
+                             self.root / "replayed-ancillary")
+        self.assertEqual(receipt["components"]["example"]["tree"], component["expected_tree"])
+        a.git(self.repo, "update-ref", "refs/heads/feature/one", self.base)
+        with self.assertRaisesRegex(a.Failure, "ref missing or moved"):
+            a.bootstrap(self.manifest_path, self.root / "moved-ancillary-topic", sources)
+
 
 if __name__ == "__main__":
     unittest.main()
