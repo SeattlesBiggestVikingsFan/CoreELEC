@@ -429,7 +429,7 @@
       ],
       "integration": {
         "binary_validation": false,
-        "ref": "refs/heads/candidate/all-fixes-today-20261122-v2"
+        "ref": "refs/heads/candidate/all-fixes-today-20261122-v3"
       },
       "limitations": [
         "Framework production parity excludes six intentional canonical recipe bindings and workflow/legacy evidence tools; recipe and unchanged packager files have individual checksum/mode checks.",
@@ -1896,6 +1896,7 @@
         "seamless_mode_refresh": true
       },
       "schema_version": 1,
+      "source_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic.git",
       "source_variable": "COMBINED_KERNEL_SOURCE",
       "upstream": {
         "commit": "58c06bb03fba0d4136115b828a3924394130c15d",
