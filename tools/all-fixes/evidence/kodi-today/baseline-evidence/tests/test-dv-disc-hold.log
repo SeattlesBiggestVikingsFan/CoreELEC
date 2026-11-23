@@ -1,0 +1,15 @@
+/tmp/dv-disc-hold-idrbch_r/test.cpp: In function ‘void aml_dv_close()’:
+/tmp/dv-disc-hold-idrbch_r/test.cpp:415:5: error: ‘s_dvGuiSdrHold’ was not declared in this scope; did you mean ‘s_dvDiscHold’?
+  415 |     s_dvGuiSdrHold = !aml_is_dv_enable();
+      |     ^~~~~~~~~~~~~~
+      |     s_dvDiscHold
+Traceback (most recent call last):
+  File "<LOCAL-SOURCE>", line 793, in <module>
+    main()
+  File "<LOCAL-SOURCE>", line 761, in main
+    run(harness)
+  File "<LOCAL-SOURCE>", line 751, in run
+    subprocess.run(["g++", "-std=c++17", "-Wall", "-Wextra", "-Werror",
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['g++', '-std=c++17', '-Wall', '-Wextra', '-Werror', '-Wno-unused-parameter', '-Wno-unused-variable', '-pthread', '-fsanitize=address,undefined', '-fno-pie', '-no-pie', '-g', '-I', '<LOCAL-SOURCE>', '/tmp/dv-disc-hold-idrbch_r/test.cpp', '-o', '/tmp/dv-disc-hold-idrbch_r/test']' returned non-zero exit status 1.

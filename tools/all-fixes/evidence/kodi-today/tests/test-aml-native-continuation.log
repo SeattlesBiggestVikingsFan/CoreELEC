@@ -1,0 +1,8 @@
+PASS: explicit display nesting and cancellable native continuations (ASan/UBSan)
+REJECTED: ignore display identity
+REJECTED: release parent under nested native
+REJECTED: run native job before admission
+REJECTED: leak active native token
+REJECTED: leak pending native token
+REJECTED: payload bypasses native gate
+REJECTED: lose exception suppression cleanup

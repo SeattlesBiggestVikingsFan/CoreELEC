@@ -1,0 +1,44 @@
+[
+  {
+    "id": "original-test-aml-skin-reload",
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "seconds": 1.1,
+    "log": "tests/original-test-aml-skin-reload.log",
+    "sha256": "180e22c40026d4dd7b1efac6f10e91229f027544897b0da4a93e5f6364ca642d",
+    "command": [
+      "python3",
+      "-B",
+      ".git/original-source-controls/tools/test-aml-skin-reload.py"
+    ],
+    "scope": "Unchanged host source fixture; not hardware or binary verification."
+  },
+  {
+    "id": "original-test-dv-disc-hold",
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "seconds": 0.73,
+    "log": "tests/original-test-dv-disc-hold.log",
+    "sha256": "2be4ca500e326138640f5649c7c4103c4503bcc7d4f9d942c3bb316912e8c36d",
+    "command": [
+      "python3",
+      "-B",
+      ".git/original-source-controls/tools/test-dv-disc-hold.py"
+    ],
+    "scope": "Unchanged host source fixture; not hardware or binary verification."
+  },
+  {
+    "id": "original-test-render-frame-selection",
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "seconds": 0.35,
+    "log": "tests/original-test-render-frame-selection.log",
+    "sha256": "b25f7c8b333b036bf2dee239d5a497469682e5d0f6ae2fd191d6db2cefc063f8",
+    "command": [
+      "python3",
+      "-B",
+      ".git/original-source-controls/tools/test-render-frame-selection.py"
+    ],
+    "scope": "Unchanged host source fixture; not hardware or binary verification."
+  }
+]

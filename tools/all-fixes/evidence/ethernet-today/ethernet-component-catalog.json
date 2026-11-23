@@ -1,0 +1,1037 @@
+{
+  "acceptance_partition": {
+    "10": {
+      "genuine_crc_repair_save": true,
+      "gigabit_certification": false,
+      "pacing": "10Mbps application reads, not server/wire throttling or exact wire-byte cap",
+      "provider_policy_reliability": "experimental only; fleet permission/quota/SLA unresolved",
+      "real_tls_receive_cancel_restore": true,
+      "schema4_warm_boot": true,
+      "two_rounds": [
+        {
+          "bytes": 25000000,
+          "crc_delta": 0,
+          "index": 30,
+          "seconds": 20.000463884999988,
+          "tls_verified": true
+        },
+        {
+          "bytes": 25000000,
+          "crc_delta": 0,
+          "index": 30,
+          "seconds": 20.004766727000003,
+          "tls_verified": true
+        }
+      ]
+    },
+    "11": {
+      "exact_pair_install_manual30_save_boot_exact_original_restore": true,
+      "five_nonvisual_lifecycle_cycles": true,
+      "genuine_profiles_preserved_not_seeded": true,
+      "numeric0_31_input_decline_invalid32_cancel": true,
+      "pending": [
+        "appearance/readability",
+        "live receive/recovery/long progress/inflight traffic Cancel",
+        "fresh calibration/CRC/throughput",
+        "manual0/31 application",
+        "factory-default hardware display",
+        "cold/suspend/wake"
+      ]
+    },
+    "8a": "Reviewed native driver/schema1/2 release; actual lease/reopen/watchdog/lifecycle passed; real schema2 public save not verified",
+    "9": "Frozen source-only manual snapshot, not standalone hardware acceptance"
+  },
+  "boot_ordering": {
+    "apply": "After local-fs/systemd-tmpfiles/userconfig; Before network-base and connman, offline --apply,25s timeout",
+    "daemon": "After connman/apply; root-only seqpacket control with runtime0700; restart-on-failure; 5s stop timeout",
+    "network": "network-base drop-in Wants/After apply"
+  },
+  "exports": {
+    "10": {
+      "components": {
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/README.md": {
+          "bytes": 19440,
+          "sha256": "e2959069bac029d2a7813ace0a3ff883d548d8ad2c5d2625c68f8f4196dfaa76",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/config/ethernet-calibration.conf": {
+          "bytes": 92,
+          "sha256": "8ae8378800832c89cf832a68a3f6724d58aeb65ff7dc4351cf069b9c6559702e",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/package.mk": {
+          "bytes": 734,
+          "sha256": "4c30dec1a28fb1c09c47be18f19b08e14f7662fda5a223e25e3cc3665ec8434b",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/calibration.py": {
+          "bytes": 59163,
+          "sha256": "2ecc7ca3d4e05719ded1b8e2caa06dd40cb0bb57b1bb2e7d1dff7dd88c2fb409",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/https_receive.py": {
+          "bytes": 13655,
+          "sha256": "07dcf6b0e58c84504316fe5e99b1d7ec69fb96b81d22deb398928e484fa4d887",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/public_servers.py": {
+          "bytes": 6220,
+          "sha256": "2fb381515afbc397bcfa63b1d928fbbaa514b15ac8b84cdf853259b3b5938e2d",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/service.py": {
+          "bytes": 19695,
+          "sha256": "e5e349bc73aad652d4f814db0cfcc17e1c2ba4f4167f8e838987fc13f0823529",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/system.d/ethernet-calibration-apply.service": {
+          "bytes": 381,
+          "sha256": "ec95a39db78c7398b3422154752d1bd4636ddadb84249a881800c170c74c7897",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/system.d/ethernet-calibration.service": {
+          "bytes": 378,
+          "sha256": "60edb278ceb9e8f57b79f43df29c67209da4c10d848852a9fba6ce9528536cf8",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/tests/test_calibration.py": {
+          "bytes": 78217,
+          "sha256": "ade70f5a495c68f588fbe5ce7678aa7206ae48ee85e231a4c8d0286b426d3a0b",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/tests/test_driver.py": {
+          "bytes": 12235,
+          "sha256": "c8920dea1ac8fea452a99619d01e382f0a4008660f965ccf59873284bcd5e796",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/tests/test_https_receive.py": {
+          "bytes": 13109,
+          "sha256": "d01e13625980e5164f348aa4e78d7512d5627d1e4944fd4085059f405e1febff",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/patches/CoreELEC-settings/CoreELEC-settings-001-native-ethernet-calibration.patch": {
+          "bytes": 65324,
+          "sha256": "52d6b7631ee24541cd78807440da30f0b86054123b8b03a824e79b9a8b12ee06",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/patches/linux/linux-11-native-ethernet-calibration.patch": {
+          "bytes": 14213,
+          "sha256": "7cfea4f427629995cb730873dc796e76da2d86e957d70f71177b5e95a547d012",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/packages/linux/package.mk": {
+          "bytes": 12369,
+          "sha256": "363549e54a90d16a5316021fae9b9bafd01e2a91a4c47cc9bc75d26eea16b254",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/packages/mediacenter/CoreELEC-settings/package.mk": {
+          "bytes": 1551,
+          "sha256": "f3ba4c3567b903e6ea70a9abbc6b6baa3b06f06826747e6d68d32dbb06557c62",
+          "zip_mode": "0o600"
+        }
+      },
+      "file": "Native-Ethernet-HTTPS10-Source.zip",
+      "git_commit": null,
+      "git_tree": null,
+      "identity": "immutable file export, not a topic commit or imported Git ancestry",
+      "sha256": "b68a64fe155a3c311c8db823c75b07a1ed09277668f0f07eaad5ff409d493ca1"
+    },
+    "11": {
+      "components": {
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/README.md": {
+          "bytes": 21726,
+          "sha256": "9ad27b049d013cd1b5a6048b917bd91c07649ee6227ca236c7a1428db5b1d8d7",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/config/ethernet-calibration.conf": {
+          "bytes": 92,
+          "sha256": "8ae8378800832c89cf832a68a3f6724d58aeb65ff7dc4351cf069b9c6559702e",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/package.mk": {
+          "bytes": 734,
+          "sha256": "4c30dec1a28fb1c09c47be18f19b08e14f7662fda5a223e25e3cc3665ec8434b",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/calibration.py": {
+          "bytes": 62084,
+          "sha256": "a0602aa40a86dac4dfcea042335766dbb49e7938024e23ae989e4e573ef7b2a0",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/https_receive.py": {
+          "bytes": 13565,
+          "sha256": "86fbfee633f7d1f69d04a4e69a69e5e684804e38d38f7daaa6f29ca73ed04328",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/public_servers.py": {
+          "bytes": 6220,
+          "sha256": "2fb381515afbc397bcfa63b1d928fbbaa514b15ac8b84cdf853259b3b5938e2d",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/service.py": {
+          "bytes": 24209,
+          "sha256": "5382446a28dbf957f05407335558d07f0aaac18a42d97be6d55a851aafac8791",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/system.d/ethernet-calibration-apply.service": {
+          "bytes": 381,
+          "sha256": "ec95a39db78c7398b3422154752d1bd4636ddadb84249a881800c170c74c7897",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/system.d/ethernet-calibration.service": {
+          "bytes": 378,
+          "sha256": "60edb278ceb9e8f57b79f43df29c67209da4c10d848852a9fba6ce9528536cf8",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/tests/test_calibration.py": {
+          "bytes": 94273,
+          "sha256": "a6e243278c6c4700ee7a2eda2c5f757a020b55aafec4759acf203996c6d079c3",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/tests/test_driver.py": {
+          "bytes": 12235,
+          "sha256": "c8920dea1ac8fea452a99619d01e382f0a4008660f965ccf59873284bcd5e796",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/tests/test_https_receive.py": {
+          "bytes": 13109,
+          "sha256": "d01e13625980e5164f348aa4e78d7512d5627d1e4944fd4085059f405e1febff",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/patches/CoreELEC-settings/CoreELEC-settings-001-native-ethernet-calibration.patch": {
+          "bytes": 81808,
+          "sha256": "f448f76a49a56accd6f53b4a4a277d5b2afef4c6e32d53cb5b9b9b70cbf6aca6",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/patches/linux/linux-11-native-ethernet-calibration.patch": {
+          "bytes": 14213,
+          "sha256": "7cfea4f427629995cb730873dc796e76da2d86e957d70f71177b5e95a547d012",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/packages/linux/package.mk": {
+          "bytes": 12369,
+          "sha256": "363549e54a90d16a5316021fae9b9bafd01e2a91a4c47cc9bc75d26eea16b254",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/packages/mediacenter/CoreELEC-settings/package.mk": {
+          "bytes": 1551,
+          "sha256": "f3ba4c3567b903e6ea70a9abbc6b6baa3b06f06826747e6d68d32dbb06557c62",
+          "zip_mode": "0o600"
+        }
+      },
+      "file": "Native-Ethernet-UX11-Source.zip",
+      "git_commit": null,
+      "git_tree": null,
+      "identity": "immutable file export, not a topic commit or imported Git ancestry",
+      "sha256": "1e7d5f5488e60d2f149b15347fade81b3f493e421b411bd906d471ef27560ec3"
+    },
+    "8a": {
+      "components": {
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/README.md": {
+          "bytes": 16221,
+          "sha256": "ef94dfe01e3196e7a53fc349a4453fa52c0baadd4dbc85a6eff5ba5dd817b111",
+          "zip_mode": "0o777"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/config/ethernet-calibration.conf": {
+          "bytes": 92,
+          "sha256": "8ae8378800832c89cf832a68a3f6724d58aeb65ff7dc4351cf069b9c6559702e",
+          "zip_mode": "0o777"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/package.mk": {
+          "bytes": 734,
+          "sha256": "4c30dec1a28fb1c09c47be18f19b08e14f7662fda5a223e25e3cc3665ec8434b",
+          "zip_mode": "0o777"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/calibration.py": {
+          "bytes": 54082,
+          "sha256": "c5e4b68bf993b4b2e64b94aeb5ae762d0685bea59e7a401ae3ad076e5935fecf",
+          "zip_mode": "0o777"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/public_servers.py": {
+          "bytes": 6220,
+          "sha256": "2fb381515afbc397bcfa63b1d928fbbaa514b15ac8b84cdf853259b3b5938e2d",
+          "zip_mode": "0o777"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/service.py": {
+          "bytes": 18820,
+          "sha256": "eadffa46c493309a9c3f677d6da56ae1fd303af7aee49ae56487ce77b9524f48",
+          "zip_mode": "0o777"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/system.d/ethernet-calibration-apply.service": {
+          "bytes": 381,
+          "sha256": "ec95a39db78c7398b3422154752d1bd4636ddadb84249a881800c170c74c7897",
+          "zip_mode": "0o777"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/system.d/ethernet-calibration.service": {
+          "bytes": 378,
+          "sha256": "60edb278ceb9e8f57b79f43df29c67209da4c10d848852a9fba6ce9528536cf8",
+          "zip_mode": "0o777"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/tests/test_calibration.py": {
+          "bytes": 69887,
+          "sha256": "8cb851fc650261da484a2d9028068e770ccb0a345b4f7ce23401509139ea7e2a",
+          "zip_mode": "0o777"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/tests/test_driver.py": {
+          "bytes": 12235,
+          "sha256": "c8920dea1ac8fea452a99619d01e382f0a4008660f965ccf59873284bcd5e796",
+          "zip_mode": "0o777"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/patches/CoreELEC-settings/CoreELEC-settings-001-native-ethernet-calibration.patch": {
+          "bytes": 62262,
+          "sha256": "502c4e05e6ba9c2d0c9aabc7bbe4824bb347158a45a7ab8a8f5e7851f8efaaf2",
+          "zip_mode": "0o777"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/patches/linux/linux-11-native-ethernet-calibration.patch": {
+          "bytes": 14213,
+          "sha256": "7cfea4f427629995cb730873dc796e76da2d86e957d70f71177b5e95a547d012",
+          "zip_mode": "0o777"
+        },
+        "projects/Amlogic-ce/packages/linux/package.mk": {
+          "bytes": 12369,
+          "sha256": "363549e54a90d16a5316021fae9b9bafd01e2a91a4c47cc9bc75d26eea16b254",
+          "zip_mode": "0o777"
+        },
+        "projects/Amlogic-ce/packages/mediacenter/CoreELEC-settings/package.mk": {
+          "bytes": 1551,
+          "sha256": "f3ba4c3567b903e6ea70a9abbc6b6baa3b06f06826747e6d68d32dbb06557c62",
+          "zip_mode": "0o777"
+        }
+      },
+      "file": "Native-Ethernet-Feedback8A-Source.zip",
+      "git_commit": null,
+      "git_tree": null,
+      "identity": "immutable file export, not a topic commit or imported Git ancestry",
+      "sha256": "3b70387a27dc33c820020794d01ad3f5c81f1e30c732add1c36f51e354ae0168"
+    },
+    "9": {
+      "components": {
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/README.md": {
+          "bytes": 17621,
+          "sha256": "af26edd90a590112c4c7a2841812a0ce5a79d0397fd31982e855b3bb1785025c",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/config/ethernet-calibration.conf": {
+          "bytes": 92,
+          "sha256": "8ae8378800832c89cf832a68a3f6724d58aeb65ff7dc4351cf069b9c6559702e",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/package.mk": {
+          "bytes": 734,
+          "sha256": "4c30dec1a28fb1c09c47be18f19b08e14f7662fda5a223e25e3cc3665ec8434b",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/calibration.py": {
+          "bytes": 54817,
+          "sha256": "253e6ae8ea8109a82d35a3d29c6182c1b152f50cf6f6e15f320d5416659f91ac",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/public_servers.py": {
+          "bytes": 6220,
+          "sha256": "2fb381515afbc397bcfa63b1d928fbbaa514b15ac8b84cdf853259b3b5938e2d",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/service.py": {
+          "bytes": 21904,
+          "sha256": "0bdb622006724c5c5debd635b63cb55138d6c48973c9576ec958981e23c67bec",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/system.d/ethernet-calibration-apply.service": {
+          "bytes": 381,
+          "sha256": "ec95a39db78c7398b3422154752d1bd4636ddadb84249a881800c170c74c7897",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/system.d/ethernet-calibration.service": {
+          "bytes": 378,
+          "sha256": "60edb278ceb9e8f57b79f43df29c67209da4c10d848852a9fba6ce9528536cf8",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/tests/test_calibration.py": {
+          "bytes": 78620,
+          "sha256": "9a9220521e9ae1d3d06f7a457066c6c13f4677e3bccba917a7242f376e307b73",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/tests/test_driver.py": {
+          "bytes": 12235,
+          "sha256": "c8920dea1ac8fea452a99619d01e382f0a4008660f965ccf59873284bcd5e796",
+          "zip_mode": "0o600"
+        },
+        "projects/Amlogic-ce/devices/Amlogic-ng/patches/CoreELEC-settings/CoreELEC-settings-001-native-ethernet-calibration.patch": {
+          "bytes": 68662,
+          "sha256": "2ea83d0b5279fbec81e073735cbeb6531192a7708d51c4c884cc8bfaa0142411",
+          "zip_mode": "0o600"
+        }
+      },
+      "file": "Native-Ethernet-Manual9-Source.zip",
+      "git_commit": null,
+      "git_tree": null,
+      "identity": "immutable file export, not a topic commit or imported Git ancestry",
+      "sha256": "0911994269e8b179fd69cf26beb8382451bae32c5dab789867f4f395c07a685e"
+    }
+  },
+  "framework_source_base": {
+    "commit": "872edca4dd5a7c5d6344e785d7358766834d7119",
+    "private_history_not_exported": true,
+    "replay": "No UX11 Git refs exist. Replay reviewed file deltas on owner's public baseline; do not import private55ab/worktree history or blindly overwrite recipes.",
+    "repo": "pannal/CoreELEC"
+  },
+  "kernel": {
+    "abi": {
+      "baseline_to_native_changed_gpl_exports": {
+        "stmmac_dvr_probe": {
+          "new": {
+            "crc": 687815931,
+            "kind": "EXPORT_SYMBOL_GPL",
+            "module": "vmlinux"
+          },
+          "old": {
+            "crc": 1830738719,
+            "kind": "EXPORT_SYMBOL_GPL",
+            "module": "vmlinux"
+          }
+        },
+        "stmmac_probe_config_dt": {
+          "new": {
+            "crc": 1287320828,
+            "kind": "EXPORT_SYMBOL_GPL",
+            "module": "vmlinux"
+          },
+          "old": {
+            "crc": 1983824767,
+            "kind": "EXPORT_SYMBOL_GPL",
+            "module": "vmlinux"
+          }
+        },
+        "stmmac_remove_config_dt": {
+          "new": {
+            "crc": 159888406,
+            "kind": "EXPORT_SYMBOL_GPL",
+            "module": "vmlinux"
+          },
+          "old": {
+            "crc": 1500156381,
+            "kind": "EXPORT_SYMBOL_GPL",
+            "module": "vmlinux"
+          }
+        }
+      },
+      "control": 1,
+      "inherited_dovi_crc_mismatches": {
+        "dovi": {
+          "loaded": true,
+          "mismatches": {
+            "module_layout": {
+              "kernel": 434193837,
+              "required": 2291701365
+            },
+            "register_dv_functions": {
+              "kernel": 3134087549,
+              "required": 3872703687
+            }
+          }
+        }
+      },
+      "no_introduced_preserved_module_import_mismatches": true,
+      "no_review_export_or_config_delta": true,
+      "struct": "plat_stmmacenet_data gains calibration_init"
+    },
+    "accepted_source_delta": {
+      "drivers/net/ethernet/stmicro/stmmac/dwmac-meson.c": {
+        "new": {
+          "bytes": 31369,
+          "kind": "file",
+          "sha256": "e57c4cac7a1a8dd59deedc6be91afb267506a82ec61fa4c3580a6b95c387c521"
+        },
+        "old": {
+          "bytes": 20984,
+          "kind": "file",
+          "sha256": "5fb998164a65636961324317a87c02cd65d6d1a1a248f2f618b46ef900b59dcd"
+        }
+      },
+      "drivers/net/ethernet/stmicro/stmmac/stmmac_main.c": {
+        "new": {
+          "bytes": 109634,
+          "kind": "file",
+          "sha256": "d11af416b717e7100f8c172f5c5a48f19322881f6900ef0c31dfb0bf1100818c"
+        },
+        "old": {
+          "bytes": 109336,
+          "kind": "file",
+          "sha256": "79acc6113e7ac857066e0ff81dd3aa8929592ae5932b14ef54c5d0a46b0ae667"
+        }
+      },
+      "include/linux/stmmac.h": {
+        "new": {
+          "bytes": 4627,
+          "kind": "file",
+          "sha256": "3f9b69ed609a34216a1b4f37bb9c800766602d61aaa3b6d79abdac270bbcb32b"
+        },
+        "old": {
+          "bytes": 4546,
+          "kind": "file",
+          "sha256": "4b94e81c760a2795112d738b37526051eb18c30e2e3cddc2224d4e7be45de45c"
+        }
+      }
+    },
+    "actual_a3_source_commit": null,
+    "actual_a3_source_identity": "private reconstructed exported baseline plus canonical accepted8a patch; not a new Git commit",
+    "build_outputs": {
+      "baseline-v20-build": {
+        ".config": {
+          "bytes": 162260,
+          "sha256": "a2ad46a61fe51d913dcc06a4b8c250f42acc3c5a8fd703c4526b6a8121defc9a"
+        },
+        "Module.symvers": {
+          "bytes": 576559,
+          "sha256": "df24ee806536aeadd04c033012e998ed45923068349a3b845a505e9977fa844a"
+        },
+        "System.map": {
+          "bytes": 5446445,
+          "sha256": "c5d88428e4427070b80ca4a899964ed3f5c12fac5922a10983ac6bc0ca364b4d"
+        },
+        "arch/arm64/boot/Image": {
+          "bytes": 28117000,
+          "sha256": "e13659d537a616be5fc6e468276e989b9e8115a4dd7f16768ce21bad520d7bf3"
+        },
+        "arch/arm64/boot/Image.lzo": {
+          "bytes": 11364850,
+          "sha256": "dd5ad9bc9236641172a0f0b26c4039584610c5ecdf6820320d575e754440bbc6"
+        },
+        "include/config/kernel.release": {
+          "bytes": 8,
+          "sha256": "c5aacf7c7624b1c0b1bcb793847da91547384755e20db5c7edf9e2816c4306ff"
+        },
+        "include/generated/utsrelease.h": {
+          "bytes": 65,
+          "sha256": "27592cfd29f70b56242cb10f0aa3ca6204b3a7924ae06da4289490b15f94ae43"
+        },
+        "vmlinux": {
+          "bytes": 35266464,
+          "sha256": "f2d00135bbd19df2f1c2a1acb911a72a246080425ac59217879784ead6e26550"
+        }
+      },
+      "native-v20-build": {
+        ".config": {
+          "bytes": 162260,
+          "sha256": "a2ad46a61fe51d913dcc06a4b8c250f42acc3c5a8fd703c4526b6a8121defc9a"
+        },
+        "Module.symvers": {
+          "bytes": 576559,
+          "sha256": "e230cb3938692ff685143064a54cc3c40bcc42126fecc6e83c5237123868e47b"
+        },
+        "System.map": {
+          "bytes": 5446784,
+          "sha256": "e10aacfdc08b975c515e6550b0f6a99fa765b80ea62330736d4fce8666d6e1fd"
+        },
+        "arch/arm64/boot/Image": {
+          "bytes": 28117000,
+          "sha256": "9a2158c328edaf7b614fe46065df50978266ed218e6b8dc367cc1107f7694058"
+        },
+        "arch/arm64/boot/Image.lzo": {
+          "bytes": 11368029,
+          "sha256": "652de6607b8077a54e0d23bd8447baf2a06bc8be4b0e9e7aa7f742a37ee31465"
+        },
+        "include/config/kernel.release": {
+          "bytes": 8,
+          "sha256": "c5aacf7c7624b1c0b1bcb793847da91547384755e20db5c7edf9e2816c4306ff"
+        },
+        "include/generated/utsrelease.h": {
+          "bytes": 65,
+          "sha256": "27592cfd29f70b56242cb10f0aa3ca6204b3a7924ae06da4289490b15f94ae43"
+        },
+        "vmlinux": {
+          "bytes": 35266872,
+          "sha256": "66339d43b90f1e23a2427a9e6d1fafd7644ca3d1ac384da7e58d54776f4c5159"
+        }
+      },
+      "review8a-build": {
+        ".config": {
+          "bytes": 162260,
+          "sha256": "a2ad46a61fe51d913dcc06a4b8c250f42acc3c5a8fd703c4526b6a8121defc9a"
+        },
+        "Module.symvers": {
+          "bytes": 576559,
+          "sha256": "e230cb3938692ff685143064a54cc3c40bcc42126fecc6e83c5237123868e47b"
+        },
+        "System.map": {
+          "bytes": 5446784,
+          "sha256": "f6ffdb6e4b34d89dcdfcebc2a910175e7555e37fe4f8be4b4fbe2a8fae4a3888"
+        },
+        "arch/arm64/boot/Image": {
+          "bytes": 28117000,
+          "sha256": "af12d4781c4f5eef43d31e6be176621f477809b17154ddb8cfafabae9a5e4424"
+        },
+        "arch/arm64/boot/Image.lzo": {
+          "bytes": 11367877,
+          "sha256": "afec40c13435fd49317c8a2042d5f4b66d04fbe05655104d256ec912359f922d"
+        },
+        "include/config/kernel.release": {
+          "bytes": 8,
+          "sha256": "c5aacf7c7624b1c0b1bcb793847da91547384755e20db5c7edf9e2816c4306ff"
+        },
+        "include/generated/utsrelease.h": {
+          "bytes": 65,
+          "sha256": "27592cfd29f70b56242cb10f0aa3ca6204b3a7924ae06da4289490b15f94ae43"
+        },
+        "vmlinux": {
+          "bytes": 35266848,
+          "sha256": "c9c49c160eebb8946ba1bcb1565693ba7b7a53debe8e0e4d099579913403a7e7"
+        }
+      }
+    },
+    "combined_baseline": {
+      "binary_wide_abi_equivalence_asserted": false,
+      "config_sha256": "f9681e51a088f79e5868142da4cd20232820d355d037100e4305355bab8c70d0",
+      "ethernet_three_files_identical_to_accepted8a": true,
+      "exports_sha256": "ccf2a5df09a260e641e4ceb878722fdf025b15681cee5cfa2f5d0b8df802cba8",
+      "kernel_sha256": "3b3a0180cba8d510247752a1fee18438f19204c7ad7e4b0df8ced69f89dfebbd",
+      "new_ethernet_kernel_delta": [],
+      "source_commit": "2b17ade58f733854821be8b18cf66f5d249bc727",
+      "source_tree": "2de60b436acf0c6289449c53eee6f842d176d4d2"
+    },
+    "combined_source_mode_comparison": {
+      "accepted_a3_ethernet_paths": {
+        "drivers/net/ethernet/stmicro/stmmac/dwmac-meson.c": {
+          "accepted_git_mode": "100644",
+          "byte_mode_identical": true,
+          "combined_git_mode": "100644",
+          "sha256": "e57c4cac7a1a8dd59deedc6be91afb267506a82ec61fa4c3580a6b95c387c521"
+        },
+        "drivers/net/ethernet/stmicro/stmmac/stmmac_main.c": {
+          "accepted_git_mode": "100644",
+          "byte_mode_identical": true,
+          "combined_git_mode": "100644",
+          "sha256": "d11af416b717e7100f8c172f5c5a48f19322881f6900ef0c31dfb0bf1100818c"
+        },
+        "include/linux/stmmac.h": {
+          "accepted_git_mode": "100644",
+          "byte_mode_identical": true,
+          "combined_git_mode": "100644",
+          "sha256": "3f9b69ed609a34216a1b4f37bb9c800766602d61aaa3b6d79abdac270bbcb32b"
+        }
+      },
+      "combined_commit": "2b17ade58f733854821be8b18cf66f5d249bc727",
+      "combined_kernel_sha256": "3b3a0180cba8d510247752a1fee18438f19204c7ad7e4b0df8ced69f89dfebbd",
+      "combined_tree": "2de60b436acf0c6289449c53eee6f842d176d4d2",
+      "new_ethernet_kernel_source_delta": [],
+      "new_tests_build_patch_device_or_owner_writes": false,
+      "not_asserted": "No binary-wide or configuration/module ABI equivalence; no claim a3a was built from current2b17."
+    },
+    "comparison_receipt": {
+      "file": "combined-kernel-ethernet-reconciliation.json",
+      "sha256": "c3d7863ee8bc9680ac64b19f530e48d83a1e705057cf4d6ae0a9ceb23e586e7c"
+    },
+    "package": {
+      "device_accessed": false,
+      "original_boot_repack_exact": true,
+      "payload_sha256": "afec40c13435fd49317c8a2042d5f4b66d04fbe05655104d256ec912359f922d",
+      "preserved_ramdisk_sha256": "c046b2a549ebaff43fa163492b8801461e3a53d32143196abe350faffc57e540",
+      "sha256": "a3a463735093550b371a1eac0db3b8f49f67144e4ee6a4aee823bcc3626051ac"
+    },
+    "package_archive_sha256": "543e303e78b268cd6036700680c38c3227658b7c52188377fbcf8b0897ca1e1d",
+    "package_commit": "1f2292a39cec1e881d18ff77614cc663bc2dd760",
+    "package_repo": "pannal/linux-amlogic",
+    "patch_sha256": "7cfea4f427629995cb730873dc796e76da2d86e957d70f71177b5e95a547d012",
+    "scope_limits": "Hardware8a lease/reopen/watchdog and GUI retests passed; blocked RTNL race and resume/NAPI failure paths actual-C host only; no physical suspend/cold/wake.",
+    "source_manifests": {
+      "baseline-v20-source": {
+        "entries": 59129,
+        "manifest_sha256": "26edfcf862102ec3d869d2558d73ad54a67962a93201a635c0d1c5b51bcbd037"
+      },
+      "review8a-source": {
+        "entries": 59129,
+        "manifest_sha256": "34c1c8cd3b9eb536a212b55dac8e1b5f54cbfcd559ee0bcd229ad97b8c774d1c"
+      }
+    }
+  },
+  "ordered_deltas": {
+    "10-to-11": {
+      "addon": {
+        "artifact": {
+          "bytes": 35448,
+          "file": "addon-10-to-11.patch",
+          "sha256": "71a01092343e69bb8f243b2b0c4efdd47447fee4df3a78768fd684a6e105f59d"
+        },
+        "changes": {
+          "language/resource.language.en_gb/strings.po": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "a02c5537c2ec6b1beb76ce2461202f6c392d00de29ea2cdbbfe26ceecd7e9c95",
+            "old_sha256": "97c2490e862e46bc81d6878ef526f6a24b992eed2388e02073411ed2e482dd96"
+          },
+          "src/resources/lib/ethernet_calibration.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "948318990aa65e70c7319de5ad8349837cd08b55460ac4d0d9289c54500346ba",
+            "old_sha256": "ae744d957ddb09e68aa665c585ce5a81a78a913f7cb9abf36f026af273c5578c"
+          },
+          "src/resources/lib/modules/connman.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "5d147b6bbc0304053c2fffeff902b9284a6c8958f651d1c60be33f24be5f9c3b",
+            "old_sha256": "e695e11cc6bae9efecef8617412d74619b6c60adbc4328f6a8982b31c2077921"
+          },
+          "src/resources/lib/oeWindows.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "9c1a659b2df64b411cbe1286b892f9bb258d5a88cebeef403e74cb8ffaa2185b",
+            "old_sha256": "1296283430b425eec773ded79b90c8630cf4dc392cbd98d4879ea9453409b2c0"
+          },
+          "tests/test_ethernet_calibration.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "4f7e0a4ead6f200e77eb91b7600b242b8e7dce08460935e0758dafd813719529",
+            "old_sha256": "9d931fcd62594583d88a58338681811158a9559b1e762980ba6662f5bd241f52"
+          }
+        }
+      },
+      "framework": {
+        "artifact": {
+          "bytes": 101354,
+          "file": "framework-10-to-11.patch",
+          "sha256": "0e8a7b4e0b9f6b7cd013e173a81637a328418f89f3a3fe36ed46366eb5341371"
+        },
+        "changes": {
+          "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/README.md": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "9ad27b049d013cd1b5a6048b917bd91c07649ee6227ca236c7a1428db5b1d8d7",
+            "old_sha256": "e2959069bac029d2a7813ace0a3ff883d548d8ad2c5d2625c68f8f4196dfaa76"
+          },
+          "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/calibration.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "a0602aa40a86dac4dfcea042335766dbb49e7938024e23ae989e4e573ef7b2a0",
+            "old_sha256": "2ecc7ca3d4e05719ded1b8e2caa06dd40cb0bb57b1bb2e7d1dff7dd88c2fb409"
+          },
+          "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/https_receive.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "86fbfee633f7d1f69d04a4e69a69e5e684804e38d38f7daaa6f29ca73ed04328",
+            "old_sha256": "07dcf6b0e58c84504316fe5e99b1d7ec69fb96b81d22deb398928e484fa4d887"
+          },
+          "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/service.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "5382446a28dbf957f05407335558d07f0aaac18a42d97be6d55a851aafac8791",
+            "old_sha256": "e5e349bc73aad652d4f814db0cfcc17e1c2ba4f4167f8e838987fc13f0823529"
+          },
+          "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/tests/test_calibration.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "a6e243278c6c4700ee7a2eda2c5f757a020b55aafec4759acf203996c6d079c3",
+            "old_sha256": "ade70f5a495c68f588fbe5ce7678aa7206ae48ee85e231a4c8d0286b426d3a0b"
+          },
+          "projects/Amlogic-ce/devices/Amlogic-ng/patches/CoreELEC-settings/CoreELEC-settings-001-native-ethernet-calibration.patch": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "f448f76a49a56accd6f53b4a4a277d5b2afef4c6e32d53cb5b9b9b70cbf6aca6",
+            "old_sha256": "52d6b7631ee24541cd78807440da30f0b86054123b8b03a824e79b9a8b12ee06"
+          }
+        }
+      }
+    },
+    "8a-to-10": {
+      "addon": {
+        "artifact": {
+          "bytes": 5311,
+          "file": "addon-8a-to-10.patch",
+          "sha256": "f2349b006ade96a6b35cf13263b6c02213847478227ed0b047479da22163cf75"
+        },
+        "changes": {
+          "language/resource.language.en_gb/strings.po": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "97c2490e862e46bc81d6878ef526f6a24b992eed2388e02073411ed2e482dd96",
+            "old_sha256": "1d94f6679c6011053b02c9aaca71386ccb25392006d480c4e0152d6884d6d1dc"
+          },
+          "src/resources/lib/ethernet_calibration.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "ae744d957ddb09e68aa665c585ce5a81a78a913f7cb9abf36f026af273c5578c",
+            "old_sha256": "3839cbe1c1da694e32a91b82fe5e30cf7833f1106d4b4c11abc20c255b1da594"
+          },
+          "tests/test_ethernet_calibration.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "9d931fcd62594583d88a58338681811158a9559b1e762980ba6662f5bd241f52",
+            "old_sha256": "33fe0cb78c2c340211ec9666a1c8e67e8b679f4c5f30ef8805ddbb3a2cd1c257"
+          }
+        }
+      },
+      "framework": {
+        "artifact": {
+          "bytes": 66510,
+          "file": "framework-8a-to-10.patch",
+          "sha256": "5137ab5a0127c5a0cfdb93565f31c20f18ed648ec7aeebe1286cb2455dddf025"
+        },
+        "changes": {
+          "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/README.md": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "e2959069bac029d2a7813ace0a3ff883d548d8ad2c5d2625c68f8f4196dfaa76",
+            "old_sha256": "ef94dfe01e3196e7a53fc349a4453fa52c0baadd4dbc85a6eff5ba5dd817b111"
+          },
+          "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/calibration.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "2ecc7ca3d4e05719ded1b8e2caa06dd40cb0bb57b1bb2e7d1dff7dd88c2fb409",
+            "old_sha256": "c5e4b68bf993b4b2e64b94aeb5ae762d0685bea59e7a401ae3ad076e5935fecf"
+          },
+          "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/https_receive.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "07dcf6b0e58c84504316fe5e99b1d7ec69fb96b81d22deb398928e484fa4d887",
+            "old_sha256": null
+          },
+          "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/service.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "e5e349bc73aad652d4f814db0cfcc17e1c2ba4f4167f8e838987fc13f0823529",
+            "old_sha256": "eadffa46c493309a9c3f677d6da56ae1fd303af7aee49ae56487ce77b9524f48"
+          },
+          "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/tests/test_calibration.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "ade70f5a495c68f588fbe5ce7678aa7206ae48ee85e231a4c8d0286b426d3a0b",
+            "old_sha256": "8cb851fc650261da484a2d9028068e770ccb0a345b4f7ce23401509139ea7e2a"
+          },
+          "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/tests/test_https_receive.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "d01e13625980e5164f348aa4e78d7512d5627d1e4944fd4085059f405e1febff",
+            "old_sha256": null
+          },
+          "projects/Amlogic-ce/devices/Amlogic-ng/patches/CoreELEC-settings/CoreELEC-settings-001-native-ethernet-calibration.patch": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "52d6b7631ee24541cd78807440da30f0b86054123b8b03a824e79b9a8b12ee06",
+            "old_sha256": "502c4e05e6ba9c2d0c9aabc7bbe4824bb347158a45a7ab8a8f5e7851f8efaaf2"
+          }
+        }
+      }
+    },
+    "8a-to-11": {
+      "addon": {
+        "artifact": {
+          "bytes": 36747,
+          "file": "addon-8a-to-11.patch",
+          "sha256": "17b9bd6e0b891a9a0d5300beda514b695d17c27bd185cf2031c06105826b6e2c"
+        },
+        "changes": {
+          "language/resource.language.en_gb/strings.po": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "a02c5537c2ec6b1beb76ce2461202f6c392d00de29ea2cdbbfe26ceecd7e9c95",
+            "old_sha256": "1d94f6679c6011053b02c9aaca71386ccb25392006d480c4e0152d6884d6d1dc"
+          },
+          "src/resources/lib/ethernet_calibration.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "948318990aa65e70c7319de5ad8349837cd08b55460ac4d0d9289c54500346ba",
+            "old_sha256": "3839cbe1c1da694e32a91b82fe5e30cf7833f1106d4b4c11abc20c255b1da594"
+          },
+          "src/resources/lib/modules/connman.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "5d147b6bbc0304053c2fffeff902b9284a6c8958f651d1c60be33f24be5f9c3b",
+            "old_sha256": "e695e11cc6bae9efecef8617412d74619b6c60adbc4328f6a8982b31c2077921"
+          },
+          "src/resources/lib/oeWindows.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "9c1a659b2df64b411cbe1286b892f9bb258d5a88cebeef403e74cb8ffaa2185b",
+            "old_sha256": "1296283430b425eec773ded79b90c8630cf4dc392cbd98d4879ea9453409b2c0"
+          },
+          "tests/test_ethernet_calibration.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "4f7e0a4ead6f200e77eb91b7600b242b8e7dce08460935e0758dafd813719529",
+            "old_sha256": "33fe0cb78c2c340211ec9666a1c8e67e8b679f4c5f30ef8805ddbb3a2cd1c257"
+          }
+        }
+      },
+      "framework": {
+        "artifact": {
+          "bytes": 143582,
+          "file": "framework-8a-to-11.patch",
+          "sha256": "a29d83c52e585236ac40220720b2364ef7850107bbbe491f52eb30f591eecc13"
+        },
+        "changes": {
+          "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/README.md": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "9ad27b049d013cd1b5a6048b917bd91c07649ee6227ca236c7a1428db5b1d8d7",
+            "old_sha256": "ef94dfe01e3196e7a53fc349a4453fa52c0baadd4dbc85a6eff5ba5dd817b111"
+          },
+          "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/calibration.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "a0602aa40a86dac4dfcea042335766dbb49e7938024e23ae989e4e573ef7b2a0",
+            "old_sha256": "c5e4b68bf993b4b2e64b94aeb5ae762d0685bea59e7a401ae3ad076e5935fecf"
+          },
+          "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/https_receive.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "86fbfee633f7d1f69d04a4e69a69e5e684804e38d38f7daaa6f29ca73ed04328",
+            "old_sha256": null
+          },
+          "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/service.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "5382446a28dbf957f05407335558d07f0aaac18a42d97be6d55a851aafac8791",
+            "old_sha256": "eadffa46c493309a9c3f677d6da56ae1fd303af7aee49ae56487ce77b9524f48"
+          },
+          "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/tests/test_calibration.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "a6e243278c6c4700ee7a2eda2c5f757a020b55aafec4759acf203996c6d079c3",
+            "old_sha256": "8cb851fc650261da484a2d9028068e770ccb0a345b4f7ce23401509139ea7e2a"
+          },
+          "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/tests/test_https_receive.py": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "d01e13625980e5164f348aa4e78d7512d5627d1e4944fd4085059f405e1febff",
+            "old_sha256": null
+          },
+          "projects/Amlogic-ce/devices/Amlogic-ng/patches/CoreELEC-settings/CoreELEC-settings-001-native-ethernet-calibration.patch": {
+            "intended_regular_file_mode": "0644",
+            "new_sha256": "f448f76a49a56accd6f53b4a4a277d5b2afef4c6e32d53cb5b9b9b70cbf6aca6",
+            "old_sha256": "502c4e05e6ba9c2d0c9aabc7bbe4824bb347158a45a7ab8a8f5e7851f8efaaf2"
+          }
+        }
+      }
+    }
+  },
+  "permissions": "Inventory/delta export only. Selection/replay/build/publication belongs to consumers/coordinator; no implicit installation/inclusion permission.",
+  "profiles": {
+    "defaults": "Raw factory-1 differs from effective/default0; never universal seed30; manual value does not prove health.",
+    "schemas": {
+      "1": "verified LAN",
+      "2": "public iPerf error checks",
+      "3": "persistent manual0-31 explicitly unverified",
+      "4": "experimental TLS HTTPS error checks"
+    },
+    "storage": "/storage/.config/ethernet-calibration/active.json and previous.json; directory0700/files0600",
+    "upgrade": "Backward-compatible offline validation, no eager rewrite/migration or boot traffic. Preserve existing per-device active/previous bytes and preference; protected LAN history, transactional rollback.",
+    "user_preferences": "Genuine LAN30/HTTPS30 retained by their actual profiles, not templates copied into new images."
+  },
+  "public_safety": "No raw device/profile/settings/database evidence, binaries, credentials or private backup/SDK paths included.",
+  "recipes_and_dependencies": {
+    "delta_against_8a": "Native package.mk, linux/package.mk, settings/package.mk, systemd units/drop-in byte-identical; HTTPS adds receiver, UX11 merges schema3 and UI/status logic",
+    "native": "toolchain Python3 iperf ethtool busybox",
+    "settings": "toolchain Python3 connman dbussy plus ethernet-calibration only for Amlogic-ng; existing display-specific dependencies unchanged",
+    "tls": "existing Python3/OpenSSL/system CA store, no new third-party dependencies"
+  },
+  "settings_source": {
+    "archive_sha256": "80a2149d5dc5239358365499793eec72e7a428fded9fbd0e72cf0a6230a36d74",
+    "commit": "08856dd621b359bf571fcde42f48967a25d36500",
+    "patch_ownership": "Full001 patch against original08856 exactly once OR incremental addon delta against maintained8a; never both. Native runtime and UI must move together.",
+    "readable_source_line_ending_differences": {
+      "skins/Default/1080i/service-CoreELEC-Ethernet-Numeric.xml": {
+        "difference": "CRLF versus LF only; ordered deltas use authoritative patch output",
+        "pinned_patch_sha256": "d79a866757301ac44b859d2a6f982af68b17325aa01ee6cfcd5514937196b711",
+        "readable_raw_sha256": "136b9521bdbad81f72c72398ef40e8353ac9a619970bd16a4c7f060fb927e422"
+      }
+    },
+    "repo": "pannal/service.coreelec.settings"
+  },
+  "source_to_installed_binding": {
+    "actual_helper_pyc_tests": 52,
+    "actual_system_native_tests": 139,
+    "complete_entries": 12979,
+    "exact_seven_system_files": {
+      "usr/lib/coreelec/ethernet-calibration/calibration.py": {
+        "new": [
+          32768,
+          420,
+          0,
+          0,
+          "a0602aa40a86dac4dfcea042335766dbb49e7938024e23ae989e4e573ef7b2a0"
+        ],
+        "old": [
+          32768,
+          420,
+          0,
+          0,
+          "2ecc7ca3d4e05719ded1b8e2caa06dd40cb0bb57b1bb2e7d1dff7dd88c2fb409"
+        ]
+      },
+      "usr/lib/coreelec/ethernet-calibration/https_receive.py": {
+        "new": [
+          32768,
+          420,
+          0,
+          0,
+          "86fbfee633f7d1f69d04a4e69a69e5e684804e38d38f7daaa6f29ca73ed04328"
+        ],
+        "old": [
+          32768,
+          420,
+          0,
+          0,
+          "07dcf6b0e58c84504316fe5e99b1d7ec69fb96b81d22deb398928e484fa4d887"
+        ]
+      },
+      "usr/lib/coreelec/ethernet-calibration/service.py": {
+        "new": [
+          32768,
+          420,
+          0,
+          0,
+          "5382446a28dbf957f05407335558d07f0aaac18a42d97be6d55a851aafac8791"
+        ],
+        "old": [
+          32768,
+          420,
+          0,
+          0,
+          "e5e349bc73aad652d4f814db0cfcc17e1c2ba4f4167f8e838987fc13f0823529"
+        ]
+      },
+      "usr/share/kodi/addons/service.coreelec.settings/resources/language/resource.language.en_gb/strings.po": {
+        "new": [
+          32768,
+          493,
+          0,
+          0,
+          "78c2a9362ad14fc26dd57d91f62c076e01de4b7667bccf24ef80158663d240bf"
+        ],
+        "old": [
+          32768,
+          493,
+          0,
+          0,
+          "12a17b7413d1e53f37a834c42651a3988a379fdf7a41a5c909cf6e8052e76f80"
+        ]
+      },
+      "usr/share/kodi/addons/service.coreelec.settings/resources/lib/ethernet_calibration.pyc": {
+        "new": [
+          32768,
+          420,
+          0,
+          0,
+          "79213285718f5c702338de7cdf2e789f06204d16f1225a10fa5da3340590f233"
+        ],
+        "old": [
+          32768,
+          420,
+          0,
+          0,
+          "3ba86cfee7d5d4a2d6f9ecbf66e00981936221a1560d1ef05634ade68bd920c8"
+        ]
+      },
+      "usr/share/kodi/addons/service.coreelec.settings/resources/lib/modules/connman.pyc": {
+        "new": [
+          32768,
+          420,
+          0,
+          0,
+          "43c42135ac69bf0ddd14fa040a587b86e62c4d8be5a205f4e4642672e8d4c2b4"
+        ],
+        "old": [
+          32768,
+          420,
+          0,
+          0,
+          "3cc7fd665f10b150a78c2fb0c785955b642ced7639ad156bc3adc8c3e4077193"
+        ]
+      },
+      "usr/share/kodi/addons/service.coreelec.settings/resources/lib/oeWindows.pyc": {
+        "new": [
+          32768,
+          420,
+          0,
+          0,
+          "057f401f84bfb8cdb57dd447b3c7473ad7d3af84dd4497c8fd85a5c5a0108982"
+        ],
+        "old": [
+          32768,
+          420,
+          0,
+          0,
+          "a7d3d4a6041a5bda5bfc4ed78eb4b2acfe9068ab02f12c7b31a1e7c42dcffcdd"
+        ]
+      }
+    },
+    "kernel_sha256": "a3a463735093550b371a1eac0db3b8f49f67144e4ee6a4aee823bcc3626051ac",
+    "last_verified_release_not_fresh_device_read": true,
+    "paired_tar_sha256": "444c1841d65e7e96a5410bc9b8cdf681dbec03424b202659f1d8a3ecbf543b78",
+    "scoped_acceptance_receipt_sha256": "74b7cd7f07330caca7ace4c1201e2680711be221648326fc947e4464bba8e1bf",
+    "skips": 0,
+    "source_addon_tests": 342,
+    "source_native_tests": 139,
+    "source_sha256": "1e7d5f5488e60d2f149b15347fade81b3f493e421b411bd906d471ef27560ec3",
+    "system_sha256": "548b4d2919fd6d8b04f443f49d081dbe652319cdea89b909f84d96113ed5eb58",
+    "three_actual_addon_pycs_canonical_source_matched": true
+  },
+  "state": "reconciled_component_inventory_for_owner_selection_not_new_build_or_install"
+}

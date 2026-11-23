@@ -132,6 +132,146 @@
       "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
       "settings_defaults": {},
       "status": "included"
+    },
+    {
+      "base": "e4f493e3c34399333b7959a6d471dda49eb69f43",
+      "default": true,
+      "depends_on": [
+        "public-source-bootstrap"
+      ],
+      "experimental": false,
+      "head": "4f5c410fffd7cf7f47c22ae9a8048a9e2b9ae682",
+      "id": "cross-component-dependency-validation",
+      "ordered_commits": [
+        "4f5c410fffd7cf7f47c22ae9a8048a9e2b9ae682"
+      ],
+      "provenance": {
+        "kind": "reviewed-isolated-source-refresh",
+        "source_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git"
+      },
+      "ref": "refs/heads/feature/today-cross-component-dependencies",
+      "settings_defaults": {},
+      "status": "included"
+    },
+    {
+      "base": "e4f493e3c34399333b7959a6d471dda49eb69f43",
+      "default": true,
+      "depends_on": [
+        "public-source-bootstrap"
+      ],
+      "experimental": false,
+      "head": "44fa6b0c172526fb081a34479baac00777429517",
+      "id": "ancillary-replay-bootstrap",
+      "ordered_commits": [
+        "44fa6b0c172526fb081a34479baac00777429517"
+      ],
+      "provenance": {
+        "kind": "reviewed-isolated-source-refresh",
+        "source_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git"
+      },
+      "ref": "refs/heads/feature/today-ancillary-replay-bootstrap",
+      "settings_defaults": {},
+      "status": "included"
+    },
+    {
+      "base": "e4f493e3c34399333b7959a6d471dda49eb69f43",
+      "default": true,
+      "delivery": "identified-source-companion-only; no SYSTEM addon component or auto hook",
+      "depends_on": [
+        "verified-update-packaging"
+      ],
+      "experimental": false,
+      "head": "34b205ae3c93c47e8432f2449bd7af4585835b10",
+      "id": "accepted-jellyfin-companion-sources",
+      "ordered_commits": [
+        "34b205ae3c93c47e8432f2449bd7af4585835b10"
+      ],
+      "provenance": {
+        "kind": "reviewed-isolated-source-refresh",
+        "source_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git"
+      },
+      "ref": "refs/heads/feature/today-accepted-companion-contract",
+      "settings_defaults": {},
+      "status": "included"
+    },
+    {
+      "base": "e4f493e3c34399333b7959a6d471dda49eb69f43",
+      "cross_component_depends_on": [
+        {
+          "component": "kernel",
+          "feature": "ethernet-calibration-8a"
+        }
+      ],
+      "default": true,
+      "depends_on": [
+        "native-ethernet8a",
+        "native-unit-lf-adapter"
+      ],
+      "experimental": false,
+      "head": "57452281b4db223c4ebcf4a3c3ce17555412b90c",
+      "id": "ethernet-https10",
+      "ordered_commits": [
+        "57452281b4db223c4ebcf4a3c3ce17555412b90c"
+      ],
+      "provenance": {
+        "kind": "reviewed-isolated-source-refresh",
+        "source_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git"
+      },
+      "ref": "refs/heads/feature/today-ethernet-https10",
+      "runtime_policy": {
+        "https_provider": "explicit experimental choice, not default",
+        "schema4": "no eager migration or boot traffic"
+      },
+      "settings_defaults": {},
+      "status": "included"
+    },
+    {
+      "acceptance": "manual/nonvisual only; visual/live/fresh/cold/suspend pending",
+      "base": "e4f493e3c34399333b7959a6d471dda49eb69f43",
+      "default": true,
+      "depends_on": [
+        "ethernet-https10"
+      ],
+      "experimental": false,
+      "head": "3ba471344c0c438175f9f7077b711abc05a15edf",
+      "id": "ethernet-ux11",
+      "ordered_commits": [
+        "3ba471344c0c438175f9f7077b711abc05a15edf"
+      ],
+      "provenance": {
+        "kind": "reviewed-isolated-source-refresh",
+        "source_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git"
+      },
+      "ref": "refs/heads/feature/today-ethernet-ux11",
+      "runtime_policy": {
+        "manual_schema3": "explicit user choice, health unverified",
+        "profiles": "preserve existing bytes/history, no seeds"
+      },
+      "settings_defaults": {},
+      "status": "included"
+    },
+    {
+      "base": "e4f493e3c34399333b7959a6d471dda49eb69f43",
+      "default": true,
+      "depends_on": [
+        "cross-component-dependency-validation",
+        "ancillary-replay-bootstrap",
+        "accepted-jellyfin-companion-sources",
+        "ethernet-ux11"
+      ],
+      "experimental": false,
+      "head": "cd0ae59eb22d1e7163e92b1e388363b952544017",
+      "id": "qualified-refresh-ledger",
+      "ordered_commits": [
+        "cd0ae59eb22d1e7163e92b1e388363b952544017"
+      ],
+      "provenance": {
+        "kind": "reviewed-isolated-source-refresh",
+        "source_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git"
+      },
+      "ref": "refs/heads/feature/today-qualified-refresh-ledger",
+      "settings_defaults": {},
+      "status": "included"
     }
   ],
   "files": [
@@ -204,13 +344,66 @@
       "mode": "100644",
       "path": "tools/combined-playback-hdr/tar-release.txt",
       "sha256": "8910488d3a187534e5a765d35171cb30274eb45ab608db3714c68cad1224459e"
+    },
+    {
+      "mode": "100644",
+      "path": "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/calibration.py",
+      "sha256": "a0602aa40a86dac4dfcea042335766dbb49e7938024e23ae989e4e573ef7b2a0"
+    },
+    {
+      "mode": "100644",
+      "path": "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/tests/test_calibration.py",
+      "sha256": "a6e243278c6c4700ee7a2eda2c5f757a020b55aafec4759acf203996c6d079c3"
+    },
+    {
+      "mode": "100644",
+      "path": "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/https_receive.py",
+      "sha256": "86fbfee633f7d1f69d04a4e69a69e5e684804e38d38f7daaa6f29ca73ed04328"
+    },
+    {
+      "mode": "100644",
+      "path": "projects/Amlogic-ce/devices/Amlogic-ng/patches/CoreELEC-settings/CoreELEC-settings-001-native-ethernet-calibration.patch",
+      "sha256": "f448f76a49a56accd6f53b4a4a277d5b2afef4c6e32d53cb5b9b9b70cbf6aca6"
+    },
+    {
+      "mode": "100644",
+      "path": "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/tests/test_https_receive.py",
+      "sha256": "d01e13625980e5164f348aa4e78d7512d5627d1e4944fd4085059f405e1febff"
+    },
+    {
+      "mode": "100644",
+      "path": "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/README.md",
+      "sha256": "9ad27b049d013cd1b5a6048b917bd91c07649ee6227ca236c7a1428db5b1d8d7"
+    },
+    {
+      "mode": "100644",
+      "path": "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/service.py",
+      "sha256": "5382446a28dbf957f05407335558d07f0aaac18a42d97be6d55a851aafac8791"
+    },
+    {
+      "mode": "100644",
+      "path": "tools/all-fixes/companions/jellyfin-late-keepalive/ws_client-original.py",
+      "sha256": "7cc8bbce35b2ea0ba889fd8bbe0938cd74fb0f99b8459b7bd33ef9899ab57b39"
+    },
+    {
+      "mode": "100644",
+      "path": "tools/all-fixes/companions/jellyfin-late-keepalive/ws_client.py",
+      "sha256": "acdd54e6c7caf61275ab2405c7bb9b8013583124e185a7e4eb44ac4135dc0b07"
+    },
+    {
+      "mode": "100644",
+      "path": "tools/all-fixes/companions/jellyfin-late-keepalive/ws-client-ordering.patch",
+      "sha256": "2002d2770df89079adcf80c322c6744add69acc8fd16d637dcd0b79b69979ed6"
+    },
+    {
+      "mode": "100644",
+      "path": "tools/all-fixes/companions/jellyfin-late-keepalive/test_jellyfin_shutdown.py",
+      "sha256": "548d0d03691fa162fb65058f42116ec98523710281e2efe69c35ddcadceffca0"
     }
   ],
   "integration": {
-    "containing_manifest_commit_pinned_by_receipt": true,
-    "head_record": "assembly.json/components/framework/head",
-    "ref": "refs/heads/integration/all-fixes",
-    "tree_record": "assembly.json/components/framework/tree"
+    "binary_validation": false,
+    "ref": "refs/heads/candidate/all-fixes-today-20261122"
   },
   "limitations": [
     "Framework production parity excludes six intentional canonical recipe bindings and workflow/legacy evidence tools; recipe and unchanged packager files have individual checksum/mode checks.",
@@ -225,19 +418,26 @@
   },
   "parity": [
     {
-      "entries_count": 3691,
-      "entries_sha256": "24256f032c7a49b11d337aec99a9b5daf1bd8411484eb72c561990a1a0a3c055",
+      "entries_count": 3686,
+      "entries_sha256": "9f83927b486f881dff2ca838154f71b50dffd393c4a7c175de0e4a875c0c5a65",
       "exclude": [
-        "tools/combined-playback-hdr",
-        "tools/all-fixes",
-        "projects/Amlogic-ce/packages/mediacenter/kodi/package.mk",
-        "projects/Amlogic-ce/packages/linux/package.mk",
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/README.md",
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/calibration.py",
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/https_receive.py",
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/service.py",
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/tests/test_calibration.py",
+        "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/tests/test_https_receive.py",
+        "projects/Amlogic-ce/devices/Amlogic-ng/patches/CoreELEC-settings/CoreELEC-settings-001-native-ethernet-calibration.patch",
+        "projects/Amlogic-ce/packages/linux-drivers/amlogic/ap6275s-aml/package.mk",
         "projects/Amlogic-ce/packages/linux-drivers/amlogic/media_modules-aml/package.mk",
+        "projects/Amlogic-ce/packages/linux/package.mk",
         "projects/Amlogic-ce/packages/mediacenter/CoreELEC-settings/package.mk",
+        "projects/Amlogic-ce/packages/mediacenter/kodi/package.mk",
         "projects/Amlogic-ce/packages/mediacenter/skin.p3i.estuary/package.mk",
-        "projects/Amlogic-ce/packages/linux-drivers/amlogic/ap6275s-aml/package.mk"
+        "tools/all-fixes",
+        "tools/combined-playback-hdr"
       ],
-      "reference_commit": "55ab6e4ff30464b4456da1f85bbbbbdb3907e9c9"
+      "reference_commit": "e4f493e3c34399333b7959a6d471dda49eb69f43"
     }
   ],
   "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
@@ -250,6 +450,13 @@
     "COMBINED_AP6275S_SOURCE"
   ],
   "schema": 1,
+  "source_refresh_qualification": {
+    "all_existing_original_refs_unchanged": true,
+    "hardware_and_binary_claim": false,
+    "native_owner_catalog_sha256": "77635d830d26eda36d2473d3089dae2579dbb2e95b440997da67a3ccf0fe1c2c",
+    "native_source_zip_is_not_git_commit": true,
+    "original_public_source_baseline": "e4f493e3c34399333b7959a6d471dda49eb69f43"
+  },
   "source_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
   "upstream": {
     "commit": "7a36d3e71d20014db093d5dfc613fe21fe654902",

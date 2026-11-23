@@ -20,14 +20,14 @@
     "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git"
   },
   "integration": {
-    "ref": "integration/all-fixes",
-    "head": "fce97af5c969859be1d42fdebb19b727b6d4b5be",
-    "tree": "80398010a104b30fc2a0d21eaf2af6567a3f685f",
+    "ref": "integration/all-fixes-today-20261122",
+    "head": "5ee5e77fc07ae84012355e133ef66b530ea43569",
+    "tree": "a752e03e60bc2c3624190de63fc846c983c6310b",
     "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
     "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
     "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git"
   },
-  "expected_tree": "80398010a104b30fc2a0d21eaf2af6567a3f685f",
+  "expected_tree": "a752e03e60bc2c3624190de63fc846c983c6310b",
   "original_release": {
     "commit": "0aff06e05c4faada67c96a791f8a7e5f3485a29f",
     "tree": "80398010a104b30fc2a0d21eaf2af6567a3f685f",
@@ -67,11 +67,11 @@
       "settings_defaults": {},
       "evidence": [
         {
-          "id": "hunk-ownership.json",
+          "id": "baseline-evidence/hunk-ownership.json",
           "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
         },
         {
-          "id": "tree-parity.json",
+          "id": "baseline-evidence/tree-parity.json",
           "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
         }
       ],
@@ -114,27 +114,27 @@
       "settings_defaults": {},
       "evidence": [
         {
-          "id": "hunk-ownership.json",
+          "id": "baseline-evidence/hunk-ownership.json",
           "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
         },
         {
-          "id": "tree-parity.json",
+          "id": "baseline-evidence/tree-parity.json",
           "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
         },
         {
-          "id": "tests/test-aml-dv-manager-dependency.log",
+          "id": "baseline-evidence/tests/test-aml-dv-manager-dependency.log",
           "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
         },
         {
-          "id": "tests/test-aml-dv-options.log",
+          "id": "baseline-evidence/tests/test-aml-dv-options.log",
           "sha256": "e7f694bcf6bfe21f474b4f2a5a97d80f5fa36d59e627fbc6d6e8bc39e11959cf"
         },
         {
-          "id": "tests/test-aml-dv-preset-read.log",
+          "id": "baseline-evidence/tests/test-aml-dv-preset-read.log",
           "sha256": "ddedc445ffe6370c4d2430ce36bc9103ef23188e0b324ae8b57c07eacf476b62"
         },
         {
-          "id": "tests/test-aml-dv-setting-locks.log",
+          "id": "baseline-evidence/tests/test-aml-dv-setting-locks.log",
           "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
         }
       ],
@@ -188,27 +188,27 @@
       "settings_defaults": {},
       "evidence": [
         {
-          "id": "hunk-ownership.json",
+          "id": "baseline-evidence/hunk-ownership.json",
           "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
         },
         {
-          "id": "tree-parity.json",
+          "id": "baseline-evidence/tree-parity.json",
           "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
         },
         {
-          "id": "tests/test-aml-presenter-cadence.log",
+          "id": "baseline-evidence/tests/test-aml-presenter-cadence.log",
           "sha256": "113b7cdee2150d9c0cf1ad8b05ecb5bfc269dde0f18b43eb4d1585e8ef100184"
         },
         {
-          "id": "tests/test-aml-presenter-step-invalidation.log",
+          "id": "baseline-evidence/tests/test-aml-presenter-step-invalidation.log",
           "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
         },
         {
-          "id": "tests/test-dvd-clock-locking.log",
+          "id": "baseline-evidence/tests/test-dvd-clock-locking.log",
           "sha256": "7b986b070adba05f50408fd6bdb94cdf6d685cd3a7db4cfb645446855ec48d55"
         },
         {
-          "id": "tests/test-presenter-invalidation-lifetime.log",
+          "id": "baseline-evidence/tests/test-presenter-invalidation-lifetime.log",
           "sha256": "15bdde7faaba220f1d1273b970147c4482a01b733c77a8d46a6478b397f338f6"
         }
       ],
@@ -267,43 +267,43 @@
       "settings_defaults": {},
       "evidence": [
         {
-          "id": "hunk-ownership.json",
+          "id": "baseline-evidence/hunk-ownership.json",
           "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
         },
         {
-          "id": "tree-parity.json",
+          "id": "baseline-evidence/tree-parity.json",
           "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
         },
         {
-          "id": "tests/test-seek-preview-origin.log",
+          "id": "baseline-evidence/tests/test-seek-preview-origin.log",
           "sha256": "5caf7ad573205ffb23400585a26977dbe2ab710ac68560da4ec615beeb17e71e"
         },
         {
-          "id": "tests/test-seek-timeline-marker.log",
+          "id": "baseline-evidence/tests/test-seek-timeline-marker.log",
           "sha256": "002ee1e755f9c70c8a95da436ef7c7ce10541f93226c16d457af4bf60dd220d9"
         },
         {
-          "id": "tests/test-seek-marker-review-retirement-preview.log",
+          "id": "baseline-evidence/tests/test-seek-marker-review-retirement-preview.log",
           "sha256": "5281598eb6fca8f6c9e0a13dd6a966e0df0a38155ed74887ed72c4cebd6b7162"
         },
         {
-          "id": "tests/test-seek-marker-review-retirement-commit.log",
+          "id": "baseline-evidence/tests/test-seek-marker-review-retirement-commit.log",
           "sha256": "b612113c7f98b20b5020f7ebafbf0a8271d551e4416434481d6c251966cfa0ef"
         },
         {
-          "id": "tests/test-seek-marker-review-queued-speed.log",
+          "id": "baseline-evidence/tests/test-seek-marker-review-queued-speed.log",
           "sha256": "c95ad4a83eb4349ca35cb80273b99db3b806e9ed6f5cbd198e0b449fadb104ad"
         },
         {
-          "id": "tests/test-seek-marker-review-rejected-queue-keeps-older.log",
+          "id": "baseline-evidence/tests/test-seek-marker-review-rejected-queue-keeps-older.log",
           "sha256": "4ce8e30c802419c9153dbb0011e302f46fc4b44a7a3eaf6222bff668803d4379"
         },
         {
-          "id": "tests/test-seek-marker-review-chapter-supersession.log",
+          "id": "baseline-evidence/tests/test-seek-marker-review-chapter-supersession.log",
           "sha256": "b4373673a1faa1e0c0d16d488d4e874ba2cac51a04ef7e52059ab8167e06651a"
         },
         {
-          "id": "tests/test-seek-marker-review-stack-accurate-overlap.log",
+          "id": "baseline-evidence/tests/test-seek-marker-review-stack-accurate-overlap.log",
           "sha256": "30995aaf5f94a635739cf461c19111d16dd38c1d45020916a306389bd7151da2"
         }
       ],
@@ -368,15 +368,15 @@
       "settings_defaults": {},
       "evidence": [
         {
-          "id": "hunk-ownership.json",
+          "id": "baseline-evidence/hunk-ownership.json",
           "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
         },
         {
-          "id": "tree-parity.json",
+          "id": "baseline-evidence/tree-parity.json",
           "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
         },
         {
-          "id": "tests/test-paused-trickplay-return.log",
+          "id": "baseline-evidence/tests/test-paused-trickplay-return.log",
           "sha256": "853a42b935422d1115ad932e4f9a8b99cc3e5e3e37b870417fe211354870a64e"
         }
       ],
@@ -421,11 +421,11 @@
       "settings_defaults": {},
       "evidence": [
         {
-          "id": "hunk-ownership.json",
+          "id": "baseline-evidence/hunk-ownership.json",
           "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
         },
         {
-          "id": "tree-parity.json",
+          "id": "baseline-evidence/tree-parity.json",
           "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
         }
       ],
@@ -477,19 +477,19 @@
       },
       "evidence": [
         {
-          "id": "hunk-ownership.json",
+          "id": "baseline-evidence/hunk-ownership.json",
           "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
         },
         {
-          "id": "tree-parity.json",
+          "id": "baseline-evidence/tree-parity.json",
           "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
         },
         {
-          "id": "tests/test-hdr10-seamless-setting.log",
+          "id": "baseline-evidence/tests/test-hdr10-seamless-setting.log",
           "sha256": "48fb8760bfd1e89ac0ed96dadd32c3e20299891bf59d95264c75950cce51eb16"
         },
         {
-          "id": "tests/test-seamless-profile-migration.log",
+          "id": "baseline-evidence/tests/test-seamless-profile-migration.log",
           "sha256": "0858aaff3e9e1340fe4d777d56c823c5fa84b672f9644b8d51a9b0384bdbba1b"
         }
       ],
@@ -551,11 +551,11 @@
       },
       "evidence": [
         {
-          "id": "hunk-ownership.json",
+          "id": "baseline-evidence/hunk-ownership.json",
           "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
         },
         {
-          "id": "tree-parity.json",
+          "id": "baseline-evidence/tree-parity.json",
           "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
         }
       ],
@@ -602,16 +602,16 @@
       },
       "evidence": [
         {
-          "id": "hunk-ownership.json",
+          "id": "baseline-evidence/hunk-ownership.json",
           "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
         },
         {
-          "id": "tree-parity.json",
+          "id": "baseline-evidence/tree-parity.json",
           "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
         },
         {
-          "id": "tests/ddplus-parser-synthetic-12.log",
-          "sha256": "53dc1083de4d867205f3406073c5b499b67a60f2eb1f49841966565ca65ad7a3"
+          "id": "baseline-evidence/tests/ddplus-parser-synthetic-12.log",
+          "sha256": "f8805ba4750aee7f50bf52600573d3bc42a85a41b30a1d0f99f8962080a79ab8"
         }
       ],
       "upstream_equivalence_reason": null,
@@ -665,51 +665,51 @@
       "settings_defaults": {},
       "evidence": [
         {
-          "id": "hunk-ownership.json",
+          "id": "baseline-evidence/hunk-ownership.json",
           "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
         },
         {
-          "id": "tree-parity.json",
+          "id": "baseline-evidence/tree-parity.json",
           "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
         },
         {
-          "id": "tests/test-activeae-configure-retry.log",
+          "id": "baseline-evidence/tests/test-activeae-configure-retry.log",
           "sha256": "5c08e1c566d9af917049c35a46a4c2f977f26577f56981468ba317611b58720d"
         },
         {
-          "id": "tests/test-activeae-dropped-raw-delay.log",
+          "id": "baseline-evidence/tests/test-activeae-dropped-raw-delay.log",
           "sha256": "a5c34bcdd434dd26a58029127158cdce90edadcceaa52a3f339b55aca71ef0e5"
         },
         {
-          "id": "tests/test-activeae-duration-families.log",
+          "id": "baseline-evidence/tests/test-activeae-duration-families.log",
           "sha256": "6a69b4f78754d631b37d88f95ff97c15f98308342fd7183fae4e96e18d3aa976"
         },
         {
-          "id": "tests/test-activeae-error-free.log",
+          "id": "baseline-evidence/tests/test-activeae-error-free.log",
           "sha256": "4766ffa38f56bfac0f963b9d03f9d7e2a196a761a0c7517c5d7eb491693e719a"
         },
         {
-          "id": "tests/test-activeae-long-pause.log",
+          "id": "baseline-evidence/tests/test-activeae-long-pause.log",
           "sha256": "d2475985a2ac8b30f4228c0d1787a608b3c98e331c8bb8dfa69ceaf409e36f36"
         },
         {
-          "id": "tests/test-activeae-pause-silence.log",
+          "id": "baseline-evidence/tests/test-activeae-pause-silence.log",
           "sha256": "8dfd9fa630083c16c360840142ef1e754e2ec639efd2a905860ee9b269cb025d"
         },
         {
-          "id": "tests/test-activeae-paused-packets.log",
+          "id": "baseline-evidence/tests/test-activeae-paused-packets.log",
           "sha256": "6a20eddc0c0c240089d7b2599e3ee54ee351c908b20b7ef4dd98c803caf0212f"
         },
         {
-          "id": "tests/test-activeae-resume-epoch.log",
+          "id": "baseline-evidence/tests/test-activeae-resume-epoch.log",
           "sha256": "df87449bfa8fbdd6b904389dc2afbdb3d05aaa3a8ccdce35ba08fcb08e9c47d9"
         },
         {
-          "id": "tests/test-activeae-stream-flush.log",
+          "id": "baseline-evidence/tests/test-activeae-stream-flush.log",
           "sha256": "da44c5c28eba40bec587a1bbe8735fc7fd5c4aef336b31e7aea22acddd1b2932"
         },
         {
-          "id": "tests/test-activeae-threaded-barrier.log",
+          "id": "baseline-evidence/tests/test-activeae-threaded-barrier.log",
           "sha256": "09db92f7ea40cff765cfdbc2650aeb3d04260959bcf1b2bad60447f70027e6e2"
         }
       ],
@@ -783,15 +783,15 @@
       "settings_defaults": {},
       "evidence": [
         {
-          "id": "hunk-ownership.json",
+          "id": "baseline-evidence/hunk-ownership.json",
           "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
         },
         {
-          "id": "tree-parity.json",
+          "id": "baseline-evidence/tree-parity.json",
           "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
         },
         {
-          "id": "tests/test-audio-frame-admission.log",
+          "id": "baseline-evidence/tests/test-audio-frame-admission.log",
           "sha256": "f6d06a36e120d3ca2ef82da4d6d4524676fa817be46c366ffff9f3633e9b74f3"
         }
       ],
@@ -836,15 +836,15 @@
       "settings_defaults": {},
       "evidence": [
         {
-          "id": "hunk-ownership.json",
+          "id": "baseline-evidence/hunk-ownership.json",
           "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
         },
         {
-          "id": "tree-parity.json",
+          "id": "baseline-evidence/tree-parity.json",
           "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
         },
         {
-          "id": "tests/frame-pacing.log",
+          "id": "baseline-evidence/tests/frame-pacing.log",
           "sha256": "6b693b6d25abe12d1b69f6f62be0fd246fedfbc9a3db494c36820968e0b90c8a"
         }
       ],
@@ -901,11 +901,11 @@
       "settings_defaults": {},
       "evidence": [
         {
-          "id": "hunk-ownership.json",
+          "id": "baseline-evidence/hunk-ownership.json",
           "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
         },
         {
-          "id": "tree-parity.json",
+          "id": "baseline-evidence/tree-parity.json",
           "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
         }
       ],
@@ -960,103 +960,103 @@
       "settings_defaults": {},
       "evidence": [
         {
-          "id": "hunk-ownership.json",
+          "id": "baseline-evidence/hunk-ownership.json",
           "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
         },
         {
-          "id": "tree-parity.json",
+          "id": "baseline-evidence/tree-parity.json",
           "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
         },
         {
-          "id": "tests/test-activeae-truehd-sync.log",
+          "id": "baseline-evidence/tests/test-activeae-truehd-sync.log",
           "sha256": "783d7ba22a1a1d617222d3f894283f7ebbebc54f0941f9aec1063000e54e3dd9"
         },
         {
-          "id": "tests/test-aml-lifecycle.log",
+          "id": "baseline-evidence/tests/test-aml-lifecycle.log",
           "sha256": "da3632e61b90565553cef38cf5f8871ad87938371bc1abaeb92f1e4ba09a05bc"
         },
         {
-          "id": "tests/test-aml-mute-renderer.log",
+          "id": "baseline-evidence/tests/test-aml-mute-renderer.log",
           "sha256": "95490e56d47610d3adf2f59f47447ee406498bd9037b4b2ba81cc55e185674c5"
         },
         {
-          "id": "tests/test-aml-native-continuation.log",
+          "id": "baseline-evidence/tests/test-aml-native-continuation.log",
           "sha256": "c82306bd1c2de7a4f5f7ec74b1f1a2f84f49867a34fa14d51e90886aa7d710b5"
         },
         {
-          "id": "tests/test-aml-native-settings.log",
+          "id": "baseline-evidence/tests/test-aml-native-settings.log",
           "sha256": "53266bcb4581cd03cf1991b482543fe3ca08843250c8bc609764815eb2fca67d"
         },
         {
-          "id": "tests/test-aml-preroll.log",
+          "id": "baseline-evidence/tests/test-aml-preroll.log",
           "sha256": "a416cd0766a952d9932ebcb6d2b98b7121072445a68b4bbf2ccad741ea481ebd"
         },
         {
-          "id": "tests/test-aml-presenter-cadence.log",
+          "id": "baseline-evidence/tests/test-aml-presenter-cadence.log",
           "sha256": "113b7cdee2150d9c0cf1ad8b05ecb5bfc269dde0f18b43eb4d1585e8ef100184"
         },
         {
-          "id": "tests/test-aml-presenter-setting.log",
+          "id": "baseline-evidence/tests/test-aml-presenter-setting.log",
           "sha256": "64b61e7b6fb90ce8abe1bd1f4b6eb5762952d4ef2d4edbba27c5a9c5bef490a9"
         },
         {
-          "id": "tests/test-aml-presenter-step-invalidation.log",
+          "id": "baseline-evidence/tests/test-aml-presenter-step-invalidation.log",
           "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
         },
         {
-          "id": "tests/test-aml-presenter.log",
+          "id": "baseline-evidence/tests/test-aml-presenter.log",
           "sha256": "df9b449c3fc4eb08c2fe23683b24632f5196cb0790c6e884c9ff1afa1788fe78"
         },
         {
-          "id": "tests/test-aml-restart-hold.log",
+          "id": "baseline-evidence/tests/test-aml-restart-hold.log",
           "sha256": "a5e601cf385ad789f1b1080ccff2a8428cd4fa04fa14d5e6620653ea3cbe3e42"
         },
         {
-          "id": "tests/test-aml-seek-clock.log",
+          "id": "baseline-evidence/tests/test-aml-seek-clock.log",
           "sha256": "e8bea246dfaabf2bddea9ae96d50647c1373b3ab905871ad927a13e6c8917a4e"
         },
         {
-          "id": "tests/test-aml-skin-reload.log",
-          "sha256": "a68cec0e1908074a26cf75384b03f64f834f883e7dbb374ee438f5cfbd34b649"
+          "id": "baseline-evidence/tests/test-aml-skin-reload.log",
+          "sha256": "7163a3a869b360a1f69c491de9c9e8544a9d041104a8fc2062a5061ad3417d8f"
         },
         {
-          "id": "tests/test-aml-window-lifecycle.log",
+          "id": "baseline-evidence/tests/test-aml-window-lifecycle.log",
           "sha256": "f739ad337ac056e6aeab95457940565d7761632e3f3095f367d5685633e4751d"
         },
         {
-          "id": "tests/test-audio-recovery-seek.log",
+          "id": "baseline-evidence/tests/test-audio-recovery-seek.log",
           "sha256": "0edc6188ca1e6d8c6d9d1f3c5d016fa34d6c76f97d7b6138860067b2e61a9fec"
         },
         {
-          "id": "tests/test-chapter-seek-intent.log",
+          "id": "baseline-evidence/tests/test-chapter-seek-intent.log",
           "sha256": "f0351acd142921c56e8e7d70bc934f4a890e3f92f4a0c3865772a294bb1a179f"
         },
         {
-          "id": "tests/test-dv-disc-hold.log",
-          "sha256": "8101cbe2eec629d64f3019aca2e197c7dcf46b3ea293108df2e78358eff42120"
+          "id": "baseline-evidence/tests/test-dv-disc-hold.log",
+          "sha256": "8e6b494fd031055e349036535f61972cc00c9622fe6cf5e6cc9d72300f6a8254"
         },
         {
-          "id": "tests/test-player-lifecycle.log",
+          "id": "baseline-evidence/tests/test-player-lifecycle.log",
           "sha256": "5b26cc0e262eb77844d7527ac6aca3223f5bd4798196828e801f6e0ab9d64d68"
         },
         {
-          "id": "tests/test-player-retirement.log",
+          "id": "baseline-evidence/tests/test-player-retirement.log",
           "sha256": "0814e3a7097ec779c12b56c7b4d3c25b33b54da330d9dd56485208c64d6cbae3"
         },
         {
-          "id": "tests/test-render-lifecycle.log",
+          "id": "baseline-evidence/tests/test-render-lifecycle.log",
           "sha256": "d0cb44fba94722a57b63c8fb6f99c3e699e7768eb4517c5e19d9bcbfdc90c0cb"
         },
         {
-          "id": "tests/test-render-video-admission.log",
+          "id": "baseline-evidence/tests/test-render-video-admission.log",
           "sha256": "17466672469e3f195bb2e8fa9ba02859e4f84c5ebb39a55790661a2d4136f75e"
         },
         {
-          "id": "tests/test-truehd-delivery.log",
+          "id": "baseline-evidence/tests/test-truehd-delivery.log",
           "sha256": "1fe79f2d6e8a520afe82b7e2aa437f9bec98db9d5942c75ef78b0aa91e671597"
         },
         {
-          "id": "tests/test-video-timeout-recovery.log",
+          "id": "baseline-evidence/tests/test-video-timeout-recovery.log",
           "sha256": "c3502fd80db653510d1e6d6e61c9a7c8f28e2859dbc665ca08c22398fe931d39"
         }
       ],
@@ -1146,7 +1146,7 @@
       "settings_defaults": {},
       "evidence": [
         {
-          "id": "upstream-review.json",
+          "id": "baseline-evidence/upstream-review.json",
           "sha256": "4bbc8de0ba80d6909d118c4e9b61a4eb18150d877b0904b5efc32e876bc12886"
         }
       ],
@@ -1155,57 +1155,564 @@
       "ref_repository": "https://github.com/pannal/xbmc.git",
       "ref_availability": "local archive alias; no replay or remote fetch",
       "upstream_repository": "https://github.com/pannal/xbmc.git"
+    },
+    {
+      "id": "python-forced-shutdown",
+      "status": "included",
+      "default": true,
+      "ref": "fix/today-python-shutdown",
+      "base": "fce97af5c969859be1d42fdebb19b727b6d4b5be",
+      "head": "8ef79ccdec5243ec0803f2c608420f4979d51d25",
+      "ordered_commits": [
+        "8ef79ccdec5243ec0803f2c608420f4979d51d25"
+      ],
+      "depends_on": [
+        "seek-queue",
+        "manual-lldv",
+        "pause-presenter",
+        "seek-ux",
+        "trickplay-reanchor",
+        "startup-gate",
+        "hdr-v20",
+        "jvc-sticky-sdr",
+        "ddplus-safety",
+        "audio-pause-transport",
+        "retained-audio-admission",
+        "numbered-frame-tools",
+        "distribution-build",
+        "fixture-union"
+      ],
+      "source_pins": [
+        "2abc372bd7584d9e7575811a6fc730a5bfe9ce4f"
+      ],
+      "source_export_sha256": "493359a1c71153332b4b11baab0715dabf0077e55a5d80af89e077d7d90c2ea5",
+      "required_runtime": "CPython 3.13.18 exported PyThreadState_SetAsyncExc",
+      "paths": [
+        "xbmc/interfaces/python/PythonInvoker.cpp",
+        "tools/test-python-forced-shutdown.py"
+      ],
+      "branch": "fix/today-python-shutdown",
+      "experimental": false,
+      "commits": [
+        "8ef79ccdec5243ec0803f2c608420f4979d51d25"
+      ],
+      "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "provenance": {
+        "source_commits": [
+          "2abc372bd7584d9e7575811a6fc730a5bfe9ce4f"
+        ],
+        "source_export_sha256": "493359a1c71153332b4b11baab0715dabf0077e55a5d80af89e077d7d90c2ea5",
+        "source_pin_role": "Historical owner acceptance only; replay ordered_commits from owned fork."
+      },
+      "evidence": [
+        {
+          "id": "topic-ownership-matrix-final.json",
+          "sha256": "7e769cd14714fa1b26b903745a0d1b9794aca407e40806ca13606930032b6d5d"
+        },
+        {
+          "id": "source-acceptance-review.json",
+          "sha256": "1856c7af76976ca3eda2dc0f42eab65aa1640e214e99846e3815f6541f74b599"
+        },
+        {
+          "id": "source-parity-and-overlap.json",
+          "sha256": "d79da323b30066588296d363188b0d008ad918c95c344dd83ae79a173e37c6f5"
+        }
+      ]
+    },
+    {
+      "id": "lldv-vsif-suppression",
+      "status": "included",
+      "default": true,
+      "ref": "feature/today-lldv-vsif-suppression",
+      "base": "fce97af5c969859be1d42fdebb19b727b6d4b5be",
+      "head": "9cdf90502deda6026cdad45b6bbb7172f90f4de0",
+      "ordered_commits": [
+        "4c36d29c89cefa2e8d596f180706eb790eb99c38",
+        "9cdf90502deda6026cdad45b6bbb7172f90f4de0"
+      ],
+      "depends_on": [
+        "seek-queue",
+        "manual-lldv",
+        "pause-presenter",
+        "seek-ux",
+        "trickplay-reanchor",
+        "startup-gate",
+        "hdr-v20",
+        "jvc-sticky-sdr",
+        "ddplus-safety",
+        "audio-pause-transport",
+        "retained-audio-admission",
+        "numbered-frame-tools",
+        "distribution-build",
+        "fixture-union"
+      ],
+      "source_pins": [
+        "7944fad16e5b2344d9bfc6b37ceaea146d33a3fb",
+        "ac278966543eabcebae5db1945e407273cfba800"
+      ],
+      "source_export_sha256": "3f491e615fdb925840fcb88f4597026cd47efa39ce5d45c55873f5f832caf80b",
+      "paths": [
+        "addons/resource.language.en_gb/resources/strings.po",
+        "system/settings/settings.xml",
+        "tools/test-lldv-vsif-suppress-setting.py",
+        "xbmc/settings/Settings.h",
+        "xbmc/utils/AMLLldvVsifPolicy.h",
+        "xbmc/utils/AMLUtils.cpp",
+        "xbmc/utils/AMLUtils.h",
+        "xbmc/windowing/amlogic/DolbyVisionAML.cpp",
+        "tools/test-aml-native-continuation.py",
+        "tools/test-aml-native-settings.py",
+        "tools/test-hdr10-seamless-setting.py"
+      ],
+      "existing_baseline_prerequisites": [
+        "accepted HDR v20/default-On migration",
+        "sticky SDR GUI",
+        "same seamless gate writer"
+      ],
+      "optional_kernel_capability": "lldv_vsif_suppress; generic kernel default Off",
+      "settings_defaults": {
+        "suppression": false,
+        "policy": "opt-in",
+        "adopted_marker": false,
+        "first_start": "adopt existing kernel value once; do not change signaling"
+      },
+      "branch": "feature/today-lldv-vsif-suppression",
+      "experimental": false,
+      "commits": [
+        "4c36d29c89cefa2e8d596f180706eb790eb99c38",
+        "9cdf90502deda6026cdad45b6bbb7172f90f4de0"
+      ],
+      "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "provenance": {
+        "source_commits": [
+          "7944fad16e5b2344d9bfc6b37ceaea146d33a3fb",
+          "ac278966543eabcebae5db1945e407273cfba800"
+        ],
+        "source_export_sha256": "3f491e615fdb925840fcb88f4597026cd47efa39ce5d45c55873f5f832caf80b",
+        "source_pin_role": "Historical owner acceptance only; replay ordered_commits from owned fork."
+      },
+      "evidence": [
+        {
+          "id": "topic-ownership-matrix-final.json",
+          "sha256": "7e769cd14714fa1b26b903745a0d1b9794aca407e40806ca13606930032b6d5d"
+        },
+        {
+          "id": "source-acceptance-review.json",
+          "sha256": "1856c7af76976ca3eda2dc0f42eab65aa1640e214e99846e3815f6541f74b599"
+        },
+        {
+          "id": "source-parity-and-overlap.json",
+          "sha256": "d79da323b30066588296d363188b0d008ad918c95c344dd83ae79a173e37c6f5"
+        }
+      ],
+      "cross_component_depends_on": [
+        {
+          "component": "kernel",
+          "feature": "lldv-vsif-suppression-v3"
+        }
+      ]
     }
   ],
   "evidence": [
     {
-      "id": "hunk-ownership.json",
-      "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
-    },
-    {
-      "id": "tree-parity.json",
-      "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
-    },
-    {
-      "id": "upstream-review.json",
-      "sha256": "4bbc8de0ba80d6909d118c4e9b61a4eb18150d877b0904b5efc32e876bc12886"
-    },
-    {
-      "id": "publish-safe-audit.json",
-      "sha256": "1e6836fc92384a631b37286587f63cfb8efa75168ebc4f63c78845c706a55119"
-    },
-    {
-      "id": "WORKFLOW.md",
+      "id": "baseline-evidence/WORKFLOW.md",
       "sha256": "d98ab70bfd2af60a2a033f19dd0e1fe91dbba2e525a1f64bf8866a027770e955"
     },
     {
-      "id": "test-results.json",
-      "sha256": "cfa36e17f6b59357f140c022d3cda317a7918ba94f4780ad850a1dfac744859b"
-    },
-    {
-      "id": "original-control-results.json",
-      "sha256": "8f5579e51e518ae3b6ceda80edc375d9f3d42432d73165d4784684b21b7dcaa5"
-    },
-    {
-      "id": "host-parser-boundary.json",
-      "sha256": "6e05a91742fc9495bcd26b66b93ddff9ec109686c00a49592fc986eeee711467"
-    },
-    {
-      "id": "host-dependencies.json",
+      "id": "baseline-evidence/host-dependencies.json",
       "sha256": "06bdee0e92c829caaae43610a8f1cac0652c93860a3f3db90868237a4487555d"
     },
     {
-      "id": "public-bootstrap-provenance.json",
+      "id": "baseline-evidence/host-parser-boundary.json",
+      "sha256": "6e05a91742fc9495bcd26b66b93ddff9ec109686c00a49592fc986eeee711467"
+    },
+    {
+      "id": "baseline-evidence/hunk-ownership.json",
+      "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+    },
+    {
+      "id": "baseline-evidence/original-control-results.json",
+      "sha256": "8f5579e51e518ae3b6ceda80edc375d9f3d42432d73165d4784684b21b7dcaa5"
+    },
+    {
+      "id": "baseline-evidence/public-bootstrap-provenance.json",
       "sha256": "0e0ab16681503852fbf1453b2521fc917913d5e8324d3e5a5ed9b6ae1e4bb65f"
+    },
+    {
+      "id": "baseline-evidence/publish-safe-audit.json",
+      "sha256": "1e6836fc92384a631b37286587f63cfb8efa75168ebc4f63c78845c706a55119"
+    },
+    {
+      "id": "baseline-evidence/test-results.json",
+      "sha256": "cfa36e17f6b59357f140c022d3cda317a7918ba94f4780ad850a1dfac744859b"
+    },
+    {
+      "id": "baseline-evidence/tests/ddplus-parser-synthetic-12.log",
+      "sha256": "f8805ba4750aee7f50bf52600573d3bc42a85a41b30a1d0f99f8962080a79ab8"
+    },
+    {
+      "id": "baseline-evidence/tests/frame-pacing.log",
+      "sha256": "6b693b6d25abe12d1b69f6f62be0fd246fedfbc9a3db494c36820968e0b90c8a"
+    },
+    {
+      "id": "baseline-evidence/tests/test-activeae-configure-retry.log",
+      "sha256": "5c08e1c566d9af917049c35a46a4c2f977f26577f56981468ba317611b58720d"
+    },
+    {
+      "id": "baseline-evidence/tests/test-activeae-dropped-raw-delay.log",
+      "sha256": "a5c34bcdd434dd26a58029127158cdce90edadcceaa52a3f339b55aca71ef0e5"
+    },
+    {
+      "id": "baseline-evidence/tests/test-activeae-duration-families.log",
+      "sha256": "6a69b4f78754d631b37d88f95ff97c15f98308342fd7183fae4e96e18d3aa976"
+    },
+    {
+      "id": "baseline-evidence/tests/test-activeae-error-free.log",
+      "sha256": "4766ffa38f56bfac0f963b9d03f9d7e2a196a761a0c7517c5d7eb491693e719a"
+    },
+    {
+      "id": "baseline-evidence/tests/test-activeae-long-pause.log",
+      "sha256": "d2475985a2ac8b30f4228c0d1787a608b3c98e331c8bb8dfa69ceaf409e36f36"
+    },
+    {
+      "id": "baseline-evidence/tests/test-activeae-pause-silence.log",
+      "sha256": "8dfd9fa630083c16c360840142ef1e754e2ec639efd2a905860ee9b269cb025d"
+    },
+    {
+      "id": "baseline-evidence/tests/test-activeae-paused-packets.log",
+      "sha256": "6a20eddc0c0c240089d7b2599e3ee54ee351c908b20b7ef4dd98c803caf0212f"
+    },
+    {
+      "id": "baseline-evidence/tests/test-activeae-resume-epoch.log",
+      "sha256": "df87449bfa8fbdd6b904389dc2afbdb3d05aaa3a8ccdce35ba08fcb08e9c47d9"
+    },
+    {
+      "id": "baseline-evidence/tests/test-activeae-stream-flush.log",
+      "sha256": "da44c5c28eba40bec587a1bbe8735fc7fd5c4aef336b31e7aea22acddd1b2932"
+    },
+    {
+      "id": "baseline-evidence/tests/test-activeae-threaded-barrier.log",
+      "sha256": "09db92f7ea40cff765cfdbc2650aeb3d04260959bcf1b2bad60447f70027e6e2"
+    },
+    {
+      "id": "baseline-evidence/tests/test-activeae-truehd-sync.log",
+      "sha256": "783d7ba22a1a1d617222d3f894283f7ebbebc54f0941f9aec1063000e54e3dd9"
+    },
+    {
+      "id": "baseline-evidence/tests/test-aml-dv-manager-dependency.log",
+      "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+    },
+    {
+      "id": "baseline-evidence/tests/test-aml-dv-options.log",
+      "sha256": "e7f694bcf6bfe21f474b4f2a5a97d80f5fa36d59e627fbc6d6e8bc39e11959cf"
+    },
+    {
+      "id": "baseline-evidence/tests/test-aml-dv-preset-read.log",
+      "sha256": "ddedc445ffe6370c4d2430ce36bc9103ef23188e0b324ae8b57c07eacf476b62"
+    },
+    {
+      "id": "baseline-evidence/tests/test-aml-dv-setting-locks.log",
+      "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+    },
+    {
+      "id": "baseline-evidence/tests/test-aml-lifecycle.log",
+      "sha256": "da3632e61b90565553cef38cf5f8871ad87938371bc1abaeb92f1e4ba09a05bc"
+    },
+    {
+      "id": "baseline-evidence/tests/test-aml-mute-renderer.log",
+      "sha256": "95490e56d47610d3adf2f59f47447ee406498bd9037b4b2ba81cc55e185674c5"
+    },
+    {
+      "id": "baseline-evidence/tests/test-aml-native-continuation.log",
+      "sha256": "c82306bd1c2de7a4f5f7ec74b1f1a2f84f49867a34fa14d51e90886aa7d710b5"
+    },
+    {
+      "id": "baseline-evidence/tests/test-aml-native-settings.log",
+      "sha256": "53266bcb4581cd03cf1991b482543fe3ca08843250c8bc609764815eb2fca67d"
+    },
+    {
+      "id": "baseline-evidence/tests/test-aml-preroll.log",
+      "sha256": "a416cd0766a952d9932ebcb6d2b98b7121072445a68b4bbf2ccad741ea481ebd"
+    },
+    {
+      "id": "baseline-evidence/tests/test-aml-presenter-cadence.log",
+      "sha256": "113b7cdee2150d9c0cf1ad8b05ecb5bfc269dde0f18b43eb4d1585e8ef100184"
+    },
+    {
+      "id": "baseline-evidence/tests/test-aml-presenter-setting.log",
+      "sha256": "64b61e7b6fb90ce8abe1bd1f4b6eb5762952d4ef2d4edbba27c5a9c5bef490a9"
+    },
+    {
+      "id": "baseline-evidence/tests/test-aml-presenter-step-invalidation.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "baseline-evidence/tests/test-aml-presenter.log",
+      "sha256": "df9b449c3fc4eb08c2fe23683b24632f5196cb0790c6e884c9ff1afa1788fe78"
+    },
+    {
+      "id": "baseline-evidence/tests/test-aml-restart-hold.log",
+      "sha256": "a5e601cf385ad789f1b1080ccff2a8428cd4fa04fa14d5e6620653ea3cbe3e42"
+    },
+    {
+      "id": "baseline-evidence/tests/test-aml-seek-clock.log",
+      "sha256": "e8bea246dfaabf2bddea9ae96d50647c1373b3ab905871ad927a13e6c8917a4e"
+    },
+    {
+      "id": "baseline-evidence/tests/test-aml-skin-reload.log",
+      "sha256": "7163a3a869b360a1f69c491de9c9e8544a9d041104a8fc2062a5061ad3417d8f"
+    },
+    {
+      "id": "baseline-evidence/tests/test-aml-window-lifecycle.log",
+      "sha256": "f739ad337ac056e6aeab95457940565d7761632e3f3095f367d5685633e4751d"
+    },
+    {
+      "id": "baseline-evidence/tests/test-audio-frame-admission.log",
+      "sha256": "f6d06a36e120d3ca2ef82da4d6d4524676fa817be46c366ffff9f3633e9b74f3"
+    },
+    {
+      "id": "baseline-evidence/tests/test-audio-recovery-seek.log",
+      "sha256": "0edc6188ca1e6d8c6d9d1f3c5d016fa34d6c76f97d7b6138860067b2e61a9fec"
+    },
+    {
+      "id": "baseline-evidence/tests/test-chapter-seek-intent.log",
+      "sha256": "f0351acd142921c56e8e7d70bc934f4a890e3f92f4a0c3865772a294bb1a179f"
+    },
+    {
+      "id": "baseline-evidence/tests/test-dv-disc-hold.log",
+      "sha256": "8e6b494fd031055e349036535f61972cc00c9622fe6cf5e6cc9d72300f6a8254"
+    },
+    {
+      "id": "baseline-evidence/tests/test-dvd-clock-locking.log",
+      "sha256": "7b986b070adba05f50408fd6bdb94cdf6d685cd3a7db4cfb645446855ec48d55"
+    },
+    {
+      "id": "baseline-evidence/tests/test-hdr10-seamless-setting.log",
+      "sha256": "48fb8760bfd1e89ac0ed96dadd32c3e20299891bf59d95264c75950cce51eb16"
+    },
+    {
+      "id": "baseline-evidence/tests/test-paused-trickplay-return.log",
+      "sha256": "853a42b935422d1115ad932e4f9a8b99cc3e5e3e37b870417fe211354870a64e"
+    },
+    {
+      "id": "baseline-evidence/tests/test-player-lifecycle.log",
+      "sha256": "5b26cc0e262eb77844d7527ac6aca3223f5bd4798196828e801f6e0ab9d64d68"
+    },
+    {
+      "id": "baseline-evidence/tests/test-player-retirement.log",
+      "sha256": "0814e3a7097ec779c12b56c7b4d3c25b33b54da330d9dd56485208c64d6cbae3"
+    },
+    {
+      "id": "baseline-evidence/tests/test-presenter-invalidation-lifetime.log",
+      "sha256": "15bdde7faaba220f1d1273b970147c4482a01b733c77a8d46a6478b397f338f6"
+    },
+    {
+      "id": "baseline-evidence/tests/test-render-lifecycle.log",
+      "sha256": "d0cb44fba94722a57b63c8fb6f99c3e699e7768eb4517c5e19d9bcbfdc90c0cb"
+    },
+    {
+      "id": "baseline-evidence/tests/test-render-video-admission.log",
+      "sha256": "17466672469e3f195bb2e8fa9ba02859e4f84c5ebb39a55790661a2d4136f75e"
+    },
+    {
+      "id": "baseline-evidence/tests/test-seamless-profile-migration.log",
+      "sha256": "0858aaff3e9e1340fe4d777d56c823c5fa84b672f9644b8d51a9b0384bdbba1b"
+    },
+    {
+      "id": "baseline-evidence/tests/test-seek-marker-review-chapter-supersession.log",
+      "sha256": "b4373673a1faa1e0c0d16d488d4e874ba2cac51a04ef7e52059ab8167e06651a"
+    },
+    {
+      "id": "baseline-evidence/tests/test-seek-marker-review-queued-speed.log",
+      "sha256": "c95ad4a83eb4349ca35cb80273b99db3b806e9ed6f5cbd198e0b449fadb104ad"
+    },
+    {
+      "id": "baseline-evidence/tests/test-seek-marker-review-rejected-queue-keeps-older.log",
+      "sha256": "4ce8e30c802419c9153dbb0011e302f46fc4b44a7a3eaf6222bff668803d4379"
+    },
+    {
+      "id": "baseline-evidence/tests/test-seek-marker-review-retirement-commit.log",
+      "sha256": "b612113c7f98b20b5020f7ebafbf0a8271d551e4416434481d6c251966cfa0ef"
+    },
+    {
+      "id": "baseline-evidence/tests/test-seek-marker-review-retirement-preview.log",
+      "sha256": "5281598eb6fca8f6c9e0a13dd6a966e0df0a38155ed74887ed72c4cebd6b7162"
+    },
+    {
+      "id": "baseline-evidence/tests/test-seek-marker-review-stack-accurate-overlap.log",
+      "sha256": "30995aaf5f94a635739cf461c19111d16dd38c1d45020916a306389bd7151da2"
+    },
+    {
+      "id": "baseline-evidence/tests/test-seek-preview-origin.log",
+      "sha256": "5caf7ad573205ffb23400585a26977dbe2ab710ac68560da4ec615beeb17e71e"
+    },
+    {
+      "id": "baseline-evidence/tests/test-seek-timeline-marker.log",
+      "sha256": "002ee1e755f9c70c8a95da436ef7c7ce10541f93226c16d457af4bf60dd220d9"
+    },
+    {
+      "id": "baseline-evidence/tests/test-truehd-delivery.log",
+      "sha256": "1fe79f2d6e8a520afe82b7e2aa437f9bec98db9d5942c75ef78b0aa91e671597"
+    },
+    {
+      "id": "baseline-evidence/tests/test-video-timeout-recovery.log",
+      "sha256": "c3502fd80db653510d1e6d6e61c9a7c8f28e2859dbc665ca08c22398fe931d39"
+    },
+    {
+      "id": "baseline-evidence/tree-parity.json",
+      "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+    },
+    {
+      "id": "baseline-evidence/upstream-review.json",
+      "sha256": "4bbc8de0ba80d6909d118c4e9b61a4eb18150d877b0904b5efc32e876bc12886"
+    },
+    {
+      "id": "topic-ownership-matrix-final.json",
+      "sha256": "7e769cd14714fa1b26b903745a0d1b9794aca407e40806ca13606930032b6d5d"
+    },
+    {
+      "id": "source-acceptance-review.json",
+      "sha256": "1856c7af76976ca3eda2dc0f42eab65aa1640e214e99846e3815f6541f74b599"
+    },
+    {
+      "id": "source-parity-and-overlap.json",
+      "sha256": "d79da323b30066588296d363188b0d008ad918c95c344dd83ae79a173e37c6f5"
+    },
+    {
+      "id": "inherited-evidence-portability.json",
+      "sha256": "dc844c4738064b71bc08dfc61501ee9cb1baaacb1965a549718114cdbe03b694"
+    },
+    {
+      "id": "focused-tests.json",
+      "sha256": "2abb3d8de5adc6f0c3184d79bc71d1e554cf7c8493eb493fcd99eb0fd156f245"
+    },
+    {
+      "id": "tests/test-python-forced-shutdown.log",
+      "sha256": "67357884b47b2827fe257b422a8382be2dea9affd6f1abb252ca3c14bf303e29"
+    },
+    {
+      "id": "tests/test-lldv-vsif-suppress-setting.log",
+      "sha256": "a19feee95053fa7034637adcef17133e0954570f7325adc0ba63d436224adfab"
+    },
+    {
+      "id": "tests/test-hdr10-seamless-setting.log",
+      "sha256": "48fb8760bfd1e89ac0ed96dadd32c3e20299891bf59d95264c75950cce51eb16"
+    },
+    {
+      "id": "tests/test-seamless-profile-migration.log",
+      "sha256": "0858aaff3e9e1340fe4d777d56c823c5fa84b672f9644b8d51a9b0384bdbba1b"
+    },
+    {
+      "id": "tests/test-aml-native-settings.log",
+      "sha256": "abfd304607578c2d6f375180201a9d0ce44212f9ff80be4931f4f8186546b798"
+    },
+    {
+      "id": "tests/test-aml-native-continuation.log",
+      "sha256": "15f15569b8952486efd84ce4c0a5b55be54f5ad05abf8114e76f80f0a4b9922c"
+    },
+    {
+      "id": "tests/test-aml-dv-manager-dependency.log",
+      "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+    },
+    {
+      "id": "tests/test-aml-dv-preset-read.log",
+      "sha256": "ddedc445ffe6370c4d2430ce36bc9103ef23188e0b324ae8b57c07eacf476b62"
+    },
+    {
+      "id": "tests/test-aml-dv-setting-locks.log",
+      "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+    },
+    {
+      "id": "tests/test-aml-dv-options.log",
+      "sha256": "e7f694bcf6bfe21f474b4f2a5a97d80f5fa36d59e627fbc6d6e8bc39e11959cf"
+    },
+    {
+      "id": "tests/test-aml-lifecycle.log",
+      "sha256": "da3632e61b90565553cef38cf5f8871ad87938371bc1abaeb92f1e4ba09a05bc"
+    },
+    {
+      "id": "tests/test-aml-restart-hold.log",
+      "sha256": "a5e601cf385ad789f1b1080ccff2a8428cd4fa04fa14d5e6620653ea3cbe3e42"
+    },
+    {
+      "id": "tests/test-truehd-delivery.log",
+      "sha256": "1fe79f2d6e8a520afe82b7e2aa437f9bec98db9d5942c75ef78b0aa91e671597"
+    },
+    {
+      "id": "independent-replay.json",
+      "sha256": "aec4e5fcc7372d49664dd337b4bfed83c0cc9d383ff5a9e2ff4462b2bf1b9ea3"
+    },
+    {
+      "id": "offline/focused-tests.json",
+      "sha256": "0ffd69879da1220b710d510bfbe72d42f3e3837a05ff8a47bd54dfca93ee930b"
+    },
+    {
+      "id": "offline/tests/test-python-forced-shutdown.log",
+      "sha256": "67357884b47b2827fe257b422a8382be2dea9affd6f1abb252ca3c14bf303e29"
+    },
+    {
+      "id": "offline/tests/test-lldv-vsif-suppress-setting.log",
+      "sha256": "a19feee95053fa7034637adcef17133e0954570f7325adc0ba63d436224adfab"
+    },
+    {
+      "id": "offline/tests/test-hdr10-seamless-setting.log",
+      "sha256": "48fb8760bfd1e89ac0ed96dadd32c3e20299891bf59d95264c75950cce51eb16"
+    },
+    {
+      "id": "offline/tests/test-seamless-profile-migration.log",
+      "sha256": "0858aaff3e9e1340fe4d777d56c823c5fa84b672f9644b8d51a9b0384bdbba1b"
+    },
+    {
+      "id": "offline/tests/test-aml-native-settings.log",
+      "sha256": "abfd304607578c2d6f375180201a9d0ce44212f9ff80be4931f4f8186546b798"
+    },
+    {
+      "id": "offline/tests/test-aml-native-continuation.log",
+      "sha256": "15f15569b8952486efd84ce4c0a5b55be54f5ad05abf8114e76f80f0a4b9922c"
+    },
+    {
+      "id": "offline/tests/test-aml-dv-manager-dependency.log",
+      "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+    },
+    {
+      "id": "offline/tests/test-aml-dv-preset-read.log",
+      "sha256": "ddedc445ffe6370c4d2430ce36bc9103ef23188e0b324ae8b57c07eacf476b62"
+    },
+    {
+      "id": "offline/tests/test-aml-dv-setting-locks.log",
+      "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+    },
+    {
+      "id": "offline/tests/test-aml-dv-options.log",
+      "sha256": "e7f694bcf6bfe21f474b4f2a5a97d80f5fa36d59e627fbc6d6e8bc39e11959cf"
+    },
+    {
+      "id": "offline/tests/test-aml-lifecycle.log",
+      "sha256": "da3632e61b90565553cef38cf5f8871ad87938371bc1abaeb92f1e4ba09a05bc"
+    },
+    {
+      "id": "offline/tests/test-aml-restart-hold.log",
+      "sha256": "a5e601cf385ad789f1b1080ccff2a8428cd4fa04fa14d5e6620653ea3cbe3e42"
+    },
+    {
+      "id": "offline/tests/test-truehd-delivery.log",
+      "sha256": "1fe79f2d6e8a520afe82b7e2aa437f9bec98db9d5942c75ef78b0aa91e671597"
+    },
+    {
+      "id": "publication-reachability-audit.json",
+      "sha256": "6858e1d815c64cd35075ac9c350b55620407a133b2923eea7a5f1106e3419ab2"
     }
   ],
   "limits": [
-    "No hardware or new binary verification; source parity only.",
-    "Unrelated old historical blobs are excluded; three original bundles required.",
-    "Active stress shutdown/VFM sources pending acceptance; not included.",
-    "No accepted post-seek/pre-roll/timeline-flash/IVTC/Atmos-gain claim.",
-    "PCM 5.1/7.1 remains unverified.",
-    "Frozen source has preserved skin-reload/disc-hold fixture compile gaps; exact original controls reproduce them. Legacy frame-selection also retains its original failure. No assertion was relaxed."
+    "Host source/caller fixtures only, not a new Kodi/firmware binary or new hardware acceptance.",
+    "Generic VSIF default-Off path and current union have no target-hardware validation.",
+    "Original 9a90 diagnostic fixture remains local-only; public refs alone do not provide it.",
+    "Fresh release requires coherent binary/UI packaging, exact Python provider and targeted runtime checks.",
+    "Inherited fixture compile gaps/legacy failures remain in baseline receipts; no unrelated fixes."
   ],
   "cross_component_coverage": [
     {
@@ -1216,20 +1723,9 @@
     }
   ],
   "pending_acceptance": [
-    {
-      "id": "stress-python-shutdown",
-      "status": "pending",
-      "default": false,
-      "source_commit": "2abc372bd7584d9e7575811a6fc730a5bfe9ce4f",
-      "availability": "local-only; unaccepted and excluded from public bootstrap"
-    },
-    {
-      "id": "stress-vfm-route",
-      "status": "pending",
-      "default": false,
-      "source_commit": "8fa1efaf811753848394f34294932f6526941df7",
-      "availability": "local-only; unaccepted and excluded from public bootstrap"
-    }
+    "HDR10+ hidden mode-is-3 visibility repair",
+    "pre-roll v13c",
+    "VFM/parser/decoder playback cures; unresolved reboots"
   ],
   "excluded_experiments": [
     "postseek-corruption",
@@ -1250,69 +1746,142 @@
     "156": "eefe92d249c72edbd2f216b0b6ca3944e85e69b3"
   },
   "validations": {
-    "receipt": "test-results.json",
-    "sha256": "cfa36e17f6b59357f140c022d3cda317a7918ba94f4780ad850a1dfac744859b",
-    "passed": [
-      "test-activeae-configure-retry",
-      "test-activeae-dropped-raw-delay",
-      "test-activeae-duration-families",
-      "test-activeae-error-free",
-      "test-activeae-long-pause",
-      "test-activeae-pause-silence",
-      "test-activeae-paused-packets",
-      "test-activeae-resume-epoch",
-      "test-activeae-stream-flush",
-      "test-activeae-threaded-barrier",
-      "test-activeae-truehd-sync",
-      "test-aml-dv-manager-dependency",
-      "test-aml-dv-options",
-      "test-aml-dv-preset-read",
-      "test-aml-dv-setting-locks",
-      "test-aml-lifecycle",
-      "test-aml-mute-renderer",
-      "test-aml-native-continuation",
-      "test-aml-native-settings",
-      "test-aml-preroll",
-      "test-aml-presenter-cadence",
-      "test-aml-presenter-setting",
-      "test-aml-presenter-step-invalidation",
-      "test-aml-presenter",
-      "test-aml-restart-hold",
-      "test-aml-seek-clock",
-      "test-aml-window-lifecycle",
-      "test-audio-frame-admission",
-      "test-audio-recovery-seek",
-      "test-chapter-seek-intent",
-      "test-dvd-clock-locking",
-      "test-hdr10-seamless-setting",
-      "test-paused-trickplay-return",
-      "test-player-lifecycle",
-      "test-player-retirement",
-      "test-presenter-invalidation-lifetime",
-      "test-render-lifecycle",
-      "test-render-video-admission",
-      "test-seamless-profile-migration",
-      "test-seek-preview-origin",
-      "test-seek-timeline-marker",
-      "test-truehd-delivery",
-      "test-video-timeout-recovery",
-      "test-seek-marker-review-retirement-preview",
-      "test-seek-marker-review-retirement-commit",
-      "test-seek-marker-review-queued-speed",
-      "test-seek-marker-review-rejected-queue-keeps-older",
-      "test-seek-marker-review-chapter-supersession",
-      "test-seek-marker-review-stack-accurate-overlap",
-      "frame-pacing",
-      "ddplus-parser-compile",
-      "ddplus-parser-synthetic-12"
+    "current_source_focused_host_runners": 13,
+    "all_passed": true,
+    "test_inventory": [
+      {
+        "id": "test-python-forced-shutdown",
+        "command": [
+          "python3",
+          "-B",
+          "tools/test-python-forced-shutdown.py",
+          "--negative-control"
+        ],
+        "exit_code": 0
+      },
+      {
+        "id": "test-lldv-vsif-suppress-setting",
+        "command": [
+          "python3",
+          "-B",
+          "tools/test-lldv-vsif-suppress-setting.py"
+        ],
+        "exit_code": 0
+      },
+      {
+        "id": "test-hdr10-seamless-setting",
+        "command": [
+          "python3",
+          "-B",
+          "tools/test-hdr10-seamless-setting.py",
+          "--negative-control"
+        ],
+        "exit_code": 0
+      },
+      {
+        "id": "test-seamless-profile-migration",
+        "command": [
+          "python3",
+          "-B",
+          "tools/test-seamless-profile-migration.py"
+        ],
+        "exit_code": 0
+      },
+      {
+        "id": "test-aml-native-settings",
+        "command": [
+          "python3",
+          "-B",
+          "tools/test-aml-native-settings.py",
+          "--negative-controls"
+        ],
+        "exit_code": 0
+      },
+      {
+        "id": "test-aml-native-continuation",
+        "command": [
+          "python3",
+          "-B",
+          "tools/test-aml-native-continuation.py",
+          "--negative-controls"
+        ],
+        "exit_code": 0
+      },
+      {
+        "id": "test-aml-dv-manager-dependency",
+        "command": [
+          "python3",
+          "-B",
+          "tools/test-aml-dv-manager-dependency.py"
+        ],
+        "exit_code": 0
+      },
+      {
+        "id": "test-aml-dv-preset-read",
+        "command": [
+          "python3",
+          "-B",
+          "tools/test-aml-dv-preset-read.py"
+        ],
+        "exit_code": 0
+      },
+      {
+        "id": "test-aml-dv-setting-locks",
+        "command": [
+          "python3",
+          "-B",
+          "tools/test-aml-dv-setting-locks.py"
+        ],
+        "exit_code": 0
+      },
+      {
+        "id": "test-aml-dv-options",
+        "command": [
+          "python3",
+          "-B",
+          "tools/test-aml-dv-options.py"
+        ],
+        "exit_code": 0
+      },
+      {
+        "id": "test-aml-lifecycle",
+        "command": [
+          "python3",
+          "-B",
+          "tools/test-aml-lifecycle.py"
+        ],
+        "exit_code": 0
+      },
+      {
+        "id": "test-aml-restart-hold",
+        "command": [
+          "python3",
+          "-B",
+          "tools/test-aml-restart-hold.py"
+        ],
+        "exit_code": 0
+      },
+      {
+        "id": "test-truehd-delivery",
+        "command": [
+          "python3",
+          "-B",
+          "tools/test-truehd-delivery.py",
+          "--sanitize"
+        ],
+        "exit_code": 0
+      }
     ],
-    "failures": [
-      "test-aml-skin-reload",
-      "test-dv-disc-hold"
-    ]
+    "baseline_source_parity": {
+      "id": "source-parity-and-overlap.json",
+      "sha256": "d79da323b30066588296d363188b0d008ad918c95c344dd83ae79a173e37c6f5"
+    },
+    "old_fixture_compile_gaps": "Preserved historical original-control receipts; not falsely called passing.",
+    "source_build": false,
+    "hardware_validation": false
   },
-  "revision": 2,
-  "previous_catalog_sha256": "efbc2cfa3f120d374f75ab4beceb3ea89be9496c792e7771b50937e07ff3de12",
+  "revision": "today-20261122-accepted-python-and-opt-in-vsif",
+  "previous_catalog_sha256": "ab3762d0a66c110c85288defbe7a5e396e9f68258ce422b25ceb5d7a021aeacc",
   "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
   "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
   "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
@@ -1321,5 +1890,46 @@
     "upstream_base_and_refresh": "Canonical public Pannal ancestry; validated base stays pinned.",
     "original_0aff_and_9a90": "Remain local, neither refs nor private ancestry are publication targets.",
     "original_diagnostic_gate": "Requires preserved local original fixture evidence; not runnable from public refs alone."
+  },
+  "baseline_contract": {
+    "commit": "fce97af5c969859be1d42fdebb19b727b6d4b5be",
+    "tree": "80398010a104b30fc2a0d21eaf2af6567a3f685f",
+    "dependency_policy": "New deltas require this complete accepted baseline; explicit dependency IDs preserve its whole default union."
+  },
+  "source_candidate": {
+    "ref": "release/today-20261122-source-candidate",
+    "commit": "5ee5e77fc07ae84012355e133ef66b530ea43569",
+    "tree": "a752e03e60bc2c3624190de63fc846c983c6310b",
+    "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+    "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+    "binary_built": false
+  },
+  "settings_defaults": {
+    "hdr_seamless": "Retained default On; one-time saved-Off migration; later Off persists.",
+    "lldv_vsif_suppress": false,
+    "lldv_vsif_suppress_adopted": false,
+    "assembly_selection_is_not_runtime_setting": true
+  },
+  "deployment_obligations": {
+    "python_provider": {
+      "version": "3.13.18",
+      "soname": "libpython3.13.so.1.0",
+      "export": "PyThreadState_SetAsyncExc",
+      "new_cohort_provider_audit_required": true
+    },
+    "ui_assets": [
+      {
+        "path": "system/settings/settings.xml",
+        "source_blob": "b199c734f01912181810b19536ddb2fa35c318df",
+        "source_sha256": "0fc04d96590bd18c9110b073ca46f413ee797a0fac18cc616ca71ba78a7e3d8e"
+      },
+      {
+        "path": "addons/resource.language.en_gb/resources/strings.po",
+        "source_blob": "924386d16912496d2c39393ddc8d53fd7a103982",
+        "source_sha256": "a9324f7e5895d5536d5f03b65a1d36a39ef146bb3c51e72d4a1e293f6330cd84"
+      }
+    ],
+    "kodi_binary": "Must be newly built from this candidate and match both UI assets; historical binaries are not this cohort.",
+    "reuse_old_overlay_or_stock_system_mount_recipe": false
   }
 }

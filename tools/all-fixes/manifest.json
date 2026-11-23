@@ -158,6 +158,146 @@
           "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
           "settings_defaults": {},
           "status": "included"
+        },
+        {
+          "base": "e4f493e3c34399333b7959a6d471dda49eb69f43",
+          "default": true,
+          "depends_on": [
+            "public-source-bootstrap"
+          ],
+          "experimental": false,
+          "head": "4f5c410fffd7cf7f47c22ae9a8048a9e2b9ae682",
+          "id": "cross-component-dependency-validation",
+          "ordered_commits": [
+            "4f5c410fffd7cf7f47c22ae9a8048a9e2b9ae682"
+          ],
+          "provenance": {
+            "kind": "reviewed-isolated-source-refresh",
+            "source_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git"
+          },
+          "ref": "refs/heads/feature/today-cross-component-dependencies",
+          "settings_defaults": {},
+          "status": "included"
+        },
+        {
+          "base": "e4f493e3c34399333b7959a6d471dda49eb69f43",
+          "default": true,
+          "depends_on": [
+            "public-source-bootstrap"
+          ],
+          "experimental": false,
+          "head": "44fa6b0c172526fb081a34479baac00777429517",
+          "id": "ancillary-replay-bootstrap",
+          "ordered_commits": [
+            "44fa6b0c172526fb081a34479baac00777429517"
+          ],
+          "provenance": {
+            "kind": "reviewed-isolated-source-refresh",
+            "source_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git"
+          },
+          "ref": "refs/heads/feature/today-ancillary-replay-bootstrap",
+          "settings_defaults": {},
+          "status": "included"
+        },
+        {
+          "base": "e4f493e3c34399333b7959a6d471dda49eb69f43",
+          "default": true,
+          "delivery": "identified-source-companion-only; no SYSTEM addon component or auto hook",
+          "depends_on": [
+            "verified-update-packaging"
+          ],
+          "experimental": false,
+          "head": "34b205ae3c93c47e8432f2449bd7af4585835b10",
+          "id": "accepted-jellyfin-companion-sources",
+          "ordered_commits": [
+            "34b205ae3c93c47e8432f2449bd7af4585835b10"
+          ],
+          "provenance": {
+            "kind": "reviewed-isolated-source-refresh",
+            "source_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git"
+          },
+          "ref": "refs/heads/feature/today-accepted-companion-contract",
+          "settings_defaults": {},
+          "status": "included"
+        },
+        {
+          "base": "e4f493e3c34399333b7959a6d471dda49eb69f43",
+          "cross_component_depends_on": [
+            {
+              "component": "kernel",
+              "feature": "ethernet-calibration-8a"
+            }
+          ],
+          "default": true,
+          "depends_on": [
+            "native-ethernet8a",
+            "native-unit-lf-adapter"
+          ],
+          "experimental": false,
+          "head": "57452281b4db223c4ebcf4a3c3ce17555412b90c",
+          "id": "ethernet-https10",
+          "ordered_commits": [
+            "57452281b4db223c4ebcf4a3c3ce17555412b90c"
+          ],
+          "provenance": {
+            "kind": "reviewed-isolated-source-refresh",
+            "source_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git"
+          },
+          "ref": "refs/heads/feature/today-ethernet-https10",
+          "runtime_policy": {
+            "https_provider": "explicit experimental choice, not default",
+            "schema4": "no eager migration or boot traffic"
+          },
+          "settings_defaults": {},
+          "status": "included"
+        },
+        {
+          "acceptance": "manual/nonvisual only; visual/live/fresh/cold/suspend pending",
+          "base": "e4f493e3c34399333b7959a6d471dda49eb69f43",
+          "default": true,
+          "depends_on": [
+            "ethernet-https10"
+          ],
+          "experimental": false,
+          "head": "3ba471344c0c438175f9f7077b711abc05a15edf",
+          "id": "ethernet-ux11",
+          "ordered_commits": [
+            "3ba471344c0c438175f9f7077b711abc05a15edf"
+          ],
+          "provenance": {
+            "kind": "reviewed-isolated-source-refresh",
+            "source_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git"
+          },
+          "ref": "refs/heads/feature/today-ethernet-ux11",
+          "runtime_policy": {
+            "manual_schema3": "explicit user choice, health unverified",
+            "profiles": "preserve existing bytes/history, no seeds"
+          },
+          "settings_defaults": {},
+          "status": "included"
+        },
+        {
+          "base": "e4f493e3c34399333b7959a6d471dda49eb69f43",
+          "default": true,
+          "depends_on": [
+            "cross-component-dependency-validation",
+            "ancillary-replay-bootstrap",
+            "accepted-jellyfin-companion-sources",
+            "ethernet-ux11"
+          ],
+          "experimental": false,
+          "head": "cd0ae59eb22d1e7163e92b1e388363b952544017",
+          "id": "qualified-refresh-ledger",
+          "ordered_commits": [
+            "cd0ae59eb22d1e7163e92b1e388363b952544017"
+          ],
+          "provenance": {
+            "kind": "reviewed-isolated-source-refresh",
+            "source_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git"
+          },
+          "ref": "refs/heads/feature/today-qualified-refresh-ledger",
+          "settings_defaults": {},
+          "status": "included"
         }
       ],
       "files": [
@@ -230,13 +370,66 @@
           "mode": "100644",
           "path": "tools/combined-playback-hdr/tar-release.txt",
           "sha256": "8910488d3a187534e5a765d35171cb30274eb45ab608db3714c68cad1224459e"
+        },
+        {
+          "mode": "100644",
+          "path": "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/calibration.py",
+          "sha256": "a0602aa40a86dac4dfcea042335766dbb49e7938024e23ae989e4e573ef7b2a0"
+        },
+        {
+          "mode": "100644",
+          "path": "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/tests/test_calibration.py",
+          "sha256": "a6e243278c6c4700ee7a2eda2c5f757a020b55aafec4759acf203996c6d079c3"
+        },
+        {
+          "mode": "100644",
+          "path": "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/https_receive.py",
+          "sha256": "86fbfee633f7d1f69d04a4e69a69e5e684804e38d38f7daaa6f29ca73ed04328"
+        },
+        {
+          "mode": "100644",
+          "path": "projects/Amlogic-ce/devices/Amlogic-ng/patches/CoreELEC-settings/CoreELEC-settings-001-native-ethernet-calibration.patch",
+          "sha256": "f448f76a49a56accd6f53b4a4a277d5b2afef4c6e32d53cb5b9b9b70cbf6aca6"
+        },
+        {
+          "mode": "100644",
+          "path": "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/tests/test_https_receive.py",
+          "sha256": "d01e13625980e5164f348aa4e78d7512d5627d1e4944fd4085059f405e1febff"
+        },
+        {
+          "mode": "100644",
+          "path": "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/README.md",
+          "sha256": "9ad27b049d013cd1b5a6048b917bd91c07649ee6227ca236c7a1428db5b1d8d7"
+        },
+        {
+          "mode": "100644",
+          "path": "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/service.py",
+          "sha256": "5382446a28dbf957f05407335558d07f0aaac18a42d97be6d55a851aafac8791"
+        },
+        {
+          "mode": "100644",
+          "path": "tools/all-fixes/companions/jellyfin-late-keepalive/ws_client-original.py",
+          "sha256": "7cc8bbce35b2ea0ba889fd8bbe0938cd74fb0f99b8459b7bd33ef9899ab57b39"
+        },
+        {
+          "mode": "100644",
+          "path": "tools/all-fixes/companions/jellyfin-late-keepalive/ws_client.py",
+          "sha256": "acdd54e6c7caf61275ab2405c7bb9b8013583124e185a7e4eb44ac4135dc0b07"
+        },
+        {
+          "mode": "100644",
+          "path": "tools/all-fixes/companions/jellyfin-late-keepalive/ws-client-ordering.patch",
+          "sha256": "2002d2770df89079adcf80c322c6744add69acc8fd16d637dcd0b79b69979ed6"
+        },
+        {
+          "mode": "100644",
+          "path": "tools/all-fixes/companions/jellyfin-late-keepalive/test_jellyfin_shutdown.py",
+          "sha256": "548d0d03691fa162fb65058f42116ec98523710281e2efe69c35ddcadceffca0"
         }
       ],
       "integration": {
-        "containing_manifest_commit_pinned_by_receipt": true,
-        "head_record": "assembly.json/components/framework/head",
-        "ref": "refs/heads/integration/all-fixes",
-        "tree_record": "assembly.json/components/framework/tree"
+        "binary_validation": false,
+        "ref": "refs/heads/candidate/all-fixes-today-20261122"
       },
       "limitations": [
         "Framework production parity excludes six intentional canonical recipe bindings and workflow/legacy evidence tools; recipe and unchanged packager files have individual checksum/mode checks.",
@@ -251,19 +444,26 @@
       },
       "parity": [
         {
-          "entries_count": 3691,
-          "entries_sha256": "24256f032c7a49b11d337aec99a9b5daf1bd8411484eb72c561990a1a0a3c055",
+          "entries_count": 3686,
+          "entries_sha256": "9f83927b486f881dff2ca838154f71b50dffd393c4a7c175de0e4a875c0c5a65",
           "exclude": [
-            "tools/combined-playback-hdr",
-            "tools/all-fixes",
-            "projects/Amlogic-ce/packages/mediacenter/kodi/package.mk",
-            "projects/Amlogic-ce/packages/linux/package.mk",
+            "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/README.md",
+            "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/calibration.py",
+            "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/https_receive.py",
+            "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/source/service.py",
+            "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/tests/test_calibration.py",
+            "projects/Amlogic-ce/devices/Amlogic-ng/packages/sysutils/ethernet-calibration/tests/test_https_receive.py",
+            "projects/Amlogic-ce/devices/Amlogic-ng/patches/CoreELEC-settings/CoreELEC-settings-001-native-ethernet-calibration.patch",
+            "projects/Amlogic-ce/packages/linux-drivers/amlogic/ap6275s-aml/package.mk",
             "projects/Amlogic-ce/packages/linux-drivers/amlogic/media_modules-aml/package.mk",
+            "projects/Amlogic-ce/packages/linux/package.mk",
             "projects/Amlogic-ce/packages/mediacenter/CoreELEC-settings/package.mk",
+            "projects/Amlogic-ce/packages/mediacenter/kodi/package.mk",
             "projects/Amlogic-ce/packages/mediacenter/skin.p3i.estuary/package.mk",
-            "projects/Amlogic-ce/packages/linux-drivers/amlogic/ap6275s-aml/package.mk"
+            "tools/all-fixes",
+            "tools/combined-playback-hdr"
           ],
-          "reference_commit": "55ab6e4ff30464b4456da1f85bbbbbdb3907e9c9"
+          "reference_commit": "e4f493e3c34399333b7959a6d471dda49eb69f43"
         }
       ],
       "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
@@ -276,6 +476,13 @@
         "COMBINED_AP6275S_SOURCE"
       ],
       "schema": 1,
+      "source_refresh_qualification": {
+        "all_existing_original_refs_unchanged": true,
+        "hardware_and_binary_claim": false,
+        "native_owner_catalog_sha256": "77635d830d26eda36d2473d3089dae2579dbb2e95b440997da67a3ccf0fe1c2c",
+        "native_source_zip_is_not_git_commit": true,
+        "original_public_source_baseline": "e4f493e3c34399333b7959a6d471dda49eb69f43"
+      },
       "source_repository": "https://github.com/SeattlesBiggestVikingsFan/CoreELEC.git",
       "upstream": {
         "commit": "7a36d3e71d20014db093d5dfc613fe21fe654902",
@@ -289,8 +496,22 @@
       }
     },
     "kernel": {
+      "build_policy": "No binary was built or relabeled for this source candidate; original/older kernel hashes remain provenance only.",
+      "candidate_status": "Exact replay source candidate with passing offline checks; parent build/publication and new combined hardware acceptance are separate.",
       "component": "kernel",
-      "expected_tree": "2de60b436acf0c6289449c53eee6f842d176d4d2",
+      "excluded_updates": [
+        {
+          "id": "stress-vfm-parser-decoder-experiments",
+          "reason": "Did not cure the stress reboot; not accepted playback remedies.",
+          "status": "excluded"
+        },
+        {
+          "id": "hdr10plus-visibility-diagnosis",
+          "reason": "Existing converter/config trial; no accepted new kernel visibility source.",
+          "status": "pending"
+        }
+      ],
+      "expected_tree": "a2921b265a9ea43517b6036cc2dde95418545af0",
       "features": [
         {
           "base": "58c06bb03fba0d4136115b828a3924394130c15d",
@@ -306,6 +527,10 @@
             {
               "id": "evidence/workflow-tests.json",
               "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
             }
           ],
           "experimental": false,
@@ -326,7 +551,7 @@
             "patch": "linux-004_lower_undefined_mode_timeout.patch",
             "sha256": "837fe5e88c2b006337456af4dc8ad281f523ddf372f33bd567edd7c9aef12d66"
           },
-          "ref": "refs/heads/fix/boot-mode-timeout",
+          "ref": "fix/boot-mode-timeout",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {},
           "status": "included",
@@ -346,6 +571,10 @@
             {
               "id": "evidence/workflow-tests.json",
               "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
             }
           ],
           "experimental": false,
@@ -365,7 +594,7 @@
             "patch": "linux-007_die_floppy_die.patch",
             "sha256": "8c4db095ecf5f0a5f66790fd2afdeac1fa8eb999dfc442fb8f3aec4be02cd623"
           },
-          "ref": "refs/heads/fix/disable-floppy-probe",
+          "ref": "fix/disable-floppy-probe",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {},
           "status": "included",
@@ -385,6 +614,10 @@
             {
               "id": "evidence/workflow-tests.json",
               "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
             }
           ],
           "experimental": false,
@@ -404,7 +637,7 @@
             "patch": "linux-009_disable_i8042_check_on_apple_mac.patch",
             "sha256": "06967b05cdbad10c7fb87106bed1987863b5525a805331cb4f6fa16c75e8203f"
           },
-          "ref": "refs/heads/fix/apple-i8042",
+          "ref": "fix/apple-i8042",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {},
           "status": "included",
@@ -424,6 +657,10 @@
             {
               "id": "evidence/workflow-tests.json",
               "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
             }
           ],
           "experimental": false,
@@ -443,7 +680,7 @@
             "patch": "linux-02-fix_bluetooth_reconnect.patch",
             "sha256": "204a4445350aab48905b06efb6ae174ccbfab0afe3e8dd82c189ff3a19bcd063"
           },
-          "ref": "refs/heads/fix/bluetooth-reconnect",
+          "ref": "fix/bluetooth-reconnect",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {},
           "status": "included",
@@ -463,6 +700,10 @@
             {
               "id": "evidence/workflow-tests.json",
               "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
             }
           ],
           "experimental": false,
@@ -483,7 +724,7 @@
             "patch": "linux-03-stop-hid-generic-from-grabing-xbone.patch",
             "sha256": "fceceb760b4ed9bd0c6b321f7bef0d377c3e9c2c6bfffa8cf7e4b957ef351a41"
           },
-          "ref": "refs/heads/fix/xbox-special-driver",
+          "ref": "fix/xbox-special-driver",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {},
           "status": "included",
@@ -505,6 +746,10 @@
             {
               "id": "evidence/workflow-tests.json",
               "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
             }
           ],
           "experimental": false,
@@ -526,7 +771,7 @@
             "patch": "linux-04-xpadneo.patch",
             "sha256": "e2b236165b286514eb0ecc1ef253848328a6c32a761fb638c7bfa1468ce778da"
           },
-          "ref": "refs/heads/fix/xpadneo",
+          "ref": "fix/xpadneo",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {},
           "status": "included",
@@ -546,6 +791,10 @@
             {
               "id": "evidence/workflow-tests.json",
               "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
             }
           ],
           "experimental": false,
@@ -565,7 +814,7 @@
             "patch": "linux-10-add-compatibility-macro-for-input_event_sec.patch",
             "sha256": "587241c0af2c460c5baf2ea550e89f9647c4ba21b3cab19cc5f5da9c49eb738c"
           },
-          "ref": "refs/heads/fix/input-event-compat",
+          "ref": "fix/input-event-compat",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {},
           "status": "included",
@@ -585,6 +834,10 @@
             {
               "id": "evidence/workflow-tests.json",
               "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
             }
           ],
           "experimental": false,
@@ -604,7 +857,7 @@
             "patch": "linux-11-ax88179-fix-rx-bounds.patch",
             "sha256": "7076077560a67db8dcd6976a041884dc565872d957844ecfeb377d7079f404a6"
           },
-          "ref": "refs/heads/fix/ax88179-rx-bounds",
+          "ref": "fix/ax88179-rx-bounds",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {},
           "status": "included",
@@ -626,6 +879,10 @@
             {
               "id": "evidence/workflow-tests.json",
               "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
             }
           ],
           "experimental": false,
@@ -645,7 +902,7 @@
             "patch": "linux-12-ax88179-fix-packet-receiving.patch",
             "sha256": "4b064efbbe91d898ca729a9890e3cf2449d436bd943a97be2d9c06bc614174f6"
           },
-          "ref": "refs/heads/fix/ax88179-rx-packets",
+          "ref": "fix/ax88179-rx-packets",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {},
           "status": "included",
@@ -665,6 +922,10 @@
             {
               "id": "evidence/workflow-tests.json",
               "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
             }
           ],
           "experimental": false,
@@ -685,7 +946,7 @@
             "patch": "linux-13-usb-prevent-nested-device-resets.patch",
             "sha256": "3d06531a83ab56ef173e39bbc88fb642130f542e5cff7ff26614cdfbc8a193ec"
           },
-          "ref": "refs/heads/fix/usb-nested-reset",
+          "ref": "fix/usb-nested-reset",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {},
           "status": "included",
@@ -705,6 +966,10 @@
             {
               "id": "evidence/workflow-tests.json",
               "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
             }
           ],
           "experimental": false,
@@ -729,7 +994,7 @@
             "patch": "linux-14-usb-storage-add-boot-uas-policy.patch",
             "sha256": "051592f38a0e81a5bc339e48ced682b1b80803263c5dc3032b8d42ce651804ef"
           },
-          "ref": "refs/heads/fix/usb-boot-uas-policy",
+          "ref": "fix/usb-boot-uas-policy",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {},
           "status": "included",
@@ -751,6 +1016,10 @@
             {
               "id": "evidence/workflow-tests.json",
               "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
             }
           ],
           "experimental": false,
@@ -770,7 +1039,7 @@
             "patch": "linux-15-usb-storage-disable-uas-for-vl817.patch",
             "sha256": "7cab56ca50dc7b97fdd83a025fe0756f2a91c9500abe12f8a8f3ba17348a72eb"
           },
-          "ref": "refs/heads/fix/vl817-disable-uas",
+          "ref": "fix/vl817-disable-uas",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {},
           "status": "included",
@@ -790,6 +1059,10 @@
             {
               "id": "evidence/workflow-tests.json",
               "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
             }
           ],
           "experimental": false,
@@ -809,7 +1082,7 @@
             "patch": "linux-temp-02-fo_on_source.patch",
             "sha256": "c07599c5b51e1d240a1719a6e81d2544fa6a93a10d70a5c24b7521c1147e9f12"
           },
-          "ref": "refs/heads/fix/force-output-source-policy",
+          "ref": "fix/force-output-source-policy",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {},
           "status": "included",
@@ -829,6 +1102,10 @@
             {
               "id": "evidence/workflow-tests.json",
               "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
             }
           ],
           "experimental": false,
@@ -848,7 +1125,7 @@
             "patch": "linux-uapi-fix_linux-if.h-userspace-compilation-errors.patch",
             "sha256": "920c84771dc6167f843e3046698148df7e91dc228fce0be05e582807688fc9f4"
           },
-          "ref": "refs/heads/fix/network-uapi-compat",
+          "ref": "fix/network-uapi-compat",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {},
           "status": "included",
@@ -868,6 +1145,10 @@
             {
               "id": "evidence/workflow-tests.json",
               "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
             }
           ],
           "experimental": false,
@@ -885,7 +1166,7 @@
             "original_source": "b3fdef79fcf04d602849315f70edae9583138b72",
             "reason": "Remove redundant ./ in symlink while preserving identical target resolution."
           },
-          "ref": "refs/heads/fix/powerpc-test-symlink",
+          "ref": "fix/powerpc-test-symlink",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {},
           "status": "included",
@@ -909,6 +1190,10 @@
             {
               "id": "evidence/focused-tests.json",
               "sha256": "01b32fbf1bfe8d2457cbd8217fc250ebcaff41f66bebe565d842c46b349b76d6"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
             }
           ],
           "experimental": false,
@@ -938,7 +1223,7 @@
             "pr": 29,
             "repository": "https://github.com/pannal/linux-amlogic"
           },
-          "ref": "refs/heads/fix/afbc-scanout-retention",
+          "ref": "fix/afbc-scanout-retention",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {},
           "status": "included",
@@ -967,6 +1252,10 @@
             {
               "id": "evidence/focused-tests.json",
               "sha256": "01b32fbf1bfe8d2457cbd8217fc250ebcaff41f66bebe565d842c46b349b76d6"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
             }
           ],
           "experimental": false,
@@ -1008,7 +1297,7 @@
             "repository": "https://github.com/pannal/linux-amlogic",
             "scope": "Complete accepted v20: BT2020 output, guarded mute bypass, pre-arm, packet/transport trust and gated same-mode policy; not only recent default changes."
           },
-          "ref": "refs/heads/feature/seamless-hdr-v20",
+          "ref": "feature/seamless-hdr-v20",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {
             "dv_seamless_refresh": false,
@@ -1036,6 +1325,14 @@
             },
             {
               "id": "evidence/c2-results.json",
+              "sha256": "0e420dc63b2d8c4af908a50d15fb5c41b0a031f9ab5e4acf998db5b81089d5df"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
+            },
+            {
+              "id": "evidence/today-c2-results.json",
               "sha256": "0e420dc63b2d8c4af908a50d15fb5c41b0a031f9ab5e4acf998db5b81089d5df"
             }
           ],
@@ -1068,7 +1365,7 @@
             },
             "scope": "Counted sampler-clock borrow plus independently valid mute/config/register serialization; folded PR34 into PR32."
           },
-          "ref": "refs/heads/fix/hdmi-c2-clock-serialization",
+          "ref": "fix/hdmi-c2-clock-serialization",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {},
           "status": "included",
@@ -1094,6 +1391,18 @@
             {
               "id": "evidence/ethernet-lease.json",
               "sha256": "f247bde663f0695cdcf6d169c628d19a3e013bae5b72248ca2a8f68afa7c2ca6"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
+            },
+            {
+              "id": "evidence/today-ethernet-source-reconciliation.json",
+              "sha256": "53b2d11e09fd5769fa0095fedb17fb74a6b356c452f7ecc8ec8b08e315fb2d56"
+            },
+            {
+              "id": "evidence/today-ethernet-build-cohort-provenance.json",
+              "sha256": "9984ace5b718479c92e5a55062795e84fe6f8ca135682f43ac8cf60b37c1c4ee"
             }
           ],
           "experimental": false,
@@ -1119,7 +1428,7 @@
             "source_abi": 1,
             "source_zip_sha256": "3b70387a27dc33c820020794d01ad3f5c81f1e30c732add1c36f51e354ae0168"
           },
-          "ref": "refs/heads/feature/ethernet-calibration-8a",
+          "ref": "feature/ethernet-calibration-8a",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {
             "calibration": "Explicitly initiated; bounded lease restores original timing."
@@ -1150,6 +1459,10 @@
             {
               "id": "evidence/focused-tests.json",
               "sha256": "01b32fbf1bfe8d2457cbd8217fc250ebcaff41f66bebe565d842c46b349b76d6"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
             }
           ],
           "experimental": false,
@@ -1173,7 +1486,7 @@
             "scope": "Compiled default on; later manual Off remains authoritative through Kodi.",
             "user_directed": true
           },
-          "ref": "refs/heads/feature/seamless-default-on",
+          "ref": "feature/seamless-default-on",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {
             "dv_seamless_refresh": true,
@@ -1204,6 +1517,10 @@
             {
               "id": "evidence/focused-tests.json",
               "sha256": "01b32fbf1bfe8d2457cbd8217fc250ebcaff41f66bebe565d842c46b349b76d6"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
             }
           ],
           "experimental": false,
@@ -1228,7 +1545,7 @@
               "eebe87aede345899623f576ce5bf65d6d75774d6": "e184a6caed7926af99bf3081215ce19a9e4ea322"
             }
           },
-          "ref": "refs/heads/fix/osd-afbc-upstream-integrated",
+          "ref": "fix/osd-afbc-upstream-integrated",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {},
           "status": "upstream-integrated",
@@ -1257,6 +1574,10 @@
             {
               "id": "evidence/workflow-tests.json",
               "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
             }
           ],
           "experimental": false,
@@ -1281,7 +1602,7 @@
               "4d182eabe7eaee0e287027c91e2de1ae127a6a26": "5973e593d064a0c4b1bdb9deea0b5734ab2fdb8c"
             }
           },
-          "ref": "refs/heads/fix/vfm-vdin-upstream-integrated",
+          "ref": "fix/vfm-vdin-upstream-integrated",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {},
           "status": "upstream-integrated",
@@ -1310,6 +1631,10 @@
             {
               "id": "evidence/workflow-tests.json",
               "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
             }
           ],
           "experimental": false,
@@ -1328,7 +1653,7 @@
               "1f9baf7026d8fb0e8fc578bf337e0b23166e67e6": "12a8b87542ebbfd9d5aa46f42b182784fd629c6b"
             }
           },
-          "ref": "refs/heads/feature/raven-vdin-upstream-integrated",
+          "ref": "feature/raven-vdin-upstream-integrated",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {},
           "status": "upstream-integrated",
@@ -1361,6 +1686,10 @@
             {
               "id": "evidence/focused-tests.json",
               "sha256": "01b32fbf1bfe8d2457cbd8217fc250ebcaff41f66bebe565d842c46b349b76d6"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
             }
           ],
           "experimental": false,
@@ -1380,7 +1709,7 @@
               "3a5991353f33e67bf9ddfe2735b3d3133b042974": "0671fe98ea43df6bc030e1c8ec1c21e284dac72a"
             }
           },
-          "ref": "refs/heads/fix/hdr-sink-vsvdb-upstream-integrated",
+          "ref": "fix/hdr-sink-vsvdb-upstream-integrated",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {},
           "status": "upstream-integrated",
@@ -1411,6 +1740,10 @@
             {
               "id": "evidence/workflow-tests.json",
               "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
             }
           ],
           "experimental": false,
@@ -1429,7 +1762,7 @@
               "5710229b488aae905e14ecb386c77eceda552500": "0886f6685a6e210b34b78fb53920115d49821364"
             }
           },
-          "ref": "refs/heads/feature/native-p81-upstream-integrated",
+          "ref": "feature/native-p81-upstream-integrated",
           "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
           "settings_defaults": {
             "xbmc_live_frame_l5": true
@@ -1441,9 +1774,80 @@
             "reason": "Original native P8.1 same-picture L5 default-on commit is retained beneath the later archived sink-safeguard commit; complete resulting production file equals validated upstream and release. Native module/version policy is unchanged.",
             "upstream_commit": "58c06bb03fba0d4136115b828a3924394130c15d"
           }
+        },
+        {
+          "base": "56298eb1cb81e270876b454dcbd7290b1dfea25f",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "default": true,
+          "defaults": {
+            "lldv_vsif_suppress": false
+          },
+          "depends_on": [
+            "hdmi-c2-clock-serialization"
+          ],
+          "evidence": [
+            {
+              "id": "evidence/today-jvc-source-reconciliation.json",
+              "sha256": "b7bc74daf67e15ac8fb444d625f31d5321f668659f88868bcfeacd100ac59e53"
+            },
+            {
+              "id": "evidence/today-regressions.json",
+              "sha256": "57f567b246bcd06dbba0f835411b50a40182f7a7437c49d4922c6f9a83dfceb1"
+            },
+            {
+              "id": "evidence/today-workflow-tests.json",
+              "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
+            }
+          ],
+          "experimental": false,
+          "external_dependencies": [
+            "kodi/lldv-vsif-suppression-setting"
+          ],
+          "head": "5b9376a38cf4b0e4fb39aca74e2c1e889cf32281",
+          "id": "lldv-vsif-suppression-v3",
+          "limits": [
+            "Hardware acceptance applies to custom suppressionOn v3 in one manually configured projector-chain setup.",
+            "Generic defaultOff, generic cae054 with suppressionOn, this 2b17/f706 integration and Dolby-signaled sinks with suppressionOn were not hardware-tested.",
+            "LLDV video processing is preserved; keep suppressionOff for displays needing the Dolby VSIF.",
+            "No HDR10+ visibility/parser/decoder/stress experiments are included."
+          ],
+          "ordered_commits": [
+            "5b9376a38cf4b0e4fb39aca74e2c1e889cf32281"
+          ],
+          "patch_sha256": "afdd4408addf31ed21ce12441cbd5edc4756f903c73f69b93b4c063bcedc1c80",
+          "paths": [
+            "drivers/amlogic/media/vout/hdmitx/hdmi_tx_20/hdmi_tx_main.c",
+            "drivers/amlogic/media/vout/hdmitx/hdmi_tx_20/hdmi_tx_video.c",
+            "drivers/amlogic/media/vout/hdmitx/hdmi_tx_20/hw/hdmi_tx_hw.c",
+            "include/linux/amlogic/media/vout/hdmi_tx/hdmi_tx_module.h",
+            "tools/test-lldv-vsif-suppress.py"
+          ],
+          "provenance": {
+            "accepted_generic_commit": "cae054dbed345e6479ce48a7099a138608b7d369",
+            "accepted_generic_tree": "899982f9fb701e8493472fec7c115671d70ac34a",
+            "adaptation": "Use exact public generic defaultOff gating, getter and regressions; enabled packet/AVI behavior retained from accepted v3, not copied custom defaultY.",
+            "custom_deployed_image_sha256": "8837666164ab2630aa4074fba4c8217b83a88c20718ca1800cbedd635a9cebc2",
+            "custom_source_baseline": "3c223629c5f7ff87151b696161cf99bc7c857b94",
+            "immutable_custom_exports": {
+              "lldv-modern-avi-v2-candidate.patch": "b8a95b1aaa8e8dd3cb795e6f90c5e889c13a456dc457b93e1399bec45cbd1959",
+              "lldv-vsif-suppress-v3-candidate.patch": "48e04b8b3ea16abb5eeb540d2afdd2fcd39a88bf33b5f1d6927a965e0576b8eb"
+            },
+            "immutable_generic_mbox_sha256": "19c0bc40ec5094a98863a5f661d42c11ce9be91be2bb593b2b451bd98e47324a",
+            "original_pr": 32,
+            "original_repository": "https://github.com/pannal/linux-amlogic"
+          },
+          "ref": "feature/lldv-vsif-suppression-v3-20261122",
+          "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+          "settings_defaults": {
+            "lldv_vsif_suppress": false,
+            "seamless_refresh_preserved": true
+          },
+          "status": "included",
+          "upstream_equivalence_reason": "Accepted generic PR32 delta absent from frozen f706/2b17; replay exactly once without replacing C2/HDR/defaultOn policy."
         }
       ],
       "immutable_refs": {
+        "refs/heads/workflow/catalog-today-20261122": "08ba9087a96834fb9bb5eb69a1ce0c8bd2da8551",
         "source/original-pr-29-20261122": "a2ed27d5ba51f79ba386eae9281e588cfd9c5fa9",
         "source/original-pr-30-20261122": "eebe87aede345899623f576ce5bf65d6d75774d6",
         "source/original-pr-31-20261122": "1f9baf7026d8fb0e8fc578bf337e0b23166e67e6",
@@ -1455,10 +1859,10 @@
         "source/upstream-validated-20261122": "58c06bb03fba0d4136115b828a3924394130c15d"
       },
       "integration": {
-        "head": "f7061e5ca4f174c28614bfc29eed368e7cefafd0",
-        "ref": "integration/all-fixes",
+        "head": "d49892898952cc48768f9faf25b3d095650e3438",
+        "ref": "integration/all-fixes-today-20261122",
         "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
-        "tree": "2de60b436acf0c6289449c53eee6f842d176d4d2"
+        "tree": "a2921b265a9ea43517b6036cc2dde95418545af0"
       },
       "limits": [
         "No firmware build, deployment, push, merge, PR or hardware testing.",
@@ -1473,16 +1877,25 @@
         "tag": "source/release-original-20261122",
         "tree": "2de60b436acf0c6289449c53eee6f842d176d4d2"
       },
-      "reconstructed_baseline": {
+      "prior_release": {
         "commit": "f7061e5ca4f174c28614bfc29eed368e7cefafd0",
+        "ref": "integration/all-fixes",
         "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
-        "tag": "source/reconstructed-equivalent-20261122",
         "tree": "2de60b436acf0c6289449c53eee6f842d176d4d2"
       },
+      "reconstructed_baseline": {
+        "commit": "d49892898952cc48768f9faf25b3d095650e3438",
+        "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+        "status": "Source candidate; not built or hardware-accepted as a combined image.",
+        "tag": "source/candidate-today-20261122",
+        "tree": "a2921b265a9ea43517b6036cc2dde95418545af0"
+      },
       "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+      "runtime_defaults": {
+        "lldv_vsif_suppress": false,
+        "seamless_mode_refresh": true
+      },
       "schema_version": 1,
-      "source_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic.git",
-      "source_variable": "COMBINED_KERNEL_SOURCE",
       "upstream": {
         "commit": "58c06bb03fba0d4136115b828a3924394130c15d",
         "published_ref": "amlogic-4.9-20",
@@ -1490,6 +1903,7 @@
         "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
         "refresh": {
           "commit": "605cf2407df57a850fc7db29e514c2de41b5ebc7",
+          "observation": "Re-fetched during today's refresh; same published 605cf240 pin, still unvalidated and excluded.",
           "ref": "upstream-dev",
           "status": "unvalidated-separate"
         },
@@ -1497,34 +1911,47 @@
       },
       "validations": [
         {
-          "id": "evidence/parity.json",
-          "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+          "id": "evidence/today-jvc-source-reconciliation.json",
+          "sha256": "b7bc74daf67e15ac8fb444d625f31d5321f668659f88868bcfeacd100ac59e53"
         },
         {
-          "id": "evidence/focused-tests.json",
-          "sha256": "01b32fbf1bfe8d2457cbd8217fc250ebcaff41f66bebe565d842c46b349b76d6"
+          "id": "evidence/today-regressions.json",
+          "sha256": "57f567b246bcd06dbba0f835411b50a40182f7a7437c49d4922c6f9a83dfceb1"
         },
         {
-          "id": "evidence/decomposition-review.json",
-          "sha256": "2bad736aec91ced5b07b28c63bf7ab880ef937000eb8f5bdc52d61212ea131f4"
+          "id": "evidence/today-ethernet-source-reconciliation.json",
+          "sha256": "53b2d11e09fd5769fa0095fedb17fb74a6b356c452f7ecc8ec8b08e315fb2d56"
         },
         {
-          "id": "evidence/workflow-tests.json",
-          "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+          "id": "evidence/today-c2-public-baseline.json",
+          "sha256": "4f8b5850d0511aee4968a4a6f7e7d824dcf6bd72b832ce9ca7f0f2238a663612"
         },
         {
-          "id": "evidence/c2-results.json",
+          "id": "evidence/today-c2-results.json",
           "sha256": "0e420dc63b2d8c4af908a50d15fb5c41b0a031f9ab5e4acf998db5b81089d5df"
         },
         {
-          "id": "evidence/ethernet-lease.json",
+          "id": "evidence/today-ethernet-host-results.json",
           "sha256": "f247bde663f0695cdcf6d169c628d19a3e013bae5b72248ca2a8f68afa7c2ca6"
+        },
+        {
+          "id": "evidence/today-ethernet-build-cohort-provenance.json",
+          "sha256": "9984ace5b718479c92e5a55062795e84fe6f8ca135682f43ac8cf60b37c1c4ee"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
-      "workflow_ref": "workflow/catalog",
+      "workflow_ref": "workflow/catalog-today-20261122-v2",
       "workflow_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic"
     },
     "kodi": {
+      "baseline_contract": {
+        "commit": "fce97af5c969859be1d42fdebb19b727b6d4b5be",
+        "dependency_policy": "New deltas require this complete accepted baseline; explicit dependency IDs preserve its whole default union.",
+        "tree": "80398010a104b30fc2a0d21eaf2af6567a3f685f"
+      },
       "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
       "component": "kodi",
       "cross_component_coverage": [
@@ -1535,46 +1962,416 @@
           "source_commit": "a2ed27d5ba51f79ba386eae9281e588cfd9c5fa9"
         }
       ],
+      "deployment_obligations": {
+        "kodi_binary": "Must be newly built from this candidate and match both UI assets; historical binaries are not this cohort.",
+        "python_provider": {
+          "export": "PyThreadState_SetAsyncExc",
+          "new_cohort_provider_audit_required": true,
+          "soname": "libpython3.13.so.1.0",
+          "version": "3.13.18"
+        },
+        "reuse_old_overlay_or_stock_system_mount_recipe": false,
+        "ui_assets": [
+          {
+            "path": "system/settings/settings.xml",
+            "source_blob": "b199c734f01912181810b19536ddb2fa35c318df",
+            "source_sha256": "0fc04d96590bd18c9110b073ca46f413ee797a0fac18cc616ca71ba78a7e3d8e"
+          },
+          {
+            "path": "addons/resource.language.en_gb/resources/strings.po",
+            "source_blob": "924386d16912496d2c39393ddc8d53fd7a103982",
+            "source_sha256": "a9324f7e5895d5536d5f03b65a1d36a39ef146bb3c51e72d4a1e293f6330cd84"
+          }
+        ]
+      },
       "evidence": [
         {
-          "id": "hunk-ownership.json",
-          "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
-        },
-        {
-          "id": "tree-parity.json",
-          "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
-        },
-        {
-          "id": "upstream-review.json",
-          "sha256": "4bbc8de0ba80d6909d118c4e9b61a4eb18150d877b0904b5efc32e876bc12886"
-        },
-        {
-          "id": "publish-safe-audit.json",
-          "sha256": "1e6836fc92384a631b37286587f63cfb8efa75168ebc4f63c78845c706a55119"
-        },
-        {
-          "id": "WORKFLOW.md",
+          "id": "baseline-evidence/WORKFLOW.md",
           "sha256": "d98ab70bfd2af60a2a033f19dd0e1fe91dbba2e525a1f64bf8866a027770e955"
         },
         {
-          "id": "test-results.json",
-          "sha256": "cfa36e17f6b59357f140c022d3cda317a7918ba94f4780ad850a1dfac744859b"
-        },
-        {
-          "id": "original-control-results.json",
-          "sha256": "8f5579e51e518ae3b6ceda80edc375d9f3d42432d73165d4784684b21b7dcaa5"
-        },
-        {
-          "id": "host-parser-boundary.json",
-          "sha256": "6e05a91742fc9495bcd26b66b93ddff9ec109686c00a49592fc986eeee711467"
-        },
-        {
-          "id": "host-dependencies.json",
+          "id": "baseline-evidence/host-dependencies.json",
           "sha256": "06bdee0e92c829caaae43610a8f1cac0652c93860a3f3db90868237a4487555d"
         },
         {
-          "id": "public-bootstrap-provenance.json",
+          "id": "baseline-evidence/host-parser-boundary.json",
+          "sha256": "6e05a91742fc9495bcd26b66b93ddff9ec109686c00a49592fc986eeee711467"
+        },
+        {
+          "id": "baseline-evidence/hunk-ownership.json",
+          "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+        },
+        {
+          "id": "baseline-evidence/original-control-results.json",
+          "sha256": "8f5579e51e518ae3b6ceda80edc375d9f3d42432d73165d4784684b21b7dcaa5"
+        },
+        {
+          "id": "baseline-evidence/public-bootstrap-provenance.json",
           "sha256": "0e0ab16681503852fbf1453b2521fc917913d5e8324d3e5a5ed9b6ae1e4bb65f"
+        },
+        {
+          "id": "baseline-evidence/publish-safe-audit.json",
+          "sha256": "1e6836fc92384a631b37286587f63cfb8efa75168ebc4f63c78845c706a55119"
+        },
+        {
+          "id": "baseline-evidence/test-results.json",
+          "sha256": "cfa36e17f6b59357f140c022d3cda317a7918ba94f4780ad850a1dfac744859b"
+        },
+        {
+          "id": "baseline-evidence/tests/ddplus-parser-synthetic-12.log",
+          "sha256": "f8805ba4750aee7f50bf52600573d3bc42a85a41b30a1d0f99f8962080a79ab8"
+        },
+        {
+          "id": "baseline-evidence/tests/frame-pacing.log",
+          "sha256": "6b693b6d25abe12d1b69f6f62be0fd246fedfbc9a3db494c36820968e0b90c8a"
+        },
+        {
+          "id": "baseline-evidence/tests/test-activeae-configure-retry.log",
+          "sha256": "5c08e1c566d9af917049c35a46a4c2f977f26577f56981468ba317611b58720d"
+        },
+        {
+          "id": "baseline-evidence/tests/test-activeae-dropped-raw-delay.log",
+          "sha256": "a5c34bcdd434dd26a58029127158cdce90edadcceaa52a3f339b55aca71ef0e5"
+        },
+        {
+          "id": "baseline-evidence/tests/test-activeae-duration-families.log",
+          "sha256": "6a69b4f78754d631b37d88f95ff97c15f98308342fd7183fae4e96e18d3aa976"
+        },
+        {
+          "id": "baseline-evidence/tests/test-activeae-error-free.log",
+          "sha256": "4766ffa38f56bfac0f963b9d03f9d7e2a196a761a0c7517c5d7eb491693e719a"
+        },
+        {
+          "id": "baseline-evidence/tests/test-activeae-long-pause.log",
+          "sha256": "d2475985a2ac8b30f4228c0d1787a608b3c98e331c8bb8dfa69ceaf409e36f36"
+        },
+        {
+          "id": "baseline-evidence/tests/test-activeae-pause-silence.log",
+          "sha256": "8dfd9fa630083c16c360840142ef1e754e2ec639efd2a905860ee9b269cb025d"
+        },
+        {
+          "id": "baseline-evidence/tests/test-activeae-paused-packets.log",
+          "sha256": "6a20eddc0c0c240089d7b2599e3ee54ee351c908b20b7ef4dd98c803caf0212f"
+        },
+        {
+          "id": "baseline-evidence/tests/test-activeae-resume-epoch.log",
+          "sha256": "df87449bfa8fbdd6b904389dc2afbdb3d05aaa3a8ccdce35ba08fcb08e9c47d9"
+        },
+        {
+          "id": "baseline-evidence/tests/test-activeae-stream-flush.log",
+          "sha256": "da44c5c28eba40bec587a1bbe8735fc7fd5c4aef336b31e7aea22acddd1b2932"
+        },
+        {
+          "id": "baseline-evidence/tests/test-activeae-threaded-barrier.log",
+          "sha256": "09db92f7ea40cff765cfdbc2650aeb3d04260959bcf1b2bad60447f70027e6e2"
+        },
+        {
+          "id": "baseline-evidence/tests/test-activeae-truehd-sync.log",
+          "sha256": "783d7ba22a1a1d617222d3f894283f7ebbebc54f0941f9aec1063000e54e3dd9"
+        },
+        {
+          "id": "baseline-evidence/tests/test-aml-dv-manager-dependency.log",
+          "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+        },
+        {
+          "id": "baseline-evidence/tests/test-aml-dv-options.log",
+          "sha256": "e7f694bcf6bfe21f474b4f2a5a97d80f5fa36d59e627fbc6d6e8bc39e11959cf"
+        },
+        {
+          "id": "baseline-evidence/tests/test-aml-dv-preset-read.log",
+          "sha256": "ddedc445ffe6370c4d2430ce36bc9103ef23188e0b324ae8b57c07eacf476b62"
+        },
+        {
+          "id": "baseline-evidence/tests/test-aml-dv-setting-locks.log",
+          "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+        },
+        {
+          "id": "baseline-evidence/tests/test-aml-lifecycle.log",
+          "sha256": "da3632e61b90565553cef38cf5f8871ad87938371bc1abaeb92f1e4ba09a05bc"
+        },
+        {
+          "id": "baseline-evidence/tests/test-aml-mute-renderer.log",
+          "sha256": "95490e56d47610d3adf2f59f47447ee406498bd9037b4b2ba81cc55e185674c5"
+        },
+        {
+          "id": "baseline-evidence/tests/test-aml-native-continuation.log",
+          "sha256": "c82306bd1c2de7a4f5f7ec74b1f1a2f84f49867a34fa14d51e90886aa7d710b5"
+        },
+        {
+          "id": "baseline-evidence/tests/test-aml-native-settings.log",
+          "sha256": "53266bcb4581cd03cf1991b482543fe3ca08843250c8bc609764815eb2fca67d"
+        },
+        {
+          "id": "baseline-evidence/tests/test-aml-preroll.log",
+          "sha256": "a416cd0766a952d9932ebcb6d2b98b7121072445a68b4bbf2ccad741ea481ebd"
+        },
+        {
+          "id": "baseline-evidence/tests/test-aml-presenter-cadence.log",
+          "sha256": "113b7cdee2150d9c0cf1ad8b05ecb5bfc269dde0f18b43eb4d1585e8ef100184"
+        },
+        {
+          "id": "baseline-evidence/tests/test-aml-presenter-setting.log",
+          "sha256": "64b61e7b6fb90ce8abe1bd1f4b6eb5762952d4ef2d4edbba27c5a9c5bef490a9"
+        },
+        {
+          "id": "baseline-evidence/tests/test-aml-presenter-step-invalidation.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "id": "baseline-evidence/tests/test-aml-presenter.log",
+          "sha256": "df9b449c3fc4eb08c2fe23683b24632f5196cb0790c6e884c9ff1afa1788fe78"
+        },
+        {
+          "id": "baseline-evidence/tests/test-aml-restart-hold.log",
+          "sha256": "a5e601cf385ad789f1b1080ccff2a8428cd4fa04fa14d5e6620653ea3cbe3e42"
+        },
+        {
+          "id": "baseline-evidence/tests/test-aml-seek-clock.log",
+          "sha256": "e8bea246dfaabf2bddea9ae96d50647c1373b3ab905871ad927a13e6c8917a4e"
+        },
+        {
+          "id": "baseline-evidence/tests/test-aml-skin-reload.log",
+          "sha256": "7163a3a869b360a1f69c491de9c9e8544a9d041104a8fc2062a5061ad3417d8f"
+        },
+        {
+          "id": "baseline-evidence/tests/test-aml-window-lifecycle.log",
+          "sha256": "f739ad337ac056e6aeab95457940565d7761632e3f3095f367d5685633e4751d"
+        },
+        {
+          "id": "baseline-evidence/tests/test-audio-frame-admission.log",
+          "sha256": "f6d06a36e120d3ca2ef82da4d6d4524676fa817be46c366ffff9f3633e9b74f3"
+        },
+        {
+          "id": "baseline-evidence/tests/test-audio-recovery-seek.log",
+          "sha256": "0edc6188ca1e6d8c6d9d1f3c5d016fa34d6c76f97d7b6138860067b2e61a9fec"
+        },
+        {
+          "id": "baseline-evidence/tests/test-chapter-seek-intent.log",
+          "sha256": "f0351acd142921c56e8e7d70bc934f4a890e3f92f4a0c3865772a294bb1a179f"
+        },
+        {
+          "id": "baseline-evidence/tests/test-dv-disc-hold.log",
+          "sha256": "8e6b494fd031055e349036535f61972cc00c9622fe6cf5e6cc9d72300f6a8254"
+        },
+        {
+          "id": "baseline-evidence/tests/test-dvd-clock-locking.log",
+          "sha256": "7b986b070adba05f50408fd6bdb94cdf6d685cd3a7db4cfb645446855ec48d55"
+        },
+        {
+          "id": "baseline-evidence/tests/test-hdr10-seamless-setting.log",
+          "sha256": "48fb8760bfd1e89ac0ed96dadd32c3e20299891bf59d95264c75950cce51eb16"
+        },
+        {
+          "id": "baseline-evidence/tests/test-paused-trickplay-return.log",
+          "sha256": "853a42b935422d1115ad932e4f9a8b99cc3e5e3e37b870417fe211354870a64e"
+        },
+        {
+          "id": "baseline-evidence/tests/test-player-lifecycle.log",
+          "sha256": "5b26cc0e262eb77844d7527ac6aca3223f5bd4798196828e801f6e0ab9d64d68"
+        },
+        {
+          "id": "baseline-evidence/tests/test-player-retirement.log",
+          "sha256": "0814e3a7097ec779c12b56c7b4d3c25b33b54da330d9dd56485208c64d6cbae3"
+        },
+        {
+          "id": "baseline-evidence/tests/test-presenter-invalidation-lifetime.log",
+          "sha256": "15bdde7faaba220f1d1273b970147c4482a01b733c77a8d46a6478b397f338f6"
+        },
+        {
+          "id": "baseline-evidence/tests/test-render-lifecycle.log",
+          "sha256": "d0cb44fba94722a57b63c8fb6f99c3e699e7768eb4517c5e19d9bcbfdc90c0cb"
+        },
+        {
+          "id": "baseline-evidence/tests/test-render-video-admission.log",
+          "sha256": "17466672469e3f195bb2e8fa9ba02859e4f84c5ebb39a55790661a2d4136f75e"
+        },
+        {
+          "id": "baseline-evidence/tests/test-seamless-profile-migration.log",
+          "sha256": "0858aaff3e9e1340fe4d777d56c823c5fa84b672f9644b8d51a9b0384bdbba1b"
+        },
+        {
+          "id": "baseline-evidence/tests/test-seek-marker-review-chapter-supersession.log",
+          "sha256": "b4373673a1faa1e0c0d16d488d4e874ba2cac51a04ef7e52059ab8167e06651a"
+        },
+        {
+          "id": "baseline-evidence/tests/test-seek-marker-review-queued-speed.log",
+          "sha256": "c95ad4a83eb4349ca35cb80273b99db3b806e9ed6f5cbd198e0b449fadb104ad"
+        },
+        {
+          "id": "baseline-evidence/tests/test-seek-marker-review-rejected-queue-keeps-older.log",
+          "sha256": "4ce8e30c802419c9153dbb0011e302f46fc4b44a7a3eaf6222bff668803d4379"
+        },
+        {
+          "id": "baseline-evidence/tests/test-seek-marker-review-retirement-commit.log",
+          "sha256": "b612113c7f98b20b5020f7ebafbf0a8271d551e4416434481d6c251966cfa0ef"
+        },
+        {
+          "id": "baseline-evidence/tests/test-seek-marker-review-retirement-preview.log",
+          "sha256": "5281598eb6fca8f6c9e0a13dd6a966e0df0a38155ed74887ed72c4cebd6b7162"
+        },
+        {
+          "id": "baseline-evidence/tests/test-seek-marker-review-stack-accurate-overlap.log",
+          "sha256": "30995aaf5f94a635739cf461c19111d16dd38c1d45020916a306389bd7151da2"
+        },
+        {
+          "id": "baseline-evidence/tests/test-seek-preview-origin.log",
+          "sha256": "5caf7ad573205ffb23400585a26977dbe2ab710ac68560da4ec615beeb17e71e"
+        },
+        {
+          "id": "baseline-evidence/tests/test-seek-timeline-marker.log",
+          "sha256": "002ee1e755f9c70c8a95da436ef7c7ce10541f93226c16d457af4bf60dd220d9"
+        },
+        {
+          "id": "baseline-evidence/tests/test-truehd-delivery.log",
+          "sha256": "1fe79f2d6e8a520afe82b7e2aa437f9bec98db9d5942c75ef78b0aa91e671597"
+        },
+        {
+          "id": "baseline-evidence/tests/test-video-timeout-recovery.log",
+          "sha256": "c3502fd80db653510d1e6d6e61c9a7c8f28e2859dbc665ca08c22398fe931d39"
+        },
+        {
+          "id": "baseline-evidence/tree-parity.json",
+          "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+        },
+        {
+          "id": "baseline-evidence/upstream-review.json",
+          "sha256": "4bbc8de0ba80d6909d118c4e9b61a4eb18150d877b0904b5efc32e876bc12886"
+        },
+        {
+          "id": "topic-ownership-matrix-final.json",
+          "sha256": "7e769cd14714fa1b26b903745a0d1b9794aca407e40806ca13606930032b6d5d"
+        },
+        {
+          "id": "source-acceptance-review.json",
+          "sha256": "1856c7af76976ca3eda2dc0f42eab65aa1640e214e99846e3815f6541f74b599"
+        },
+        {
+          "id": "source-parity-and-overlap.json",
+          "sha256": "d79da323b30066588296d363188b0d008ad918c95c344dd83ae79a173e37c6f5"
+        },
+        {
+          "id": "inherited-evidence-portability.json",
+          "sha256": "dc844c4738064b71bc08dfc61501ee9cb1baaacb1965a549718114cdbe03b694"
+        },
+        {
+          "id": "focused-tests.json",
+          "sha256": "2abb3d8de5adc6f0c3184d79bc71d1e554cf7c8493eb493fcd99eb0fd156f245"
+        },
+        {
+          "id": "tests/test-python-forced-shutdown.log",
+          "sha256": "67357884b47b2827fe257b422a8382be2dea9affd6f1abb252ca3c14bf303e29"
+        },
+        {
+          "id": "tests/test-lldv-vsif-suppress-setting.log",
+          "sha256": "a19feee95053fa7034637adcef17133e0954570f7325adc0ba63d436224adfab"
+        },
+        {
+          "id": "tests/test-hdr10-seamless-setting.log",
+          "sha256": "48fb8760bfd1e89ac0ed96dadd32c3e20299891bf59d95264c75950cce51eb16"
+        },
+        {
+          "id": "tests/test-seamless-profile-migration.log",
+          "sha256": "0858aaff3e9e1340fe4d777d56c823c5fa84b672f9644b8d51a9b0384bdbba1b"
+        },
+        {
+          "id": "tests/test-aml-native-settings.log",
+          "sha256": "abfd304607578c2d6f375180201a9d0ce44212f9ff80be4931f4f8186546b798"
+        },
+        {
+          "id": "tests/test-aml-native-continuation.log",
+          "sha256": "15f15569b8952486efd84ce4c0a5b55be54f5ad05abf8114e76f80f0a4b9922c"
+        },
+        {
+          "id": "tests/test-aml-dv-manager-dependency.log",
+          "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+        },
+        {
+          "id": "tests/test-aml-dv-preset-read.log",
+          "sha256": "ddedc445ffe6370c4d2430ce36bc9103ef23188e0b324ae8b57c07eacf476b62"
+        },
+        {
+          "id": "tests/test-aml-dv-setting-locks.log",
+          "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+        },
+        {
+          "id": "tests/test-aml-dv-options.log",
+          "sha256": "e7f694bcf6bfe21f474b4f2a5a97d80f5fa36d59e627fbc6d6e8bc39e11959cf"
+        },
+        {
+          "id": "tests/test-aml-lifecycle.log",
+          "sha256": "da3632e61b90565553cef38cf5f8871ad87938371bc1abaeb92f1e4ba09a05bc"
+        },
+        {
+          "id": "tests/test-aml-restart-hold.log",
+          "sha256": "a5e601cf385ad789f1b1080ccff2a8428cd4fa04fa14d5e6620653ea3cbe3e42"
+        },
+        {
+          "id": "tests/test-truehd-delivery.log",
+          "sha256": "1fe79f2d6e8a520afe82b7e2aa437f9bec98db9d5942c75ef78b0aa91e671597"
+        },
+        {
+          "id": "independent-replay.json",
+          "sha256": "aec4e5fcc7372d49664dd337b4bfed83c0cc9d383ff5a9e2ff4462b2bf1b9ea3"
+        },
+        {
+          "id": "offline/focused-tests.json",
+          "sha256": "0ffd69879da1220b710d510bfbe72d42f3e3837a05ff8a47bd54dfca93ee930b"
+        },
+        {
+          "id": "offline/tests/test-python-forced-shutdown.log",
+          "sha256": "67357884b47b2827fe257b422a8382be2dea9affd6f1abb252ca3c14bf303e29"
+        },
+        {
+          "id": "offline/tests/test-lldv-vsif-suppress-setting.log",
+          "sha256": "a19feee95053fa7034637adcef17133e0954570f7325adc0ba63d436224adfab"
+        },
+        {
+          "id": "offline/tests/test-hdr10-seamless-setting.log",
+          "sha256": "48fb8760bfd1e89ac0ed96dadd32c3e20299891bf59d95264c75950cce51eb16"
+        },
+        {
+          "id": "offline/tests/test-seamless-profile-migration.log",
+          "sha256": "0858aaff3e9e1340fe4d777d56c823c5fa84b672f9644b8d51a9b0384bdbba1b"
+        },
+        {
+          "id": "offline/tests/test-aml-native-settings.log",
+          "sha256": "abfd304607578c2d6f375180201a9d0ce44212f9ff80be4931f4f8186546b798"
+        },
+        {
+          "id": "offline/tests/test-aml-native-continuation.log",
+          "sha256": "15f15569b8952486efd84ce4c0a5b55be54f5ad05abf8114e76f80f0a4b9922c"
+        },
+        {
+          "id": "offline/tests/test-aml-dv-manager-dependency.log",
+          "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+        },
+        {
+          "id": "offline/tests/test-aml-dv-preset-read.log",
+          "sha256": "ddedc445ffe6370c4d2430ce36bc9103ef23188e0b324ae8b57c07eacf476b62"
+        },
+        {
+          "id": "offline/tests/test-aml-dv-setting-locks.log",
+          "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+        },
+        {
+          "id": "offline/tests/test-aml-dv-options.log",
+          "sha256": "e7f694bcf6bfe21f474b4f2a5a97d80f5fa36d59e627fbc6d6e8bc39e11959cf"
+        },
+        {
+          "id": "offline/tests/test-aml-lifecycle.log",
+          "sha256": "da3632e61b90565553cef38cf5f8871ad87938371bc1abaeb92f1e4ba09a05bc"
+        },
+        {
+          "id": "offline/tests/test-aml-restart-hold.log",
+          "sha256": "a5e601cf385ad789f1b1080ccff2a8428cd4fa04fa14d5e6620653ea3cbe3e42"
+        },
+        {
+          "id": "offline/tests/test-truehd-delivery.log",
+          "sha256": "1fe79f2d6e8a520afe82b7e2aa437f9bec98db9d5942c75ef78b0aa91e671597"
+        },
+        {
+          "id": "publication-reachability-audit.json",
+          "sha256": "6858e1d815c64cd35075ac9c350b55620407a133b2923eea7a5f1106e3419ab2"
         }
       ],
       "excluded_experiments": [
@@ -1584,7 +2381,7 @@
         "ivtc",
         "atmos-gain-recovery"
       ],
-      "expected_tree": "80398010a104b30fc2a0d21eaf2af6567a3f685f",
+      "expected_tree": "a752e03e60bc2c3624190de63fc846c983c6310b",
       "features": [
         {
           "base": "a4295421f270929315fea42b9e53b00c16e920a5",
@@ -1597,11 +2394,11 @@
           "depends_on": [],
           "evidence": [
             {
-              "id": "hunk-ownership.json",
+              "id": "baseline-evidence/hunk-ownership.json",
               "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
             },
             {
-              "id": "tree-parity.json",
+              "id": "baseline-evidence/tree-parity.json",
               "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
             }
           ],
@@ -1620,7 +2417,7 @@
             "source_commits": [],
             "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
           },
-          "ref": "refs/heads/fix/seek-queue-prerequisite",
+          "ref": "fix/seek-queue-prerequisite",
           "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
           "settings_defaults": {},
           "source_pins": [],
@@ -1640,27 +2437,27 @@
           "depends_on": [],
           "evidence": [
             {
-              "id": "hunk-ownership.json",
+              "id": "baseline-evidence/hunk-ownership.json",
               "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
             },
             {
-              "id": "tree-parity.json",
+              "id": "baseline-evidence/tree-parity.json",
               "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
             },
             {
-              "id": "tests/test-aml-dv-manager-dependency.log",
+              "id": "baseline-evidence/tests/test-aml-dv-manager-dependency.log",
               "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
             },
             {
-              "id": "tests/test-aml-dv-options.log",
+              "id": "baseline-evidence/tests/test-aml-dv-options.log",
               "sha256": "e7f694bcf6bfe21f474b4f2a5a97d80f5fa36d59e627fbc6d6e8bc39e11959cf"
             },
             {
-              "id": "tests/test-aml-dv-preset-read.log",
+              "id": "baseline-evidence/tests/test-aml-dv-preset-read.log",
               "sha256": "ddedc445ffe6370c4d2430ce36bc9103ef23188e0b324ae8b57c07eacf476b62"
             },
             {
-              "id": "tests/test-aml-dv-setting-locks.log",
+              "id": "baseline-evidence/tests/test-aml-dv-setting-locks.log",
               "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
             }
           ],
@@ -1687,7 +2484,7 @@
             ],
             "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
           },
-          "ref": "refs/heads/feature/manual-lldv",
+          "ref": "feature/manual-lldv",
           "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
           "settings_defaults": {},
           "source_pins": [
@@ -1714,27 +2511,27 @@
           "depends_on": [],
           "evidence": [
             {
-              "id": "hunk-ownership.json",
+              "id": "baseline-evidence/hunk-ownership.json",
               "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
             },
             {
-              "id": "tree-parity.json",
+              "id": "baseline-evidence/tree-parity.json",
               "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
             },
             {
-              "id": "tests/test-aml-presenter-cadence.log",
+              "id": "baseline-evidence/tests/test-aml-presenter-cadence.log",
               "sha256": "113b7cdee2150d9c0cf1ad8b05ecb5bfc269dde0f18b43eb4d1585e8ef100184"
             },
             {
-              "id": "tests/test-aml-presenter-step-invalidation.log",
+              "id": "baseline-evidence/tests/test-aml-presenter-step-invalidation.log",
               "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
             },
             {
-              "id": "tests/test-dvd-clock-locking.log",
+              "id": "baseline-evidence/tests/test-dvd-clock-locking.log",
               "sha256": "7b986b070adba05f50408fd6bdb94cdf6d685cd3a7db4cfb645446855ec48d55"
             },
             {
-              "id": "tests/test-presenter-invalidation-lifetime.log",
+              "id": "baseline-evidence/tests/test-presenter-invalidation-lifetime.log",
               "sha256": "15bdde7faaba220f1d1273b970147c4482a01b733c77a8d46a6478b397f338f6"
             }
           ],
@@ -1764,7 +2561,7 @@
             ],
             "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
           },
-          "ref": "refs/heads/fix/pause-presenter",
+          "ref": "fix/pause-presenter",
           "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
           "settings_defaults": {},
           "source_pins": [
@@ -1793,43 +2590,43 @@
           ],
           "evidence": [
             {
-              "id": "hunk-ownership.json",
+              "id": "baseline-evidence/hunk-ownership.json",
               "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
             },
             {
-              "id": "tree-parity.json",
+              "id": "baseline-evidence/tree-parity.json",
               "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
             },
             {
-              "id": "tests/test-seek-preview-origin.log",
+              "id": "baseline-evidence/tests/test-seek-preview-origin.log",
               "sha256": "5caf7ad573205ffb23400585a26977dbe2ab710ac68560da4ec615beeb17e71e"
             },
             {
-              "id": "tests/test-seek-timeline-marker.log",
+              "id": "baseline-evidence/tests/test-seek-timeline-marker.log",
               "sha256": "002ee1e755f9c70c8a95da436ef7c7ce10541f93226c16d457af4bf60dd220d9"
             },
             {
-              "id": "tests/test-seek-marker-review-retirement-preview.log",
+              "id": "baseline-evidence/tests/test-seek-marker-review-retirement-preview.log",
               "sha256": "5281598eb6fca8f6c9e0a13dd6a966e0df0a38155ed74887ed72c4cebd6b7162"
             },
             {
-              "id": "tests/test-seek-marker-review-retirement-commit.log",
+              "id": "baseline-evidence/tests/test-seek-marker-review-retirement-commit.log",
               "sha256": "b612113c7f98b20b5020f7ebafbf0a8271d551e4416434481d6c251966cfa0ef"
             },
             {
-              "id": "tests/test-seek-marker-review-queued-speed.log",
+              "id": "baseline-evidence/tests/test-seek-marker-review-queued-speed.log",
               "sha256": "c95ad4a83eb4349ca35cb80273b99db3b806e9ed6f5cbd198e0b449fadb104ad"
             },
             {
-              "id": "tests/test-seek-marker-review-rejected-queue-keeps-older.log",
+              "id": "baseline-evidence/tests/test-seek-marker-review-rejected-queue-keeps-older.log",
               "sha256": "4ce8e30c802419c9153dbb0011e302f46fc4b44a7a3eaf6222bff668803d4379"
             },
             {
-              "id": "tests/test-seek-marker-review-chapter-supersession.log",
+              "id": "baseline-evidence/tests/test-seek-marker-review-chapter-supersession.log",
               "sha256": "b4373673a1faa1e0c0d16d488d4e874ba2cac51a04ef7e52059ab8167e06651a"
             },
             {
-              "id": "tests/test-seek-marker-review-stack-accurate-overlap.log",
+              "id": "baseline-evidence/tests/test-seek-marker-review-stack-accurate-overlap.log",
               "sha256": "30995aaf5f94a635739cf461c19111d16dd38c1d45020916a306389bd7151da2"
             }
           ],
@@ -1861,7 +2658,7 @@
             ],
             "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
           },
-          "ref": "refs/heads/fix/seek-ux",
+          "ref": "fix/seek-ux",
           "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
           "settings_defaults": {},
           "source_pins": [
@@ -1894,15 +2691,15 @@
           ],
           "evidence": [
             {
-              "id": "hunk-ownership.json",
+              "id": "baseline-evidence/hunk-ownership.json",
               "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
             },
             {
-              "id": "tree-parity.json",
+              "id": "baseline-evidence/tree-parity.json",
               "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
             },
             {
-              "id": "tests/test-paused-trickplay-return.log",
+              "id": "baseline-evidence/tests/test-paused-trickplay-return.log",
               "sha256": "853a42b935422d1115ad932e4f9a8b99cc3e5e3e37b870417fe211354870a64e"
             }
           ],
@@ -1923,7 +2720,7 @@
             ],
             "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
           },
-          "ref": "refs/heads/fix/trickplay-reanchor",
+          "ref": "fix/trickplay-reanchor",
           "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
           "settings_defaults": {},
           "source_pins": [
@@ -1947,11 +2744,11 @@
           "depends_on": [],
           "evidence": [
             {
-              "id": "hunk-ownership.json",
+              "id": "baseline-evidence/hunk-ownership.json",
               "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
             },
             {
-              "id": "tree-parity.json",
+              "id": "baseline-evidence/tree-parity.json",
               "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
             }
           ],
@@ -1973,7 +2770,7 @@
             ],
             "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
           },
-          "ref": "refs/heads/fix/startup-gate",
+          "ref": "fix/startup-gate",
           "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
           "settings_defaults": {},
           "source_pins": [
@@ -1995,19 +2792,19 @@
           "depends_on": [],
           "evidence": [
             {
-              "id": "hunk-ownership.json",
+              "id": "baseline-evidence/hunk-ownership.json",
               "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
             },
             {
-              "id": "tree-parity.json",
+              "id": "baseline-evidence/tree-parity.json",
               "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
             },
             {
-              "id": "tests/test-hdr10-seamless-setting.log",
+              "id": "baseline-evidence/tests/test-hdr10-seamless-setting.log",
               "sha256": "48fb8760bfd1e89ac0ed96dadd32c3e20299891bf59d95264c75950cce51eb16"
             },
             {
-              "id": "tests/test-seamless-profile-migration.log",
+              "id": "baseline-evidence/tests/test-seamless-profile-migration.log",
               "sha256": "0858aaff3e9e1340fe4d777d56c823c5fa84b672f9644b8d51a9b0384bdbba1b"
             }
           ],
@@ -2038,7 +2835,7 @@
             ],
             "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
           },
-          "ref": "refs/heads/feature/hdr-v20",
+          "ref": "feature/hdr-v20",
           "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
           "settings_defaults": {
             "first_launch_saved_off": "enable-once-and-save-version-1",
@@ -2072,11 +2869,11 @@
           ],
           "evidence": [
             {
-              "id": "hunk-ownership.json",
+              "id": "baseline-evidence/hunk-ownership.json",
               "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
             },
             {
-              "id": "tree-parity.json",
+              "id": "baseline-evidence/tree-parity.json",
               "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
             }
           ],
@@ -2097,7 +2894,7 @@
             "source_patch_sha256": "3bf337f2a13648ebd65dc7b3a4ef50b8e7ca7398452914ffd1a74a937471ff57",
             "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
           },
-          "ref": "refs/heads/fix/jvc-sticky-sdr",
+          "ref": "fix/jvc-sticky-sdr",
           "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
           "settings_defaults": {
             "applies_only": "DV Mode On after bypassed SDR playback",
@@ -2123,16 +2920,16 @@
           "depends_on": [],
           "evidence": [
             {
-              "id": "hunk-ownership.json",
+              "id": "baseline-evidence/hunk-ownership.json",
               "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
             },
             {
-              "id": "tree-parity.json",
+              "id": "baseline-evidence/tree-parity.json",
               "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
             },
             {
-              "id": "tests/ddplus-parser-synthetic-12.log",
-              "sha256": "53dc1083de4d867205f3406073c5b499b67a60f2eb1f49841966565ca65ad7a3"
+              "id": "baseline-evidence/tests/ddplus-parser-synthetic-12.log",
+              "sha256": "f8805ba4750aee7f50bf52600573d3bc42a85a41b30a1d0f99f8962080a79ab8"
             }
           ],
           "experimental": false,
@@ -2161,7 +2958,7 @@
             "source_patch_sha256": "9ad643e1cf583939ac80797ecc76a640f8a715e14fa0be7970f8cff708dd2c40",
             "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
           },
-          "ref": "refs/heads/fix/ddplus-safety",
+          "ref": "fix/ddplus-safety",
           "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
           "settings_defaults": {
             "atmos_gain_recovery": false,
@@ -2189,51 +2986,51 @@
           "depends_on": [],
           "evidence": [
             {
-              "id": "hunk-ownership.json",
+              "id": "baseline-evidence/hunk-ownership.json",
               "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
             },
             {
-              "id": "tree-parity.json",
+              "id": "baseline-evidence/tree-parity.json",
               "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
             },
             {
-              "id": "tests/test-activeae-configure-retry.log",
+              "id": "baseline-evidence/tests/test-activeae-configure-retry.log",
               "sha256": "5c08e1c566d9af917049c35a46a4c2f977f26577f56981468ba317611b58720d"
             },
             {
-              "id": "tests/test-activeae-dropped-raw-delay.log",
+              "id": "baseline-evidence/tests/test-activeae-dropped-raw-delay.log",
               "sha256": "a5c34bcdd434dd26a58029127158cdce90edadcceaa52a3f339b55aca71ef0e5"
             },
             {
-              "id": "tests/test-activeae-duration-families.log",
+              "id": "baseline-evidence/tests/test-activeae-duration-families.log",
               "sha256": "6a69b4f78754d631b37d88f95ff97c15f98308342fd7183fae4e96e18d3aa976"
             },
             {
-              "id": "tests/test-activeae-error-free.log",
+              "id": "baseline-evidence/tests/test-activeae-error-free.log",
               "sha256": "4766ffa38f56bfac0f963b9d03f9d7e2a196a761a0c7517c5d7eb491693e719a"
             },
             {
-              "id": "tests/test-activeae-long-pause.log",
+              "id": "baseline-evidence/tests/test-activeae-long-pause.log",
               "sha256": "d2475985a2ac8b30f4228c0d1787a608b3c98e331c8bb8dfa69ceaf409e36f36"
             },
             {
-              "id": "tests/test-activeae-pause-silence.log",
+              "id": "baseline-evidence/tests/test-activeae-pause-silence.log",
               "sha256": "8dfd9fa630083c16c360840142ef1e754e2ec639efd2a905860ee9b269cb025d"
             },
             {
-              "id": "tests/test-activeae-paused-packets.log",
+              "id": "baseline-evidence/tests/test-activeae-paused-packets.log",
               "sha256": "6a20eddc0c0c240089d7b2599e3ee54ee351c908b20b7ef4dd98c803caf0212f"
             },
             {
-              "id": "tests/test-activeae-resume-epoch.log",
+              "id": "baseline-evidence/tests/test-activeae-resume-epoch.log",
               "sha256": "df87449bfa8fbdd6b904389dc2afbdb3d05aaa3a8ccdce35ba08fcb08e9c47d9"
             },
             {
-              "id": "tests/test-activeae-stream-flush.log",
+              "id": "baseline-evidence/tests/test-activeae-stream-flush.log",
               "sha256": "da44c5c28eba40bec587a1bbe8735fc7fd5c4aef336b31e7aea22acddd1b2932"
             },
             {
-              "id": "tests/test-activeae-threaded-barrier.log",
+              "id": "baseline-evidence/tests/test-activeae-threaded-barrier.log",
               "sha256": "09db92f7ea40cff765cfdbc2650aeb3d04260959bcf1b2bad60447f70027e6e2"
             }
           ],
@@ -2274,7 +3071,7 @@
             ],
             "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
           },
-          "ref": "refs/heads/fix/audio-pause-transport",
+          "ref": "fix/audio-pause-transport",
           "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
           "scope": "Complete accepted fc74 extension including silent frames, whole pause and DTS-HD core. No universal zero-loss claim.",
           "settings_defaults": {},
@@ -2309,15 +3106,15 @@
           "depends_on": [],
           "evidence": [
             {
-              "id": "hunk-ownership.json",
+              "id": "baseline-evidence/hunk-ownership.json",
               "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
             },
             {
-              "id": "tree-parity.json",
+              "id": "baseline-evidence/tree-parity.json",
               "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
             },
             {
-              "id": "tests/test-audio-frame-admission.log",
+              "id": "baseline-evidence/tests/test-audio-frame-admission.log",
               "sha256": "f6d06a36e120d3ca2ef82da4d6d4524676fa817be46c366ffff9f3633e9b74f3"
             }
           ],
@@ -2338,7 +3135,7 @@
             ],
             "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
           },
-          "ref": "refs/heads/fix/retained-audio-admission",
+          "ref": "fix/retained-audio-admission",
           "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
           "settings_defaults": {},
           "source_pins": [
@@ -2362,15 +3159,15 @@
           "depends_on": [],
           "evidence": [
             {
-              "id": "hunk-ownership.json",
+              "id": "baseline-evidence/hunk-ownership.json",
               "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
             },
             {
-              "id": "tree-parity.json",
+              "id": "baseline-evidence/tree-parity.json",
               "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
             },
             {
-              "id": "tests/frame-pacing.log",
+              "id": "baseline-evidence/tests/frame-pacing.log",
               "sha256": "6b693b6d25abe12d1b69f6f62be0fd246fedfbc9a3db494c36820968e0b90c8a"
             }
           ],
@@ -2400,7 +3197,7 @@
             ],
             "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
           },
-          "ref": "refs/heads/feature/numbered-frame-tools",
+          "ref": "feature/numbered-frame-tools",
           "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
           "scope": "Source measurement tooling only; not a production pacing fix.",
           "settings_defaults": {},
@@ -2425,11 +3222,11 @@
           "depends_on": [],
           "evidence": [
             {
-              "id": "hunk-ownership.json",
+              "id": "baseline-evidence/hunk-ownership.json",
               "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
             },
             {
-              "id": "tree-parity.json",
+              "id": "baseline-evidence/tree-parity.json",
               "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
             }
           ],
@@ -2451,7 +3248,7 @@
             ],
             "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
           },
-          "ref": "refs/heads/fix/distribution-build",
+          "ref": "fix/distribution-build",
           "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
           "settings_defaults": {},
           "source_pins": [
@@ -2484,103 +3281,103 @@
           ],
           "evidence": [
             {
-              "id": "hunk-ownership.json",
+              "id": "baseline-evidence/hunk-ownership.json",
               "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
             },
             {
-              "id": "tree-parity.json",
+              "id": "baseline-evidence/tree-parity.json",
               "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
             },
             {
-              "id": "tests/test-activeae-truehd-sync.log",
+              "id": "baseline-evidence/tests/test-activeae-truehd-sync.log",
               "sha256": "783d7ba22a1a1d617222d3f894283f7ebbebc54f0941f9aec1063000e54e3dd9"
             },
             {
-              "id": "tests/test-aml-lifecycle.log",
+              "id": "baseline-evidence/tests/test-aml-lifecycle.log",
               "sha256": "da3632e61b90565553cef38cf5f8871ad87938371bc1abaeb92f1e4ba09a05bc"
             },
             {
-              "id": "tests/test-aml-mute-renderer.log",
+              "id": "baseline-evidence/tests/test-aml-mute-renderer.log",
               "sha256": "95490e56d47610d3adf2f59f47447ee406498bd9037b4b2ba81cc55e185674c5"
             },
             {
-              "id": "tests/test-aml-native-continuation.log",
+              "id": "baseline-evidence/tests/test-aml-native-continuation.log",
               "sha256": "c82306bd1c2de7a4f5f7ec74b1f1a2f84f49867a34fa14d51e90886aa7d710b5"
             },
             {
-              "id": "tests/test-aml-native-settings.log",
+              "id": "baseline-evidence/tests/test-aml-native-settings.log",
               "sha256": "53266bcb4581cd03cf1991b482543fe3ca08843250c8bc609764815eb2fca67d"
             },
             {
-              "id": "tests/test-aml-preroll.log",
+              "id": "baseline-evidence/tests/test-aml-preroll.log",
               "sha256": "a416cd0766a952d9932ebcb6d2b98b7121072445a68b4bbf2ccad741ea481ebd"
             },
             {
-              "id": "tests/test-aml-presenter-cadence.log",
+              "id": "baseline-evidence/tests/test-aml-presenter-cadence.log",
               "sha256": "113b7cdee2150d9c0cf1ad8b05ecb5bfc269dde0f18b43eb4d1585e8ef100184"
             },
             {
-              "id": "tests/test-aml-presenter-setting.log",
+              "id": "baseline-evidence/tests/test-aml-presenter-setting.log",
               "sha256": "64b61e7b6fb90ce8abe1bd1f4b6eb5762952d4ef2d4edbba27c5a9c5bef490a9"
             },
             {
-              "id": "tests/test-aml-presenter-step-invalidation.log",
+              "id": "baseline-evidence/tests/test-aml-presenter-step-invalidation.log",
               "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
             },
             {
-              "id": "tests/test-aml-presenter.log",
+              "id": "baseline-evidence/tests/test-aml-presenter.log",
               "sha256": "df9b449c3fc4eb08c2fe23683b24632f5196cb0790c6e884c9ff1afa1788fe78"
             },
             {
-              "id": "tests/test-aml-restart-hold.log",
+              "id": "baseline-evidence/tests/test-aml-restart-hold.log",
               "sha256": "a5e601cf385ad789f1b1080ccff2a8428cd4fa04fa14d5e6620653ea3cbe3e42"
             },
             {
-              "id": "tests/test-aml-seek-clock.log",
+              "id": "baseline-evidence/tests/test-aml-seek-clock.log",
               "sha256": "e8bea246dfaabf2bddea9ae96d50647c1373b3ab905871ad927a13e6c8917a4e"
             },
             {
-              "id": "tests/test-aml-skin-reload.log",
-              "sha256": "a68cec0e1908074a26cf75384b03f64f834f883e7dbb374ee438f5cfbd34b649"
+              "id": "baseline-evidence/tests/test-aml-skin-reload.log",
+              "sha256": "7163a3a869b360a1f69c491de9c9e8544a9d041104a8fc2062a5061ad3417d8f"
             },
             {
-              "id": "tests/test-aml-window-lifecycle.log",
+              "id": "baseline-evidence/tests/test-aml-window-lifecycle.log",
               "sha256": "f739ad337ac056e6aeab95457940565d7761632e3f3095f367d5685633e4751d"
             },
             {
-              "id": "tests/test-audio-recovery-seek.log",
+              "id": "baseline-evidence/tests/test-audio-recovery-seek.log",
               "sha256": "0edc6188ca1e6d8c6d9d1f3c5d016fa34d6c76f97d7b6138860067b2e61a9fec"
             },
             {
-              "id": "tests/test-chapter-seek-intent.log",
+              "id": "baseline-evidence/tests/test-chapter-seek-intent.log",
               "sha256": "f0351acd142921c56e8e7d70bc934f4a890e3f92f4a0c3865772a294bb1a179f"
             },
             {
-              "id": "tests/test-dv-disc-hold.log",
-              "sha256": "8101cbe2eec629d64f3019aca2e197c7dcf46b3ea293108df2e78358eff42120"
+              "id": "baseline-evidence/tests/test-dv-disc-hold.log",
+              "sha256": "8e6b494fd031055e349036535f61972cc00c9622fe6cf5e6cc9d72300f6a8254"
             },
             {
-              "id": "tests/test-player-lifecycle.log",
+              "id": "baseline-evidence/tests/test-player-lifecycle.log",
               "sha256": "5b26cc0e262eb77844d7527ac6aca3223f5bd4798196828e801f6e0ab9d64d68"
             },
             {
-              "id": "tests/test-player-retirement.log",
+              "id": "baseline-evidence/tests/test-player-retirement.log",
               "sha256": "0814e3a7097ec779c12b56c7b4d3c25b33b54da330d9dd56485208c64d6cbae3"
             },
             {
-              "id": "tests/test-render-lifecycle.log",
+              "id": "baseline-evidence/tests/test-render-lifecycle.log",
               "sha256": "d0cb44fba94722a57b63c8fb6f99c3e699e7768eb4517c5e19d9bcbfdc90c0cb"
             },
             {
-              "id": "tests/test-render-video-admission.log",
+              "id": "baseline-evidence/tests/test-render-video-admission.log",
               "sha256": "17466672469e3f195bb2e8fa9ba02859e4f84c5ebb39a55790661a2d4136f75e"
             },
             {
-              "id": "tests/test-truehd-delivery.log",
+              "id": "baseline-evidence/tests/test-truehd-delivery.log",
               "sha256": "1fe79f2d6e8a520afe82b7e2aa437f9bec98db9d5942c75ef78b0aa91e671597"
             },
             {
-              "id": "tests/test-video-timeout-recovery.log",
+              "id": "baseline-evidence/tests/test-video-timeout-recovery.log",
               "sha256": "c3502fd80db653510d1e6d6e61c9a7c8f28e2859dbc665ca08c22398fe931d39"
             }
           ],
@@ -2621,7 +3418,7 @@
             ],
             "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
           },
-          "ref": "refs/heads/fix/accepted-fixture-union",
+          "ref": "fix/accepted-fixture-union",
           "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
           "settings_defaults": {},
           "source_pins": [
@@ -2666,7 +3463,7 @@
           "depends_on": [],
           "evidence": [
             {
-              "id": "upstream-review.json",
+              "id": "baseline-evidence/upstream-review.json",
               "sha256": "4bbc8de0ba80d6909d118c4e9b61a4eb18150d877b0904b5efc32e876bc12886"
             }
           ],
@@ -2683,7 +3480,7 @@
             ],
             "source_pin_role": "Historical provenance only; use ordered_commits for assembly fetches."
           },
-          "ref": "refs/heads/archive/accepted-upstream/pr-151",
+          "ref": "archive/accepted-upstream/pr-151",
           "ref_availability": "local archive alias; no replay or remote fetch",
           "ref_repository": "https://github.com/pannal/xbmc.git",
           "settings_defaults": {},
@@ -2698,23 +3495,182 @@
             "reason": "Original Dim/Black commit and merge are ancestors of validated upstream; GUIWindow production file has no local delta. Retained, not replayed.",
             "upstream_commit": "a4295421f270929315fea42b9e53b00c16e920a5"
           }
+        },
+        {
+          "base": "fce97af5c969859be1d42fdebb19b727b6d4b5be",
+          "branch": "fix/today-python-shutdown",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "commits": [
+            "8ef79ccdec5243ec0803f2c608420f4979d51d25"
+          ],
+          "default": true,
+          "depends_on": [
+            "seek-queue",
+            "manual-lldv",
+            "pause-presenter",
+            "seek-ux",
+            "trickplay-reanchor",
+            "startup-gate",
+            "hdr-v20",
+            "jvc-sticky-sdr",
+            "ddplus-safety",
+            "audio-pause-transport",
+            "retained-audio-admission",
+            "numbered-frame-tools",
+            "distribution-build",
+            "fixture-union"
+          ],
+          "evidence": [
+            {
+              "id": "topic-ownership-matrix-final.json",
+              "sha256": "7e769cd14714fa1b26b903745a0d1b9794aca407e40806ca13606930032b6d5d"
+            },
+            {
+              "id": "source-acceptance-review.json",
+              "sha256": "1856c7af76976ca3eda2dc0f42eab65aa1640e214e99846e3815f6541f74b599"
+            },
+            {
+              "id": "source-parity-and-overlap.json",
+              "sha256": "d79da323b30066588296d363188b0d008ad918c95c344dd83ae79a173e37c6f5"
+            }
+          ],
+          "experimental": false,
+          "head": "8ef79ccdec5243ec0803f2c608420f4979d51d25",
+          "id": "python-forced-shutdown",
+          "ordered_commits": [
+            "8ef79ccdec5243ec0803f2c608420f4979d51d25"
+          ],
+          "paths": [
+            "xbmc/interfaces/python/PythonInvoker.cpp",
+            "tools/test-python-forced-shutdown.py"
+          ],
+          "provenance": {
+            "source_commits": [
+              "2abc372bd7584d9e7575811a6fc730a5bfe9ce4f"
+            ],
+            "source_export_sha256": "493359a1c71153332b4b11baab0715dabf0077e55a5d80af89e077d7d90c2ea5",
+            "source_pin_role": "Historical owner acceptance only; replay ordered_commits from owned fork."
+          },
+          "ref": "fix/today-python-shutdown",
+          "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "required_runtime": "CPython 3.13.18 exported PyThreadState_SetAsyncExc",
+          "source_export_sha256": "493359a1c71153332b4b11baab0715dabf0077e55a5d80af89e077d7d90c2ea5",
+          "source_pins": [
+            "2abc372bd7584d9e7575811a6fc730a5bfe9ce4f"
+          ],
+          "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "status": "included"
+        },
+        {
+          "base": "fce97af5c969859be1d42fdebb19b727b6d4b5be",
+          "branch": "feature/today-lldv-vsif-suppression",
+          "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "commits": [
+            "4c36d29c89cefa2e8d596f180706eb790eb99c38",
+            "9cdf90502deda6026cdad45b6bbb7172f90f4de0"
+          ],
+          "cross_component_depends_on": [
+            {
+              "component": "kernel",
+              "feature": "lldv-vsif-suppression-v3"
+            }
+          ],
+          "default": true,
+          "depends_on": [
+            "seek-queue",
+            "manual-lldv",
+            "pause-presenter",
+            "seek-ux",
+            "trickplay-reanchor",
+            "startup-gate",
+            "hdr-v20",
+            "jvc-sticky-sdr",
+            "ddplus-safety",
+            "audio-pause-transport",
+            "retained-audio-admission",
+            "numbered-frame-tools",
+            "distribution-build",
+            "fixture-union"
+          ],
+          "evidence": [
+            {
+              "id": "topic-ownership-matrix-final.json",
+              "sha256": "7e769cd14714fa1b26b903745a0d1b9794aca407e40806ca13606930032b6d5d"
+            },
+            {
+              "id": "source-acceptance-review.json",
+              "sha256": "1856c7af76976ca3eda2dc0f42eab65aa1640e214e99846e3815f6541f74b599"
+            },
+            {
+              "id": "source-parity-and-overlap.json",
+              "sha256": "d79da323b30066588296d363188b0d008ad918c95c344dd83ae79a173e37c6f5"
+            }
+          ],
+          "existing_baseline_prerequisites": [
+            "accepted HDR v20/default-On migration",
+            "sticky SDR GUI",
+            "same seamless gate writer"
+          ],
+          "experimental": false,
+          "head": "9cdf90502deda6026cdad45b6bbb7172f90f4de0",
+          "id": "lldv-vsif-suppression",
+          "optional_kernel_capability": "lldv_vsif_suppress; generic kernel default Off",
+          "ordered_commits": [
+            "4c36d29c89cefa2e8d596f180706eb790eb99c38",
+            "9cdf90502deda6026cdad45b6bbb7172f90f4de0"
+          ],
+          "paths": [
+            "addons/resource.language.en_gb/resources/strings.po",
+            "system/settings/settings.xml",
+            "tools/test-lldv-vsif-suppress-setting.py",
+            "xbmc/settings/Settings.h",
+            "xbmc/utils/AMLLldvVsifPolicy.h",
+            "xbmc/utils/AMLUtils.cpp",
+            "xbmc/utils/AMLUtils.h",
+            "xbmc/windowing/amlogic/DolbyVisionAML.cpp",
+            "tools/test-aml-native-continuation.py",
+            "tools/test-aml-native-settings.py",
+            "tools/test-hdr10-seamless-setting.py"
+          ],
+          "provenance": {
+            "source_commits": [
+              "7944fad16e5b2344d9bfc6b37ceaea146d33a3fb",
+              "ac278966543eabcebae5db1945e407273cfba800"
+            ],
+            "source_export_sha256": "3f491e615fdb925840fcb88f4597026cd47efa39ce5d45c55873f5f832caf80b",
+            "source_pin_role": "Historical owner acceptance only; replay ordered_commits from owned fork."
+          },
+          "ref": "feature/today-lldv-vsif-suppression",
+          "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "settings_defaults": {
+            "adopted_marker": false,
+            "first_start": "adopt existing kernel value once; do not change signaling",
+            "policy": "opt-in",
+            "suppression": false
+          },
+          "source_export_sha256": "3f491e615fdb925840fcb88f4597026cd47efa39ce5d45c55873f5f832caf80b",
+          "source_pins": [
+            "7944fad16e5b2344d9bfc6b37ceaea146d33a3fb",
+            "ac278966543eabcebae5db1945e407273cfba800"
+          ],
+          "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+          "status": "included"
         }
       ],
       "integration": {
         "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
-        "head": "fce97af5c969859be1d42fdebb19b727b6d4b5be",
-        "ref": "integration/all-fixes",
+        "head": "5ee5e77fc07ae84012355e133ef66b530ea43569",
+        "ref": "integration/all-fixes-today-20261122",
         "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
         "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
-        "tree": "80398010a104b30fc2a0d21eaf2af6567a3f685f"
+        "tree": "a752e03e60bc2c3624190de63fc846c983c6310b"
       },
       "limits": [
-        "No hardware or new binary verification; source parity only.",
-        "Unrelated old historical blobs are excluded; three original bundles required.",
-        "Active stress shutdown/VFM sources pending acceptance; not included.",
-        "No accepted post-seek/pre-roll/timeline-flash/IVTC/Atmos-gain claim.",
-        "PCM 5.1/7.1 remains unverified.",
-        "Frozen source has preserved skin-reload/disc-hold fixture compile gaps; exact original controls reproduce them. Legacy frame-selection also retains its original failure. No assertion was relaxed."
+        "Host source/caller fixtures only, not a new Kodi/firmware binary or new hardware acceptance.",
+        "Generic VSIF default-Off path and current union have no target-hardware validation.",
+        "Original 9a90 diagnostic fixture remains local-only; public refs alone do not provide it.",
+        "Fresh release requires coherent binary/UI packaging, exact Python provider and targeted runtime checks.",
+        "Inherited fixture compile gaps/legacy failures remain in baseline receipts; no unrelated fixes."
       ],
       "original_release": {
         "availability": "local-only; not a public bootstrap fetch target",
@@ -2724,22 +3680,11 @@
         "tree": "80398010a104b30fc2a0d21eaf2af6567a3f685f"
       },
       "pending_acceptance": [
-        {
-          "availability": "local-only; unaccepted and excluded from public bootstrap",
-          "default": false,
-          "id": "stress-python-shutdown",
-          "source_commit": "2abc372bd7584d9e7575811a6fc730a5bfe9ce4f",
-          "status": "pending"
-        },
-        {
-          "availability": "local-only; unaccepted and excluded from public bootstrap",
-          "default": false,
-          "id": "stress-vfm-route",
-          "source_commit": "8fa1efaf811753848394f34294932f6526941df7",
-          "status": "pending"
-        }
+        "HDR10+ hidden mode-is-3 visibility repair",
+        "pre-roll v13c",
+        "VFM/parser/decoder playback cures; unresolved reboots"
       ],
-      "previous_catalog_sha256": "efbc2cfa3f120d374f75ab4beceb3ea89be9496c792e7771b50937e07ff3de12",
+      "previous_catalog_sha256": "ab3762d0a66c110c85288defbe7a5e396e9f68258ce422b25ceb5d7a021aeacc",
       "public_bootstrap": {
         "included_feature_commits_and_refs": "Fetch from owned assembly repository, never from pannal.",
         "original_0aff_and_9a90": "Remain local, neither refs nor private ancestry are publication targets.",
@@ -2765,10 +3710,23 @@
         "tree": "80398010a104b30fc2a0d21eaf2af6567a3f685f"
       },
       "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
-      "revision": 2,
+      "revision": "today-20261122-accepted-python-and-opt-in-vsif",
       "schema": 1,
+      "settings_defaults": {
+        "assembly_selection_is_not_runtime_setting": true,
+        "hdr_seamless": "Retained default On; one-time saved-Off migration; later Off persists.",
+        "lldv_vsif_suppress": false,
+        "lldv_vsif_suppress_adopted": false
+      },
+      "source_candidate": {
+        "binary_built": false,
+        "commit": "5ee5e77fc07ae84012355e133ef66b530ea43569",
+        "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+        "ref": "release/today-20261122-source-candidate",
+        "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+        "tree": "a752e03e60bc2c3624190de63fc846c983c6310b"
+      },
       "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
-      "source_variable": "COMBINED_KODI_SOURCE",
       "tracked_upstream": {
         "commit": "efcb4dac04f9b2cfeb863154045602e768195ab2",
         "ref": "upstream-dev",
@@ -2788,66 +3746,139 @@
         "repository": "https://github.com/pannal/xbmc.git"
       },
       "validations": {
-        "failures": [
-          "test-aml-skin-reload",
-          "test-dv-disc-hold"
-        ],
-        "passed": [
-          "test-activeae-configure-retry",
-          "test-activeae-dropped-raw-delay",
-          "test-activeae-duration-families",
-          "test-activeae-error-free",
-          "test-activeae-long-pause",
-          "test-activeae-pause-silence",
-          "test-activeae-paused-packets",
-          "test-activeae-resume-epoch",
-          "test-activeae-stream-flush",
-          "test-activeae-threaded-barrier",
-          "test-activeae-truehd-sync",
-          "test-aml-dv-manager-dependency",
-          "test-aml-dv-options",
-          "test-aml-dv-preset-read",
-          "test-aml-dv-setting-locks",
-          "test-aml-lifecycle",
-          "test-aml-mute-renderer",
-          "test-aml-native-continuation",
-          "test-aml-native-settings",
-          "test-aml-preroll",
-          "test-aml-presenter-cadence",
-          "test-aml-presenter-setting",
-          "test-aml-presenter-step-invalidation",
-          "test-aml-presenter",
-          "test-aml-restart-hold",
-          "test-aml-seek-clock",
-          "test-aml-window-lifecycle",
-          "test-audio-frame-admission",
-          "test-audio-recovery-seek",
-          "test-chapter-seek-intent",
-          "test-dvd-clock-locking",
-          "test-hdr10-seamless-setting",
-          "test-paused-trickplay-return",
-          "test-player-lifecycle",
-          "test-player-retirement",
-          "test-presenter-invalidation-lifetime",
-          "test-render-lifecycle",
-          "test-render-video-admission",
-          "test-seamless-profile-migration",
-          "test-seek-preview-origin",
-          "test-seek-timeline-marker",
-          "test-truehd-delivery",
-          "test-video-timeout-recovery",
-          "test-seek-marker-review-retirement-preview",
-          "test-seek-marker-review-retirement-commit",
-          "test-seek-marker-review-queued-speed",
-          "test-seek-marker-review-rejected-queue-keeps-older",
-          "test-seek-marker-review-chapter-supersession",
-          "test-seek-marker-review-stack-accurate-overlap",
-          "frame-pacing",
-          "ddplus-parser-compile",
-          "ddplus-parser-synthetic-12"
-        ],
-        "receipt": "test-results.json",
-        "sha256": "cfa36e17f6b59357f140c022d3cda317a7918ba94f4780ad850a1dfac744859b"
+        "all_passed": true,
+        "baseline_source_parity": {
+          "id": "source-parity-and-overlap.json",
+          "sha256": "d79da323b30066588296d363188b0d008ad918c95c344dd83ae79a173e37c6f5"
+        },
+        "current_source_focused_host_runners": 13,
+        "hardware_validation": false,
+        "old_fixture_compile_gaps": "Preserved historical original-control receipts; not falsely called passing.",
+        "source_build": false,
+        "test_inventory": [
+          {
+            "command": [
+              "python3",
+              "-B",
+              "tools/test-python-forced-shutdown.py",
+              "--negative-control"
+            ],
+            "exit_code": 0,
+            "id": "test-python-forced-shutdown"
+          },
+          {
+            "command": [
+              "python3",
+              "-B",
+              "tools/test-lldv-vsif-suppress-setting.py"
+            ],
+            "exit_code": 0,
+            "id": "test-lldv-vsif-suppress-setting"
+          },
+          {
+            "command": [
+              "python3",
+              "-B",
+              "tools/test-hdr10-seamless-setting.py",
+              "--negative-control"
+            ],
+            "exit_code": 0,
+            "id": "test-hdr10-seamless-setting"
+          },
+          {
+            "command": [
+              "python3",
+              "-B",
+              "tools/test-seamless-profile-migration.py"
+            ],
+            "exit_code": 0,
+            "id": "test-seamless-profile-migration"
+          },
+          {
+            "command": [
+              "python3",
+              "-B",
+              "tools/test-aml-native-settings.py",
+              "--negative-controls"
+            ],
+            "exit_code": 0,
+            "id": "test-aml-native-settings"
+          },
+          {
+            "command": [
+              "python3",
+              "-B",
+              "tools/test-aml-native-continuation.py",
+              "--negative-controls"
+            ],
+            "exit_code": 0,
+            "id": "test-aml-native-continuation"
+          },
+          {
+            "command": [
+              "python3",
+              "-B",
+              "tools/test-aml-dv-manager-dependency.py"
+            ],
+            "exit_code": 0,
+            "id": "test-aml-dv-manager-dependency"
+          },
+          {
+            "command": [
+              "python3",
+              "-B",
+              "tools/test-aml-dv-preset-read.py"
+            ],
+            "exit_code": 0,
+            "id": "test-aml-dv-preset-read"
+          },
+          {
+            "command": [
+              "python3",
+              "-B",
+              "tools/test-aml-dv-setting-locks.py"
+            ],
+            "exit_code": 0,
+            "id": "test-aml-dv-setting-locks"
+          },
+          {
+            "command": [
+              "python3",
+              "-B",
+              "tools/test-aml-dv-options.py"
+            ],
+            "exit_code": 0,
+            "id": "test-aml-dv-options"
+          },
+          {
+            "command": [
+              "python3",
+              "-B",
+              "tools/test-aml-lifecycle.py"
+            ],
+            "exit_code": 0,
+            "id": "test-aml-lifecycle"
+          },
+          {
+            "command": [
+              "python3",
+              "-B",
+              "tools/test-aml-restart-hold.py"
+            ],
+            "exit_code": 0,
+            "id": "test-aml-restart-hold"
+          },
+          {
+            "command": [
+              "python3",
+              "-B",
+              "tools/test-truehd-delivery.py",
+              "--sanitize"
+            ],
+            "exit_code": 0,
+            "id": "test-truehd-delivery"
+          }
+        ]
       }
     },
     "media_modules": {
@@ -2868,14 +3899,101 @@
       }
     },
     "settings": {
-      "expected_tree": "49e63446af24b2f1b23f1b99c6b45115b08de3fc",
-      "features": [],
+      "expected_tree": "d9ac67c43de71ba908ff5356ebda999eb45b8dc3",
+      "features": [
+        {
+          "base": "d81eff5f0596d63e6a3fe79f656efe88b902b7ec",
+          "cross_component_depends_on": [
+            {
+              "component": "framework",
+              "feature": "ethernet-https10"
+            }
+          ],
+          "default": true,
+          "depends_on": [],
+          "experimental": false,
+          "head": "cca0e474fe8ff9d5a7c79d38ed224c7417e8c357",
+          "id": "settings-https10",
+          "ordered_commits": [
+            "cca0e474fe8ff9d5a7c79d38ed224c7417e8c357"
+          ],
+          "provenance": {
+            "distribution_translation_corrections_preserved": true,
+            "full001_reapplied": false,
+            "kind": "incremental-reviewed-addon-source-delta",
+            "patch_sha256": "f2349b006ade96a6b35cf13263b6c02213847478227ed0b047479da22163cf75"
+          },
+          "ref": "refs/heads/feature/today-settings-https10",
+          "settings_defaults": {
+            "user_profiles": "preserved; no seed or eager migration"
+          },
+          "status": "included"
+        },
+        {
+          "base": "cca0e474fe8ff9d5a7c79d38ed224c7417e8c357",
+          "cross_component_depends_on": [
+            {
+              "component": "framework",
+              "feature": "ethernet-ux11"
+            }
+          ],
+          "default": true,
+          "depends_on": [
+            "settings-https10"
+          ],
+          "experimental": false,
+          "head": "8a367cf0216b15bd4aaa881640dbb5b6ae547a79",
+          "id": "settings-ux11",
+          "ordered_commits": [
+            "8a367cf0216b15bd4aaa881640dbb5b6ae547a79"
+          ],
+          "provenance": {
+            "distribution_translation_corrections_preserved": true,
+            "full001_reapplied": false,
+            "kind": "incremental-reviewed-addon-source-delta",
+            "patch_sha256": "71a01092343e69bb8f243b2b0c4efdd47447fee4df3a78768fd684a6e105f59d"
+          },
+          "ref": "refs/heads/feature/today-settings-ux11",
+          "settings_defaults": {
+            "user_profiles": "preserved; no seed or eager migration"
+          },
+          "status": "included"
+        }
+      ],
+      "files": [
+        {
+          "mode": "100644",
+          "path": "language/resource.language.en_gb/strings.po",
+          "sha256": "201ee3ca05a9c998f210072292885922d162c164c917d63decb302167e24275e"
+        },
+        {
+          "mode": "100644",
+          "path": "src/resources/lib/ethernet_calibration.py",
+          "sha256": "948318990aa65e70c7319de5ad8349837cd08b55460ac4d0d9289c54500346ba"
+        },
+        {
+          "mode": "100644",
+          "path": "src/resources/lib/modules/connman.py",
+          "sha256": "5d147b6bbc0304053c2fffeff902b9284a6c8958f651d1c60be33f24be5f9c3b"
+        },
+        {
+          "mode": "100644",
+          "path": "src/resources/lib/oeWindows.py",
+          "sha256": "9c1a659b2df64b411cbe1286b892f9bb258d5a88cebeef403e74cb8ffaa2185b"
+        },
+        {
+          "mode": "100644",
+          "path": "tests/test_ethernet_calibration.py",
+          "sha256": "4f7e0a4ead6f200e77eb91b7600b242b8e7dce08460935e0758dafd813719529"
+        }
+      ],
+      "history_policy": "Exact sealed base snapshot and reviewed topic parents; full older upstream history not required or claimed.",
       "pinned_source": {
         "commit": "d81eff5f0596d63e6a3fe79f656efe88b902b7ec",
         "historical_graph_policy": "Exact selected commit/tree preserved as depth-one Git source; unrelated donor historical .gitattributes object unavailable, historical completeness not claimed.",
         "history_boundary": "d81eff5f0596d63e6a3fe79f656efe88b902b7ec",
         "original_release_input": true,
-        "stage": "accepted integrated export; no new ancillary source changes or feature refs",
+        "stage": "sealed integrated8a base plus exact reviewed HTTPS10/UX11 replay topics",
         "tree": "49e63446af24b2f1b23f1b99c6b45115b08de3fc"
       },
       "recipe_policy": "Canonical six-source binding; pre-integrated platform patches are not replayed.",
@@ -2935,18 +4053,69 @@
     "default_selection": [],
     "opt_in": "Explicit --experiment component:feature only for declared pinned default-off experimental deltas. Unaccepted/no-implementation investigations have no selectable feature refs."
   },
+  "external_companions": [
+    {
+      "accepted_source_sha256": "acdd54e6c7caf61275ab2405c7bb9b8013583124e185a7e4eb44ac4135dc0b07",
+      "component": "external-companion",
+      "delivery": {
+        "addon_updater_ownership": "unchanged, later source updates require maintained reviewed rebase",
+        "automatic_native_hook": false,
+        "parent_packages_identified_companion_archive": true,
+        "preserve_existing_addon_and_userdata": true,
+        "system_component": false,
+        "unfixed_or_fresh_install": "excluded from automatic migration; separate authorized exact-identity/source-gated companion procedure required",
+        "user_settings_writes": false,
+        "whole_addon_package": false
+      },
+      "feature_head": "34b205ae3c93c47e8432f2449bd7af4585835b10",
+      "feature_ref": "feature/today-accepted-companion-contract",
+      "framework_feature": "accepted-jellyfin-companion-sources",
+      "id": "jellyfin-late-keepalive",
+      "observed_addon": {
+        "declared_requires_graph_available": false,
+        "id": "plugin.video.jellyfin",
+        "manifest_bytes_available": false,
+        "manifest_sha256": "785d238176b45558407a48e4f2aa9912a8c8e744fc4c2fd5224ad3da0c32c1ea",
+        "new_version_or_dependencies": false,
+        "observed_websocket_version": "1.6.4",
+        "version": "2.2.0+py3"
+      },
+      "original_source_sha256": "7cc8bbce35b2ea0ba889fd8bbe0938cd74fb0f99b8459b7bd33ef9899ab57b39",
+      "original_test_sha256": "0f795e9d0be458519fed9274c6b4eef0b3464d0692b2be213e94840f03fb0058",
+      "patch_sha256": "2002d2770df89079adcf80c322c6744add69acc8fd16d637dcd0b79b69979ed6",
+      "provenance": {
+        "export_release_sha256": "39c014ee2a9ae3a9616d657980aac7a612c3773eca4a0f26dcd628692d117379",
+        "hardware_data_and_raw_logs": "hash-only, local evidence; no new-cohort hardware claim",
+        "packaging_contract_sha256": "4882d7f1e0a0402f78cda111b4e376611a4519e61d29f45e49c4b641ec06a30a",
+        "source_export_zip_sha256": "c68be9dda14425c041b038a6cbba5e67bd58957ce745129f03c1a8ad2921bf55"
+      },
+      "schema": 1,
+      "source_commit": null,
+      "source_directory": "tools/all-fixes/companions/jellyfin-late-keepalive",
+      "source_files": {
+        "ws-client-ordering.patch": "2002d2770df89079adcf80c322c6744add69acc8fd16d637dcd0b79b69979ed6",
+        "ws_client-original.py": "7cc8bbce35b2ea0ba889fd8bbe0938cd74fb0f99b8459b7bd33ef9899ab57b39",
+        "ws_client.py": "acdd54e6c7caf61275ab2405c7bb9b8013583124e185a7e4eb44ac4135dc0b07"
+      },
+      "source_tree": null,
+      "status": "included-source-companion-only",
+      "test_portability_adaptation": "SOURCE directory only; remaining AST and assertions identical",
+      "test_sha256": "548d0d03691fa162fb65058f42116ec98523710281e2efe69c35ddcadceffca0",
+      "tests_passed": 7
+    }
+  ],
   "inputs": [
     {
       "path": "catalogs/framework.json",
-      "sha256": "e1ed634e85bc9a3215bc1304790b3b8626a9a8e97232d222370de06a342a004a"
+      "sha256": "55085e6ffff54b79b236d85b3ea6b51e353589b5e5ef0957028aaa21dbd913cf"
     },
     {
       "path": "catalogs/kodi.json",
-      "sha256": "ab3762d0a66c110c85288defbe7a5e396e9f68258ce422b25ceb5d7a021aeacc"
+      "sha256": "3e20514b5251ddfa1f796441680e37814b20aa4499617492127d64b769d05ba3"
     },
     {
       "path": "catalogs/kernel.json",
-      "sha256": "f251558ff99e07ae0c498be7dd1614bead7fe4ece4fb0565ad62b2bd708457a0"
+      "sha256": "ee60f85cff4c6e1103faae4c1497a58113586559c41cbf5c4d58cc64df24d888"
     },
     {
       "path": "catalogs/ancillary.json",
@@ -3043,6 +4212,506 @@
     {
       "path": "evidence/kernel/decomposition-review.json",
       "sha256": "2bad736aec91ced5b07b28c63bf7ab880ef937000eb8f5bdc52d61212ea131f4"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/WORKFLOW.md",
+      "sha256": "d98ab70bfd2af60a2a033f19dd0e1fe91dbba2e525a1f64bf8866a027770e955"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/host-dependencies.json",
+      "sha256": "06bdee0e92c829caaae43610a8f1cac0652c93860a3f3db90868237a4487555d"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/host-parser-boundary.json",
+      "sha256": "6e05a91742fc9495bcd26b66b93ddff9ec109686c00a49592fc986eeee711467"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/hunk-ownership.json",
+      "sha256": "7efb726e2eec74319005c17d97d8b4a6454fd939c6ebf9ce2a9845cd345fa4e2"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/original-control-results.json",
+      "sha256": "8f5579e51e518ae3b6ceda80edc375d9f3d42432d73165d4784684b21b7dcaa5"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/public-bootstrap-provenance.json",
+      "sha256": "0e0ab16681503852fbf1453b2521fc917913d5e8324d3e5a5ed9b6ae1e4bb65f"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/publish-safe-audit.json",
+      "sha256": "1e6836fc92384a631b37286587f63cfb8efa75168ebc4f63c78845c706a55119"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/test-results.json",
+      "sha256": "cfa36e17f6b59357f140c022d3cda317a7918ba94f4780ad850a1dfac744859b"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/ddplus-parser-synthetic-12.log",
+      "sha256": "f8805ba4750aee7f50bf52600573d3bc42a85a41b30a1d0f99f8962080a79ab8"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/frame-pacing.log",
+      "sha256": "6b693b6d25abe12d1b69f6f62be0fd246fedfbc9a3db494c36820968e0b90c8a"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-activeae-configure-retry.log",
+      "sha256": "5c08e1c566d9af917049c35a46a4c2f977f26577f56981468ba317611b58720d"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-activeae-dropped-raw-delay.log",
+      "sha256": "a5c34bcdd434dd26a58029127158cdce90edadcceaa52a3f339b55aca71ef0e5"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-activeae-duration-families.log",
+      "sha256": "6a69b4f78754d631b37d88f95ff97c15f98308342fd7183fae4e96e18d3aa976"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-activeae-error-free.log",
+      "sha256": "4766ffa38f56bfac0f963b9d03f9d7e2a196a761a0c7517c5d7eb491693e719a"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-activeae-long-pause.log",
+      "sha256": "d2475985a2ac8b30f4228c0d1787a608b3c98e331c8bb8dfa69ceaf409e36f36"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-activeae-pause-silence.log",
+      "sha256": "8dfd9fa630083c16c360840142ef1e754e2ec639efd2a905860ee9b269cb025d"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-activeae-paused-packets.log",
+      "sha256": "6a20eddc0c0c240089d7b2599e3ee54ee351c908b20b7ef4dd98c803caf0212f"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-activeae-resume-epoch.log",
+      "sha256": "df87449bfa8fbdd6b904389dc2afbdb3d05aaa3a8ccdce35ba08fcb08e9c47d9"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-activeae-stream-flush.log",
+      "sha256": "da44c5c28eba40bec587a1bbe8735fc7fd5c4aef336b31e7aea22acddd1b2932"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-activeae-threaded-barrier.log",
+      "sha256": "09db92f7ea40cff765cfdbc2650aeb3d04260959bcf1b2bad60447f70027e6e2"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-activeae-truehd-sync.log",
+      "sha256": "783d7ba22a1a1d617222d3f894283f7ebbebc54f0941f9aec1063000e54e3dd9"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-aml-dv-manager-dependency.log",
+      "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-aml-dv-options.log",
+      "sha256": "e7f694bcf6bfe21f474b4f2a5a97d80f5fa36d59e627fbc6d6e8bc39e11959cf"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-aml-dv-preset-read.log",
+      "sha256": "ddedc445ffe6370c4d2430ce36bc9103ef23188e0b324ae8b57c07eacf476b62"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-aml-dv-setting-locks.log",
+      "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-aml-lifecycle.log",
+      "sha256": "da3632e61b90565553cef38cf5f8871ad87938371bc1abaeb92f1e4ba09a05bc"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-aml-mute-renderer.log",
+      "sha256": "95490e56d47610d3adf2f59f47447ee406498bd9037b4b2ba81cc55e185674c5"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-aml-native-continuation.log",
+      "sha256": "c82306bd1c2de7a4f5f7ec74b1f1a2f84f49867a34fa14d51e90886aa7d710b5"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-aml-native-settings.log",
+      "sha256": "53266bcb4581cd03cf1991b482543fe3ca08843250c8bc609764815eb2fca67d"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-aml-preroll.log",
+      "sha256": "a416cd0766a952d9932ebcb6d2b98b7121072445a68b4bbf2ccad741ea481ebd"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-aml-presenter-cadence.log",
+      "sha256": "113b7cdee2150d9c0cf1ad8b05ecb5bfc269dde0f18b43eb4d1585e8ef100184"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-aml-presenter-setting.log",
+      "sha256": "64b61e7b6fb90ce8abe1bd1f4b6eb5762952d4ef2d4edbba27c5a9c5bef490a9"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-aml-presenter-step-invalidation.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-aml-presenter.log",
+      "sha256": "df9b449c3fc4eb08c2fe23683b24632f5196cb0790c6e884c9ff1afa1788fe78"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-aml-restart-hold.log",
+      "sha256": "a5e601cf385ad789f1b1080ccff2a8428cd4fa04fa14d5e6620653ea3cbe3e42"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-aml-seek-clock.log",
+      "sha256": "e8bea246dfaabf2bddea9ae96d50647c1373b3ab905871ad927a13e6c8917a4e"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-aml-skin-reload.log",
+      "sha256": "7163a3a869b360a1f69c491de9c9e8544a9d041104a8fc2062a5061ad3417d8f"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-aml-window-lifecycle.log",
+      "sha256": "f739ad337ac056e6aeab95457940565d7761632e3f3095f367d5685633e4751d"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-audio-frame-admission.log",
+      "sha256": "f6d06a36e120d3ca2ef82da4d6d4524676fa817be46c366ffff9f3633e9b74f3"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-audio-recovery-seek.log",
+      "sha256": "0edc6188ca1e6d8c6d9d1f3c5d016fa34d6c76f97d7b6138860067b2e61a9fec"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-chapter-seek-intent.log",
+      "sha256": "f0351acd142921c56e8e7d70bc934f4a890e3f92f4a0c3865772a294bb1a179f"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-dv-disc-hold.log",
+      "sha256": "8e6b494fd031055e349036535f61972cc00c9622fe6cf5e6cc9d72300f6a8254"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-dvd-clock-locking.log",
+      "sha256": "7b986b070adba05f50408fd6bdb94cdf6d685cd3a7db4cfb645446855ec48d55"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-hdr10-seamless-setting.log",
+      "sha256": "48fb8760bfd1e89ac0ed96dadd32c3e20299891bf59d95264c75950cce51eb16"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-paused-trickplay-return.log",
+      "sha256": "853a42b935422d1115ad932e4f9a8b99cc3e5e3e37b870417fe211354870a64e"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-player-lifecycle.log",
+      "sha256": "5b26cc0e262eb77844d7527ac6aca3223f5bd4798196828e801f6e0ab9d64d68"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-player-retirement.log",
+      "sha256": "0814e3a7097ec779c12b56c7b4d3c25b33b54da330d9dd56485208c64d6cbae3"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-presenter-invalidation-lifetime.log",
+      "sha256": "15bdde7faaba220f1d1273b970147c4482a01b733c77a8d46a6478b397f338f6"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-render-lifecycle.log",
+      "sha256": "d0cb44fba94722a57b63c8fb6f99c3e699e7768eb4517c5e19d9bcbfdc90c0cb"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-render-video-admission.log",
+      "sha256": "17466672469e3f195bb2e8fa9ba02859e4f84c5ebb39a55790661a2d4136f75e"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-seamless-profile-migration.log",
+      "sha256": "0858aaff3e9e1340fe4d777d56c823c5fa84b672f9644b8d51a9b0384bdbba1b"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-seek-marker-review-chapter-supersession.log",
+      "sha256": "b4373673a1faa1e0c0d16d488d4e874ba2cac51a04ef7e52059ab8167e06651a"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-seek-marker-review-queued-speed.log",
+      "sha256": "c95ad4a83eb4349ca35cb80273b99db3b806e9ed6f5cbd198e0b449fadb104ad"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-seek-marker-review-rejected-queue-keeps-older.log",
+      "sha256": "4ce8e30c802419c9153dbb0011e302f46fc4b44a7a3eaf6222bff668803d4379"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-seek-marker-review-retirement-commit.log",
+      "sha256": "b612113c7f98b20b5020f7ebafbf0a8271d551e4416434481d6c251966cfa0ef"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-seek-marker-review-retirement-preview.log",
+      "sha256": "5281598eb6fca8f6c9e0a13dd6a966e0df0a38155ed74887ed72c4cebd6b7162"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-seek-marker-review-stack-accurate-overlap.log",
+      "sha256": "30995aaf5f94a635739cf461c19111d16dd38c1d45020916a306389bd7151da2"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-seek-preview-origin.log",
+      "sha256": "5caf7ad573205ffb23400585a26977dbe2ab710ac68560da4ec615beeb17e71e"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-seek-timeline-marker.log",
+      "sha256": "002ee1e755f9c70c8a95da436ef7c7ce10541f93226c16d457af4bf60dd220d9"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-truehd-delivery.log",
+      "sha256": "1fe79f2d6e8a520afe82b7e2aa437f9bec98db9d5942c75ef78b0aa91e671597"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tests/test-video-timeout-recovery.log",
+      "sha256": "c3502fd80db653510d1e6d6e61c9a7c8f28e2859dbc665ca08c22398fe931d39"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/tree-parity.json",
+      "sha256": "7332910ed8a1e59a6407ce01e91c7f80b1729f71295e74d8d78d32682c832294"
+    },
+    {
+      "path": "evidence/kodi-today/baseline-evidence/upstream-review.json",
+      "sha256": "4bbc8de0ba80d6909d118c4e9b61a4eb18150d877b0904b5efc32e876bc12886"
+    },
+    {
+      "path": "evidence/kodi-today/topic-ownership-matrix-final.json",
+      "sha256": "7e769cd14714fa1b26b903745a0d1b9794aca407e40806ca13606930032b6d5d"
+    },
+    {
+      "path": "evidence/kodi-today/source-acceptance-review.json",
+      "sha256": "1856c7af76976ca3eda2dc0f42eab65aa1640e214e99846e3815f6541f74b599"
+    },
+    {
+      "path": "evidence/kodi-today/source-parity-and-overlap.json",
+      "sha256": "d79da323b30066588296d363188b0d008ad918c95c344dd83ae79a173e37c6f5"
+    },
+    {
+      "path": "evidence/kodi-today/inherited-evidence-portability.json",
+      "sha256": "dc844c4738064b71bc08dfc61501ee9cb1baaacb1965a549718114cdbe03b694"
+    },
+    {
+      "path": "evidence/kodi-today/focused-tests.json",
+      "sha256": "2abb3d8de5adc6f0c3184d79bc71d1e554cf7c8493eb493fcd99eb0fd156f245"
+    },
+    {
+      "path": "evidence/kodi-today/tests/test-python-forced-shutdown.log",
+      "sha256": "67357884b47b2827fe257b422a8382be2dea9affd6f1abb252ca3c14bf303e29"
+    },
+    {
+      "path": "evidence/kodi-today/tests/test-lldv-vsif-suppress-setting.log",
+      "sha256": "a19feee95053fa7034637adcef17133e0954570f7325adc0ba63d436224adfab"
+    },
+    {
+      "path": "evidence/kodi-today/tests/test-hdr10-seamless-setting.log",
+      "sha256": "48fb8760bfd1e89ac0ed96dadd32c3e20299891bf59d95264c75950cce51eb16"
+    },
+    {
+      "path": "evidence/kodi-today/tests/test-seamless-profile-migration.log",
+      "sha256": "0858aaff3e9e1340fe4d777d56c823c5fa84b672f9644b8d51a9b0384bdbba1b"
+    },
+    {
+      "path": "evidence/kodi-today/tests/test-aml-native-settings.log",
+      "sha256": "abfd304607578c2d6f375180201a9d0ce44212f9ff80be4931f4f8186546b798"
+    },
+    {
+      "path": "evidence/kodi-today/tests/test-aml-native-continuation.log",
+      "sha256": "15f15569b8952486efd84ce4c0a5b55be54f5ad05abf8114e76f80f0a4b9922c"
+    },
+    {
+      "path": "evidence/kodi-today/tests/test-aml-dv-manager-dependency.log",
+      "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+    },
+    {
+      "path": "evidence/kodi-today/tests/test-aml-dv-preset-read.log",
+      "sha256": "ddedc445ffe6370c4d2430ce36bc9103ef23188e0b324ae8b57c07eacf476b62"
+    },
+    {
+      "path": "evidence/kodi-today/tests/test-aml-dv-setting-locks.log",
+      "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+    },
+    {
+      "path": "evidence/kodi-today/tests/test-aml-dv-options.log",
+      "sha256": "e7f694bcf6bfe21f474b4f2a5a97d80f5fa36d59e627fbc6d6e8bc39e11959cf"
+    },
+    {
+      "path": "evidence/kodi-today/tests/test-aml-lifecycle.log",
+      "sha256": "da3632e61b90565553cef38cf5f8871ad87938371bc1abaeb92f1e4ba09a05bc"
+    },
+    {
+      "path": "evidence/kodi-today/tests/test-aml-restart-hold.log",
+      "sha256": "a5e601cf385ad789f1b1080ccff2a8428cd4fa04fa14d5e6620653ea3cbe3e42"
+    },
+    {
+      "path": "evidence/kodi-today/tests/test-truehd-delivery.log",
+      "sha256": "1fe79f2d6e8a520afe82b7e2aa437f9bec98db9d5942c75ef78b0aa91e671597"
+    },
+    {
+      "path": "evidence/kodi-today/independent-replay.json",
+      "sha256": "aec4e5fcc7372d49664dd337b4bfed83c0cc9d383ff5a9e2ff4462b2bf1b9ea3"
+    },
+    {
+      "path": "evidence/kodi-today/offline/focused-tests.json",
+      "sha256": "0ffd69879da1220b710d510bfbe72d42f3e3837a05ff8a47bd54dfca93ee930b"
+    },
+    {
+      "path": "evidence/kodi-today/offline/tests/test-python-forced-shutdown.log",
+      "sha256": "67357884b47b2827fe257b422a8382be2dea9affd6f1abb252ca3c14bf303e29"
+    },
+    {
+      "path": "evidence/kodi-today/offline/tests/test-lldv-vsif-suppress-setting.log",
+      "sha256": "a19feee95053fa7034637adcef17133e0954570f7325adc0ba63d436224adfab"
+    },
+    {
+      "path": "evidence/kodi-today/offline/tests/test-hdr10-seamless-setting.log",
+      "sha256": "48fb8760bfd1e89ac0ed96dadd32c3e20299891bf59d95264c75950cce51eb16"
+    },
+    {
+      "path": "evidence/kodi-today/offline/tests/test-seamless-profile-migration.log",
+      "sha256": "0858aaff3e9e1340fe4d777d56c823c5fa84b672f9644b8d51a9b0384bdbba1b"
+    },
+    {
+      "path": "evidence/kodi-today/offline/tests/test-aml-native-settings.log",
+      "sha256": "abfd304607578c2d6f375180201a9d0ce44212f9ff80be4931f4f8186546b798"
+    },
+    {
+      "path": "evidence/kodi-today/offline/tests/test-aml-native-continuation.log",
+      "sha256": "15f15569b8952486efd84ce4c0a5b55be54f5ad05abf8114e76f80f0a4b9922c"
+    },
+    {
+      "path": "evidence/kodi-today/offline/tests/test-aml-dv-manager-dependency.log",
+      "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+    },
+    {
+      "path": "evidence/kodi-today/offline/tests/test-aml-dv-preset-read.log",
+      "sha256": "ddedc445ffe6370c4d2430ce36bc9103ef23188e0b324ae8b57c07eacf476b62"
+    },
+    {
+      "path": "evidence/kodi-today/offline/tests/test-aml-dv-setting-locks.log",
+      "sha256": "b85937f45851975ccbe686e13e60d88677f86428c3615ae91f9759483655eb54"
+    },
+    {
+      "path": "evidence/kodi-today/offline/tests/test-aml-dv-options.log",
+      "sha256": "e7f694bcf6bfe21f474b4f2a5a97d80f5fa36d59e627fbc6d6e8bc39e11959cf"
+    },
+    {
+      "path": "evidence/kodi-today/offline/tests/test-aml-lifecycle.log",
+      "sha256": "da3632e61b90565553cef38cf5f8871ad87938371bc1abaeb92f1e4ba09a05bc"
+    },
+    {
+      "path": "evidence/kodi-today/offline/tests/test-aml-restart-hold.log",
+      "sha256": "a5e601cf385ad789f1b1080ccff2a8428cd4fa04fa14d5e6620653ea3cbe3e42"
+    },
+    {
+      "path": "evidence/kodi-today/offline/tests/test-truehd-delivery.log",
+      "sha256": "1fe79f2d6e8a520afe82b7e2aa437f9bec98db9d5942c75ef78b0aa91e671597"
+    },
+    {
+      "path": "evidence/kodi-today/publication-reachability-audit.json",
+      "sha256": "6858e1d815c64cd35075ac9c350b55620407a133b2923eea7a5f1106e3419ab2"
+    },
+    {
+      "path": "evidence/kernel-today/evidence/parity.json",
+      "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+    },
+    {
+      "path": "evidence/kernel-today/evidence/workflow-tests.json",
+      "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+    },
+    {
+      "path": "evidence/kernel-today/evidence/today-workflow-tests.json",
+      "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
+    },
+    {
+      "path": "evidence/kernel-today/evidence/focused-tests.json",
+      "sha256": "01b32fbf1bfe8d2457cbd8217fc250ebcaff41f66bebe565d842c46b349b76d6"
+    },
+    {
+      "path": "evidence/kernel-today/evidence/c2-results.json",
+      "sha256": "0e420dc63b2d8c4af908a50d15fb5c41b0a031f9ab5e4acf998db5b81089d5df"
+    },
+    {
+      "path": "evidence/kernel-today/evidence/today-c2-results.json",
+      "sha256": "0e420dc63b2d8c4af908a50d15fb5c41b0a031f9ab5e4acf998db5b81089d5df"
+    },
+    {
+      "path": "evidence/kernel-today/evidence/ethernet-lease.json",
+      "sha256": "f247bde663f0695cdcf6d169c628d19a3e013bae5b72248ca2a8f68afa7c2ca6"
+    },
+    {
+      "path": "evidence/kernel-today/evidence/today-ethernet-source-reconciliation.json",
+      "sha256": "53b2d11e09fd5769fa0095fedb17fb74a6b356c452f7ecc8ec8b08e315fb2d56"
+    },
+    {
+      "path": "evidence/kernel-today/evidence/today-ethernet-build-cohort-provenance.json",
+      "sha256": "9984ace5b718479c92e5a55062795e84fe6f8ca135682f43ac8cf60b37c1c4ee"
+    },
+    {
+      "path": "evidence/kernel-today/evidence/osd-afbc-queued-flips-upstream-review.json",
+      "sha256": "d626a0ce4358a21dcddcc8f7e65e4d672d3a92206bcdf4b2385bd758656c4f90"
+    },
+    {
+      "path": "evidence/kernel-today/evidence/vfm-vdin-routing-safeguards-upstream-review.json",
+      "sha256": "454e5e5f9b8428988b0eedf5c21cd3fb5f17850ef3aa4e417978dce98e38074a"
+    },
+    {
+      "path": "evidence/kernel-today/evidence/raven-vdin-writeback-upstream-review.json",
+      "sha256": "086dd63d9d36fb8ce8c27148c30b99d4e167f8425560e2be6fd82dd6ca9c2c70"
+    },
+    {
+      "path": "evidence/kernel-today/evidence/hdr-sink-vsvdb-recovery-upstream-review.json",
+      "sha256": "c00d814607b35446072569ad2ca9f4cab0813ac7529923a856aec43da16141e2"
+    },
+    {
+      "path": "evidence/kernel-today/evidence/native-p81-live-l5-default-upstream-review.json",
+      "sha256": "a49414f956da63c0e31c6aa0c11df8e625318ce95bc5f4bd745578a0ff2460e5"
+    },
+    {
+      "path": "evidence/kernel-today/evidence/today-jvc-source-reconciliation.json",
+      "sha256": "b7bc74daf67e15ac8fb444d625f31d5321f668659f88868bcfeacd100ac59e53"
+    },
+    {
+      "path": "evidence/kernel-today/evidence/today-regressions.json",
+      "sha256": "57f567b246bcd06dbba0f835411b50a40182f7a7437c49d4922c6f9a83dfceb1"
+    },
+    {
+      "path": "evidence/kernel-today/evidence/today-c2-public-baseline.json",
+      "sha256": "4f8b5850d0511aee4968a4a6f7e7d824dcf6bd72b832ce9ca7f0f2238a663612"
+    },
+    {
+      "path": "evidence/kernel-today/evidence/today-ethernet-host-results.json",
+      "sha256": "f247bde663f0695cdcf6d169c628d19a3e013bae5b72248ca2a8f68afa7c2ca6"
+    },
+    {
+      "path": "catalogs/settings.json",
+      "sha256": "560cc1a76e2323e7a6d6e5e062ce617be382f95c07f8618e3c37fd1fd27feb0d"
+    },
+    {
+      "path": "catalogs/jellyfin-companion.json",
+      "sha256": "36ca8fa23e4bf72df9a967cbcc14393bd36e665816730708637811a8e3b80e64"
+    },
+    {
+      "path": "evidence/ethernet-today/ethernet-component-catalog.json",
+      "sha256": "77635d830d26eda36d2473d3089dae2579dbb2e95b440997da67a3ccf0fe1c2c"
+    },
+    {
+      "path": "evidence/ethernet-today/handoff-manifest.json",
+      "sha256": "a1fbdfb79af0838b4661a0e9aad1e08dbabadbe9a22f0873b16833650183e985"
+    },
+    {
+      "path": "evidence/ethernet-today/combined-kernel-ethernet-reconciliation.json",
+      "sha256": "c3d7863ee8bc9680ac64b19f530e48d83a1e705057cf4d6ae0a9ceb23e586e7c"
+    },
+    {
+      "path": "evidence/ethernet-today/independent-kernel-owner-reference.json",
+      "sha256": "35f2b8595dfe8e02ae6f39881c2a8e7cec89b3f46f859be3673a0bc407c3237c"
+    },
+    {
+      "path": "evidence/ethernet-today/export-replay-consistency.json",
+      "sha256": "431923d14286f2546062c3ff5b1659c94e85529f6db090bd6c224c88a2516e4f"
+    },
+    {
+      "path": "evidence/framework-today/native-framework-replay.json",
+      "sha256": "7ce22a30d530078f0a02a421ae9c9f514a3857b52d224977f547835c296bff1f"
+    },
+    {
+      "path": "evidence/framework-today/settings-replay.json",
+      "sha256": "c572da69ac8a3956b875b4245c0f29f9b66e7d4ce1cec847228eb77c93b81afb"
+    },
+    {
+      "path": "evidence/framework-today/companion-source-regressions.json",
+      "sha256": "cfddbe22b607bc8f776369a6d98d556c9b539f5899dbb74b6c2c6b4a8ab92047"
     }
   ],
   "original_image_sha256": "09d980218d8ab1cc9b48cb27c056f03c8f7a4ba198e98b3d15f4c2bbea0a672a",
@@ -3058,6 +4727,8 @@
     "assembly-regressions",
     "packaging-regressions",
     "native-ethernet-regressions",
+    "settings-ui-regressions",
+    "companion-source-regressions",
     "source-parity",
     "source-materialization",
     "repeat-assembly",
@@ -3082,6 +4753,22 @@
       "skin"
     ],
     "policy": "Joint pinned source/configuration selection; no component binary or ABI substitution inferred from source tree equality."
+  },
+  "source_refresh": {
+    "baseline": "e4f493e3c34399333b7959a6d471dda49eb69f43",
+    "excluded": [
+      "HDR10+ hidden visibility diagnosis",
+      "preroll v13c",
+      "silenceES",
+      "runtime experiment configs",
+      "automatic Jellyfin native migration",
+      "private diagnostics/tracing",
+      "visual/live/new-cohort hardware claims"
+    ],
+    "firmware_build_run": false,
+    "kernel_binary_cohort": "do not substitute older a3a binary/config/export cohort; three driver source checks only",
+    "parent_build_required": true,
+    "source_only": true
   },
   "target": {
     "ARCH": "arm",

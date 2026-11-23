@@ -1,0 +1,2 @@
+437 cases; 0 CRC trace assertions; complete behavior recorded
+PASS whole OutputSamples dropped DTS RAW: measured sink delay retained with IEC and non-IEC output

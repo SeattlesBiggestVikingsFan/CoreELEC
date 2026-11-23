@@ -1,6 +1,20 @@
 {
+  "build_policy": "No binary was built or relabeled for this source candidate; original/older kernel hashes remain provenance only.",
+  "candidate_status": "Exact replay source candidate with passing offline checks; parent build/publication and new combined hardware acceptance are separate.",
   "component": "kernel",
-  "expected_tree": "2de60b436acf0c6289449c53eee6f842d176d4d2",
+  "excluded_updates": [
+    {
+      "id": "stress-vfm-parser-decoder-experiments",
+      "reason": "Did not cure the stress reboot; not accepted playback remedies.",
+      "status": "excluded"
+    },
+    {
+      "id": "hdr10plus-visibility-diagnosis",
+      "reason": "Existing converter/config trial; no accepted new kernel visibility source.",
+      "status": "pending"
+    }
+  ],
+  "expected_tree": "a2921b265a9ea43517b6036cc2dde95418545af0",
   "features": [
     {
       "base": "58c06bb03fba0d4136115b828a3924394130c15d",
@@ -16,6 +30,10 @@
         {
           "id": "evidence/workflow-tests.json",
           "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
       "experimental": false,
@@ -56,6 +74,10 @@
         {
           "id": "evidence/workflow-tests.json",
           "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
       "experimental": false,
@@ -95,6 +117,10 @@
         {
           "id": "evidence/workflow-tests.json",
           "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
       "experimental": false,
@@ -134,6 +160,10 @@
         {
           "id": "evidence/workflow-tests.json",
           "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
       "experimental": false,
@@ -173,6 +203,10 @@
         {
           "id": "evidence/workflow-tests.json",
           "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
       "experimental": false,
@@ -215,6 +249,10 @@
         {
           "id": "evidence/workflow-tests.json",
           "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
       "experimental": false,
@@ -256,6 +294,10 @@
         {
           "id": "evidence/workflow-tests.json",
           "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
       "experimental": false,
@@ -295,6 +337,10 @@
         {
           "id": "evidence/workflow-tests.json",
           "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
       "experimental": false,
@@ -336,6 +382,10 @@
         {
           "id": "evidence/workflow-tests.json",
           "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
       "experimental": false,
@@ -375,6 +425,10 @@
         {
           "id": "evidence/workflow-tests.json",
           "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
       "experimental": false,
@@ -415,6 +469,10 @@
         {
           "id": "evidence/workflow-tests.json",
           "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
       "experimental": false,
@@ -461,6 +519,10 @@
         {
           "id": "evidence/workflow-tests.json",
           "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
       "experimental": false,
@@ -500,6 +562,10 @@
         {
           "id": "evidence/workflow-tests.json",
           "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
       "experimental": false,
@@ -539,6 +605,10 @@
         {
           "id": "evidence/workflow-tests.json",
           "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
       "experimental": false,
@@ -578,6 +648,10 @@
         {
           "id": "evidence/workflow-tests.json",
           "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
       "experimental": false,
@@ -619,6 +693,10 @@
         {
           "id": "evidence/focused-tests.json",
           "sha256": "01b32fbf1bfe8d2457cbd8217fc250ebcaff41f66bebe565d842c46b349b76d6"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
       "experimental": false,
@@ -677,6 +755,10 @@
         {
           "id": "evidence/focused-tests.json",
           "sha256": "01b32fbf1bfe8d2457cbd8217fc250ebcaff41f66bebe565d842c46b349b76d6"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
       "experimental": false,
@@ -747,6 +829,14 @@
         {
           "id": "evidence/c2-results.json",
           "sha256": "0e420dc63b2d8c4af908a50d15fb5c41b0a031f9ab5e4acf998db5b81089d5df"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
+        },
+        {
+          "id": "evidence/today-c2-results.json",
+          "sha256": "0e420dc63b2d8c4af908a50d15fb5c41b0a031f9ab5e4acf998db5b81089d5df"
         }
       ],
       "experimental": false,
@@ -804,6 +894,18 @@
         {
           "id": "evidence/ethernet-lease.json",
           "sha256": "f247bde663f0695cdcf6d169c628d19a3e013bae5b72248ca2a8f68afa7c2ca6"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
+        },
+        {
+          "id": "evidence/today-ethernet-source-reconciliation.json",
+          "sha256": "53b2d11e09fd5769fa0095fedb17fb74a6b356c452f7ecc8ec8b08e315fb2d56"
+        },
+        {
+          "id": "evidence/today-ethernet-build-cohort-provenance.json",
+          "sha256": "9984ace5b718479c92e5a55062795e84fe6f8ca135682f43ac8cf60b37c1c4ee"
         }
       ],
       "experimental": false,
@@ -860,6 +962,10 @@
         {
           "id": "evidence/focused-tests.json",
           "sha256": "01b32fbf1bfe8d2457cbd8217fc250ebcaff41f66bebe565d842c46b349b76d6"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
       "experimental": false,
@@ -914,6 +1020,10 @@
         {
           "id": "evidence/focused-tests.json",
           "sha256": "01b32fbf1bfe8d2457cbd8217fc250ebcaff41f66bebe565d842c46b349b76d6"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
       "experimental": false,
@@ -967,6 +1077,10 @@
         {
           "id": "evidence/workflow-tests.json",
           "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
       "experimental": false,
@@ -1020,6 +1134,10 @@
         {
           "id": "evidence/workflow-tests.json",
           "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
       "experimental": false,
@@ -1071,6 +1189,10 @@
         {
           "id": "evidence/focused-tests.json",
           "sha256": "01b32fbf1bfe8d2457cbd8217fc250ebcaff41f66bebe565d842c46b349b76d6"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
       "experimental": false,
@@ -1121,6 +1243,10 @@
         {
           "id": "evidence/workflow-tests.json",
           "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
         }
       ],
       "experimental": false,
@@ -1151,9 +1277,80 @@
         "reason": "Original native P8.1 same-picture L5 default-on commit is retained beneath the later archived sink-safeguard commit; complete resulting production file equals validated upstream and release. Native module/version policy is unchanged.",
         "upstream_commit": "58c06bb03fba0d4136115b828a3924394130c15d"
       }
+    },
+    {
+      "base": "56298eb1cb81e270876b454dcbd7290b1dfea25f",
+      "commit_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+      "default": true,
+      "defaults": {
+        "lldv_vsif_suppress": false
+      },
+      "depends_on": [
+        "hdmi-c2-clock-serialization"
+      ],
+      "evidence": [
+        {
+          "id": "evidence/today-jvc-source-reconciliation.json",
+          "sha256": "b7bc74daf67e15ac8fb444d625f31d5321f668659f88868bcfeacd100ac59e53"
+        },
+        {
+          "id": "evidence/today-regressions.json",
+          "sha256": "57f567b246bcd06dbba0f835411b50a40182f7a7437c49d4922c6f9a83dfceb1"
+        },
+        {
+          "id": "evidence/today-workflow-tests.json",
+          "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
+        }
+      ],
+      "experimental": false,
+      "external_dependencies": [
+        "kodi/lldv-vsif-suppression-setting"
+      ],
+      "head": "5b9376a38cf4b0e4fb39aca74e2c1e889cf32281",
+      "id": "lldv-vsif-suppression-v3",
+      "limits": [
+        "Hardware acceptance applies to custom suppressionOn v3 in one manually configured projector-chain setup.",
+        "Generic defaultOff, generic cae054 with suppressionOn, this 2b17/f706 integration and Dolby-signaled sinks with suppressionOn were not hardware-tested.",
+        "LLDV video processing is preserved; keep suppressionOff for displays needing the Dolby VSIF.",
+        "No HDR10+ visibility/parser/decoder/stress experiments are included."
+      ],
+      "ordered_commits": [
+        "5b9376a38cf4b0e4fb39aca74e2c1e889cf32281"
+      ],
+      "patch_sha256": "afdd4408addf31ed21ce12441cbd5edc4756f903c73f69b93b4c063bcedc1c80",
+      "paths": [
+        "drivers/amlogic/media/vout/hdmitx/hdmi_tx_20/hdmi_tx_main.c",
+        "drivers/amlogic/media/vout/hdmitx/hdmi_tx_20/hdmi_tx_video.c",
+        "drivers/amlogic/media/vout/hdmitx/hdmi_tx_20/hw/hdmi_tx_hw.c",
+        "include/linux/amlogic/media/vout/hdmi_tx/hdmi_tx_module.h",
+        "tools/test-lldv-vsif-suppress.py"
+      ],
+      "provenance": {
+        "accepted_generic_commit": "cae054dbed345e6479ce48a7099a138608b7d369",
+        "accepted_generic_tree": "899982f9fb701e8493472fec7c115671d70ac34a",
+        "adaptation": "Use exact public generic defaultOff gating, getter and regressions; enabled packet/AVI behavior retained from accepted v3, not copied custom defaultY.",
+        "custom_deployed_image_sha256": "8837666164ab2630aa4074fba4c8217b83a88c20718ca1800cbedd635a9cebc2",
+        "custom_source_baseline": "3c223629c5f7ff87151b696161cf99bc7c857b94",
+        "immutable_custom_exports": {
+          "lldv-modern-avi-v2-candidate.patch": "b8a95b1aaa8e8dd3cb795e6f90c5e889c13a456dc457b93e1399bec45cbd1959",
+          "lldv-vsif-suppress-v3-candidate.patch": "48e04b8b3ea16abb5eeb540d2afdd2fcd39a88bf33b5f1d6927a965e0576b8eb"
+        },
+        "immutable_generic_mbox_sha256": "19c0bc40ec5094a98863a5f661d42c11ce9be91be2bb593b2b451bd98e47324a",
+        "original_pr": 32,
+        "original_repository": "https://github.com/pannal/linux-amlogic"
+      },
+      "ref": "feature/lldv-vsif-suppression-v3-20261122",
+      "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+      "settings_defaults": {
+        "lldv_vsif_suppress": false,
+        "seamless_refresh_preserved": true
+      },
+      "status": "included",
+      "upstream_equivalence_reason": "Accepted generic PR32 delta absent from frozen f706/2b17; replay exactly once without replacing C2/HDR/defaultOn policy."
     }
   ],
   "immutable_refs": {
+    "refs/heads/workflow/catalog-today-20261122": "08ba9087a96834fb9bb5eb69a1ce0c8bd2da8551",
     "source/original-pr-29-20261122": "a2ed27d5ba51f79ba386eae9281e588cfd9c5fa9",
     "source/original-pr-30-20261122": "eebe87aede345899623f576ce5bf65d6d75774d6",
     "source/original-pr-31-20261122": "1f9baf7026d8fb0e8fc578bf337e0b23166e67e6",
@@ -1165,10 +1362,10 @@
     "source/upstream-validated-20261122": "58c06bb03fba0d4136115b828a3924394130c15d"
   },
   "integration": {
-    "head": "f7061e5ca4f174c28614bfc29eed368e7cefafd0",
-    "ref": "integration/all-fixes",
+    "head": "d49892898952cc48768f9faf25b3d095650e3438",
+    "ref": "integration/all-fixes-today-20261122",
     "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
-    "tree": "2de60b436acf0c6289449c53eee6f842d176d4d2"
+    "tree": "a2921b265a9ea43517b6036cc2dde95418545af0"
   },
   "limits": [
     "No firmware build, deployment, push, merge, PR or hardware testing.",
@@ -1183,13 +1380,24 @@
     "tag": "source/release-original-20261122",
     "tree": "2de60b436acf0c6289449c53eee6f842d176d4d2"
   },
-  "reconstructed_baseline": {
+  "prior_release": {
     "commit": "f7061e5ca4f174c28614bfc29eed368e7cefafd0",
+    "ref": "integration/all-fixes",
     "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
-    "tag": "source/reconstructed-equivalent-20261122",
     "tree": "2de60b436acf0c6289449c53eee6f842d176d4d2"
   },
+  "reconstructed_baseline": {
+    "commit": "d49892898952cc48768f9faf25b3d095650e3438",
+    "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+    "status": "Source candidate; not built or hardware-accepted as a combined image.",
+    "tag": "source/candidate-today-20261122",
+    "tree": "a2921b265a9ea43517b6036cc2dde95418545af0"
+  },
   "repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
+  "runtime_defaults": {
+    "lldv_vsif_suppress": false,
+    "seamless_mode_refresh": true
+  },
   "schema_version": 1,
   "upstream": {
     "commit": "58c06bb03fba0d4136115b828a3924394130c15d",
@@ -1198,6 +1406,7 @@
     "ref_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic",
     "refresh": {
       "commit": "605cf2407df57a850fc7db29e514c2de41b5ebc7",
+      "observation": "Re-fetched during today's refresh; same published 605cf240 pin, still unvalidated and excluded.",
       "ref": "upstream-dev",
       "status": "unvalidated-separate"
     },
@@ -1205,30 +1414,38 @@
   },
   "validations": [
     {
-      "id": "evidence/parity.json",
-      "sha256": "b0d1a015fc5b6567feb9a7a199da524fb362b31d376267002d54a6b588a96a36"
+      "id": "evidence/today-jvc-source-reconciliation.json",
+      "sha256": "b7bc74daf67e15ac8fb444d625f31d5321f668659f88868bcfeacd100ac59e53"
     },
     {
-      "id": "evidence/focused-tests.json",
-      "sha256": "01b32fbf1bfe8d2457cbd8217fc250ebcaff41f66bebe565d842c46b349b76d6"
+      "id": "evidence/today-regressions.json",
+      "sha256": "57f567b246bcd06dbba0f835411b50a40182f7a7437c49d4922c6f9a83dfceb1"
     },
     {
-      "id": "evidence/decomposition-review.json",
-      "sha256": "2bad736aec91ced5b07b28c63bf7ab880ef937000eb8f5bdc52d61212ea131f4"
+      "id": "evidence/today-ethernet-source-reconciliation.json",
+      "sha256": "53b2d11e09fd5769fa0095fedb17fb74a6b356c452f7ecc8ec8b08e315fb2d56"
     },
     {
-      "id": "evidence/workflow-tests.json",
-      "sha256": "ed76cce9581d2e496e0d6c6655ae4b720ce11d7870b51811747dbd4e9d475c36"
+      "id": "evidence/today-c2-public-baseline.json",
+      "sha256": "4f8b5850d0511aee4968a4a6f7e7d824dcf6bd72b832ce9ca7f0f2238a663612"
     },
     {
-      "id": "evidence/c2-results.json",
+      "id": "evidence/today-c2-results.json",
       "sha256": "0e420dc63b2d8c4af908a50d15fb5c41b0a031f9ab5e4acf998db5b81089d5df"
     },
     {
-      "id": "evidence/ethernet-lease.json",
+      "id": "evidence/today-ethernet-host-results.json",
       "sha256": "f247bde663f0695cdcf6d169c628d19a3e013bae5b72248ca2a8f68afa7c2ca6"
+    },
+    {
+      "id": "evidence/today-ethernet-build-cohort-provenance.json",
+      "sha256": "9984ace5b718479c92e5a55062795e84fe6f8ca135682f43ac8cf60b37c1c4ee"
+    },
+    {
+      "id": "evidence/today-workflow-tests.json",
+      "sha256": "944b51f64dbcc5d7aa217a864d7df550196534dc8f9c1f7f2345f59b4ff4044e"
     }
   ],
-  "workflow_ref": "workflow/catalog",
+  "workflow_ref": "workflow/catalog-today-20261122-v2",
   "workflow_repository": "https://github.com/SeattlesBiggestVikingsFan/linux-amlogic"
 }
