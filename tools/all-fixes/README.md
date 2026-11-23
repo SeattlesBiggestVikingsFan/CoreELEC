@@ -3,6 +3,11 @@
 `upstream-dev` is unmodified published development, not the integration branch.
 The manifest pins an exact reviewed upstream commit even when development moves.
 Small `feature/*` branches carry explicit ordered commits and dependencies.
+Cross-component requirements use `cross_component_depends_on` entries with
+`component` and `feature`, for example the Kodi VSIF UI requiring the kernel's
+`lldv-vsif-suppression-v3`. Missing/unselected capabilities and cycles fail before
+assembly, including explicitly selected experiments. Runtime defaults remain
+separate from selecting a source capability.
 `default` means selected in the default assembly; `settings_defaults` describes
 runtime policy separately. Pending/excluded features are not selected.
 Experiments must be declared default-off and selected with
