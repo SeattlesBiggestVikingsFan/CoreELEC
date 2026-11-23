@@ -96,6 +96,8 @@ exact SHA, then supply `--refresh /reviewed/location/refresh.json` (component to
 SHA). This produces an **unvalidated candidate**, with conflicts or explicit
 already-upstream review tasks as needed. It never promotes or rewrites PR branches.
 After review, revise the manifest pin/feature selection and run fresh validation.
+See [UPSTREAM-REFRESH.md](UPSTREAM-REFRESH.md) for local daily-entry-point discovery,
+last-success comparison, serialized execution and the upstream-only selection.
 
 ```sh
 python3 tools/all-fixes/assemble.py immutable --repo <repository> \
