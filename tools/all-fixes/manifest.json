@@ -429,7 +429,7 @@
       ],
       "integration": {
         "binary_validation": false,
-        "ref": "refs/heads/candidate/all-fixes-today-20261122"
+        "ref": "refs/heads/candidate/all-fixes-today-20261122-v2"
       },
       "limitations": [
         "Framework production parity excludes six intentional canonical recipe bindings and workflow/legacy evidence tools; recipe and unchanged packager files have individual checksum/mode checks.",
@@ -1896,6 +1896,7 @@
         "seamless_mode_refresh": true
       },
       "schema_version": 1,
+      "source_variable": "COMBINED_KERNEL_SOURCE",
       "upstream": {
         "commit": "58c06bb03fba0d4136115b828a3924394130c15d",
         "published_ref": "amlogic-4.9-20",
@@ -3727,6 +3728,7 @@
         "tree": "a752e03e60bc2c3624190de63fc846c983c6310b"
       },
       "source_repository": "https://github.com/SeattlesBiggestVikingsFan/xbmc.git",
+      "source_variable": "COMBINED_KODI_SOURCE",
       "tracked_upstream": {
         "commit": "efcb4dac04f9b2cfeb863154045602e768195ab2",
         "ref": "upstream-dev",
